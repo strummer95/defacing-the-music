@@ -1,0 +1,4 @@
+:root{--purple:#2a1450;--purple2:#4b2289;--teal:#1fd1c1;--pink:#ff3ea5;--gold:#ffc83d;--cream:#fff4e0}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 20%,var(--purple2),var(--purple));color:var(--cream);font-family:system-ui,sans-serif;display:grid;place-items:center}
+.hero{text-align:center;padding:2rem}.hero h1{font-size:clamp(2.5rem,9vw,6rem);margin:0;color:var(--pink);text-transform:uppercase;font-style:italic;letter-spacing:.02em;text-shadow:4px 4px 0 #000}
+.hero h1 span{display:block;color:var(--gold)}.hero p{font-size:1.25rem;color:var(--teal)}
