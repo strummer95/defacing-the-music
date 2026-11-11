@@ -4,7 +4,7 @@ Website for the Defacing The Music podcast, https://defacingthemusic.com (IONOS 
 
 - Plain PHP, no build. `main` is what's live after "Pull latest".
 - `pull.php` copies `main` onto the server. It holds no secret; it reads `../dtm-secrets.php` (server only).
-- Claude's work queue: `TASKS.md`. Notes for Claude: `CLAUDE.md`. Hourly builder: `.github/workflows/claude-builder.yml`.
+- Claude's work queue: `TASKS.md`. Notes for Claude: `CLAUDE.md`. Board for talking to Claude: `BOARD.md`. Builder: the hourly Claude runner in strummer95/bridge (`dtm/TASKS.md`).
 
 ## Server secrets file (`../dtm-secrets.php`, never in git)
 ```php
