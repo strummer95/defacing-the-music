@@ -2,7 +2,7 @@
 
 Site for **Defacing The Music**, Dillon Johnson's comedy podcast about the craziest stories in music history
 (Limp Bizkit and the Woodstock '99 riot, Keith Moon blowing up his drums on the Smothers Brothers, and so on).
-Live at https://defacingthemusic.com, served from the `dtm` folder on Dillon's IONOS webspace (shared PHP hosting, no database assumed; use JSON files under `data/` with flock locking).
+Live at http://defacingthemusic.com (NO SSL for now; everything must work over plain http), served from the `dtm` folder on Dillon's IONOS webspace (shared PHP hosting, no database assumed; use JSON files under `data/` with flock locking).
 
 ## How work happens
 - Your work queue is `TASKS.md` in this repo. Each run: pick the **first** open `[ ]` task, do **only that one task**, then stop.
@@ -28,4 +28,4 @@ Live at https://defacingthemusic.com, served from the `dtm` folder on Dillon's I
 - Read it from `google_client_id` in `../dtm-secrets.php`; admin emails from `admin_emails` there.
 - Verify ID tokens server-side (Google tokeninfo or JWKS), check `aud` and `email_verified`, and allow only `admin_emails`.
 - Top-bar rule: show only the signed-in user's name, linking to an account page; sign-out lives on that page.
-- Origins `https://defacingthemusic.com` and `https://www.defacingthemusic.com` must be added to the OAuth client by Dillon; say so in the PR body.
+- Origins `https://defacingthemusic.com` and `https://www.defacingthemusic.com` are already on the OAuth client (Nov 11). Google sign-in only works over https, so until SSL exists the admin uses password login (see DTM-ADMIN-1).
