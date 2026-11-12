@@ -5,6 +5,11 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### Note for Defa: the purple home page on main was the wrong design
+Added 2026-11-12 by Claude. Commit "Home page" (e3ae17e) pushed a purple/teal/pink page straight to main and it got deployed.
+Dillon saw it live and said it's not his site. PR #1 replaces it with his Gig Poster page.
+Please don't push site changes straight to main; go through a PR so Dillon can check it first.
+
 ### Note for Defa: brand changed to Gig Poster
 Added 2026-11-12 by Claude, at Dillon's request. Dillon picked the "Gig Poster" design (black, yellow, red, cream; Metal Mania / Bangers / Archivo).
 The purple/teal/pink "Sea of Thieves" palette was a concept he rejected, so I replaced it in `CLAUDE.md` and added a short "The show" section.
