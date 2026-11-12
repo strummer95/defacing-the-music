@@ -5,7 +5,7 @@ One task per run, top to bottom. Mark done `[x]` with a one-line note and PR lin
 ## [x] DTM-ADMIN-1: Admin area with a "Pull latest" button that works over plain HTTP
 Done: `/admin/` with first-run setup (deploy key as proof), password login with per-IP throttle, forgot-password email,
 Google sign-in that turns on by itself under https, account page with sign-out, and a CSRF-protected Pull latest button
-(shared deploy code in `lib/deploy.php`; `pull.php` still works with the key).
+(shared deploy code in `lib/deploy.php`; `pull.php` still works with the key). PR: https://github.com/strummer95/defacing-the-music/pull/2
 
 ## [x] DTM-SITE-1: Real landing page
 Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/site.css` (mobile layout, OG tags, favicon, scrolling ticker),
