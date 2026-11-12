@@ -18,15 +18,20 @@ forgot-password by email, session). Build `admin/` (replace the placeholder) tha
   and shows the output.
 - Document the exact `../dtm-secrets.php` shape in README, and put any server steps for Dillon under "Dillon needs to" in the PR.
 
-## [ ] DTM-SITE-1: Real landing page
-Replace the starter `index.php` with a proper one-page site: hero with wordmark and tagline, "what's the show" blurb,
-episode list area (empty state "first episode coming soon"), listen-on links section (placeholders for Spotify, Apple, YouTube),
-contact/email signup placeholder, footer. Brand per CLAUDE.md. Mobile first, fast, good meta/OG tags, favicon placeholder.
+## [x] DTM-SITE-1: Real landing page
+Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/site.css` (mobile layout, OG tags, favicon, scrolling ticker),
+episodes show "Coming soon", listen links show "soon" until URLs are filled in at the top of `index.php`,
+Guest List form saves to `data/subscribers.json` via `signup.php`.
 
 ## [ ] DTM-EPISODES-1: Episodes managed from the admin
 `data/episodes.json` (flock-locked writes) with title, slug, number, date, summary, story subject (band/artist), embed URL, cover image.
-Admin CRUD page for episodes; public episode list on the home page and an `episode.php?slug=` page. Validate and escape everything.
+Admin CRUD page for episodes; public episode list on the home page (replace the hardcoded `$episodes` array and keep the ticket-stub card look) and an `episode.php?slug=` page. Validate and escape everything.
+
+## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
+Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
 
 ## [ ] DTM-STORIES-1: Story idea backlog in the admin
 Admin-only page to log candidate stories (title, artist, year, one-line hook, source links, status idea/researching/recorded).
-Seed it with: Limp Bizkit and the Woodstock '99 riot; Keith Moon blowing up his drum kit on The Smothers Brothers Comedy Hour.
+Seed it with: Limp Bizkit and the Woodstock '99 riot; Keith Moon blowing up his drum kit on The Smothers Brothers Comedy Hour;
+Ozzy and the bat in Des Moines (1982); Mayhem (Norwegian black metal); the Bjork stalker case; the Montreux casino fire ("Smoke on the Water");
+GG Allin; Metallica/Guns N' Roses in Montreal 1992.
