@@ -46,4 +46,5 @@ Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home
 
 ## Done
 
+- 2026-11-12: DTM-EPISODES-1, episode admin + public episode pages (Claude). PR: https://github.com/strummer95/defacing-the-music/pull/4
 - 2026-11-12: DTM-SITE-1, Gig Poster home page (Claude).

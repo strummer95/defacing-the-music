@@ -12,9 +12,21 @@ Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/sit
 episodes show "Coming soon", listen links show "soon" until URLs are filled in at the top of `index.php`,
 Guest List form saves to `data/subscribers.json` via `signup.php`. PR: https://github.com/strummer95/defacing-the-music/pull/1
 
-## [ ] DTM-EPISODES-1: Episodes managed from the admin
-`data/episodes.json` (flock-locked writes) with title, slug, number, date, summary, story subject (band/artist), embed URL, cover image.
-Admin CRUD page for episodes; public episode list on the home page (replace the hardcoded `$episodes` array and keep the ticket-stub card look) and an `episode.php?slug=` page. Validate and escape everything.
+## [x] DTM-EPISODES-1: Episodes managed from the admin
+Done: `data/episodes.json` (flock-locked via the existing `dtm_json_update`) with id, number, title, slug (auto from
+title, forced unique), date, subject (band/artist), summary, embed URL, cover image. New `admin/episodes.php`
+(add/edit/delete, CSRF-protected, slug collisions auto-suffixed, cover uploads validated with `getimagesize`
+not just the extension, JPEG/PNG/WEBP only, 5MB cap, stored under `uploads/episodes/` with a `.htaccess`
+blocking `.php`/`.phtml` execution there). `index.php`'s `$episodes` array is now `dtm_episodes()`; same
+ticket-stub cards (alternating red/yellow shadow), plus an optional cover thumbnail and an "Episode details"
+link to the new `episode.php?slug=`. First run seeds `data/episodes.json` with the three episodes that were
+previously hardcoded (and are the real ones named in `CLAUDE.md`'s "The show" section), so they don't vanish
+from the live site after this deploys — Dillon can edit them from the admin like any other episode from now on.
+`php -l` clean on every file. Verified end-to-end against a local `php -S`: seed/list/add/edit/delete, slug
+collision gets a `-2` suffix, bad date/bad embed URL/non-image "cover" all rejected with a visible error,
+missing CSRF gets a 400, cover file is deleted when its episode is deleted, signed-out access to
+`admin/episodes.php` redirects to login. Screenshotted the home page, an episode detail page (with and without
+a cover + embed), and the admin page. PR: https://github.com/strummer95/defacing-the-music/pull/4
 
 ## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
 Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).

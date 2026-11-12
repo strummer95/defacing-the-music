@@ -20,5 +20,6 @@ dtm_page_start('Admin', $user, true);
     <li><span class="bang">Guest List</span> <?= (int)$subs ?> signed up</li>
     <li><span class="bang">Last pull</span> <?= $last ? h($last['at'] . ' by ' . $last['by'] . ($last['ok'] ? '' : ' (failed)')) : 'Never from here' ?></li>
   </ul>
+  <p><a href="episodes.php">Manage episodes &rarr;</a></p>
 </section>
 <?php dtm_page_end();

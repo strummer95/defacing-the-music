@@ -1,22 +1,13 @@
 <?php
 // Defacing The Music: home page ("Gig Poster" design).
+require __DIR__ . '/lib/episodes.php';
 // Listen links stay empty until the show is on each platform; fill them in here.
 $listen = [
   'Spotify'        => '',
   'Apple Podcasts' => '',
   'YouTube'        => '',
 ];
-$episodes = [
-  ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Let Keith Moon Near the Pyro',
-   'blurb' => "Live TV, 1967. Keith Moon's bass drum gets loaded with way more flash powder than any human needed. Pete Townshend's hair catches fire, and his ears never forgive anybody.",
-   'meta' => 'CBS Studios, 1967', 'shadow' => ''],
-  ['num' => '02', 'title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Let Fred Durst Try to Calm People Down',
-   'blurb' => '200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.',
-   'meta' => 'Rome, NY, 1999', 'shadow' => 'red'],
-  ['num' => '03', 'title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let a Kid From Des Moines Bring a Bat to an Ozzy Show',
-   'blurb' => "A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber.",
-   'meta' => 'Des Moines, 1982', 'shadow' => ''],
-];
+$episodes = dtm_episodes();
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 $desc = "Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.";
@@ -45,7 +36,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link rel="stylesheet" href="assets/site.css?v=4">
 </head>
 <body>
 
@@ -98,21 +89,25 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     <p class="bang">Doors at 7. Disaster by 7:15.</p>
   </div>
   <div class="cards">
-    <?php foreach ($episodes as $ep): ?>
-    <article class="ticket <?= $h($ep['shadow']) ?>">
+    <?php foreach ($episodes as $i => $ep): ?>
+    <article class="ticket <?= $i % 2 === 1 ? 'red' : '' ?>">
       <div class="ticket-top bang">
-        <span class="num">EP <?= $h($ep['num']) ?></span>
+        <span class="num">EP <?= $h($ep['number']) ?></span>
         <span class="admit">Admit one</span>
       </div>
+      <?php if (!empty($ep['cover'])): ?>
+        <img class="ticket-cover" src="<?= $h($ep['cover']) ?>" alt="" loading="lazy" width="320" height="180">
+      <?php endif; ?>
       <div class="ticket-body">
         <h3 class="bang"><?= $h($ep['title']) ?></h3>
-        <p class="who"><?= $h($ep['who']) ?></p>
-        <p class="blurb"><?= $h($ep['blurb']) ?></p>
+        <?php if (!empty($ep['subject'])): ?><p class="who">Featuring <?= $h($ep['subject']) ?></p><?php endif; ?>
+        <p class="blurb"><?= $h($ep['summary']) ?></p>
         <div class="ticket-foot">
-          <span class="meta"><?= $h($ep['meta']) ?> · 15 min</span>
+          <span class="meta"><?= $h(date('Y', strtotime($ep['date']))) ?> · 15 min</span>
           <span class="status bang">Coming soon</span>
         </div>
       </div>
+      <a class="ticket-link" href="episode.php?slug=<?= urlencode($ep['slug']) ?>">Episode details</a>
     </article>
     <?php endforeach; ?>
   </div>
