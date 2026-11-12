@@ -2,6 +2,7 @@
 body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232,213,.06) 1.3px,transparent 1.6px);background-size:11px 11px;min-height:100vh}
 .admin-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:6px solid var(--yellow);background:var(--black)}
 .admin-bar .wordmark{font-size:26px}
+.admin-bar .logo-mark{width:40px;height:40px}
 .admin-bar-right{display:flex;align-items:center;gap:12px;margin-left:auto}
 .admin-bar-right form{margin:0}
 .admin-user{color:var(--cream);font-size:20px;text-decoration:none;padding:8px 4px}

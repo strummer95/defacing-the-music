@@ -172,12 +172,13 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="stylesheet" href="../assets/site.css?v=3">
 <link rel="stylesheet" href="../assets/admin.css?v=1">
 </head>
 <body class="admin">
 <header class="admin-bar">
-  <a href="index.php" class="wordmark metal">Defacing the Music</a>
+  <a href="index.php" class="wordmark metal"><img src="../assets/logo-192.png" alt="" width="40" height="40" class="logo-mark">Defacing the Music</a>
   <?php if ($user): ?>
   <div class="admin-bar-right">
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>

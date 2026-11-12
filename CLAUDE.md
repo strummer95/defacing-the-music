@@ -23,7 +23,7 @@ Live at http://defacingthemusic.com (NO SSL for now; everything must work over p
 - Palette: black `#111111`, yellow `#FFD21F`, red `#E4251B`, cream `#F2E8D5`; illustration extras `#FF8A00`, `#FFE23B`.
 - Fonts (Google Fonts): Metal Mania (wordmark/headings), Bangers (labels, buttons, stickers), Archivo (body).
 - `index.php` + `assets/site.css` are the reference implementation. Reuse their classes for new pages.
-- The final logo is still being designed; use the Metal Mania text wordmark until `assets/logo.*` exists.
+- Logo: yellow warning sign with a music-note exclamation mark, bullet hole and burnt corner. Transparent `assets/logo.png` (512), `assets/logo-192.png`, favicons, `assets/og-image.png`; untouched original `assets/logo-original.png` (1024, cream background). Pair it with the Metal Mania wordmark.
 
 ## The show
 - Solo host (Dillon, Chicagoland, plays in Limp Bizkit tribute band Counterfeit), about 15 minutes per episode. Dark-comedy narrative history: live-show disasters, meltdowns, terrible decisions.
