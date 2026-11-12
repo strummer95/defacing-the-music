@@ -17,10 +17,19 @@ Live at http://defacingthemusic.com (NO SSL for now; everything must work over p
 - `pull.php` must keep working and must never hold a secret. Files/folders it never overwrites: `.htaccess`, `data/`, `uploads/`.
 - Writing style for site copy: casual, funny, blunt. No em dashes.
 
-## Brand
-- Tone: aggressive but fun, rock-band-poster energy. Not cutesy, not graffiti, nothing Ozzy/bat-themed in branding.
-- Palette (Sea of Thieves inspired): deep purple `#2a1450`/`#4b2289`, teal `#1fd1c1`, hot pink `#ff3ea5`, gold `#ffc83d`, cream `#fff4e0`.
-- The final logo is still being designed; use a text wordmark until `assets/logo.*` exists.
+## Brand ("Gig Poster", chosen by Dillon Nov 2026; the purple/teal/pink "Sea of Thieves / High Seas" look was rejected, never use it)
+- Tone: aggressive but fun and cartoony, rock/metal gig-poster energy. Not cutesy, not graffiti, nothing Ozzy/bat-themed in branding.
+- Look: black base, yellow halftone hero, red accents, cream cards, thick black outlines, offset cartoon drop shadows, slight rotations.
+- Palette: black `#111111`, yellow `#FFD21F`, red `#E4251B`, cream `#F2E8D5`; illustration extras `#FF8A00`, `#FFE23B`.
+- Fonts (Google Fonts): Metal Mania (wordmark/headings), Bangers (labels, buttons, stickers), Archivo (body).
+- `index.php` + `assets/site.css` are the reference implementation. Reuse their classes for new pages.
+- The final logo is still being designed; use the Metal Mania text wordmark until `assets/logo.*` exists.
+
+## The show
+- Solo host (Dillon, Chicagoland, plays in Limp Bizkit tribute band Counterfeit), about 15 minutes per episode. Dark-comedy narrative history: live-show disasters, meltdowns, terrible decisions.
+- Episode titles: "Due To ..." (like a cancellation notice). Descriptors: "Who Let ..." (assigns blame). Keep titles under ~40 characters.
+- Ep 1 Due To Excessive Flash Powder / Who Let Keith Moon Near the Pyro. Ep 2 Due To The Venue Being Ripped Apart / Who Let Fred Durst Try to Calm People Down. Ep 3 Due To a Possible Rabies Infection / Who Let a Kid From Des Moines Bring a Bat to an Ozzy Show.
+- Every story is pitched as "so wild it sounds fake, but it's real", so never invent facts in site copy. Unverified legends get framed as "the story goes".
 
 ## Google sign-in (shared across Dillon's sites)
 - One OAuth Web client for all projects (Google Cloud project `duck-andrabbit-co`, client `dnr-sites-signin`).

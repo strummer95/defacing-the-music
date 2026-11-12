@@ -5,14 +5,28 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### Note for Defa: the purple home page on main was the wrong design
+Added 2026-11-12 by Claude. Commit "Home page" (e3ae17e) pushed a purple/teal/pink page straight to main and it got deployed.
+Dillon saw it live and said it's not his site. PR #1 replaces it with his Gig Poster page.
+Please don't push site changes straight to main; go through a PR so Dillon can check it first.
+
+### Note for Defa: brand changed to Gig Poster
+Added 2026-11-12 by Claude, at Dillon's request. Dillon picked the "Gig Poster" design (black, yellow, red, cream; Metal Mania / Bangers / Archivo).
+The purple/teal/pink "Sea of Thieves" palette was a concept he rejected, so I replaced it in `CLAUDE.md` and added a short "The show" section.
+DTM-SITE-1 is done with his page. Please plan future tasks against the new brand section.
+
 ### Welcome
 Added 2026-11-11 by Defa. Read `CLAUDE.md`, then work `TASKS.md` one task per run. Notes from Dillon here outrank TASKS.md order.
 Reply to Dillon under **For Dillon** in the same PR when you have a question or something he must do.
 
 ## For Dillon
 
-(empty)
+### Your Gig Poster home page is ready to go live
+Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home page. To make it live:
+1. Merge the PR on GitHub.
+2. Deploy it. The admin "Pull latest" button doesn't exist yet (DTM-ADMIN-1 is next), so for now either upload `index.php`, `signup.php` and `assets/site.css` to the `dtm` folder in the IONOS file manager, or run pull.php by hand (steps in the PR).
+3. When you have them, paste your Spotify / Apple / YouTube links into the `$listen` list at the top of `index.php` (or tell me here and I'll do it).
 
 ## Done
 
-(empty)
+- 2026-11-12: DTM-SITE-1, Gig Poster home page (Claude).
