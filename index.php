@@ -34,17 +34,23 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 <meta property="og:title" content="Defacing the Music">
 <meta property="og:description" content="<?= $h($desc) ?>">
 <meta property="og:url" content="http://defacingthemusic.com/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23FFD21F'/><circle cx='32' cy='34' r='20' fill='%23E4251B' stroke='%23111' stroke-width='5'/><circle cx='32' cy='34' r='12' fill='%23F2E8D5' stroke='%23111' stroke-width='4'/></svg>">
+<meta property="og:image" content="http://defacingthemusic.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://defacingthemusic.com/assets/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=2">
+<link rel="stylesheet" href="assets/site.css?v=3">
 </head>
 <body>
 
 <header class="wrap site-header">
-  <a href="#top" class="wordmark metal">Defacing the Music</a>
+  <a href="#top" class="wordmark metal"><img src="assets/logo-192.png" alt="" width="56" height="56" class="logo-mark">Defacing the Music</a>
   <nav class="nav bang" aria-label="Main">
     <a href="#episodes">Episodes</a>
     <a href="#host">The Host</a>
@@ -72,31 +78,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     </div>
 
     <div class="hero-art">
-      <svg viewBox="0 0 600 600" aria-hidden="true">
-        <polygon points="592,300 526,332 580,382 507,395 546,458 472,449 491,521 423,492 421,566 364,519 342,589 300,528 258,589 236,519 179,566 177,492 109,521 128,449 54,458 93,395 20,382 74,332 8,300 74,268 20,218 93,205 54,142 128,151 109,79 177,108 179,34 236,81 258,11 300,72 342,11 364,81 421,34 423,108 491,79 472,151 546,142 507,205 580,218 526,268" fill="#E4251B" stroke="#111111" stroke-width="8" stroke-linejoin="round"/>
-        <path d="M150,270 C130,190 200,175 185,105 C240,150 232,195 262,185 C248,120 290,85 300,30 C335,105 365,125 345,185 C372,185 385,135 418,112 C418,180 470,200 452,270 Z" fill="#FF8A00" stroke="#111111" stroke-width="8" stroke-linejoin="round"/>
-        <path d="M205,260 C195,210 235,200 228,160 C258,190 255,215 278,210 C272,170 295,140 300,110 C322,155 340,170 328,212 C350,210 358,180 380,165 C384,210 410,225 398,260 Z" fill="#FFE23B" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
-        <g transform="rotate(-28 150 120)"><rect x="60" y="112" width="190" height="18" rx="9" fill="#E8B06A" stroke="#111111" stroke-width="5"/><ellipse cx="250" cy="121" rx="14" ry="11" fill="#F2E8D5" stroke="#111111" stroke-width="5"/></g>
-        <g transform="rotate(32 460 130)"><rect x="370" y="122" width="190" height="18" rx="9" fill="#E8B06A" stroke="#111111" stroke-width="5"/><ellipse cx="370" cy="131" rx="14" ry="11" fill="#F2E8D5" stroke="#111111" stroke-width="5"/></g>
-        <path d="M40,200 L80,215 M30,240 L72,246 M560,215 L520,228 M570,255 L528,258" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
-        <g fill="#C9C9C9" stroke="#111111" stroke-width="5">
-          <?php foreach ([0,45,90,135,180,225,270,315] as $deg): ?>
-          <rect x="290" y="156" width="20" height="30" rx="4" transform="rotate(<?= $deg ?> 300 345)"/>
-          <?php endforeach; ?>
-        </g>
-        <circle cx="300" cy="345" r="168" fill="#E4251B" stroke="#111111" stroke-width="10"/>
-        <circle cx="300" cy="345" r="138" fill="#F2E8D5" stroke="#111111" stroke-width="8"/>
-        <polyline points="210,265 250,312 228,338 292,372 270,418 300,470" fill="none" stroke="#111111" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
-        <path d="M232,292 L272,326 M272,292 L232,326 M328,292 L368,326 M368,292 L328,326" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
-        <ellipse cx="305" cy="400" rx="46" ry="34" fill="#111111"/>
-        <ellipse cx="312" cy="418" rx="22" ry="12" fill="#E4251B"/>
-        <polygon points="90,90 98,109 119,111 102,124 108,144 90,133 72,144 78,124 61,111 82,109" fill="#FFE23B" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
-        <polygon points="520,444 526,461 545,462 530,473 535,491 520,481 505,491 510,473 495,462 514,461" fill="#FFE23B" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
-        <polygon points="500,90 505,103 519,104 509,113 512,126 500,119 488,126 491,113 481,104 495,103" fill="#F2E8D5" stroke="#111111" stroke-width="4" stroke-linejoin="round"/>
-        <g transform="rotate(-10 300 560)">
-          <text x="300" y="578" text-anchor="middle" font-family="Bangers, sans-serif" font-size="92" fill="#FFE23B" stroke="#111111" stroke-width="14" paint-order="stroke" letter-spacing="3">KA-BLAM!</text>
-        </g>
-      </svg>
+      <img src="assets/logo.png" alt="Defacing the Music logo: a busted yellow warning sign with a music note for an exclamation mark" width="512" height="512" class="hero-logo">
       <p class="sticker bang">First eps<br>coming<br>soon</p>
     </div>
   </div>
@@ -178,7 +160,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p class="wordmark metal">Defacing the Music</p>
+    <p class="wordmark metal"><img src="assets/logo-192.png" alt="" width="44" height="44" class="logo-mark">Defacing the Music</p>
     <p>Due to unforeseen circumstances, all rights reserved. · defacingthemusic.com</p>
   </div>
 </footer>
