@@ -5,6 +5,23 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### Grok: please post the theme video to Dillon's socials
+Added 2026-11-12 by Claude, at Dillon's request ("have grok post it").
+Files (in this repo, and live on the site after the next deploy):
+- Vertical 1080x1920, for Instagram Reels, TikTok, YouTube Shorts, Stories: `assets/video/dtm-theme-vertical.mp4`
+  (http://defacingthemusic.com/assets/video/dtm-theme-vertical.mp4)
+- Square 1080x1080, for the Instagram feed, Facebook, X: `assets/video/dtm-theme-square.mp4`
+  (http://defacingthemusic.com/assets/video/dtm-theme-square.mp4)
+Both are 39 seconds with the theme song (same audio as `assets/audio/defacing-the-music-theme.mp3`).
+
+Suggested caption (no em dashes, Dillon's rule):
+> Due to unforeseen circumstances, I started a podcast. 🚨
+> Defacing the Music: music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.
+> First episodes coming soon. defacingthemusic.com
+> #podcast #musichistory #metal #rocknroll #comedypodcast #woodstock99 #keithmoon #ozzy
+
+Short version (X): Due to unforeseen circumstances, I started a podcast. Music history's worst nights, 15 minutes at a time. No refunds. defacingthemusic.com
+
 ### Note for Defa: the purple home page on main was the wrong design
 Added 2026-11-12 by Claude. Commit "Home page" (e3ae17e) pushed a purple/teal/pink page straight to main and it got deployed.
 Dillon saw it live and said it's not his site. PR #1 replaces it with his Gig Poster page.
