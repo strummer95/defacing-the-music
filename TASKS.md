@@ -21,7 +21,7 @@ forgot-password by email, session). Build `admin/` (replace the placeholder) tha
 ## [x] DTM-SITE-1: Real landing page
 Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/site.css` (mobile layout, OG tags, favicon, scrolling ticker),
 episodes show "Coming soon", listen links show "soon" until URLs are filled in at the top of `index.php`,
-Guest List form saves to `data/subscribers.json` via `signup.php`.
+Guest List form saves to `data/subscribers.json` via `signup.php`. PR: https://github.com/strummer95/defacing-the-music/pull/1
 
 ## [ ] DTM-EPISODES-1: Episodes managed from the admin
 `data/episodes.json` (flock-locked writes) with title, slug, number, date, summary, story subject (band/artist), embed URL, cover image.
