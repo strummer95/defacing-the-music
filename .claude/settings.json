@@ -1,0 +1,1 @@
+{"permissions":{"allow":["Bash(gh pr merge*)","Bash(gh api -X PUT repos/strummer95/defacing-the-music/pulls/*/merge*)"]}}
