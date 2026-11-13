@@ -33,7 +33,14 @@ a{color:inherit}
 .btn.alt{color:var(--black);background:var(--cream);box-shadow:6px 6px 0 var(--black)}
 a.btn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--red)}
 .btn.soon{opacity:.92;cursor:default}
-.follow{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.listen-main{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:8px}
+.yt-btn{display:inline-flex;align-items:center;gap:14px;font-size:34px;letter-spacing:1.5px;padding:16px 30px;background:var(--black);color:var(--cream);border:4px solid var(--black);box-shadow:8px 8px 0 var(--red)}
+.yt-btn svg{flex:0 0 auto}
+a.yt-btn:hover{transform:translate(2px,2px);box-shadow:6px 6px 0 var(--red)}
+.also{margin:0;font-weight:700;font-size:18px;color:var(--black)}
+.also a{color:var(--black);text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--red);text-underline-offset:3px}
+.also a:hover{color:var(--red)}
+.follow{margin-top:6px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .follow-label{font-size:20px;letter-spacing:1px;color:var(--black);margin-right:2px}
 .btn.sm{font-size:19px;padding:8px 16px;box-shadow:4px 4px 0 var(--red)}
 .btn small{font-size:15px;opacity:.75;margin-left:6px}
@@ -129,6 +136,8 @@ a.sticker{text-decoration:none}
   .lede{font-size:18px}
   .btn{font-size:21px;padding:10px 16px}
   .btn.sm{font-size:17px;padding:7px 12px}
+  .yt-btn{font-size:27px;padding:13px 20px;gap:10px}
+  .also{font-size:16px}
   .follow-label{flex-basis:100%;font-size:18px}
   .sticker{width:98px;height:98px;font-size:17px;top:-8px}
   .ticker p{font-size:22px}
