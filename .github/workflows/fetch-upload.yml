@@ -1,0 +1,35 @@
+# Lets Claude grab a file Duck uploaded in admin > Uploads (the site is http-only, which Claude's sandbox can't reach).
+# Run manually with the file's id and secret token from "Copy link for Claude". The file is kept as a
+# 1-day artifact; Claude downloads it and then deletes the run. pull.php never deploys .github/.
+name: Fetch uploaded file from the site
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: File id (from the Copy link for Claude URL)
+        required: true
+      t:
+        description: File token (from the same URL)
+        required: true
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download from defacingthemusic.com
+        env:
+          FID: ${{ inputs.id }}
+          FTOK: ${{ inputs.t }}
+        run: |
+          echo "::add-mask::$FTOK"
+          [[ "$FID" =~ ^[a-f0-9]{16}$ && "$FTOK" =~ ^[a-f0-9]{40}$ ]] || { echo "bad id/token"; exit 1; }
+          mkdir out && cd out
+          curl -fSL --retry 3 -OJ "http://defacingthemusic.com/admin/file.php?id=${FID}&t=${FTOK}&dl=1"
+          ls -la
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upload
+          path: out/
+          retention-days: 1
+          compression-level: 0
