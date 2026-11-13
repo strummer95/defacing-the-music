@@ -7,13 +7,13 @@ $listen = [
   'YouTube'        => 'https://youtu.be/X48gJu0NSyw',
 ];
 $episodes = [
-  ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Let Keith Moon Near the Pyro',
+  ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
    'blurb' => "Live TV, 1967. Keith Moon's bass drum gets loaded with way more flash powder than any human needed. Pete Townshend's hair catches fire, and his ears never forgive anybody.",
    'meta' => 'CBS Studios, 1967', 'shadow' => ''],
-  ['num' => '02', 'title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Let Fred Durst Try to Calm People Down',
+  ['num' => '02', 'title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
    'blurb' => '200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.',
    'meta' => 'Rome, NY, 1999', 'shadow' => 'red'],
-  ['num' => '03', 'title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let a Kid From Des Moines Bring a Bat to an Ozzy Show',
+  ['num' => '03', 'title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let That Guy Bring a Bat?',
    'blurb' => "A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber.",
    'meta' => 'Des Moines, 1982', 'shadow' => ''],
 ];
@@ -105,7 +105,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     <div class="np-copy">
       <p class="np-num bang">EP 00</p>
       <h3 class="bang">Due To Unforeseen Circumstances</h3>
-      <p class="who">Who Let This Guy Have a Mic</p>
+      <p class="who">Who Gave This Guy a Mic?</p>
       <p>Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber.</p>
       <a class="btn bang" href="https://youtu.be/X48gJu0NSyw" target="_blank" rel="noopener">Watch on YouTube</a>
     </div>
