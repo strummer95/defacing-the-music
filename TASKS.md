@@ -7,6 +7,10 @@ Done: `/admin/` with first-run setup (deploy key as proof), password login with 
 Google sign-in that turns on by itself under https, account page with sign-out, and a CSRF-protected Pull latest button
 (shared deploy code in `lib/deploy.php`; `pull.php` still works with the key). PR: https://github.com/strummer95/defacing-the-music/pull/2
 
+## [x] DTM-PROMPTER-1: Teleprompter in the admin
+Done: Scripts section in the admin (create, edit, delete, seeded with Episode 0) and a black-screen reader with
+size +/-, auto-scroll with speed, space to play/pause, full screen, mirror mode, settings remembered per device.
+
 ## [x] DTM-SITE-1: Real landing page
 Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/site.css` (mobile layout, OG tags, favicon, scrolling ticker),
 episodes show "Coming soon", listen links show "soon" until URLs are filled in at the top of `index.php`,

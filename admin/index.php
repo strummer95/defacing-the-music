@@ -16,6 +16,7 @@ dtm_page_start('Admin', $user, true);
 <section class="admin-card">
   <h1 class="metal">Backstage</h1>
   <p>Hit <strong>Pull latest</strong> (top right) to copy what's on GitHub <code>main</code> onto the live site.</p>
+  <p><a class="pull-btn bang link-btn" href="scripts.php">Scripts and teleprompter</a></p>
   <ul class="stats">
     <li><span class="bang">Guest List</span> <?= (int)$subs ?> signed up</li>
     <li><span class="bang">Last pull</span> <?= $last ? h($last['at'] . ' by ' . $last['by'] . ($last['ok'] ? '' : ' (failed)')) : 'Never from here' ?></li>
