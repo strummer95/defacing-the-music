@@ -5,6 +5,138 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### TODO: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
+Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
+Dillon reviewed the teleprompter scripts: they blaze through too fast and read like a tight summary. He wants the tone of The Dollop or How Did This Get Made: casual, conversational, room to breathe, dry and NOT cliche, corny or hokey. He records alone, so bare RIFF cues leave him improvising into silence.
+
+1. Replace the Episode 1 script (lib/seed/episode-01.txt) with the version below, word for word. Add the sha1 of the current shipped episode-01 text to DTM_SEED_OLD so an unedited copy on the server upgrades automatically.
+2. Rewrite Episodes 0, 2 and 3 to match Episode 1's pacing and style, and update their seeds the same way (old sha1s into DTM_SEED_OLD). Use Episode 1 as the template:
+   - Target about 2,000 to 2,400 words each (about 15 minutes read aloud before riffs). Episode 0 can be shorter, around 1,200 to 1,500.
+   - Slow walk-ups before punchlines, with [Pause.] beats. Don't jump fact to fact.
+   - Context for people who weren't there (who/what/why it mattered then), tangents, and direct asides to the listener ("I need you to picture this", "I looked this up twice").
+   - Every [RIFF: ...] gets a written fallback right after it that Duck can read, change or skip. Optional asides go in [FILL: ...].
+   - Keep the honesty rule: anything unproven goes in "the story goes" / "the legend goes" pile. People who got hurt are never the joke; the joke is the guy who decided it was fine. "There's always a guy."
+   - Order stays: COLD OPEN (teaser of that episode's story), TODAY summary, "I'm Duck, and this is Defacing the Music.", [THEME SONG, hard stop], episode title line. Episode 0's cold open stays generic, show-wide.
+   - Host is Duck. No em dashes anywhere.
+3. Specific fixes:
+   - Woodstock '99 is a Limp Bizkit / "Break Stuff" story, not a Red Hot Chili Peppers story. Episode 0's cold open and "What's coming" must use: "A band plays 'Break Stuff' to a quarter million angry people, and they take it as instructions." Remove the RHCP "Fire" line from Episode 0.
+   - Episode 2's cold open must open on Fred, the Alanis "mellow out" line and "Break Stuff." The Sunday candles/fire and RHCP "Fire" stay later as the aftermath. Note the HBO doc (Woodstock 99: Peace, Love, and Rage, 2021) came before Netflix's Trainwreck (2022). Put "Fred surfs on plywood" in the "story goes" pile unless sourced.
+   - Episode 3's cold open should lead with the bat in Des Moines; the dove becomes the "and this wasn't his first time" turn.
+   - Episode 0 also keeps: "They were not unforeseen. Somebody saw every one of them coming." and the out "I'm Duck. Due to unforeseen circumstances, I'll see you next week."
+4. Open a PR (don't push to main). You may merge it when done; Dillon deploys with Pull latest. Leave a note here when done.
+
+Episode 1 script (new, use word for word):
+```
+## COLD OPEN
+September 1967. CBS Television City, Los Angeles. A Sunday night comedy show.
+Tommy Smothers walks over to a British rock band with a microphone and a big friendly smile, and asks them a few easy questions. Where are you from. What's your name. Nice stuff.
+About ninety seconds later the drum kit explodes, the guitar player's hair is smoking, the drummer is bleeding, and Tommy Smothers is holding an acoustic guitar that is about to stop being a guitar.
+And this aired. On a Sunday night. Into living rooms. Where families were eating dinner.
+## TODAY
+Today: a drummer, a bass drum, way too much flash powder, a guitarist with noticeably less hair than he started the day with, and a TV host who loses his own guitar on his own show.
+Also, the biggest band in this story was opening for Herman's Hermits. We'll get to that. It's important to me that we get to that.
+I'm Duck, and this is Defacing the Music.
+[THEME SONG, hard stop]
+Episode one. Due To Excessive Flash Powder. Or, Who Let Keith Moon Near the Pyro.
+
+## POP QUIZ ANSWER
+Okay. Last episode I left you with a question, and if you remember it, thank you, you're the one.
+In 1967 The Who are touring America. They are not the headliner. They are the opening act. For who?
+Herman's Hermits.
+[Pause. Let that sit.]
+I need you to really line these two bands up next to each other, because I don't think the answer lands until you do.
+The Who. "My Generation." "I hope I die before I get old." A guitar player who windmills his arm and then smashes the guitar into the amp until it's in pieces. A drummer who kicks the whole kit off the riser every night like it owes him money.
+Herman's Hermits. "Mrs. Brown, You've Got a Lovely Daughter." "I'm Henery the Eighth, I Am." Peter Noone, who looked like he would help your grandma with her groceries and then ask if she needed anything else.
+That's a tour. Somebody booked that. Somebody sat at a desk and went, "Yeah. Same night. Same stage. This makes sense."
+[FILL: I looked this up more than once because I didn't believe it. It's real. The Who spent a chunk of summer 1967 warming up crowds for Herman's Hermits.]
+So picture the crowd. You're twelve. You're in Ohio. Your mom drove you three hours in a station wagon with no air conditioning so you could see Peter Noone smile in your general direction. You have a sign. You made the sign.
+And before Peter comes out, four guys from London walk on stage and murder their equipment in front of you. Feedback. Smoke. A guitar in splinters. Your mom has her hand over your eyes.
+And then they leave, and a nice young man comes out and sings about Mrs. Brown's daughter like none of that just happened.
+[RIFF: opening for a band the crowd didn't come for. If there's a Counterfeit night where the room was waiting for somebody else, this is the spot. If not, use this:]
+I play in a Limp Bizkit tribute band, so I know a little about being the thing the room did not ask for. But nobody has ever made us open for a barbershop quartet. That's a line even our booking agent won't cross. Probably.
+Anyway. That's where The Who are in the summer of 1967. Big in England. Kind of a weird rumor in America. And in the middle of that tour, somebody books them on national television.
+
+## WHO IS KEITH MOON
+Before we get to the TV show, I have to tell you about Keith Moon. Because "drummer" doesn't cover it. "Drummer" is the job title on paper. The actual job was something closer to "weather event."
+Keith Moon is the guy who walked into a five star hotel room and started thinking about how to get it down to one star. Not in a mean way. In a curious way. Like a scientist.
+His favorite thing was blowing up toilets. With cherry bombs, and later with stronger stuff. And I want to be clear, that is not one of those legends I'm going to put an asterisk on. That was a documented hobby. Hotel chains knew his name the way your mailman knows which house has the dog.
+[FILL: Think about the hotel manager who has to call the front office. "Hi, yes, it's the toilet again. No, a different one. No, the same guy."]
+And here's my favorite Keith Moon story from this exact tour, and this one does go in the "the story goes" pile, so hold it loosely.
+August 1967. Flint, Michigan. A Holiday Inn. Keith is turning twenty one, or says he is, which with Keith is about as good as you're getting.
+There's a party. There's a cake. The cake does not survive. There's a cake fight, there's a fire extinguisher situation, and the legend says that by the end of the night a car ended up at the bottom of the hotel pool.
+Did a car end up in the pool? Nobody's ever proven it. People have gone looking. People have argued about it for fifty years.
+Did The Who get a very large bill from that Holiday Inn? Yes. That part's real.
+[RIFF: the car in the pool. Is it better if it's true or better if it's not? Your call.]
+So that's our guy. Twenty one, maybe. Loves explosions. Recently banned from a Holiday Inn, allegedly. And now CBS is going to put him on live television with a pyrotechnic in his bass drum.
+What could possibly.
+
+## THE SMOTHERS BROTHERS
+Quick thing for anybody under fifty, because I had to look some of this up too.
+The Smothers Brothers Comedy Hour was a Sunday night variety show on CBS. Tom and Dick Smothers. Brothers. Folk singers who did comedy. Tommy played the dumb one, Dick played the straight man, and the bit was mostly Tommy losing an argument with his brother. "Mom always liked you best." That was their line.
+And on paper that sounds like the safest show on television. Two guys in matching sweaters doing folk songs.
+But they were actually the cool show. They booked rock bands. They got in fights with CBS about politics and the war almost every week. Network censors basically had a desk with their name on it.
+[FILL: So, to recap the booking: a network that's already nervous about this show lets it bring on the band that destroys its own equipment for a living. And then says, "Can you make the ending bigger?"]
+
+## THE SETUP
+The Who come on to do two songs. "I Can See for Miles," which was brand new, and is going to become their biggest American hit. And "My Generation," which is the one where they wreck everything.
+And for TV, the wrecking has to be bigger. It's a stage show, but now it's a stage show on a screen the size of a toaster. So the plan is a small explosive charge in Keith's bass drum. A flash. A pop. A little puff of smoke. Great television. Everybody goes home.
+Now here's where the story gets murky, and I'm going to be straight with you about it, because nobody agrees on exactly what happened.
+The most common version: Keith pays off a stagehand to load extra flash powder. Some versions say the crew loaded the normal amount, and Keith added more on top when nobody was watching. One account says it ended up being around ten times what it should've been.
+[FILL: Ten times. Not "a little extra." Not "a splash more." Ten times. That's not a recipe adjustment, that's a different recipe.]
+And I keep thinking about the stagehand. Because in every version of this, there's a guy. There's a crew guy holding a can of flash powder, and a twenty one year old Englishman with a reputation for blowing up toilets walks up and goes, "Mate. A bit more."
+And the guy says yes.
+[RIFF: the stagehand. What's in his head. What does he tell his wife that night. "How was work?" "Well."]
+There's always a guy. We're gonna find the guy. We're not gonna find the guy. Nobody knows his name. But he's out there. In spirit.
+
+## THE BOOM
+Okay. So. They play "I Can See for Miles," it's great, nobody's on fire yet.
+Then Tommy Smothers comes out and does a little interview with them. And you can watch this, it's on YouTube, and it's honestly one of the best things on the internet. Tommy's being friendly, asking names, making small talk, and the band is not really meeting him halfway. Tommy is doing his best.
+[FILL: Watch Tommy in that clip. He has no idea. He's the guy in a horror movie saying "I'll be right back."]
+Then they go into "My Generation." And it's building, and building, and Pete starts smashing his guitar, and Keith kicks over the drums, and then somebody hits the charge.
+And it is not a pop.
+[Pause.]
+It is a bomb. On a soundstage. The camera shakes. There's a wall of smoke where the drums used to be.
+Keith gets knocked backward off his riser. A piece of cymbal slices his arm open. Pete Townshend is standing right in front of the bass drum when it goes, and it singes his hair. Pete comes out of the smoke looking like a cartoon. Like he lost a fight with a cigar.
+[RIFF: describe Pete's face in the clip. Then tell people to go watch it after the episode.]
+And here's the part that's not funny, and I'll say it once. Pete has said for years that this night is part of why his hearing has been bad ever since. He's lived with tinnitus most of his life.
+To be fair to Keith, and I can't believe I'm being fair to Keith, Pete also stood in front of the loudest amplifiers on Earth for sixty years. So it's not all one night. But Pete has pointed at this one. He remembers which night it was.
+
+## THE GUITAR
+Now. My favorite part. And this is on tape, so no asterisk.
+The smoke is still clearing. Pete's hair is still smoking. The drummer is bleeding. The audience doesn't know if this is the bit or a real emergency.
+And Tommy Smothers walks back out. With an acoustic guitar. Smiling. Because the show must go on, and he's got a little comedy bit planned.
+[Pause.]
+Pete takes the guitar out of his hands. And smashes it on the floor.
+[FILL: Not angry. Not a fight. Just, "Oh, I'll take that." Like a waiter clearing a plate.]
+And Tommy just kind of stands there. Holding the air where his guitar was. On his own show. In front of the whole country.
+[RIFF: Tommy's reaction. "I was going to play that later." Or what you'd do if a guy smashed your guitar at a Counterfeit gig.]
+I think about that a lot. A guy built an entire career on being the nice brother who loses arguments, and then he loses his guitar to a British art student covered in soot. That's the most Tommy Smothers thing that could have possibly happened.
+
+## THE LEGEND
+One more piece of this, and this one gets the biggest asterisk of the episode.
+The story goes that Bette Davis was backstage that night, waiting to go on. Bette Davis. Old Hollywood royalty. All About Eve. And when the bass drum went off, she was so shaken up that she fainted. Into the arms of Mickey Rooney.
+[Pause.]
+Is that true? I can't prove it. It shows up in a lot of retellings, and every time I try to nail it down it slips out of my hand.
+But I'm telling it anyway, because if it's not true, somebody made up "Bette Davis faints into Mickey Rooney," and that person deserves something. An award. A plaque.
+[RIFF: picture it. Smoke, a bleeding drummer, and Bette Davis going down like a folding chair into Mickey Rooney.]
+
+## THE FALLOUT
+So what happened to everybody?
+Keith Moon got bandaged up and went right back to being Keith Moon for another eleven years. If anything, the explosion was great for business. It's one of the most famous clips in rock and roll.
+Pete Townshend got a story he's told for over fifty years, and ears that still ring.
+"I Can See for Miles" became The Who's biggest hit single in America. So, in a way, the explosion worked. Two months later nobody was asking who opened for Herman's Hermits.
+[FILL: Herman's Hermits, meanwhile. Wonderful band. Lovely people. Did not explode on television. And nobody's making a podcast about them.]
+And the Smothers Brothers? CBS canceled the show in 1969. Not because of The Who. They had a long fight with the network over politics and censorship, and the network finally just pulled the plug. But I'd like to think somebody at CBS had a folder, and the drum kit was in it.
+
+## OUT
+So that's it. One drummer. One bass drum. Way too much flash powder. A stagehand who said yes. And a man who walked out to do a bit and lost his guitar.
+And the lesson, if there is one: when the guy who blows up hotel toilets for fun asks for a little more, the answer is no. Write it down. Put it on the wall.
+[RIFF: one last thought. What it says about 1967 that this was Sunday night family viewing.]
+Next time: Woodstock '99. A concrete Air Force base in July, four dollar water, and a song called "Break Stuff" played to a quarter million people who took it as instructions. And I've got a conflict of interest, because my band plays that song for a living.
+[RIFF: defacingthemusic.com, Guest List, subscribe, socials. Keep it short.]
+I'm Duck. Due to unforeseen circumstances, I'll see you next week.
+```
+
 ### DONE: Teleprompter: script reader in the admin
 Done 2026-11-13 by Claude: admin > Scripts > Read. (Original request below.)
 Added 2026-11-12 by Defa, at Dillon's request.
