@@ -11,7 +11,38 @@ const DTM_SEEDS = [
   'episode-03' => ['3', 'Due To a Possible Rabies Infection'],
 ];
 
+// sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
+// exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
+const DTM_SEED_OLD = [
+  'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a'],
+  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717'],
+  'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5'],
+  'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375'],
+];
+
+function dtm_upgrade_seeds(): void {
+  $list = dtm_json_read('scripts.json');
+  $need = false;
+  foreach ($list as $s) {
+    foreach (DTM_SEED_OLD as $key => $old) {
+      if ((string)$s['episode'] === DTM_SEEDS[$key][0] && in_array(sha1((string)$s['body']), $old, true)) { $need = true; break 2; }
+    }
+  }
+  if (!$need) return;
+  dtm_json_update('scripts.json', function ($list) {
+    foreach ($list as &$s) {
+      foreach (DTM_SEED_OLD as $key => $old) {
+        if ((string)$s['episode'] !== DTM_SEEDS[$key][0] || !in_array(sha1((string)$s['body']), $old, true)) continue;
+        $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
+        if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
+      }
+    }
+    return $list;
+  });
+}
+
 function dtm_seed_scripts(): void {
+  dtm_upgrade_seeds();
   $marker = dtm_data_dir() . '/scripts.seeded';
   $done = [];
   if (is_file($marker)) {
