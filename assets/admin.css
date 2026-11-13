@@ -61,3 +61,9 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
 .linkish{background:none;border:0;padding:0;font:inherit;font-weight:800;color:var(--red);text-decoration:underline;cursor:pointer}
 .linkish.danger{color:#8a0f08}
 .admin-form input[type=file]{min-height:auto;padding:10px;background:#fff}
+.saved-h{font-size:22px;margin:16px 0 8px;color:var(--black)}
+.saved-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.saved-grid figure{margin:0;background:#fff;border:3px solid var(--black);padding:6px}
+.saved-grid img{display:block;width:100%;height:130px;object-fit:cover;background:#ddd}
+.saved-grid figcaption{font-size:12px;margin-top:6px;word-break:break-word}
+.saved-grid figure.dnu{opacity:.55;border-color:var(--red)}
