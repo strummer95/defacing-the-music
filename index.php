@@ -5,7 +5,7 @@ require __DIR__ . '/lib/https.php';
 $listen = [
   'Spotify'        => 'https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx',
   'Apple Podcasts' => 'https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289',
-  'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
+  'YouTube'        => 'https://www.youtube.com/@DefacingTheMusic',
 ];
 // Social pages. Paste the full URL to make a button live.
 $social = [
