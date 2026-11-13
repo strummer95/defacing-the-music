@@ -5,8 +5,9 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### Teleprompter: script reader in the admin
-Added 2026-11-12 by Defa, at Dillon's request. Do this next, before other tasks.
+### DONE: Teleprompter: script reader in the admin
+Done 2026-11-13 by Claude: admin > Scripts > Read. (Original request below.)
+Added 2026-11-12 by Defa, at Dillon's request.
 Dillon wants to read episode scripts from the site admin while recording, so his screen doesn't wash out his face on camera.
 - Admin: add a Scripts section (create, edit, delete). Each script has an episode number, title and body. Body is plain text with simple markup: lines starting with `## ` are section headings, and `[RIFF: ...]`, `[FILL: ...]`, `[THEME SONG ...]` cues are shown highlighted.
 - Reader view per script (admin only, behind the login): pure black background, white text, no other UI except tiny controls. Text scales to the window width (CSS clamp/vw), with buttons or keys to make it bigger or smaller (+/-) and optional auto-scroll with a speed control (space to start/stop). Full-screen button. Remember size and speed in localStorage.
@@ -88,4 +89,5 @@ Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home
 
 ## Done
 
+- 2026-11-13: Teleprompter in the admin (Scripts > Read), seeded with Episode 0 (Claude).
 - 2026-11-12: DTM-SITE-1, Gig Poster home page (Claude).

@@ -181,6 +181,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
   <a href="index.php" class="wordmark metal"><img src="../assets/logo-192.png" alt="" width="40" height="40" class="logo-mark">Defacing the Music</a>
   <?php if ($user): ?>
   <div class="admin-bar-right">
+    <a href="scripts.php" class="admin-user bang">Scripts</a>
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>
     <?php if ($pullButton): ?>
     <form method="post" action="deploy.php" id="pull-form">
