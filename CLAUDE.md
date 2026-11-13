@@ -26,7 +26,7 @@ Live at http://defacingthemusic.com (NO SSL for now; everything must work over p
 - Logo: yellow warning sign with a music-note exclamation mark, bullet hole and burnt corner. Transparent `assets/logo.png` (512), `assets/logo-192.png`, favicons, `assets/og-image.png`; untouched original `assets/logo-original.png` (1024, cream background). Pair it with the Metal Mania wordmark. Vector master from Illustrator: `brand/DTM_Logo.pdf` (+ `brand/DTM_Logo.svg`) for print, merch and cover art; the site uses the PNG because the vector trace flattens the halftone and bands the burn.
 
 ## The show
-- Solo host (Dillon, Chicagoland, plays in Limp Bizkit tribute band Counterfeit), about 15 minutes per episode. Dark-comedy narrative history: live-show disasters, meltdowns, terrible decisions.
+- Solo host, goes by **Duck** on the show (Chicagoland, 32 years playing guitar), about 15 minutes per episode. NEVER mention his tribute band, Counterfeit, or "my band" in any script or show copy. Dark-comedy narrative history: live-show disasters, meltdowns, terrible decisions.
 - Episode titles: "Due To ..." (like a cancellation notice). Descriptors: "Who Let ..." (assigns blame). Keep titles under ~40 characters.
 - Ep 1 Due To Excessive Flash Powder / Who Let Keith Moon Near the Pyro. Ep 2 Due To The Venue Being Ripped Apart / Who Let Fred Durst Try to Calm People Down. Ep 3 Due To a Possible Rabies Infection / Who Let a Kid From Des Moines Bring a Bat to an Ozzy Show.
 - Every story is pitched as "so wild it sounds fake, but it's real", so never invent facts in site copy. Unverified legends get framed as "the story goes".
