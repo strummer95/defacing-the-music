@@ -49,3 +49,13 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
   .admin-bar-right{margin:0 auto}
   .admin-card h1{font-size:42px}
 }
+.link-btn{display:inline-flex;align-items:center;text-decoration:none;color:var(--black)!important}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-row .pull-btn{margin-top:14px}
+.script-box{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;line-height:1.5;padding:12px;border:4px solid var(--black);background:#fff;color:var(--black);width:100%;resize:vertical}
+.script-list{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:12px}
+.script-list li{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 0;border-bottom:3px solid var(--black)}
+.script-list .ep{background:var(--black);color:var(--yellow);padding:4px 10px;font-size:20px}
+.script-list .ttl{flex:1 1 200px;font-weight:800;font-size:18px}
+.script-list .acts{display:flex;align-items:center;gap:14px}
+.script-list .pull-btn{min-height:40px;font-size:18px;padding:6px 14px}

@@ -5,7 +5,7 @@ require __DIR__ . '/lib/episodes.php';
 $listen = [
   'Spotify'        => '',
   'Apple Podcasts' => '',
-  'YouTube'        => '',
+  'YouTube'        => 'https://youtu.be/X48gJu0NSyw',
 ];
 $episodes = dtm_episodes();
 $signup = $_GET['signup'] ?? '';
@@ -43,6 +43,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 <header class="wrap site-header">
   <a href="#top" class="wordmark metal"><img src="assets/logo-192.png" alt="" width="56" height="56" class="logo-mark">Defacing the Music</a>
   <nav class="nav bang" aria-label="Main">
+    <a href="#now-playing">Episode 0</a>
     <a href="#episodes">Episodes</a>
     <a href="#host">The Host</a>
     <a href="#list">Guest List</a>
@@ -70,7 +71,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 
     <div class="hero-art">
       <img src="assets/logo.png" alt="Defacing the Music logo: a busted yellow warning sign with a music note for an exclamation mark" width="512" height="512" class="hero-logo">
-      <p class="sticker bang">First eps<br>coming<br>soon</p>
+      <a href="#now-playing" class="sticker bang">Ep 0<br>out<br>now</a>
     </div>
   </div>
 </section>
@@ -82,6 +83,25 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     <?php endfor; ?>
   </div>
 </div>
+
+<section id="now-playing" class="wrap now-playing">
+  <div class="section-head">
+    <h2 class="metal">Now Playing</h2>
+    <p class="bang">Episode 0. Admit one.</p>
+  </div>
+  <div class="np-grid">
+    <div class="video-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/X48gJu0NSyw" title="Defacing the Music, Episode 0: Due To Unforeseen Circumstances" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="np-copy">
+      <p class="np-num bang">EP 00</p>
+      <h3 class="bang">Due To Unforeseen Circumstances</h3>
+      <p class="who">Who Let This Guy Have a Mic</p>
+      <p>Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber.</p>
+      <a class="btn bang" href="https://youtu.be/X48gJu0NSyw" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+  </div>
+</section>
 
 <section id="episodes" class="wrap episodes">
   <div class="section-head">
