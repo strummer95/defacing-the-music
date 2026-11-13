@@ -3,7 +3,7 @@ require __DIR__ . '/lib/https.php';
 // Defacing The Music: home page ("Gig Poster" design).
 // Listen links stay empty until the show is on each platform; fill them in here.
 $listen = [
-  'Spotify'        => 'https://spotifycreators-web.app.link/e/UOUueB2B27b',
+  'Spotify'        => 'https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx',
   'Apple Podcasts' => '',
   'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
 ];
