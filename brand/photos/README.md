@@ -12,5 +12,7 @@ Photos for thumbnails, cover art and site artwork. Blocked from the web by `.hta
 | wall-phone.webp | Leaning on a wall on his phone. "Reading the comments" / "looking it up". |
 | flag-hoodie-garth.webp | Flag hoodie, Garth Brooks CD. Joke / merch. |
 | mirror-selfie.png | Small, casual. Not for thumbnails. |
-| stage-scream-small.png | 204x280 only. Mid-scream at the mic; too small for photo use (ask Duck for the full-size file). |
+| stage-scream.webp | 1456x2000. Mid-scream on stage. Duck's pick for thumbnails. |
+| stage-scream-cutout.png | Background removed (guitar kept). Ready for thumbnails. |
+| stage-scream-small.png | 204x280 copy of stage-scream.webp. |
 | counterfeit-stage-DO-NOT-USE.webp | Shows the tribute band name. Never use in show copy, thumbnails or art (CLAUDE.md rule). |
