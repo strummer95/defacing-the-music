@@ -16,11 +16,11 @@ if (!$s) { header('Location: scripts.php'); exit; }
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--scale:1;--width:900px}
+:root{--scale:1;--w:88}
 *{box-sizing:border-box}
 html,body{margin:0;background:#000;color:#e8e8e8}
 body{font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-#script{max-width:var(--width);margin:0 auto;padding:40vh 6vw 70vh;font-size:calc(clamp(26px,4.6vw,84px) * var(--scale));line-height:1.35;font-weight:500}
+#script{width:calc(var(--w) * 1vw);max-width:100%;margin:0 auto;padding:40vh 0 70vh;font-size:calc(clamp(26px,4.6vw,84px) * var(--scale));line-height:1.35;font-weight:500}
 #script p{margin:0 0 .55em}
 #script .gap{height:.4em}
 #script h2{margin:1.4em 0 .5em;font-size:.55em;letter-spacing:.12em;text-transform:uppercase;color:#5a5a5a;font-weight:700}
@@ -44,12 +44,14 @@ body.playing #help{opacity:0}
 </head>
 <body>
 <div id="line"></div>
-<div id="help">Space: play/pause · ↑↓: speed · + −: size · F: full screen · M: mirror</div>
+<div id="help">Space: play/pause · ↑↓: speed · + −: size · [ ]: width · F: full screen · M: mirror</div>
 <main id="script"><?= dtm_script_html((string)$s['body']) ?></main>
 <nav id="bar" aria-label="Teleprompter controls">
   <a href="scripts.php" title="Back to scripts">✕</a>
   <button id="smaller" title="Smaller text (−)">A−</button>
   <button id="bigger" title="Bigger text (+)">A+</button>
+  <button id="narrower" title="Narrower column ([)">⇥⇤</button>
+  <button id="wider" title="Wider column (])">⇤⇥</button>
   <button id="slower" title="Slower (↓)">−</button>
   <span class="val" id="speedv"></span>
   <button id="faster" title="Faster (↑)">+</button>
@@ -60,13 +62,15 @@ body.playing #help{opacity:0}
 </nav>
 <script>
 (function(){
-  var KEY='dtm-prompter', st={scale:1,speed:40,mirror:false};
+  var KEY='dtm-prompter', st={scale:1,speed:40,mirror:false,w:88};
   try{Object.assign(st,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
   var root=document.documentElement, body=document.body, playing=false, last=0, acc=0, idleT;
   function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
   function apply(){
     st.scale=Math.min(3,Math.max(.4,Math.round(st.scale*100)/100));
     st.speed=Math.min(400,Math.max(5,st.speed));
+    st.w=Math.min(98,Math.max(40,st.w||88));
+    root.style.setProperty('--w',st.w);
     root.style.setProperty('--scale',st.scale);
     document.getElementById('speedv').textContent=st.speed;
     body.classList.toggle('mirror',!!st.mirror);
@@ -96,6 +100,8 @@ body.playing #help{opacity:0}
   on('smaller',function(){st.scale/=1.1;apply()});
   on('faster',function(){st.speed+=st.speed<60?5:10;apply()});
   on('slower',function(){st.speed-=st.speed<=60?5:10;apply()});
+  on('narrower',function(){st.w-=6;apply()});
+  on('wider',function(){st.w+=6;apply()});
   on('play',function(){toggle()});
   on('top',function(){window.scrollTo(0,0)});
   on('mirror',function(){st.mirror=!st.mirror;apply()});
@@ -110,6 +116,8 @@ body.playing #help{opacity:0}
     else if(k==='-'||k==='_'){st.scale/=1.1;apply();}
     else if(k==='f'||k==='F'){full();}
     else if(k==='m'||k==='M'){st.mirror=!st.mirror;apply();}
+    else if(k==='['){st.w-=6;apply();}
+    else if(k===']'){st.w+=6;apply();}
     else if(k==='Home'){window.scrollTo(0,0);}
     wake();
   });
