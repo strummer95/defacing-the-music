@@ -3,6 +3,7 @@
 // sessions, CSRF, per-IP throttle. Admin accounts live in data/admins.json (never deployed over by pull.php).
 // Secrets come from ../dtm-secrets.php (one folder above the site), never from git.
 
+require_once __DIR__ . '/https.php';
 const DTM_ROOT = __DIR__ . '/..';
 date_default_timezone_set('America/Chicago');
 

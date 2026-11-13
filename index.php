@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/lib/https.php';
 // Defacing The Music: home page ("Gig Poster" design).
 // Listen links stay empty until the show is on each platform; fill them in here.
 $listen = [
@@ -38,12 +39,12 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 <meta property="og:site_name" content="Defacing the Music">
 <meta property="og:title" content="Defacing the Music">
 <meta property="og:description" content="<?= $h($desc) ?>">
-<meta property="og:url" content="http://defacingthemusic.com/">
-<meta property="og:image" content="http://defacingthemusic.com/assets/og-image.png">
+<meta property="og:url" content="https://defacingthemusic.com/">
+<meta property="og:image" content="https://defacingthemusic.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://defacingthemusic.com/assets/og-image.png">
+<meta name="twitter:image" content="https://defacingthemusic.com/assets/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
