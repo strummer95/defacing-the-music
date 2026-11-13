@@ -9,7 +9,7 @@ $listen = [
 // Social pages. Paste the full URL to make a button live.
 $social = [
   'Facebook'  => 'https://www.facebook.com/profile.php?id=61596260741323',
-  'Instagram' => '',
+  'Instagram' => 'https://www.instagram.com/defacingthemusicpod/',
 ];
 $episodes = [
   ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
