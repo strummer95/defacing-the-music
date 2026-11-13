@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/lib/https.php';
 // Guest List signup: appends an email to data/subscribers.json (flock-locked).
 // data/ is never overwritten by pull.php, and .htaccess blocks direct access to .json files.
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ./#list'); exit; }

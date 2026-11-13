@@ -1,16 +1,18 @@
 <?php
+require __DIR__ . '/lib/https.php';
 // Defacing The Music: home page ("Gig Poster" design).
 require __DIR__ . '/lib/episodes.php';
 // Listen links stay empty until the show is on each platform; fill them in here.
 $listen = [
-  'Spotify'        => '',
+  'Spotify'        => 'https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx',
   'Apple Podcasts' => '',
   'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
 ];
 // Social pages. Paste the full URL to make a button live.
 $social = [
-  'Facebook'  => '',
-  'Instagram' => '',
+  'Facebook'  => 'https://www.facebook.com/defacingthemusic',
+  'Instagram' => 'https://www.instagram.com/defacingthemusicpod/',
+  'TikTok'    => 'https://www.tiktok.com/@defacingthemusic',
 ];
 $episodes = dtm_episodes();
 // Subtitles ("Who Gave The Who Explosives?" etc.) live on the scripts, not the episode records —
@@ -20,7 +22,7 @@ $episodeSubtitles = [];
 foreach (dtm_scripts() as $s) $episodeSubtitles[(string)(int)$s['episode']] = (string)($s['subtitle'] ?? '');
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
-$desc = "Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.";
+$desc = "Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.";
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,12 +36,12 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 <meta property="og:site_name" content="Defacing the Music">
 <meta property="og:title" content="Defacing the Music">
 <meta property="og:description" content="<?= $h($desc) ?>">
-<meta property="og:url" content="http://defacingthemusic.com/">
-<meta property="og:image" content="http://defacingthemusic.com/assets/og-image.png">
+<meta property="og:url" content="https://defacingthemusic.com/">
+<meta property="og:image" content="https://defacingthemusic.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://defacingthemusic.com/assets/og-image.png">
+<meta name="twitter:image" content="https://defacingthemusic.com/assets/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -67,7 +69,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     <div class="hero-copy">
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
-      <p class="lede">Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.</p>
+      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.</p>
       <div id="listen" class="listen bang">
         <?php $i = 0; foreach ($listen as $name => $url): $cls = 'btn' . ($i++ === 2 ? ' alt' : ''); ?>
           <?php if ($url): ?>
