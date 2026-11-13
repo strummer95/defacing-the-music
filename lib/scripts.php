@@ -5,19 +5,19 @@ require_once __DIR__ . '/auth.php';
 // Scripts that ship with the site (lib/seed/*.txt). Each is added once: if it was already added
 // (even if Duck deleted or edited it since) or a script with that episode number exists, it's skipped.
 const DTM_SEEDS = [
-  'episode-00' => ['0', 'Due To Unforeseen Circumstances'],
-  'episode-01' => ['1', 'Due To Excessive Flash Powder'],
-  'episode-02' => ['2', 'Due To The Venue Being Ripped Apart'],
-  'episode-03' => ['3', 'Due To a Possible Rabies Infection'],
+  'episode-00' => ['0', 'Due To Unforeseen Circumstances', '7232a021773d9aa2a230518fa393f16447343a59'],
+  'episode-01' => ['1', 'Due To Excessive Flash Powder', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee'],
+  'episode-02' => ['2', 'Due To The Venue Being Ripped Apart', '687fbe72cc2458ddad679552cf3aa2290c9f9e48'],
+  'episode-03' => ['3', 'Due To a Possible Rabies Infection', 'c4f5e7c8a43992869c40ad4fae986b8143646781'],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
-  'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a'],
-  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717'],
-  'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5'],
-  'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375'],
+  'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a', '7232a021773d9aa2a230518fa393f16447343a59'],
+  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee'],
+  'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5', '687fbe72cc2458ddad679552cf3aa2290c9f9e48'],
+  'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375', 'c4f5e7c8a43992869c40ad4fae986b8143646781'],
 ];
 
 function dtm_upgrade_seeds(): void {

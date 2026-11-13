@@ -5,7 +5,8 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### TODO: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
+### DONE: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
+Done 2026-11-13 by Claude. Episode 1 is in word for word. Episodes 0 (1,348 words), 2 (2,084) and 3 (2,004) rewritten to match: slower walk-ups, [Pause.] beats, context, a written fallback after every [RIFF], Break Stuff fixes, bat-first Episode 3. Unedited copies on the server upgrade on the next Pull latest; edited ones are left alone. Nothing more to do here.
 Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
 Dillon reviewed the teleprompter scripts: they blaze through too fast and read like a tight summary. He wants the tone of The Dollop or How Did This Get Made: casual, conversational, room to breathe, dry and NOT cliche, corny or hokey. He records alone, so bare RIFF cues leave him improvising into silence.
 
@@ -221,5 +222,6 @@ Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home
 
 ## Done
 
+- 2026-11-13: Script pacing pass, Episodes 0 to 3 (Claude).
 - 2026-11-13: Teleprompter in the admin (Scripts > Read), seeded with Episode 0 (Claude).
 - 2026-11-12: DTM-SITE-1, Gig Poster home page (Claude).
