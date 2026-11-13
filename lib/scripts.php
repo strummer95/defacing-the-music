@@ -9,6 +9,16 @@ const DTM_SEEDS = [
   'episode-01' => ['1', 'Due To Excessive Flash Powder', 'Who Gave The Who Explosives?'],
   'episode-02' => ['2', 'Due To The Venue Being Ripped Apart', 'Who Asked Fred Durst to Be a Therapist?'],
   'episode-03' => ['3', 'Due To a Possible Rabies Infection', 'Who Let That Guy Bring a Bat?'],
+  // Library scripts: no episode number until Duck makes them an episode.
+  'story-disco-demolition'      => ['', 'Due To Excessive Disco', 'Who Let a DJ Blow Up Center Field?'],
+  'story-dmb-bus'               => ['', 'Due To a Septic Tank Over the River', 'Who Let the Bus Driver Find the Bridge?'],
+  'story-fyre-festival'         => ['', 'Due To a Cheese Sandwich', 'Who Sold Them Paradise?'],
+  'story-milli-vanilli'         => ['', 'Due To a Skipping Track', 'Who Let the Tape Run?'],
+  'story-sex-pistols-grundy'    => ['', 'Due To Language', 'Who Dared the Sex Pistols?'],
+  'story-jerry-lee-graceland'   => ['', 'Due To an Unannounced Visitor', 'Who Let Jerry Lee Drive to Graceland?'],
+  'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
+  'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
+  'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
@@ -23,7 +33,10 @@ const DTM_SEED_OLD = [
 // Which seed a script row came from. New rows carry 'seed'; older rows are matched by their episode number.
 function dtm_row_is_seed(array $s, string $key): bool {
   if (isset($s['seed'])) return $s['seed'] === $key;
-  return (string)($s['episode'] ?? '') === DTM_SEEDS[$key][0];
+  // Rows without a seed tag are only matched by episode number for the original numbered seeds,
+  // never for library seeds (number ''), so Duck's own scripts can't be mistaken for a seed.
+  $n = DTM_SEEDS[$key][0];
+  return $n !== '' && (string)($s['episode'] ?? '') === $n;
 }
 
 function dtm_upgrade_seeds(): void {
@@ -96,7 +109,7 @@ function dtm_scripts_migrate_v2(): void {
   if (is_file($marker)) return;
   dtm_json_update('scripts.json', function ($list) {
     foreach ($list as &$s) {
-      if (!isset($s['seed'])) foreach (DTM_SEEDS as $key => $row) if ((string)($s['episode'] ?? '') === $row[0]) { $s['seed'] = $key; break; }
+      if (!isset($s['seed'])) foreach (DTM_SEEDS as $key => $row) if ($row[0] !== '' && (string)($s['episode'] ?? '') === $row[0]) { $s['seed'] = $key; break; }
       $ep = (string)($s['episode'] ?? '');
       if (!isset($s['status'])) $s['status'] = $ep === '0' ? 'recorded' : 'ready';
       if (isset($s['seed']) && $s['seed'] !== 'episode-00') $s['episode'] = '';

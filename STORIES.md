@@ -8,6 +8,9 @@ Titles follow the format: "Due To ..." / "Who ...?"
 2. Woodstock '99, Limp Bizkit and "Break Stuff". Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
 3. Ozzy and the bat, Des Moines, 1982 (plus the dove, 1981). Due To a Possible Rabies Infection / Who Let That Guy Bring a Bat?
 
+## Scripted, in the admin Scripts library (Ready, no number yet)
+Research notes with sources for each: `research/<slug>.notes.md`.
+
 ## Up next (fun all the way through)
 - Disco Demolition Night, Comiskey Park, Chicago, 1979. Records blown up in center field, fans storm the field, White Sox forfeit. Hometown episode. Due To Excessive Disco / Who Let a DJ Blow Up Center Field?
 - Dave Matthews Band tour bus, Chicago, 2004. Driver empties the toilet tank through the Kinzie Street bridge grate onto a tour boat. Settlement, guilty plea. Due To a Septic Tank Over the River / Who Let the Bus Driver Find the Bridge?
