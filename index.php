@@ -11,6 +11,7 @@ $listen = [
 $social = [
   'Facebook'  => 'https://www.facebook.com/defacingthemusic',
   'Instagram' => 'https://www.instagram.com/defacingthemusicpod/',
+  'TikTok'    => 'https://www.tiktok.com/@defacingthemusic',
 ];
 $episodes = [
   ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
