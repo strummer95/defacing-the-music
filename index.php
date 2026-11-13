@@ -6,6 +6,11 @@ $listen = [
   'Apple Podcasts' => '',
   'YouTube'        => 'https://youtu.be/X48gJu0NSyw',
 ];
+// Social pages. Paste the full URL to make a button live.
+$social = [
+  'Facebook'  => '',
+  'Instagram' => '',
+];
 $episodes = [
   ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
    'blurb' => "Live TV, 1967. Keith Moon's bass drum gets loaded with way more flash powder than any human needed. Pete Townshend's hair catches fire, and his ears never forgive anybody.",
@@ -73,6 +78,16 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
             <a class="<?= $cls ?>" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
           <?php else: ?>
             <span class="<?= $cls ?> soon"><?= $h($name) ?><small>soon</small></span>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+      <div class="follow bang">
+        <span class="follow-label">Follow the wreckage</span>
+        <?php foreach ($social as $name => $url): ?>
+          <?php if ($url): ?>
+            <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
+          <?php else: ?>
+            <span class="btn sm soon"><?= $h($name) ?><small>soon</small></span>
           <?php endif; ?>
         <?php endforeach; ?>
       </div>
