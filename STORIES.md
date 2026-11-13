@@ -18,7 +18,6 @@ Titles follow the format: "Due To ..." / "Who ...?"
 - Montreux Casino fire, 1971. Flare gun at a Frank Zappa show, casino burns, Deep Purple writes "Smoke on the Water". Due To a Flare Gun Indoors / Who Brought a Flare Gun to a Zappa Show?
 - Metallica and Guns N' Roses, Montreal, 1992. Hetfield burned by pyro, Axl ends the GN'R set early, riot. Due To Pyro and a Sore Throat / Who Stood James Hetfield on the Flamethrower?
 - GG Allin. Nearly every show ended in a riot, police or a hospital. Due To Everything / Who Kept Booking GG Allin?
-- QOTSA / Dave Grohl "most unhinged prank in rock history" (from Duck's YouTube short). Needs details from Duck.
 
 ## Darker (careful tone: people died or were hurt)
 - Mayhem and Norwegian black metal, early 1990s. Suicide, church burnings, a murder.
