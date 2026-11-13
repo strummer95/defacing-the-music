@@ -11,7 +11,7 @@ Dillon wants to read episode scripts from the site admin while recording, so his
 - Admin: add a Scripts section (create, edit, delete). Each script has an episode number, title and body. Body is plain text with simple markup: lines starting with `## ` are section headings, and `[RIFF: ...]`, `[FILL: ...]`, `[THEME SONG ...]` cues are shown highlighted.
 - Reader view per script (admin only, behind the login): pure black background, white text, no other UI except tiny controls. Text scales to the window width (CSS clamp/vw), with buttons or keys to make it bigger or smaller (+/-) and optional auto-scroll with a speed control (space to start/stop). Full-screen button. Remember size and speed in localStorage.
 - Cues in yellow #FFD21F, headings dimmed. No bright elements anywhere in the reader.
-- Seed it with Episode 0 below.
+- Seed it with Episode 0 below. On the show Dillon goes by "Duck" (not Dillon) in all scripts and show copy.
 - Open a PR (don't push to main). You may merge it when done; Dillon deploys with Pull latest.
 - No em dashes in copy.
 
@@ -24,7 +24,7 @@ A man bites the head off a bat because he thought it was rubber.
 Every one of those nights ended with some guy in a suit taping a piece of paper to a door. "Due to unforeseen circumstances."
 This show is about everything that happened before he grabbed the tape.
 [THEME SONG, hard stop]
-I'm Dillon. This is Defacing the Music.
+I'm Duck. This is Defacing the Music.
 ## WHO I AM
 I play guitar in a Limp Bizkit tribute band called Counterfeit.
 Counterfeit was Limp Bizkit's first single, in 1997. So every night we play it, a fake band is playing a song called Counterfeit. Nobody has ever found that as funny as I do.
@@ -43,7 +43,7 @@ After that: the night a casino burned down during a Frank Zappa show and a band 
 ## OUT
 One question to chew on until next time. On that same 1967 tour, The Who weren't the headliner. They were opening. For who? The answer's in episode one, and it's worse than you think.
 [RIFF: defacingthemusic.com, Guest List signup, socials.]
-I'm Dillon. Due to unforeseen circumstances, I'll see you next week.
+I'm Duck. Due to unforeseen circumstances, I'll see you next week.
 ```
 (Quiz answer for episode 1: Herman's Hermits.)
 
