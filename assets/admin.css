@@ -67,3 +67,11 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
 .saved-grid img{display:block;width:100%;height:130px;object-fit:cover;background:#ddd}
 .saved-grid figcaption{font-size:12px;margin-top:6px;word-break:break-word}
 .saved-grid figure.dnu{opacity:.55;border-color:var(--red)}
+.status{display:inline-block;font-family:'Bangers',sans-serif;letter-spacing:1px;font-size:15px;padding:3px 9px;border:2px solid var(--black);background:#fff;color:var(--black);white-space:nowrap}
+.status.st-idea{background:#e9e2d2}.status.st-draft{background:#fff}.status.st-ready{background:var(--yellow)}
+.status.st-recorded,.status.st-planned{background:#cfe3ff}.status.st-published{background:#3bb54a;color:#fff}
+.script-list .ttl .meta{display:block;font-style:normal;margin-top:4px;font-size:13px;color:#555}
+.admin-select{min-height:52px;font-family:'Archivo',sans-serif;font-size:17px;padding:0 10px;background:#fff;color:var(--black);border:4px solid var(--black);max-width:100%}
+.make-ep{margin-top:18px;padding-top:14px;border-top:3px dashed var(--black)}
+.make-ep .btn-row .admin-select{flex:1 1 260px}
+.make-ep .btn-row .pull-btn{margin-top:0}
