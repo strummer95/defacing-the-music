@@ -4,7 +4,7 @@
 $listen = [
   'Spotify'        => '',
   'Apple Podcasts' => '',
-  'YouTube'        => 'https://youtu.be/X48gJu0NSyw',
+  'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
 ];
 // Social pages. Paste the full URL to make a button live.
 $social = [
@@ -115,14 +115,14 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
   </div>
   <div class="np-grid">
     <div class="video-frame">
-      <iframe src="https://www.youtube-nocookie.com/embed/X48gJu0NSyw" title="Defacing the Music, Episode 0: Due To Unforeseen Circumstances" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/FQK-XMkoajA" title="Defacing the Music, Episode 0: Due To Unforeseen Circumstances" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="np-copy">
       <p class="np-num bang">EP 00</p>
       <h3 class="bang">Due To Unforeseen Circumstances</h3>
       <p class="who">Who Gave This Guy a Mic?</p>
       <p>Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber.</p>
-      <a class="btn bang" href="https://youtu.be/X48gJu0NSyw" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn bang" href="https://youtu.be/FQK-XMkoajA" target="_blank" rel="noopener">Watch on YouTube</a>
     </div>
   </div>
 </section>
