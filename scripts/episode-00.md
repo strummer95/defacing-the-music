@@ -5,19 +5,21 @@
 
 ---
 
-## Cold open (about 30 sec)
+## Theme song + cold open (about 1 min)
 
-*(PA announcer voice, flat and bored)*
+`[THEME SONG plays: "Due to unforeseen circumstances... the show is cancelled... DEFACING THE MUSIC"]`
 
-"Ladies and gentlemen. Due to unforeseen circumstances, tonight's performance has been cancelled. Refunds will not be issued. Please exit in an orderly fashion."
+*(Come in right as it hard stops. Slightly out of breath energy, like you just walked in.)*
 
-*(Normal voice)*
+Yeah. That's the theme song. I'd love to tell you a band of session musicians in LA cut that for me. It was a robot. It took me an entire day of arguing with that robot, and at one point it gave me a sitar.
 
-Every great music disaster ends with a sentence like that. Somebody in a suit types it up, puts it on the venue door, and goes home.
+`[RIFF: the Suno struggle. The orchestra it kept adding, the woman's voice, running out of credits. Short version, this is a great "I'm a normal guy" moment.]`
 
-This show is about everything that happened *before* that sentence got typed.
+Anyway. Pull up a stool. I'm Dillon, and this is Defacing the Music.
 
-Hey. Pull up a stool. I'm Dillon, and this is Defacing the Music.
+And yes, you just heard a song tell you the show is cancelled. That's kind of the whole idea. Every great music disaster ends with some poor guy in a suit typing up "due to unforeseen circumstances" and taping it to the venue door.
+
+This show is about everything that happened *before* he typed it.
 
 ---
 
