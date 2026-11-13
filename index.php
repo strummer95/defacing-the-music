@@ -4,7 +4,7 @@ require __DIR__ . '/lib/https.php';
 // Listen links stay empty until the show is on each platform; fill them in here.
 $listen = [
   'Spotify'        => 'https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx',
-  'Apple Podcasts' => '',
+  'Apple Podcasts' => 'https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289',
   'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
 ];
 // Social pages. Paste the full URL to make a button live.
@@ -74,14 +74,15 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
       <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.</p>
-      <div id="listen" class="listen bang">
-        <?php $i = 0; foreach ($listen as $name => $url): $cls = 'btn' . ($i++ === 2 ? ' alt' : ''); ?>
-          <?php if ($url): ?>
-            <a class="<?= $cls ?>" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
-          <?php else: ?>
-            <span class="<?= $cls ?> soon"><?= $h($name) ?><small>soon</small></span>
-          <?php endif; ?>
-        <?php endforeach; ?>
+      <div id="listen" class="listen-main">
+        <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>" rel="noopener" target="_blank">
+          <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
+          Watch on YouTube
+        </a>
+        <p class="also">Also on
+          <?php $alts = array_filter(['Spotify' => $listen['Spotify'], 'Apple Podcasts' => $listen['Apple Podcasts']]); $k = 0;
+          foreach ($alts as $name => $url): ?><?= $k++ ? ' and ' : ' ' ?><a href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a><?php endforeach; ?>
+        </p>
       </div>
       <div class="follow bang">
         <span class="follow-label">Follow the wreckage</span>
