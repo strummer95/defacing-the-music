@@ -20,19 +20,25 @@ const DTM_SEED_OLD = [
   'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375', 'c4f5e7c8a43992869c40ad4fae986b8143646781', 'c02bf5dcf4b3383c30fad282fe5470e99eec82f1', '49c09096b60f68d41f99caf79d6547a3d0d968c2', '5d356b15f96b61936f8fda8b601284b2f4dafc4e'],
 ];
 
+// Which seed a script row came from. New rows carry 'seed'; older rows are matched by their episode number.
+function dtm_row_is_seed(array $s, string $key): bool {
+  if (isset($s['seed'])) return $s['seed'] === $key;
+  return (string)($s['episode'] ?? '') === DTM_SEEDS[$key][0];
+}
+
 function dtm_upgrade_seeds(): void {
   $list = dtm_json_read('scripts.json');
   $need = false;
   foreach ($list as $s) {
     foreach (DTM_SEED_OLD as $key => $old) {
-      if ((string)$s['episode'] === DTM_SEEDS[$key][0] && in_array(sha1((string)$s['body']), $old, true)) { $need = true; break 2; }
+      if (dtm_row_is_seed($s, $key) && in_array(sha1((string)$s['body']), $old, true)) { $need = true; break 2; }
     }
   }
   if (!$need) return;
   dtm_json_update('scripts.json', function ($list) {
     foreach ($list as &$s) {
       foreach (DTM_SEED_OLD as $key => $old) {
-        if ((string)$s['episode'] !== DTM_SEEDS[$key][0] || !in_array(sha1((string)$s['body']), $old, true)) continue;
+        if (!dtm_row_is_seed($s, $key) || !in_array(sha1((string)$s['body']), $old, true)) continue;
         $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
       }
@@ -43,13 +49,15 @@ function dtm_upgrade_seeds(): void {
 
 // Seeded episodes that predate subtitles get theirs once. A subtitle Duck set (even blank) is kept.
 function dtm_seed_subtitles(): void {
-  $map = [];
-  foreach (DTM_SEEDS as $row) $map[$row[0]] = $row[2];
+  $sub = function (array $s): ?string {
+    foreach (DTM_SEEDS as $key => $row) if (dtm_row_is_seed($s, $key)) return $row[2];
+    return null;
+  };
   $need = false;
-  foreach (dtm_json_read('scripts.json') as $s) if (!array_key_exists('subtitle', $s) && isset($map[(string)$s['episode']])) { $need = true; break; }
+  foreach (dtm_json_read('scripts.json') as $s) if (!array_key_exists('subtitle', $s) && $sub($s) !== null) { $need = true; break; }
   if (!$need) return;
-  dtm_json_update('scripts.json', function ($list) use ($map) {
-    foreach ($list as &$s) if (!array_key_exists('subtitle', $s) && isset($map[(string)$s['episode']])) $s['subtitle'] = $map[(string)$s['episode']];
+  dtm_json_update('scripts.json', function ($list) use ($sub) {
+    foreach ($list as &$s) if (!array_key_exists('subtitle', $s) && ($t = $sub($s)) !== null) $s['subtitle'] = $t;
     return $list;
   });
 }
@@ -66,23 +74,49 @@ function dtm_seed_scripts(): void {
   $todo = array_diff(array_keys(DTM_SEEDS), $done);
   if (!$todo) return;
   dtm_json_update('scripts.json', function ($list) use ($todo) {
-    $eps = array_map(fn($s) => (string)$s['episode'], $list);
     foreach ($todo as $key) {
       [$ep, $title, $subtitle] = DTM_SEEDS[$key];
-      if (in_array($ep, $eps, true)) continue;
+      foreach ($list as $s) if (dtm_row_is_seed($s, $key)) continue 2;
       $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
       if ($body === '') continue;
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'episode' => $ep, 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
+      // New scripts land in the library (no episode number); Duck decides when they become episodes.
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'status' => 'ready', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
     }
     return $list;
   });
   @file_put_contents($marker, json_encode(array_values(array_unique(array_merge($done, $todo)))));
 }
 
+const DTM_SCRIPT_STATUSES = ['idea' => 'Idea', 'draft' => 'Draft', 'ready' => 'Ready', 'recorded' => 'Recorded'];
+
+// One-time move to "scripts library + episodes": tags seeded rows with their seed key, gives every script a
+// status, keeps Episode 0 as an episode, and returns the other seeded scripts to the library (no number).
+function dtm_scripts_migrate_v2(): void {
+  $marker = dtm_data_dir() . '/scripts.v2';
+  if (is_file($marker)) return;
+  dtm_json_update('scripts.json', function ($list) {
+    foreach ($list as &$s) {
+      if (!isset($s['seed'])) foreach (DTM_SEEDS as $key => $row) if ((string)($s['episode'] ?? '') === $row[0]) { $s['seed'] = $key; break; }
+      $ep = (string)($s['episode'] ?? '');
+      if (!isset($s['status'])) $s['status'] = $ep === '0' ? 'recorded' : 'ready';
+      if (isset($s['seed']) && $s['seed'] !== 'episode-00') $s['episode'] = '';
+    }
+    return $list;
+  });
+  @file_put_contents($marker, date('c'));
+}
+
 function dtm_scripts(): array {
   dtm_seed_scripts();
+  dtm_scripts_migrate_v2();
   $list = dtm_json_read('scripts.json');
-  usort($list, fn($a, $b) => strnatcmp((string)$a['episode'], (string)$b['episode']));
+  foreach ($list as &$s) { $s += ['episode' => '', 'status' => 'draft', 'subtitle' => '']; }
+  usort($list, function ($a, $b) {
+    $ea = (string)$a['episode']; $eb = (string)$b['episode'];
+    if ($ea !== '' && $eb !== '') return strnatcmp($ea, $eb);
+    if ($ea !== $eb) return $ea === '' ? 1 : -1;
+    return strcmp((string)($b['updated'] ?? ''), (string)($a['updated'] ?? ''));
+  });
   return $list;
 }
 

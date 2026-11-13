@@ -20,9 +20,10 @@ Done: Dillon's chosen "Gig Poster" home page ported to `index.php` + `assets/sit
 episodes show "Coming soon", listen links show "soon" until URLs are filled in at the top of `index.php`,
 Guest List form saves to `data/subscribers.json` via `signup.php`. PR: https://github.com/strummer95/defacing-the-music/pull/1
 
-## [ ] DTM-EPISODES-1: Episodes managed from the admin
-`data/episodes.json` (flock-locked writes) with title, slug, number, date, summary, story subject (band/artist), embed URL, cover image.
-Admin CRUD page for episodes; public episode list on the home page (replace the hardcoded `$episodes` array and keep the ticket-stub card look) and an `episode.php?slug=` page. Validate and escape everything.
+## [x] DTM-EPISODES-1: Episodes + scripts library in the admin
+Done (replaces the earlier PR #4, which should not be merged): admin > Scripts is an unnumbered library (status idea/draft/ready/recorded);
+"Make it an episode" gives a script the next number. admin > Episodes lists numbered episodes (planned/recorded/published,
+publish date, YouTube/Spotify links, notes, linked script). Public episode list on the home page is still hardcoded (next step).
 
 ## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
 Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
