@@ -151,7 +151,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     </div>
     <div class="host-copy">
       <h2 class="metal">Who let this guy have a mic?</h2>
-      <p>One guy from Chicagoland, one microphone, and the worst nights in music history. No co-host to stop him. He plays in a Limp Bizkit tribute band, so he has no right to judge anyone. He judges anyway.</p>
+      <p>One guy from Chicagoland, one microphone, and the worst nights in music history. No co-host to stop him. Thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He judges them anyway.</p>
       <p class="stamp bang">Every story is real. Allegedly.</p>
     </div>
   </div>

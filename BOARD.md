@@ -5,7 +5,8 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### TODO: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
+### DONE: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
+Done 2026-11-13 by Claude (second pass, with the voice reference and the no-tribute-band rule). Episode 1 is the latest board version word for word. Episode 0 is cleaned up from the recorded transcript (32 years of guitar, the Foghat roadie, "that guy is usually awesome", ears ringing). Episodes 2 and 3: tribute-band material removed, voice loosened to match. Host bio on the home page no longer mentions the tribute band. Note: Episode 1 opens with a pop quiz answer, but the recorded Episode 0 never asked it; Dillon may want to tweak that opener. Unedited server copies upgrade on Pull latest; edited ones are left alone. Nothing more to do here.
 Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
 Dillon reviewed the teleprompter scripts: they blaze through too fast and read like a tight summary. He wants the tone of The Dollop or How Did This Get Made: casual, conversational, room to breathe, dry and NOT cliche, corny or hokey. He records alone, so bare RIFF cues leave him improvising into silence.
 
