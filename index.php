@@ -5,9 +5,19 @@ require __DIR__ . '/lib/episodes.php';
 $listen = [
   'Spotify'        => '',
   'Apple Podcasts' => '',
-  'YouTube'        => 'https://youtu.be/X48gJu0NSyw',
+  'YouTube'        => 'https://youtu.be/FQK-XMkoajA',
+];
+// Social pages. Paste the full URL to make a button live.
+$social = [
+  'Facebook'  => '',
+  'Instagram' => '',
 ];
 $episodes = dtm_episodes();
+// Subtitles ("Who Gave The Who Explosives?" etc.) live on the scripts, not the episode records —
+// keyed by episode number so the cards stay in sync with whatever Duck sets in admin > Scripts.
+require_once __DIR__ . '/lib/scripts.php';
+$episodeSubtitles = [];
+foreach (dtm_scripts() as $s) $episodeSubtitles[(string)(int)$s['episode']] = (string)($s['subtitle'] ?? '');
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 $desc = "Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.";
@@ -36,7 +46,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=4">
+<link rel="stylesheet" href="assets/site.css?v=<?= @filemtime(__DIR__ . '/assets/site.css') ?>">
 </head>
 <body>
 
@@ -67,6 +77,16 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
           <?php endif; ?>
         <?php endforeach; ?>
       </div>
+      <div class="follow bang">
+        <span class="follow-label">Follow the wreckage</span>
+        <?php foreach ($social as $name => $url): ?>
+          <?php if ($url): ?>
+            <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
+          <?php else: ?>
+            <span class="btn sm soon"><?= $h($name) ?><small>soon</small></span>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
     </div>
 
     <div class="hero-art">
@@ -91,14 +111,14 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
   </div>
   <div class="np-grid">
     <div class="video-frame">
-      <iframe src="https://www.youtube-nocookie.com/embed/X48gJu0NSyw" title="Defacing the Music, Episode 0: Due To Unforeseen Circumstances" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/FQK-XMkoajA" title="Defacing the Music, Episode 0: Due To Unforeseen Circumstances" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="np-copy">
       <p class="np-num bang">EP 00</p>
       <h3 class="bang">Due To Unforeseen Circumstances</h3>
-      <p class="who">Who Let This Guy Have a Mic</p>
+      <p class="who">Who Gave This Guy a Mic?</p>
       <p>Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber.</p>
-      <a class="btn bang" href="https://youtu.be/X48gJu0NSyw" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn bang" href="https://youtu.be/FQK-XMkoajA" target="_blank" rel="noopener">Watch on YouTube</a>
     </div>
   </div>
 </section>
@@ -120,7 +140,9 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
       <?php endif; ?>
       <div class="ticket-body">
         <h3 class="bang"><?= $h($ep['title']) ?></h3>
-        <?php if (!empty($ep['subject'])): ?><p class="who">Featuring <?= $h($ep['subject']) ?></p><?php endif; ?>
+        <?php $subtitle = $episodeSubtitles[(string)(int)$ep['number']] ?? ''; ?>
+        <?php if ($subtitle !== ''): ?><p class="who"><?= $h($subtitle) ?></p>
+        <?php elseif (!empty($ep['subject'])): ?><p class="who">Featuring <?= $h($ep['subject']) ?></p><?php endif; ?>
         <p class="blurb"><?= $h($ep['summary']) ?></p>
         <div class="ticket-foot">
           <span class="meta"><?= $h(date('Y', strtotime($ep['date']))) ?> · 15 min</span>
@@ -146,7 +168,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     </div>
     <div class="host-copy">
       <h2 class="metal">Who let this guy have a mic?</h2>
-      <p>One guy from Chicagoland, one microphone, and the worst nights in music history. No co-host to stop him. He plays in a Limp Bizkit tribute band, so he has no right to judge anyone. He judges anyway.</p>
+      <p>One guy from Chicagoland, one microphone, and the worst nights in music history. No co-host to stop him. Thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He judges them anyway.</p>
       <p class="stamp bang">Every story is real. Allegedly.</p>
     </div>
   </div>

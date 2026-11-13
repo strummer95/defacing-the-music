@@ -173,8 +173,8 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-<link rel="stylesheet" href="../assets/site.css?v=4">
-<link rel="stylesheet" href="../assets/admin.css?v=2">
+<link rel="stylesheet" href="../assets/site.css?v=<?= @filemtime(DTM_ROOT . '/assets/site.css') ?>">
+<link rel="stylesheet" href="../assets/admin.css?v=<?= @filemtime(DTM_ROOT . '/assets/admin.css') ?>">
 </head>
 <body class="admin">
 <header class="admin-bar">
@@ -182,6 +182,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
   <?php if ($user): ?>
   <div class="admin-bar-right">
     <a href="scripts.php" class="admin-user bang">Scripts</a>
+    <a href="uploads.php" class="admin-user bang">Uploads</a>
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>
     <?php if ($pullButton): ?>
     <form method="post" action="deploy.php" id="pull-form">

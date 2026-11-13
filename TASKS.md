@@ -7,6 +7,10 @@ Done: `/admin/` with first-run setup (deploy key as proof), password login with 
 Google sign-in that turns on by itself under https, account page with sign-out, and a CSRF-protected Pull latest button
 (shared deploy code in `lib/deploy.php`; `pull.php` still works with the key). PR: https://github.com/strummer95/defacing-the-music/pull/2
 
+## [x] DTM-UPLOADS-1: File uploads in the admin
+Done: admin > Uploads. Chunked uploads (big video works on shared hosting), progress + retries, files in uploads/media
+(blocked from the web), download/stream via admin/file.php for admins or a per-file secret link ("Copy link for Claude").
+
 ## [x] DTM-PROMPTER-1: Teleprompter in the admin
 Done: Scripts section in the admin (create, edit, delete, seeded with Episode 0) and a black-screen reader with
 size +/-, auto-scroll with speed, space to play/pause, full screen, mirror mode, settings remembered per device.

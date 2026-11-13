@@ -33,6 +33,9 @@ a{color:inherit}
 .btn.alt{color:var(--black);background:var(--cream);box-shadow:6px 6px 0 var(--black)}
 a.btn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--red)}
 .btn.soon{opacity:.92;cursor:default}
+.follow{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.follow-label{font-size:20px;letter-spacing:1px;color:var(--black);margin-right:2px}
+.btn.sm{font-size:19px;padding:8px 16px;box-shadow:4px 4px 0 var(--red)}
 .btn small{font-size:15px;opacity:.75;margin-left:6px}
 .hero-art{flex:1 1 420px;min-width:0;max-width:560px;position:relative;display:flex;justify-content:center}
 .hero-art .hero-logo{width:100%;max-width:520px;height:auto;display:block;transform:rotate(4deg);filter:drop-shadow(10px 10px 0 rgba(17,17,17,.9))}
@@ -131,6 +134,8 @@ a.sticker{text-decoration:none}
   .kicker{font-size:19px}
   .lede{font-size:18px}
   .btn{font-size:21px;padding:10px 16px}
+  .btn.sm{font-size:17px;padding:7px 12px}
+  .follow-label{flex-basis:100%;font-size:18px}
   .sticker{width:98px;height:98px;font-size:17px;top:-8px}
   .ticker p{font-size:22px}
   .episodes{padding-top:72px;padding-bottom:72px}

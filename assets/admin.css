@@ -59,3 +59,24 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
 .script-list .ttl{flex:1 1 200px;font-weight:800;font-size:18px}
 .script-list .acts{display:flex;align-items:center;gap:14px}
 .script-list .pull-btn{min-height:40px;font-size:18px;padding:6px 14px}
+.script-list .ttl .sub{display:block;font-weight:600;font-style:italic;font-size:15px;color:var(--red);margin-top:2px}
+.up-queue{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+.up-row{border:3px solid var(--black);background:#fff;padding:10px 12px}
+.up-top{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:15px;flex-wrap:wrap}
+.up-bar{height:14px;background:#e5dccb;border:2px solid var(--black);margin-top:8px}
+.up-bar i{display:block;height:100%;width:0;background:var(--yellow);transition:width .2s}
+.up-row.ok .up-bar i{background:#3bb54a}.up-row.err{background:#ffe3e1}.up-row.err .up-pct{color:var(--red)}
+.up-list{list-style:none;margin:0 0 14px;padding:0}
+.up-list li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:3px solid var(--black)}
+.up-name{display:flex;flex-direction:column;gap:2px;min-width:0;word-break:break-word}
+.up-acts{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.up-acts form{margin:0}
+.linkish{background:none;border:0;padding:0;font:inherit;font-weight:800;color:var(--red);text-decoration:underline;cursor:pointer}
+.linkish.danger{color:#8a0f08}
+.admin-form input[type=file]{min-height:auto;padding:10px;background:#fff}
+.saved-h{font-size:22px;margin:16px 0 8px;color:var(--black)}
+.saved-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.saved-grid figure{margin:0;background:#fff;border:3px solid var(--black);padding:6px}
+.saved-grid img{display:block;width:100%;height:130px;object-fit:cover;background:#ddd}
+.saved-grid figcaption{font-size:12px;margin-top:6px;word-break:break-word}
+.saved-grid figure.dnu{opacity:.55;border-color:var(--red)}
