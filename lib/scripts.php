@@ -2,17 +2,41 @@
 // Episode scripts for the teleprompter. Stored in data/scripts.json (flock-locked, never overwritten by a pull).
 require_once __DIR__ . '/auth.php';
 
-function dtm_scripts(): array {
-  $list = dtm_json_read('scripts.json');
-  if (!$list && !is_file(dtm_data_dir() . '/scripts.seeded')) {
-    // First run: seed Episode 0 once.
-    $body = (string)@file_get_contents(__DIR__ . '/seed/episode-00.txt');
-    $list = dtm_json_update('scripts.json', function ($l) use ($body) {
-      if ($l) return null;
-      return [['id' => bin2hex(random_bytes(6)), 'episode' => '0', 'title' => 'Due To Unforeseen Circumstances', 'body' => $body, 'updated' => date('c')]];
-    });
-    @touch(dtm_data_dir() . '/scripts.seeded');
+// Scripts that ship with the site (lib/seed/*.txt). Each is added once: if it was already added
+// (even if Duck deleted or edited it since) or a script with that episode number exists, it's skipped.
+const DTM_SEEDS = [
+  'episode-00' => ['0', 'Due To Unforeseen Circumstances'],
+  'episode-01' => ['1', 'Due To Excessive Flash Powder'],
+  'episode-02' => ['2', 'Due To The Venue Being Ripped Apart'],
+  'episode-03' => ['3', 'Due To a Possible Rabies Infection'],
+];
+
+function dtm_seed_scripts(): void {
+  $marker = dtm_data_dir() . '/scripts.seeded';
+  $done = [];
+  if (is_file($marker)) {
+    $raw = trim((string)@file_get_contents($marker));
+    $done = $raw === '' ? ['episode-00'] : (json_decode($raw, true) ?: ['episode-00']); // old empty marker = ep 0 seeded
   }
+  $todo = array_diff(array_keys(DTM_SEEDS), $done);
+  if (!$todo) return;
+  dtm_json_update('scripts.json', function ($list) use ($todo) {
+    $eps = array_map(fn($s) => (string)$s['episode'], $list);
+    foreach ($todo as $key) {
+      [$ep, $title] = DTM_SEEDS[$key];
+      if (in_array($ep, $eps, true)) continue;
+      $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
+      if ($body === '') continue;
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'episode' => $ep, 'title' => $title, 'body' => $body, 'updated' => date('c')];
+    }
+    return $list;
+  });
+  @file_put_contents($marker, json_encode(array_values(array_unique(array_merge($done, $todo)))));
+}
+
+function dtm_scripts(): array {
+  dtm_seed_scripts();
+  $list = dtm_json_read('scripts.json');
   usort($list, fn($a, $b) => strnatcmp((string)$a['episode'], (string)$b['episode']));
   return $list;
 }
