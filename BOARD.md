@@ -5,8 +5,7 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### DONE: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
-Done 2026-11-13 by Claude. Episode 1 is in word for word. Episodes 0 (1,348 words), 2 (2,084) and 3 (2,004) rewritten to match: slower walk-ups, [Pause.] beats, context, a written fallback after every [RIFF], Break Stuff fixes, bat-first Episode 3. Unedited copies on the server upgrade on the next Pull latest; edited ones are left alone. Nothing more to do here.
+### TODO: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
 Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
 Dillon reviewed the teleprompter scripts: they blaze through too fast and read like a tight summary. He wants the tone of The Dollop or How Did This Get Made: casual, conversational, room to breathe, dry and NOT cliche, corny or hokey. He records alone, so bare RIFF cues leave him improvising into silence.
 
@@ -19,6 +18,7 @@ Dillon reviewed the teleprompter scripts: they blaze through too fast and read l
    - Keep the honesty rule: anything unproven goes in "the story goes" / "the legend goes" pile. People who got hurt are never the joke; the joke is the guy who decided it was fine. "There's always a guy."
    - Order stays: COLD OPEN (teaser of that episode's story), TODAY summary, "I'm Duck, and this is Defacing the Music.", [THEME SONG, hard stop], episode title line. Episode 0's cold open stays generic, show-wide.
    - Host is Duck. No em dashes anywhere.
+   - NEW RULE from Dillon (11:25 PM): never mention his Limp Bizkit tribute band, Counterfeit, or "my band" in any script or show copy, and never do the "nobody gets the name" joke. Remove the Counterfeit material from Episode 0's WHO I AM (leave a short [FILL: who Duck is, in his words] placeholder there for now) and drop Episode 2's CONFLICT OF INTEREST section and any "as the Counterfeit guy" / "a guy who plays it live" riffs. Limp Bizkit as a band in the Woodstock story is fine.
 3. Specific fixes:
    - Woodstock '99 is a Limp Bizkit / "Break Stuff" story, not a Red Hot Chili Peppers story. Episode 0's cold open and "What's coming" must use: "A band plays 'Break Stuff' to a quarter million angry people, and they take it as instructions." Remove the RHCP "Fire" line from Episode 0.
    - Episode 2's cold open must open on Fred, the Alanis "mellow out" line and "Break Stuff." The Sunday candles/fire and RHCP "Fire" stay later as the aftermath. Note the HBO doc (Woodstock 99: Peace, Love, and Rage, 2021) came before Netflix's Trainwreck (2022). Put "Fred surfs on plywood" in the "story goes" pile unless sourced.
@@ -53,8 +53,8 @@ That's a tour. Somebody booked that. Somebody sat at a desk and went, "Yeah. Sam
 So picture the crowd. You're twelve. You're in Ohio. Your mom drove you three hours in a station wagon with no air conditioning so you could see Peter Noone smile in your general direction. You have a sign. You made the sign.
 And before Peter comes out, four guys from London walk on stage and murder their equipment in front of you. Feedback. Smoke. A guitar in splinters. Your mom has her hand over your eyes.
 And then they leave, and a nice young man comes out and sings about Mrs. Brown's daughter like none of that just happened.
-[RIFF: opening for a band the crowd didn't come for. If there's a Counterfeit night where the room was waiting for somebody else, this is the spot. If not, use this:]
-I play in a Limp Bizkit tribute band, so I know a little about being the thing the room did not ask for. But nobody has ever made us open for a barbershop quartet. That's a line even our booking agent won't cross. Probably.
+[RIFF: opening for a band the crowd didn't come for. Or use this:]
+Every musician has played that show. The one where you can see the whole room looking past you at the door. But most of us didn't do it by setting our gear on fire in front of children.
 Anyway. That's where The Who are in the summer of 1967. Big in England. Kind of a weird rumor in America. And in the middle of that tour, somebody books them on national television.
 
 ## WHO IS KEITH MOON
@@ -110,7 +110,7 @@ And Tommy Smothers walks back out. With an acoustic guitar. Smiling. Because the
 Pete takes the guitar out of his hands. And smashes it on the floor.
 [FILL: Not angry. Not a fight. Just, "Oh, I'll take that." Like a waiter clearing a plate.]
 And Tommy just kind of stands there. Holding the air where his guitar was. On his own show. In front of the whole country.
-[RIFF: Tommy's reaction. "I was going to play that later." Or what you'd do if a guy smashed your guitar at a Counterfeit gig.]
+[RIFF: Tommy's reaction. "I was going to play that later." Or what you'd do if a guy smashed your guitar at a gig.]
 I think about that a lot. A guy built an entire career on being the nice brother who loses arguments, and then he loses his guitar to a British art student covered in soot. That's the most Tommy Smothers thing that could have possibly happened.
 
 ## THE LEGEND
@@ -133,7 +133,7 @@ And the Smothers Brothers? CBS canceled the show in 1969. Not because of The Who
 So that's it. One drummer. One bass drum. Way too much flash powder. A stagehand who said yes. And a man who walked out to do a bit and lost his guitar.
 And the lesson, if there is one: when the guy who blows up hotel toilets for fun asks for a little more, the answer is no. Write it down. Put it on the wall.
 [RIFF: one last thought. What it says about 1967 that this was Sunday night family viewing.]
-Next time: Woodstock '99. A concrete Air Force base in July, four dollar water, and a song called "Break Stuff" played to a quarter million people who took it as instructions. And I've got a conflict of interest, because my band plays that song for a living.
+Next time: Woodstock '99. A concrete Air Force base in July, four dollar water, and a song called "Break Stuff" played to a quarter million people who took it as instructions.
 [RIFF: defacingthemusic.com, Guest List, subscribe, socials. Keep it short.]
 I'm Duck. Due to unforeseen circumstances, I'll see you next week.
 ```
@@ -222,6 +222,5 @@ Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home
 
 ## Done
 
-- 2026-11-13: Script pacing pass, Episodes 0 to 3 (Claude).
 - 2026-11-13: Teleprompter in the admin (Scripts > Read), seeded with Episode 0 (Claude).
 - 2026-11-12: DTM-SITE-1, Gig Poster home page (Claude).
