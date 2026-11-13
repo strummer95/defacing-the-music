@@ -9,6 +9,16 @@ const DTM_SEEDS = [
   'episode-01' => ['1', 'Due To Excessive Flash Powder', 'Who Gave The Who Explosives?'],
   'episode-02' => ['2', 'Due To The Venue Being Ripped Apart', 'Who Asked Fred Durst to Be a Therapist?'],
   'episode-03' => ['3', 'Due To a Possible Rabies Infection', 'Who Let That Guy Bring a Bat?'],
+  // Library scripts: no episode number until Duck makes them an episode.
+  'story-disco-demolition'      => ['', 'Due To Excessive Disco', 'Who Let a DJ Blow Up Center Field?'],
+  'story-dmb-bus'               => ['', 'Due To a Septic Tank Over the River', 'Who Let the Bus Driver Find the Bridge?'],
+  'story-fyre-festival'         => ['', 'Due To a Cheese Sandwich', 'Who Sold Them Paradise?'],
+  'story-milli-vanilli'         => ['', 'Due To a Skipping Track', 'Who Let the Tape Run?'],
+  'story-sex-pistols-grundy'    => ['', 'Due To Language', 'Who Dared the Sex Pistols?'],
+  'story-jerry-lee-graceland'   => ['', 'Due To an Unannounced Visitor', 'Who Let Jerry Lee Drive to Graceland?'],
+  'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
+  'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
+  'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
