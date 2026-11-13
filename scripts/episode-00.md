@@ -5,21 +5,27 @@
 
 ---
 
-## Theme song + cold open (about 1 min)
+## Cold open (about 30 sec)
 
-`[THEME SONG plays: "Due to unforeseen circumstances... the show is cancelled... DEFACING THE MUSIC"]`
+A drummer blows up his kit on national TV. A festival burns down while the band on stage plays a song called "Fire." A man bites the head off a bat because he thought it was rubber.
 
-*(Come in right as it hard stops. Slightly out of breath energy, like you just walked in.)*
+Every one of those nights ended with some poor guy in a suit typing up "due to unforeseen circumstances" and taping it to the venue door.
+
+This show is about everything that happened *before* he grabbed the tape.
+
+## Today (about 15 sec)
+
+Today, nothing explodes. Nobody gets arrested. Nobody eats anything they shouldn't. This is the pilot. I tell you who I am, what this show is, and which disasters are coming. Think of it as the safety briefing before the plane catches fire.
+
+I'm Duck, and this is Defacing the Music.
+
+`[THEME SONG, hard stop]`
+
+*(Come in right as it stops.)*
 
 Yeah. That's the theme song. I'd love to tell you a band of session musicians in LA cut that for me. It was a robot. It took me an entire day of arguing with that robot, and at one point it gave me a sitar.
 
-`[RIFF: the Suno struggle. The orchestra it kept adding, the woman's voice, running out of credits. Short version, this is a great "I'm a normal guy" moment.]`
-
-Anyway. Pull up a stool. I'm Dillon, and this is Defacing the Music.
-
-And yes, you just heard a song tell you the show is cancelled. That's kind of the whole idea. Every great music disaster ends with some poor guy in a suit typing up "due to unforeseen circumstances" and taping it to the venue door.
-
-This show is about everything that happened *before* he typed it.
+`[RIFF: the Suno struggle. The orchestra it kept adding, the woman's voice, running out of credits. Short version.]`
 
 ---
 
@@ -100,7 +106,7 @@ Answer's in episode one. And trust me, it's funnier than you think.
 
 `[RIFF: plug. Website, defacingthemusic.com. Guest List signup. "Tell a friend who thinks they know music history." Whatever socials you have.]`
 
-I'm Dillon. This has been Defacing the Music. Due to unforeseen circumstances, I'll see you next week.
+I'm Duck. This has been Defacing the Music. Due to unforeseen circumstances, I'll see you next week.
 
 ---
 
