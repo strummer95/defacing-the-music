@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $r[] = ['hash' => hash('sha256', $token), 'email' => $email, 'exp' => $now + 3600];
         return $r;
       });
-      $base = rtrim((string)(dtm_secrets()['site_url'] ?? 'http://defacingthemusic.com'), '/');
+      $base = rtrim((string)(dtm_secrets()['site_url'] ?? 'https://defacingthemusic.com'), '/');
       $link = "$base/admin/reset.php?t=$token";
       $body = "Someone (hopefully you) asked to reset your Defacing the Music admin password.\n\n$link\n\nThe link works for one hour. If this wasn't you, ignore this email.\n";
       @mail($email, 'Reset your Defacing the Music admin password', $body, "From: Defacing the Music <noreply@defacingthemusic.com>\r\nContent-Type: text/plain; charset=UTF-8");

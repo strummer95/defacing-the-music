@@ -2,7 +2,7 @@
 
 Site for **Defacing The Music**, Dillon Johnson's comedy podcast about the craziest stories in music history
 (Limp Bizkit and the Woodstock '99 riot, Keith Moon blowing up his drums on the Smothers Brothers, and so on).
-Live at http://defacingthemusic.com (NO SSL for now; everything must work over plain http), served from the `dtm` folder on Dillon's IONOS webspace (shared PHP hosting, no database assumed; use JSON files under `data/` with flock locking).
+Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visitors get https, Cloudflare talks plain http to IONOS, so PHP sees http; use X-Forwarded-Proto / `dtm_is_https()`). `lib/https.php` 301s http visitors to https, served from the `dtm` folder on Dillon's IONOS webspace (shared PHP hosting, no database assumed; use JSON files under `data/` with flock locking).
 
 ## How work happens
 - Start every run by reading `BOARD.md` (Dillon talks to you there; his notes outrank TASKS.md order; answer him under "For Dillon"). Your work queue is `TASKS.md` in this repo. Each run: pick the **first** open `[ ]` task, do **only that one task**, then stop.

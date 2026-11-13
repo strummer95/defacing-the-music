@@ -50,5 +50,5 @@ function dtm_human_size(int $b): string {
 }
 
 function dtm_site_base(): string {
-  return rtrim((string)(dtm_secrets()['site_url'] ?? 'http://defacingthemusic.com'), '/');
+  return rtrim((string)(dtm_secrets()['site_url'] ?? 'https://defacingthemusic.com'), '/');
 }

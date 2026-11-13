@@ -25,7 +25,7 @@ jobs:
           echo "::add-mask::$FTOK"
           [[ "$FID" =~ ^[a-f0-9]{16}$ && "$FTOK" =~ ^[a-f0-9]{40}$ ]] || { echo "bad id/token"; exit 1; }
           mkdir out && cd out
-          curl -fSL --retry 3 -OJ "http://defacingthemusic.com/admin/file.php?id=${FID}&t=${FTOK}&dl=1"
+          curl -fSL --retry 3 -OJ "https://defacingthemusic.com/admin/file.php?id=${FID}&t=${FTOK}&dl=1"
           ls -la
       - uses: actions/upload-artifact@v4
         with:
