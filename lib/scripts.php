@@ -23,7 +23,10 @@ const DTM_SEED_OLD = [
 // Which seed a script row came from. New rows carry 'seed'; older rows are matched by their episode number.
 function dtm_row_is_seed(array $s, string $key): bool {
   if (isset($s['seed'])) return $s['seed'] === $key;
-  return (string)($s['episode'] ?? '') === DTM_SEEDS[$key][0];
+  // Rows without a seed tag are only matched by episode number for the original numbered seeds,
+  // never for library seeds (number ''), so Duck's own scripts can't be mistaken for a seed.
+  $n = DTM_SEEDS[$key][0];
+  return $n !== '' && (string)($s['episode'] ?? '') === $n;
 }
 
 function dtm_upgrade_seeds(): void {
@@ -96,7 +99,7 @@ function dtm_scripts_migrate_v2(): void {
   if (is_file($marker)) return;
   dtm_json_update('scripts.json', function ($list) {
     foreach ($list as &$s) {
-      if (!isset($s['seed'])) foreach (DTM_SEEDS as $key => $row) if ((string)($s['episode'] ?? '') === $row[0]) { $s['seed'] = $key; break; }
+      if (!isset($s['seed'])) foreach (DTM_SEEDS as $key => $row) if ($row[0] !== '' && (string)($s['episode'] ?? '') === $row[0]) { $s['seed'] = $key; break; }
       $ep = (string)($s['episode'] ?? '');
       if (!isset($s['status'])) $s['status'] = $ep === '0' ? 'recorded' : 'ready';
       if (isset($s['seed']) && $s['seed'] !== 'episode-00') $s['episode'] = '';
