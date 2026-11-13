@@ -8,7 +8,7 @@ $listen = [
 ];
 // Social pages. Paste the full URL to make a button live.
 $social = [
-  'Facebook'  => '',
+  'Facebook'  => 'https://www.facebook.com/profile.php?id=61596260741323',
   'Instagram' => '',
 ];
 $episodes = [
