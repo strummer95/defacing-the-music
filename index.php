@@ -24,7 +24,7 @@ $episodes = [
 ];
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
-$desc = "Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.";
+$desc = "Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.";
 ?>
 <!doctype html>
 <html lang="en">
@@ -71,7 +71,7 @@ $desc = "Music history's most unhinged live disasters, meltdowns and terrible de
     <div class="hero-copy">
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
-      <p class="lede">Music history's most unhinged live disasters, meltdowns and terrible decisions. One host. Fifteen minutes. No refunds.</p>
+      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.</p>
       <div id="listen" class="listen bang">
         <?php $i = 0; foreach ($listen as $name => $url): $cls = 'btn' . ($i++ === 2 ? ' alt' : ''); ?>
           <?php if ($url): ?>
