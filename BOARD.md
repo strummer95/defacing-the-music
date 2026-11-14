@@ -5,6 +5,31 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### Images button, public sources pages, description links
+Added 2026-11-14 by Claude (chat), at Dillon's request, from a voice session with him. Three pieces. Open a PR per piece or one PR for all, your call. Don't push to main.
+
+**1. Images button in Scripts & Teleprompter**
+- In admin > Backstage > Scripts & Teleprompter, each script row has Read and Edit (`admin/scripts.php`). Add an **Images** button next to them. Also next to Read on the Episodes list (`admin/episodes.php`) if it fits.
+- It opens that script's images and NOTHING else: just the pictures, big enough to judge, with a way to open or download each one full size. No source or license text on this page (Dillon: "When I click on images, I just want to see the optional images that I can use."). That info lives in the sources section (piece 2).
+- What they're for: cutaways. Dillon records one take on one camera and edits afterward, so he needs things to cut to when he hides an edit.
+- Gather 5 to 10 images per script (fewer is fine if a story doesn't have many good ones). Mix: photos of the event or the people, newspaper headlines or clippings, band shots, and goofy related stuff (a cheese sandwich, a flare gun, a tour bus). Dillon: "Keep it goofy and fun."
+- **Licensing is a hard rule.** Dillon may make money on this show eventually, so every image must be legal for commercial use. Use Wikimedia Commons files licensed CC BY, CC BY-SA, CC0 or public domain (NOT NC or ND), free stock (Unsplash, Pexels) for the generic and goofy extras, and public-domain material. No Google Images grabs, no news-agency photos, album art or screenshots unless the license clearly allows it. Record for every image: the file page URL, the author or credit line, and the license with its link.
+- If you can't fetch a particular image yourself (photos of real people, for example), list the Commons file page in that script's sources entry and say so in the PR, so Dillon can grab it and add it through the existing Uploads page. If it's easy, let him add or remove images from the Images page too.
+- Start with the scripts not yet recorded, then eps 1 to 3.
+
+**2. Public Sources & Credits section per episode**
+- A public page (or section of an episode page) per episode on the site, e.g. `defacingthemusic.com/episode-1` or `/sources/episode-1`, whatever fits the site. It needs a short, clean URL Dillon can paste into descriptions.
+- It lists the research sources for that story (already in `research/<slug>.notes.md`; turn them into a readable list of titles + links, not raw notes) and the credit for every image from piece 1 (title, author, license + link). Think of it like a bibliography.
+- Library scripts without an episode number yet: build it so the page goes live when the script gets an episode, or however you think is cleanest.
+- Gig Poster brand, reuse `assets/site.css`. No em dashes.
+
+**3. Descriptions just link to the sources page**
+- Dillon doesn't want to clutter the YouTube, Spotify or other show descriptions with sources and credits. Each description gets one line like "Sources and credits: defacingthemusic.com/episode-1".
+- Wherever the site stores or shows an episode's description text (admin > Episodes), add that line or a one-click copy of it, so he can paste it.
+- Background (Claude chat, not a lawyer): for the story sources a link is plenty. For CC images, CC 4.0 licenses accept credit through a link to a page with the details. Some older CC versions want the credit closer to the work, so on the sources page keep each image's credit complete, and flag in the PR any image whose license would want the photographer's name in the description itself.
+
+When done, leave a DONE note here like the others.
+
 ### DONE: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
 Done 2026-11-13 by Claude (second pass, with the voice reference and the no-tribute-band rule). Episode 1 is the latest board version word for word. Episode 0 is cleaned up from the recorded transcript (32 years of guitar, the Foghat roadie, "that guy is usually awesome", ears ringing). Episodes 2 and 3: tribute-band material removed, voice loosened to match. Host bio on the home page no longer mentions the tribute band. Third pass (11:33 PM items): THAT GUY segment added to Episodes 1 to 3 (planted in TODAY, suspects, verdict right before OUT; Ep 1 = the stagehand, Ep 2 = the promoters, a whole office of guys, Ep 3 = Ozzy, but the meat did it), Episode 0 sets it up as a show thing, and Episode 0's What's Coming is now the board's tease block. Note: Episode 1 opens with a pop quiz answer, but the recorded Episode 0 never asked it; Dillon may want to tweak that opener. Unedited server copies upgrade on Pull latest; edited ones are left alone. Nothing more to do here.
 Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
