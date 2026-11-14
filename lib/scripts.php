@@ -25,9 +25,18 @@ const DTM_SEEDS = [
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
   'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a', '7232a021773d9aa2a230518fa393f16447343a59', 'd61ecbce297a5442a2a42112b2a583f61d133e1b', '9fb19500807901e9cf1d32c3ebff9918e42ad46c', 'e40daceeba30539686c8fbe484a7c645b2e688fb'],
-  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee', '305bfaa521a7e92ea540da27d1e71e68b29afc18', '4c534b033ad2e436832c01d045a51a5a74f49e1f', '6b7e320eed0fe6ac0402a18be46009af1e8e1442', 'fa7f326e9b310ee92d5a88bb9c4772ea4ac5d313'],
-  'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5', '687fbe72cc2458ddad679552cf3aa2290c9f9e48', 'b76c280a63359aa13c883bc417f09f6adddab2c5', '6cd32e7d91cb8997871fa61fe41049777ec0633b', '753f5b89fd82ccc4eabdfa52a5f06e4ff26b92f9', '3ac5d60d055afac5ed18ffb2f767e0875e240f08'],
-  'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375', 'c4f5e7c8a43992869c40ad4fae986b8143646781', 'c02bf5dcf4b3383c30fad282fe5470e99eec82f1', '49c09096b60f68d41f99caf79d6547a3d0d968c2', '5d356b15f96b61936f8fda8b601284b2f4dafc4e'],
+  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee', '305bfaa521a7e92ea540da27d1e71e68b29afc18', '4c534b033ad2e436832c01d045a51a5a74f49e1f', '6b7e320eed0fe6ac0402a18be46009af1e8e1442', 'fa7f326e9b310ee92d5a88bb9c4772ea4ac5d313', '0c7dc51dce8b66aad0ddd26579234aa52e38ccd7'],
+  'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5', '687fbe72cc2458ddad679552cf3aa2290c9f9e48', 'b76c280a63359aa13c883bc417f09f6adddab2c5', '6cd32e7d91cb8997871fa61fe41049777ec0633b', '753f5b89fd82ccc4eabdfa52a5f06e4ff26b92f9', '3ac5d60d055afac5ed18ffb2f767e0875e240f08', '8959ceeb759ab1b8783254ff339726735f07546d'],
+  'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375', 'c4f5e7c8a43992869c40ad4fae986b8143646781', 'c02bf5dcf4b3383c30fad282fe5470e99eec82f1', '49c09096b60f68d41f99caf79d6547a3d0d968c2', '5d356b15f96b61936f8fda8b601284b2f4dafc4e', '14e7d40dc153a8f1521d67111baebb1d61af5b53'],
+  'story-disco-demolition' => ['729fae1af1b9f6c002f0fa941b70633784660f2d'],
+  'story-dmb-bus' => ['b688ec518f0b47630373d1373f73ec663a3fa1b1'],
+  'story-fyre-festival' => ['2a104530ee95bc40c824b8fa646b6d07fd332ce6'],
+  'story-gg-allin' => ['4c037d575f180c786c9ba74e76abd5b7a9cf82ff'],
+  'story-jerry-lee-graceland' => ['c529afbd373824cb730f0ad76505b7cd6851bf9a'],
+  'story-metallica-gnr-montreal' => ['3ca77605ef5cc95a6b854130d6efa2422797e165'],
+  'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384'],
+  'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa'],
+  'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b'],
 ];
 
 // Which seed a script row came from. New rows carry 'seed'; older rows are matched by their episode number.
@@ -39,19 +48,24 @@ function dtm_row_is_seed(array $s, string $key): bool {
   return $n !== '' && (string)($s['episode'] ?? '') === $n;
 }
 
+// A script still counts as unedited if only trailing whitespace changed (saving the admin form can drop the final newline).
+function dtm_body_matches(string $body, array $old): bool {
+  return in_array(sha1($body), $old, true) || in_array(sha1(rtrim($body) . "\n"), $old, true);
+}
+
 function dtm_upgrade_seeds(): void {
   $list = dtm_json_read('scripts.json');
   $need = false;
   foreach ($list as $s) {
     foreach (DTM_SEED_OLD as $key => $old) {
-      if (dtm_row_is_seed($s, $key) && in_array(sha1((string)$s['body']), $old, true)) { $need = true; break 2; }
+      if (dtm_row_is_seed($s, $key) && dtm_body_matches((string)$s['body'], $old)) { $need = true; break 2; }
     }
   }
   if (!$need) return;
   dtm_json_update('scripts.json', function ($list) {
     foreach ($list as &$s) {
       foreach (DTM_SEED_OLD as $key => $old) {
-        if (!dtm_row_is_seed($s, $key) || !in_array(sha1((string)$s['body']), $old, true)) continue;
+        if (!dtm_row_is_seed($s, $key) || !dtm_body_matches((string)$s['body'], $old)) continue;
         $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
       }
