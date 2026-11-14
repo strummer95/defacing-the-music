@@ -77,6 +77,58 @@
    "width": 1920,
    "height": 2639,
    "attribution_required": "true"
+  },
+  {
+   "file": "07-pasteur-rabies-shot.jpg",
+   "title": "Louis Pasteur giving a rabies shot",
+   "commons_title": "Pasteur inoculating a man with the rabies virus. Chromolitho Wellcome L0027358.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg",
+   "author": "https://wellcomeimages.org/indexplus/obf_images/0d/84/c6e9391eccc4b92b98622dcb8cb3.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0027358.html Wellcome Collection gallery (2018-04-01): https",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg/1920px-Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg",
+   "width": 1920,
+   "height": 1277,
+   "attribution_required": "true"
+  },
+  {
+   "file": "08-alamo.jpg",
+   "title": "The Alamo, San Antonio",
+   "commons_title": "Mission Alamo 7127.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Mission_Alamo_7127.jpg",
+   "author": "gillfoto",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mission_Alamo_7127.jpg/1920px-Mission_Alamo_7127.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "true"
+  },
+  {
+   "file": "09-alamo-cenotaph.jpg",
+   "title": "The Alamo Cenotaph monument",
+   "commons_title": "Alamo Cenotaph (48873531712).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Alamo_Cenotaph_(48873531712).jpg",
+   "author": "Eden, Janine and Jim from New York City",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Alamo_Cenotaph_%2848873531712%29.jpg/1920px-Alamo_Cenotaph_%2848873531712%29.jpg",
+   "width": 1920,
+   "height": 2560,
+   "attribution_required": "true"
+  },
+  {
+   "file": "10-randy-rhoads-1980.jpg",
+   "title": "Randy Rhoads in 1980",
+   "commons_title": "RandyRhoads1980.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:RandyRhoads1980.jpg",
+   "author": "Jet Records",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/e/e5/RandyRhoads1980.jpg",
+   "width": 1920,
+   "height": 2882,
+   "attribution_required": "false"
   }
  ]
 }

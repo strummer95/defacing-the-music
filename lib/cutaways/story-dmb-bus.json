@@ -1,0 +1,109 @@
+{
+ "images": [
+  {
+   "file": "01-dmb-band-2005.jpg",
+   "title": "Dave Matthews Band on stage, 2005",
+   "commons_title": "Dave Matthews Band - Band Shot Melbourne 2005.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Dave_Matthews_Band_-_Band_Shot_Melbourne_2005.jpg",
+   "author": "Diliff",
+   "license": "CC BY 2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Dave_Matthews_Band_-_Band_Shot_Melbourne_2005.jpg",
+   "width": 1920,
+   "height": 1310,
+   "restrictions": "personality",
+   "attribution_required": "true"
+  },
+  {
+   "file": "02-boyd-tinsley.png",
+   "title": "Boyd Tinsley backstage",
+   "commons_title": "Boyd Tinsley.png",
+   "source": "https://commons.wikimedia.org/wiki/File:Boyd_Tinsley.png",
+   "author": "Eduardo Montes-Bradley",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Boyd_Tinsley.png/1920px-Boyd_Tinsley.png",
+   "width": 1920,
+   "height": 1411,
+   "attribution_required": "true"
+  },
+  {
+   "file": "03-tour-buses.jpg",
+   "title": "Tour buses lined up at an arena",
+   "commons_title": "Viejas Arena Loading Area - Nicki Minaj Tour, September 27, 2024.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Viejas_Arena_Loading_Area_-_Nicki_Minaj_Tour,_September_27,_2024.jpg",
+   "author": "Kire1975",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Viejas_Arena_Loading_Area_-_Nicki_Minaj_Tour%2C_September_27%2C_2024.jpg",
+   "width": 1920,
+   "height": 1081,
+   "attribution_required": "false"
+  },
+  {
+   "file": "04-peninsula-chicago.jpg",
+   "title": "The Peninsula hotel, Chicago",
+   "commons_title": "The Peninsula Chicago (6847968468).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Peninsula_Chicago_(6847968468).jpg",
+   "author": "Alan Light",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Peninsula_Chicago_%286847968468%29.jpg/1920px-The_Peninsula_Chicago_%286847968468%29.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "true"
+  },
+  {
+   "file": "05-river-dyed-green.jpg",
+   "title": "The Chicago River dyed green",
+   "commons_title": "Chicago River dyed green for St. Patrick's Day.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Chicago_River_dyed_green_for_St._Patrick%27s_Day.jpg",
+   "author": "Pjfinlay",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Chicago_River_dyed_green_for_St._Patrick%27s_Day.jpg/1920px-Chicago_River_dyed_green_for_St._Patrick%27s_Day.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "false"
+  },
+  {
+   "file": "06-architecture-boat-tour.jpg",
+   "title": "A Chicago architecture boat tour",
+   "commons_title": "Chicago architecture boat tour (7705661762).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Chicago_architecture_boat_tour_(7705661762).jpg",
+   "author": "Kent Wang from Barcelona, Spain",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Chicago_architecture_boat_tour_%287705661762%29.jpg/1920px-Chicago_architecture_boat_tour_%287705661762%29.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "true"
+  },
+  {
+   "file": "07-kinzie-street-bridge.jpg",
+   "title": "The Kinzie Street bridge",
+   "commons_title": "Kinzie Street Bridge from the south, from riverside walkway (2012).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Kinzie_Street_Bridge_from_the_south,_from_riverside_walkway_(2012).jpg",
+   "author": "Jaysin Trevino from Evanston, IL, US",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Kinzie_Street_Bridge_from_the_south%2C_from_riverside_walkway_%282012%29.jpg/1920px-Kinzie_Street_Bridge_from_the_south%2C_from_riverside_walkway_%282012%29.jpg",
+   "width": 1920,
+   "height": 1345,
+   "attribution_required": "true"
+  },
+  {
+   "file": "08-kinzie-bridge-deck.jpg",
+   "title": "The Kinzie Street bridge deck",
+   "commons_title": "Roadway view of Kinzie Street Bridge in 2011.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Roadway_view_of_Kinzie_Street_Bridge_in_2011.jpg",
+   "author": "Chicago Bicycle Program from United States of America",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Roadway_view_of_Kinzie_Street_Bridge_in_2011.jpg/1920px-Roadway_view_of_Kinzie_Street_Bridge_in_2011.jpg",
+   "width": 1920,
+   "height": 1281,
+   "attribution_required": "true"
+  }
+ ]
+}

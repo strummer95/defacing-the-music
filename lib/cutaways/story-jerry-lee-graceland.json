@@ -1,0 +1,121 @@
+{
+ "images": [
+  {
+   "file": "01-graceland-gates.jpg",
+   "title": "The music gates at Graceland",
+   "commons_title": "Gates, Graceland, Memphis, Tennessee LCCN2010630456.tif",
+   "source": "https://commons.wikimedia.org/wiki/File:Gates,_Graceland,_Memphis,_Tennessee_LCCN2010630456.tif",
+   "author": "Carol M. Highsmith",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Gates%2C_Graceland%2C_Memphis%2C_Tennessee_LCCN2010630456.tif/lossy-page1-1920px-Gates%2C_Graceland%2C_Memphis%2C_Tennessee_LCCN2010630456.tif.jpg",
+   "width": 1920,
+   "height": 1123,
+   "attribution_required": "false"
+  },
+  {
+   "file": "02-ferriday.jpg",
+   "title": "Ferriday, Louisiana",
+   "commons_title": "Ferriday Louisiana July 2019.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Ferriday_Louisiana_July_2019.jpg",
+   "author": "U.S. Department of Agriculture",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Ferriday_Louisiana_July_2019.jpg/1920px-Ferriday_Louisiana_July_2019.jpg",
+   "width": 1920,
+   "height": 1280,
+   "attribution_required": "false"
+  },
+  {
+   "file": "03-upright-piano.jpg",
+   "title": "A beat-up old upright piano",
+   "commons_title": "Old Piano - Banks Street Bar, New Orleans.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Old_Piano_-_Banks_Street_Bar,_New_Orleans.jpg",
+   "author": "Bart Everson",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Old_Piano_-_Banks_Street_Bar%2C_New_Orleans.jpg/1920px-Old_Piano_-_Banks_Street_Bar%2C_New_Orleans.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "true"
+  },
+  {
+   "file": "04-sun-studio.jpg",
+   "title": "Sun Studio, 706 Union Avenue, Memphis",
+   "commons_title": "Sun Records Studio, Memphis, Tennessee LCCN2010630851.tif",
+   "source": "https://commons.wikimedia.org/wiki/File:Sun_Records_Studio,_Memphis,_Tennessee_LCCN2010630851.tif",
+   "author": "Carol M. Highsmith",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Sun_Records_Studio%2C_Memphis%2C_Tennessee_LCCN2010630851.tif/lossy-page1-1920px-Sun_Records_Studio%2C_Memphis%2C_Tennessee_LCCN2010630851.tif.jpg",
+   "width": 1920,
+   "height": 1255,
+   "attribution_required": "false"
+  },
+  {
+   "file": "05-jerry-lee-1950s.jpg",
+   "title": "Jerry Lee Lewis, 1950s publicity photo",
+   "commons_title": "Jerry Lee Lewis 1950s.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:Jerry_Lee_Lewis_1950s.JPG",
+   "author": "photographer:Maurice Seymour, Chicago.",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Jerry_Lee_Lewis_1950s.JPG",
+   "width": 1920,
+   "height": 2398,
+   "attribution_required": "false"
+  },
+  {
+   "file": "06-rolls-royce.jpg",
+   "title": "A 1970s Rolls-Royce, right side up",
+   "commons_title": "Rolls-Royce Silver Shadow.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Rolls-Royce_Silver_Shadow.jpg",
+   "author": "http://rolls-royce-wiki.de/index.php/Rolls-Royce_Silver_Shadow_Inhaltsverzeichnis",
+   "license": "CC BY-SA 3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Rolls-Royce_Silver_Shadow.jpg/1920px-Rolls-Royce_Silver_Shadow.jpg",
+   "width": 1920,
+   "height": 1285,
+   "attribution_required": "true"
+  },
+  {
+   "file": "07-lincoln-continental.jpg",
+   "title": "A 1976 Lincoln Continental, the backup car",
+   "commons_title": "1976 Lincoln Continental Town Car, front right, 07-21-2024.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:1976_Lincoln_Continental_Town_Car,_front_right,_07-21-2024.jpg",
+   "author": "MercurySable99",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/1976_Lincoln_Continental_Town_Car%2C_front_right%2C_07-21-2024.jpg/1920px-1976_Lincoln_Continental_Town_Car%2C_front_right%2C_07-21-2024.jpg",
+   "width": 1920,
+   "height": 1272,
+   "attribution_required": "true"
+  },
+  {
+   "file": "08-derringer.jpg",
+   "title": "A derringer, tiny gun, big trouble",
+   "commons_title": "Derringer 1.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Derringer_1.jpg",
+   "author": "Southpaw Dutch",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Derringer_1.jpg/1920px-Derringer_1.jpg",
+   "width": 1920,
+   "height": 1287,
+   "attribution_required": "true"
+  },
+  {
+   "file": "09-champagne.jpg",
+   "title": "Champagne, which he didn't even like",
+   "commons_title": "Champagne bottle, 2017-(01).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Champagne_bottle,_2017-(01).jpg",
+   "author": "Jernej Furman",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Champagne_bottle%2C_2017-%2801%29.jpg/1920px-Champagne_bottle%2C_2017-%2801%29.jpg",
+   "width": 1920,
+   "height": 1311,
+   "attribution_required": "true"
+  }
+ ]
+}
