@@ -25,8 +25,10 @@ Done (replaces the earlier PR #4, which should not be merged): admin > Scripts i
 "Make it an episode" gives a script the next number. admin > Episodes lists numbered episodes (planned/recorded/published,
 publish date, YouTube/Spotify links, notes, linked script). Public episode list on the home page is still hardcoded (next step).
 
-## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
-Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
+## [x] DTM-SUBSCRIBERS-1: Guest List in the admin
+Done: admin > Guest List (`admin/subscribers.php`) lists `data/subscribers.json` newest-first with a count, a CSV
+download, and a CSRF-protected remove button; reuses the same `dtm_json_update`/CSRF/admin-gate helpers as
+Episodes/Scripts. PR: https://github.com/strummer95/defacing-the-music/pull/39
 
 ## [ ] DTM-STORIES-1: Story idea backlog in the admin
 Admin-only page to log candidate stories (title, artist, year, one-line hook, source links, status idea/researching/recorded).

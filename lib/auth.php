@@ -184,6 +184,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
   <div class="admin-bar-right">
     <a href="episodes.php" class="admin-user bang">Episodes</a>
     <a href="scripts.php" class="admin-user bang">Scripts</a>
+    <a href="subscribers.php" class="admin-user bang">Guest List</a>
     <a href="uploads.php" class="admin-user bang">Uploads</a>
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>
     <?php if ($pullButton): ?>
