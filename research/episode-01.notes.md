@@ -22,8 +22,17 @@ Research method: WebSearch only (WebFetch could not reach outside hosts in this 
 - Bette Davis fainting into Mickey Rooney's arms backstage: reported in retellings; one article says the Smothers Brothers themselves have denied it. The script already frames it as a legend, which is right: https://www.slashfilm.com/1545384/the-who-60s-tv-explosion-the-smothers-brothers-comedy-hour
 - "Ten times" the normal flash powder: one account. The script attributes it to "one account", which is fine.
 
+## Nov 14 cold-open audit: fact fixes in THE BOOM
+- Blast threw Moon off the drum riser and cymbal shrapnel cut his arm: Rolling Stone's "The Kids Are Alright: Fifteen Years of The Who" (search summary only), /Film says "blown off the drum stand". Script now frames the riser as "the way it usually gets told", states shrapnel in his arm as fact (History.com), and the cymbal as "some versions say": https://www.rollingstone.com/music/music-news/the-kids-are-alright-fifteen-years-of-the-who-238404/ , https://www.slashfilm.com/1545384/the-who-60s-tv-explosion-the-smothers-brothers-comedy-hour
+- Moon can be heard yelling in pain afterward on the tape: https://faroutmagazine.co.uk/who-us-tv-debut-smothers-brothers-1967-townshend-moon-daltrey-entwistle/
+- Footage shows the heads and hoops blown clean off the bass drum: https://reverb.com/news/keith-moon-and-his-pictures-of-lily-drum-kit
+- "The camera shakes": still no source; cut.
+- Producer Allan Blye's "powder puff" rehearsal charge and his request for a bigger effect (already in key facts above) now used in THE SETUP and THAT GUY.
+- Moon's 21st really was Aug 23, 1967 (born Aug 23, 1946); script no longer says "or says he is".
+- Some sources (Far Out, Matthew Dicks) give other amounts ("three times", "double"); the script still attributes "ten times" to "one account".
+
 ## Could NOT verify (flag for Duck)
-- "A piece of cymbal slices his arm open": sources say shrapnel in Moon's arm; the specific cymbal fragment detail turned up in retellings but not in a source I could confirm.
-- "Keith gets knocked backward off his riser" and "the camera shakes": consistent with the footage descriptions but not stated in a source I read.
+- Cymbal as the specific source of the shrapnel: only in retellings and a Rolling Stone summary; framed as "some versions say".
+- Moon thrown off the riser: in Rolling Stone and /Film summaries, not confirmed from a full read; framed as "the way it usually gets told".
 - The "Ohio kid in a station wagon" bit is clearly a hypothetical, fine as written.
 - Whether the explosion knocked the broadcast off the air "momentarily" (History.com says so) does not matter to the script, which never claims it.
