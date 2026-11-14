@@ -5,7 +5,17 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### Duck's Nov 14 evening voice session: launch order, two pillars, Ozzy, Woodstock, Disco Demolition, Jerry Lee, Encore and B-Side
+### DONE: Duck's Nov 14 evening voice session
+Done 2026-11-14 by Claude. Hit **Pull latest**; every script you haven't edited on the site updates by itself (an edited one is left alone).
+- Rules folded into CLAUDE.md (two pillars as the top rule, 75-word cold opens, launch order, prices with today's money, serious stuff once and briefly, Encore / B-Side) and STORIES.md.
+- **Ozzy** reworked as the launch episode (~28 min): dove on purpose, bat by accident, your bite questions answered from his memoir and Mark Neal, tribute ending with fresh numbers.
+- **Woodstock '99** (~32 min): your 8-part outline in order, one serious note after the title, Kiedis gone, today's prices, Woodstock 50. That Guy now names John Scher ("You are the guy who booked Saturday").
+- **Disco Demolition** (~29 min): goofier, specific fans on the field (Michael Clarke Duncan slid into third, by his own telling), Ten Cent Beer Night callback. No Drew Peterson.
+- **Jerry Lee** (~29 min): who he is up front, the night on a clock, guard and court accounts. Subtitle now "Who Let Jerry Lee Back to Graceland?" Title is your call (below).
+- Every other script: cold open cut to ~75 words with no spoilers, crutches and pauses thinned, and the "who decided this" side beefed up where it was thin (DMB bus, Montreux, Metallica/GN'R, GG Allin). Keith Moon got more taping-day moments.
+- No episode got renumbered. Scripts no longer say an episode number, so the order can change freely.
+
+### (original note) Duck's Nov 14 evening voice session: launch order, two pillars, Ozzy, Woodstock, Disco Demolition, Jerry Lee, Encore and B-Side
 Added 2026-11-14 ~5 PM by Claude (chat), at Dillon's request. Taken from a long voice conversation with Duck. He asked for this to be passed on in full detail, NOT summarized ("I want Claude Code to know exactly how this conversation went and what we talked about"). Duck's own words are quoted where it matters. Fold the rules into CLAUDE.md, the story notes into STORIES.md and research notes, then rework scripts. PRs as usual, never push to main.
 
 #### 1. THE TWO PILLARS (top rule for every script, above everything else)
@@ -342,6 +352,25 @@ Added 2026-11-11 by Defa. Read `CLAUDE.md`, then work `TASKS.md` one task per ru
 Reply to Dillon under **For Dillon** in the same PR when you have a question or something he must do.
 
 ## For Dillon
+
+### Questions from the Nov 14 evening session (answer here or in chat)
+Added 2026-11-14 by Claude.
+1. **Renumbering.** You want Ozzy as Episode 1, Woodstock 2, Disco Demolition 3, Keith Moon 4. Have you recorded anything yet under the old numbers (Keith Moon as 1, Woodstock 2, Ozzy 3)? If not, say "renumber" and I'll set the episodes up in the new order.
+2. **Jerry Lee title.** Pick one (or say none):
+   - Due To Great Balls of Firearms
+   - Due To Whole Lotta Shootin' Goin' On
+   - Due To a Whole Lotta Drinkin' Goin' On
+   - New: Due To Goodness Gracious, a Derringer
+   - New: Due To Great Balls of Champagne
+   - New: Due To Whole Lotta Knockin' Goin' On
+3. **Guest episodes:** B-Side or Mic Swap?
+4. **Things the research changed that you should know before recording:**
+   - Ozzy: Mark Neal didn't come forward "years later"; the Des Moines Register named him two days after the show. CBS threw Ozzy out after the dove (the record still came out on their label). "Sharon sent ads asking fans to bring meat" rests on one biography; it's credited on air, soften it if you want. There's a "Rest easy, Ozzy." line before the sign-off; cut it if it's too soft.
+   - Jerry Lee: it wasn't all in a few hours. He flipped the Rolls about 9:30 AM and came back with the derringer around 3 AM the next night. Also has a short Springsteen-climbed-the-Graceland-wall sidebar; cut it if you don't like it there.
+   - Woodstock: the only evidence anyone asked Fred to calm the crowd is Fred himself, mocking it on stage. It's in the legend pile.
+   - Long scripts now: Woodstock ~32 min, Montreux ~30, Disco and Jerry Lee ~29, Ozzy ~28, DMB ~25. Nothing was trimmed, per your rule.
+   - Montreux: Nobs turning the fire hose down so the coffee machine wouldn't blow up rests on one unnamed person; keep or cut. DMB: nobody ever said why the driver dumped it there, so the script gives your three guesses, labeled as guesses.
+
 
 ### Your Gig Poster home page is ready to go live
 Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home page. To make it live:
