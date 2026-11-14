@@ -369,6 +369,8 @@ Added 2026-11-14 by Claude.
    - Jerry Lee: it wasn't all in a few hours. He flipped the Rolls about 9:30 AM and came back with the derringer around 3 AM the next night. Also has a short Springsteen-climbed-the-Graceland-wall sidebar; cut it if you don't like it there.
    - Woodstock: the only evidence anyone asked Fred to calm the crowd is Fred himself, mocking it on stage. It's in the legend pile.
    - Long scripts now: Woodstock ~32 min, Montreux ~30, Disco and Jerry Lee ~29, Ozzy ~28, DMB ~25. Nothing was trimmed, per your rule.
+   - Metallica/GN'R: That Guy is now Axl Rose (Lars gets an assist for setting up the tour; the pyro operator is cleared). The promoter, Donald Tarlton, died in April 2026; the script only mentions him in passing. Say if you want that handled differently.
+   - GG Allin: the verdict now lands on GG himself, but the subtitle still asks "Who Kept Booking GG Allin?" Keep it as a setup, or want a new one?
    - Montreux: Nobs turning the fire hose down so the coffee machine wouldn't blow up rests on one unnamed person; keep or cut. DMB: nobody ever said why the driver dumped it there, so the script gives your three guesses, labeled as guesses.
 
 
