@@ -1,0 +1,33 @@
+# Notes: episode-03 (Ozzy, the bat, the dove and the Alamo)
+
+Research method: WebSearch only (WebFetch could not reach outside hosts in this session), so facts were cross-checked across search-result summaries from several outlets. Written after the script, as a fact-check.
+
+## Key facts used, with sources
+- Wednesday, January 20, 1982, Veterans Memorial Auditorium, Des Moines. Ozzy bit the head off a bat thrown from the crowd and said he thought it was rubber: https://www.upi.com/Archives/1982/01/21/Diagnosis-Patient-bit-head-off-bat/5450380437200/ , https://americansongwriter.com/remember-when-ozzy-osbourne-bit-the-head-off-a-bat , https://www.hellomagazine.com/celebrities/846054/ozzy-osbourne-true-story-bat-biting-incident
+- Thrower was Mark Neal, then 17, who came forward to the Des Moines Register years later; he says the bat was already dead: https://news.yahoo.com/led-ozzy-osbourne-infamously-biting-131803275.html , https://www.yahoo.com/now/archives-ozzy-osbourne-leaves-des-131737421.html , https://loudwire.com/ozzy-osbourne-bat-biting-mark-neal/
+- Rabies treatment after the show; UPI quotes a Broadlawns Medical Center spokesman (rabies shot, rabies vaccine, tetanus shot) and says Ozzy was to check in with hospitals along the tour route to continue the series. The Register says he took enough vaccine with him to finish the series: https://www.upi.com/Archives/1982/01/21/Diagnosis-Patient-bit-head-off-bat/5450380437200/ , https://www.yahoo.com/now/archives-ozzy-osbourne-leaves-des-131737421.html
+- Diary of a Madman tour threw raw meat (calves' livers, pig intestines, reportedly from a catapult) into the crowd, and fans started throwing animal stuff back: https://www.yahoo.com/lifestyle/ozzy-bites-head-off-bat-151556491.html , https://news.yahoo.com/bassist-rudy-sarzo-remembers-ozzy-osbournes-bat-biting-40-years-later-185555775.html
+- Dove: 1981 CBS Records meeting around the Blizzard of Ozz launch, Ozzy drunk, released one dove and bit the head off another. Location (LA vs New York), date (March vs May 1981) and dove count (2 vs 3) differ by source: https://www.mojo4music.com/time-machine/1980s/mojo-time-machine-ozzy-osbourne-bites-the-head-off-a-dove/ , https://www.guitarworld.com/features/ozzy-osbourne-hell-and-back , https://ultimateclassicrock.com/ozzy-osbourne-dove-bite-head/
+- Black Sabbath fired Ozzy in April 1979 (27th in most sources, 17th in one); Dio replaced him; Sharon Arden, daughter of Sabbath's manager Don Arden, took over managing him, later married him; Randy Rhoads hired: https://www.musicradar.com/artists/it-wasnt-just-my-decision-to-fire-ozzy-it-was-a-band-decision-it-was-either-we-break-up-or-we-carry-on-without-him-tony-iommi-says-they-had-to-get-rid-of-ozzy-osbourne-to-make-black-sabbath-great-again , https://ultimateclassicrock.com/ozzy-osbourne-fired-from-black-sabbath/
+- Alamo: February 19, 1982, San Antonio. Arrested (charged with public intoxication) after urinating on the Alamo Cenotaph, wearing Sharon's dress because she had hidden his clothes. Banned from playing San Antonio for about a decade; 1992 donation of $10,000 to the Daughters of the Republic of Texas; returned to apologize in November 2015: https://www.nme.com/news/music/ozzy-osbourne-14-1202230 , https://www.vice.com/en/article/remember-that-time-ozzy-osbourne-peed-on-the-alamo-they-sure-do/ , https://loudwire.com/ozzy-osbourne-arrested-urinating-alamo-cenotaph-anniversary/
+- Randy Rhoads died March 19, 1982, age 25, in a small-plane joyride crash at Leesburg, Florida (the pilot, the tour bus driver, and makeup artist Rachel Youngblood also died): https://americansongwriter.com/the-traumatic-fatal-incident-that-changed-the-osbournes-lives-forever , https://ultimateclassicrock.com/randy-rhoads-plane-crash/
+- Ozzy called Randy's death "the greatest tragedy of my life": https://www.musicradar.com/artists/the-day-randy-died-was-the-greatest-tragedy-of-my-life-ozzy-osbourne-thought-he-was-finished-after-he-was-fired-by-black-sabbath-then-along-came-a-guitarist-named-randy-rhoads
+- Final show "Back to the Beginning", July 5, 2025, Villa Park, Birmingham, performed seated on a throne; died July 22, 2025, aged 76: https://www.expressandstar.com/whats-on/ozzy-osbourne-dies-aged-76-just-weeks-after-final-black-sabbath-gig-5681639 , https://www.nme.com/news/music/ozzy-osbourne-dies-at-the-age-of-76-3879970
+
+## "Story goes" pile
+- The Sharon's-dress detail at the Alamo: widely repeated, comes from Ozzy's own retellings. Script already frames it as "the story goes".
+- The dove: Ozzy's own tellings vary; the script flags this ("honesty check").
+- Live or dead bat: Neal says dead; Ozzy has said he felt the head twitch. Script goes with Neal's version and says it's debated.
+
+## Could NOT verify, or sources differ (flag for Duck)
+- "His younger brother found it and brought it home, planning to keep it": Neal's account in search results is that he and his brother took the bat home from school and it died about two weeks before the show. "Younger" and "planning to keep it" were not confirmed.
+- "A kid walked into a concert with a dead bat in his coat": the coat detail was not found. It's a joke setup, but it's stated as fact.
+- "And they kept him" (after the dove): in Hello! Magazine Ozzy recalls they threw him out and said he'd never work for CBS again. The record still came out and was a hit, so "they kept him" is loose. Consider softening.
+- "One version, he says the dove was already dead": not confirmed in search results.
+- "Some people say Los Angeles, some say New York": confirmed (Best Classic Bands/most retellings say LA, Guitar World says New York).
+- "Rumors about cities trying to ban his shows": results only say other cities worried and the Des Moines mayor asked whether he'd broken an agreement about animals in the act. "Rumors" framing is OK; no specific city ban found.
+- "In every city, Ozzy had to find a doctor and get another shot": UPI supports checking in with hospitals on the route; the Register says he carried the vaccine. Roughly right.
+- "His mouth was instantly full of something warm": his best-known description is feeling the head twitch and realizing it wasn't rubber. The "warm" wording was not found.
+- The Alamo arrest charge was public intoxication; the script says "arrested for urinating on a monument", which is how it is usually told, but strictly the charge was intoxication.
+- "1981 ... Blizzard of Ozz ... nobody knows that yet": UK release was September 1980, US release March 1981. Fine for the US story.
+- Randy "classically trained, obsessed with practicing": well known (he took classical lessons on tour), not separately searched.

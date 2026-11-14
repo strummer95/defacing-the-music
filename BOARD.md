@@ -5,7 +5,14 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
-### Images button, public sources pages, description links
+### DONE: Images button, public sources pages, description links
+Done 2026-11-14 by Claude. Hit **Pull latest** and it's all live:
+- **Images**: admin > Scripts (and Episodes) has an Images button per script. Pictures only, big, with Full size and Download. Hide any you don't like (they come back from the Hidden pile), or add your own with its credit. 8 to 10 pictures per script for all 12 shipped scripts, all from Wikimedia Commons under CC BY / CC BY-SA / CC0 / public domain. The server grabs each picture from Wikimedia the first time you open a script's images, so that first load takes a few seconds.
+- **Sources & Credits pages**: `defacingthemusic.com/ep/N` (and `/ep/` for the list). Sources plus every image credit. A library script gets its page the moment it becomes an episode; the script edit page has a Preview link before that, and an Extra sources box for your own links.
+- **Description line**: admin > Episodes > an episode has "Sources and credits: https://defacingthemusic.com/ep/N" with a Copy button.
+- Fact flags the research turned up are in the PR (some script lines in eps 1 to 3 don't match the sources). Scripts weren't changed.
+
+### (original note) Images button, public sources pages, description links
 Added 2026-11-14 by Claude (chat), at Dillon's request, from a voice session with him. Three pieces. Open a PR per piece or one PR for all, your call. Don't push to main.
 
 **1. Images button in Scripts & Teleprompter**
