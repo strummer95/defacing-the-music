@@ -26,7 +26,14 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 - Logo: yellow warning sign with a music-note exclamation mark, bullet hole and burnt corner. Transparent `assets/logo.png` (512), `assets/logo-192.png`, favicons, `assets/og-image.png`; untouched original `assets/logo-original.png` (1024, cream background). Pair it with the Metal Mania wordmark. Host photos for thumbnails/art: `brand/photos/` (see its README; never use the Counterfeit one). Vector master from Illustrator: `brand/DTM_Logo.pdf` (+ `brand/DTM_Logo.svg`) for print, merch and cover art; the site uses the PNG because the vector trace flattens the halftone and bands the burn.
 
 ## The show
-Source of truth for these rules: Duck's own decisions, most recently `docs/HANDOFF-2026-11-14-show-notes.md` (read it in full before writing or editing scripts; it overrides older guidance where they conflict).
+Source of truth for these rules: Duck's own decisions, most recently the Nov 14 evening voice session (BOARD.md, "Duck's Nov 14 evening voice session") and `docs/HANDOFF-2026-11-14-show-notes.md`. Read both in full before writing or editing scripts; the newer one wins where they conflict.
+
+### THE TWO PILLARS (top rule for every script, above everything else)
+Duck: "That's the key thing for me that's going to make me want to do this and make this interesting and what I think will make people enjoy it." If a script doesn't have both, it isn't done.
+1. **The Dollop side: "I went down the rabbit hole for you."** A handful of oddly specific moments only someone who really dug in would know: what one specific person said, did or saw. One guy doing one specific dumb thing, then another. Duck: "those finer details that make it sound like a more unique telling of the story, a more informed telling... it's not just a generic telling of the story from the outside. It feels like you're actually getting into it." That's the difference between "I read the Wikipedia page" and "I went down the rabbit hole for you," and it's what makes people want the other episodes.
+2. **The How Did This Get Made side: the decisions behind the disaster.** Who thought this was a good idea, and why. Feeds straight into THAT GUY.
+- Duck's touchstones: The Dollop (he loves its Ten Cent Beer Night episode and the Lincoln's body one: "it really gives a lot of specific details, like even an account of like this person in the crowd came on the field and did this") and How Did This Get Made. "Not copy but replicate that energy."
+- Research for every story hunts for eyewitness details and individual moments (oral histories, period newspapers, books, first-person accounts, interviews), not just the big picture. Every fact used goes in `research/<seed>.notes.md` with its source, and the sources list in `lib/sources/<seed>.json`.
 
 ### Basics
 - Solo host, goes by **Duck** on the show (Chicagoland, 32 years playing guitar). NEVER mention his tribute band, Counterfeit, or "my band" in any script or show copy. Dark-comedy narrative history in the style of The Dollop.
@@ -51,14 +58,16 @@ Source of truth for these rules: Duck's own decisions, most recently `docs/HANDO
 - Measure spoken length as words outside [brackets] at about 150 words per minute. Shorter scripts (eps 1 to 3 run about 13 to 15 min) should get MORE material, not less.
 
 ### Episode format (Duck's description, confirmed)
-1. **Cold open:** a wild, brief teaser, just a few sentences about what the episode's about. (Scripts also carry a short "Today" summary before the intro line.)
+1. **Cold open:** about **30 seconds, about 75 words**. Three or four quick hits and out. A real teaser that does NOT spoil what happens (Duck: some cold opens were "way too long... It needs to really be a teaser. And not spoil, you know, what's going to happen really"). Ozzy example of the right spirit: "a dead bat, a boardroom full of executives, and a dove that had a very bad day." (Scripts also carry a short "Today" summary before the intro line.)
 2. **"I'm Duck, and this is Defacing the Music."**
 3. **Theme song** (`[THEME SONG, hard stop]`).
 4. **Coming out of the theme:** Duck starts the episode, announces the title ("Due To ... Or, Who ...?"), and gets into it. Library scripts don't say an episode number (Duck numbers them when he makes them episodes in the admin).
-5. The story, with `## ` section headings. A straight `## THE SERIOUS PART` when people were hurt or died.
+5. The story, with `## ` section headings. When people were hurt or died, address it right, and briefly: a straight `## THE SERIOUS PART`, or (when Duck doesn't want it in the episode, like Woodstock '99) one short straight acknowledgment right after the title, before the story starts, then never again. Duck: most episodes shouldn't dwell on bad or sad stuff, but when it exists, address it right, briefly.
 6. **"That Guy"** (`## THAT GUY`), every episode: the point where Duck names the one who caused it or is to blame. "Because in every story there's a 'that guy.' Don't be that guy." Plant it early ("somewhere in this story there's a guy"), drop suspects, give a verdict; if blame is disputed, say so; when it's genuinely a group, say so (but see crutches below).
 7. **Sign-off:** something like "I'm Duck. Due to unforeseen circumstances, I'll see you next week." Then back into the theme song and done. Don't name the next episode in library scripts (order isn't decided).
 - Every `[RIFF: ...]` must be followed by a written fallback Duck can read ("Or use this:"). Optional asides go in `[FILL: ...]`.
+- **Prices:** whenever a price comes up, give today's equivalent so it lands for younger listeners (e.g. $4 water in 1999 is about $8 today). Check it with a CPI inflation calculator and cite it in the research notes.
+- **Duck's reasoning, said straight:** when the script makes a clear, logical read of why something happened (e.g. "Break Stuff" being where Woodstock '99 turned destructive), write it as a confident, plainly reasoned statement in Duck's voice, without a "well, my take is" hedge (Duck: that "makes it seem like it can be critiqued or countered"). It is still not stated as an established fact about causation; the facts it rests on must be sourced.
 
 ### "That Guy" sound sting
 - Duck's worry: sound effects can sound hokey and cheesy. So: ONE signature sting, used the same way every time. No stock effects (air horns, laugh tracks, cartoon boings).
@@ -82,8 +91,15 @@ Source of truth for these rules: Duck's own decisions, most recently `docs/HANDO
 ### Later: listener submissions
 - If enough listeners send in stories, do special episodes, about half an hour, where Duck reads submitted stories, under a slightly different title: "Defacing the Music: [something]". Name not chosen yet. Options: "Local Opener" (Claude's top pick), "Dive Bar Edition", "Basement Show", "Open Mic Night", "Battle of the Bands", "Incident Reports", "Complaints Department".
 
-### Recording order (suggested, not locked)
-- Eps 1 to 3 as planned, then Disco Demolition, then the Dave Matthews bus (two Chicago stories early, easiest for Duck to riff on).
+### Launch order (Nov 14 evening; Duck: "that's all very good and smart. I like that.")
+- Duck wants two or three episodes finished and posted before he really promotes, so people land on something that looks like a real, running show. Episode 1 has to capture as many people as possible.
+- **Ep 1: Ozzy** (most famous story, fits the pitch: everybody knows the bat, almost nobody knows the dove; Ozzy died in 2025 so people still search for him). **Ep 2: Woodstock '99** (younger crowd from the documentaries). **Ep 3: Disco Demolition** (hometown, goofy, no tragedy at the center). **Ep 4: Keith Moon** (great, but skews older). **Jerry Lee at Graceland: top five.** That spreads 80s / 90s / 70s and metal / nu-metal / a Chicago baseball riot.
+- The numbers in "Basics" above (Ep 1 Keith Moon, Ep 2 Woodstock, Ep 3 Ozzy) are the OLD order and the seed keys still use them (`episode-01` = Keith Moon, `episode-03` = Ozzy). Don't renumber anything until Duck answers under "For Dillon" whether anything is already recorded under the old numbers. Scripts never say an episode number, so the order can change without editing them.
+- If he asks for more Dollop-energy picks after those: Jerry Lee, Fyre, the Dave Matthews bus.
+
+### Special episode formats
+- **Encore:** Duck's name for any follow-up episode on a story he's already done.
+- **Guest tells Duck a wild story** (like The Dollop's "Reverse Dollop"): Duck narrowed the name to **B-Side** (Claude's pick: flipping the record is the reversal; "Defacing the Music: B-Side with [guest]") or **Mic Swap**. Final pick is his.
 
 ## Cutaway images and Sources & Credits pages
 - Every shipped script gets `lib/sources/<seed>.json` (`{"sources": [{"title", "publisher", "url"}]}`, real titles, built from `research/<seed>.notes.md`) and `lib/cutaways/<seed>.json` (5 to 10 cutaway pictures).

@@ -15,7 +15,7 @@ const DTM_SEEDS = [
   'story-fyre-festival'         => ['', 'Due To a Cheese Sandwich', 'Who Sold Them Paradise?'],
   'story-milli-vanilli'         => ['', 'Due To a Skipping Track', 'Who Let the Tape Run?'],
   'story-sex-pistols-grundy'    => ['', 'Due To Language', 'Who Dared the Sex Pistols?'],
-  'story-jerry-lee-graceland'   => ['', 'Due To an Unannounced Visitor', 'Who Let Jerry Lee Drive to Graceland?'],
+  'story-jerry-lee-graceland'   => ['', 'Due To an Unannounced Visitor', 'Who Let Jerry Lee Back to Graceland?'],
   'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
   'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
   'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
@@ -37,6 +37,11 @@ const DTM_SEED_OLD = [
   'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384'],
   'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa'],
   'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b'],
+];
+
+// Earlier shipped subtitles. When an unedited seed is upgraded and its subtitle is still one of these, it gets the new one.
+const DTM_SEED_OLD_SUBTITLES = [
+  'story-jerry-lee-graceland' => ['Who Let Jerry Lee Drive to Graceland?'],
 ];
 
 // Which seed a script row came from. New rows carry 'seed'; older rows are matched by their episode number.
@@ -68,6 +73,7 @@ function dtm_upgrade_seeds(): void {
         if (!dtm_row_is_seed($s, $key) || !dtm_body_matches((string)$s['body'], $old)) continue;
         $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
+        if (in_array((string)($s['subtitle'] ?? ''), DTM_SEED_OLD_SUBTITLES[$key] ?? [], true)) $s['subtitle'] = DTM_SEEDS[$key][2];
       }
     }
     return $list;
