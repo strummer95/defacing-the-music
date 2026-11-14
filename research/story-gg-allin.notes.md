@@ -29,3 +29,22 @@ Research note: direct page fetches were blocked in this session, so facts were c
 - Name of the apartment host (John Handley, fan-wiki only) and exact address: inconsistent, left out.
 - Phillips' budget (~$12,000): single-source, left out.
 - No explicit drug-use glamor; death given one plain line plus context.
+
+## Nov 14 rework: named bookers + rabbit-hole details (web-search summaries; austinchronicle.com fetch blocked)
+- Cavity Club, 615 Red River, Austin: co-founded by Staryn Wagner with Dave Herman (also spelled Hermann) and Jimmy Bradshaw, converted the old Zendik Farms location in 1991. Wagner met GG two years before the show when a roommate repaired GG's tour vehicle; still sings songs from the 1988 "Hated in the Nation" cassette; spent weeks prepping the club so nothing shatterable could be thrown by performer or audience; "the maximum we ever charged was $5", never paid guarantees. https://www.austinchronicle.com/music/2022-02-18/30-years-ago-gg-allin-cleared-austins-scuzziest-punk-venue-in-24-minutes/ ; https://www.texasstandard.org/stories/texas-music-history-cavity-club-closes-austin/
+- Maximum RocknRoll ads boasted GG's then-$100 guarantee; club damages frequently ran several times that (Austin Chronicle 2022). Same URL.
+- Arrest report (Austin Chronicle reprint): Mace in the crowd; Allin asked why police Maced him; officer told him it wasn't police, it was the crowd, APD doesn't carry Mace. Allin said [his onstage conduct] was part of his act and the club manager knew when he booked the band. Warrant out of Flint, Mich., to revoke probation. "So the Cavity Club bust was the end of the tour." https://www.austinchronicle.com/music/2001-01-26/80354/ ; https://www.austinchronicle.com/music/dead-shots-11707989/ ; https://www.grunge.com/775617/the-foul-reason-gg-allin-was-arrested-in-austin/
+- Cavity Club closed Feb 20, 1993, last show by Pork. https://www.texasstandard.org/stories/texas-music-history-cavity-club-closes-austin/
+- Gas Station / Space 2B, Avenue B and E. 2nd St (194 E 2nd): former gas station turned junk-metal sculpture yard and art space; curator Ruben Garcia secured the lease; sculptor Linus Coraggio ran it for most of its life; studios, welding facilities, performance space; evicted mid-90s. Coraggio to NYT (Sept 24, 1995): one of the last venues for unusual art work, alternative parties and experimentation. Who booked GG's show there: not found. https://en.wikipedia.org/wiki/Linus_Coraggio ; https://untappedcities.com/2017/12/18/video-takes-you-inside-nycs-the-gas-station-east-villages-lost-post-apocalyptic-art-space/ ; https://linuscoraggio.art/blogs/press-breaks/14616551-new-york-times-09-24-95
+- Talk shows: Geraldo 1992 (one listing: episode on "obscene art"); Jerry Springer, May 5, 1993, episode framed around a father trying to keep his teenage daughter away from GG's music; Jane Whitney 1993 (June or July 16; dates conflict), his last TV interview, where he said he'd take fans with him when he killed himself onstage. Producers' names not found; script names the hosts. https://faroutmagazine.co.uk/when-gg-allin-appeared-on-the-jerry-springer-show/ ; https://www.imdb.com/title/tt0615286 ; https://davesstrangeworld.com/tag/gg-allin ; https://severed-cinema.com/gg-allin-talk-show-appearances-review/ ; https://en.wikipedia.org/wiki/GG_Allin
+- Writer Tom DiNardo told the Daily News about the 80-100 punks and the cab (already in clipping). https://www.oocities.org/ekx001/MG/DN300693MG.html
+- Funeral: buried with a bottle of Jim Beam and a microphone (multiple secondary); Merle put headphones on him playing "The Suicide Sessions" (one UK source, script says "one account"). https://www.loudersound.com/features/gg-allin-the-gruesome-life-and-tragic-death-of-the-most-shocking-man-in-music ; https://rpmonline.co.uk/?p=6356
+
+### That Guy verdict (reworked)
+- Named bookers (Wagner, the Gas Station, the three talk-show hosts' shows) as suspects; Wagner treated fairly (did homework, took the glass out). Verdict: GG Allin himself. Removed "whole office full of guys".
+
+### Rework: left out
+- Vice / Johnny Puke account that the Gas Station promoter supplied heroin: one firsthand-style claim against an unnamed person, drug detail; left out.
+- GG on Springer saying his pay only covered hospital bills and jail fines: TV Tropes only, left out.
+- Funeral body details (unwashed, items placed in mouth): gross-out, left out.
+- "24 minutes and 51 seconds" set length: Spanish-language source only, left out.
