@@ -116,6 +116,19 @@
    "width": 1920,
    "height": 1311,
    "attribution_required": "true"
+  },
+  {
+   "file": "10-graceland-house.jpg",
+   "title": "Graceland, where Elvis stayed upstairs",
+   "commons_title": "Graceland (34329661300).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Graceland_(34329661300).jpg",
+   "author": "Brian Crawford from Oak Park, IL, USA",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Graceland_%2834329661300%29.jpg/1920px-Graceland_%2834329661300%29.jpg",
+   "width": 1920,
+   "height": 1240,
+   "attribution_required": "true"
   }
  ]
 }
