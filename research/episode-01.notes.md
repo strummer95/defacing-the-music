@@ -22,8 +22,30 @@ Research method: WebSearch only (WebFetch could not reach outside hosts in this 
 - Bette Davis fainting into Mickey Rooney's arms backstage: reported in retellings; one article says the Smothers Brothers themselves have denied it. The script already frames it as a legend, which is right: https://www.slashfilm.com/1545384/the-who-60s-tv-explosion-the-smothers-brothers-comedy-hour
 - "Ten times" the normal flash powder: one account. The script attributes it to "one account", which is fine.
 
+## Nov 14 cold-open audit: fact fixes in THE BOOM
+- Blast threw Moon off the drum riser and cymbal shrapnel cut his arm: Rolling Stone's "The Kids Are Alright: Fifteen Years of The Who" (search summary only), /Film says "blown off the drum stand". Script now frames the riser as "the way it usually gets told", states shrapnel in his arm as fact (History.com), and the cymbal as "some versions say": https://www.rollingstone.com/music/music-news/the-kids-are-alright-fifteen-years-of-the-who-238404/ , https://www.slashfilm.com/1545384/the-who-60s-tv-explosion-the-smothers-brothers-comedy-hour
+- Moon can be heard yelling in pain afterward on the tape: https://faroutmagazine.co.uk/who-us-tv-debut-smothers-brothers-1967-townshend-moon-daltrey-entwistle/
+- Footage shows the heads and hoops blown clean off the bass drum: https://reverb.com/news/keith-moon-and-his-pictures-of-lily-drum-kit
+- "The camera shakes": still no source; cut.
+- Producer Allan Blye's "powder puff" rehearsal charge and his request for a bigger effect (already in key facts above) now used in THE SETUP and THAT GUY.
+- Moon's 21st really was Aug 23, 1967 (born Aug 23, 1946); script no longer says "or says he is".
+- Some sources (Far Out, Matthew Dicks) give other amounts ("three times", "double"); the script still attributes "ten times" to "one account".
+
 ## Could NOT verify (flag for Duck)
-- "A piece of cymbal slices his arm open": sources say shrapnel in Moon's arm; the specific cymbal fragment detail turned up in retellings but not in a source I could confirm.
-- "Keith gets knocked backward off his riser" and "the camera shakes": consistent with the footage descriptions but not stated in a source I read.
+- Cymbal as the specific source of the shrapnel: only in retellings and a Rolling Stone summary; framed as "some versions say".
+- Moon thrown off the riser: in Rolling Stone and /Film summaries, not confirmed from a full read; framed as "the way it usually gets told".
 - The "Ohio kid in a station wagon" bit is clearly a hypothetical, fine as written.
 - Whether the explosion knocked the broadcast off the air "momentarily" (History.com says so) does not matter to the script, which never claims it.
+
+## Nov 14 cleanup pass: taping-day eyewitness moments added (WebSearch summaries only; hollywoodreporter.com, loudersound.com and bestclassicbands.com were not reachable for full reads)
+- Townshend, VH1 interview (as quoted by Rolling Stone): the Smothers Brothers had a "fairly radical" show and "bravely asked us if we would destroy our instruments"; also "It set my hair alight." Used in THE SMOTHERS BROTHERS and THE BOOM: https://www.rollingstone.com/music/news/flashback-the-who-blow-up-smothers-brothers-in-primetime-20160304
+- Tommy Smothers, Hollywood Reporter oral history (Marc Freeman, Nov 25 2017, "'The Smothers Brothers Comedy Hour' at 50: The Rise and Fall of a Groundbreaking Variety Show"): the bit was supposed to end with Townshend smashing his guitar; "there was shrapnel everywhere"; he thought there were going to be dead bodies; because he was looking around panicked, people assumed it wasn't part of the act; "a real, authentic moment." Used in THE GUITAR (the script now says the guitar smash was the planned bit and the bomb was not): https://www.hollywoodreporter.com/live-feed/smothers-brothers-comedy-hour-oral-history-1060153
+- Dick Smothers, same oral history: he stood in the wings with Bette Davis watching; "The rumor was that she fainted when she heard the blast"; "Bette Davis could see an atom bomb go off and wouldn't faint. I don't even know if she blinked." Tommy Smothers has also denied the faint (/Film). Bette Davis and Mickey Rooney were on the bill that week. Used in THE LEGEND, which now calls the faint debunked by the two hosts: https://www.hollywoodreporter.com/live-feed/smothers-brothers-comedy-hour-oral-history-1060153 , https://www.slashfilm.com/1545384/the-who-60s-tv-explosion-the-smothers-brothers-comedy-hour , https://www.loudersound.com/features/the-who-the-smothers-brothers
+- One account puts the fainting exaggeration down to Moon retelling it years later (search summary; framed as "some people think" in a FILL).
+- Roger Daltrey, Ultimate Classic Rock 2024 interview: "It blew me flat on my face." Used in THE BOOM: https://ultimateclassicrock.com/roger-daltrey-interview-2024/
+- The blast also took out a camera and the studio's monitors (Rolling Stone, The Kids Are Alright summary; framed "reportedly"): https://www.rollingstone.com/music/music-news/the-kids-are-alright-fifteen-years-of-the-who-238404/
+- Entwistle barely flinching and glancing back in the footage (Louder description; viewer can check it on the clip): https://www.loudersound.com/features/the-who-the-smothers-brothers
+
+## Left out (Nov 14 pass)
+- One retelling (search summary, source unclear, possibly matthewdicks.com or Uproxx) names the stage manager as "Bob LeHendro" and says he loaded the charge without knowing Moon had already added more ("three times the firepower"). A search for the name returned nothing else, so it stays out of the script; never name a crew member as That Guy on one unclear source.
+- Fixed: cold open no longer says Tommy planned to play the guitar later (the smash was the planned bit, per Tommy).

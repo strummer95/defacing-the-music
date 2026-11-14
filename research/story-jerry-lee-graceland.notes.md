@@ -10,7 +10,7 @@ Research method: WebSearch only (WebFetch blocked for outside hosts in this sess
 - Vester Presley said Elvis told staff to "ignore it"; other version says Elvis said call police: https://www.elvis.com.au/presley/jerry-lee-lewis-arrested-at-the-gates-of-graceland.shtml
 - Elvis died at Graceland Aug 16, 1977, age 42: https://www.nickiswift.com/908778/what-happened-to-elvis-presleys-fiancee-ginger-alden/
 - Ginger Alden met Elvis Nov 19, 1976 (her account); Linda Thompson relationship ending around Nov/Dec 1976: https://www.elvis.com.au/presley/interview-with-ginger-alden.shtml , https://www.cheatsheet.com/news/linda-thompson-once-admitted-probably-extended-elvis-presley-life-few-years.html
-- Sept 1976 (day before 41st birthday), shot bassist Butch Owens in the chest with a .357 while aiming at a Coke bottle; said it was an accident, didn't know it was loaded; Owens survived and sued: https://www.rollingstone.com/music/music-news/the-devil-and-jerry-lee-lewis-79638/4/ , https://countryreunionmusic.com/1976-the-killers-bad-bad-year/
+- RESOLVED (Nov 14 rework): the shooting was ON his 41st birthday, Sept 29, 1976 (AOL/Parade dates it Sept 29; Saving Country Music calls it his 41st birthday). "Day before" in older notes was wrong. About 1:35 PM at the Collierville home; Norman "Butch" Owens, 31, came by (with his wife) to drop off a copy of the album "Country Class"; .357 Magnum; hit in the chest; about a month in hospital. Lewis told officers they were playing with a gun he didn't know was loaded; Owens's 1977 $400,000 lawsuit says Lewis shot at a Coca-Cola bottle about three feet from him; charged with firing a gun inside city limits (misdemeanor): https://savingcountrymusic.com/50-years-ago-jerry-lee-lewis-shoots-his-bass-player/ , https://www.aol.com/lifestyle/controversial-rock-icon-accidentally-shot-150940619.html , https://www.thecurrent.org/feature/2016/09/23/today-in-music-history-jerry-lee-lewis-accidentally-shot-norman-owens , https://countryreunionmusic.com/1976-the-killers-bad-bad-year/
 - Born Sept 29, 1935, Ferriday LA; father Elmo mortgaged the home for $300 for a rebuilt upright piano; Assembly of God upbringing: https://www.countrymusichalloffame.org/hall-of-fame/jerry-lee-lewis , https://jerryleelewis.com/?p=136
 - Cousins Mickey Gilley and Jimmy Swaggart: https://en.wikipedia.org/wiki/Jerry_Lee_Lewis
 - Expelled from Bible school after boogie-woogie "My God Is Real" at an assembly; dean expelled him the next morning: https://en.wikipedia.org/wiki/Jerry_Lee_Lewis
@@ -19,17 +19,46 @@ Research method: WebSearch only (WebFetch blocked for outside hosts in this sess
 - Died 2022 at 87: https://www.rollingstone.com/music/music-news/jerry-lee-lewis-dead-1234616040/
 - Rock Hall inaugural class 1986 with Elvis; late-60s country comeback: general, well established.
 
+## Added in the Nov 14 rework (Duck's spec, BOARD #7)
+Intro / who he is:
+- "Whole Lotta Shakin' Goin' On": released April 15, 1957 on Sun; No. 3 pop, No. 1 country and No. 1 R&B: https://en.wikipedia.org/wiki/Whole_Lotta_Shakin%27_Goin_On , https://americansongwriter.com/on-this-day-in-1957-jerry-lee-lewis-released-a-controversial-song-that-became-his-first-no-1/
+- First national TV: The Steve Allen Show, July 28, 1957; kicked the bench; NPR describes Steve Allen throwing the bench back: https://www.thecurrent.org/feature/2016/07/27/today-in-music-history-jerry-lee-lewis-made-his-tv-debut-on-the-steve-allen-show , https://www.npr.org/2007/01/22/6254523/jerry-lee-lewis-rocks-last-man-standing
+- Look/act: blond hair falling in his face, played standing, kicked the bench, pounded keys with his heel, played with feet, elbows, backside: https://www.britannica.com/biography/Jerry-Lee-Lewis , https://www.biography.com/musician/jerry-lee-lewis
+- "The Killer": origin disputed; obituary on his page: schoolroom fight in Ferriday, tried to choke a grown man with his necktie; alt: he called everyone "Killer" as a kid: https://americansongwriter.com/jerry-lee-lewis-nickname-the-killer-had-nothing-to-do-with-his-playing/ , https://www.iheart.com/content/2022-10-28-do-you-know-how-jerry-lee-lewis-got-his-killer-nickname/
+- "Great Balls of Fire!" (1989), Dennis Quaid as Lewis, Winona Ryder as Myra, based on Myra Lewis and Murray Silver's book; Lewis re-recorded his hits for the soundtrack; credits say piano and vocals by "The Killer himself": https://en.wikipedia.org/wiki/Great_Balls_of_Fire!_(film) , https://catalog.afi.com/Catalog/moviedetails/58098
+- Bible school: Southwest(ern) Bible Institute, Waxahachie, Texas, mother enrolled him; lasted about three months (Reuters factbox); renamed Nelson University Aug 1, 2024: https://en.wikipedia.org/wiki/Jerry_Lee_Lewis , https://malaysia.news.yahoo.com/factbox-eight-facts-rock-pioneer-173121219.html , https://en.wikipedia.org/wiki/Southwestern_Assemblies_of_God_University
+Timeline (corrects "all within a few hours"):
+- Early hours Nov 22, 1976: first visit in the Rolls-Royce Silver Shadow, guard says Elvis is asleep, turned away. About 9:30 AM Nov 22: flips the Rolls on a curve at Peterson Lake Road and Powell Road, Collierville; cited DWI, reckless driving, no license; breathalyzer reportedly barely registered (one account: passed): https://bestclassicbands.com/jerry-lee-lewis-arrested-graceland-11-23-1555/ , https://desotoparishjournal.com/2022/11/04/the-gates-of-graceland/ , https://www.thethings.com/jerry-lee-lewis-arrested-in-the-1970s-at-graceland/
+- Bragg (via Memphis Flyer review): Jaren Pate (his wife) was in the car during the crash: https://www.memphisflyer.com/rick-braggs-jerry-lee-lewis-his-own-story/
+- That night, less than 12 hours after the crash, at the Vapors club in Memphis; leaves about 2:30 AM: https://bestclassicbands.com/jerry-lee-lewis-arrested-graceland-11-23-1555/
+- Gun: Lewis to Bragg, the Vapors owner "give it to me... A .38 derringer" (quoted on a fan wiki citing Bragg): https://classicrock.fandom.com/wiki/Jerry_Lee_Lewis ; bodyguard Sam Thompson's version: gift from a Mississippi sheriff: https://www.elvisinfonet.com/interview_sam_thompson.html
+- Linda Gail Lewis: Elvis was feeling low and called the Vapors: https://elvisinfonet.com/spotlight_jrerryleelewis.html
+- Second visit ~2:50 to 3 AM Nov 23, new (white) 1976 Lincoln Continental; one account says it bumped/rammed the gate: https://bestclassicbands.com/jerry-lee-lewis-arrested-graceland-11-23-1555/
+- Guard Harold Loyd (also spelled Lloyd; one source says Robert Lloyd): Lewis "sittin' in his car down here outside the gate, wavin' a derringer pistol and raisin' hell"; Elvis (per Loyd's retelling): call the police, "lock his butt up and throw the goddamn key away": https://www.elvis.com.au/presley/jerry-lee-lewis-arrested-at-the-gates-of-graceland.shtml , https://ultimateclassicrock.com/jerry-lee-lewis-shoot-elvis-presley/
+- Fan club president Kay Martin insisted Loyd never told Elvis Lewis was there: same Elvis Australia page.
+- Patrolman B.J. Kirkpatrick found him in the car; chrome-plated over-under .38 derringer on his knee, "cocked and fully loaded"; another officer recalled it wedged between knee and door, falling to the floorboard when the door opened: https://jacksonparishjournal.com/2022/11/01/the-gates-of-graceland/ , http://www.elvispresleyfansofnashville.com/elvis-presley-news/37th-anniversary-of-jerry-lee-lewis-arrest-at-graceland
+- Arrested 3:07 AM, released on $250 bond about three hours later (Brad Dison column citing the Memphis Press-Scimitar, Nov 23, 1976): https://lincolnparishjournal.com/2022/11/03/the-gates-of-graceland/
+- Champagne: officer's report says the empty bottle was thrown through the closed window, facial cut; Lewis: drinking a lot of champagne, doesn't like champagne, "it made me a little wild": https://ultimateclassicrock.com/jerry-lee-lewis-shoot-elvis-presley/ , https://710keel.com/jerry-lee-lewis-shoot-elvis-presley/ . WHICH window: not found in any source. Script says so and doesn't name it.
+- Court: continued six times; trial May 3, 1977, Memphis City Court; Lewis testified he'd been on medication, forgot the pistol was in the car, was never screaming, Elvis called him; Judge Albert Boyd: not "in control of himself at the time, but transporting a pistol doesn't mean he had intentions of going armed"; acquitted: https://countryreunionmusic.com/1976-the-killers-bad-bad-year/
+- Bragg book: two summers of interviews; Lewis: "He was a coward. He hurt me. That did." (about Elvis): https://mikalggilmore.substack.com/p/night-beat-post-223-jerry-lee-lewis , https://www.city-journal.org/article/whole-lotta-killer
+- Springsteen sidebar: April 29/30, 1976, after a Memphis show, ~3 AM cab with Steve Van Zandt, climbed the wall, ran up the driveway, stopped by security, told Elvis was away (Lake Tahoe per Springsteen Center, Las Vegas in Bruce's own telling), asked the guard to tell Elvis he came by: https://springsteencenter.org/curatorial-corner-springsteen-at-graceland/ , https://americansongwriter.com/on-this-day-in-1976-bruce-springsteen-scaled-a-wall-at-graceland-while-trying-to-meet-elvis-presley/
+- Country Music Hall of Fame induction Oct 16, 2022; couldn't attend on doctor's advice; Kris Kristofferson and Hank Williams Jr. there for him; died Oct 28, 2022: https://abcnews4.com/news/entertainment/country-music-hall-of-fame-inducts-early-rock-pioneer-jerry-lee-lewis-the-killer-bluegrass-performer-keith-whitley-nashville-tennessee-garth-brooks-mickey-guyton-chris-isaak-kenny-chesney-miranda-lambert-alabama
+
 ## "Story goes" pile
 - Elvis invited him over by phone: Lewis's claim only, never confirmed or denied.
 - Elvis watched on a closed-circuit monitor: reported, unconfirmed.
 - Lewis bumping/ramming the gate with the car: one account only.
 - Setting his piano on fire and saying "Follow that" to Chuck Berry: classic legend, never pinned down, explicitly framed as legend.
-- Exactly what Elvis told staff (ignore it vs call police vs lock him up): presented as split accounts.
+- Exactly what Elvis told staff (ignore it vs call police vs "lock his butt up"): presented as split accounts; Loyd's quote attributed to Loyd's retelling.
+- Who ordered the guards not to let him in: never pinned down; script says so.
+- Steve Allen throwing the bench back: attributed to NPR.
+- The Vapors owner vs. a Mississippi sheriff as the gun's source: both given.
 
 ## Left out
 - The "assassination attempt" framing: tabloid-level; script says he "never meant to shoot Elvis" per Lewis and doesn't claim intent.
-- School name/location (Southwestern Bible Institute, Waxahachie TX): not confirmed in results, so the script just says "Bible school".
-- His mother wanting him to be a preacher: not confirmed, softened to "the plan is church".
-- Origin of "The Killer" nickname: not found.
+- Outcome of Owens's $400,000 lawsuit: not found ($50,000 figure appears once, unverified). Script says it couldn't find out.
+- "The noise they heard must have been my tape player" (court testimony): appeared only in a search summary, no traceable source; left out.
+- "Wh-wh-what's that goddamn guy want?" (Elvis, stuttering): one secondhand account; left out in favor of the paraphrase.
+- Elvis "lock him up" per Rolling Stone 2022: seen only in a search summary; script uses Loyd's retelling instead.
 - Deaths of his sons: not researched, left out.
 - THE SERIOUS PART covers Butch Owens (shot) and Myra Gale Brown (13-year-old bride), since those are real people who were hurt. Nobody but Lewis was hurt at the gate.

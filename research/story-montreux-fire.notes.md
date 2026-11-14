@@ -35,3 +35,41 @@ Research note: this session could not fetch pages directly (wikipedia.org, npr.o
 - "Armed police" at the Pavilion: not supported, left out. Exact time of the police visit (one account says ~2am): script says "middle of the night."
 - The value of the Mothers' lost gear: no source found.
 - Mattresses on the hotel walls: unverified, removed.
+
+## Added Nov 14 (voice session pass: "How did this get made" pillar + Dollop details)
+Main new source: Spearpoint and Clark, "Fire in the Sky: A Look Back at the Montreux Casino Fire", SFPE Europe Digital issue 25 (fire engineers, OFR Consultants), read in full from the PDF: https://www.sfpe.org/publications/periodicals/sfpeeuropedigital/sfpeeurope25/europeissue25feature5 . It cites Journal de Montreux (Dec 1971), Feuille d'Avis de Lausanne and Nouvelle Revue de Lausanne (both 6 Dec 1971), The Real Frank Zappa Book (1989), Zappa's 1971 French TV interview, SRF (2015), Peter Schneider's and Alain Rieder's eyewitness blogs, notreHistoire.ch (2013).
+From SFPE unless noted:
+- Kursaal opened 1881 (casino, restaurant, winter garden, theatre); terrace 1905-18; Lido dance hall; pool 1957; Hourglass (le Sablier) hall 1969.
+- Ceiling reportedly wood "with tropical island decors" (a 2021 secondary source); other reports: curtains, papier-mache Christmas decorations, rattan; the authors could not see rattan/bamboo in photos.
+- Hourglass emblem / "hydraulic clock": 1972 tribunal; claim of 4,500 liters of paraffin vs casino lawyer's 3,000 liters of mineral oil; contribution to the fire unclear.
+- Scaffolding from ongoing renovations "burnt like torches".
+- Chairs removed, audience sat on the floor (Schneider; Rieder: standing concerts not yet the fashion).
+- Audience: ~2,000 (papers); Zappa: 2,500 to 3,000 "well over capacity"; one account up to 4,000.
+- Show started ~2 pm; security staff, tourist-office volunteers and four firefighters on duty. Fire started 16:15 to 16:20.
+- Ignition accounts: a Deep Purple member: flare from behind them into the rafters; eyewitness (Feuille d'Avis de Lausanne): young man near her fired a small pistol at the start of the concert and again later, starting the ceiling fire; Schneider: a boy throwing lit matches at the low ceiling; Nouvelle Revue: fire started in an electric canvas pendant lamp near a bamboo ceiling (short circuit). Authors' consensus: a pyrotechnic device, not proven.
+- Rieder: at first the fire was very small, thought it would be put out. Schneider: "Because I was very stoned it looked beautiful", thought it was part of the show.
+- Zappa (French TV): a guy ran up with an extinguisher, fire came out of the ceiling and part of the roof fell. An on-duty firefighter tried a hose reel unsuccessfully. A commentator: Nobs's hose jet barely reached 2 m because the pressure had been reduced so the coffee machine wouldn't explode (single anecdotal source: framed "the story goes").
+- Zappa on the PA: "Fire! If you'd kindly move calmly toward the exit, ladies and gentlemen. Calmly."
+- Exits: an eyewitness says all emergency exits were opened quickly by security and young hotel/casino staff; Zappa (French TV) says an exit was locked and had to be banged down; Zappa's book: "Since more kids were outside, trying to get in, the organizers had cleverly chained the doors shut." Script gives both sides.
+- Windows: Rieder: people opened curtains over floor-to-ceiling windows by the stage, some broke them with chairs; Zappa: a roadie smashed the big window with an equipment case; Nobs said Zappa smashed it with his guitar (Zappa never claimed it); Schneider: a firefighter broke windows with an axe. Drop of about 10 to 15 ft / ~3 m; Rieder hung from a ledge and dropped into the grass; one witness went back for belongings before jumping.
+- Schneider: no chairs + daylight + everyone stoned = orderly exit.
+- Tourist office: everyone out in 3.5 minutes; Nobs: about five. Fire brigade alarm 16:22, first appliances 3.5 minutes later as the last audience left by the main door; about 80 firefighters; water system empty after two hours, then water taken from the lake; garage saved, theatre lost; damage 12 to 15 million francs.
+- Zappa: roadies last out, blown out by an explosion from the heating system; three people to hospital incl. one roadie; no deaths.
+- Michel Ferla on Nobs's team: "We crawled through the burning building on all fours, at that time a lot of marijuana was smoked. We wanted to be sure that no one had fallen asleep."
+- The person identified as the flare shooter fled and was never apprehended. Also https://darrensmusicblog.com/2021/01/22/deep-purples-smoke-on-the-water-so-who-actually-was-the-stupid-with-a-flare-gun/ (police "wanted" operation, never located) and the researchgate version of the SFPE paper (rumored to have gone to South America).
+Other new facts:
+- Gillan saw two flares fired by someone behind him: https://americansongwriter.com/on-this-day-in-1971-a-fan-fired-flare-gun-ended-a-frank-zappa-concert-early-and-inspired-this-classic-rock-hit/ . Nobs said Gillan told him the shooter was right next to him and fired before he could be stopped (French-language Montreux local article, via search summary).
+- Gillan got out, then went back in for his girlfriend's jacket; Nobs: "typical of him": https://www.blick.ch/fr/suisse/smoke-on-the-water-bis-le-casino-de-montreux-evacue-50-ans-apres-le-hit-de-deep-purple-id16849151.html (citing RTL). Framed "the story goes".
+- The show recording was released officially as "Swiss Cheese/Fire!" in Beat the Boots II (Rhino, 1992); Zappa can be heard asking people to stay calm and head for the exits: https://en.wikipedia.org/wiki/Beat_the_Boots!_II , https://globalia.net/donlope/fz/notes/swiss_cheese_fire.html
+- Why Purple were in Montreux: planned US dates at end of 1971 fell through when Gillan got ill (Jon Lord); one account adds an unusual setting and avoiding UK tax: https://www.loudersound.com/features/deep-purple-making-of-machine-head , https://en.wikipedia.org/wiki/Machine_Head_(album)
+- Grand Hotel: mobile parked at the main entrance; band at the end of a corridor off the lobby where it made a T; about a hundred mattresses (Paice); playbacks so awkward they mostly stopped listening to them; "Smoke On The Water only made it onto the album as filler" (Louder headline): https://www.loudersound.com/features/deep-purple-making-of-machine-head , https://faroutmagazine.co.uk/album-deep-purple-recorded-entirely-in-a-hotel/ . (This replaces the earlier "mattresses unverified" note.)
+
+### Decisions (pillar 2) as written
+Shooter fires once early (one witness) and nobody stops him; fires again. Building side: wooden/decorated ceiling, oil-filled hourglass, scaffolding, chairs out, over capacity (Zappa), doors chained against gate-crashers (Zappa; disputed by an eyewitness), hose pressure turned down for the coffee machine (anecdote). Better decisions: Zappa's calm PA, roadie with the equipment case, firefighters' axe, Nobs and Ferla's crawl-through search. Purple: Gillan's illness puts them in Montreux; Grand Hotel corridor with mattresses, no playbacks. THAT GUY verdict stays the flare shooter, with the building as a named runner-up and the unknowns stated plainly.
+
+### Still not settled / left out
+- Shooter's name and nationality: police named a suspect, never caught, never charged; script does not name him.
+- Exactly what was fired (flare, bottle rocket/Roman candle, matches, or an electrical fault).
+- Whether doors were chained: Zappa vs one eyewitness; both given.
+- The coffee-machine hose detail: one unnamed commentator only; framed as "the story goes".
+- The value of the Mothers' gear (one unsourced 600,000 francs figure): left out.
