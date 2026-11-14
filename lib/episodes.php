@@ -31,6 +31,14 @@ function dtm_episodes_bootstrap(): void {
     ];
     return $rows;
   });
+  // Fresh install: hook Episode 0 up to its shipped script so its Sources & Credits page works.
+  foreach (dtm_json_read('episodes.json') as $e) {
+    if ((string)$e['number'] !== '0' || $e['script_id'] !== '') continue;
+    foreach ($scripts as $s) if (($s['seed'] ?? '') === 'episode-00' && (string)$s['episode'] === '') {
+      dtm_json_update('episodes.json', function ($l) use ($s) { foreach ($l as &$x) if ((string)$x['number'] === '0' && $x['script_id'] === '') $x['script_id'] = $s['id']; return $l; });
+      dtm_script_set_episode($s['id'], '0');
+    }
+  }
 }
 
 function dtm_episodes(): array {

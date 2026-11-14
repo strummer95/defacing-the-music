@@ -1,6 +1,6 @@
 <?php
 // Episodes: numbered list with status, publish date, links, and the script behind each one.
-require __DIR__ . '/../lib/episodes.php';
+require __DIR__ . '/../lib/cutaways.php';
 $user = dtm_require_admin();
 $id = (string)($_GET['edit'] ?? '');
 $error = '';
@@ -73,9 +73,13 @@ dtm_page_start('Episodes', $user, true);
       <button type="submit" class="pull-btn bang">Save</button>
       <?php if ($c['script_id'] !== '' && isset($byId[$c['script_id']])): ?>
         <a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($c['script_id'])) ?>">Read script</a>
+        <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($c['script_id'])) ?>">Images</a>
       <?php endif; ?>
     </div>
   </form>
+  <h2 class="bang saved-h">Description line</h2>
+  <p>Paste this at the end of the YouTube, Spotify and Apple descriptions. It points to the <a href="<?= h(dtm_episode_page_path((string)$c['number'])) ?>" target="_blank" rel="noopener">public Sources &amp; Credits page</a><?= $c['script_id'] === '' ? ' (pick a script above, or the page stays empty)' : '' ?>.</p>
+  <?= dtm_copy_line(dtm_description_line((string)$c['number'])) ?>
   <form method="post" onsubmit="return confirm('Remove Episode <?= h($c['number']) ?>? Its script goes back to the library.')">
     <?= dtm_csrf_field() ?><input type="hidden" name="action" value="delete"><input type="hidden" name="id" value="<?= h($c['id']) ?>">
     <button type="submit" class="signout-btn bang">Remove episode</button>
@@ -94,7 +98,8 @@ dtm_page_start('Episodes', $user, true);
       <span class="ttl"><?= h($e['title']) ?><?php if ($e['subtitle'] !== ''): ?><em class="sub"><?= h($e['subtitle']) ?></em><?php endif; ?>
         <em class="meta"><?= $badge($e['status']) ?><?= $e['date'] !== '' ? ' ' . h(date('M j, Y', strtotime($e['date']))) : '' ?></em></span>
       <span class="acts">
-        <?php if ($s): ?><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a><?php endif; ?>
+        <?php if ($s): ?><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a>
+        <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($s['id'])) ?>">Images</a><?php endif; ?>
         <?php if ($e['youtube'] !== ''): ?><a href="<?= h($e['youtube']) ?>" target="_blank" rel="noopener">YouTube</a><?php endif; ?>
         <a href="episodes.php?edit=<?= h(urlencode($e['id'])) ?>">Edit</a>
       </span>

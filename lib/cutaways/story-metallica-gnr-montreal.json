@@ -1,0 +1,121 @@
+{
+ "images": [
+  {
+   "file": "01-hetfield-1996.jpg",
+   "title": "James Hetfield with Metallica, 1996",
+   "commons_title": "James Hetfield - Cardiff 1996.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:James_Hetfield_-_Cardiff_1996.jpg",
+   "author": "Andrew King",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/James_Hetfield_-_Cardiff_1996.jpg/1920px-James_Hetfield_-_Cardiff_1996.jpg",
+   "width": 1920,
+   "height": 1128,
+   "attribution_required": "true"
+  },
+  {
+   "file": "02-axl-rose.jpg",
+   "title": "Axl Rose",
+   "commons_title": "Axl Rose sings in London 2022.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Axl_Rose_sings_in_London_2022.jpg",
+   "author": "Kreepin Deth",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Axl_Rose_sings_in_London_2022.jpg/1920px-Axl_Rose_sings_in_London_2022.jpg",
+   "width": 1920,
+   "height": 2560,
+   "attribution_required": "true"
+  },
+  {
+   "file": "03-jfk-airport.jpg",
+   "title": "JFK Airport from above, 1994",
+   "commons_title": "JFK Airport - USGS 8 April 1994.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:JFK_Airport_-_USGS_8_April_1994.jpg",
+   "author": "United States Geological Survey (USGS)",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/1/1b/JFK_Airport_-_USGS_8_April_1994.jpg",
+   "width": 1920,
+   "height": 1468,
+   "attribution_required": "false"
+  },
+  {
+   "file": "04-olympic-stadium.jpg",
+   "title": "Olympic Stadium, Montreal, the Big O",
+   "commons_title": "Aerial view of Olympic Stadium of Montreal.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Olympic_Stadium_of_Montreal.jpg",
+   "author": "Wilfredor",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Aerial_view_of_Olympic_Stadium_of_Montreal.jpg/1920px-Aerial_view_of_Olympic_Stadium_of_Montreal.jpg",
+   "width": 1920,
+   "height": 1142,
+   "attribution_required": "false"
+  },
+  {
+   "file": "05-cigarette.jpg",
+   "title": "A cigarette, the stadium payment plan",
+   "commons_title": "Cigarette in white ashtray.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Cigarette_in_white_ashtray.jpg",
+   "author": "© 2005 by Tomasz Sienicki [user: tsca, mail: tomasz.sienicki at gmail.com]",
+   "license": "CC BY 2.5",
+   "license_url": "https://creativecommons.org/licenses/by/2.5",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cigarette_in_white_ashtray.jpg",
+   "width": 1920,
+   "height": 1581,
+   "attribution_required": "true"
+  },
+  {
+   "file": "06-stage-pyro.jpg",
+   "title": "Stage pyro flames",
+   "commons_title": "Flames on stage by Rammstein (cropped).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Flames_on_stage_by_Rammstein_(cropped).jpg",
+   "author": "Mike Lawrence",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Flames_on_stage_by_Rammstein_%28cropped%29.jpg/1920px-Flames_on_stage_by_Rammstein_%28cropped%29.jpg",
+   "width": 1920,
+   "height": 1303,
+   "attribution_required": "true"
+  },
+  {
+   "file": "07-stadium-night.jpg",
+   "title": "Olympic Stadium at night",
+   "commons_title": "Le Stade Olympique de Montréal Nuit Arriere.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Le_Stade_Olympique_de_Montr%C3%A9al_Nuit_Arriere.jpg",
+   "author": "Acarpentier",
+   "license": "CC BY 3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Le_Stade_Olympique_de_Montr%C3%A9al_Nuit_Arriere.jpg/1920px-Le_Stade_Olympique_de_Montr%C3%A9al_Nuit_Arriere.jpg",
+   "width": 1920,
+   "height": 1430,
+   "attribution_required": "true"
+  },
+  {
+   "file": "08-montreal-police-car.jpg",
+   "title": "A Montreal police car, still upright",
+   "commons_title": "Chevrolet Impala Montreal police car.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Chevrolet_Impala_Montreal_police_car.jpg",
+   "author": "Jonalongnose",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Chevrolet_Impala_Montreal_police_car.jpg/1920px-Chevrolet_Impala_Montreal_police_car.jpg",
+   "width": 1920,
+   "height": 1081,
+   "attribution_required": "true"
+  },
+  {
+   "file": "09-hetfield-2010.jpg",
+   "title": "James Hetfield, still playing, 2010",
+   "commons_title": "James Hetfield live in Ramat Gan stadium - Israel 2010.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:James_Hetfield_live_in_Ramat_Gan_stadium_-_Israel_2010.JPG",
+   "author": "Little Savage",
+   "license": "Public domain",
+   "license_url": "",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/James_Hetfield_live_in_Ramat_Gan_stadium_-_Israel_2010.JPG/1920px-James_Hetfield_live_in_Ramat_Gan_stadium_-_Israel_2010.JPG",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "false"
+  }
+ ]
+}

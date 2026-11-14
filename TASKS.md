@@ -25,6 +25,10 @@ Done (replaces the earlier PR #4, which should not be merged): admin > Scripts i
 "Make it an episode" gives a script the next number. admin > Episodes lists numbered episodes (planned/recorded/published,
 publish date, YouTube/Spotify links, notes, linked script). Public episode list on the home page is still hardcoded (next step).
 
+## [x] DTM-IMAGES-1: Cutaway images, public Sources & Credits pages, description line (BOARD note, Nov 14)
+Done: admin Images page per script (Commons pictures, commercial-safe licenses, cached by the server), `/ep/N` public pages with
+sources + image credits, copy-ready description line in admin > Episodes. PR: https://github.com/strummer95/defacing-the-music/pull/45
+
 ## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
 Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
 

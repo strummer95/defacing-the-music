@@ -85,6 +85,12 @@ Source of truth for these rules: Duck's own decisions, most recently `docs/HANDO
 ### Recording order (suggested, not locked)
 - Eps 1 to 3 as planned, then Disco Demolition, then the Dave Matthews bus (two Chicago stories early, easiest for Duck to riff on).
 
+## Cutaway images and Sources & Credits pages
+- Every shipped script gets `lib/sources/<seed>.json` (`{"sources": [{"title", "publisher", "url"}]}`, real titles, built from `research/<seed>.notes.md`) and `lib/cutaways/<seed>.json` (5 to 10 cutaway pictures).
+- Cutaways are Wikimedia Commons only, CC BY / CC BY-SA / CC0 / public domain (never NC or ND). Add them with `python3 -I tools/commons.py add <seed> "File:..." "Title" slug`, which checks the license and records the credit. Pictures are not in git: the server downloads each one from Wikimedia on first view (admin > Scripts > Images) and caches it in `uploads/cutaways/`.
+- Public page per episode: `defacingthemusic.com/ep/<number>` (`ep/index.php`, short link via `ep/.htaccess`): sources plus image credits. It exists once a script is on an episode. Descriptions carry one line, "Sources and credits: https://defacingthemusic.com/ep/N", with a Copy button in admin > Episodes.
+- Duck can hide shipped pictures, add his own (with credit) and add extra sources on the script edit page; that lives in `data/cutaways.json` and the script row.
+
 ## Google sign-in (shared across Dillon's sites)
 - One OAuth Web client for all projects (Google Cloud project `duck-andrabbit-co`, client `dnr-sites-signin`).
   Client ID (public): `189196968664-684fp4dk94n94hq26ovccm65450457b1.apps.googleusercontent.com`

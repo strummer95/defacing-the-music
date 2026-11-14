@@ -1,0 +1,6 @@
+# Short links for the public Sources & Credits pages: /ep/1 -> index.php?n=1
+RewriteEngine On
+RewriteBase /ep/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9]{1,4})/?$ index.php?n=$1 [L,QSA]

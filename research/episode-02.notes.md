@@ -1,0 +1,37 @@
+# Notes: episode-02 (Woodstock '99, Limp Bizkit, "Break Stuff")
+
+Research method: WebSearch only (WebFetch could not reach outside hosts in this session), so everything below comes from search-result summaries and snippets, not full page reads.
+
+## Key facts used, with sources
+- Woodstock '99 ran July 22 to 25, 1999, on the former Griffiss Air Force Base in Rome, New York; organizers included Michael Lang and John Scher: https://ultimateclassicrock.com/woodstock-99-riots/ , https://ebsco.com/research-starters/history/woodstock-1999-ends-violence
+- Tickets $150 in advance (about $180 at the gate); temperatures near 100 degrees; little shade on concrete and asphalt; hundreds treated for heat: https://ultimateclassicrock.com/woodstock-99-riots/ , https://www.grunge.com/194017/the-real-reason-woodstock-99-was-a-huge-failure
+- Water at $4 a bottle is the commonly cited figure (some sources give higher numbers); free water spigots were scarce: https://ultimateclassicrock.com/woodstock-99-riots/ , https://www.rollingstone.com/music/news/coachella-provided-an-antidote-to-woodstock-99s-hangover-19991011 (Coachella sold water at $2, "half the price charged at Woodstock")
+- Trench mouth reported among attendees: https://www.goodto.com/entertainment/woodstock-99-how-many--died-injuries-assault , https://www.yahoo.com/lifestyle/people-died-developed-world-war-172100987.html
+- Alanis Morissette played earlier Saturday; Durst's "mellow out ... Alanis Morissette" remark; "Break Stuff" during the Saturday Limp Bizkit set; people tore plywood off the walls and surfed on it; set included a cover of George Michael's "Faith"; Durst surfed the crowd on plywood: https://www.radiox.co.uk/features/what-fred-durst-said-about-limp-bizkit-woodstock-99/ , https://loudwire.com/limp-bizkit-woodstock-99-setlist/
+- Durst has blamed organizers and said he didn't cause it; Scher has blamed Durst: https://news.yahoo.com/fred-durst-no-woodstock-99-235457178.html
+- Anti-violence group PAX handed out candles for a vigil (meant for "Under the Bridge"); they were used to start bonfires. RHCP played Hendrix's "Fire" as a tribute requested by Hendrix's sister: https://news.yahoo.com/when-the-red-hot-chili-peppers-played-fire-at-woodstock-99-the-timing-of-it-wasnt-so-great-194105669.html , https://ultimateclassicrock.com/red-hot-chili-peppers-woodstock-99/
+- Sunday night riot: vendors looted, an ATM ripped open, trucks/trailers burned, state troopers in riot gear cleared the field, 44 arrests reported: https://ebsco.com/research-starters/history/woodstock-1999-ends-violence , https://www.cbsnews.com/news/woodstock-99-ends-in-chaos
+- Deaths (MTV counted three): David DeRosia, 24, of Waterbury CT, collapsed during Metallica's Saturday set and died of hyperthermia; a 44-year-old Hyannis, Mass. man with a heart condition died in the campground on Friday; Tara Weaver, 28, was hit by a car (see flag below): https://www.mtv.com/news/516294/woodstock-99-death-toll-rises-to-three/ , https://www.theringer.com/2019/8/6/20756176/woodstock-99-death-david-derosia
+- Sexual assaults reported: covered by both documentaries and The Ringer's "Break Stuff" podcast; I did not find specific numbers.
+- Documentaries: HBO "Woodstock 99: Peace, Love, and Rage" (2021); Netflix "Trainwreck: Woodstock '99" (2022): https://www.yahoo.com/now/woodstock-99-peace-love-rage-153751232.html , https://www.salon.com/2022/08/04/trainwreck-woodstock-99-netflix
+- First Coachella, Oct 9 to 10, 1999, Empire Polo Club, Indio; ads touted free water fountains, ample restrooms, misting tents: https://www.rollingstone.com/music/news/coachella-provided-an-antidote-to-woodstock-99s-hangover-19991011 , https://en.wikipedia.org/wiki/Coachella
+- Woodstock 50: Dentsu pulled out and declared it canceled in late April 2019; Lang sued and a court let it proceed; Watkins Glen dropped it (missed payment); Vernon Downs permits denied; moved to Merriweather Post Pavilion, Maryland; officially canceled July 31, 2019 (was set for Aug 16 to 18): https://hudsonvalleyone.com/2019/07/31/woodstock-50-cancelled-for-real-this-time/ , https://fortune.com/2019/07/31/woodstock-50-officially-canceled/
+- Limp Bizkit at Lollapalooza, Grant Park, July 31, 2021: gray hair, mustache, debuted "Dad Vibes" (released Sept 2021): https://www.kerrang.com/limp-bizkit-embrace-the-dad-vibes-as-fred-durst-unveils-new-look-at-lollapalooza , https://www.billboard.com/articles/news/festivals/9608812/limp-bizkit-lollapalooza-recap-fred-durst-best-moments
+- "Still Sucks" released Oct 31, 2021: https://en.wikipedia.org/wiki/Still_Sucks
+- Download 2026 headliners (Friday, June 2026), 23 years after pulling out of the first Download in 2003: https://www.loudersound.com/bands-artists/limp-bizkit-guns-n-roses-and-linkin-park-to-headline-download-2026-over-90-bands-confirmed-for-next-years-lineup , https://www.kerrang.com/a-different-sort-of-celebration-how-limp-bizkit-triumphed-at-their-download-2026-headliner
+- Summer of '99 and Beyond (Creed's festival), Credit Union 1 Amphitheatre, Tinley Park, July 18 to 19, 2026, Limp Bizkit co-headlining: https://knotfest.com/blogs/news/limp-bizkit-cypress-hill-kittie-and-more-set-for-creeds-summer-of-99-and-beyond-festival
+- Limp Bizkit has never played Coachella; Durst floated a festival for the "uninvited" (April 2026, replying to Lil Wayne): https://faroutmagazine.co.uk/fred-durst-threatens-start-alternative-coachella-uninvited/ , https://concerts.consequence.net/articles/fred-durst-lil-wayne-uninvited-gathering
+- Sam Rivers, co-founder and bassist, died Oct 18, 2025, aged 48: https://www.wrvo.org/2025-10-19/sam-rivers-bassist-and-founding-member-of-limp-bizkit-dies-aged-48 , https://www.rollingstone.com/music/music-news/sam-rivers-limp-bizkit-bassist-dead-1235449987/
+
+## "Story goes" pile
+- Organizers asking Fred to calm the crowd: the script calls this a legend. Note that Radio X reports Durst saying on stage, mid-set, that organizers had asked the band to get the crowd to calm down, then saying he didn't want them to mellow out. So there's some on-tape support for "they asked him", it just comes from Fred himself.
+- Who started the fires, and the organizers' claim that on-site firefighters wouldn't leave their station: organizer claims, not established.
+
+## Could NOT verify, or sources differ (flag for Duck)
+- "A slice of pizza was twelve dollars": sources say $12 for a pizza (a 10-inch or small personal pizza), not a slice. Suggest "twelve dollars for a little personal pizza".
+- "The two main stages were about a mile and a half apart": search results from Wikipedia copies say about 2 miles or more (one gave 2.3 miles / 3.7 km). Either way they were far apart; the exact number is shaky.
+- "A woman was hit by a car" in THE SERIOUS PART: Tara Weaver was hit on a road near South New Berlin, NY, about 55 miles from the site, after car trouble, apparently on the way. Count her if you want MTV's "three deaths", but don't imply it happened at the festival.
+- "Thousands" of candles: one source says PAX handed out about 100,000. "Thousands" understates it but isn't wrong.
+- "Ditch weed" and the crystals-convention bit: jokes, not claims.
+- Fred Durst's next-day video for Sam Rivers saying what Sam left behind is "priceless": not found in search results. The band's statement ("pure magic", "heartbeat") is confirmed. Check before recording.
+- 1994's 25th anniversary being "also muddy": well known, not separately searched.
