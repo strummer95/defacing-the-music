@@ -1,10 +1,10 @@
 ## COLD OPEN
-December 4th, 1971. Montreux, Switzerland. A Saturday.
-Frank Zappa and the Mothers are on stage at the Montreux Casino, on the shore of Lake Geneva, with the Alps sitting behind it like a postcard. They're well into the show. They're in the middle of a song called "King Kong." The keyboard player is off on a long, weird synthesizer solo.
-And somebody in the crowd raises a flare gun. Points it up. And pulls the trigger.
+[CLIP: Cold open: a flare gun at a Zappa show]
+December 1971. Montreux, Switzerland. A casino on Lake Geneva, with the Alps sitting behind it like a postcard.
+Frank Zappa's band is on stage, deep into a long, weird synthesizer solo.
+Somebody in the crowd raises a flare gun. Points it at the ceiling. And pulls the trigger.
 Indoors.
-[Pause.]
-By the end of the night the whole building is gone. And across the water, a British band with nowhere to record is watching the smoke roll out over the lake, and somebody is writing down a title.
+And across the water, a British rock band that came to town to make a record is about to have a very different week than the one they planned.
 ## TODAY
 Today: a Swiss casino, a flare gun, a band losing every piece of gear it owned, a festival boss running into a burning building, a truck borrowed from the Rolling Stones, the Swiss police banging on a door in the middle of the night, and the riff. You know the riff.
 And somewhere in this story, there's a guy. There always is. This time he had a flare gun. Keep an eye out for him.
@@ -15,7 +15,8 @@ Due To a Flare Gun Indoors. Or, Who Brought a Flare Gun to a Zappa Show?
 ## MONTREUX
 Okay. Montreux. Let me set the table.
 Montreux is a little resort town on Lake Geneva. Old hotels. Mountains. Rich people in nice coats walking slowly. The loudest sound on a Tuesday is a spoon hitting a teacup.
-And in the middle of it is the Casino. Now, "casino" makes you think Vegas, slot machines, a guy named Sal. This was more of an entertainment complex. Gambling, sure, but also a concert hall, a place where things happened. And for a few years it had been home to something that put this quiet little town on the map.
+And in the middle of it is the Casino. Now, "casino" makes you think Vegas, slot machines, a guy named Sal. This was more of an entertainment complex. It opened in 1881 as the Kursaal: a casino, a restaurant, a winter garden, a theatre. And for ninety years, every time somebody had an idea, they bolted another room onto it. A terrace. A dance hall called the Lido. A swimming pool in the fifties. And in 1969, a new concert hall called the Hourglass, le Sablier.
+And for a few years it had been home to something that put this quiet little town on the map.
 The Montreux Jazz Festival.
 
 ## FUNKY CLAUDE
@@ -28,56 +29,104 @@ Every town has a Claude. The guy at the chamber of commerce who says, "What if w
 ## FRANK
 Now. Frank Zappa. The mustache.
 Zappa was born in Baltimore in 1940. His dad was a chemist who worked in the defense industry. And here's the detail I can't get over. The way Frank told it, he learned to make gunpowder when he was about six. He kept experimenting with explosives until he was around fifteen.
-[Pause.]
-So hold onto that. The kid who made gunpowder in his bedroom grows up, and somebody else brings the fire to his show.
+So that's the kid who made gunpowder in his bedroom. Keep him in mind when somebody else brings the fire to his show.
 The family moved west, to California, and Frank ended up in music. Not normal music. His first album with the Mothers of Invention, "Freak Out!", came out in 1966. Doo-wop, satire, noise, jokes, orchestra stuff. Zappa was a composer who happened to have a rock band.
 And by 1971, his band had a lineup that I personally find hilarious. Because two of the lead singers were Mark Volman and Howard Kaylan. If those names don't ring a bell: they were from The Turtles.
 "Happy Together." "Imagine me and you, I do." That Turtles.
-[Pause.]
 So the guys who sang the sweetest, sunniest pop song of 1967 are now in Frank Zappa's band, going by Flo and Eddie, doing filthy comedy rock. And they still sang "Happy Together" in the Zappa shows. It's on the Fillmore East live album from that year.
 So that's the band that rolls into Montreux in December of 1971. Zappa, Flo and Eddie, and a keyboard player named Don Preston, with a Minimoog synthesizer, which in 1971 was still a pretty exotic thing to bring on tour.
 
+## THE ROOM
+Before anything catches fire, let's look at the room. Because this is the part of the story where people make decisions, and nobody thinks they're making decisions.
+The Hourglass hall had a ceiling made of wood. One account says it had "tropical island" decorations. Other people remember curtains, papier-mache Christmas decorations, and rattan. Nobody fully agrees on the rattan. A fire engineering study looked at the photos fifty years later and couldn't spot any. What everybody agrees on is that the fire started up there, and that up there was the kind of thing that burns.
+Up on the wall was the hall's big emblem, an hourglass. A hydraulic clock. Full of liquid. And when the Swiss held a tribunal about the fire the next year, one claim was that it held forty five hundred liters of paraffin. The casino's lawyer said no, no, it was only three thousand liters of mineral oil.
+[FILL: "Only three thousand liters of mineral oil" is the most lawyer sentence I have ever read. That's your defense? It was the other flammable liquid?]
+Outside, the building was covered in scaffolding, because it was being renovated.
+Inside, somebody had taken out the chairs. So the crowd sat on the floor. One fan who was there, Alain Rieder, said standing concerts weren't the fashion yet, so everybody just sat down on the ground.
+How many people? The papers said about two thousand. Zappa said twenty five hundred to three thousand kids, packed in, "well over capacity." One later account said as many as four thousand.
+There were security people, volunteers from the tourist office, and four firefighters on duty for the show.
+And according to Zappa, writing in his book years later, there was one more decision. A lot more kids were outside trying to get in. So, he said, the organizers had "cleverly chained the doors shut."
+[RIFF: chaining the doors because of gate crashers. Or use this:]
+Every club owner in history has had the same thought. "If I lock that door, nobody sneaks in." Which is true. It is also true that nobody gets out. It's the same door. It works both ways. That's how doors work.
+Now, to be fair to the casino, an eyewitness said the security staff and the young hotel and casino workers got all the emergency exits open fast. So it's Zappa's word against that. But Zappa said it more than once. In a French TV interview, he said people got to an exit and it was locked, and they had to bang it down.
+
 ## THE SHOW
-The show was in the afternoon. A matinee. Which feels wrong for a fire story, but here we are.
-By most accounts it's a good show. A packed house, a couple thousand people. And they get into "King Kong," a long instrumental the Mothers liked to stretch out, and Don Preston takes a synthesizer solo.
-And right in the middle of it, somebody in the audience fires a flare gun up at the ceiling.
-[Pause.]
+The show was on Saturday, December 4th, in the afternoon. A matinee. It started around two. Which feels wrong for a fire story, but here we are.
+By most accounts it's a good show. A packed house. And they get into "King Kong," a long instrumental the Mothers liked to stretch out, and Don Preston takes a synthesizer solo.
+And somewhere around a quarter after four, somebody in the audience fires something up at the ceiling.
 And the ceiling, I'm sorry to tell you, was the kind that catches fire.
-Now the honesty part. The common version, the one in the song, is a flare gun. Zappa himself, in at least one telling, called it something more like a rocket or a Roman candle. So I can't tell you the exact model of stupid. Just that it was fired indoors, and it went up.
-[RIFF: the logic of bringing a flare gun to a concert. Or use this:]
-I have been to a lot of shows. I have seen people sneak in a lot of things. Flasks. Weed. A whole sandwich in a coat. I have never once, in thirty two years, seen a guy pat his jacket and go, "Got my flare gun. Let's do this."
-And for a second, nobody panics. Because remember, it's a Zappa show. Weird stuff happens at a Zappa show. Smoke and fire might just be the bit.
+
+## THE GUY WITH THE GUN
+[CLIP: Nobody knows who fired the flare]
+So who was it? This is where I went digging, and here's what's actually out there.
+The common version, the one in the song, is a flare gun. One of the guys in Deep Purple said someone behind them shot off a flare that went up into the rafters. Ian Gillan has said he saw two of them. And Claude Nobs said later that Gillan told him the guy was standing right next to him and fired before anybody could stop him.
+A woman who was there told a Lausanne paper two days later that a young man near her fired a small pistol at the start of the concert, and then fired it again later, and that's the one that lit the ceiling.
+So he warmed up. He did a test shot. At the start of the show. And nobody took it away from him.
+[FILL: That's the part that kills me. Shot one, nobody does anything. Shot two, the building's gone. There was a whole Zappa set in between where somebody could've said, "Hey man, what's in the jacket?"]
+But not everybody saw a flare. Zappa himself, in one telling, called it more like a bottle rocket or a Roman candle. A guy named Peter Schneider, who wrote about being one of the last ones out, thought it was a kid throwing lit matches up at the low ceiling. And one Lausanne paper reported witnesses who saw it start in an electric lamp hanging near the ceiling, which would mean a short circuit and no gun at all.
+The fire engineers who studied it fifty years later landed on this: the consensus is some kind of firework or flare. Not proven. Consensus.
+And the man himself? The Swiss police named a suspect. He took off right after, they put out a search, and they never found him. The rumor is he went to South America. He was never caught, never charged, never tried, and never told his side. His name is out there online. I'm not saying it, because nobody ever proved it.
+So "the guy with the flare gun" is a real guy. We just don't get to meet him.
+
+## IT'S PART OF THE SHOW
+And for a second, nobody panics. Because it's a Zappa show. Weird stuff happens at a Zappa show. Smoke and fire might just be the bit.
+Alain Rieder said that at first the fire was tiny, and he figured they'd put it out and the concert would keep going.
+And Peter Schneider, the guy who was one of the last ones out, wrote this, and I love him for his honesty. He looked behind him, saw a big ball of flame, and, quote, "Because I was very stoned it looked beautiful." He thought the fire was part of the show.
+[RIFF: being too high to notice the building is on fire. Or use this:]
+Every one of us has been at a show where something went wrong and we thought it was on purpose. An amp blows, you think it's a sound effect. The drummer falls off the riser, you think it's choreography. This guy watched the ceiling catch fire and thought, "Wow. Production values."
 And this next part is legendary, but the details shift depending on who's telling it. The story goes that somebody on stage made a joke. "Fire! Arthur Brown in person!"
 [FILL: For the young people: Arthur Brown's big hit in 1968 was a song called "Fire," and he performed wearing a helmet that was on fire. Great joke, if you were alive in 1968.]
-Who said it? Some accounts say Zappa, some say Mark Volman, some say Howard Kaylan. And one guy who was there that day has said the idea of Zappa laughing it off is nonsense. So it goes in the "the story goes" pile.
+Who said it? Some accounts say Zappa, some say Mark Volman, some say Howard Kaylan. And Rieder has said the idea of Zappa laughing it off is nonsense. So it goes in the "the story goes" pile.
+Meanwhile, people tried to put it out. Zappa said in that French interview that a guy ran up with a fire extinguisher, and when he used it, fire came out of the ceiling and part of the roof fell down. One of the four firefighters on duty tried a hose reel and couldn't get it going.
+And Claude grabbed a hose too. And here's the detail one person who was around tells: the water barely went two meters up. Because the pressure in that line had been turned down. So the coffee machine wouldn't explode.
+[Pause.]
+The story goes. I can't prove the coffee machine. But somebody, at some point, made a call about that coffee machine, and it was not a fire safety call.
 
 ## EVERYBODY OUT
 Here is where Frank Zappa becomes the responsible adult.
-By the accounts that survive, Zappa told the crowd to stay calm and get out. Slowly. No running.
-And that matters, because the room didn't have great ways out. The main doors were small for a crowd that size. So people also went out through a big plate glass window near the stage. Which got broken, so people could climb through it.
-[Pause.]
-A couple thousand people. A fire on the ceiling. A small front door. And a window.
-And here's the thing I have to say clearly. As far as every account I could find goes, nobody died. Injuries were described as minor. For a fire that took down an entire building with a crowd inside, that is about as lucky as it gets.
+And we don't have to guess much about what he said, because the show was taped. Zappa later put the recording out himself, on an official bootleg set called Beat the Boots, and you can hear him telling people to stay calm. The line that gets quoted is: "Fire! If you'd kindly move calmly toward the exit, ladies and gentlemen. Calmly."
+Ladies and gentlemen. The building is on fire and he says "if you'd kindly."
+And the room didn't have great ways out. So people went for the windows. Behind the curtains on each side of the stage there were floor to ceiling windows. People ripped the curtains open. Zappa said one of his roadies picked up an equipment case and smashed the big window. Claude Nobs, years later, told it as Zappa smashing it with his guitar, which Zappa never claimed. And Schneider says what got him out was a firefighter breaking a window with an axe.
+So depending on who you ask, the window got broken by a roadie, a firefighter, or the guitar that Frank Zappa did not use. My money's on the guy with the equipment case. Roadies break things for a living.
+And then people jumped. About ten feet, give or take, into the grass. Rieder said he hung off a ledge and let himself drop.
+And one witness said that before jumping, they went back for their belongings. Which were exactly where they'd left them. In the burning building.
+[FILL: Somewhere out there is a person who walked back into a burning casino for a bag, and I respect the priorities.]
+And the no-chairs thing, the thing that sounds like a bad decision? Schneider thinks it helped. No rows to climb over, broad daylight, and, his words, nearly everybody was so stoned that the fear didn't kick in, so they walked out in a more or less orderly way.
+The tourist office said everybody was out in three and a half minutes. Claude said about five. The fire department got the alarm at 4:22, and the first trucks pulled up three and a half minutes later, right as the last of the crowd came out the front door.
+And Zappa said his roadies were the last ones out, and an explosion from the heating system blew them out the door.
+And here's the thing I have to say clearly. Nobody died. Zappa said three people went to the hospital, one of them a roadie caught in that blast. For a fire that took down an entire building with a crowd inside, that is about as lucky as it gets.
 [RIFF: the calm voice in an emergency. Or use this:]
 Every band has the one member who's good in a crisis. The guy who, when the van catches fire on the interstate, is already on the shoulder with the extinguisher while the drummer films it. That day, that guy was Frank Zappa.
 
 ## CLAUDE RUNS IN
+[CLIP: Funky Claude runs into the fire]
 And Claude Nobs. The chef. The tourist office guy.
 While the place is burning, Claude is going back in. The festival's own history, and his obituaries, credit him with pulling out several young people who had hidden inside the casino, because they thought they'd be safe from the fire in there.
-[Pause.]
+One of the guys who went in with him, Michel Ferla, explained the search plan. "We crawled through the burning building on all fours. At that time a lot of marijuana was smoked. We wanted to be sure that no one had fallen asleep."
+That's the most Swiss rescue in history. Calm. Thorough. And checking under every couch for a sleeping hippie.
 That is why he's in the song. "Funky Claude was running in and out." That line is about a real man running into a real burning building to drag out kids who'd made a terrible decision about where to hide.
 I want that on his headstone. Not "Founder of the Jazz Festival." "Ran Into The Fire."
 
+## THE BUILDING GOES
+About eighty firefighters came in from all over the area. And the fire just ate the place. The Hourglass, then the rest of the building. The scaffolding outside burned like torches. Somebody said the whole thing looked like a giant torch, with black smoke you could see from miles away.
+And here's my favorite detail from the firefighters. One of their senior guys said the water system ran dry after two hours. So they started pumping water straight out of the lake.
+They put the fire out with Lake Geneva.
+They saved a garage next door. They did not save the theatre. The estimate at the time was twelve to fifteen million Swiss francs in damage.
+And everything the Mothers brought on that tour was inside. All their gear. Gone.
+
 ## DEEP PURPLE
 Deep Purple. British hard rock band, and in 1971 they're right in the classic lineup. Ian Gillan singing. Ritchie Blackmore on guitar. Jon Lord on the organ. Roger Glover on bass. Ian Paice on drums.
-And they're in Montreux on purpose. They'd booked the casino to record their next album, in the off season, after the casino's last show of the year. That last show was Zappa.
+And they're in Montreux on purpose. Here's how that decision got made. They were supposed to be touring America at the end of 1971. Then Ian Gillan got sick, and the dates fell through. So now they've got a hole in the calendar and a record to make. One account adds they wanted somewhere unusual, and somewhere outside Britain's taxes.
+They'd booked the casino to record their next album, in the off season, after the casino's last show of the year. That last show was Zappa.
 And they didn't book a regular studio. They booked a truck.
 The Rolling Stones Mobile. A recording studio in a truck, owned by the Rolling Stones. You park it outside a building, run cables in, and now the building is a studio. That truck is on a lot of great records from that era, including parts of Led Zeppelin's fourth album.
+[CLIP: Smoke on the Water gets its title]
 So the plan is: Zappa plays the last show, everybody goes home, the casino goes quiet for winter, and Deep Purple moves in and makes a record with the Stones' truck parked outside.
 And Deep Purple had passes to the show. Roger Glover has told the story: they got to their hotel rooms and there was a fruit basket, a bottle of Swiss wine, and a pass to see Zappa at the casino. Ian Gillan has said he was in the audience when the flare went up.
 [Pause.]
 So the welcome gift was a ticket to watch your recording studio burn down.
-[Pause.]
+And the story goes, from French-language press and retold by Claude himself, that Gillan got out fine and then went back inside the burning building. For his girlfriend's jacket. Claude called it typical of him.
+[FILL: Gentlemen. If your girlfriend's jacket is in a burning casino, it's a gift to the casino now. Buy her a new jacket.]
 The smoke drifted out over Lake Geneva. Smoke. On the water.
 And yeah. That's the title. It was sitting right there.
 Roger Glover gets credit for the title, and there are two versions of how. In one, he woke up from a dream a few days later with the phrase in his head. In another, he wrote it down right away. Either way, it's Roger's.
@@ -86,47 +135,57 @@ Roger Glover gets credit for the title, and there are two versions of how. In on
 So now Deep Purple has a truck, a booking, and no building.
 And Claude Nobs, who has just had the worst day of his professional life, starts finding them somewhere else to record. Because that's the kind of guy he is.
 First stop: a local hall called the Pavilion. They set up, and they start jamming. And out of that jam comes a riff.
-[Pause.]
 Ritchie Blackmore. Four notes. Well. You know.
 [RIFF: the riff. If you've ever picked up a guitar, you've played it. Or use this:]
 If you have ever picked up a guitar, you know this riff. You learned it before you knew what a chord was. You learned it on one string. Every guitar teacher in America has heard it ten thousand times and would like it to stop.
 Blackmore has explained it a few ways. He's said it's built in fourths, that old, kind of medieval sounding interval. He's also said in an interview that it's Beethoven's Fifth, turned around. Plenty of musicians say it doesn't sound like that at all. So Beethoven goes in the "the story goes" pile.
 And then the neighbors complain.
-[Pause.]
+[CLIP: Roadies hold the door against the Swiss police]
 It's the middle of the night in a quiet Swiss town, and a hard rock band is blasting away in a public hall. The band has told this one many times: the police showed up and started pounding on the door, and the road crew held the door shut so they could finish the take.
 So the backing track for the most famous riff in rock history got finished while roadies physically held the door against the Swiss police.
-Then they moved again, to the Grand Hotel, which was empty for the winter. They recorded in the hallways and rooms, with the Stones truck out back and cables running in through the windows. Gillan wrote the lyrics, and they're basically a news report of the week: the fire, Funky Claude, the Grand Hotel, and the man of the hour, who the song calls "some stupid with a flare gun." That's his official review.
+[FILL: Second time that week a door in Montreux got held shut on purpose. This time, at least, nobody needed to get out.]
+
+## THE GRAND HOTEL
+Then they moved again, to the Grand Hotel, which was empty for the winter. And this is another decision that sounds insane and worked.
+They parked the Stones truck at the main entrance and set up the band at the end of a corridor off the lobby, where the hallway made a T. To kill the echo in a big empty hotel, they hauled in mattresses. Ian Paice said about a hundred of them, lining the hallway.
+So the band that just lost its studio to a fire is now recording in a hotel hallway made of beds.
+And the truck was outside, so every time they wanted to hear a take, somebody had to walk out through the hotel, out the front, into the truck. It was such a pain that, by one account, they mostly stopped listening to playbacks. They just played it and trusted it.
+[RIFF: recording without playbacks. Or use this:]
+That's the scariest way to make a record. No playback. You play it, you nod at each other, you go, "Yeah, that felt good," and you move on. Every band I've ever been around would argue about that for an hour. Deep Purple just went, "Fine. Next."
+Gillan wrote the lyrics, and they're basically a news report of the week: the fire, Funky Claude, the Grand Hotel, and the man of the hour, who the song calls "some stupid with a flare gun." That's his official review.
 
 ## THE HIT
-The album was "Machine Head." It came out in March 1972. And here's the funny part. Nobody in the band thought "Smoke on the Water" was the single. Gillan has said it was just another riff to them.
+The album was "Machine Head." It came out in March 1972. And here's the funny part. Nobody in the band thought "Smoke on the Water" was the single. Gillan has said it was just another riff to them. One retelling of the sessions says it only made the album as filler.
 It became a single in the States in 1973, and it went to number four on the Billboard chart.
 And it never left. Every garage, every guitar store, every talent show. All because some guy brought a flare gun to a Zappa matinee.
 And the casino? Rebuilt. It reopened in 1975, with a recording studio inside called Mountain Studios. In 1979, Queen bought it. Freddie Mercury ended up making records in the building that replaced the one that burned, and today there's a statue of Freddie on the lakefront.
 
 ## THE SERIOUS PART
 Now I need to slow down for a minute, because Zappa's week was not done.
-The fire took everything the Mothers had brought. All their gear. Gone. And they kept going anyway. They rented equipment and got to London, and six days later, on December 10th, 1971, they're playing the Rainbow Theatre.
+The fire took everything the Mothers had brought. And they kept going anyway. They rented equipment and got to London, and six days later, on December 10th, 1971, they're playing the Rainbow Theatre.
 And during the show, a man in the audience named Trevor Howell gets on stage and shoves Zappa off it. Into the orchestra pit. Onto concrete. Accounts put the fall at somewhere between ten and fifteen feet.
-[Pause.]
 Zappa was badly hurt. A broken leg, a head injury, injuries to his back and neck. He was in the hospital for weeks, and he spent a long stretch of the next year in a wheelchair, off the road. Zappa wrote later that the band thought he was dead. He also said the injury to his throat dropped his voice for good.
 Howell got a year in jail. And his reason depends on which report you read. One version, the one Zappa repeated, is that it was about his girlfriend and Zappa. Another contemporary report says he just didn't think the concert was good value for the money. So the motive goes in the "the story goes" pile. Either way, there are a lot of ways to complain about a ticket price, and this is the worst one.
 That doesn't get a joke. That lineup of the Mothers was basically done. A guy who had just calmly walked a couple thousand people out of a burning building got thrown off a stage six days later.
 
 ## THAT GUY
+[CLIP: That Guy verdict]
 Okay. Time to name him. That Guy.
 The suspects.
-Suspect one: the guy with the flare gun. He brought a flare gun to a concert hall and fired it at a ceiling. There's a name that floats around online as the police suspect, but I couldn't find solid enough proof to say any name on this show. So he stays "the guy."
-Suspect two: the building. A packed hall where one flare could take the whole place down, with exits tight enough that people went out a window. I don't know the Swiss fire codes of 1971, and I won't pretend to. But the room didn't help.
+Suspect one: the guy with the flare gun. Fired once at the start of the show, according to one witness, and nobody stopped him. Fired again, and the ceiling went. Swiss police named a suspect, he ran, and they never caught him. So he stays "the guy."
+Suspect two: the people who ran the building. A wooden ceiling, a giant hourglass full of either paraffin or "only" mineral oil, a room Zappa said was way over capacity, doors Zappa said were chained against gate crashers, and a fire hose that, the story goes, got turned down for a coffee machine. Every one of those is a decision somebody made on a normal day without thinking about the bad day.
 Suspect three: Frank Zappa. Kidding. Partly. The man made gunpowder at six and his show was the one that caught fire. That's either cosmic justice or a coincidence and I'm calling it a coincidence.
 [Pause.]
 And the verdict.
-It's the flare gun guy. No twist. There's no office full of guys here. There's no stagehand who said yes. There's one guy in a crowd of a couple thousand people who thought, "You know what this King Kong solo needs?"
+It's the flare gun guy. The building made it worse, and I'm not letting the coffee machine off the hook. But buildings full of wood and bad choices sit there for ninety years without burning down. What they need is one guy in a crowd of a couple thousand people who thinks, "You know what this King Kong solo needs?" And then does it twice.
+[THAT GUY STING]
+And to be straight with you: we don't know his name for sure, we don't know exactly what he fired, and we never heard his side. What we know is what he did.
 But here's the "that guy is usually awesome" part. And I hate it. Without that guy, there is no "Smoke on the Water." No fire, no song. Every kid who ever learned that riff on one string owes a little piece of it to the worst decision anybody made in Switzerland that year.
 [RIFF: your verdict. Do you thank him or not? Or use this:]
 He burned down a casino and accidentally wrote the first lesson in every guitar book. I'm not thanking him. But I'm not not thanking him.
 
 ## OUT
-So that's it. One Swiss casino. One flare gun. A Zappa band that lost all its gear and then had a week that got worse. A chef from the tourist office running into a fire. Roadies holding a door against the police. And four notes every guitar player on Earth can play.
+So that's it. One Swiss casino. One flare gun, maybe two shots. A Zappa band that lost all its gear and then had a week that got worse. A chef from the tourist office crawling through a fire looking for sleeping hippies. Firemen pumping Lake Geneva. Roadies holding a door against the police. A hallway full of mattresses. And four notes every guitar player on Earth can play.
 And the lesson, if there is one: if the casino is on fire, do not hide in the casino. Claude will come get you, but don't make Claude do that.
 [RIFF: one last thought, maybe play the riff, or tell people your first riff. Or use this:]
 Next time you hear some kid in a guitar store playing that riff on one string, don't roll your eyes. That kid is doing history.

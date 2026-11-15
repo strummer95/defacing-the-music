@@ -1,7 +1,7 @@
 <?php
 // Scripts library: unnumbered scripts with a status. "Make it an episode" gives one the next episode number.
 // Reader view lives in prompter.php; numbered episodes live in episodes.php.
-require __DIR__ . '/../lib/episodes.php';
+require __DIR__ . '/../lib/cutaways.php';
 $user = dtm_require_admin();
 $id = (string)($_GET['edit'] ?? '');
 $isNew = isset($_GET['new']);
@@ -32,13 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = (string)($_POST['status'] ?? 'draft');
     if (!isset(DTM_SCRIPT_STATUSES[$status])) $status = 'draft';
     $body = str_replace("\r\n", "\n", (string)($_POST['body'] ?? ''));
+    $sources = trim(str_replace("\r\n", "\n", (string)($_POST['sources'] ?? '')));
     if ($title === '' || mb_strlen($title) > 120) $error = 'Give it a title (120 characters max).';
     elseif (mb_strlen($subtitle) > 160) $error = 'Subtitle is too long (160 characters max).';
     elseif (strlen($body) > 200000) $error = 'That script is huge. Trim it a bit.';
+    elseif (strlen($sources) > 20000) $error = 'That sources list is huge. Trim it a bit.';
     else {
       $saved = $pid !== '' ? $pid : bin2hex(random_bytes(6));
-      dtm_json_update('scripts.json', function ($l) use ($saved, $title, $subtitle, $status, $body) {
-        $fields = ['title' => $title, 'subtitle' => $subtitle, 'status' => $status, 'body' => $body, 'updated' => date('c')];
+      dtm_json_update('scripts.json', function ($l) use ($saved, $title, $subtitle, $status, $body, $sources) {
+        $fields = ['title' => $title, 'subtitle' => $subtitle, 'status' => $status, 'body' => $body, 'sources' => $sources, 'updated' => date('c')];
         foreach ($l as &$s) if ($s['id'] === $saved) { $s = array_merge($s, $fields); return $l; } // keeps episode + seed
         $l[] = ['id' => $saved, 'episode' => ''] + $fields; return $l;
       });
@@ -52,7 +54,7 @@ $scripts = dtm_scripts();
 $current = $id !== '' ? dtm_script($id) : null;
 if ($error && ($_POST['action'] ?? '') === 'save') {
   $current = ['id' => $id, 'episode' => $current['episode'] ?? '', 'title' => $_POST['title'] ?? '', 'subtitle' => $_POST['subtitle'] ?? '',
-              'status' => $_POST['status'] ?? 'draft', 'body' => $_POST['body'] ?? ''];
+              'status' => $_POST['status'] ?? 'draft', 'body' => $_POST['body'] ?? '', 'sources' => $_POST['sources'] ?? '', 'seed' => $current['seed'] ?? ''];
 }
 $library = array_values(array_filter($scripts, fn($s) => (string)$s['episode'] === ''));
 $onEps = array_values(array_filter($scripts, fn($s) => (string)$s['episode'] !== ''));
@@ -61,7 +63,7 @@ foreach (dtm_episodes() as $e) if ($e['script_id'] !== '') $epFor[$e['script_id'
 $badge = fn($st) => '<span class="status st-' . h($st) . '">' . h(DTM_SCRIPT_STATUSES[$st] ?? 'Draft') . '</span>';
 dtm_page_start('Scripts', $user, true);
 ?>
-<?php if ($current || $isNew): $c = ($current ?? []) + ['id' => '', 'episode' => '', 'title' => '', 'subtitle' => '', 'status' => 'draft', 'body' => '']; ?>
+<?php if ($current || $isNew): $c = ($current ?? []) + ['id' => '', 'episode' => '', 'title' => '', 'subtitle' => '', 'status' => 'draft', 'body' => '', 'sources' => '']; ?>
 <section class="admin-card">
   <p class="small"><a href="scripts.php">All scripts</a></p>
   <h1 class="metal"><?= $c['id'] ? 'Edit script' : 'New script' ?></h1>
@@ -83,11 +85,24 @@ dtm_page_start('Scripts', $user, true);
     <label for="body" class="bang">Script</label>
     <p class="small">Start a line with <code>## </code> for a section heading. Cues in brackets, like <code>[RIFF: ...]</code> or <code>[THEME SONG]</code>, show up in yellow.</p>
     <textarea id="body" name="body" rows="22" class="script-box"><?= h($c['body']) ?></textarea>
+    <label for="sources" class="bang">Extra sources</label>
+    <p class="small">For the public Sources &amp; Credits page. One per line: <code>Title | https://link</code>.<?php $shipped = count(dtm_lib_json('sources', dtm_seed_key($c))['sources'] ?? []); if ($shipped): ?> This script already ships with <?= $shipped ?> sources, so only add new ones.<?php endif; ?></p>
+    <textarea id="sources" name="sources" rows="4" class="script-box" placeholder="Rolling Stone: the night it all went wrong | https://..."><?= h($c['sources']) ?></textarea>
     <div class="btn-row">
       <button type="submit" class="pull-btn bang">Save</button>
-      <?php if ($c['id']): ?><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($c['id'])) ?>">Open teleprompter</a><?php endif; ?>
+      <?php if ($c['id']): ?><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($c['id'])) ?>">Open teleprompter</a>
+      <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($c['id'])) ?>">Images</a><?php endif; ?>
     </div>
   </form>
+  <?php if ($c['id']): ?>
+  <h2 class="bang saved-h">Sources &amp; Credits page</h2>
+  <?php if ((string)$c['episode'] !== ''): ?>
+    <p>Public page: <a href="<?= h(dtm_episode_page_path((string)$c['episode'])) ?>" target="_blank" rel="noopener"><?= h(dtm_episode_page_url((string)$c['episode'])) ?></a>. Paste this line in the YouTube and Spotify descriptions:</p>
+    <?= dtm_copy_line(dtm_description_line((string)$c['episode'])) ?>
+  <?php else: ?>
+    <p>Goes public at <code>defacingthemusic.com/ep/N</code> once this script is an episode. <a href="/ep/?preview=<?= h(urlencode($c['id'])) ?>" target="_blank" rel="noopener">Preview it</a>.</p>
+  <?php endif; ?>
+  <?php endif; ?>
   <?php if ($c['id'] && (string)$c['episode'] === ''): ?>
   <form method="post" onsubmit="return confirm('Make this Episode <?= h(dtm_next_episode_number()) ?>?')">
     <?= dtm_csrf_field() ?><input type="hidden" name="action" value="make_episode"><input type="hidden" name="id" value="<?= h($c['id']) ?>">
@@ -105,7 +120,7 @@ dtm_page_start('Scripts', $user, true);
 <section class="admin-card">
   <h1 class="metal">Scripts</h1>
   <?php if (isset($_GET['deleted'])): ?><p class="notice ok bang" role="status">Deleted.</p><?php endif; ?>
-  <p>Your script library. No numbers until you pick one: open a script and hit <strong>Make it an episode</strong>. <strong>Read</strong> opens the teleprompter.</p>
+  <p>Your script library. No numbers until you pick one: open a script and hit <strong>Make it an episode</strong>. <strong>Read</strong> opens the teleprompter. <strong>Images</strong> has cutaway pictures you can use.</p>
   <p><a class="pull-btn bang link-btn" href="scripts.php?new=1">New script</a></p>
   <h2 class="bang saved-h">Library</h2>
   <?php if (!$library): ?><p>Empty. Every script is on an episode.</p><?php endif; ?>
@@ -114,7 +129,7 @@ dtm_page_start('Scripts', $user, true);
     <li>
       <?= $badge($s['status']) ?>
       <span class="ttl"><?= h($s['title']) ?><?php if (!empty($s['subtitle'])): ?><em class="sub"><?= h($s['subtitle']) ?></em><?php endif; ?></span>
-      <span class="acts"><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a> <a href="scripts.php?edit=<?= h(urlencode($s['id'])) ?>">Edit</a></span>
+      <span class="acts"><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a> <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($s['id'])) ?>">Images</a> <a href="scripts.php?edit=<?= h(urlencode($s['id'])) ?>">Edit</a></span>
     </li>
     <?php endforeach; ?>
   </ul>
@@ -125,7 +140,7 @@ dtm_page_start('Scripts', $user, true);
     <li>
       <span class="ep bang">EP <?= h(str_pad((string)$s['episode'], 2, '0', STR_PAD_LEFT)) ?></span>
       <span class="ttl"><?= h($s['title']) ?><?php if (!empty($s['subtitle'])): ?><em class="sub"><?= h($s['subtitle']) ?></em><?php endif; ?></span>
-      <span class="acts"><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a> <a href="scripts.php?edit=<?= h(urlencode($s['id'])) ?>">Edit</a></span>
+      <span class="acts"><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a> <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($s['id'])) ?>">Images</a> <a href="scripts.php?edit=<?= h(urlencode($s['id'])) ?>">Edit</a></span>
     </li>
     <?php endforeach; ?>
   </ul>

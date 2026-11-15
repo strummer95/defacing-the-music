@@ -75,3 +75,22 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
 .make-ep{margin-top:18px;padding-top:14px;border-top:3px dashed var(--black)}
 .make-ep .btn-row .admin-select{flex:1 1 260px}
 .make-ep .btn-row .pull-btn{margin-top:0}
+/* Images (cutaways) page + copy-a-line boxes */
+.admin-main:has(.cut-grid){max-width:1180px}
+.cut-for{font-size:22px;color:var(--red);margin:0 0 16px!important}
+.cut-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px;margin:0 0 16px}
+.cut-grid.small-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.cut{margin:0;background:var(--black);border:4px solid var(--black);box-shadow:6px 6px 0 var(--yellow);display:flex;flex-direction:column}
+.cut img{display:block;width:100%;height:260px;object-fit:contain;background:#222}
+.small-grid .cut img{height:120px;opacity:.6}
+.cut figcaption{background:var(--cream);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.cut-ttl{font-weight:800;font-size:16px;line-height:1.3}
+.cut-acts{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.cut-acts form{margin:0 0 0 auto}
+.cut .pull-btn{min-height:38px;font-size:17px;padding:4px 12px;box-shadow:3px 3px 0 var(--red)}
+.cut-x{background:none;border:0;padding:4px 0;font:inherit;font-size:14px;font-weight:800;color:var(--red);text-decoration:underline;cursor:pointer}
+.cut-more{margin:18px 0 0;border-top:3px solid var(--black);padding-top:12px}
+.cut-more summary{font-size:22px;cursor:pointer}
+.copy-line{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 14px}
+.copy-line input{flex:1 1 280px;min-height:46px;font-family:'Archivo',sans-serif;font-size:16px;padding:0 12px;background:#fff;color:var(--black);border:4px solid var(--black)}
+.copy-line .pull-btn{min-height:46px;font-size:18px;padding:4px 14px}

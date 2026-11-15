@@ -25,6 +25,13 @@ Done (replaces the earlier PR #4, which should not be merged): admin > Scripts i
 "Make it an episode" gives a script the next number. admin > Episodes lists numbered episodes (planned/recorded/published,
 publish date, YouTube/Spotify links, notes, linked script). Public episode list on the home page is still hardcoded (next step).
 
+## [x] DTM-IMAGES-1: Cutaway images, public Sources & Credits pages, description line (BOARD note, Nov 14)
+Done: admin Images page per script (Commons pictures, commercial-safe licenses, cached by the server), `/ep/N` public pages with
+sources + image credits, copy-ready description line in admin > Episodes. PR: https://github.com/strummer95/defacing-the-music/pull/45
+
+## [x] DTM-VOICE-1114: Duck's Nov 14 evening voice session (BOARD note)
+Done: rules into CLAUDE.md/STORIES.md, Ozzy/Woodstock/Disco/Jerry Lee reworked, every cold open ~75 words, decision chains and crutch cleanup across the library, seed upgrade hashes. Questions for Duck under "For Dillon". PR: https://github.com/strummer95/defacing-the-music/pull/47
+
 ## [x] DTM-SUBSCRIBERS-1: Guest List in the admin
 Done: admin > Guest List (`admin/subscribers.php`) lists `data/subscribers.json` newest-first with a count, a CSV
 download, and a CSRF-protected remove button; reuses the same `dtm_json_update`/CSRF/admin-gate helpers as

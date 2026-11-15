@@ -1,0 +1,121 @@
+{
+ "images": [
+  {
+   "file": "01-lancaster-nh.jpg",
+   "title": "Lancaster, New Hampshire",
+   "commons_title": "Lancaster NH 5-19-26a.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Lancaster_NH_5-19-26a.jpg",
+   "author": "Ascended Dreamer",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Lancaster_NH_5-19-26a.jpg/1920px-Lancaster_NH_5-19-26a.jpg",
+   "width": 1920,
+   "height": 960,
+   "attribution_required": "true"
+  },
+  {
+   "file": "02-nh-cabin.jpg",
+   "title": "A cabin in the New Hampshire woods",
+   "commons_title": "Hunting cabin in the woods.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Hunting_cabin_in_the_woods.jpg",
+   "author": "Phil8684",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Hunting_cabin_in_the_woods.jpg/1920px-Hunting_cabin_in_the_woods.jpg",
+   "width": 1920,
+   "height": 1920,
+   "attribution_required": "true"
+  },
+  {
+   "file": "03-austin-alley.jpg",
+   "title": "An alley off Red River Street, Austin",
+   "commons_title": "P01 Austin, Texas 35.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:P01_Austin,_Texas_35.jpg",
+   "author": "boklm",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/P01_Austin%2C_Texas_35.jpg/1920px-P01_Austin%2C_Texas_35.jpg",
+   "width": 1920,
+   "height": 1282,
+   "attribution_required": "false"
+  },
+  {
+   "file": "04-jerry-springer.jpg",
+   "title": "Jerry Springer",
+   "commons_title": "Jerry Springer - Endymion Parade.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Jerry_Springer_-_Endymion_Parade.jpg",
+   "author": "Travis Wise",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Jerry_Springer_-_Endymion_Parade.jpg",
+   "width": 1920,
+   "height": 2144,
+   "attribution_required": "true"
+  },
+  {
+   "file": "05-jack-o-lantern.jpg",
+   "title": "Halloween, the date he never kept",
+   "commons_title": "Jack-o'-lantern 2.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Jack-o%27-lantern_2.jpg",
+   "author": "F0i",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Jack-o%27-lantern_2.jpg/1920px-Jack-o%27-lantern_2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "attribution_required": "true"
+  },
+  {
+   "file": "06-avenue-b.jpg",
+   "title": "Avenue B, East Village",
+   "commons_title": "45-51 Avenue B.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:45-51_Avenue_B.jpg",
+   "author": "Beyond My Ken",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/45-51_Avenue_B.jpg/1920px-45-51_Avenue_B.jpg",
+   "width": 1920,
+   "height": 1271,
+   "attribution_required": "true"
+  },
+  {
+   "file": "07-nyc-cab.jpg",
+   "title": "A New York yellow cab",
+   "commons_title": "Checker Taxi Madison Sq jeh.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Checker_Taxi_Madison_Sq_jeh.jpg",
+   "author": "Jim.henderson",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Checker_Taxi_Madison_Sq_jeh.jpg/1920px-Checker_Taxi_Madison_Sq_jeh.jpg",
+   "width": 1920,
+   "height": 1264,
+   "attribution_required": "false"
+  },
+  {
+   "file": "08-camcorder.jpg",
+   "title": "A student filmmaker's camcorder",
+   "commons_title": "Canon Hi8 (PAL version) video camera recorder UC2Hi.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Canon_Hi8_(PAL_version)_video_camera_recorder_UC2Hi.jpg",
+   "author": "Nabukodinosaure",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Canon_Hi8_%28PAL_version%29_video_camera_recorder_UC2Hi.jpg",
+   "width": 1920,
+   "height": 1280,
+   "attribution_required": "true"
+  },
+  {
+   "file": "09-todd-phillips.jpg",
+   "title": "Todd Phillips, later of The Hangover",
+   "commons_title": "Todd Phillips (29486703114).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Todd_Phillips_(29486703114).jpg",
+   "author": "Thierry Sollerot from Vernon (Eure, Hte Normandie), FRANCE",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Todd_Phillips_%2829486703114%29.jpg/1920px-Todd_Phillips_%2829486703114%29.jpg",
+   "width": 1920,
+   "height": 2505,
+   "attribution_required": "false"
+  }
+ ]
+}

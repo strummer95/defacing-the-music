@@ -5,6 +5,127 @@ Dillon: edit this file right on GitHub (pencil icon), add a note under **For Cla
 
 ## For Claude
 
+### DONE: Duck's Nov 14 evening voice session
+Done 2026-11-14 by Claude. Hit **Pull latest**; every script you haven't edited on the site updates by itself (an edited one is left alone).
+- Rules folded into CLAUDE.md (two pillars as the top rule, 75-word cold opens, launch order, prices with today's money, serious stuff once and briefly, Encore / B-Side) and STORIES.md.
+- **Ozzy** reworked as the launch episode (~28 min): dove on purpose, bat by accident, your bite questions answered from his memoir and Mark Neal, tribute ending with fresh numbers.
+- **Woodstock '99** (~32 min): your 8-part outline in order, one serious note after the title, Kiedis gone, today's prices, Woodstock 50. That Guy now names John Scher ("You are the guy who booked Saturday").
+- **Disco Demolition** (~29 min): goofier, specific fans on the field (Michael Clarke Duncan slid into third, by his own telling), Ten Cent Beer Night callback. No Drew Peterson.
+- **Jerry Lee** (~29 min): who he is up front, the night on a clock, guard and court accounts. Subtitle now "Who Let Jerry Lee Back to Graceland?" Title is your call (below).
+- Every other script: cold open cut to ~75 words with no spoilers, crutches and pauses thinned, and the "who decided this" side beefed up where it was thin (DMB bus, Montreux, Metallica/GN'R, GG Allin). Keith Moon got more taping-day moments.
+- No episode got renumbered. Scripts no longer say an episode number, so the order can change freely.
+
+### (original note) Duck's Nov 14 evening voice session: launch order, two pillars, Ozzy, Woodstock, Disco Demolition, Jerry Lee, Encore and B-Side
+Added 2026-11-14 ~5 PM by Claude (chat), at Dillon's request. Taken from a long voice conversation with Duck. He asked for this to be passed on in full detail, NOT summarized ("I want Claude Code to know exactly how this conversation went and what we talked about"). Duck's own words are quoted where it matters. Fold the rules into CLAUDE.md, the story notes into STORIES.md and research notes, then rework scripts. PRs as usual, never push to main.
+
+#### 1. THE TWO PILLARS (top rule for every script, above everything else)
+Duck: "That's the key thing for me that's going to make me want to do this and make this interesting and what I think will make people enjoy it." If a script doesn't have both, it isn't done.
+1. **The Dollop side: "I went down the rabbit hole for you."** Every script needs a handful of oddly specific moments only someone who really dug in would know: what one specific person said, did or saw. One guy doing one specific dumb thing, then another. Duck: "those finer details that make it sound like a more unique telling of the story, a more informed telling... it's not just a generic telling of the story from the outside. It feels like you're actually getting into it." That's the difference between "I read the Wikipedia page" and "I went down the rabbit hole for you," and it's what makes people want the other episodes.
+2. **The How Did This Get Made side: the decisions behind the disaster.** Who thought this was a good idea, and why. Feeds straight into THAT GUY.
+- Duck's touchstones: The Dollop (he loves its **Ten Cent Beer Night** episode and the Lincoln's body one; "it really gives a lot of specific details, like even an account of like this person in the crowd came on the field and did this") and How Did This Get Made. "Not copy but replicate that energy." He doesn't listen to many podcasts; it's those two.
+- Research consequence: research for every story must go hunting for eyewitness details and individual moments (oral histories, period newspapers, books, first-person accounts), not just the big picture.
+
+#### 2. Cold open rule (all scripts)
+- About **30 seconds = about 75 words**. Three or four quick hits and out. A real teaser that does NOT spoil what happens. Duck: some current cold opens are "way too long... It needs to really be a teaser. And not spoil, you know, what's going to happen really."
+- Example of the problem: the Ozzy cold open already says he bites the head off and that it wasn't a toy. A teaser in the right spirit: "a dead bat in a kid's coat, a boardroom full of executives, and a dove that had a very bad day."
+- Audit every script's cold open against this (except ep 0, which is published).
+
+#### 3. Launch order (Duck: "that's all very good and smart. I like that.")
+Duck wants two or three episodes finished and posted before he really promotes, so people land on something that looks like a real, running show. Episode 1 has to capture as many people as possible.
+- **Ep 1: Ozzy.** Most famous story he has, fits the pitch exactly (everybody knows the bat, almost nobody knows the dove), and Ozzy died in 2025 so people still search for him.
+- **Ep 2: Woodstock '99.** Pulls a younger crowd who grew up on the documentaries.
+- **Ep 3: Disco Demolition.** Hometown, pure goofy fun, no tragedy at the center.
+- That spreads 80s / 90s / 70s and metal / nu-metal / a Chicago baseball riot.
+- **Ep 4: Keith Moon** (great, but skews older).
+- **Jerry Lee at Graceland: top five.** Duck: "That's going to need to be one of the early episodes, probably top five."
+- NOTE: CLAUDE.md currently numbers Ep 1 Keith Moon, Ep 2 Woodstock, Ep 3 Ozzy. Before renumbering seeds/episodes, ask Duck under "For Dillon" whether anything is already recorded under the old numbers. The Dollop-energy picks from the rest of the list, if he asks: Jerry Lee, Fyre, the Dave Matthews bus.
+
+#### 4. Ozzy episode (the angle Duck locked in)
+Duck: "everyone just thinks like, oh yeah, he was crazy and bit the head off a bat. It's like, yeah, but really, he didn't know, and there's a lot of stuff that led up to it... there was just a lot of things that added up to having that situation happen accidentally."
+- The flip: the bat was basically a setup. Ozzy throws raw meat and animal guts into crowds on that tour, so fans start throwing stuff back (rubber snakes, toy bats, sometimes dead animals). The dove story has gotten around, so fans know he's the guy who bites heads off things and they bring him things to bite. A kid shows up with a dead bat; under hot lights, drunk, it looks like another rubber toy; he bites. **The dove is the one he did on purpose. The bat is the one everybody remembers.**
+- The dove: 1981, about a year earlier, just fired from Sabbath, meeting CBS Records execs deciding if his solo career was worth their money. Plan was to release a couple of doves as a peace gesture. Drunk, he let one fly, grabbed the second and bit its head off in the meeting. They signed him anyway. Why the dove isn't famous: closed room, a dozen executives, label not eager to publicize; the bat was in front of thousands, made the papers right away, rabies shots as a sequel, and a bat fits the Prince of Darkness image (a dove is "weirdly sad").
+- Duck's specific questions the script should answer (research these, Ozzy's book and Mark Neal's interviews): how much did he really bite? Why couldn't he tell it wasn't rubber when he picked it up? Did he bite all the way through that fast, or notice and only bite partway? Ozzy's version: a second, drunk, hot lights, rubber toys all tour, bit down for the crowd without looking, mouth instantly full of something warm and awful. Whether the head came fully off / how much he spat out is not established; say so if research can't settle it.
+- **Mark Neal:** say plainly it was him, by name. He came forward himself years later (Des Moines Register); nobody has ever disputed it or claimed it. Duck: "if it was someone else, they definitely would have stepped up." Fine to add "he came forward himself years later." His little brother found the bat; Mark brought it as a joke.
+- Room to cover, per Duck: Ozzy's crazy history from the early days through the TV show (The Osbournes), the dove, the meat, people throwing stuff on stage, the aftermath.
+- **Tribute ending (new):** close with a brief honor of Ozzy as a legend: how many shows he played, records sold, Spotify listens, things like that. **Look the numbers up fresh with sources; don't pull them from memory.**
+- THAT GUY: blame is spread around (Ozzy, the meat, the kid, the dove). Current verdict "the meat did it" still fits.
+
+#### 5. Woodstock '99 episode (Duck's outline, in his order)
+1. Brief: what the original 1969 Woodstock was, what it meant, how peaceful it was, and the "it was such a nice event, we could do that again" thinking.
+2. How different the culture was: pop culture, society, mainstream music, even what songs are about. The songs show it: "peace and love" on one end, "Break Stuff" on the other.
+3. What was going wrong from the start: what wasn't planned right ahead of time.
+4. How it unraveled during the fest.
+5. The moments right before Limp Bizkit: what the crowd was like, what was going on.
+6. What was said to Fred before they went on, what they did, and the instant chaos right then. Duck: "if it's just there was chaos there, and at one point Limp Bizkit played Break Stuff, that's not it. We want to see why Break Stuff was the spark. What lit the fire."
+7. Aftermath: what people think of it now, how much of a failure it was, would anyone try again.
+8. How big Limp Bizkit still is.
+Specifics agreed:
+- **Fred and the crowd.** That organizers asked Fred to calm the crowd has never been proven: "legend goes" pile. What's on tape is Fred telling the crowd not to let anybody get hurt, "but I don't think you should mellow out. That's what Alanis Morissette had you motherfuckers do." (Alanis played a mellow set earlier that day.) Verify exact wording against footage/sources.
+- **The snowball (say it as Duck's read, without a "my take" hedge).** "Break Stuff" didn't burn the place down (the big fires and riot were Sunday night), but it's where the crowd went from miserable to destructive: plywood came down during the set. Duck: "once one person gets a little crazy and takes something down, and then another person does, and then it starts looking permitted... kind of like looting... it just snowballs and it's exponentially worse." Duck does NOT want "well, this is my take" wording: "I'll just say it... it's a clear, reasonable, logical thing to say. So I don't have to say like 'well my take is' because then that makes it seem like it can be critiqued or countered." Write it as a confident, plainly-reasoned statement in his voice, not as established fact about causation.
+- **Sunday candles.** An anti-gun-violence group handed out thousands of candles for a vigil during the Red Hot Chili Peppers' set (three months after Columbine, well meant). After three days of heat and rip-offs on a field of trash and plywood walls, people lit bonfires and fed them with the torn-down plywood walls. Order: the fires came first; RHCP played Hendrix's "Fire" near the end, in the encore (reportedly asked to do a Hendrix tribute). The song didn't give people the idea; it was terrible timing on top of something already happening. Verify the order in research.
+- **Anthony Kiedis: leave him out.** Duck doesn't want to give him any credit or benefit of the doubt. Don't quote him (e.g. not his "we didn't realize how bad it was"). Also do NOT put anything about his personal conduct in the episode. Let the facts speak: fires visibly burning, they played "Fire" anyway.
+- **Serious-stuff acknowledgment.** Duck doesn't want deaths, rapes or serious crime in the episode. Agreed: one short straight acknowledgment right after the title, before the story starts, then never again. Draft from the session: "Quick note before we start. People died at Woodstock '99, and women were sexually assaulted. That was real, and it was awful. I'm not going to make jokes about it, and I'm not going to dig into it. If you want that side of the story, the HBO and Netflix documentaries cover it. This one's about everything else that went wrong." Replace the current detailed SERIOUS PART with this (no names, no details). Duck also floated "this podcast is about keeping things light." General rule from Duck: most episodes shouldn't dwell on bad or sad stuff, but when it exists, address it right, briefly.
+- **Inflation.** Whenever a price comes up, give today's equivalent so it lands for younger listeners: $4 water in 1999 is about $8 today; a $12 slice of pizza is about $24. Verify with a CPI calculator and cite it. (Nobody reports how big the slice was; "cheese cardboard" stays.)
+- **Closer for "would anyone try again":** they did. Woodstock 50, planned for 2019, fell apart and got cancelled before it happened.
+
+#### 6. Disco Demolition episode
+- Setup Duck wants told (agreed): Steve Dahl comes to Chicago in 1978 for mornings at WDAI; Christmas Eve 1978 the station goes disco and fires him; he lands at WLUP The Loop 97.9 and turns his show into a war on disco (parody songs, "Disco D.I.E.", the Insane Coho Lips). Bill Veeck: wooden leg / ashtray, the 3-foot-7 batter, exploding scoreboard, shorts. Sox bad, attendance needs help, son Mike Veeck runs promotions. July 12, 1979 doubleheader vs. Detroit, bring a disco record and get in for 98 cents (97.9). Official 47,795 in a park that held about 44,500, thousands more outside. Security staffed for a normal Thursday, mostly at the gates. Records thrown like frisbees during game one (story goes). Firecrackers, beer, a smell that wasn't just tobacco. Rusty Staub's "people brought ladders" (still needs a real source). Dahl in army fatigues and a helmet in a Jeep, "Disco sucks" chant, a real explosion that tears a hole in center field. Thousands on the field (some say about 7,000): grass torn up, bases run and stolen, batting cage wrecked, bonfires of records. Bill Veeck, Dahl and Harry Caray beg on the PA. Riot police, about 39 arrests. Sparky Anderson refuses to play, forfeit 9-0. Ending: usher Vince Lawrence (saving for a synthesizer) co-writes one of the first house records; Mike Veeck blackballed for years, later co-owns the St. Paul Saints with Bill Murray.
+- **Ramp up the goofiness and craziness**, Dollop Ten Cent Beer Night energy. Lean hard into the absurd specific moments. Callback: Ten Cent Beer Night (Cleveland, 1974) is Disco Demolition's older cousin: "Baseball had already learned this lesson five years earlier, and nobody listened."
+- **Research task:** dig for specific crowd moments, Dollop style: individual fans and what they did on the field, people stealing the bases, the batting cage, etc. Best source: Dahl's 2016 book "Disco Demolition: The Night Disco Died" (photos and stories from people who were there), plus period Chicago newspapers and oral histories.
+- **Steve Dahl / Drew Peterson: do NOT put this in the episode.** Context for you only: Duck stopped listening to Dahl over it. In January 2008 (Jan 23) Drew Peterson and his lawyer called in to Dahl's WJMK show; a "Win a Date With Drew Peterson" contest was floated (accounts differ on whose idea) and cancelled the next day after backlash; Dahl had been doing Peterson parody songs and impressions; Dahl announced the end of his Jack FM show Dec 5, 2008 (low ratings). Duck decided Disco Demolition is big enough to do anyway. Don't make Dahl a hero; tell his part straight. Mike Veeck stays That Guy.
+
+#### 7. Jerry Lee Lewis at Graceland
+- Duck is now "way more into this story." Top five episode.
+- **Introduce who he is early.** Duck knows the name but not what he looks like, sounds like, or his songs, and many listeners won't either. Do a "you know this song, you just didn't know it was him" moment: "Great Balls of Fire" ("Goodness gracious, great balls of fire") and "Whole Lotta Shakin' Goin' On" (1957, his first big hit). 1950s rock and roll piano player, wild wavy blond pompadour, played standing up, kicked the bench across the stage, sometimes played with his feet, pounded the keys like he was mad at them. Nickname The Killer. Dennis Quaid played him in "Great Balls of Fire!" (1989).
+- Make the timeline clear: Bible school expulsion in the 50s; shot bassist Butch Owens Sept 1976 (resolve day-before-birthday vs. on-birthday); Nov 22-23, 1976 all in a few hours: turned away at Graceland, flips the Rolls, comes back about 3 AM in a different car with a loaded derringer.
+- Answer Duck's "why" questions: turned away because guards had been told not to let him in (drunk, uninvited; who gave the order is unclear). Came back because, his lifelong version, Elvis called and invited him (never confirmed or denied by Elvis's side). The gun: he said a club owner gave it to him, he forgot it was in the car, it slid off the dash; the guard said he waved it and yelled to see Elvis; police said loaded and cocked. The champagne: he'd been drinking it though he said he didn't like it, went to toss the empty out the window, window was closed, bottle through the glass, cut his face. Whether it was the driver's window: check; don't state it unless sourced.
+- **Title (not locked, Duck wanted options):**
+  - "Due To Great Balls of Firearms": Duck loved it ("Nailed it") but then noted "what's a ball of firearms? ... it's a little odd, it doesn't quite make sense."
+  - "Due To Whole Lotta Shootin' Goin' On": a real sentence, obviously his song, and true (bassist + gun). Claude's suggestion after Duck's concern.
+  - "Due To a Whole Lotta Drinkin' Goin' On": also makes sense (champagne, flipped Rolls), less punch.
+  - Duck's title rule: it must reference his song so people know who it's about, and be funny enough to make you go "what the fuck is that about?"
+  - Subtitle: "Who Let Jerry Lee Back to Graceland?" (Duck: "that's good").
+  - Put the options to Duck under "For Dillon"; don't pick for him.
+
+#### 8. Special episode formats (names)
+- **Encore:** Duck's name for any follow-up episode on a story he's already done.
+- **Guest flips it and tells Duck a wild story** (The Dollop's "Reverse Dollop"): Duck wants a music-performance term. Options from chat: **B-Side** (Claude's pick: flipping the record is the reversal; "Defacing the Music: B-Side with [guest]"), Sit-In (a musician from another band jumps into your set), Featuring ("feat. [guest]"), Mic Swap, Stage Swap. **Duck narrowed it to Mic Swap or B-Side** ("Mic swap or b side is really good"). Final pick still his.
+- Listener-submission specials naming is still open (see CLAUDE.md list).
+
+When you've folded these in, leave a DONE note here and put questions for Duck (renumbering, Jerry Lee title, B-Side) under "For Dillon".
+
+### DONE: Images button, public sources pages, description links
+Done 2026-11-14 by Claude. Hit **Pull latest** and it's all live:
+- **Images**: admin > Scripts (and Episodes) has an Images button per script. Pictures only, big, with Full size and Download. Hide any you don't like (they come back from the Hidden pile), or add your own with its credit. 8 to 10 pictures per script for all 12 shipped scripts, all from Wikimedia Commons under CC BY / CC BY-SA / CC0 / public domain. The server grabs each picture from Wikimedia the first time you open a script's images, so that first load takes a few seconds.
+- **Sources & Credits pages**: `defacingthemusic.com/ep/N` (and `/ep/` for the list). Sources plus every image credit. A library script gets its page the moment it becomes an episode; the script edit page has a Preview link before that, and an Extra sources box for your own links.
+- **Description line**: admin > Episodes > an episode has "Sources and credits: https://defacingthemusic.com/ep/N" with a Copy button.
+- Fact flags the research turned up are in the PR (some script lines in eps 1 to 3 don't match the sources). Scripts weren't changed.
+
+### (original note) Images button, public sources pages, description links
+Added 2026-11-14 by Claude (chat), at Dillon's request, from a voice session with him. Three pieces. Open a PR per piece or one PR for all, your call. Don't push to main.
+
+**1. Images button in Scripts & Teleprompter**
+- In admin > Backstage > Scripts & Teleprompter, each script row has Read and Edit (`admin/scripts.php`). Add an **Images** button next to them. Also next to Read on the Episodes list (`admin/episodes.php`) if it fits.
+- It opens that script's images and NOTHING else: just the pictures, big enough to judge, with a way to open or download each one full size. No source or license text on this page (Dillon: "When I click on images, I just want to see the optional images that I can use."). That info lives in the sources section (piece 2).
+- What they're for: cutaways. Dillon records one take on one camera and edits afterward, so he needs things to cut to when he hides an edit.
+- Gather 5 to 10 images per script (fewer is fine if a story doesn't have many good ones). Mix: photos of the event or the people, newspaper headlines or clippings, band shots, and goofy related stuff (a cheese sandwich, a flare gun, a tour bus). Dillon: "Keep it goofy and fun."
+- **Licensing is a hard rule.** Dillon may make money on this show eventually, so every image must be legal for commercial use. Use Wikimedia Commons files licensed CC BY, CC BY-SA, CC0 or public domain (NOT NC or ND), free stock (Unsplash, Pexels) for the generic and goofy extras, and public-domain material. No Google Images grabs, no news-agency photos, album art or screenshots unless the license clearly allows it. Record for every image: the file page URL, the author or credit line, and the license with its link.
+- If you can't fetch a particular image yourself (photos of real people, for example), list the Commons file page in that script's sources entry and say so in the PR, so Dillon can grab it and add it through the existing Uploads page. If it's easy, let him add or remove images from the Images page too.
+- Start with the scripts not yet recorded, then eps 1 to 3.
+
+**2. Public Sources & Credits section per episode**
+- A public page (or section of an episode page) per episode on the site, e.g. `defacingthemusic.com/episode-1` or `/sources/episode-1`, whatever fits the site. It needs a short, clean URL Dillon can paste into descriptions.
+- It lists the research sources for that story (already in `research/<slug>.notes.md`; turn them into a readable list of titles + links, not raw notes) and the credit for every image from piece 1 (title, author, license + link). Think of it like a bibliography.
+- Library scripts without an episode number yet: build it so the page goes live when the script gets an episode, or however you think is cleanest.
+- Gig Poster brand, reuse `assets/site.css`. No em dashes.
+
+**3. Descriptions just link to the sources page**
+- Dillon doesn't want to clutter the YouTube, Spotify or other show descriptions with sources and credits. Each description gets one line like "Sources and credits: defacingthemusic.com/episode-1".
+- Wherever the site stores or shows an episode's description text (admin > Episodes), add that line or a one-click copy of it, so he can paste it.
+- Background (Claude chat, not a lawyer): for the story sources a link is plenty. For CC images, CC 4.0 licenses accept credit through a link to a page with the details. Some older CC versions want the credit closer to the work, so on the sources page keep each image's credit complete, and flag in the PR any image whose license would want the photographer's name in the description itself.
+
+When done, leave a DONE note here like the others.
+
 ### DONE: Script pacing pass (Episode 1 rewrite + redo 0, 2, 3 to match)
 Done 2026-11-13 by Claude (second pass, with the voice reference and the no-tribute-band rule). Episode 1 is the latest board version word for word. Episode 0 is cleaned up from the recorded transcript (32 years of guitar, the Foghat roadie, "that guy is usually awesome", ears ringing). Episodes 2 and 3: tribute-band material removed, voice loosened to match. Host bio on the home page no longer mentions the tribute band. Third pass (11:33 PM items): THAT GUY segment added to Episodes 1 to 3 (planted in TODAY, suspects, verdict right before OUT; Ep 1 = the stagehand, Ep 2 = the promoters, a whole office of guys, Ep 3 = Ozzy, but the meat did it), Episode 0 sets it up as a show thing, and Episode 0's What's Coming is now the board's tease block. Note: Episode 1 opens with a pop quiz answer, but the recorded Episode 0 never asked it; Dillon may want to tweak that opener. Unedited server copies upgrade on Pull latest; edited ones are left alone. Nothing more to do here.
 Added 2026-11-12 11:20 PM by Defa, at Dillon's request.
@@ -231,6 +352,27 @@ Added 2026-11-11 by Defa. Read `CLAUDE.md`, then work `TASKS.md` one task per ru
 Reply to Dillon under **For Dillon** in the same PR when you have a question or something he must do.
 
 ## For Dillon
+
+### Questions from the Nov 14 evening session (answer here or in chat)
+Added 2026-11-14 by Claude.
+1. **Renumbering.** You want Ozzy as Episode 1, Woodstock 2, Disco Demolition 3, Keith Moon 4. Have you recorded anything yet under the old numbers (Keith Moon as 1, Woodstock 2, Ozzy 3)? If not, say "renumber" and I'll set the episodes up in the new order.
+2. **Jerry Lee title.** Pick one (or say none):
+   - Due To Great Balls of Firearms
+   - Due To Whole Lotta Shootin' Goin' On
+   - Due To a Whole Lotta Drinkin' Goin' On
+   - New: Due To Goodness Gracious, a Derringer
+   - New: Due To Great Balls of Champagne
+   - New: Due To Whole Lotta Knockin' Goin' On
+3. **Guest episodes:** B-Side or Mic Swap?
+4. **Things the research changed that you should know before recording:**
+   - Ozzy: Mark Neal didn't come forward "years later"; the Des Moines Register named him two days after the show. CBS threw Ozzy out after the dove (the record still came out on their label). "Sharon sent ads asking fans to bring meat" rests on one biography; it's credited on air, soften it if you want. There's a "Rest easy, Ozzy." line before the sign-off; cut it if it's too soft.
+   - Jerry Lee: it wasn't all in a few hours. He flipped the Rolls about 9:30 AM and came back with the derringer around 3 AM the next night. Also has a short Springsteen-climbed-the-Graceland-wall sidebar; cut it if you don't like it there.
+   - Woodstock: the only evidence anyone asked Fred to calm the crowd is Fred himself, mocking it on stage. It's in the legend pile.
+   - Long scripts now: Woodstock ~32 min, Montreux ~30, Disco and Jerry Lee ~29, Ozzy ~28, DMB ~25. Nothing was trimmed, per your rule.
+   - Metallica/GN'R: That Guy is now Axl Rose (Lars gets an assist for setting up the tour; the pyro operator is cleared). The promoter, Donald Tarlton, died in April 2026; the script only mentions him in passing. Say if you want that handled differently.
+   - GG Allin: the verdict now lands on GG himself, but the subtitle still asks "Who Kept Booking GG Allin?" Keep it as a setup, or want a new one?
+   - Montreux: Nobs turning the fire hose down so the coffee machine wouldn't blow up rests on one unnamed person; keep or cut. DMB: nobody ever said why the driver dumped it there, so the script gives your three guesses, labeled as guesses.
+
 
 ### Your Gig Poster home page is ready to go live
 Added 2026-11-12 by Claude. The PR puts your Gig Poster page up as the real home page. To make it live:
