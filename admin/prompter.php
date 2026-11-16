@@ -45,7 +45,7 @@ body.playing #help{opacity:0}
 <body>
 <div id="line"></div>
 <div id="help">Space: play/pause · ↑↓: speed · + −: size · [ ]: width · F: full screen · M: mirror</div>
-<main id="script"><?= dtm_script_html((string)$s['body']) ?></main>
+<main id="script"><?= dtm_script_html(dtm_fill_episode_number((string)$s['body'], (string)$s['episode'])) ?></main>
 <nav id="bar" aria-label="Teleprompter controls">
   <a href="scripts.php" title="Back to scripts">✕</a>
   <button id="smaller" title="Smaller text (−)">A−</button>

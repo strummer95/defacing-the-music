@@ -8,7 +8,8 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 **What the show is**
 - Comedy podcast, solo host **Duck** (Chicagoland, 32 years playing guitar). Crazy or really funny true stories from music history, told Dollop style. **Never mention his tribute band, Counterfeit, or "my band" anywhere.** No em dashes in any copy.
-- Titles: "Due To ..." (like a cancellation notice) + a "Who ...?" subtitle that points at the guilty party. Every episode names **That Guy** (the one to blame), marked by a short guitar squeal Duck records himself.
+- Titles: "Due To ..." (like a cancellation notice) + a "Who ...?" subtitle that points at the guilty party.
+- **How every episode opens (Duck, Nov 16):** short teaser, then "I'm Duck, and due to [title], this is Defacing the Music." (e.g. "I'm Duck, and due to a possible rabies infection, this is Defacing the Music."), then the theme song, then "Episode 1. Who Let That Guy Bring a Bat?" and into the story. Title before the theme, subtitle after it. Every episode names **That Guy** (the one to blame), marked by a short guitar squeal Duck records himself.
 - YouTube is the main platform. Also on Spotify and Apple Podcasts. Socials: Facebook, Instagram, TikTok (links on defacingthemusic.com).
 - Old promo line "Fifteen minutes. No refunds." is retired: episodes run 15 to 30 minutes now, and Duck didn't like "no refunds".
 
