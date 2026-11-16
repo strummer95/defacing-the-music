@@ -355,7 +355,7 @@ Reply to Dillon under **For Dillon** in the same PR when you have a question or 
 
 ### Questions from the Nov 14 evening session (answer here or in chat)
 Added 2026-11-14 by Claude.
-1. **Renumbering.** You want Ozzy as Episode 1, Woodstock 2, Disco Demolition 3, Keith Moon 4. Have you recorded anything yet under the old numbers (Keith Moon as 1, Woodstock 2, Ozzy 3)? If not, say "renumber" and I'll set the episodes up in the new order.
+1. ANSWERED Nov 16: no numbers on unused scripts; a script only gets a number when you make it an episode (done: home page lineup and docs unnumbered). Original question: **Renumbering.** You want Ozzy as Episode 1, Woodstock 2, Disco Demolition 3, Keith Moon 4. Have you recorded anything yet under the old numbers (Keith Moon as 1, Woodstock 2, Ozzy 3)? If not, say "renumber" and I'll set the episodes up in the new order.
 2. **Jerry Lee title.** ANSWERED Nov 16: "Due To Great Balls of Firearms" (done). Options were:
    - Due To Great Balls of Firearms
    - Due To Whole Lotta Shootin' Goin' On

@@ -5,21 +5,21 @@ Fact-check each one before scripting (the first AI chat's pitches had invented d
 
 **Selection rule (Duck's):** every episode is EITHER a story everybody knows told with new information (how it got handled, how it affected people's lives, how it really played out), OR a story people don't really know. It has to be crazy or funny, not just "something went wrong." Legends are fine if they're called legends and the episode plays up how wild the retellings got.
 
-## Launch order (Duck, Nov 14 evening; numbers not changed yet, see CLAUDE.md "Launch order")
+## Launch order (Duck, Nov 14 evening). Planned order only: nothing gets a number until Duck makes it an episode (Nov 16).
 1. Ozzy and the bat. 2. Woodstock '99. 3. Disco Demolition. 4. Keith Moon. Jerry Lee at Graceland in the top five.
 Two or three episodes go up before Duck really promotes. Every script needs both pillars (Dollop specifics + the decisions behind the disaster); see CLAUDE.md.
 
 ## Published
 0. Due To Unforeseen Circumstances / Who Gave This Guy a Mic? (the pilot; can't be changed)
 
-## Scripted: the original numbered three (old numbers; launch order above replaces them)
-1. Keith Moon, The Smothers Brothers Comedy Hour, 1967. Due To Excessive Flash Powder / Who Gave The Who Explosives?
-2. Woodstock '99, Limp Bizkit and "Break Stuff". Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
+## Scripted: the original three (their old numbers are retired; unnumbered until made episodes)
+- Keith Moon, The Smothers Brothers Comedy Hour, 1967. Due To Excessive Flash Powder / Who Gave The Who Explosives?
+- Woodstock '99, Limp Bizkit and "Break Stuff". Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
    - Nov 14 evening outline, in Duck's order: the original 1969 Woodstock and the "we could do that again" thinking; how different the culture was (peace and love vs "Break Stuff"); what was wrong from the start; how it unraveled; the moments right before Limp Bizkit; what was said to Fred, what they did, and WHY "Break Stuff" was the spark; aftermath (Woodstock 50 in 2019 fell apart before it happened); how big Limp Bizkit still is.
    - Organizers asking Fred to calm the crowd is unproven ("legend goes"). On tape: "I don't think you should mellow out. That's what Alanis Morissette had you motherfuckers do." The snowball (miserable to destructive during "Break Stuff", plywood came down) is said as Duck's plain, confident read, no "my take" hedge. Sunday: vigil candles during RHCP, fires first, "Fire" in the encore.
    - Leave Anthony Kiedis out entirely: no quotes, nothing about his conduct. Deaths and assaults: one short straight acknowledgment after the title, then never again; no names, no details. Prices get today's equivalent.
    - Earlier: Duck: lots of room here. Limp Bizkit's place in pop culture, the original Woodstock, why they brought it back, the problems, what happened, the aftermath, what it changed for festivals, and where Limp Bizkit is now. The script is one of the shorter ones (about 13 min) and needs "what it changed" and "where Bizkit is now". Never mention Duck's tribute band.
-3. Ozzy and the bat, Des Moines, 1982 (plus the dove, 1981, and peeing on the Alamo). Due To a Possible Rabies Infection / Who Let That Guy Bring a Bat?
+- Ozzy and the bat, Des Moines, 1982 (plus the dove, 1981, and peeing on the Alamo). Due To a Possible Rabies Infection / Who Let That Guy Bring a Bat?
    - "Ozzy pees on the Alamo" rated PROBABLY as its own idea; it's already inside ep 3.
    - Nov 14 evening angle (launch episode): the bat was basically a setup. The meat and guts he threw got the crowd throwing stuff back, the dove story got around, fans brought him things to bite, a kid brought a dead bat, under hot lights and drunk it looked like another rubber toy. "The dove is the one he did on purpose. The bat is the one everybody remembers." Answer Duck's questions (how much did he bite, why couldn't he tell, all the way or partway) from Ozzy's book and Mark Neal's interviews; say so if it can't be settled. Name Mark Neal plainly (he came forward himself). Cover Ozzy from the early days through The Osbournes. Close with a short tribute (shows, records sold, Spotify numbers, looked up fresh with sources). Verdict stays "That Guy is Ozzy. But the meat did it."
 
