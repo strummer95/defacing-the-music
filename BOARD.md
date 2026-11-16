@@ -38,6 +38,27 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
+### TODO (Nov 16, from Duck and Defa): Ozzy script review, co-host Pat, sign-off
+**From Duck:**
+- **Co-host Pat (planned).** Duck's friend Pat is joining as co-host: Duck is play-by-play, Pat is the color commentator. **Pat is never scripted.** He hears the story fresh and just talks with Duck about it, like Gareth on the Dollop. Don't write lines, prompts or cues for Pat. Scripts stay Duck's story, read word for word. The only exception is if Pat does a Mic Swap, and that one is entirely his.
+- Because Pat reacts live, Duck's written asides and riff fallbacks can be lighter. Leave room after the big reveals (a beat, not a cue) so there's space for Pat to jump in. Keep the scripts readable solo too, since the plan isn't final.
+- **Sign-off:** Duck's spoken close is "I'm Duck. Due to unforeseen circumstances, I'll see you next time." ("next time", not "next week"). "This show is canceled" is a theme song lyric, not the spoken sign-off. Update every script's OUT section and the docs.
+
+**From Defa's review of the Ozzy script (do these in one PR):**
+1. **Verify and cite before Duck reads these out loud** (add sources to lib/sources; cut or soften anything you can't source):
+   - "Crazy Train" passing one billion Spotify streams in August 2026, and hitting the Billboard Hot 100 for the first time after he died.
+   - The Rolling Stone anniversary piece that said the bat thrower never came forward. Use the actual article or cut the gotcha.
+   - The Bat Conservation International expert talking to TMZ about the bite.
+   - "More than six million monthly listeners" on Spotify after he died.
+   - "The most watched series MTV has ever had": Jersey Shore later passed it. Change it to "at the time."
+2. **Pace:** cut "Why Nobody Remembers the Dove" to about two lines and keep "a bat is basically merch." It stops the story to explain things essay style, which the Dollop doesn't do. Cut "Legend or Fact" down to just the new items (the dress, the Alamo, who threw it) or fold them into the story, since it repeats things right before the That Guy payoff. That should save about 2 to 3 minutes.
+3. **Jokes:** keep the good ones (puke remover to cow killer, owns speakers, "Pick up dry cleaning. Doves.", please bring meat, the bat next to the Tater Tots, bat taste in his mouth, the clipboard, meat at Iowa). Swap out the weak ones: the frat line, and "Texas is more forgiving than you'd think."
+4. **More Dollop:** read one longer passage straight from the 1982 Des Moines Register coverage (with the source named), then react to it. The Dollop reads long chunks of old articles word for word. Also make "somebody had to buy the doves / the meat" a deliberate running gag about the errand guy, and pay it off once more near the end.
+5. Leave the Randy section's tone alone. It's right.
+
+Leave a DONE note here when it's finished, open a PR, and merge it per the usual rules.
+
+
 ### DONE: Duck's Nov 14 evening voice session
 Done 2026-11-14 by Claude. Hit **Pull latest**; every script you haven't edited on the site updates by itself (an edited one is left alone).
 - Rules folded into CLAUDE.md (two pillars as the top rule, 75-word cold opens, launch order, prices with today's money, serious stuff once and briefly, Encore / B-Side) and STORIES.md.
