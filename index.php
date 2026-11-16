@@ -13,20 +13,21 @@ $social = [
   'Instagram' => 'https://www.instagram.com/defacingthemusicpod/',
   'TikTok'    => 'https://www.tiktok.com/@defacingthemusic',
 ];
+// Upcoming stories (no episode numbers until Duck makes them episodes in the admin). Launch order.
 $episodes = [
-  ['num' => '01', 'title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
-   'blurb' => "Live TV, 1967. Keith Moon's bass drum gets loaded with way more flash powder than any human needed. Pete Townshend's hair catches fire, and his ears never forgive anybody.",
-   'meta' => 'CBS Studios, 1967', 'shadow' => ''],
-  ['num' => '02', 'title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
+  ['title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let That Guy Bring a Bat?',
+   'blurb' => "A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber. And it wasn't even his first animal.",
+   'meta' => 'Des Moines, 1982', 'shadow' => ''],
+  ['title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
    'blurb' => '200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.',
    'meta' => 'Rome, NY, 1999', 'shadow' => 'red'],
-  ['num' => '03', 'title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let That Guy Bring a Bat?',
-   'blurb' => "A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber.",
-   'meta' => 'Des Moines, 1982', 'shadow' => ''],
+  ['title' => 'Due To Excessive Disco', 'who' => 'Who Let a DJ Blow Up Center Field?',
+   'blurb' => "A White Sox promotion: bring a disco record, get in for 98 cents, watch a DJ blow them up in center field. Chicago did not stay in its seats.",
+   'meta' => 'Comiskey Park, 1979', 'shadow' => ''],
 ];
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
-$desc = "Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.";
+$desc = "Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.";
 ?>
 <!doctype html>
 <html lang="en">
@@ -73,7 +74,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
     <div class="hero-copy">
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
-      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, fifteen minutes each, told like a friend at the bar who actually looked it up.</p>
+      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
       <div id="listen" class="listen-main">
         <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>" rel="noopener" target="_blank">
           <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -139,7 +140,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
     <?php foreach ($episodes as $ep): ?>
     <article class="ticket <?= $h($ep['shadow']) ?>">
       <div class="ticket-top bang">
-        <span class="num">EP <?= $h($ep['num']) ?></span>
+        <span class="num"><?= $h(substr($ep['meta'], -4)) ?></span>
         <span class="admit">Admit one</span>
       </div>
       <div class="ticket-body">
@@ -147,7 +148,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
         <p class="who"><?= $h($ep['who']) ?></p>
         <p class="blurb"><?= $h($ep['blurb']) ?></p>
         <div class="ticket-foot">
-          <span class="meta"><?= $h($ep['meta']) ?> · 15 min</span>
+          <span class="meta"><?= $h($ep['meta']) ?></span>
           <span class="status bang">Coming soon</span>
         </div>
       </div>
