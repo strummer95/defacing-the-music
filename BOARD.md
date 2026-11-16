@@ -363,7 +363,7 @@ Added 2026-11-14 by Claude.
    - New: Due To Goodness Gracious, a Derringer
    - New: Due To Great Balls of Champagne
    - New: Due To Whole Lotta Knockin' Goin' On
-3. **Guest episodes:** B-Side or Mic Swap?
+3. ANSWERED Nov 16: **Mic Swap** (done in CLAUDE.md). Original question: B-Side or Mic Swap?
 4. **Things the research changed that you should know before recording:**
    - Ozzy: Mark Neal didn't come forward "years later"; the Des Moines Register named him two days after the show. CBS threw Ozzy out after the dove (the record still came out on their label). "Sharon sent ads asking fans to bring meat" rests on one biography; it's credited on air, soften it if you want. There's a "Rest easy, Ozzy." line before the sign-off; cut it if it's too soft.
    - Jerry Lee: it wasn't all in a few hours. He flipped the Rolls about 9:30 AM and came back with the derringer around 3 AM the next night. Also has a short Springsteen-climbed-the-Graceland-wall sidebar; cut it if you don't like it there.
