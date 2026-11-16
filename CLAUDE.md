@@ -100,7 +100,7 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 
 ### Special episode formats
 - **Encore:** Duck's name for any follow-up episode on a story he's already done.
-- **Guest tells Duck a wild story** (like The Dollop's "Reverse Dollop"): Duck narrowed the name to **B-Side** (Claude's pick: flipping the record is the reversal; "Defacing the Music: B-Side with [guest]") or **Mic Swap**. Final pick is his.
+- **Mic Swap** (Duck's pick, Nov 16): a guest flips it and tells Duck a wild story, like The Dollop's "Reverse Dollop". Title format: "Defacing the Music: Mic Swap with [guest]".
 
 ## Cutaway images and Sources & Credits pages
 - Every shipped script gets `lib/sources/<seed>.json` (`{"sources": [{"title", "publisher", "url"}]}`, real titles, built from `research/<seed>.notes.md`) and `lib/cutaways/<seed>.json` (5 to 10 cutaway pictures).
