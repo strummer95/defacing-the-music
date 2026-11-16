@@ -3,6 +3,38 @@
 Dillon, Defa and Claude talk here about Defacing The Music. Newest notes at the top of each section. Times in America/Chicago.
 Dillon: edit this file right on GitHub (pencil icon), add a note under **For Claude**, commit. Claude reads it every run.
 
+## For Grok / Defa: where the show stands (updated Nov 16 by Claude, at Dillon's request)
+Grok and Defa: read this before doing anything for the show. The full rules live in `CLAUDE.md` ("The show" section); this is the short version plus what changed Nov 14 to 16.
+
+**What the show is**
+- Comedy podcast, solo host **Duck** (Chicagoland, 32 years playing guitar). Crazy or really funny true stories from music history, told Dollop style. **Never mention his tribute band, Counterfeit, or "my band" anywhere.** No em dashes in any copy.
+- Titles: "Due To ..." (like a cancellation notice) + a "Who ...?" subtitle that points at the guilty party. Every episode names **That Guy** (the one to blame), marked by a short guitar squeal Duck records himself.
+- YouTube is the main platform. Also on Spotify and Apple Podcasts. Socials: Facebook, Instagram, TikTok (links on defacingthemusic.com).
+- Old promo line "Fifteen minutes. No refunds." is retired: episodes run 15 to 30 minutes now, and Duck didn't like "no refunds".
+
+**The vibe (Duck's top rule)**
+- **The Dollop and How Did This Get Made.** Two pillars every episode: (1) "I went down the rabbit hole for you": oddly specific details about what one person said, did or saw; (2) the decisions behind the disaster: who thought this was a good idea, and why.
+- **It's read, like the Dollop** (Duck, Nov 16): "it's clear that david anthony reads, and it isnt off the top of the head." Scripts are full researched stories Duck reads, with real quotes read straight from named sources. Nothing is made up; unproven stuff is called a legend.
+- People who got hurt or died are never the joke.
+
+**Episodes and numbering**
+- Only **Episode 0** (Due To Unforeseen Circumstances / Who Gave This Guy a Mic?) is out: https://youtu.be/FQK-XMkoajA
+- **No other script has a number.** Duck: "dont number the unused scripts... only number them once i make them an episode." Don't call anything "Episode 1/2/3" in posts until Duck makes it an episode in the admin.
+- Planned order (not numbers): Ozzy and the bat, then Woodstock '99, then Disco Demolition, then Keith Moon. Jerry Lee at Graceland in the first five. Duck wants two or three out before he really promotes.
+- Titles of the first few:
+  - Ozzy: Due To a Possible Rabies Infection / Who Let That Guy Bring a Bat?
+  - Woodstock '99: Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
+  - Disco Demolition: Due To Excessive Disco / Who Let a DJ Blow Up Center Field?
+  - Keith Moon: Due To Excessive Flash Powder / Who Gave The Who Explosives?
+  - Jerry Lee: **Due To Great Balls of Firearms / Who Let Jerry Lee Back to Graceland?** (Duck's pick, Nov 16)
+- More scripted stories in the library: Dave Matthews bus, Fyre Festival, Milli Vanilli, Sex Pistols on Bill Grundy, Montreux / "Smoke on the Water", Metallica and GN'R Montreal, GG Allin. Next idea Duck wants: Altamont (the Stones hiring the Hells Angels).
+- Special formats: **Encore** = a follow-up on a story already done. **Mic Swap** = a guest tells Duck a wild story ("Defacing the Music: Mic Swap with [guest]"; Duck's pick, Nov 16). Listener-story specials: name not picked yet.
+
+**For posts and descriptions**
+- Every episode has a public Sources & Credits page: `https://defacingthemusic.com/ep/N` (N = episode number). Descriptions end with one line: "Sources and credits: https://defacingthemusic.com/ep/N". Nothing else about sources or image credits goes in descriptions.
+- Social clips: every script marks 30 to 60 second moments with [CLIP: ...]; the That Guy verdict is always one.
+- Brand: "Gig Poster" (black, yellow #FFD21F, red #E4251B, cream #F2E8D5; Metal Mania / Bangers / Archivo fonts; the warning-sign logo). Never the old purple/teal/pink look.
+
 ## For Claude
 
 ### DONE: Duck's Nov 14 evening voice session
