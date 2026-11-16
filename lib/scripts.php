@@ -15,7 +15,7 @@ const DTM_SEEDS = [
   'story-fyre-festival'         => ['', 'Due To a Cheese Sandwich', 'Who Sold Them Paradise?'],
   'story-milli-vanilli'         => ['', 'Due To a Skipping Track', 'Who Let the Tape Run?'],
   'story-sex-pistols-grundy'    => ['', 'Due To Language', 'Who Dared the Sex Pistols?'],
-  'story-jerry-lee-graceland'   => ['', 'Due To an Unannounced Visitor', 'Who Let Jerry Lee Back to Graceland?'],
+  'story-jerry-lee-graceland'   => ['', 'Due To Great Balls of Firearms', 'Who Let Jerry Lee Back to Graceland?'],
   'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
   'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
   'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
@@ -32,11 +32,16 @@ const DTM_SEED_OLD = [
   'story-dmb-bus' => ['b688ec518f0b47630373d1373f73ec663a3fa1b1', '95b8bed82284c7992a91680dcf1bf22d935e3f79'],
   'story-fyre-festival' => ['2a104530ee95bc40c824b8fa646b6d07fd332ce6', 'd6d84255abf2bdd50c7419c2e7681c05d5cd4f12'],
   'story-gg-allin' => ['4c037d575f180c786c9ba74e76abd5b7a9cf82ff', '08d68fc6e643fa0a31d7204e9853d0e31a1daa14'],
-  'story-jerry-lee-graceland' => ['c529afbd373824cb730f0ad76505b7cd6851bf9a', 'c882b610870cd66067ab08db6e193e8f3b2a4bc0'],
+  'story-jerry-lee-graceland' => ['c529afbd373824cb730f0ad76505b7cd6851bf9a', 'c882b610870cd66067ab08db6e193e8f3b2a4bc0', 'ecad2fd6ef45f1e1192b76897e08f72104d8154a'],
   'story-metallica-gnr-montreal' => ['3ca77605ef5cc95a6b854130d6efa2422797e165', 'a7dad0ed695be61f20b2973d8288e7ec8c86cf48'],
   'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384', '3c2e6640338309ad8ba074c89d160eb2bf08144b'],
   'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa', '78f9ce091756b4cc9e7696706ca53b389d320439'],
   'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b', '59f6cbf0d89ca110853ff09a843bae56945f9d3e'],
+];
+
+// Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
+const DTM_SEED_OLD_TITLES = [
+  'story-jerry-lee-graceland' => ['Due To an Unannounced Visitor'],
 ];
 
 // Earlier shipped subtitles. When an unedited seed is upgraded and its subtitle is still one of these, it gets the new one.
@@ -74,6 +79,7 @@ function dtm_upgrade_seeds(): void {
         $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
         if (in_array((string)($s['subtitle'] ?? ''), DTM_SEED_OLD_SUBTITLES[$key] ?? [], true)) $s['subtitle'] = DTM_SEEDS[$key][2];
+        if (in_array((string)($s['title'] ?? ''), DTM_SEED_OLD_TITLES[$key] ?? [], true)) $s['title'] = DTM_SEEDS[$key][1];
       }
     }
     return $list;
