@@ -24,7 +24,7 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 - Planned order (not numbers): Ozzy and the bat, then Woodstock '99, then Disco Demolition, then Keith Moon. Jerry Lee at Graceland in the first five. Duck wants two or three out before he really promotes.
 - Titles of the first few:
   - Ozzy: Due To a Possible Rabies Infection / Who Let That Guy Bring a Bat?
-  - Woodstock '99: Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
+  - Woodstock '99: Due To Not Giving Peace a Chance / Who Asked Fred Durst to Be a Therapist?
   - Disco Demolition: Due To Excessive Disco / Who Let a DJ Blow Up Center Field?
   - Keith Moon: Due To Excessive Flash Powder / Who Gave The Who Explosives?
   - Jerry Lee: **Due To Great Balls of Firearms / Who Let Jerry Lee Back to Graceland?** (Duck's pick, Nov 16)
