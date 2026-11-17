@@ -84,3 +84,8 @@ Research method again WebSearch only; WebFetch blocked for sabr.org, chicagomag.
 - Umpire Dave Phillips quotes (home plate dug up, center field on fire): only a secondary blog; left out in favor of Jack Morris's NYT quote.
 - Sparky Anderson "black mark on baseball" quote: undated secondary page, left out.
 - Mike Veeck "This is the Woodstock they never had": forum post only; left out (used David Israel's "Veeckstock" instead).
+
+## Nov 17 additions
+- "Insane Coho Lips" name: Dahl combined the Insane Unknowns (a Chicago street gang at the time) with the coho salmon fishing fleet he passed at Burnham Harbor every morning on the way to work. Dahl's own account in a Baseball Almanac interview, also in ESPN: https://www.baseball-almanac.com/box-scores/boxscore.php?boxid=197907121CHA , https://www.espn.com/espn/print?id=4322594
+- "Le Freak" (Chic) was the Billboard Hot 100 number one in late December 1978 (charts dated Dec 23 and Dec 30, 1978): https://en.wikipedia.org/wiki/Le_Freak , https://stereogum.com/2069711/the-number-ones-chics-le-freak/franchises/columns/the-number-ones
+- Not used: "Funkytown" (Lipps Inc.) came out in March 1980, after Disco Demolition, so it can't be the song WDAI flipped to: https://en.wikipedia.org/wiki/Funkytown
