@@ -26,6 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($eid) { header('Location: episodes.php?edit=' . urlencode($eid) . '&made=1'); exit; }
     $error = 'That script is already on an episode.'; $id = $pid;
   }
+  if ($action === 'update_seed' && $pid !== '') {
+    $sc = dtm_script($pid); $key = $sc ? dtm_seed_key($sc) : '';
+    $fresh = $key !== '' ? (string)@file_get_contents(DTM_ROOT . "/lib/seed/$key.txt") : '';
+    if ($fresh !== '' && isset(DTM_SEEDS[$key])) {
+      dtm_json_update('scripts.json', function ($l) use ($pid, $key, $fresh) {
+        foreach ($l as &$x) if ($x['id'] === $pid) {
+          $x['body'] = $fresh; $x['title'] = DTM_SEEDS[$key][1]; $x['subtitle'] = DTM_SEEDS[$key][2]; $x['updated'] = date('c');
+        }
+        return $l;
+      });
+      header('Location: scripts.php?edit=' . urlencode($pid) . '&updated=1'); exit;
+    }
+    $error = 'There is no newer version of this script.'; $id = $pid;
+  }
   if ($action === 'save') {
     $title = trim((string)($_POST['title'] ?? ''));
     $subtitle = trim((string)($_POST['subtitle'] ?? ''));
@@ -68,6 +82,15 @@ dtm_page_start('Scripts', $user, true);
   <p class="small"><a href="scripts.php">All scripts</a></p>
   <h1 class="metal"><?= $c['id'] ? 'Edit script' : 'New script' ?></h1>
   <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status">Saved.</p><?php endif; ?>
+  <?php if (isset($_GET['updated'])): ?><p class="notice ok bang" role="status">Updated to the latest version.</p><?php endif; ?>
+  <?php $seedKey = $c['id'] ? dtm_seed_key($c) : ''; $seedFile = $seedKey !== '' ? DTM_ROOT . "/lib/seed/$seedKey.txt" : '';
+    if ($seedFile !== '' && is_file($seedFile) && !isset($_GET['saved']) && rtrim((string)file_get_contents($seedFile)) !== rtrim(str_replace("\r\n", "\n", (string)$c['body']))): ?>
+  <form method="post" class="seed-update" onsubmit="return confirm('Replace this script with the latest version Claude wrote? Any changes you made to it here will be lost.')">
+    <?= dtm_csrf_field() ?><input type="hidden" name="action" value="update_seed"><input type="hidden" name="id" value="<?= h($c['id']) ?>">
+    <p class="notice ok bang">This copy is different from the latest version Claude shipped (newer edits, or your own changes).
+      <button type="submit" class="pull-btn bang">Update to latest version</button></p>
+  </form>
+  <?php endif; ?>
   <?php if ($error): ?><p class="notice err bang" role="alert"><?= h($error) ?></p><?php endif; ?>
   <?php if ((string)$c['episode'] !== ''): $e = $epFor[$c['id']] ?? null; ?>
     <p class="notice ok bang">This is Episode <?= h($c['episode']) ?><?php if ($e): ?> · <a href="episodes.php?edit=<?= h(urlencode($e['id'])) ?>">open the episode</a><?php endif; ?></p>
