@@ -18,7 +18,7 @@ $episodes = [
   ['title' => 'Due To a Possible Rabies Infection', 'who' => 'Who Let That Guy Bring a Bat?',
    'blurb' => "A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber. And it wasn't even his first animal.",
    'meta' => 'Des Moines, 1982', 'shadow' => ''],
-  ['title' => 'Due To The Venue Being Ripped Apart', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
+  ['title' => 'Due To Not Giving Peace a Chance', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
    'blurb' => '200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.',
    'meta' => 'Rome, NY, 1999', 'shadow' => 'red'],
   ['title' => 'Due To Excessive Disco', 'who' => 'Who Let a DJ Blow Up Center Field?',
