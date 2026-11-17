@@ -96,3 +96,10 @@ Research method: WebSearch only (WebFetch could not reach outside hosts, includi
 
 ## Nov 17: title reference
 - "Give Peace a Chance": recorded June 1, 1969 at John and Yoko's bed-in, Queen Elizabeth Hotel, Montreal; released July 1969 (Plastic Ono Band); sung by a huge crowd at the Moratorium to End the War in Vietnam rally in Washington, Nov 15, 1969: https://en.wikipedia.org/wiki/Give_Peace_a_Chance
+
+## Nov 17: Woodstock '94 as the warning sign (Duck: tie '94 to '99, not to '69)
+- Spokesman: "The show won't be weighted toward the original Woodstock artists. There will be a lot of current performers." (Rolling Stone): https://www.rollingstone.com/music/music-news/aerosmith-nine-inch-nails-to-play-woodstock-anniversary-concert-98999/
+- Sponsors Pepsi, Haagen-Dazs, Apple; Pepsi logo everywhere; Trent Reznor feared "a corporate nightmare"; gates failed, 100,000+ gate-crashers, organizers stopped taking tickets; complaints about food: https://ultimateclassicrock.com/woodstock-94/ , https://loudersound.com/features/woodstock-94-mud-sweat-and-beers-the-clash-of-cultures-that-summed-up-metals-maddest-year
+- NIN mud-caked set: https://www.rollingstone.com/music/music-news/flashback-nine-inch-nails-play-mud-caked-set-at-woodstock-94-187670/
+- About 5,000 treated for first aid (1994 newspaper graphic): https://newspaper.library.tamu.edu/lccn/sn86088544/1994-08-29/ed-1/seq-19.pdf
+- Deaths at '94 (a newspaper graphic says 2) left out: thinly sourced, and not the joke.
