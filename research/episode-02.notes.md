@@ -93,3 +93,6 @@ Research method: WebSearch only (WebFetch could not reach outside hosts, includi
 - All deaths, names of the dead, and sexual assaults beyond the single acknowledgment after the title (Duck's rule).
 - Anthony Kiedis entirely (Duck's rule). RHCP named only as the band on stage.
 - Fatboy Slim rave-hangar vehicle incident (possible injuries; not "light").
+
+## Nov 17: title reference
+- "Give Peace a Chance": recorded June 1, 1969 at John and Yoko's bed-in, Queen Elizabeth Hotel, Montreal; released July 1969 (Plastic Ono Band); sung by a huge crowd at the Moratorium to End the War in Vietnam rally in Washington, Nov 15, 1969: https://en.wikipedia.org/wiki/Give_Peace_a_Chance
