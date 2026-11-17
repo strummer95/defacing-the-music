@@ -91,3 +91,27 @@ Research method: WebSearch only (WebFetch could not reach outside hosts in this 
 - Where the "string around its neck" came from: no source.
 - Whether Ozzy was drunk that night: not in his telling. Script only points to the brandy before the dove meeting.
 - Wedding date: July 1982 confirmed; July 4 / Maui not confirmed, so not used.
+
+## Quote bank: Des Moines Register, Jan 22, 1982 (full text, verbatim)
+Source: Nick Lamberto, Des Moines Register, Jan 22, 1982, reprinted as "From the archives: Ozzy Osbourne leaves Des Moines with 'bat taste' in mouth": https://www.yahoo.com/now/archives-ozzy-osbourne-leaves-des-131737421.html (fetched Nov 17, 2026, full network access). Not yet used in the script; Duck approves any additions first.
+
+> Rock Singer Ozzy Osbourne left Des Moines Thursday with a $39,000 haul from a concert at Veterans Memorial Auditorium, a four-day supply of rabies vaccine and a bat taste in his mouth.
+> Osbourne reportedly put a dead bat in his mouth, bit its head off and threw it back into the crowd of about 5,000 at the auditorium Wednesday night.
+> Some skeptics think the whole thing was a publicity stunt – even the taking of the first of a series of five rabies shots at a Des Moines hospital after the concert.
+> But Mark Neal, 17, of Des Moines said he threw the dead bat onto the stage, saw Osbourne pick it up, bite its head off and then throw it into the audience.
+> "It really freaked me out," Neal said. "I won't get in any trouble for admitting this, will I?"
+> After the show, Osbourne went to Mercy Hospital Medical Center, and was referred to Broadlawns Medical Center because rabies vaccine was available there.
+> Osbourne, listed as John M. Osbourne, 33, of Beverly Hills, California, was given a tetanus shot and a rabies shot and took enough rabies vaccine with him to complete the series, according to Winifred Barden, a supervisor at Broadlawns.
+> Pam Culver, another Broadlawns supervisor, said Osbourne paid $500 to $600 in cash for the medical care and vaccine.
+> "If it was a joke or publicity stunt, he sure put himself to a lot of trouble to do it," Culver said.
+> Des Moines Mayor Pete Crivaro said he wants "to find out if the performer violated an agreement on the use of animals in his act. We had been assured he wasn't going to, and I want to find out who is lying."
+> Dave Palmitier, the manager of the auditorium, said Osbourne "did let some doves loose, which he wasn't supposed to do. We found one dead that apparently had been killed in the audience."
+> Des Moines Police Lt. Derald Leaming said he had warned Osbourne's manager before the show that if an animal was harmed, he and Osbourne "were going to jail because it's against Iowa law.
+> "We had heard about Osbourne sticking birds in his mouth and warned them he would be arrested on the spot if he bit them."
+> Leaming said he didn't see the bat incident.
+> Bruce Kapp, an executive for Contemporary Productions of St. Louis, Missouri, which booked the Wednesday show, said Osbourne put a dead bat in his mouth, "but I don't know if he bit the head off …"
+> Kapp said police and auditorium officials had "told us not to do anything with live animals and we agreed not to. He did release seven doves to the audience, which he does every night."
+> He said Osbourne closes his act "by putting raw liver in his mouth and spitting it out, and people think he bit something in two. There's no truth to the report that he bit the head off a chicken in Omaha."
+> Osbourne is scheduled to perform Saturday night at the Dane County Coliseum at Madison, Wisconsin. He could not be reached for comment Thursday.
+
+Note: the Register's own dash in "publicity stunt – even" is the paper's punctuation; if read on air it's just a pause (no dash in the script).
