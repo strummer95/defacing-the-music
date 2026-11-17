@@ -108,3 +108,82 @@ Research method: WebSearch only (WebFetch could not reach outside hosts, includi
 - '94 returnees from 1969: Joe Cocker, Crosby Stills and Nash, Country Joe McDonald, Santana, John Sebastian (Rolling Stone; Ultimate Classic Rock). A minority of 80+ acts ("the bulk... were contemporary performers"), so the script says "outnumbered", never "half".
 - '99: no 1969 bands; Rolling Stone: Entwistle "one of a mere two performers from the 1969 festival booked"; the other was Mickey Hart with Planet Drum: https://www.rollingstone.com/music/music-news/flashback-john-entwistle-returns-to-woodstock-in-1999-108654/ , https://www.radiox.co.uk/features/who-played-at-woodstock-1999-line-up/
 - Changed "I've played in rooms where somebody puts Break Stuff on" to "I've been in bars": the old line could point at Duck's band (never mention it).
+
+## Nov 17: read-aloud passages (Duck wants longer real quotes, light touch)
+All five were read from the full fetched page (curl, paragraph text extracted), not from search snippets. Text below is copied exactly; anything I left out is marked with "...". Nothing in the script has been changed. None of these touch the deaths or the assaults, and none mention Kiedis.
+
+### 1. AP, Saturday: "drink lots of it" (water irony)
+- Source: Associated Press, "Heat at Woodstock is top concern -- not drugs", dated July 25, 1999 (filed Saturday July 24), as reprinted by the Deseret News: https://www.deseret.com/1999/7/25/19457345/heat-at-woodstock-is-top-concern-not-drugs/
+- Read from full page: yes.
+- Dash flag: the original uses double hyphens ("ROME, N.Y. --" and "water -- drink"). Read them as a pause. (The page runs "megaconcert." straight into the Scher quote with no space; I added the space.)
+- Passage:
+  > ROME, N.Y. -- At the original Woodstock, there were warnings about bad acid. At Woodstock '99, the admonishments are about water -- drink lots of it.
+  >
+  > Organizers on Saturday tried to push H2O on more than 225,000 people sweltering in 90-degree-plus temperatures during the second day of the three-day megaconcert. "There's lots of free water here. There's water all over the site. We just have to get people to use it," promoter John Scher said. "Without being preachy or lecturing them, we are telling concertgoers to drink lots of water, wear hats and use sunscreen."
+  >
+  > ...
+  >
+  > Not crime. Not traffic. Not gatecrashers. Not the growing piles of garbage and overflowing portable toilets.
+- Same article, useful facts: Scher said medical crews had treated "nearly 1,000 people for heat exhaustion and dehydration" since Friday (the script says "hundreds", which undersells it); "rain rooms", tents with sprinklers; organizers kept selling "discounted tickets -- now priced at $120 apiece". In today's money that's about two hundred forty (1999 multiplier about 2.0, see Inflation above).
+- Where it fits: right after "There are free water fountains. Not enough. Lines up to half an hour in the sun. So people get frustrated and start breaking the pipes to get at the water." The promoter (our That Guy) saying "we just have to get people to use it" on the day people are breaking pipes for it, and the AP listing "overflowing portable toilets" as the stuff nobody was worried about, sets up the not-mud bit perfectly.
+
+### 2. AP, Sunday night: "ended in blazing chaos"
+- Source: Associated Press, "Woodstock '99 Ends In Chaos", July 1999 (night of Sunday July 25 into Monday July 26), on CBSNews.com (page metadata: published July 23, 1999, modified Dec 13, 1999; the story itself is the Sunday night AP report): https://www.cbsnews.com/news/woodstock-99-ends-in-chaos
+- Read from full page: yes. (The page's curly quotes come through garbled as "Â"; they are normal quote marks.)
+- Dash flag: none.
+- Passage:
+  > After almost 72 hours of peace and love, Woodstock '99 ended in blazing chaos Sunday night as hundreds of concert goers turned into vandals, starting fires and looting.
+  >
+  > ...
+  >
+  > The three-day concert climaxed into a frenzy about a quarter mile from the main stage when several concertgoers set fire to 12 parked tractor-trailers.
+  >
+  > Several people pulled cases of soda and merchandise from the trucks and fed the flames with debris. Others toppled light stands and speaker towers, while another group tried to destroy a radio station truck.
+  >
+  > "These kids are animals. It should never have gotten this far," said Ruth Mahorn, 36, of Binghamton, as she walked quickly away from the disturbance with her friends.
+  >
+  > "They're jerks," said Karen Thomas, 24, of Massachusetts. "It's been great all weekend. People were cool, and now this is how people will remember Woodstock."
+- Where it fits: right after "After the music stops, it turns into a riot." Read it as "the Associated Press, that night:". Karen Thomas's "now this is how people will remember Woodstock" is a clean clip line, and she was right.
+
+### 3. Eyewitness: the speaker tower goes into the fire
+- Source: Steven R. Rochlin, Enjoy the Music.com, on-site photo report from Woodstock '99, page dated 7/26/99 (URL 72699): https://enjoythemusic.com/woodstock/72699.htm
+- Read from full page: yes. He writes "i" in lowercase throughout; that's his original.
+- Dash flag: none.
+- Passage:
+  > The rioters worked extremely hard for about 10 minutes in trying to push this well designed and normally extremely stable structure over. After the crowd removed some of the parts which keep the tower upright, they succeeded in toppling over the tower.
+  >
+  > ...
+  >
+  > The rioters succeeded in unhooking the speakers from the tower and about four of them carried the speakers into the fire. They also carried an amplifier rack with Crown equipment into the fire as well. Sad, but true.
+- Also from him: people "were using the wood from the barrier around the Woodstock '99 show to help fuel the fire... In fact they even threw in pieces of metal fencing!" and "a Mercedes car which was turned over and vandalized." Same page says no one was hurt when the tower fell, as far as he could see.
+- Where it fits: also in SUNDAY, after "Propane in the trucks catches and goes off." This is the Dollop-style one-guy detail: four guys carefully unhooking speakers so they can carry them into a bonfire. "Worked extremely hard for about 10 minutes" is the funniest line in the pile (the most effort anybody put in all weekend).
+
+### 4. Rolling Stone, the next day: the press conference and "riot would be an overstatement"
+- Source: Joe Rosenthal, "Woodstock Officials Assess Festival's Destructive Closing Night", Rolling Stone, July 26, 1999: https://www.rollingstone.com/music/music-news/woodstock-officials-assess-festivals-destructive-closing-night-89086/
+- Read from full page: yes.
+- Dash flag: YES, one em dash in the first passage ("umbrellas — whatever was nearby —"). Read it as a pause; don't copy the dash into Duck's own lines. (Original also spells it "batton-wielding"; not read here.)
+- Passage A (the irony):
+  > Call it Murphy's Law. Just a few hours after Woodstock '99 organizers convened at a press conference to pat themselves on the back about having defied critics' predictions that the three-day festival would be a logistical nightmare, the whole thing went up in smoke. Literally.
+  >
+  > Late into the Red Hot Chili Peppers' closing set on the East Stage at Griffiss Air Force Base, bonfires began to break out at various locations throughout the crowd. As the air became thick with smoke and the flames reached higher and higher, concert goers began chucking massive amounts of trash, sleeping mats, umbrellas — whatever was nearby — onto the pyres. As the chaos escalated, audience members began scaling the speaker towers while others pushed over outhouses, one goofily exclaiming, "Hope nobody was in there."
+- Passage B (Rome's mayor, the day after):
+  > "Riot would be an overstatement in my opinion right now," said Rome's mayor Joe Griffo. "I believe that the reason the word 'riot' was used was because that's the section of the penal code that the individuals have been charged [with violating]. I believe that you people are using the word 'riot.'"
+- Passage C (Lang):
+  > "I don't think it was an anti-Woodstock statement," said Lang. "I think it was an anti-establishment, anti-everything, anti-anti statement. They were really tearing down their own facility."
+- Same article: it's the source of Lang's "a few assholes", and says Griffo, who had offered to host the next Woodstock "less than twenty-four hours earlier", now said he'd have to "reassess". Seven arrests, five injuries that night.
+- Where it fits: Passage A at the top of SUNDAY's fire section, right after "So once the Chili Peppers are on, people start lighting things." (the press conference that same day is a new detail). Passage B and C open THE MORNING AFTER, right after "So what do the guys in charge say?", before "Michael Lang calls the people who did it 'a few assholes.'" The mayor's "riot would be an overstatement", the morning after state troopers in riot gear cleared the field, pairs nicely with Lang's later "more dramatic than the actual event."
+
+### 5. E! News / AP: Spencer Parker's full pretzel line, and Scher that night
+- Source: Joal Ryan, "Woodstock Burns; Pretzel Prices Blamed!", E! Online, July 26, 1999 (quoting the AP): https://www.eonline.com/news/38492/woodstock-burns-pretzel-prices-blamed
+- Read from full page: yes.
+- Dash flag: none in the lines below. (Elsewhere the article uses "--" and wrongly calls Pax a "pop group" and implies "Fire" set things off; don't read those parts.)
+- Passage:
+  > "When [the riot] first started, there was something to it," Spencer Parker, 18, told the AP. "It has a little bit of meaning when you pay $4 for a pretzel."
+  >
+  > Concert promoter John Scher called the turn of (ugly) events a "great shame."
+  >
+  > "It put a permanent blemish on what happened here," Scher told reporters. "I think the kids made a mistake. They did not intend for this to happen."
+- Where it fits: Parker's exact words can replace the paraphrase "an eighteen year old named Spencer Parker told the Associated Press the riot had some meaning when people were paying four dollars for a pretzel." The Scher lines go in THE MORNING AFTER next to "John Scher blames what MTV's headline called 'deranged' fans", and they set up the That Guy verdict: "I think the kids made a mistake."
+
+### Tried, not used
+- Spin's 2019 reprint of its 1999 live report (spin.com) returned 403 to curl, and archive.org connections kept dropping, so no verbatim Spin passage. Old MTV News 1999 report URLs now redirect to the MTV home page, so nothing verbatim from MTV's crew pull-out either.

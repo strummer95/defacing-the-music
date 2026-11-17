@@ -92,3 +92,60 @@ Research method again WebSearch only; WebFetch blocked for sabr.org, chicagomag.
 - Jimmy Piersall (White Sox TV, with Harry Caray and Lorn Brown on WSNS) on air: "I hope they don't let you people see what's going on here at Comiskey Park; one of the saddest sights I've ever seen in a ballpark in my life." Wording per PBS American Experience (wording varies slightly elsewhere: "saddest scenes"). Later called it "the worst promotion in the history of the world" (Billboard/Collider retrospectives): https://www.pbs.org/wgbh/americanexperience/features/war-disco-we-rock-n-rollers-will-resistand-we-will-triumph/ , https://www.britannica.com/event/Disco-Demolition-Night , https://www.billboard.com/music/music-news/chicago-white-sox-disco-demolition-night-revival-mistake-8515984/
 - Piersall ran the bases backwards after his 100th career home run (1963, with the Mets): https://en.wikipedia.org/wiki/Jimmy_Piersall
 - Fans climbed poles (no names recorded): https://collider.com/disco-demolition-night-white-sox-comiskey-park/ ; the "foul pole" specifically isn't in the sources, so the script just says "the poles".
+
+## Nov 17 quote hunt: passages to read straight off the page (light touch, not a rewrite)
+Suggestions only. Nothing here is in the script yet. All passages below were copied from the full fetched page text (curl, then <p> text extracted), not from search snippets.
+
+Main source for passages 1 to 4: Dave Hoekstra, "The Night Disco Died" (oral history), Chicago magazine, July 2016 issue, published online July 5, 2016: https://www.chicagomag.com/chicago-magazine/july-2016/the-night-disco-died/ . Read from the full page (about 4,700 words of article text). Interviews done in 2016, so these are people remembering, which is how Duck should frame them ("the Sox pitcher told Chicago magazine...").
+
+### 1. Ken Kravec, the shoes (Chicago magazine oral history, 2016)
+Verbatim:
+> "The bullpen was right next to the stands. And the wall was only three feet high. The fans were right there. So I began my warm-ups, and every now and then a shoe would fly by me. Then a couple more shoes. And then they started to Frisbee the albums. I mentioned to Ron, "I don't think it's a good idea for us to be standing here." So we went out on the field to finish up on the main mound."
+(Ron = pitching coach Ron Schueler. No dashes in the passage.) Bonus line from the same speaker, same page: "I threw 10 pitches, and the next thing you know, the fans stormed the field. I grabbed my hat, held on to my glove, and walked off the field. Nobody bothered me."
+- Confirmed from full page: yes.
+- Fits: in THE FIELD, replacing the "the way it's been told" hedge. Follows "Meanwhile, the White Sox pitcher who was supposed to start game two, Ken Kravec, is out there warming up when this starts." This upgrades the shoes detail from "the way it's been told" to Kravec's own words.
+
+### 2. Nancy Faust and the three nuns (Chicago magazine oral history, 2016)
+Verbatim (Nancy Faust, Comiskey Park organist):
+> "At first I saw little fires breaking out in the outfield. Three nuns were sitting near me. They turned around and asked, "What is everybody chanting?" In those days, "Disco sucks" wasn't a nice thing to say. My friend told them, "They're just going, 'Let's go, Sox.'""
+(No dashes.)
+- Confirmed from full page: yes.
+- Fits: THE FIELD, after "They're lighting bonfires in the outfield, with records, and whatever else they can find." Or in THE BOOM right after "Tens of thousands of people." Strong clip candidate.
+
+### 3. Steve Trout, nearly killed by the Village People (Chicago magazine oral history, 2016)
+Verbatim (Steve Trout, White Sox pitcher):
+> "People tore the bases apart. Home plate was gone. There was a big spot in center field where the albums had been blown up. There was vinyl everywhere. I walked out to look at center field, and I heard something go by me. It was an album from the upper deck and landed next to my right foot. It was stuck in the ground. I said, "Holy shit, I could have been killed by the Village People.""
+(Contains "shit"; bleep or keep as Duck prefers. No dashes.)
+- Confirmed from full page: yes.
+- Fits: end of THE FIELD, after "Nobody was seriously hurt, which, when you look at the pictures, is the real miracle of the night." Also pays off Rusty Staub's records-stick-in-the-ground line.
+
+### 4. Bill Veeck at 2 a.m., the leg comes off (Chicago magazine oral history, 2016)
+Verbatim (Jeff Schwartz, WLUP sales manager):
+> "[WLUP station manager] Les Elias and I were in Bill Veeck's office at two o'clock in the morning waiting to see what the damage results were from the insurance company, because we were going to pay it. Bill goes, "Gentlemen, I hope you don't mind. It is real late and my leg is killing me." And in front of us, he unscrews his leg, puts it on the side of his desk, and proceeds to use it as an ashtray. He says, "I don't know who this guy [Dahl] is, but, boy, does he know how to draw people." Bill was an entrepreneur. He got it."
+(Brackets are the magazine's. No dashes.)
+- Confirmed from full page: yes.
+- Fits: THE FORFEIT, after "The Sox head groundskeeper, Roger Bossard, said decades later that he still has nightmares about what they did to his field." It is the payoff for the ashtray planted in THE VEECKS ("That's the guy. That's the owner.").
+- Optional companion, same page, Roger Bossard (groundskeeper), if Duck wants Bossard's own words instead of the "nightmares" summary: "Around one o'clock in the morning, Dad called the sod grower. He thought Dad was in a bar. "What are you, joking? You need 700 yards of sod tomorrow?" Dad and I stayed all night at the ballpark. We had a game the next day. We finally left about four in the morning, went home for two hours, and came back because we had to resod."
+
+### 5. The 1979 papers the next day (period quotes, via secondary pages)
+Read from two full pages that quote the July 13 and 14, 1979 coverage. The original 1979 Tribune and Free Press pages were NOT retrieved (NYT is JS-walled; the Michigan Daily 1979 wire page needs digital.bentley.umich.edu allowed in the network settings). So on air, name the paper the way these pages do ("David Israel wrote in the Tribune the next day:").
+
+a) Retrosimba, "Stayin' Alive: Baseball, drugs and rock n' roll at Comiskey", July 12, 2019: https://retrosimba.com/2019/07/12/stayin-alive-baseball-drugs-and-rock-n-roll-at-comiskey/ (full page read). Verbatim lines, in page order:
+> "Ten years after Woodstock, there was Veeckstock," wrote Tribune columnist David Israel, who called it baseball's "first rock riot."
+> "We have found a lot of ways to lose games this year," said White Sox manager Don Kessinger, "but I guess we've added a new wrinkle. It's tough to lose two games when you played only one."
+> Veeck disagreed with MacPhail's decision, saying, "I think the grounds for forfeiting are specious at best. It's true there was some sod missing. Otherwise, nothing was wrong."
+> In The Sporting News, columnist Dick Young suggested, "Let them hold it in the studio and burn down the radio station."
+
+b) The rest of David Israel's column, from the SABR Baseball Research Journal article "When Fans Wanted to Rock, the Baseball Stopped: Sports Promotions and the Demolition of Disco on Chicago's South Side" (full page read): https://sabr.org/journal/article/when-fans-wanted-to-rock-the-baseball-stopped-sports-promotions-and-the-demolition-of-disco-on-chicagos-south-side/ . Its footnote: David Israel, "When Fans Wanted to Rock, the Baseball Stopped," Chicago Tribune, July 13, 1979. Verbatim (the article quotes these two pieces of the column):
+> "It would have happened any place 50,000 teenagers got together on a sultry summer night with beer and reefer."
+> "it was a nuisance. And it really had no place at a ballpark."
+Same SABR page, Bill Veeck to the papers the next day: "I didn't investigate as carefully as I obviously should have," and "I don't think this has tarnished baseball, but it didn't brighten my escutcheon as a promoter." Also Chicago police Lt. Robert Reilly (head of the park detail, quoted in the Tribune's "Discophobia Out of Control," July 13, 1979): the night was "as bad as the night the Beatles were here."
+- Fits: THE FORFEIT. Read Kessinger and Veeck's "some sod missing" right after "The White Sox forfeited a home game. Because their own promotion worked too well." Then, at "And a Tribune columnist, David Israel, wrote the line that should be on the plaque:", read the Veeckstock line plus "first rock riot" and the "50,000 teenagers... beer and reefer" sentence as the column's surrounding lines (they are separate excerpts, so read them as two quotes, not one paragraph). Note: "the Tribune called it" phrasing is fine; the exact order of the column's sentences is not known.
+
+### Side confirmations from the same Chicago magazine page (no script change needed, but they firm up hedged lines)
+- Dahl's on-field words, as the magazine prints them: "This is now officially the world's largest antidisco rally! … Now listen, we took all the disco records you brought tonight, we got 'em in a giant box, and we're gonna blow 'em up reeeeal gooood." This resolves the "not found" entry under "Left out"; the script's "more or less word for word" is accurate.
+- Dahl on the Jeep lap: "They are throwing beers and cherry bombs at us. And they're the people who like us!" (preceded on the page by a profanity). Fits after "which in this context is love."
+- Dave Gaborek: "Kids were climbing foul poles." So the script could say "foul poles" now.
+- Mike Veeck on Harry Caray at the mic: "Harry was a pro. He was the dance band on the Titanic, playing through the disaster." Fits after "It did not settle everybody down."
+- Mike Veeck: "My old man said it best: "It was a promotion that worked too well." Then my dad went out and took the public berating for me. I'm the one who triggered it." Fits WHERE ARE THEY NOW at "Bill Veeck took the public heat."
+- Avoided per Duck: the page's Dave Marsh / Dahl racism debate paragraphs and anything Drew Peterson.
