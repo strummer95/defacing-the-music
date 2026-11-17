@@ -17,7 +17,7 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 - **The Dollop and How Did This Get Made.** Two pillars every episode: (1) "I went down the rabbit hole for you": oddly specific details about what one person said, did or saw; (2) the decisions behind the disaster: who thought this was a good idea, and why.
 - **It's read, like the Dollop** (Duck, Nov 16): "it's clear that david anthony reads, and it isnt off the top of the head." Scripts are full researched stories Duck reads, with real quotes read straight from named sources. Nothing is made up; unproven stuff is called a legend.
 - People who got hurt or died are never the joke.
-- **No fake-casual writing** (Duck, Nov 17): written-out casual banter sounds odd when it's read ("if its casual and natural, why does it have to be read?"). Real quotes make sense to read. So scripts are plain narration plus lots of real quotes with the source named; the casual part is Duck's and Pat's real reactions.
+- **No fake-casual writing** (Duck, Nov 17): lines written to sound off the top of his head are transparently fake when read ("if its casual and natural, why does it have to be read?"). Jokes are fine; more of the script should be stuff that's natural to read, like real quotes with the source named.
 
 **Episodes and numbering**
 - Only **Episode 0** (Due To Unforeseen Circumstances / Who Gave This Guy a Mic?) is out: https://youtu.be/FQK-XMkoajA
