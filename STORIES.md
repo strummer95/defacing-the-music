@@ -14,7 +14,7 @@ Two or three episodes go up before Duck really promotes. Every script needs both
 
 ## Scripted: the original three (their old numbers are retired; unnumbered until made episodes)
 - Keith Moon, The Smothers Brothers Comedy Hour, 1967. Due To Excessive Flash Powder / Who Gave The Who Explosives?
-- Woodstock '99, Limp Bizkit and "Break Stuff". Due To The Venue Being Ripped Apart / Who Asked Fred Durst to Be a Therapist?
+- Woodstock '99, Limp Bizkit and "Break Stuff". Due To Not Giving Peace a Chance / Who Asked Fred Durst to Be a Therapist?
    - Nov 14 evening outline, in Duck's order: the original 1969 Woodstock and the "we could do that again" thinking; how different the culture was (peace and love vs "Break Stuff"); what was wrong from the start; how it unraveled; the moments right before Limp Bizkit; what was said to Fred, what they did, and WHY "Break Stuff" was the spark; aftermath (Woodstock 50 in 2019 fell apart before it happened); how big Limp Bizkit still is.
    - Organizers asking Fred to calm the crowd is unproven ("legend goes"). On tape: "I don't think you should mellow out. That's what Alanis Morissette had you motherfuckers do." The snowball (miserable to destructive during "Break Stuff", plywood came down) is said as Duck's plain, confident read, no "my take" hedge. Sunday: vigil candles during RHCP, fires first, "Fire" in the encore.
    - Leave Anthony Kiedis out entirely: no quotes, nothing about his conduct. Deaths and assaults: one short straight acknowledgment after the title, then never again; no names, no details. Prices get today's equivalent.
