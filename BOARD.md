@@ -39,7 +39,10 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
-### DONE: Ozzy script review, co-host Pat, sign-off
+### Ozzy script review: REVERTED (Nov 17), waiting on Duck
+Duck had already approved the Ozzy script, and the rework went in without asking him. The script is back to his approved version (with his line fixes and the "next time" sign-off). Defa's review items and the extra quotes are not in; they need Duck's yes first. The sign-off and Pat rules from this note are still done.
+
+#### (what was done, then reverted)
 Done 2026-11-17 by Claude. Sign-off is "see you next time" in every script; Pat rules in CLAUDE.md (never scripted). Ozzy: all five review items done. Claims checked: the billion streams and the Hot 100 debut are sourced; the Rolling Stone line is quoted via American Songwriter; the TMZ bat expert is named (Kathryn Slater); Spotify now says "twelve million to almost nineteen million"; MTV "at the time". The dove essay is cut to two lines and Legend or Fact is folded into the story. The frat and Texas lines are gone, and the errand guy is a running gag. There's a new section reading the 1982 Des Moines Register coverage line by line. About 16% of the words are real quotes now (the full archives were blocked from here). Duck: check the seven Register sentences against the Register's own reprint before recording.
 
 ### (original) TODO (Nov 16, from Duck and Defa): Ozzy script review, co-host Pat, sign-off
