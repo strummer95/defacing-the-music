@@ -103,3 +103,8 @@ Research method: WebSearch only (WebFetch could not reach outside hosts, includi
 - NIN mud-caked set: https://www.rollingstone.com/music/music-news/flashback-nine-inch-nails-play-mud-caked-set-at-woodstock-94-187670/
 - About 5,000 treated for first aid (1994 newspaper graphic): https://newspaper.library.tamu.edu/lccn/sn86088544/1994-08-29/ed-1/seq-19.pdf
 - Deaths at '94 (a newspaper graphic says 2) left out: thinly sourced, and not the joke.
+
+## Nov 17: lineup angle (Duck: '69 worked because hippies, '94 kind of worked because still some hippies, '99 had none)
+- '94 returnees from 1969: Joe Cocker, Crosby Stills and Nash, Country Joe McDonald, Santana, John Sebastian (Rolling Stone; Ultimate Classic Rock). A minority of 80+ acts ("the bulk... were contemporary performers"), so the script says "outnumbered", never "half".
+- '99: no 1969 bands; Rolling Stone: Entwistle "one of a mere two performers from the 1969 festival booked"; the other was Mickey Hart with Planet Drum: https://www.rollingstone.com/music/music-news/flashback-john-entwistle-returns-to-woodstock-in-1999-108654/ , https://www.radiox.co.uk/features/who-played-at-woodstock-1999-line-up/
+- Changed "I've played in rooms where somebody puts Break Stuff on" to "I've been in bars": the old line could point at Duck's band (never mention it).
