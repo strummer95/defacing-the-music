@@ -38,7 +38,10 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
-### TODO (Nov 16, from Duck and Defa): Ozzy script review, co-host Pat, sign-off
+### DONE: Ozzy script review, co-host Pat, sign-off
+Done 2026-11-17 by Claude. Sign-off is "see you next time" in every script; Pat rules in CLAUDE.md (never scripted). Ozzy: all five review items done. Claims checked: the billion streams and the Hot 100 debut are sourced; the Rolling Stone line is quoted via American Songwriter; the TMZ bat expert is named (Kathryn Slater); Spotify now says "twelve million to almost nineteen million"; MTV "at the time". The dove essay is cut to two lines and Legend or Fact is folded into the story. The frat and Texas lines are gone, and the errand guy is a running gag. There's a new section reading the 1982 Des Moines Register coverage line by line. About 16% of the words are real quotes now (the full archives were blocked from here). Duck: check the seven Register sentences against the Register's own reprint before recording.
+
+### (original) TODO (Nov 16, from Duck and Defa): Ozzy script review, co-host Pat, sign-off
 **From Duck:**
 - **Co-host Pat (planned).** Duck's friend Pat is joining as co-host: Duck is play-by-play, Pat is the color commentator. **Pat is never scripted.** He hears the story fresh and just talks with Duck about it, like Gareth on the Dollop. Don't write lines, prompts or cues for Pat. Scripts stay Duck's story, read word for word. The only exception is if Pat does a Mic Swap, and that one is entirely his.
 - Because Pat reacts live, Duck's written asides and riff fallbacks can be lighter. Leave room after the big reveals (a beat, not a cue) so there's space for Pat to jump in. Keep the scripts readable solo too, since the plan isn't final.
