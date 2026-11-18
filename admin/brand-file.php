@@ -4,7 +4,7 @@
 require __DIR__ . '/../lib/auth.php';
 dtm_require_admin();
 $dir = (string)($_GET['d'] ?? ''); $name = basename((string)($_GET['f'] ?? ''));
-$ok = ['photos', 'thumbnails'];
+$ok = ['photos', 'thumbnails', 'obs', 'obs/titles'];
 $path = DTM_ROOT . "/brand/$dir/$name";
 if (!in_array($dir, $ok, true) || $name === '' || $name[0] === '.' || !is_file($path)) { http_response_code(404); exit('Not found.'); }
 $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
