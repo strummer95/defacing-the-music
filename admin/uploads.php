@@ -58,18 +58,19 @@ dtm_page_start('Uploads', $user, true);
 
 <?php
 $saved = [];
-foreach (['thumbnails' => 'Thumbnails', 'photos' => 'Host photos'] as $d => $label) {
+$savedDirs = ['thumbnails' => 'Thumbnails', 'photos' => 'Host photos', 'obs' => 'OBS layout pieces', 'obs/titles' => 'OBS episode titles'];
+foreach ($savedDirs as $d => $label) {
   foreach (glob(DTM_ROOT . "/brand/$d/*.{png,jpg,jpeg,webp,gif}", GLOB_BRACE) ?: [] as $f) $saved[$label][] = basename($f);
 }
 ?>
 <section class="admin-card">
   <h2 class="bang">Saved by Claude</h2>
-  <p class="small">Thumbnails and photos Claude keeps for the show. They come over with Pull latest. Tap one to open it full size.</p>
+  <p class="small">Thumbnails, photos and OBS layout pieces Claude keeps for the show. They come over with Pull latest. Tap one to open it full size.</p>
   <?php if (!$saved): ?><p>Nothing here yet. Tap Pull latest.</p><?php endif; ?>
-  <?php foreach ($saved as $label => $names): $d = $label === 'Thumbnails' ? 'thumbnails' : 'photos'; ?>
+  <?php foreach ($saved as $label => $names): $d = array_search($label, $savedDirs, true); ?>
     <h3 class="bang saved-h"><?= h($label) ?></h3>
     <div class="saved-grid">
-      <?php foreach ($names as $n): $u = 'brand-file.php?d=' . $d . '&f=' . rawurlencode($n); ?>
+      <?php foreach ($names as $n): $u = 'brand-file.php?d=' . rawurlencode($d) . '&f=' . rawurlencode($n); ?>
       <figure class="<?= str_contains($n, 'DO-NOT-USE') ? 'dnu' : '' ?>">
         <a href="<?= h($u) ?>" target="_blank" rel="noopener"><img src="<?= h($u) ?>" alt="<?= h($n) ?>" loading="lazy"></a>
         <figcaption><?= h($n) ?> · <a href="<?= h($u) ?>&amp;dl=1">Download</a></figcaption>
