@@ -187,3 +187,9 @@ All five were read from the full fetched page (curl, paragraph text extracted), 
 
 ### Tried, not used
 - Spin's 2019 reprint of its 1999 live report (spin.com) returned 403 to curl, and archive.org connections kept dropping, so no verbatim Spin passage. Old MTV News 1999 report URLs now redirect to the MTV home page, so nothing verbatim from MTV's crew pull-out either.
+
+## Nov 19: Saturday readiness pass
+- All five read-aloud passages above are now in the script, verbatim (dashes read as a period or comma, "[the riot]" left out by quoting only Parker's second sentence, and the mayor's middle sentence with "[with violating]" skipped so no brackets land in the read).
+- Heat count fixed: "hundreds treated for heat" is now "nearly a thousand people for heat exhaustion and dehydration" by Saturday, per Scher in the AP Saturday story (passage 1).
+- Temperatures differ: the AP Saturday story says "90-degree-plus"; UCR says near 100. The script keeps "right around a hundred degrees" for the blacktop and reads the AP's number in its quote.
+- Mayor Griffo's offer to host the next Woodstock "less than twenty-four hours earlier" and "reassess": Rolling Stone, July 26, 1999 (passage 4).
