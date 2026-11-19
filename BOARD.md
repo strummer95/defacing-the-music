@@ -17,6 +17,7 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 - **The Dollop and How Did This Get Made.** Two pillars every episode: (1) "I went down the rabbit hole for you": oddly specific details about what one person said, did or saw; (2) the decisions behind the disaster: who thought this was a good idea, and why.
 - **It's read, like the Dollop** (Duck, Nov 16): "it's clear that david anthony reads, and it isnt off the top of the head." Scripts are full researched stories Duck reads, with real quotes read straight from named sources. Nothing is made up; unproven stuff is called a legend.
 - People who got hurt or died are never the joke.
+- **HARD RULE (Duck, Nov 19): no political debates, racial topics or other polarizing subjects in any episode.** Not in scripts, TALK cues, jokes or show copy. If a story touches one, state the fact briefly and move on, with no debate and no take. Applies to every episode, the library scripts and future ones.
 - **Read longer passages** (Duck, Nov 17): a few full sentences straight from a news article or magazine is good; scripts were trying too hard to summarize everything.
 - **More real quotes** (Duck, Nov 17): scripts are missing real quotes read from named sources. Casual off-the-cuff lines are fine (Duck puts them in his own words); jokes stay.
 
@@ -48,7 +49,9 @@ Duck wants all three scripts well written and ready to record Saturday. Target v
 For each of the three scripts:
 1. **Quotes.** Duck wants a good length of real quotes sometimes. These aren't history-book stories, so not long newspaper articles, but real passages from people who were there (interviews, memoirs, broadcasts, period coverage), a few sentences long, with the source named out loud. Each one has to read naturally off a screen: no tongue twisters, no clunky old-timey syntax, nothing that sounds weird spoken. Pull them from the quote banks (research/*.notes.md, the Ozzy Register text, the Disco quote bank) and build one for Woodstock '99 if it doesn't have one yet. Verbatim only, never paraphrased into quote marks.
 2. **Jokes and talking points for Duck and Pat.** Pat stays unscripted (no lines for Pat), but add short `[TALK: ...]` cues at good spots. A TALK cue is a question or angle Duck can throw to Pat to riff on, like "would you have thrown the bat?" or "worst concert food you've paid for". Aim for 4 to 6 per script, at the natural breaks after big reveals, not in the middle of a build. Keep Duck's written jokes. Add more where a section has none for a while.
-3. **Readiness check.** Facts sourced (lib/sources up to date), no em dashes, no tribute band or "my band", That Guy segment present, [CLIP] marks in place, "I'll see you next time" sign-off, prices handled per the CLAUDE.md rule, and a run time estimate (15 to 30 min before riffing, a bit longer is fine with Pat).
+3. **Readiness check.** No political, racial or polarizing material (hard rule, see top). Facts sourced (lib/sources up to date), no em dashes, no tribute band or "my band", That Guy segment present, [CLIP] marks in place, "I'll see you next time" sign-off, prices handled per the CLAUDE.md rule, and a run time estimate (15 to 30 min before riffing, a bit longer is fine with Pat).
+
+Also add the hard rule to CLAUDE.md's show rules, and check every library script against it.
 
 **Deliverable:** one PR per script, **not merged**, by Friday night Nov 20. Then post a short "For Dillon" note listing for each script: the quotes added, the TALK cues added, any facts you fixed, any proposals that need his yes, and the run time. Duck approves, then you merge, then he hits Pull latest.
 
