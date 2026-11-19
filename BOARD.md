@@ -41,7 +41,7 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
-### TODO (Nov 19, from Duck via Defa): Ozzy, Disco Demolition and Woodstock '99 ready to record SATURDAY Nov 21
+### DONE, waiting on Duck's OK (PRs #85, #86, #87): Ozzy, Disco Demolition and Woodstock '99 ready to record SATURDAY Nov 21
 Duck wants all three scripts well written and ready to record Saturday. Target vibe: **The Dollop first**, with some How Did This Get Made and Last Podcast on the Left. Pat co-hosts (unscripted, he reacts live).
 
 **Ground rule (learned from the Ozzy revert):** Duck has already approved lines in these scripts. **Don't rewrite or cut his approved lines.** Make additions and small fixes, and list anything bigger as a proposal for him to approve.
@@ -430,6 +430,30 @@ Added 2026-11-11 by Defa. Read `CLAUDE.md`, then work `TASKS.md` one task per ru
 Reply to Dillon under **For Dillon** in the same PR when you have a question or something he must do.
 
 ## For Dillon
+
+### Saturday scripts ready for your OK (Nov 19, Claude)
+Three PRs, **not merged**. Read them in GitHub or tell me in chat; when you say yes, I merge and you hit Pull latest (or "Update to latest version" on each script). None of your approved lines were rewritten or cut; everything is additions plus small fixes. Every new quote was copied word for word from a full article or the memoir, with the source said out loud.
+
+**Ozzy** (PR #87): about 35 min before riffing.
+- Quotes: more of the 1982 Register (hospital: "listed as John M. Osbourne, 33, of Beverly Hills"), Rudy Sarzo on fans' Polaroids, a cow's head and a giant Texas frog, Carmen Martin-Kelly ("Hell or high water..."), Rudy on Sharon seeing "an opportunity" in the rabies shots, Ozzy's memoir ("Every one hurt like a bastard"). Extras: the handbill warning, $8.50 tickets, Mark winning his ticket from KGGO.
+- TALK cues: worst thing done to impress the boss; weirdest thing thrown at a stage; would you throw the bat; twitch or freezer; what happened in Omaha; longest you've sat on a sorry.
+- Fixes: MTV "at the time"; every price now has today's money.
+- Needs your yes: (1) swap "the head's whereabouts are officially unknown" for Rudy's account that Ozzy spat it out and "They were never able to find that bat!"; (2) add Rudy's version of the dove (Adam Ant was in the building, so nobody was watching Ozzy); (3) length, trims possible in the dove explainer and Legend or Fact.
+
+**Woodstock '99** (PR #85): about 41 min before riffing (long).
+- Quotes: AP "drink lots of it" and Scher's free water line; Rolling Stone "went up in smoke. Literally."; AP "ended in blazing chaos"; eyewitness carrying the speaker tower into the fire; the pretzel kid's exact words; Rome's mayor on the word "riot"; Lang's "anti-anti statement"; Scher "the kids made a mistake".
+- TALK cues: worst food you've paid for at a show; what you'd play to calm that crowd; the song that turns a bar into a mosh pit; an album you bought because everybody was mad at the band; what gets you to a festival called Woodstock now; Fred or Scher.
+- Fix: "hundreds treated for heat" is now "nearly a thousand" (AP).
+- Needs your yes: (1) drop "Republican" from Max Yasgur ("conservative dairy farmer"); (2) keep or shorten the candle group line to "a peace group" (and the Columbine mention in That Guy); (3) length: trim Legend or Fact and part of Woodstock 50.
+
+**Disco Demolition** (PR #86): about 34 min before riffing.
+- Quotes (Chicago magazine oral history, 1979 coverage): Kravec dodging shoes and records; organist Nancy Faust and the three nuns; Steve Trout "killed by the Village People"; Bill Veeck's leg as an ashtray at 2 a.m.; Veeck "some sod missing. Otherwise, nothing was wrong."; Dahl "they're the people who like us!"; "Kids were climbing foul poles."; Mike Veeck "I'm the one who triggered it."
+- TALK cues: which record you're bringing; which base you're stealing; worst thing thrown at a game or show; which Veeck stunt you'd pay to see; Sparky's call on game two.
+- Fixes: prices in today's money (98 cents is about $4.35); one source link removed from the public page because its headline is about the debate you cut.
+- Needs your yes: (1) drop "the way it's been told" before Kravec; (2) "the poles" to "the foul poles"; (3) the groundskeeper's own sod quote; (4) length: Ten Cent Beer Night is the easiest trim.
+
+Hard rule check on every script: nothing political, racial or polarizing left. Only brief factual mentions (Smothers Brothers vs CBS over politics in Keith Moon; Yasgur and the candle group in Woodstock, both in the proposals above).
+
 
 ### Questions from the Nov 14 evening session (answer here or in chat)
 Added 2026-11-14 by Claude.
