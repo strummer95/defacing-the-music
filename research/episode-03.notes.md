@@ -115,3 +115,22 @@ Source: Nick Lamberto, Des Moines Register, Jan 22, 1982, reprinted as "From the
 > Osbourne is scheduled to perform Saturday night at the Dane County Coliseum at Madison, Wisconsin. He could not be reached for comment Thursday.
 
 Note: the Register's own dash in "publicity stunt – even" is the paper's punctuation; if read on air it's just a pause (no dash in the script).
+
+## Nov 19, 2026 pass (Saturday readiness: quotes, TALK cues, prices)
+Method: full pages fetched with curl and the paragraph text extracted; every quoted string below was matched word for word against the fetched page. UPI (Cloudflare block) and web.archive.org (connection reset) were not reachable, so the UPI Jan 27, 1982 Champaign collapse story was NOT used.
+
+### New quotes in the script (verbatim, fetched Nov 19)
+- Register Jan 22, 1982, the two hospital paragraphs ("After the show, Osbourne went to Mercy Hospital Medical Center... according to Winifred Barden, a supervisor at Broadlawns."), plus the $500 to $600 cash line (Pam Culver) told in Duck's words: https://www.yahoo.com/now/archives-ozzy-osbourne-leaves-des-131737421.html
+- Rudy Sarzo to Yahoo Entertainment (Jan 2022): crew Polaroids of things fans couldn't get past security, "the freshly slaughtered head of a cow!"; the Texas frog passage ("I've had many things thrown onstage... maybe about a foot and a half."); the tour bus / tour manager camera passage ("We changed our clothes... getting rabies shots from the nurse."), Ozzy grimacing for the photos (paraphrased); "Sharon knew immediately that she had an opportunity here. She contacted Michael Jensen Communications, our publicist, and she spun it." and her phone line "Hey, listen, this happened. Let's make a story out of this.": https://news.yahoo.com/bassist-rudy-sarzo-remembers-ozzy-osbournes-bat-biting-40-years-later-185555775.html
+- Carmen Martin-Kelly to the Register (as quoted by American Songwriter): "Hell or high water... Section 22... throw the bat up onstage.": https://americansongwriter.com/everything-history-got-wrong-about-ozzy-osbournes-infamous-bat-incident/
+- Ozzy's memoir on the shots: "Every night for the rest of the tour I had to find a doctor and get more rabies shots: One in each arse cheek, one in each thigh, one in each arm. Every one hurt like a bastard." Quoted as "he wrote" in the Register's Nov 2018 piece (Matt Leimkuehler) and as "his 2009 memoir" by American Songwriter: https://news.yahoo.com/led-ozzy-osbourne-infamously-biting-131803275.html , https://americansongwriter.com/remember-when-ozzy-osbourne-bit-the-head-off-a-bat/ . It conflicts with the Register's five shots; the script says both.
+- Register Nov 2018 (Leimkuehler): the handbill (Ozzy in a cape and devil horns, "Just when you thought it was safe to go back to a concert.", "parental guidance", "eating before concert not recommended."), tickets $8.50, Mark won his tickets from KGGO, tucked the bat into his pocket: same Yahoo URL as above.
+
+### Today's money (Minneapolis Fed CPI annual averages: 1982 = 96.5, 1992 = 140.3, 2019 = 255.7, 2025 = 321.9; https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913- )
+- $8.50 (1982) = about $28. $39,000 (1982) = about $130,000. $500 to $600 (1982) = about $1,700 to $2,000. $40 bond (1982) = about $133 (script: "about a hundred and thirty"). $10,000 (1992) = about $23,000. $40 plush (2019) = about $50.
+
+### Found but not used (spares)
+- Sarzo (Yahoo 2022) on the dove: Adam Ant was in the CBS building that day "so nobody was paying attention to Ozzy at all"; Sharon grabbed an assistant for the photo op; the four-photo sequence of her reaction. Proposed, not added.
+- Sarzo (Yahoo 2022) on the bat: Ozzy "realizes that it's a real bat and spits it out, and it falls through the pit... They were never able to find that bat!" Louder 2025 has Sharon: "we can't find it because he spat it out into the pit." This bears on the script's "the head's whereabouts are officially unknown" line. Proposed, not changed.
+- Ozzy memoir via Register 2018: "We had dead cats, birds, lizards, all kinds of stuff. With every gig, it just got crazier and crazier." Spare for THE MEAT.
+- Pam Culver (via Loudwire): "For a week that was probably 50 percent of my job."
