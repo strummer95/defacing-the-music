@@ -91,11 +91,6 @@
    "url": "https://www.newworldencyclopedia.org/entry/Bill_Veeck"
   },
   {
-   "title": "House Great Vince Lawrence Recalls the Racism Fueling Disco Demolition Night in New Doc Clip",
-   "publisher": "Rolling Stone",
-   "url": "https://www.rollingstone.com/music/music-news/vince-lawrence-disco-demolition-night-move-ya-body-clip-1235364056/"
-  },
-  {
    "title": "Stayin' alive: Baseball, drugs and rock 'n' roll at Comiskey",
    "publisher": "RetroSimba",
    "url": "https://retrosimba.com/2019/07/12/stayin-alive-baseball-drugs-and-rock-n-roll-at-comiskey/"
@@ -174,6 +169,11 @@
    "title": "Jimmy Piersall",
    "publisher": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Jimmy_Piersall"
+  },
+  {
+   "title": "CPI Inflation Calculator",
+   "publisher": "U.S. Bureau of Labor Statistics",
+   "url": "https://data.bls.gov/cgi-bin/cpicalc.pl"
   }
  ]
 }
