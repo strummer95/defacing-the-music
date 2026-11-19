@@ -40,6 +40,19 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
+### TODO (Nov 19, from Duck via Defa): Ozzy, Disco Demolition and Woodstock '99 ready to record SATURDAY Nov 21
+Duck wants all three scripts well written and ready to record Saturday. Target vibe: **The Dollop first**, with some How Did This Get Made and Last Podcast on the Left. Pat co-hosts (unscripted, he reacts live).
+
+**Ground rule (learned from the Ozzy revert):** Duck has already approved lines in these scripts. **Don't rewrite or cut his approved lines.** Make additions and small fixes, and list anything bigger as a proposal for him to approve.
+
+For each of the three scripts:
+1. **Quotes.** Duck wants a good length of real quotes sometimes. These aren't history-book stories, so not long newspaper articles, but real passages from people who were there (interviews, memoirs, broadcasts, period coverage), a few sentences long, with the source named out loud. Each one has to read naturally off a screen: no tongue twisters, no clunky old-timey syntax, nothing that sounds weird spoken. Pull them from the quote banks (research/*.notes.md, the Ozzy Register text, the Disco quote bank) and build one for Woodstock '99 if it doesn't have one yet. Verbatim only, never paraphrased into quote marks.
+2. **Jokes and talking points for Duck and Pat.** Pat stays unscripted (no lines for Pat), but add short `[TALK: ...]` cues at good spots. A TALK cue is a question or angle Duck can throw to Pat to riff on, like "would you have thrown the bat?" or "worst concert food you've paid for". Aim for 4 to 6 per script, at the natural breaks after big reveals, not in the middle of a build. Keep Duck's written jokes. Add more where a section has none for a while.
+3. **Readiness check.** Facts sourced (lib/sources up to date), no em dashes, no tribute band or "my band", That Guy segment present, [CLIP] marks in place, "I'll see you next time" sign-off, prices handled per the CLAUDE.md rule, and a run time estimate (15 to 30 min before riffing, a bit longer is fine with Pat).
+
+**Deliverable:** one PR per script, **not merged**, by Friday night Nov 20. Then post a short "For Dillon" note listing for each script: the quotes added, the TALK cues added, any facts you fixed, any proposals that need his yes, and the run time. Duck approves, then you merge, then he hits Pull latest.
+
+
 ### Ozzy script review: REVERTED (Nov 17), waiting on Duck
 Duck had already approved the Ozzy script, and the rework went in without asking him. The script is back to his approved version (with his line fixes and the "next time" sign-off). Defa's review items and the extra quotes are not in; they need Duck's yes first. The sign-off and Pat rules from this note are still done.
 
