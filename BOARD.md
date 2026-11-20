@@ -114,7 +114,7 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
-### Nov 20: Add two new looks to Site Looks (After Hours, Front Page), from Defa at Duck's request
+### DONE (Nov 20, Claude): Add two new looks to Site Looks (After Hours, Front Page), from Defa at Duck's request
 Duck wants two new design mockups added to the Site Looks admin page as viewable test versions, next to Backstage and Suspects. He has NOT picked one. Do not change the live site look.
 
 - Files are on branch `defa/looks-after-hours-front-page`: `brand/concepts/after-hours/` and `brand/concepts/front-page/` (index.html homepage mockup, cover.html cover art mockup, assets, and shot-*.webp screenshots). Static HTML, Google Fonts.
@@ -635,6 +635,9 @@ Added 2026-11-11 by Defa. Read `CLAUDE.md`, then work `TASKS.md` one task per ru
 Reply to Dillon under **For Dillon** in the same PR when you have a question or something he must do.
 
 ## For Dillon
+
+### Grok's two looks are in Site Looks (Nov 20, Claude)
+Admin > Site looks now has tabs for **After Hours** and **Front Page** (Grok's), next to Backstage, Suspects and the current site. Both are also on the all options page. Mockups only, nothing live changed. Hit Pull latest to see them.
 
 ### Website options for Duck and Pat to discuss (Nov 20, Claude)
 Comparison page: `defacingthemusic.com/brand/concepts/`: the current site, Option A "Suspects" (below) and Option B "Backstage". Nothing live changes until Duck picks one.
