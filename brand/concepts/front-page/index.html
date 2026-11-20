@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defacing The Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3EFE4;
+    --paper-2: #E8E2D4;
+    --ink: #141413;
+    --ink-soft: #3F3D38;
+    --muted: #6B675E;
+    --rule: #C4BDB0;
+    --rule-dark: #141413;
+    --forest: #2A4036;
+    --forest-2: #3D5C4C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--paper); }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 320px;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(grain.webp);
+    background-size: 900px auto;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 80;
+    mix-blend-mode: multiply;
+  }
+  a { color: var(--forest); text-decoration: none; }
+  a:hover { color: var(--ink); text-decoration: underline; }
+  .page { width: min(1140px, calc(100% - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+
+  /* utility */
+  .util {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 0 10px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .util a { color: var(--ink); text-decoration: none; letter-spacing: 0.12em; }
+  .util a:hover { color: var(--forest); }
+  .util-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* masthead */
+  .mast {
+    text-align: center;
+    padding: 8px 0 0;
+  }
+  .rules-double {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 7px;
+  }
+  .mast h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(42px, 8.4vw, 92px);
+    letter-spacing: 0.02em;
+    line-height: 0.92;
+    padding: 18px 0 10px;
+    text-transform: uppercase;
+  }
+  .deck {
+    font-family: Newsreader, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(16px, 1.7vw, 22px);
+    color: var(--ink-soft);
+    padding: 0 0 16px;
+  }
+
+  /* lead */
+  .lead {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px 48px;
+    padding: 28px 0 8px;
+    align-items: start;
+  }
+  figure.press {
+    margin: 0;
+  }
+  figure.press img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: var(--paper-2);
+    border: 1px solid var(--ink);
+    padding: 0;
+  }
+  figure.press figcaption {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-top: 1px solid var(--ink);
+    margin-top: 0;
+    padding: 8px 0 0;
+    font-weight: 500;
+  }
+  figure.press figcaption strong { color: var(--ink); font-weight: 600; letter-spacing: 0.02em; }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+  .lead h2 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .lead .sub {
+    font-family: Newsreader, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(20px, 2.2vw, 28px);
+    margin-top: 8px;
+    color: var(--ink-soft);
+  }
+  .lead .body {
+    font-family: Newsreader, Georgia, serif;
+    font-size: 19px;
+    line-height: 1.45;
+    margin-top: 18px;
+    max-width: 42ch;
+  }
+  .lead .body::first-letter {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: 68px;
+    float: left;
+    line-height: 0.8;
+    padding: 6px 10px 0 0;
+  }
+  .play-row { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    text-decoration: none;
+  }
+  .btn:hover { background: var(--forest); color: var(--paper); text-decoration: none; }
+  .ep-tag {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  /* forthcoming */
+  .section-rule { margin-top: 36px; }
+  .sec-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0 14px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .sec-label span:first-child { color: var(--ink); }
+  .sec-label span:last-child { color: var(--muted); font-weight: 500; }
+  .forthcoming {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 36px;
+    padding-bottom: 8px;
+  }
+  .story {
+    padding: 8px 0 24px;
+  }
+  .story + .story { border-left: 1px solid var(--rule); padding-left: 36px; }
+  .story .dateline {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .story h3 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .story .who {
+    font-family: Newsreader, Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .story p { margin-top: 12px; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+  .story .soon {
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* hosts */
+  .hosts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 36px;
+    padding: 28px 0 8px;
+  }
+  .hosts .intro h2 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .hosts .intro p { margin-top: 12px; font-family: Newsreader, Georgia, serif; font-style: italic; font-size: 18px; color: var(--ink-soft); }
+  .person h3 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 600;
+    font-size: 26px;
+    border-top: 1px solid var(--ink);
+    padding-top: 10px;
+  }
+  .person .role {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--forest);
+    font-weight: 600;
+    margin: 6px 0 12px;
+  }
+  .person p { font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
+
+  /* subscribe */
+  .subscribe {
+    margin: 36px 0 8px;
+    border: 1px solid var(--ink);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+    background: var(--paper);
+  }
+  .subscribe h2 {
+    font-family: Newsreader, Georgia, serif;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+  }
+  .subscribe p { margin-top: 6px; color: var(--ink-soft); }
+  .sub-links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sub-links a {
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .sub-links a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+
+  footer {
+    margin-top: 28px;
+    padding: 20px 0 48px;
+  }
+  .signoff {
+    font-family: Newsreader, Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    max-width: 28ch;
+    line-height: 1.35;
+  }
+  .colophon {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .colophon a { color: var(--muted); text-decoration: none; }
+  .colophon a:hover { color: var(--ink); }
+
+  .m-br { display: none; }
+  @media (max-width: 860px) {
+    .page { width: min(1140px, calc(100% - 32px)); }
+    .lead, .forthcoming, .hosts, .subscribe { grid-template-columns: 1fr; }
+    .story + .story { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+    .lead { padding-top: 22px; }
+    figure.press { order: -1; }
+    .m-br { display: block; }
+    .mast h1 { font-size: 58px; letter-spacing: 0.02em; padding: 14px 0 8px; line-height: 0.9; }
+    .lead .body::first-letter { font-size: 44px; padding: 4px 8px 0 0; }
+    .util { font-size: 10px; gap: 8px; }
+    .util { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 420px) {
+    .mast h1 { font-size: 52px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="util">
+      <p>Friday, November 20, 2026 · Chicagoland</p>
+      <p class="util-links" id="listen">
+        <a href="https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx">Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289">Apple</a>
+        <a href="https://www.youtube.com/@DefacingTheMusic">YouTube</a>
+      </p>
+    </div>
+
+    <header class="mast">
+      <div class="rules-double"></div>
+      <h1>Defacing<br class="m-br"> The Music</h1>
+      <p class="deck">Rock and roll's worst nights,<br class="m-br"> and who to blame for them.</p>
+      <div class="rules-double"></div>
+    </header>
+
+    <section class="lead">
+      <div>
+        <p class="kicker">Latest episode · Episode 0</p>
+        <h2>Due To Unforeseen Circumstances</h2>
+        <p class="sub">Who Gave This Guy a Mic?</p>
+        <p class="body">Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
+        <div class="play-row">
+          <a class="btn" href="https://www.youtube.com/@DefacingTheMusic">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg>
+            Play Episode 0
+          </a>
+          <span class="ep-tag">The pilot</span>
+        </div>
+      </div>
+      <figure class="press">
+        <img src="hosts-web.webp" alt="Duck and Pat, hosts of Defacing The Music">
+        <figcaption><strong>Duck and Pat.</strong> He tells the story. Pat hears it for the first time, same as you.</figcaption>
+      </figure>
+    </section>
+
+    <div class="section-rule">
+      <div class="rules-double"></div>
+      <div class="sec-label" id="episodes"><span>Forthcoming</span><span>Coming soon</span></div>
+    </div>
+
+    <section class="forthcoming">
+      <article class="story">
+        <p class="dateline">Des Moines, 1982</p>
+        <h3>Due To a Possible Rabies Infection</h3>
+        <p class="who">Who Let That Guy Bring a Bat?</p>
+        <p>A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber. And it wasn't even his first animal.</p>
+        <p class="soon">Coming soon</p>
+      </article>
+      <article class="story">
+        <p class="dateline">Rome, NY, 1999</p>
+        <h3>Due To Not Giving Peace a Chance</h3>
+        <p class="who">Who Asked Fred Durst to Be a Therapist?</p>
+        <p>200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.</p>
+        <p class="soon">Coming soon</p>
+      </article>
+      <article class="story">
+        <p class="dateline">Comiskey Park, 1979</p>
+        <h3>Due To Excessive Disco</h3>
+        <p class="who">Who Let a DJ Blow Up Center Field?</p>
+        <p>A White Sox promotion: bring a disco record, get in for 98 cents, watch a DJ blow them up in center field. Chicago did not stay in its seats.</p>
+        <p class="soon">Coming soon</p>
+      </article>
+    </section>
+
+    <div class="section-rule">
+      <div class="rules-double"></div>
+      <div class="sec-label" id="hosts"><span>The hosts</span><span>Who let these guys have a mic?</span></div>
+    </div>
+
+    <section class="hosts">
+      <div class="intro">
+        <h2>A guy who did the reading, and a guy who says what you're thinking.</h2>
+        <p>Every story is real. Allegedly.</p>
+      </div>
+      <div class="person">
+        <h3>Duck</h3>
+        <p class="role">Host</p>
+        <p>Duck tells the story. A guy from Chicagoland with thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He did the reading so you don't have to.</p>
+      </div>
+      <div class="person">
+        <h3>Pat</h3>
+        <p class="role">Co-host</p>
+        <p>Pat hears it for the first time, right along with you, and says what everybody's thinking. Somebody has to.</p>
+      </div>
+    </section>
+
+    <aside class="subscribe">
+      <div>
+        <h2>Subscribe, if you know what's good for you.</h2>
+        <p>New episodes on Spotify, Apple Podcasts, and YouTube.</p>
+      </div>
+      <div class="sub-links">
+        <a href="https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx">Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289">Apple Podcasts</a>
+        <a href="https://www.youtube.com/@DefacingTheMusic">YouTube</a>
+      </div>
+    </aside>
+
+    <footer>
+      <p class="signoff">I'm Duck. Due to unforeseen circumstances, I'll see you next time.</p>
+      <div class="colophon">
+        <p>Defacing The Music, Vol. I · 2026</p>
+        <p>
+          <a href="https://www.instagram.com/defacingthemusicpod/">Instagram</a> ·
+          <a href="https://www.tiktok.com/@defacingthemusic">TikTok</a> ·
+          <a href="https://www.facebook.com/defacingthemusic">Facebook</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

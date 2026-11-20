@@ -6,6 +6,8 @@ $user = dtm_require_admin();
 $looks = [
   'backstage' => ['Backstage', '/brand/concepts/backstage/', 'Dark stage, warm spotlight on you two, ALL ACCESS pass for the latest episode, gaffer-taped setlist for what\'s coming up.'],
   'suspects'  => ['Suspects', '/brand/concepts/suspects/?p=oxblood', 'Ransom-note letters, the polaroid stamped SUSPECTS, the latest episode as a case file. Try the color schemes above the preview.'],
+  'after-hours' => ['After Hours', '/brand/concepts/after-hours/', 'Late-night radio booth and worn record sleeve. Warm black, brass, ivory serif type. Latest episode as a now playing deck. (From Grok)'],
+  'front-page'  => ['Front Page', '/brand/concepts/front-page/', 'Old music weekly broadsheet. Newsprint, ink, a touch of forest green. Name in a masthead, you two as the press photo, stories as feature headlines. (From Grok)'],
   'current'   => ['Current site', '/', 'What\'s live right now.'],
 ];
 $colors = ['oxblood' => 'Oxblood', 'olive' => 'Olive', 'bone' => 'Bone', 'concrete' => 'Concrete', 'charcoal' => 'Charcoal', 'tobacco' => 'Tobacco'];
@@ -13,7 +15,7 @@ dtm_page_start('Site looks', $user, true);
 ?>
 <section class="admin-card looks">
   <h1 class="metal">Site looks</h1>
-  <p>The two alternatives for the website, live, next to what's up now. Just mockups: nothing here changes the real site.</p>
+  <p>Alternative looks for the website, live, next to what's up now. Just mockups: nothing here changes the real site.</p>
   <div class="look-tabs" role="tablist">
     <?php $i = 0; foreach ($looks as $k => [$name, $url, $desc]): ?>
     <button type="button" class="pull-btn bang look-tab<?= $i++ ? '' : ' on' ?>" data-k="<?= h($k) ?>" data-url="<?= h($url) ?>" data-desc="<?= h($desc) ?>"><?= h($name) ?></button>
