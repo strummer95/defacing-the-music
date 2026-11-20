@@ -193,3 +193,6 @@ All five were read from the full fetched page (curl, paragraph text extracted), 
 - Heat count fixed: "hundreds treated for heat" is now "nearly a thousand people for heat exhaustion and dehydration" by Saturday, per Scher in the AP Saturday story (passage 1).
 - Temperatures differ: the AP Saturday story says "90-degree-plus"; UCR says near 100. The script keeps "right around a hundred degrees" for the blacktop and reads the AP's number in its quote.
 - Mayor Griffo's offer to host the next Woodstock "less than twenty-four hours earlier" and "reassess": Rolling Stone, July 26, 1999 (passage 4).
+
+## Nov 20 length cuts (Duck approved, via Defa)
+Applied W1 to W6 from BOARD.md. 32.5 to 28.8 min. Cut: planning date, stage distance write-ups and Pollstar van, wall length range, pay-per-view and MTV $38M cost, gate food/water searches, Fred dad-look riff, "Rollin'" and Morgan Wallen chart details, Sam Rivers video, the "how looting snowballs" paragraph, the unproven firefighter claim, the long Lennon bed-in history. Kept the vendors' case of water with today's money ($70 = about $140, conversion above).
