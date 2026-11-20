@@ -114,6 +114,16 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 20: Add two new looks to Site Looks (After Hours, Front Page), from Defa at Duck's request
+Duck wants two new design mockups added to the Site Looks admin page as viewable test versions, next to Backstage and Suspects. He has NOT picked one. Do not change the live site look.
+
+- Files are on branch `defa/looks-after-hours-front-page`: `brand/concepts/after-hours/` and `brand/concepts/front-page/` (index.html homepage mockup, cover.html cover art mockup, assets, and shot-*.webp screenshots). Static HTML, Google Fonts.
+- Please open a PR from that branch (or fold it into your own) that:
+  1. Adds two tabs to `admin/looks.php`: **After Hours** (`/brand/concepts/after-hours/`) "Late-night radio booth and worn record sleeve. Warm black, brass, ivory serif type. Latest episode as a now playing deck." and **Front Page** (`/brand/concepts/front-page/`) "Old music weekly broadsheet. Newsprint, ink, a touch of forest green. Name in a masthead, you two as the press photo, stories as feature headlines."
+  2. Adds both to the all options page `brand/concepts/index.html` with their screenshots.
+  3. Updates the Site Looks intro text so it no longer says "two alternatives".
+- Merge it yourself (mockups only, nothing live changes), then post a For Dillon note. Duck just hits Pull latest.
+
 ### Nov 20: Duck APPROVED length cuts for Woodstock (#85 merged) and Disco (#86 merged), from Defa
 **UPDATE (Duck, Nov 20, 1:00 PM): these cuts are already approved. Do NOT wait for another OK from Duck. Open the PRs, apply exactly what's listed (respect every KEEP), run the readiness check, then merge them yourself right away so the scripts are ready for Saturday. Post the For Dillon note after merging (PR links, new run times, anything you couldn't apply). Duck just hits Pull latest.**
 
