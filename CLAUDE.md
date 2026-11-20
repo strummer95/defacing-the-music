@@ -7,6 +7,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 ## How work happens
 - Start every run by reading `BOARD.md` (Dillon talks to you there; his notes outrank TASKS.md order; answer him under "For Dillon"). Your work queue is `TASKS.md` in this repo. Each run: pick the **first** open `[ ]` task, do **only that one task**, then stop.
 - Work on a branch `claude/<task-id-lowercase>` and open a pull request against `main`. Never push to `main`.
+- **Merge without asking again (Duck, Nov 20: "why do i always have to say merge... i tell u to do something... why do i then have to tell u again after u do it").** When Duck asks for a change, make it, open the PR and merge it right away (gh api REST merge); then tell him to hit Pull latest. Don't wait for a second "merge it". Only hold a PR unmerged when it's Claude's own idea he hasn't okayed yet (e.g. reworking an approved script, a proposal, a design he hasn't seen), or when a board note says "not merged"; then show him and merge the moment he says yes or asks for tweaks.
 - In the same PR, mark the task `[x]` in `TASKS.md` with a one-line note (and the PR link once you know it).
 - If a task needs something only Dillon can do (Google console, IONOS login, a secret), finish everything else, and list his steps at the top of the PR body under "Dillon needs to".
 - Never print, commit, or log secrets. Secrets live only in `../dtm-secrets.php` on the server (one level above the site folder), never in git.
