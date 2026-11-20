@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suspects design (concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Abril+Fatface&family=Rubik+Mono+One&family=Courier+Prime:wght@400;700&family=Caveat+Brush&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFE6D6;--text:#111;--mute:#6b6458;--card:#FBF7EF;--ink:#111;--a1:#D7261E;--a2:#111;--line:rgba(0,0,0,.18);--on-a1:#fff}
+*{box-sizing:border-box}html{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.6 "Space Grotesk",sans-serif}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;z-index:9;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+.lbl{font:13px "Courier Prime",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+nav a{font:13px "Courier Prime",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--text);text-decoration:none;margin-left:28px}
+.hero{padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.ransom{display:flex;flex-wrap:wrap;gap:6px 4px;margin:16px 0 30px;line-height:1}
+.ransom span{display:inline-block;padding:4px 9px;font-size:84px;box-shadow:3px 4px 0 rgba(0,0,0,.3)}
+.ransom .sp{width:22px;box-shadow:none;padding:0}.ransom .br{flex-basis:100%;height:0;padding:0;box-shadow:none}
+.c1{font-family:Anton;background:var(--ink);color:var(--card);transform:rotate(-3deg)}
+.c2{font-family:"Abril Fatface";background:var(--card);color:var(--ink);transform:rotate(2deg)}
+.c3{font-family:"Rubik Mono One";background:var(--a1);color:var(--on-a1);transform:rotate(-1deg);font-size:72px!important}
+.c4{font-family:"Special Elite";background:#d8d4cc;color:#111;transform:rotate(4deg)}
+.c5{font-family:Anton;background:var(--a1);color:var(--on-a1);transform:rotate(1deg)}
+.lede{font:700 23px/1.4 "Space Grotesk";max-width:480px;margin:0 0 32px}
+.lede u{text-decoration:none;border-bottom:4px solid var(--a1)}
+.btn{display:inline-block;background:var(--a1);color:var(--on-a1);font:400 23px Anton;letter-spacing:.04em;text-transform:uppercase;padding:15px 28px;text-decoration:none;box-shadow:6px 6px 0 var(--ink)}
+.also{display:inline-block;margin-left:18px;font:14px "Courier Prime";color:var(--mute)}.also a{color:var(--text)}
+.pol{background:#fff;padding:14px 14px 58px;box-shadow:0 20px 44px rgba(0,0,0,.3);transform:rotate(2.5deg);position:relative}
+.pol img{width:100%;display:block;filter:grayscale(1) contrast(1.15);background:#e5e5e5}
+.pol p{position:absolute;bottom:12px;left:0;right:0;text-align:center;margin:0;font:28px "Caveat Brush";color:#111}
+.clip{position:absolute;top:-24px;left:44px;width:24px;height:64px;border:4px solid #8d8d8d;border-radius:12px;border-bottom:none}
+.stamp{display:inline-block;font:400 20px Anton;letter-spacing:.14em;color:var(--a1);border:4px solid var(--a1);padding:2px 12px;transform:rotate(-8deg);text-transform:uppercase}
+.pol .stamp{position:absolute;right:-18px;bottom:70px;background:rgba(255,255,255,.85)}
+section{padding:80px 0;border-top:1px solid var(--line)}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px}
+h2{font:400 56px/1 Anton;text-transform:uppercase;margin:0}
+.file{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;background:var(--card);color:#111;padding:36px;box-shadow:10px 10px 0 var(--ink)}
+.file img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+table{width:100%;border-collapse:collapse;font:15px "Courier Prime"}
+td{padding:9px 0;border-bottom:1px dashed rgba(0,0,0,.25);vertical-align:top}
+td:first-child{color:#777;width:110px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding-top:12px}
+.red{background:#111;color:#111}
+.file .btn{margin-top:22px;font-size:20px;padding:12px 22px}
+</style></head><body>
+<header><div class="wrap"><span class="lbl">Incident reports · music history</span><nav><a href="#">Episodes</a><a href="#">Hosts</a><a href="#">Sources</a><a href="#">Listen</a></nav></div></header>
+<div class="hero"><div class="wrap">
+  <div>
+    <h1 class="ransom" aria-label="Defacing the Music"><span class="c1">DE</span><span class="c2">fa</span><span class="c5">C</span><span class="c4">ing</span><span class="br"></span><span class="c3">THE</span><span class="sp"></span><span class="c2">M</span><span class="c1">U</span><span class="c4">s</span><span class="c5">I</span><span class="c2">c</span></h1>
+    <p class="lede">Rock and roll's worst nights, and <u>who to blame</u> for them.</p>
+    <a class="btn" href="#">Subscribe on YouTube</a><span class="also">or <a href="#">Spotify</a> / <a href="#">Apple</a></span>
+  </div>
+  <div class="pol"><span class="clip"></span><img src="../../../assets/hosts.webp" alt=""><p>Persons of interest: Duck &amp; Pat</p><span class="stamp">Suspects</span></div>
+</div></div>
+<section><div class="wrap">
+  <div class="sh"><h2>Latest case</h2><span class="lbl">File no. 000</span></div>
+  <div class="file"><img src="https://i.ytimg.com/vi/FQK-XMkoajA/hqdefault.jpg" alt=""><div><table>
+    <tr><td>Event</td><td><b>Due To Unforeseen Circumstances</b></td></tr>
+    <tr><td>Question</td><td>Who Gave This Guy a Mic?</td></tr>
+    <tr><td>Injuries</td><td>Pride, mostly</td></tr>
+    <tr><td>Suspect</td><td><span class="red">Duck, obviously</span></td></tr></table>
+    <a class="btn" href="#">Watch it</a></div></div>
+</div></section>
+<script>
+const P={
+ bone:{bg:'#EFE6D6',text:'#111',mute:'#6b6458',card:'#FBF7EF',ink:'#111',a1:'#D7261E',line:'rgba(0,0,0,.18)','on-a1':'#fff'},
+ concrete:{bg:'#CFCBC3',text:'#111',mute:'#555',card:'#F4F2ED',ink:'#111',a1:'#FF5A12',line:'rgba(0,0,0,.2)','on-a1':'#111'},
+ oxblood:{bg:'#4B1416',text:'#F1E6D2',mute:'#C9A99A',card:'#F1E6D2',ink:'#140B0A',a1:'#E8A23A',line:'rgba(255,255,255,.18)','on-a1':'#140B0A'},
+ olive:{bg:'#3E4630',text:'#EEE7D4',mute:'#B9B49C',card:'#EEE7D4',ink:'#16180F',a1:'#F06A1F',line:'rgba(255,255,255,.18)','on-a1':'#16180F'},
+ charcoal:{bg:'#1F1E1C',text:'#EEE7DA',mute:'#9a948a',card:'#EEE7DA',ink:'#000',a1:'#E0261C',line:'rgba(255,255,255,.15)','on-a1':'#fff'},
+ tobacco:{bg:'#2E2017',text:'#F3E9D7',mute:'#BFA58C',card:'#F3E9D7',ink:'#120C08',a1:'#F26B1D',line:'rgba(255,255,255,.16)','on-a1':'#120C08'}
+};
+const p=P[new URLSearchParams(location.search).get('p')||'bone'];
+for(const k in p)document.documentElement.style.setProperty('--'+k,p[k]);
+</script>
+</body></html>

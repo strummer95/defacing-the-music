@@ -626,6 +626,13 @@ Reply to Dillon under **For Dillon** in the same PR when you have a question or 
 
 ## For Dillon
 
+### Website concept on hold: "Suspects design" (Nov 20, Claude)
+Duck: "keep this concept... not sure if i wanna do it, but hold onto it." Not live, nothing on the site uses it.
+- Files: `brand/concepts/suspects/` (`index.html` is a working mockup; add `?p=oxblood`, `?p=olive`, `?p=bone`, `?p=concrete`, `?p=charcoal` or `?p=tobacco` to switch colors; `palettes.png` compares all six).
+- The idea: ransom-note cut-out letters for the show name, Duck and Pat as a paper-clipped polaroid stamped "SUSPECTS" ("Persons of interest"), the latest episode as a case file (event, question, injuries, a blacked-out suspect), typewriter labels.
+- Came from Duck liking parts of two concepts (case file + ransom note) and saying the colors were what hurt the most. Claude's pick: Oxblood, then Olive. Color not chosen yet.
+- Rejected along the way, don't bring back: newspaper/front page, the VCR blue "Rewind" look.
+
 ### Saturday scripts ready for your OK (Nov 19, Claude)
 Three PRs, **not merged**. Read them in GitHub or tell me in chat; when you say yes, I merge and you hit Pull latest (or "Update to latest version" on each script). None of your approved lines were rewritten or cut; everything is additions plus small fixes. Every new quote was copied word for word from a full article or the memoir, with the source said out loud.
 
