@@ -627,9 +627,9 @@ Reply to Dillon under **For Dillon** in the same PR when you have a question or 
 ## For Dillon
 
 ### Website options for Duck and Pat to discuss (Nov 20, Claude)
-Comparison page: `defacingthemusic.com/brand/concepts/` (current site, Option A "Hazard", Option B "B-Side", plus Suspects on hold). Nothing live changes until Duck picks one.
-- **Hazard** (`brand/concepts/hazard/`): safety signage built off the warning-sign logo; off-white, black, safety orange; caution tape, "0 days without an incident", DANGER/WARNING/CAUTION signs for upcoming stories.
-- **B-Side** (`brand/concepts/b-side/`): 70s record sleeve; cream, mustard, rust, brown; Shrikhand script, album-cover hosts art, "Now spinning".
+Comparison page: `defacingthemusic.com/brand/concepts/`: the current site, Option A "Suspects" (below) and Option B "Backstage". Nothing live changes until Duck picks one.
+- **Backstage** (`brand/concepts/backstage/`): dark stage with a warm spotlight on Duck and Pat, stencil road-case lettering, red; latest episode as an ALL ACCESS laminate, upcoming stories as a Sharpie setlist gaffer-taped down. Duck: "thats not bad, thats nice and simple... think some of these others try to hard to be a theme." Lesson: keep it simple, not a costume.
+- Rejected Nov 20, don't bring back: "Hazard" (construction/safety signs) and "B-Side" (70s retro: "well done, but not a good fit for the show").
 
 ### Website concept on hold: "Suspects design" (Nov 20, Claude)
 Duck: "keep this concept... not sure if i wanna do it, but hold onto it." Not live, nothing on the site uses it.
