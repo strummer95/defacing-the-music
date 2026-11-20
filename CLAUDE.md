@@ -21,7 +21,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 ## Brand ("Gig Poster", chosen by Dillon Nov 2026; the purple/teal/pink "Sea of Thieves / High Seas" look was rejected, never use it)
 - Tone: aggressive but fun and cartoony, rock/metal gig-poster energy. Not cutesy, not graffiti, nothing Ozzy/bat-themed in branding.
 - Look: black base, red accents, cream cards, thick black outlines, offset cartoon drop shadows, slight rotations. Yellow is the accent, not the background: Duck (Nov 20) found the big yellow halftone hero "a bit much" (too much yellow, too many dots), so the home page top is now plain cream (no dots) with black type, the red shadow, and the hosts art (Nov 20). Use the dot pattern sparingly.
-- Hosts art: Duck and Pat drawn in the gig-poster style (made in Grok from their photos, Nov 20). Web versions `assets/hosts.webp` (1400) and `assets/hosts-800.webp`; master PNG `brand/hosts/duck-and-pat-1400.png`. Pat is on the left (bald, beard), Duck on the right (slicked hair, aviators, gauges, arms crossed).
+- Hosts art: Duck and Pat drawn in the gig-poster style (made in Grok from their photos, Nov 20). Web versions `assets/hosts.webp` (1400) and `assets/hosts-800.webp`; master PNG `brand/hosts/duck-and-pat-1400.png`. Second version (Nov 20, natural skin tones): Duck on the left (slicked hair, aviators, gauges, arms crossed), Pat on the right (bald, beard).
 - Palette: black `#111111`, yellow `#FFD21F`, red `#E4251B`, cream `#F2E8D5`; illustration extras `#FF8A00`, `#FFE23B`.
 - Fonts (Google Fonts): Metal Mania (wordmark/headings), Bangers (labels, buttons, stickers), Archivo (body).
 - `index.php` + `assets/site.css` are the reference implementation. Reuse their classes for new pages.
