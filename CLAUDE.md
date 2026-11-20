@@ -59,13 +59,17 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - Legends are fine IF they're called legends and the episode plays up how wild the retellings got. Duck: "the legends do work, as long as it's treated like that and we highlight how crazy the stories about it got." A "how the legend grew" episode is a valid format (e.g. Keith Moon's car in the pool).
 - People who got hurt or died are never the joke; the joke is the guy who decided it was fine.
 
-### Length (overrides the old "about 15 minutes")
-- **15 minutes is the MINIMUM. Closer to 30 is probably ideal.** Scripts that run 16+ minutes before riffing are "totally cool". **Do NOT trim scripts for length.**
-- Reason: Duck doesn't know yet how good he'll be at riffing, so the script alone must hit the minimum. He'll edit down later once he figures out recording; right now it's a single camera on him, one take, with no natural way to cut without it looking odd.
-- Measure spoken length as words outside [brackets] at about 150 words per minute. Shorter scripts (eps 1 to 3 run about 13 to 15 min) should get MORE material, not less.
+### Length (Duck, Nov 20: overrides the older "15 minutes minimum, do not trim" rule)
+- **Target 20 to 30 minutes of reading before any riffing, trying to stay under 30.** Duck: "if it can be told in only 15 minutes, then maybe it's not that interesting... 20 to 30 is ideal." 40 minutes of script is too long: with Pat and riffing that becomes an hour, twice what he intended.
+- Trimming for length is allowed, but only cuts Duck has said yes to (ask-before-changing rule still applies). Cut repetition, side trips and stacked quotes from the same source first. Never cut the buildup details that make the ending feel inevitable (see below).
+- `[RIFF]`, `[FILL]` and `[TALK]` lines don't count toward length; they're optional.
+- Measure spoken length as words outside [brackets] at about 150 words per minute.
+
+### The ending should feel inevitable (Duck, Nov 20)
+- The goal of the buildup: by the end, the insane outcome makes sense in a funny way. "It's insane that he bit the head off a bat, but then when you hear all the parts leading up to it, you're like, oh, well, of course he bit the head off the bat." Keep the crazy details that build to it (e.g. the freshly slaughtered cow's head and the foot-and-a-half frog fans threw at Ozzy shows).
 
 ### Episode format (Duck's description, confirmed)
-1. **Cold open:** about **30 seconds, about 75 words**. Three or four quick hits and out. A real teaser that does NOT spoil what happens (Duck: some cold opens were "way too long... It needs to really be a teaser. And not spoil, you know, what's going to happen really"). Ozzy example of the right spirit: "a dead bat, a boardroom full of executives, and a dove that had a very bad day." (Scripts also carry a short "Today" summary before the intro line.)
+1. **Cold open:** about **30 seconds, about 75 words**. **Never mention or tease That Guy in a cold open** (Duck, Nov 20: too on the nose; That Guy should come up naturally in the episode, not be pushed as a big running gag). Three or four quick hits and out. A real teaser that does NOT spoil what happens (Duck: some cold opens were "way too long... It needs to really be a teaser. And not spoil, you know, what's going to happen really"). Ozzy example of the right spirit: "a dead bat, a boardroom full of executives, and a dove that had a very bad day." (Scripts also carry a short "Today" summary before the intro line.)
 2. **The title goes in the intro line, before the theme (Duck, Nov 16):** "I'm Duck, and due to a possible rabies infection, this is Defacing the Music." (the "Due To" title, lowercase, inside the line). Title and subtitle are split because "they dont really flow together": the title and the teaser come before the theme, the subtitle comes after it.
 3. **Theme song** (`[THEME SONG, hard stop]`).
 4. **Coming out of the theme:** "Episode [NUMBER]. Who Let That Guy Bring a Bat?" (the "Who ...?" subtitle), then straight into the story. Scripts always write the literal `[NUMBER]`; the teleprompter swaps in the real number once Duck makes the script an episode in the admin, and shows it as a yellow cue until then.
