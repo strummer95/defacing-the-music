@@ -39,6 +39,79 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 - Social clips: every script marks 30 to 60 second moments with [CLIP: ...]; the That Guy verdict is always one.
 - Brand: "Gig Poster" (black, yellow #FFD21F, red #E4251B, cream #F2E8D5; Metal Mania / Bangers / Archivo fonts; the warning-sign logo). Never the old purple/teal/pink look.
 
+## For Grok / Defa: length check on the Saturday scripts (Nov 20, Claude, at Duck's request)
+Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep all the info in the file, im gonna get groks opinion." **Nothing has been cut for this note.** Duck wants Grok's opinion first. Target (CLAUDE.md): 20 to 30 min of reading before riffing, staying under 30. With Pat and the TALK cues a raw recording runs roughly 35 to 60 percent longer than the reading time.
+
+**Ozzy (Due To a Possible Rabies Infection)**: 4301 spoken words = about 29 min reading at 150 wpm (31 min at 140 wpm). 4 TALK cues. Raw recording with Pat and riffs: roughly 39 to 46 min.
+
+| Section | Words | Min |
+|---|---|---|
+| COLD OPEN | 77 | 0.5 |
+| TODAY | 99 | 0.7 |
+| THE SLAUGHTERHOUSE KID | 418 | 2.8 |
+| THE DOVE | 562 | 3.7 |
+| WHY NOBODY REMEMBERS THE DOVE | 55 | 0.4 |
+| THE MEAT | 426 | 2.8 |
+| THE KID | 606 | 4.0 |
+| THE BITE | 397 | 2.6 |
+| THE HOSPITAL | 678 | 4.5 |
+| THE ALAMO | 95 | 0.6 |
+| THE SERIOUS PART | 168 | 1.1 |
+| AFTER THE BAT | 206 | 1.4 |
+| THAT GUY | 276 | 1.8 |
+| THE LEGEND | 182 | 1.2 |
+| OUT | 56 | 0.4 |
+
+**Woodstock '99 (Due To Not Giving Peace a Chance)**: 4877 spoken words = about 33 min reading at 150 wpm (35 min at 140 wpm). 7 TALK cues. Raw recording with Pat and riffs: roughly 44 to 52 min.
+
+| Section | Words | Min |
+|---|---|---|
+| COLD OPEN | 77 | 0.5 |
+| TODAY | 291 | 1.9 |
+| THE ORIGINAL | 196 | 1.3 |
+| THE SEQUEL TO THE SEQUEL | 101 | 0.7 |
+| 1969 VERSUS 1999 | 399 | 2.7 |
+| THE PLAN | 559 | 3.7 |
+| THURSDAY TO SATURDAY | 445 | 3.0 |
+| SATURDAY NIGHT | 313 | 2.1 |
+| BREAK STUFF | 411 | 2.7 |
+| SUNDAY | 738 | 4.9 |
+| THE MORNING AFTER | 379 | 2.5 |
+| WOULD ANYBODY TRY THIS AGAIN | 219 | 1.5 |
+| THAT GUY | 355 | 2.4 |
+| WHERE ARE THEY NOW | 337 | 2.2 |
+| OUT | 57 | 0.4 |
+
+**Disco Demolition (Due To Excessive Disco)**: 5017 spoken words = about 33 min reading at 150 wpm (36 min at 140 wpm). 5 TALK cues. Raw recording with Pat and riffs: roughly 45 to 54 min.
+
+| Section | Words | Min |
+|---|---|---|
+| COLD OPEN | 79 | 0.5 |
+| 1979 | 106 | 0.7 |
+| THE DJ | 374 | 2.5 |
+| THE VEECKS | 489 | 3.3 |
+| THE IDEA | 270 | 1.8 |
+| THE CROWD | 426 | 2.8 |
+| THE BOOM | 239 | 1.6 |
+| THE FIELD | 1359 | 9.1 |
+| THE FORFEIT | 416 | 2.8 |
+| THE OLDER COUSIN | 264 | 1.8 |
+| WHERE ARE THEY NOW | 518 | 3.5 |
+| THAT GUY | 366 | 2.4 |
+| OUT | 111 | 0.7 |
+
+
+**Where the time goes**
+- Ozzy is inside the target, but the raw recording with Pat will still be about 40 to 45 min. Biggest sections: The Hospital (4.5), The Kid (4.0), The Dove (3.7).
+- Woodstock is a few minutes over. Biggest: Sunday (4.9), The Plan (3.7), Thursday to Saturday (3.0). TODAY (1.9) includes the title explanation and the one serious note.
+- Disco is the longest and hasn't had Duck's length pass yet. The Field alone is about 9 min (the field rush with all the eyewitness quotes). Then Where Are They Now (3.5), The Veecks (3.3).
+
+**Cut candidates already raised (none applied, all need Duck's yes)**
+- Disco: Ten Cent Beer Night ("The Older Cousin", 1.8); trim the stacked eyewitness quotes in The Field; shorten Where Are They Now.
+- Woodstock: trim Sunday and The Plan; Where Are They Now.
+- Ozzy: The Hospital (Milwaukee, Sharon and the publicist), After the Bat.
+- Rule to keep in mind (Duck, Nov 20): never cut the buildup details that make the ending feel inevitable (the cow's head, the frog, the meat, the frisbee records).
+
 ## For Claude
 
 ### Nov 20: Duck's length pass on the Saturday scripts (Claude chat, applied to PRs #85, #86, #87)
