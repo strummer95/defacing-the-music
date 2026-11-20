@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backstage design (concept)</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Permanent+Marker&family=Oswald:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--stage:#161518;--floor:#1E1D21;--amber:#FFB547;--red:#E4251B;--paper:#F6F3EC;--gray:#9a96a0}
+*{box-sizing:border-box}html{overflow-x:hidden}
+body{margin:0;background:var(--stage);color:var(--paper);font:18px/1.6 Inter,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+header{position:relative;z-index:2}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:78px}
+.brand{display:flex;align-items:center;gap:12px;font:400 22px "Saira Stencil One";letter-spacing:.04em}
+.brand img{width:40px;height:40px}
+nav a{font:700 14px Oswald;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-decoration:none;margin-left:28px;opacity:.85}
+.hero{position:relative;background:
+  radial-gradient(ellipse 34% 70% at 74% 0%,rgba(255,200,120,.38),rgba(255,181,71,.10) 55%,transparent 75%),
+  radial-gradient(ellipse 60% 40% at 74% 100%,rgba(255,181,71,.18),transparent 70%),var(--stage);overflow:hidden}
+.hero>.wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:end;min-height:640px}
+.copy{align-self:center;padding:40px 0 80px}
+.kick{font:700 14px Oswald;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+h1{font:400 108px/.9 "Saira Stencil One";margin:16px 0 26px;color:var(--paper);letter-spacing:.01em}
+h1 span{color:var(--red)}
+.lede{font:600 22px/1.45 Inter;max-width:460px;margin:0 0 34px;color:#e7e2d8}
+.btn{display:inline-block;background:var(--red);color:#fff;font:700 18px Oswald;letter-spacing:.12em;text-transform:uppercase;padding:16px 28px;text-decoration:none;border-radius:3px;box-shadow:0 0 0 3px var(--stage),0 0 0 5px var(--red)}
+.also{display:inline-block;margin-left:22px;font:600 14px Inter;color:var(--gray)}.also a{color:var(--paper)}
+.stagearea{position:relative;align-self:end}
+.stagearea img{display:block;width:100%;position:relative;z-index:1;filter:drop-shadow(0 0 40px rgba(255,181,71,.25))}
+.stagearea::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-6px;height:70px;background:radial-gradient(ellipse at center,rgba(0,0,0,.65),transparent 70%);z-index:0}
+.edge{height:16px;background:linear-gradient(#2b2a2f,#0d0d0f);border-top:2px solid #3a3940}
+section{padding:96px 0;background:var(--floor)}
+h2{font:400 56px/1 "Saira Stencil One";margin:0 0 44px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.lan{position:relative;padding-top:70px;display:flex;justify-content:center}
+.lan::before{content:"";position:absolute;top:0;left:50%;width:46px;height:84px;margin-left:-23px;background:repeating-linear-gradient(90deg,var(--red) 0 10px,#b51b13 10px 12px);clip-path:polygon(0 0,100% 0,62% 100%,38% 100%)}
+.pass{position:relative;width:100%;max-width:470px;background:var(--paper);color:#111;border-radius:14px;padding:22px 22px 26px;transform:rotate(-2.5deg);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.pass .hole{position:absolute;top:12px;left:50%;width:56px;height:12px;margin-left:-28px;background:var(--floor);border-radius:8px}
+.pass .top{display:flex;justify-content:space-between;align-items:center;margin:14px 0 14px}
+.pass .aa{background:var(--red);color:#fff;font:700 26px Oswald;letter-spacing:.12em;padding:4px 14px;text-transform:uppercase}
+.pass .ep{font:400 26px "Saira Stencil One"}
+.pass img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:6px}
+.pass h3{font:700 30px/1.05 Oswald;text-transform:uppercase;margin:16px 0 4px}
+.pass .q{margin:0 0 16px;font:800 17px Inter;color:var(--red)}
+.pass .btn{font-size:16px;padding:12px 22px;box-shadow:none}
+.setlist{position:relative;background:var(--paper);color:#111;padding:44px 40px 40px;transform:rotate(1.5deg);box-shadow:0 26px 50px rgba(0,0,0,.5);max-width:520px;justify-self:center;width:100%}
+.gaff{position:absolute;width:120px;height:38px;background:linear-gradient(#5a5960,#3d3c42);opacity:.95}
+.g1{top:-16px;left:-28px;transform:rotate(-30deg)}.g2{top:-16px;right:-28px;transform:rotate(30deg)}.g3{bottom:-14px;left:-26px;transform:rotate(28deg)}.g4{bottom:-14px;right:-26px;transform:rotate(-28deg)}
+.setlist .hd{font:400 22px "Permanent Marker";border-bottom:3px solid #111;padding-bottom:6px;margin-bottom:20px;display:flex;justify-content:space-between}
+.setlist ul{list-style:none;margin:0;padding:0}
+.setlist li{font:400 27px/1.15 "Permanent Marker";margin:0 0 20px}
+.setlist li small{display:block;font:600 14px Inter;color:#666;margin-top:4px;letter-spacing:.02em}
+.setlist .encore{color:var(--red);font-size:22px;transform:rotate(-3deg);display:inline-block}
+footer{background:var(--stage);padding:32px 0 60px;border-top:1px solid #2a292e}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:600 14px Inter;color:var(--gray)}
+footer a{color:var(--paper);margin-left:18px}
+@media(max-width:820px){.wrap{padding:0 18px}nav{display:none}.hero>.wrap{grid-template-columns:1fr;min-height:0;gap:0}.copy{padding:30px 0 30px}h1{font-size:62px}.two{grid-template-columns:1fr;gap:70px}h2{font-size:38px}section{padding:60px 0}.also{display:block;margin:14px 0 0}.setlist{padding:36px 24px 28px}.setlist li{font-size:23px}}
+</style></head><body>
+<div class="hero">
+<header><div class="wrap"><div class="brand"><img src="/assets/logo-192.png" alt="">Defacing the Music</div><nav><a href="#">Episodes</a><a href="#">Hosts</a><a href="#">Sources</a><a href="#">Listen</a></nav></div></header>
+<div class="wrap">
+  <div class="copy">
+    <span class="kick">Tonight only. Every night.</span>
+    <h1>Defacing<br><span>the Music</span></h1>
+    <p class="lede">Rock and roll's worst nights, and who to blame for them.</p>
+    <a class="btn" href="#">Subscribe on YouTube</a><span class="also">or <a href="#">Spotify</a> / <a href="#">Apple</a></span>
+  </div>
+  <div class="stagearea"><img src="/assets/hosts.webp" alt="Duck and Pat"></div>
+</div>
+</div>
+<div class="edge"></div>
+<section><div class="wrap">
+  <div class="two">
+    <div><h2>Latest episode</h2>
+      <div class="lan"><div class="pass"><span class="hole"></span>
+        <div class="top"><span class="aa">All access</span><span class="ep">EP 00</span></div>
+        <img src="https://i.ytimg.com/vi/FQK-XMkoajA/hqdefault.jpg" alt="">
+        <h3>Due To Unforeseen Circumstances</h3><p class="q">Who Gave This Guy a Mic?</p>
+        <a class="btn" href="#">Watch it</a></div></div>
+    </div>
+    <div><h2>Tonight's setlist</h2>
+      <div class="setlist"><span class="gaff g1"></span><span class="gaff g2"></span><span class="gaff g3"></span><span class="gaff g4"></span>
+        <div class="hd"><span>DTM</span><span>coming up</span></div>
+        <ul>
+          <li>Due To a Possible Rabies Infection<small>Des Moines, 1982 · Who Let That Guy Bring a Bat?</small></li>
+          <li>Due To Not Giving Peace a Chance<small>Rome, NY, 1999 · Who Asked Fred Durst to Be a Therapist?</small></li>
+          <li>Due To Excessive Disco<small>Chicago, 1979 · Who Let a DJ Blow Up Center Field?</small></li>
+          <li><span class="encore">encore?? ask Pat</span></li>
+        </ul></div>
+    </div>
+  </div>
+</div></section>
+<footer><div class="wrap"><span>Due to unforeseen circumstances, all rights reserved.</span><span><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a></span></div></footer>
+</body></html>
