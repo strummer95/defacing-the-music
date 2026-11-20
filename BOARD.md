@@ -114,6 +114,120 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 20: Duck APPROVED length cuts for Woodstock (#85 merged) and Disco (#86 merged), from Defa
+Duck approved these cuts on Nov 20, after going through Defa's proposals one by one. Please:
+- Open **one PR per script** (one for `lib/seed/episode-02.txt` Woodstock '99, one for `lib/seed/story-disco-demolition.txt` Disco Demolition). Do NOT merge. Duck approves, then Claude merges.
+- Apply **only** what is listed here. Anything marked **KEEP** stays exactly as written. Everything not mentioned stays as is.
+- Don't touch Ozzy (`episode-03.txt`).
+- Keep every [CLIP], [TALK], [RIFF], [FILL], [Pause.] and [THAT GUY STING] line unless this note says to remove it. No em dashes. The hard rule still applies.
+- Update the run time estimate in each PR. Targets: **Woodstock about 29 min, Disco about 28 min** of reading at 150 wpm.
+
+#### Woodstock '99 (episode-02.txt): now about 32.5 min, target about 29 min (about 575 words cut)
+
+**W1. THE PLAN, trim (saves about 175 words, 1.2 min).**
+- KEEP the '94 site line ("At first they're going to go back to the '94 site. Then they find something better. Better for them."). Duck says the '94 mention is important.
+- KEEP the Peace Patrol line ("Security is a crew called the Peace Patrol, in yellow shirts. A lot of them were basically kids themselves."). Duck thinks it's funny.
+- Cut: "Planning starts in the fall of 1998."; the "One write-up says two point three" and Pollstar van detail; "Reports say three miles of it, some say closer to six."; pay-per-view and the MTV $38M cost; the paragraph about security taking food and water at the gate. Shorten the Cristiano vendor bit.
+- The section should read like this. Cue lines (the Peace Wall [FILL], the [CLIP], the pizza [RIFF] and fallback, the [TALK]) stay where they are now:
+
+> So. Michael Lang, from the original, teams up with a big New Jersey concert promoter named John Scher.
+> At first they're going to go back to the '94 site. Then they find something better. Better for them.
+> Griffiss Air Force Base. Rome, New York. The Air Force had pulled out in the mid nineties, so now it's a giant empty base with miles of runway.
+> And here's my first oddly specific detail, and you're welcome. Griffiss had been on the EPA's Superfund list, the official list of the most contaminated hazardous waste sites in the country, since 1987. They threw the peace and love party on a Superfund site.
+> [Pause.]
+> Now think about what an Air Force base actually is. It's not grass. It's tarmac. Flat concrete and asphalt built so bombers can land on it. No trees. No shade. And the two main stages are about two miles apart. On foot. On that concrete.
+> They pick late July.
+> And to keep the gate crashers out, because the original went free when the fences fell, they build a wall. Around the whole site. Twelve feet tall, mostly plywood.
+> You know what they called it?
+> The Peace Wall.
+> [FILL: unchanged]
+> Security is a crew called the Peace Patrol, in yellow shirts. A lot of them were basically kids themselves.
+> Tickets are a hundred and fifty bucks. In today's money, that's about three hundred.
+> And once you're in, you're buying from the vendors. Here's the menu, courtesy of MTV News, live from the festival. A bottle of water, four dollars. In today's money, that's about eight. For one bottle. On a runway.
+> [CLIP: unchanged]
+> And a vendor named Frank Cristiano told Spin the concession company was selling water to the vendors at seventy bucks a case. So the guy at the booth is getting robbed too. It's robbery all the way down.
+> (Pizza lines, the [RIFF] and fallback, and the [TALK] stay as is.)
+
+(Keeping Cristiano's name, so the source stays named. Skip the optional "drop the Spin vendor line" idea.)
+
+**W2. WHERE ARE THEY NOW, rewrite (saves about 154 words, 1.0 min).** Cut the Fred dad-look [RIFF] and its fallback (it repeats the 401k joke), the "Rollin'" and Morgan Wallen chart details, and the eight minute video. Replace the whole section with:
+
+> So where's Limp Bizkit now? Because for a long time the answer was "a punchline."
+> Then, in 2021, they play Lollapalooza. Here in Chicago, Grant Park. And Fred walks out and nobody recognizes him. Gray hair. A mustache. Glasses. He looks like a guy who's about to explain your 401k. And they play a new song called "Dad Vibes." That Halloween they put out an album called "Still Sucks."
+> And they're bigger now than they've been in twenty years. "Break Stuff" has passed a billion plays on Spotify.
+> One straight thing. In October 2025, the band's bass player and co-founder, Sam Rivers, died. He was forty eight. That week, people went back to the music, and "Break Stuff" went to number one on Billboard's hard rock chart, twenty six years after it came out.
+> And Coachella, the festival that sold itself as the anti Woodstock '99, has never booked Limp Bizkit. This year Fred floated starting his own festival for the bands Coachella won't invite.
+> Twenty seven years later, he's still mad at the guys who run festivals.
+> Honestly? After this story? Fair.
+
+**W3. BREAK STUFF, cut two repeats (saves 90 words, 0.6 min).**
+- Cut the paragraph from "And here's how that works, because it's not complicated." through "every new board makes the next one easier." (It repeats Saturday's "That's a crowd checking what it's allowed to do.")
+- Cut the line "So the song didn't light the fire. The song is where the crowd figured out it was allowed to start pulling the place apart." (It repeats the section's opening.)
+
+**W4. SUNDAY, light trim only (saves about 71 words, 0.5 min).**
+- KEEP the full candle info exactly as written ("How many candles? One report says a hundred thousand. Others just say thousands. Either way, a lot of open flames, handed out on purpose." and the whole PAX/vigil setup). It's what caused the fire. Do NOT shorten it.
+- Cut from the riot paragraph: "The way the organizers tell it, the firefighters on site wouldn't leave their station, because the crowd was too out of control. That's their version, nobody's proven it." (unproven)
+- Rochlin, tighten (approved): keep his quote and the "about four of them unhooked the speakers" line. Replace the commentary paragraph ("Worked extremely hard for about ten minutes. ... Nobody was coming.") with:
+  > That's the hardest anybody worked all weekend, and that includes the guys running it. They had time to unhook the speakers. Nobody was coming.
+- Spencer, tighten (approved): merge the two lead-in lines into one. Replace "And my favorite quote of the whole thing: an eighteen year old named Spencer Parker told the Associated Press ..." plus "His exact words, from E! News, quoting the AP: ..." with:
+  > And my favorite quote of the whole thing. An eighteen year old named Spencer Parker told the Associated Press: "It has a little bit of meaning when you pay $4 for a pretzel."
+
+  Keep "Spencer. That's an eight dollar pretzel today. Spencer has a point." after it. Keep E! News in lib/sources.
+
+**W5. TODAY, cut the 1994 repeat (saves about 63 words, 0.4 min). Conditional.** Duck says the '94 mention is important, so only make this cut if a '94 mention stays elsewhere. It does: THE SEQUEL TO THE SEQUEL stays untouched (the full 1994 paragraph), and THE PLAN keeps the '94 site line (W1). If either of those is ever gone, do NOT make this cut. Replace lines 16 and 17 ("So, the name. ..." and "Then they kept trying to do it again. Once in 1994, ...") with:
+
+> So, the name. "Give Peace a Chance." John Lennon and Yoko Ono recorded it in bed, in a Montreal hotel room, in June 1969, one month before the original Woodstock, and it became the anthem for that whole generation. The whole chorus is one line: "All we are saying is give peace a chance." Thirty years later, at Woodstock '99, nobody gave peace a chance.
+
+The content warning paragraph after it stays as is.
+
+**W6. 1969 VERSUS 1999, Yasgur fix and hippies trim (saves about 23 words).**
+- Fix (needed): line 45 still says "a farmer saying 'God bless you'", but that Yasgur line was already cut from THE ORIGINAL. Change it to:
+  > That's the shift. You go from breakfast in bed for four hundred thousand to a song that is, top to bottom, about wanting to break your stuff.
+- Replace the hippies paragraph with:
+  > And the hippies? Gone. Rolling Stone counted exactly two people from the original festival on the whole bill: John Entwistle of The Who and the Grateful Dead's drummer, Mickey Hart. In 1994 the hippies were outnumbered. In 1999 they were extinct.
+- KEEP "I'm not knocking it. I've been in bars ... 401ks ..." (skip the optional cut).
+
+**KEEP in Woodstock (do not cut):** THE MORNING AFTER stays exactly as is, including Michael Lang's "a few assholes" line and the Scher "finger" line. Also keep everything in THE SEQUEL TO THE SEQUEL, the Peace Patrol, the candle setup, Karen Thomas, the press conference, "Fire", and all of THAT GUY.
+
+#### Disco Demolition (story-disco-demolition.txt): now about 33.4 min, target about 28 min (about 815 words cut)
+
+**D1. THE OLDER COUSIN, cut the whole section (saves 264 words, 1.8 min).** Remove the header, the [CLIP: Ten Cent Beer Night] cue, the [RIFF] and its fallback, and the "younger brother" line. Remove that clip from any clip list too (the clip entry and the "Ten Cent Beer Night" source entry in `lib/sources/story-disco-demolition.json` around line 134, if it is only there for this section). Nothing else in the script mentions it. The FILL about the last forfeited AL game still holds. Kravec's "Frisbee the albums" quote keeps the frisbee setup. Leave CLAUDE.md's touchstone note alone (that's about the Dollop episode).
+
+**D2. THE FIELD, trims (saves about 286 words, 1.9 min; 9.1 down to about 7.2 min).**
+- Opening: cut "And this is where I went digging, because "fans rushed the field" is not a story. Who? What did they do? So let me give you some of the guys." The next line ("There was a teenage vendor...") starts the section fine.
+- Paul Sullivan: replace the paragraph starting "And he wasn't alone. People ran the bases..." with the line below. This also removes the 1968 convention riots reference, which is too close to the hard rule:
+  > And he wasn't alone. People ran the bases like they were in the World Series. Sliding into home. Standing on the mound.
+- KEEP the Les Grobstein turf souvenir lines exactly as written.
+- Damage list: replace the four paragraphs from "Then the bigger stuff. Somebody pulled up the bases." through "Just a parade of one. On a major league field." (this cuts Jack Morris, the pole climbers and the Gaborek foul pole and sign quote) with:
+  > Then the bigger stuff. A photographer named Paul Natkin, who was shooting it that night: "They pulled all the bases up. They tipped over the batting cage." People went after the pitching rubber and home plate. They tore up the grass, tore out seats, and lit bonfires in the outfield with records and whatever else they could find.
+- Jimmy Piersall, short version: replace his three paragraphs (from "And then there's the TV booth." through "the worst promotion in the history of the world.") with:
+  > And up in the TV booth, Harry's partner, Jimmy Piersall, is disgusted. This is a former big league outfielder who once ran the bases backwards on his hundredth home run. And he told everybody watching at home: "I hope they don't let you people see what's going on here at Comiskey Park. One of the saddest sights I've ever seen in a ballpark in my life." The man who ran the bases backwards for fun thought this was too much.
+- KEEP: the second base kid and its [CLIP], Michael Clarke Duncan with its [RIFF] and [TALK], Nancy Faust and the three nuns with its [CLIP], **both Kravec bullpen quotes in full**, Bill Veeck at home plate, Harry Caray and the Titanic quote, the police, the arrests and "nobody seriously hurt", and Steve Trout's "Village People" quote.
+
+**D3. WHERE ARE THEY NOW, rewrite (saves about 230 words, 1.5 min).** Mike's twenty years out and the minors repeat what THAT GUY says right after, so those go. Also cut the drinking, divorce and jai alai, Nobody Night, Vasectomy Night, Dahl's book, the Devil Rays and the Marlins. Replace the section with this (the house music [FILL] stays where it is):
+
+> So what happened to everybody?
+> (Vince Lawrence paragraph and the "usher's uniform" line unchanged.)
+> [FILL: unchanged]
+> Steve Dahl stayed on Chicago radio for decades. He's said disco was probably on its way out anyway, and that night just sped it up.
+> Bill Veeck took the public heat, so his kid wouldn't have to. He sold the team not long after, and he's in the Hall of Fame now, for everything else he did. Eddie Gaedel, the scoreboard, the shorts. Mostly not this.
+> And Mike Veeck was out at the White Sox before the next season. He's always believed he got blackballed. But he never stopped doing promotions. He ended up running the St. Paul Saints, a minor league team he co-owns with a group that includes Bill Murray. Yes, that Bill Murray.
+> And in 2001, on the anniversary of Disco Demolition, he finally apologized. To disco. He stood at home plate and delivered an apology to KC, of KC and the Sunshine Band, and ended it with: "I'm sorry from the bottom of my leisure suit."
+> There's a Netflix documentary about him now, "The Saint of Second Chances." And he's said Disco Demolition made him great at what he does.
+
+**D4. THE VEECKS, small trim (saves about 37 words).**
+- Change "Over the years he has surgery after surgery on it, and the number you see over and over is thirty six, and eventually the leg comes off." to "After thirty six surgeries, the leg comes off."
+- Cut "Veeck's version of how that happened changed a little every time he told it."
+- KEEP: the ashtray leg, Eddie Gaedel, the exploding scoreboard, names on jerseys, the shorts and its [RIFF], and the Harry Caray setup (it pays off in THE FIELD).
+
+**KEEP in Disco (do not cut):** the cold open, THE CROWD, THE BOOM, THE FORFEIT (including the 2 a.m. leg ashtray story), and all of THAT GUY.
+
+#### For Dillon
+When both PRs are open, please post a short "For Dillon" note on this board with:
+- the two PR links;
+- the new word count and run time for each script (target Woodstock about 29 min, Disco about 28 min);
+- anything on this list you couldn't apply exactly or had to adjust, and why.
+
 ### Nov 20: Duck's length pass on the Saturday scripts (Claude chat, applied to PRs #85, #86, #87)
 Duck went through Woodstock and Ozzy with Claude (chat) on Nov 20 and okayed every cut below. They're committed on the PR branches; don't redo or revert them. New rules (length 20 to 30 min, no That Guy in cold opens, keep the buildup details) are in CLAUDE.md via the rules PR.
 - **Woodstock '99 (#85), ~33 min:** The Original cut to about a minute. 1994 cut to three lines (everything that went wrong in '99 was already there in '94). Food menu cut to the four dollar water and the twelve inch, twelve dollar pizza. Rolling Stone Sunday quote trimmed to the trash/outhouse passage plus "went up in smoke. Literally." AP down to Karen Thomas only. Speaker tower quote down to one sentence. Legend or Fact cut. What It Changed and Woodstock 50 merged into one short "Would Anybody Try This Again". Download line cut from Where Are They Now. Carson Daly stays, with a TALK cue (Ryan Seacrest of the 90s).
