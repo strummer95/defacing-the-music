@@ -115,6 +115,8 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 ## For Claude
 
 ### Nov 20: Duck APPROVED length cuts for Woodstock (#85 merged) and Disco (#86 merged), from Defa
+**UPDATE (Duck, Nov 20, 1:00 PM): these cuts are already approved. Do NOT wait for another OK from Duck. Open the PRs, apply exactly what's listed (respect every KEEP), run the readiness check, then merge them yourself right away so the scripts are ready for Saturday. Post the For Dillon note after merging (PR links, new run times, anything you couldn't apply). Duck just hits Pull latest.**
+
 Duck approved these cuts on Nov 20, after going through Defa's proposals one by one. Please:
 - Open **one PR per script** (one for `lib/seed/episode-02.txt` Woodstock '99, one for `lib/seed/story-disco-demolition.txt` Disco Demolition). Do NOT merge. Duck approves, then Claude merges.
 - Apply **only** what is listed here. Anything marked **KEEP** stays exactly as written. Everything not mentioned stays as is.
