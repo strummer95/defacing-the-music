@@ -76,7 +76,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 <header class="wrap site-header">
   <a href="#top" class="wordmark metal"><img src="assets/logo-192.png" alt="" width="56" height="56" class="logo-mark">Defacing the Music</a>
   <nav class="nav bang" aria-label="Main">
-    <a href="#top">Latest</a>
+    <a href="#latest">Latest</a>
     <a href="#episodes">Episodes</a>
     <a href="#host">The Hosts</a>
     <a href="#list">Guest List</a>
@@ -85,21 +85,11 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 </header>
 
 <main>
-<section id="top" class="hero hero-np">
-  <div class="wrap np-hero">
-    <div class="np-brand">
-      <p class="kicker bang">A podcast about music's worst nights</p>
+<section id="top" class="hero hero-simple">
+  <div class="wrap hs-inner">
+    <div class="hs-copy">
       <h1 class="metal">Defacing<br>the Music</h1>
-      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
-      <img class="hosts-art" src="assets/hosts.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts.webp') ?>" srcset="assets/hosts-800.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts-800.webp') ?> 800w, assets/hosts.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts.webp') ?> 1400w" sizes="(max-width: 720px) 92vw, 46vw" width="1400" height="1045" alt="Your hosts: Duck, slicked-back hair, aviator glasses and ear gauges, arms crossed, and Pat, bald with a full beard" fetchpriority="high">
-    </div>
-    <div class="np-side">
-      <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
-      <div class="video-frame np-video">
-        <iframe src="https://www.youtube-nocookie.com/embed/<?= $h($latest['yt']) ?>" title="Defacing the Music, Episode <?= $h($latest['num']) ?>: <?= $h($latest['title']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <h2 class="bang np-title"><?= $h($latest['title']) ?></h2>
-      <?php if ($latest['who'] !== ''): ?><p class="np-who"><?= $h($latest['who']) ?></p><?php endif; ?>
+      <p class="hs-line">Rock and roll's worst nights, and who to blame for them.</p>
       <div id="listen" class="listen-main">
         <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>?sub_confirmation=1" rel="noopener" target="_blank">
           <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -110,16 +100,9 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
           foreach ($alts as $name => $url): ?><?= $k++ ? ' and ' : ' ' ?><a href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a><?php endforeach; ?>
         </p>
       </div>
-      <div class="follow bang">
-        <span class="follow-label">Follow the wreckage</span>
-        <?php foreach ($social as $name => $url): ?>
-          <?php if ($url): ?>
-            <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
-          <?php else: ?>
-            <span class="btn sm soon"><?= $h($name) ?><small>soon</small></span>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      </div>
+    </div>
+    <div class="hs-art">
+      <img class="hosts-art" src="assets/hosts.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts.webp') ?>" srcset="assets/hosts-800.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts-800.webp') ?> 800w, assets/hosts.webp?v=<?= @filemtime(__DIR__ . '/assets/hosts.webp') ?> 1400w" sizes="(max-width: 720px) 92vw, 50vw" width="1400" height="1048" alt="Your hosts: Duck, slicked-back hair, aviator glasses and ear gauges, arms crossed, and Pat, bald with a full beard" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -131,6 +114,25 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
     <?php endfor; ?>
   </div>
 </div>
+
+<section id="latest" class="wrap latest">
+  <div class="section-head">
+    <h2 class="metal">Latest Episode</h2>
+    <p class="bang">EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?>. Admit one.</p>
+  </div>
+  <div class="np-grid">
+    <div class="video-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/<?= $h($latest['yt']) ?>" title="Defacing the Music, Episode <?= $h($latest['num']) ?>: <?= $h($latest['title']) ?>" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="np-copy">
+      <p class="np-num bang">EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
+      <h3 class="bang"><?= $h($latest['title']) ?></h3>
+      <?php if ($latest['who'] !== ''): ?><p class="who"><?= $h($latest['who']) ?></p><?php endif; ?>
+      <?php if ($latestBlurb !== ''): ?><p><?= $h($latestBlurb) ?></p><?php endif; ?>
+      <a class="btn bang" href="https://youtu.be/<?= $h($latest['yt']) ?>" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+  </div>
+</section>
 
 <section id="episodes" class="wrap episodes">
   <div class="section-head">
@@ -202,6 +204,12 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p class="wordmark metal"><img src="assets/logo-192.png" alt="" width="44" height="44" class="logo-mark">Defacing the Music</p>
+    <div class="follow bang foot-follow">
+      <span class="follow-label">Follow the wreckage</span>
+      <?php foreach ($social as $name => $url): if (!$url) continue; ?>
+        <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
+      <?php endforeach; ?>
+    </div>
     <p>Due to unforeseen circumstances, all rights reserved. · defacingthemusic.com</p>
   </div>
 </footer>

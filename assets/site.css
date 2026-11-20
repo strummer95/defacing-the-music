@@ -178,30 +178,26 @@ a.sticker{text-decoration:none}
 .credits .notice{margin-bottom:18px}
 .site-footer a{color:inherit}
 @media (max-width:600px){.credits h1{font-size:48px}.credit-card{padding:18px 16px}}
-/* Home hero (Nov 20): cream, hosts art + show name on the left, latest episode on the right */
-.hero.hero-np{background:var(--cream);background-image:none;border-top:0;border-bottom:6px solid var(--black)}
-.np-hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:40px;padding-bottom:56px}
-.np-brand{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:14px;color:var(--black)}
-.np-brand .kicker{background:var(--black);color:var(--yellow)}
-.np-brand h1{margin:0;font-size:76px;line-height:.92;color:var(--black);text-shadow:4px 4px 0 var(--red)}
-.np-brand .lede{margin:0;font-size:19px;line-height:1.45;color:var(--black);max-width:560px}
-.hosts-art{display:block;width:100%;max-width:600px;height:auto;margin-top:6px;filter:drop-shadow(8px 8px 0 rgba(17,17,17,.9))}
-.np-side{flex:1.15 1 500px;min-width:0;display:flex;flex-direction:column;gap:12px;color:var(--black)}
-.np-tag{margin:0 0 4px;align-self:flex-start;font-size:22px;letter-spacing:1px;background:var(--red);color:var(--cream);padding:5px 14px;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--black)}
-.np-video{flex:none;width:100%;outline-color:var(--black);box-shadow:12px 12px 0 var(--red)}
-.hero .np-title{margin:14px 0 0;font-size:36px;line-height:1;color:var(--red);text-shadow:2px 2px 0 var(--black)}
-.np-who{margin:0;font-weight:800;font-style:italic;font-size:18px;color:var(--black)}
-.hero-np .listen-main{padding-top:6px}
-.hero-np .yt-btn{font-size:28px;padding:14px 24px;white-space:nowrap}
-.hero-np .also{color:var(--black)}
-.hero-np .follow{gap:10px 12px}
-.hero-np .follow-label{flex-basis:100%;margin:0;color:var(--black)}
-.hero-np .follow .btn.sm{font-size:17px;padding:7px 14px;box-shadow:4px 4px 0 var(--red)}
-@media (max-width:900px){.np-brand h1{font-size:60px}}
+/* Home hero (Nov 20, simpler): name, one line, one button, hosts art. Lots of room. */
+.hero.hero-simple{background:var(--cream);background-image:none;border-top:0;border-bottom:6px solid var(--black)}
+.hs-inner{display:flex;flex-wrap:wrap;align-items:center;gap:40px 64px;padding-top:56px;padding-bottom:0}
+.hs-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:22px;color:var(--black);padding-bottom:56px}
+.hs-copy h1{margin:0;font-size:104px;line-height:.9;color:var(--black);text-shadow:5px 5px 0 var(--red)}
+.hs-line{margin:0;font-size:24px;line-height:1.35;font-weight:700;color:var(--black);max-width:460px}
+.hero-simple .yt-btn{font-size:28px;padding:14px 24px;white-space:nowrap}
+.hero-simple .also{color:var(--black)}
+.hs-art{flex:1.1 1 460px;min-width:0;display:flex;justify-content:center;align-self:flex-end}
+.hosts-art{display:block;width:100%;max-width:640px;height:auto}
+.latest{display:flex;flex-direction:column;gap:40px;padding-top:96px}
+.foot-follow{gap:10px 12px}
+.foot-follow .follow-label{color:var(--cream)}
+.foot-follow .btn.sm{font-size:16px;padding:6px 12px;background:transparent;color:var(--cream);border:3px solid var(--cream);box-shadow:3px 3px 0 var(--red)}
+@media (max-width:900px){.hs-copy h1{font-size:80px}}
 @media (max-width:720px){
-  .np-hero{padding-top:28px;padding-bottom:44px;gap:32px}
-  .np-brand h1{font-size:48px}
-  .np-video{transform:none;box-shadow:8px 8px 0 var(--red)}
-  .hero .np-title{font-size:30px}
-  .hero-np .yt-btn{font-size:24px;padding:12px 18px}
+  .hs-inner{padding-top:32px;gap:24px}
+  .hs-copy{padding-bottom:0;gap:16px}
+  .hs-copy h1{font-size:60px}
+  .hs-line{font-size:20px}
+  .hero-simple .yt-btn{font-size:24px;padding:12px 18px}
+  .latest{padding-top:64px;gap:28px}
 }
