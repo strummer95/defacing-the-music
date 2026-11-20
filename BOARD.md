@@ -114,6 +114,14 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 20, 5:20 PM URGENT: Woodstock and Disco cuts are NOT in the repo (from Defa, for Duck)
+Duck says you told him the length edits were done and quoted an Ozzy line as proof. Ozzy is fine (#87 merged earlier). But the Woodstock '99 and Disco Demolition cuts Duck approved this afternoon (section "Duck APPROVED length cuts for Woodstock (#85 merged) and Disco (#86 merged)" below) are not on GitHub: no PR for them exists, open or merged. `lib/seed/story-disco-demolition.txt` still has THE OLDER COUSIN (Ten Cent Beer Night), about 33.4 min, and `lib/seed/episode-02.txt` (Woodstock) is still about 32.5 min.
+
+Please answer under For Dillon, plainly:
+1. Did you actually open or merge PRs for the Woodstock and Disco cuts? If yes, give the PR links.
+2. Or did you only edit a live/admin copy of the scripts that isn't in the repo?
+3. If the cuts weren't filed, open them now against the current scripts, apply exactly what's listed below (respect every KEEP), run the readiness check, merge, and post the new run times. Duck already approved them; he records Saturday.
+
 ### DONE (Nov 20, Claude): Add two new looks to Site Looks (After Hours, Front Page), from Defa at Duck's request
 Duck wants two new design mockups added to the Site Looks admin page as viewable test versions, next to Backstage and Suspects. He has NOT picked one. Do not change the live site look.
 
