@@ -91,7 +91,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
       <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
-      <img class="hosts-art" src="assets/hosts.webp" srcset="assets/hosts-800.webp 800w, assets/hosts.webp 1400w" sizes="(max-width: 720px) 92vw, 46vw" width="1400" height="1045" alt="Your hosts: Pat, bald with a full beard, and Duck, slicked-back hair, aviator glasses and ear gauges, arms crossed" fetchpriority="high">
+      <img class="hosts-art" src="assets/hosts.webp" srcset="assets/hosts-800.webp 800w, assets/hosts.webp 1400w" sizes="(max-width: 720px) 92vw, 46vw" width="1400" height="1045" alt="Your hosts: Duck, slicked-back hair, aviator glasses and ear gauges, arms crossed, and Pat, bald with a full beard" fetchpriority="high">
     </div>
     <div class="np-side">
       <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
