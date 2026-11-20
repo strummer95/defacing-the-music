@@ -78,7 +78,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
   <nav class="nav bang" aria-label="Main">
     <a href="#top">Latest</a>
     <a href="#episodes">Episodes</a>
-    <a href="#host">The Host</a>
+    <a href="#host">The Hosts</a>
     <a href="#list">Guest List</a>
     <a href="#listen" class="cta">Listen Now</a>
   </nav>
@@ -87,10 +87,19 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 <main>
 <section id="top" class="hero hero-np">
   <div class="wrap np-hero">
-    <div class="hero-copy np-brand">
+    <div class="np-brand">
       <p class="kicker bang">A podcast about music's worst nights</p>
       <h1 class="metal">Defacing<br>the Music</h1>
       <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
+      <img class="hosts-art" src="assets/hosts.webp" srcset="assets/hosts-800.webp 800w, assets/hosts.webp 1400w" sizes="(max-width: 720px) 92vw, 46vw" width="1400" height="1045" alt="Your hosts: Pat, bald with a full beard, and Duck, slicked-back hair, aviator glasses and ear gauges, arms crossed" fetchpriority="high">
+    </div>
+    <div class="np-side">
+      <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
+      <div class="video-frame np-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/<?= $h($latest['yt']) ?>" title="Defacing the Music, Episode <?= $h($latest['num']) ?>: <?= $h($latest['title']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h2 class="bang np-title"><?= $h($latest['title']) ?></h2>
+      <?php if ($latest['who'] !== ''): ?><p class="np-who"><?= $h($latest['who']) ?></p><?php endif; ?>
       <div id="listen" class="listen-main">
         <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>?sub_confirmation=1" rel="noopener" target="_blank">
           <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -111,15 +120,6 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
           <?php endif; ?>
         <?php endforeach; ?>
       </div>
-    </div>
-    <div class="np-side">
-      <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
-      <div class="video-frame np-video">
-        <iframe src="https://www.youtube-nocookie.com/embed/<?= $h($latest['yt']) ?>" title="Defacing the Music, Episode <?= $h($latest['num']) ?>: <?= $h($latest['title']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <h2 class="bang np-title"><?= $h($latest['title']) ?></h2>
-      <?php if ($latest['who'] !== ''): ?><p class="np-who"><?= $h($latest['who']) ?></p><?php endif; ?>
-      <?php if ($latestBlurb !== ''): ?><p class="np-blurb"><?= $h($latestBlurb) ?></p><?php endif; ?>
     </div>
   </div>
 </section>
@@ -170,8 +170,9 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
       </svg>
     </div>
     <div class="host-copy">
-      <h2 class="metal">Who let this guy have a mic?</h2>
-      <p>One guy from Chicagoland, one microphone, and the worst nights in music history. No co-host to stop him. Thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He judges them anyway.</p>
+      <h2 class="metal">Who let these guys have a mic?</h2>
+      <p><strong>Duck</strong> tells the story. A guy from Chicagoland with thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He did the reading so you don't have to.</p>
+      <p><strong>Pat</strong> hears it for the first time, right along with you, and says what everybody's thinking. Somebody has to.</p>
       <p class="stamp bang">Every story is real. Allegedly.</p>
     </div>
   </div>
