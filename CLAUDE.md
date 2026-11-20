@@ -20,7 +20,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 
 ## Brand ("Gig Poster", chosen by Dillon Nov 2026; the purple/teal/pink "Sea of Thieves / High Seas" look was rejected, never use it)
 - Tone: aggressive but fun and cartoony, rock/metal gig-poster energy. Not cutesy, not graffiti, nothing Ozzy/bat-themed in branding.
-- Look: black base, yellow halftone hero, red accents, cream cards, thick black outlines, offset cartoon drop shadows, slight rotations.
+- Look: black base, red accents, cream cards, thick black outlines, offset cartoon drop shadows, slight rotations. Yellow is the accent, not the background: Duck (Nov 20) found the big yellow halftone hero "a bit much" (too much yellow, too many dots), so the home page top is black with yellow for the show name, the main button and labels. Use the dot pattern sparingly.
 - Palette: black `#111111`, yellow `#FFD21F`, red `#E4251B`, cream `#F2E8D5`; illustration extras `#FF8A00`, `#FFE23B`.
 - Fonts (Google Fonts): Metal Mania (wordmark/headings), Bangers (labels, buttons, stickers), Archivo (body).
 - `index.php` + `assets/site.css` are the reference implementation. Reuse their classes for new pages.

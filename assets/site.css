@@ -200,3 +200,22 @@ a.sticker{text-decoration:none}
 .hero-np .follow{gap:10px 12px}
 .hero-np .follow-label{flex-basis:100%;margin:0}
 .hero-np .follow .btn.sm{font-size:17px;padding:7px 14px;box-shadow:4px 4px 0 var(--red)}
+/* Home hero, toned down (Duck, Nov 20: too much yellow and dots): black base, yellow as the accent */
+.hero.hero-np{background-color:var(--black);background-image:none;border-top:0;border-bottom:6px solid var(--yellow)}
+.hero-np .hero-copy,.hero-np .np-side{color:var(--cream)}
+.hero-np .kicker{background:var(--yellow);color:var(--black)}
+.hero-np .hero-copy h1{color:var(--yellow);text-shadow:5px 5px 0 var(--red)}
+.hero-np .lede{color:var(--cream)}
+.hero-np .yt-btn{background:var(--yellow);color:var(--black);border-color:var(--yellow);box-shadow:8px 8px 0 var(--red)}
+.hero-np a.yt-btn:hover{box-shadow:6px 6px 0 var(--red)}
+.hero-np .also{color:var(--cream)}
+.hero-np .also a{color:var(--cream)}
+.hero-np .also a:hover{color:var(--yellow)}
+.hero-np .follow-label{color:var(--cream)}
+.hero-np .follow .btn.sm{background:transparent;color:var(--cream);border:3px solid var(--cream);box-shadow:4px 4px 0 var(--red)}
+.hero-np .follow .btn.sm:hover{color:var(--yellow);border-color:var(--yellow)}
+.hero-np .np-tag{background:var(--red);color:var(--cream);box-shadow:4px 4px 0 var(--yellow)}
+.hero-np .np-video{outline-color:var(--cream)}
+.hero-np .np-title{color:var(--red);text-shadow:none}
+.hero-np .np-who{color:var(--yellow)}
+.hero-np .np-blurb{color:var(--muted)}
