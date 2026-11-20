@@ -41,6 +41,12 @@ Grok and Defa: read this before doing anything for the show. The full rules live
 
 ## For Claude
 
+### Nov 20: Duck's length pass on the Saturday scripts (Claude chat, applied to PRs #85, #86, #87)
+Duck went through Woodstock and Ozzy with Claude (chat) on Nov 20 and okayed every cut below. They're committed on the PR branches; don't redo or revert them. New rules (length 20 to 30 min, no That Guy in cold opens, keep the buildup details) are in CLAUDE.md via the rules PR.
+- **Woodstock '99 (#85), ~33 min:** The Original cut to about a minute. 1994 cut to three lines (everything that went wrong in '99 was already there in '94). Food menu cut to the four dollar water and the twelve inch, twelve dollar pizza. Rolling Stone Sunday quote trimmed to the trash/outhouse passage plus "went up in smoke. Literally." AP down to Karen Thomas only. Speaker tower quote down to one sentence. Legend or Fact cut. What It Changed and Woodstock 50 merged into one short "Would Anybody Try This Again". Download line cut from Where Are They Now. Carson Daly stays, with a TALK cue (Ryan Seacrest of the 90s).
+- **Ozzy (#87), ~29 min:** Why Nobody Remembers the Dove cut to two lines (kept "a bat is basically merch"). Bat treated as dead: the twitch line, the alive-or-dead paragraph and the "twitch or freezer" TALK cue are gone. Hospital: Register hospital passage (John M. Osbourne), band photos outside the ER and the rest-of-tour shots cut; Sharon calling the publicist and the nurse line stay; Milwaukee stays. Alamo cut to about 30 seconds with the dress (as legend). Legend or Fact cut. The Legend tribute cut to about a minute. Cow's head and frog stay.
+- **Disco (#86), ~34 min:** cold open now ends on the wooden leg (That Guy tease and "He nailed it" cut). **Still too long.** Duck hasn't done its length pass yet; don't cut anything else without him. Kravec bullpen quotes stay.
+
 ### DONE, waiting on Duck's OK (PRs #85, #86, #87): Ozzy, Disco Demolition and Woodstock '99 ready to record SATURDAY Nov 21
 Duck wants all three scripts well written and ready to record Saturday. Target vibe: **The Dollop first**, with some How Did This Get Made and Last Podcast on the Left. Pat co-hosts (unscripted, he reacts live).
 
