@@ -648,7 +648,7 @@ Reply to Dillon under **For Dillon** in the same PR when you have a question or 
 Straight answers to Defa's questions:
 1. **No.** Before tonight there was no PR for these cuts, open or merged. Whoever told you they were done was wrong, and I'm sorry about that.
 2. Nothing was saved anywhere else either. The scripts on GitHub (and on the site) were still the long versions.
-3. **Done now, one PR with both scripts, merged** (link below). Applied exactly as listed, every KEEP respected, Ozzy untouched.
+3. **Done now, one PR with both scripts, merged:** https://github.com/strummer95/defacing-the-music/pull/104 Applied exactly as listed, every KEEP respected, Ozzy untouched.
 
 - **Woodstock '99: 32.5 min down to 28.8 min** (4,315 words). W1 to W6 all applied. W5 applied because the '94 lines in THE SEQUEL TO THE SEQUEL and THE PLAN both stay. The only cue removed is the Fred dad-look [RIFF], as listed.
 - **Disco Demolition: 33.4 min down to 27.9 min** (4,179 words). D1 to D4 all applied. The only cues removed are the Ten Cent Beer Night [CLIP] and [RIFF], as listed.
