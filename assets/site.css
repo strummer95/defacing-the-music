@@ -197,3 +197,11 @@ a.sticker{text-decoration:none}
   .hero .np-title{font-size:32px}
   .hero-np .yt-btn{font-size:24px;padding:12px 18px}
 }
+.hero-np .follow{gap:10px 12px}
+.hero-np .follow-label{flex-basis:100%;margin:0}
+.hero-np .follow .btn.sm{font-size:17px;padding:7px 14px;box-shadow:4px 4px 0 var(--red)}
+@media (max-width:720px){
+  .np-side{order:-1}
+  .np-brand .kicker{display:none}
+  .hero-np .hero-copy h1{font-size:48px}
+}
