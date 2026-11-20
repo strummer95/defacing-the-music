@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defacing The Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0C0B0A;
+    --bg-2: #14110E;
+    --bg-3: #1C1814;
+    --ivory: #E8DFD0;
+    --ivory-dim: #A39682;
+    --brass: #C4A574;
+    --brass-dim: #8F754C;
+    --line: #3A342C;
+    --line-soft: #2A241C;
+    --ink: #0C0B0A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); }
+  body {
+    background: var(--bg);
+    color: var(--ivory);
+    font-family: Figtree, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 400;
+    min-width: 320px;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(noise.webp);
+    background-size: 280px 280px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 80;
+    mix-blend-mode: overlay;
+  }
+  a { color: var(--brass); text-decoration: none; }
+  a:hover { color: var(--ivory); }
+  .wrap { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* header */
+  header {
+    position: relative;
+    z-index: 5;
+    border-bottom: 1px solid var(--line);
+    background: rgba(12,11,10,0.92);
+  }
+  .header-inner {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 24px;
+  }
+  .on-air {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brass);
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--brass);
+    box-shadow: 0 0 0 3px rgba(196,165,116,0.18);
+  }
+  .wordmark-sm {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--ivory);
+    text-transform: none;
+  }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { color: var(--ivory-dim); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; font-weight: 500; font-family: "IBM Plex Mono", monospace; }
+  nav a:hover { color: var(--ivory); }
+  nav a.cta { color: var(--brass); }
+
+  /* hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 36px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 40px;
+    align-items: end;
+  }
+  .kicker { color: var(--brass); margin-bottom: 22px; }
+  h1 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(64px, 8vw, 108px);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    font-optical-sizing: auto;
+    color: var(--ivory);
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    display: block;
+    letter-spacing: -0.035em;
+  }
+  .lede {
+    margin-top: 28px;
+    max-width: 420px;
+    color: var(--ivory-dim);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--brass);
+    color: var(--ink);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border: 1px solid var(--brass);
+  }
+  .btn:hover { background: var(--ivory); border-color: var(--ivory); color: var(--ink); }
+  .btn svg { display: block; }
+  .text-links { color: var(--ivory-dim); font-size: 14px; }
+  .text-links a { color: var(--ivory); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  .text-links a:hover { color: var(--brass); border-color: var(--brass); }
+
+  .hero-art {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 520px;
+  }
+  .hero-art .glow {
+    position: absolute;
+    width: 120%;
+    height: 90%;
+    left: -10%;
+    bottom: 8%;
+    background: radial-gradient(ellipse at 50% 60%, rgba(196,165,116,0.16), transparent 68%);
+    pointer-events: none;
+  }
+  .hero-art .grooves {
+    position: absolute;
+    width: 150%;
+    max-width: 760px;
+    aspect-ratio: 1;
+    right: -18%;
+    bottom: -8%;
+    opacity: 0.9;
+    pointer-events: none;
+    mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+    -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 72%);
+  }
+  .hero-art img.hosts {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    display: block;
+    z-index: 2;
+    filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+  }
+  .art-cap {
+    position: relative;
+    z-index: 3;
+    margin-top: 8px;
+    color: var(--ivory-dim);
+    align-self: flex-end;
+    margin-right: 8%;
+  }
+
+  /* now playing */
+  .now {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    padding: 72px 0 80px;
+  }
+  .now-card {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    background: var(--bg-3);
+    padding: 36px 40px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px 48px;
+  }
+  .now-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .now-top .mono { color: var(--brass); }
+  .now-top .ep { color: var(--ivory-dim); }
+  .now h2 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3.2vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+  .now .sub {
+    font-family: Fraunces, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ivory-dim);
+    margin-top: 6px;
+  }
+  .now .blurb {
+    max-width: 56ch;
+    color: var(--ivory-dim);
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .player {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .play {
+    flex: 0 0 auto;
+    width: 48px; height: 48px;
+    border: 1px solid var(--brass);
+    background: transparent;
+    color: var(--brass);
+    display: grid;
+    place-items: center;
+    cursor: default;
+  }
+  .track { flex: 1; }
+  .bar {
+    height: 2px;
+    background: var(--line);
+    position: relative;
+  }
+  .bar > span {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 28%;
+    background: var(--brass);
+  }
+  .bar > i {
+    position: absolute; left: 28%; top: 50%;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--brass);
+    transform: translate(-50%, -50%);
+  }
+  .times {
+    display: flex; justify-content: space-between;
+    margin-top: 8px;
+    color: var(--ivory-dim);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  /* upcoming */
+  .stack { padding: 88px 0 80px; }
+  .sec-head {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+  }
+  .sec-head h2 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+  }
+  .sec-head .mono { color: var(--ivory-dim); }
+  .stories {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .story {
+    padding: 28px 32px 8px 0;
+    border-right: 1px solid var(--line);
+    padding-right: 32px;
+    margin-right: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .story:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+  .story .meta { color: var(--brass); margin-bottom: 14px; }
+  .story h3 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .story .who {
+    font-family: Fraunces, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ivory-dim);
+    font-size: 17px;
+    margin-top: 6px;
+  }
+  .story p { margin-top: 14px; color: var(--ivory-dim); font-size: 15px; line-height: 1.55; }
+  .story .soon {
+    margin-top: auto;
+    color: var(--ivory-dim);
+    border-top: 1px solid var(--line-soft);
+    padding-top: 12px;
+    padding-top: 20px;
+  }
+
+  /* hosts */
+  .hosts-sec {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 88px 0;
+  }
+  .hosts-grid {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr;
+    gap: 48px;
+  }
+  .hosts-grid .intro h2 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .hosts-grid .intro p {
+    margin-top: 16px;
+    color: var(--ivory-dim);
+    max-width: 28ch;
+  }
+  .person h3 {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+  }
+  .person .role { color: var(--brass); margin: 8px 0 14px; }
+  .person p { color: var(--ivory-dim); }
+
+  /* footer */
+  footer { padding: 64px 0 48px; }
+  .foot {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+  }
+  .signoff {
+    font-family: Fraunces, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.3;
+    max-width: 22ch;
+    color: var(--ivory);
+  }
+  .foot-row {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: var(--ivory-dim);
+    font-size: 13px;
+  }
+  .foot-row a { color: var(--ivory-dim); }
+  .foot-row a:hover { color: var(--brass); }
+
+  @media (max-width: 900px) {
+    .wrap, .header-inner, .hero-grid, .now-card, .sec-head, .stories, .hosts-grid, .foot {
+      width: min(1180px, calc(100% - 40px));
+    }
+    .hero-grid, .stories, .hosts-grid, .now-card { grid-template-columns: 1fr; }
+    .hero { padding: 48px 0 16px; }
+    h1 { font-size: 64px; }
+    .hero-art { min-height: 0; margin-top: 8px; }
+    .hero-art .grooves { width: 120%; right: -10%; }
+    .art-cap { align-self: center; margin-right: 0; margin-bottom: 8px; }
+    .story { border-right: 0; margin-right: 0; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .story:last-child { border-bottom: 0; }
+    .now-card { padding: 28px 24px; }
+    nav { gap: 16px; }
+    .hosts-grid { gap: 36px; }
+    .hero-actions { margin-bottom: 12px; }
+  }
+  @media (max-width: 420px) {
+    h1 { font-size: 56px; }
+    nav a:not(.cta) { display: none; }
+    .header-inner { height: 64px; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="on-air mono">
+        <span class="dot" aria-hidden="true"></span>
+        <span>On air</span>
+        <span class="wordmark-sm">Defacing The Music</span>
+      </div>
+      <nav>
+        <a href="#episodes">Episodes</a>
+        <a href="#hosts">Hosts</a>
+        <a class="cta" href="#listen">Listen</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="kicker mono">Music history, after hours</p>
+        <h1>Defacing <em>the Music</em></h1>
+        <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#listen">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg>
+            Listen to Episode 0
+          </a>
+          <p class="text-links">On <a href="https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx">Spotify</a>, <a href="https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289">Apple</a>, and <a href="https://www.youtube.com/@DefacingTheMusic">YouTube</a></p>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="glow"></div>
+        <img class="grooves" src="grooves.webp" alt="">
+        <img class="hosts" src="hosts-web.webp" alt="Duck and Pat, hosts of Defacing The Music">
+        <p class="art-cap mono">Duck + Pat</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="now" id="listen">
+    <div class="now-card">
+      <div class="now-top">
+        <p class="mono">Now playing</p>
+        <p class="mono ep">Episode 0</p>
+      </div>
+      <div>
+        <h2>Due To Unforeseen Circumstances</h2>
+        <p class="sub">Who Gave This Guy a Mic?</p>
+        <p class="blurb">Meet your host, hear the house rules, and get a preview of the disasters coming up: Keith Moon's flash powder, Woodstock '99, and a bat that was not rubber.</p>
+      </div>
+      <div class="player" style="grid-column:1/-1">
+        <div class="play" aria-hidden="true">
+          <svg width="12" height="14" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0v12l10-6z"/></svg>
+        </div>
+        <div class="track">
+          <div class="bar"><span></span><i></i></div>
+          <div class="times"><span>Pilot</span><span>Episode 0</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="episodes">
+    <div class="sec-head">
+      <h2>Up next</h2>
+      <p class="mono">Coming soon</p>
+    </div>
+    <div class="stories">
+      <article class="story">
+        <p class="meta mono">Des Moines, 1982</p>
+        <h3>Due To a Possible Rabies Infection</h3>
+        <p class="who">Who Let That Guy Bring a Bat?</p>
+        <p>A kid from Des Moines throws a bat on stage. Ozzy assumes it's rubber. It is not rubber. And it wasn't even his first animal.</p>
+        <p class="soon mono">Coming soon</p>
+      </article>
+      <article class="story">
+        <p class="meta mono">Rome, NY, 1999</p>
+        <h3>Due To Not Giving Peace a Chance</h3>
+        <p class="who">Who Asked Fred Durst to Be a Therapist?</p>
+        <p>200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.</p>
+        <p class="soon mono">Coming soon</p>
+      </article>
+      <article class="story">
+        <p class="meta mono">Comiskey Park, 1979</p>
+        <h3>Due To Excessive Disco</h3>
+        <p class="who">Who Let a DJ Blow Up Center Field?</p>
+        <p>A White Sox promotion: bring a disco record, get in for 98 cents, watch a DJ blow them up in center field. Chicago did not stay in its seats.</p>
+        <p class="soon mono">Coming soon</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="hosts-sec" id="hosts">
+    <div class="hosts-grid">
+      <div class="intro">
+        <p class="kicker mono">The booth</p>
+        <h2>Who let these guys have a mic?</h2>
+        <p>Every story is real. Allegedly.</p>
+      </div>
+      <div class="person">
+        <h3>Duck</h3>
+        <p class="role mono">Host</p>
+        <p>Duck tells the story. A guy from Chicagoland with thirty two years of playing guitar and standing on stages, watching people make really bad decisions that were awesome. He did the reading so you don't have to.</p>
+      </div>
+      <div class="person">
+        <h3>Pat</h3>
+        <p class="role mono">Co-host</p>
+        <p>Pat hears it for the first time, right along with you, and says what everybody's thinking. Somebody has to.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <p class="signoff">I'm Duck. Due to unforeseen circumstances, I'll see you next time.</p>
+      <div class="foot-row">
+        <p>Defacing The Music, 2026</p>
+        <p>
+          <a href="https://open.spotify.com/show/2WZWOUIt4e7I7IIQRvh6fx">Spotify</a> ·
+          <a href="https://podcasts.apple.com/us/podcast/defacing-the-music/id6834472289">Apple Podcasts</a> ·
+          <a href="https://www.youtube.com/@DefacingTheMusic">YouTube</a> ·
+          <a href="https://www.instagram.com/defacingthemusicpod/">Instagram</a> ·
+          <a href="https://www.tiktok.com/@defacingthemusic">TikTok</a> ·
+          <a href="https://www.facebook.com/defacingthemusic">Facebook</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Defacing The Music - cover A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 3000px; height: 3000px; overflow: hidden; background: #0C0B0A; }
+  .cover {
+    width: 3000px; height: 3000px; position: relative;
+    background: #0C0B0A;
+    color: #E8DFD0;
+    font-family: Fraunces, Georgia, serif;
+  }
+  .cover::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url(noise.webp);
+    background-size: 500px 500px;
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 8;
+  }
+  .grooves {
+    position: absolute;
+    width: 2800px; height: 2800px;
+    left: 50%; top: 58%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: none;
+    mask-image: radial-gradient(circle, #000 30%, transparent 62%);
+    -webkit-mask-image: radial-gradient(circle, #000 30%, transparent 62%);
+  }
+  .glow {
+    position: absolute;
+    width: 2200px; height: 1800px;
+    left: 50%; bottom: 80px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(196,165,116,0.2), transparent 68%);
+    pointer-events: none;
+  }
+  .top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 140px 180px 0;
+    text-align: center;
+    z-index: 5;
+  }
+  .kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 36px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #C4A574;
+    font-weight: 500;
+    margin-bottom: 36px;
+  }
+  .onair {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .dot {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #C4A574;
+    box-shadow: 0 0 0 10px rgba(196,165,116,0.16);
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 300px;
+    line-height: 0.82;
+    letter-spacing: -0.035em;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    display: block;
+    letter-spacing: -0.04em;
+  }
+  .names {
+    margin-top: 36px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 32px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #C4A574;
+    font-weight: 500;
+  }
+  .hosts {
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    transform: translateX(-50%);
+    width: 2780px;
+    height: auto;
+    z-index: 4;
+    filter: drop-shadow(0 40px 80px rgba(0,0,0,0.55));
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <img class="grooves" src="grooves.webp" alt="">
+    <div class="glow"></div>
+    <div class="top">
+      <p class="kicker"><span class="onair"><span class="dot"></span> After hours</span></p>
+      <h1>Defacing <em>the Music</em></h1>
+      <p class="names">Duck + Pat</p>
+    </div>
+    <img class="hosts" src="hosts-web.webp" alt="Duck and Pat">
+  </div>
+</body>
+</html>
