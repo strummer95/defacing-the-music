@@ -86,38 +86,40 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
 
 <main>
 <section id="top" class="hero hero-np">
-  <div class="wrap">
-    <p class="kicker bang">Rock and roll's worst nights, and who to blame for them</p>
-    <div class="np-hero">
+  <div class="wrap np-hero">
+    <div class="hero-copy np-brand">
+      <p class="kicker bang">A podcast about music's worst nights</p>
+      <h1 class="metal">Defacing<br>the Music</h1>
+      <p class="lede">Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.</p>
+      <div id="listen" class="listen-main">
+        <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>?sub_confirmation=1" rel="noopener" target="_blank">
+          <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
+          Subscribe on YouTube
+        </a>
+        <p class="also">Also on
+          <?php $alts = array_filter(['Spotify' => $listen['Spotify'], 'Apple Podcasts' => $listen['Apple Podcasts']]); $k = 0;
+          foreach ($alts as $name => $url): ?><?= $k++ ? ' and ' : ' ' ?><a href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a><?php endforeach; ?>
+        </p>
+      </div>
+      <div class="follow bang">
+        <span class="follow-label">Follow the wreckage</span>
+        <?php foreach ($social as $name => $url): ?>
+          <?php if ($url): ?>
+            <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
+          <?php else: ?>
+            <span class="btn sm soon"><?= $h($name) ?><small>soon</small></span>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <div class="np-side">
+      <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
       <div class="video-frame np-video">
         <iframe src="https://www.youtube-nocookie.com/embed/<?= $h($latest['yt']) ?>" title="Defacing the Music, Episode <?= $h($latest['num']) ?>: <?= $h($latest['title']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-      <div class="np-side">
-        <p class="np-tag bang">Now playing · EP <?= $h(str_pad($latest['num'], 2, '0', STR_PAD_LEFT)) ?></p>
-        <h1 class="bang np-title"><?= $h($latest['title']) ?></h1>
-        <?php if ($latest['who'] !== ''): ?><p class="np-who"><?= $h($latest['who']) ?></p><?php endif; ?>
-        <?php if ($latestBlurb !== ''): ?><p class="np-blurb"><?= $h($latestBlurb) ?></p><?php endif; ?>
-        <div id="listen" class="listen-main">
-          <a class="btn yt-btn bang" href="<?= $h($listen['YouTube']) ?>?sub_confirmation=1" rel="noopener" target="_blank">
-            <svg width="34" height="24" viewBox="0 0 34 24" aria-hidden="true"><rect x="1.5" y="1.5" width="31" height="21" rx="6" fill="#E4251B" stroke="#111111" stroke-width="3"/><path d="M13.5 7 L22.5 12 L13.5 17 Z" fill="#F2E8D5" stroke="#111111" stroke-width="2" stroke-linejoin="round"/></svg>
-            Subscribe on YouTube
-          </a>
-          <p class="also">Also on
-            <?php $alts = array_filter(['Spotify' => $listen['Spotify'], 'Apple Podcasts' => $listen['Apple Podcasts']]); $k = 0;
-            foreach ($alts as $name => $url): ?><?= $k++ ? ' and ' : ' ' ?><a href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a><?php endforeach; ?>
-          </p>
-        </div>
-        <div class="follow bang">
-          <span class="follow-label">Follow the wreckage</span>
-          <?php foreach ($social as $name => $url): ?>
-            <?php if ($url): ?>
-              <a class="btn sm" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
-            <?php else: ?>
-              <span class="btn sm soon"><?= $h($name) ?><small>soon</small></span>
-            <?php endif; ?>
-          <?php endforeach; ?>
-        </div>
-      </div>
+      <h2 class="bang np-title"><?= $h($latest['title']) ?></h2>
+      <?php if ($latest['who'] !== ''): ?><p class="np-who"><?= $h($latest['who']) ?></p><?php endif; ?>
+      <?php if ($latestBlurb !== ''): ?><p class="np-blurb"><?= $h($latestBlurb) ?></p><?php endif; ?>
     </div>
   </div>
 </section>

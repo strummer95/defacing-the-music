@@ -178,22 +178,22 @@ a.sticker{text-decoration:none}
 .credits .notice{margin-bottom:18px}
 .site-footer a{color:inherit}
 @media (max-width:600px){.credits h1{font-size:48px}.credit-card{padding:18px 16px}}
-/* Home hero: latest episode first */
-.hero-np .wrap{padding-top:44px;padding-bottom:64px;display:flex;flex-direction:column;gap:26px}
-.hero-np .kicker{align-self:flex-start}
-.np-hero{display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start}
-.np-video{flex:1.7 1 620px;outline-color:var(--black);box-shadow:12px 12px 0 var(--red)}
-.np-side{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;color:var(--black)}
-.np-tag{margin:0;align-self:flex-start;font-size:22px;letter-spacing:1px;background:var(--black);color:var(--yellow);padding:5px 14px;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--red)}
-.hero .np-title{margin:0;font-size:54px;line-height:.95;color:var(--red);text-shadow:3px 3px 0 var(--black);overflow-wrap:anywhere}
+/* Home hero: brand on the left, latest episode on the right */
+.np-hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:56px;padding-bottom:72px}
+.np-brand{flex:1 1 440px;gap:20px}
+.hero-np .hero-copy h1{font-size:96px}
+.np-side{flex:1.25 1 520px;min-width:0;display:flex;flex-direction:column;gap:14px;color:var(--black)}
+.np-tag{margin:0 0 4px;align-self:flex-start;font-size:22px;letter-spacing:1px;background:var(--black);color:var(--yellow);padding:5px 14px;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--red)}
+.np-video{flex:none;width:100%;outline-color:var(--black);box-shadow:12px 12px 0 var(--red)}
+.hero .np-title{margin:14px 0 0;font-size:40px;line-height:1;color:var(--red);text-shadow:2px 2px 0 var(--black)}
+.np-who{margin:0;font-weight:800;font-style:italic;font-size:18px;color:var(--black)}
+.np-blurb{margin:0;font-size:16px;line-height:1.5;color:var(--black)}
 .hero-np .yt-btn{font-size:28px;padding:14px 24px;white-space:nowrap}
-.np-who{margin:-4px 0 0;font-weight:800;font-style:italic;font-size:20px;color:var(--black)}
-.np-blurb{margin:0;font-size:17px;line-height:1.5;color:var(--black)}
-.hero-np .listen-main{padding-top:4px}
+@media (max-width:900px){.hero-np .hero-copy h1{font-size:72px}}
 @media (max-width:720px){
-  .hero-np .wrap{padding-top:28px;padding-bottom:44px;gap:20px}
-  .np-hero{gap:30px}
-  .np-video{flex-basis:100%;transform:none;box-shadow:8px 8px 0 var(--red)}
-  .hero .np-title{font-size:40px}
+  .np-hero{padding-top:32px;padding-bottom:48px;gap:36px}
+  .hero-np .hero-copy h1{font-size:56px}
+  .np-video{transform:none;box-shadow:8px 8px 0 var(--red)}
+  .hero .np-title{font-size:32px}
   .hero-np .yt-btn{font-size:24px;padding:12px 18px}
 }
