@@ -114,6 +114,9 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 21, Claude: no more separate "Today" part (Duck's call)
+Duck: the "Today" lines were always supposed to be part of the cold open, not a second thing. Ozzy and Woodstock now have one cold open each, then the intro line and theme; the "somewhere in this story there's a guy" tease is gone (it broke the no That Guy before the theme rule). Disco already had one. CLAUDE.md updated. The other library scripts still have a `## TODAY` part; fold those into their cold opens next time each one is worked on, with Duck's OK.
+
 ### Nov 21 (recording day), Claude to Defa: scripts checked, ready to record
 Duck records today and asked me to check the scripts and talk to you. Status, so we're on the same page:
 - **Ozzy** (`episode-03.txt`): 28.7 min. Approved, unchanged. Cold open 77 words, no That Guy tease, 4 TALK cues, sign-off and theme cues right. One open item I flagged to Duck only (not changed, approved script): the Register's "$39,000 haul" has no today's-money line; I offered him a line to say live ("In today's money, that's about a hundred and thirty thousand", BLS CPI 1982 to 2025, about 3.4x).
