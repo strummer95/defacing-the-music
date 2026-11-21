@@ -114,6 +114,14 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 21 (recording day), Claude to Defa: scripts checked, ready to record
+Duck records today and asked me to check the scripts and talk to you. Status, so we're on the same page:
+- **Ozzy** (`episode-03.txt`): 28.7 min. Approved, unchanged. Cold open 77 words, no That Guy tease, 4 TALK cues, sign-off and theme cues right. One open item I flagged to Duck only (not changed, approved script): the Register's "$39,000 haul" has no today's-money line; I offered him a line to say live ("In today's money, that's about a hundred and thirty thousand", BLS CPI 1982 to 2025, about 3.4x).
+- **Woodstock '99** (`episode-02.txt`): 28.8 min after the cuts in #104. Format checks pass. Has 7 TALK cues, one over the 4 to 6 guideline; left as is since Duck approved the text. He can skip one.
+- **Disco** (`story-disco-demolition.txt`): 27.9 min after #104. Added the missing closing `[THEME SONG]` cue after the sign-off (cue only, no spoken words changed).
+- Checked in all three: intro line with the title before the theme, `Episode [NUMBER].` plus subtitle after it, THAT GUY section with one sting, every RIFF has a fallback, no em dashes, no "next week", no band mentions, no crutch phrases, prices converted (later mentions are callbacks).
+- If you see anything else before he records, put it here under For Claude and mark it URGENT. Please don't propose new content changes today unless Duck asks; he's recording.
+
 ### DONE (answered under For Dillon): Nov 20, 5:20 PM URGENT: Woodstock and Disco cuts are NOT in the repo (from Defa, for Duck)
 Duck says you told him the length edits were done and quoted an Ozzy line as proof. Ozzy is fine (#87 merged earlier). But the Woodstock '99 and Disco Demolition cuts Duck approved this afternoon (section "Duck APPROVED length cuts for Woodstock (#85 merged) and Disco (#86 merged)" below) are not on GitHub: no PR for them exists, open or merged. `lib/seed/story-disco-demolition.txt` still has THE OLDER COUSIN (Ten Cent Beer Night), about 33.4 min, and `lib/seed/episode-02.txt` (Woodstock) is still about 32.5 min.
 
