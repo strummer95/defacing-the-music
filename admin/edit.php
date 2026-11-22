@@ -135,7 +135,7 @@ $marksJs = $p['marks'] ?: new stdClass();
   <?php if (isset($_GET['newlink'])): ?><p class="notice ok bang" role="status">New link made. The old one stopped working.</p><?php endif; ?>
   <?php if (($_GET['err'] ?? '') === 'file'): ?><p class="notice err bang" role="alert">Pick a transcript file (under 5 MB).</p><?php endif; ?>
   <?php if (($_GET['err'] ?? '') === 'format'): ?><p class="notice err bang" role="alert">That file has no lines like "[12:34] DUCK: ...". Is it the right transcript?</p><?php endif; ?>
-  <p id="counts" class="small"><?= $c['lines'] ?> lines · <b><?= $c['cut'] ?></b> cut · <b><?= $c['cold'] ?></b> cold open · <b><?= $c['clip'] ?></b> clip · <b><?= $c['note'] ?></b> notes · <b><?= $c['words'] ?></b> words cut</p>
+  <p id="counts" class="small"><?= $c['lines'] ?> lines · <b><?= $c['cut'] ?></b> cut · <b><?= $c['trim'] ?></b> shortened · <b><?= $c['cold'] ?></b> cold open · <b><?= $c['clip'] ?></b> clip · <b><?= $c['note'] ?></b> notes · <b><?= $c['words'] ?></b> words cut</p>
   <div class="btn-row">
     <button type="button" class="pull-btn bang copy" data-link="<?= h($link) ?>">Copy link for Claude</button>
     <a class="pull-btn bang link-btn" href="edit-export.php?id=<?= h($p['id']) ?>&amp;dl=1">Download marked transcript</a>
@@ -174,7 +174,7 @@ $marksJs = $p['marks'] ?: new stdClass();
 
 <section class="admin-card edit-part">
   <h2 class="bang">Transcript</h2>
-  <p class="small"><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between (it can cross a part line). Then pick <b>Cut</b>, <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom. To cut <b>single words</b>, select one line, tap <b>Words</b>, tap the words to cut, then <b>Done</b>.</p>
+  <p class="small"><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between (it can cross a part line). Then pick <b>Cut</b>, <b>Shorten</b> (for pauses: keeps a shorter beat), <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom. To cut <b>single words</b>, select one line, tap <b>Words</b>, tap the words to cut, then <b>Done</b>.</p>
   <?php foreach ($p['parts'] as $pi => $part): $au = $part['audio'] !== '' ? dtm_upload($part['audio']) : null;
     if ($au): ?><audio class="edit-player" data-part="<?= $pi ?>" preload="none" src="file.php?id=<?= h($au['id']) ?>"></audio><?php endif; endforeach; ?>
   <div id="nowplaying" class="small" hidden><button type="button" class="linkish" id="stopbtn">Stop</button> <span id="nptxt"></span></div>
@@ -198,6 +198,7 @@ $marksJs = $p['marks'] ?: new stdClass();
 <div class="edit-bar" id="bar" hidden>
   <span id="selinfo" class="small"></span>
   <button type="button" data-m="cut" class="pull-btn bang">Cut</button>
+  <button type="button" data-m="trim" class="pull-btn bang" title="Keep the pause, just shorter">Shorten</button>
   <button type="button" data-m="cold" class="pull-btn bang">Cold open</button>
   <button type="button" data-m="clip" class="pull-btn bang">Clip</button>
   <button type="button" data-m="words" class="pull-btn bang" id="wordsbtn">Words</button>
@@ -226,6 +227,7 @@ $marksJs = $p['marks'] ?: new stdClass();
 .tx li.sel{background:#fff3b0;border-left-color:#111}
 .tx li.m-cut{border-left-color:#E4251B}.tx li.m-cut .tx-t{text-decoration:line-through;color:#8a7f70}
 .tx li.m-cut .tag::before{content:"CUT";color:#E4251B}
+.tx li.m-trim{border-left-color:#c77d00;border-left-style:dashed}.tx li.m-trim .tag::before{content:"SHORTEN";color:#c77d00}
 .tx li.m-cold{border-left-color:#c77d00;background:#fff4dc}.tx li.m-cold .tag::before{content:"COLD OPEN";color:#c77d00}
 .tx li.m-clip{box-shadow:inset -6px 0 0 #2a7d3a}.tx li.m-clip:not(.m-cut):not(.m-cold){background:#eaf6ea}.tx .tag .cl{color:#2a7d3a;margin-left:6px}
 .edit-player{display:none}
@@ -254,7 +256,7 @@ body{padding-bottom:90px}
   function key(li){return li.dataset.p+':'+li.dataset.i;}
   function paint(li){
     var mk=MARKS[key(li)]||{};
-    li.classList.remove('m-cut','m-cold','m-clip');
+    li.classList.remove('m-cut','m-cold','m-clip','m-trim');
     if(mk.m) li.classList.add('m-'+mk.m);
     var tag=li.querySelector('.tag'); tag.innerHTML='';
     if(mk.clip){li.classList.add('m-clip');var cl=document.createElement('span');cl.className='cl';cl.textContent='CLIP: '+mk.clip;tag.appendChild(cl);}
@@ -291,7 +293,8 @@ body{padding-bottom:90px}
           else { if(mk.words&&mk.words.length){var nw=words(li).length||1; gone+=d*Math.min(1,mk.words.length/nw);} if(mk.m==='cold'){cold+=d;} }
           return; }
         // a flag line (">> PAUSE 4.2s") sits inside the line before it
-        if(mk.m==='cut'&&owner&&(MARKS[key(owner)]||{}).m!=='cut'){var mm=(li.dataset.txt||li.querySelector('.tx-t').textContent).match(/PAUSE\s+([\d.]+)/i); if(mm) gone+=Math.min(parseFloat(mm[1]),dur[owner.dataset.i]||0);}
+        if((mk.m==='cut'||mk.m==='trim')&&owner&&(MARKS[key(owner)]||{}).m!=='cut'){var mm=(li.dataset.txt||li.querySelector('.tx-t').textContent).match(/PAUSE\s+([\d.]+)/i);
+          if(mm){var ps=Math.min(parseFloat(mm[1]),dur[owner.dataset.i]||0); gone+= mk.m==='cut'?ps:Math.max(0,ps-0.8);}}
       });
     });
     var edited=orig-gone+cold+THEME;
@@ -344,7 +347,7 @@ body{padding-bottom:90px}
     for(var k in data) fd.append(k,data[k]);
     return fetch('edit.php',{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
       if(j.error) throw new Error(j.error);
-      var c=j.counts; counts.innerHTML=c.lines+' lines · <b>'+c.cut+'</b> cut · <b>'+c.cold+'</b> cold open · <b>'+c.clip+'</b> clip · <b>'+c.note+'</b> notes · <b>'+c.words+'</b> words cut';
+      var c=j.counts; counts.innerHTML=c.lines+' lines · <b>'+c.cut+'</b> cut · <b>'+c.trim+'</b> shortened · <b>'+c.cold+'</b> cold open · <b>'+c.clip+'</b> clip · <b>'+c.note+'</b> notes · <b>'+c.words+'</b> words cut';
       return j;
     }).catch(function(e){alert(e.message+'\nYour last change was NOT saved.'); throw e;});
   }
