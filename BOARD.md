@@ -114,6 +114,18 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Episode 1 (Ozzy): Duck's review answers, Nov 22 (editor: learn his taste from these)
+Claude reviewed Duck's marked transcript; Duck's calls:
+- **A `>> PAUSE` can hide real talking.** The transcript missed whole sentences in the 10.8s "pause" at part 2 33:06 (Duck talked about how many records Ozzy sold). Never cut or shorten a pause without listening to it first; keep it if anyone talks.
+- Pre-show chatter before the cold open (part 1 0:31 to 0:57) is fine to keep. "So, uh, I guess we'll get into it" (part 1 3:15) is fine too.
+- Hinting at That Guy before the verdict is fine ("Mark Neal did. That guy." part 2 16:05). It's not a secret.
+- Today's-money conversions aren't needed for every passing number in conversation (the $39,000 haul is fine without one).
+- "Okay. I'm just gonna do it again." (part 1 22:15) is Pat voicing Ozzy's thought, not a retake. Keep.
+- The part 2 8:39 to 8:59 blooper short (Bat Conservation stumble + Pat's South Park bit) is wanted as a clip even though it's cut from the episode. The joke is about a TV character; fine.
+- The 39:59 sign-off URL sounds like bad audio, not a wrong URL. Keep.
+- No COLD marks needed: the cold open was recorded at the start (part 1 3:26 to 3:56); Duck's note marks the theme after "...this is Defacing the Music."
+- Estimated final length about 53 min.
+
 ### Episode 1 (Ozzy): Duck's short-form clip picks
 Editing sessions: make these into vertical clips (plus any CLIP marks on the Edit page).
 - **Part 2, 8:39 to 8:59** (Duck, Nov 22: "would make a good short"). Times are in the part 2 recordings. About 20 seconds; trim to clean starts and ends, let the laugh land.
