@@ -4,10 +4,14 @@
 // back through a private link to build the Premiere timeline.
 // Stored in data/edits.json: {"projects": {id: project}}. A project:
 //   {id, name, created, token, parts: [{name, file, audio (upload id), lines: [{i, t, ts, who, text, flag}]}],
-//    marks: {"<part>:<line>": {"m": "cut"|"cold", "clip": "name", "note": "..."}}}  (clip is separate: a line can be both)
+//    marks: {"<part>:<line>": {"m": "cut"|"cold", "clip": "name", "note": "...", "words": [cut word indexes]}}}
+//    (clip is separate: a line can be both; words = single words cut inside a kept line)
 require_once __DIR__ . '/uploads.php';
 
 const DTM_EDIT_MARKS = ['cut', 'cold', 'clip'];
+
+// The words of a line, the same way the page splits them (word cuts are stored as indexes into this).
+function dtm_edit_words(string $text): array { return array_values(array_filter(preg_split('/\s+/u', trim($text)), 'strlen')); }
 
 function dtm_edits(): array { return dtm_json_read('edits.json')['projects'] ?? []; }
 function dtm_edit(string $id): ?array { $p = dtm_edits()[$id] ?? null; return is_array($p) ? $p : null; }
@@ -57,7 +61,14 @@ function dtm_edit_export(array $p): string {
       $clip = isset($mk['clip']) ? (string)$mk['clip'] : null;
       if ($open !== null && $clip !== $open) { $out[] = 'CLIP END'; $open = null; }
       if ($clip !== null && $open === null) { $out[] = 'CLIP ' . $clip; $open = $clip; }
-      $body = $ln['flag'] ? '>> ' . $ln['text'] : ($ln['ts'] !== '' ? "[{$ln['ts']}] {$ln['who']}: {$ln['text']}" : $ln['text']);
+      $text = $ln['text'];
+      if (!empty($mk['words'])) { // cut words shown as [-...-]; neighbors merged into one bracket
+        $ws = dtm_edit_words($text); $cut = array_flip($mk['words']); $o = []; $run = [];
+        foreach ($ws as $n => $w) { if (isset($cut[$n])) { $run[] = $w; continue; } if ($run) { $o[] = '[-' . implode(' ', $run) . '-]'; $run = []; } $o[] = $w; }
+        if ($run) $o[] = '[-' . implode(' ', $run) . '-]';
+        $text = implode(' ', $o);
+      }
+      $body = $ln['flag'] ? '>> ' . $text : ($ln['ts'] !== '' ? "[{$ln['ts']}] {$ln['who']}: {$text}" : $text);
       $pre = match ($mk['m'] ?? '') { 'cut' => 'CUT ', 'cold' => 'COLD ', default => '' };
       $note = trim((string)($mk['note'] ?? ''));
       $out[] = $pre . $body . ($note !== '' ? " (( $note ))" : '');
@@ -69,12 +80,13 @@ function dtm_edit_export(array $p): string {
 }
 
 function dtm_edit_counts(array $p): array {
-  $c = ['cut' => 0, 'cold' => 0, 'clip' => 0, 'note' => 0, 'lines' => 0];
+  $c = ['cut' => 0, 'cold' => 0, 'clip' => 0, 'note' => 0, 'lines' => 0, 'words' => 0];
   foreach ($p['parts'] as $part) $c['lines'] += count($part['lines']);
   foreach ($p['marks'] ?? [] as $mk) {
     if (in_array($mk['m'] ?? '', ['cut', 'cold'], true)) $c[$mk['m']]++;
     if (isset($mk['clip'])) $c['clip']++;
     if (trim((string)($mk['note'] ?? '')) !== '') $c['note']++;
+    $c['words'] += count($mk['words'] ?? []);
   }
   return $c;
 }
