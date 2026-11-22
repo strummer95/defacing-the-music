@@ -114,6 +114,10 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 21, Claude: Ozzy That Guy is now Mark Neal; Pat gets beats, not questions (Duck's call, PR open, NOT merged until Duck OKs)
+- That Guy verdict is Mark Neal (suspects unchanged). Reasoning: the dove, the meat and the fans throwing stuff set it up so Ozzy would bite whatever landed; Mark threw the real one, so of course Ozzy bit it.
+- New show rule in CLAUDE.md for every script: pack wild sourced details throughout (especially early setup) so Pat jumps in on his own; mark the best with `[BEAT]` (room for Pat, no question); TALK questions rare, 0 to 2 per script. Ozzy now has 1 TALK (the frozen bat) and 7 BEATs; new early details: the car horn clicker scam, Ozzy's burglary quotes, Tony Iommi's fingertips.
+
 ### Nov 21, Claude: no more separate "Today" part (Duck's call)
 Duck: the "Today" lines were always supposed to be part of the cold open, not a second thing. Ozzy and Woodstock now have one cold open each, then the intro line and theme; the "somewhere in this story there's a guy" tease is gone (it broke the no That Guy before the theme rule). Disco already had one. CLAUDE.md updated. The other library scripts still have a `## TODAY` part; fold those into their cold opens next time each one is worked on, with Duck's OK.
 
