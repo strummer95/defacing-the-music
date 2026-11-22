@@ -115,7 +115,7 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 ## For Claude
 
 ### Nov 22, Duck: don't over-edit; small cuts are optional
-Duck marks lots of single words and tiny bits. Editing sessions: if a small cut can't be made cleanly (clips a word, jumpy, steps on Pat or a laugh, breaks the rhythm), leave it in instead of forcing it. Natural flow beats a perfect trim. Whole-line and longer cuts still get made at the nearest clean pause. Report the skipped small cuts to Duck at the end with the reason. (Also in docs/EDITING-KICKOFF.md.)
+Duck marks lots of single words and tiny bits. Editing sessions: if a small cut can't be made cleanly (clips a word, jumpy, steps on Pat or a laugh, breaks the rhythm), leave it in instead of forcing it. Natural flow beats a perfect trim. Whole-line and longer cuts still get made at the nearest clean pause. Report the skipped small cuts to Duck at the end with the reason. Don't force a camera switch to hide a tiny cut: a switch must make sense on its own; if it would be too quick (under about 2 seconds), unmotivated or bunched with other switches, skip the cut. (Also in docs/EDITING-KICKOFF.md.)
 
 ### Nov 22, Duck: transcript text can be wrong, marks still count
 Duck marks the episode by what he knows was said; he doesn't correct misheard words. Editing sessions: locate marked lines by part + timestamp and marked words by their position in the line, checked against the audio. Don't drop or second-guess a mark because the text doesn't match. Flag only when it's truly unclear which spoken words he meant. (Also in docs/EDITING-KICKOFF.md.)
