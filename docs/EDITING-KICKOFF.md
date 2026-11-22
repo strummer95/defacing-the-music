@@ -24,6 +24,7 @@ Before you start, read the editing brief at the bottom of this message. It's the
 ## How I'll mark the transcript (Phase 2 input)
 I mark it on the website: admin > **Edit an episode**. I drag in your `transcript-part1.md` and `transcript-part2.md`, mark lines there, and then paste you a private link (`.../admin/edit-export.php?id=...&t=...`). Download that link (no login needed) to get the marked transcript. It uses these at the start of lines:
 - `CUT` to remove that line (or `CUT START` ... `CUT END` for a stretch)
+- `SHORTEN` (usually on a `>> PAUSE` line): keep the pause but tighten it to a natural beat, roughly half a second to a second by ear. Don't remove it.
 - `COLD` for the lines that make the cold open
 - `CLIP <name>` ... `CLIP END` around each short-form clip (a line inside a clip can also be `CUT` or `COLD`)
 - `[-like this-]` inside a kept line: cut just those words. Find their exact times in the audio (word timestamps), cut cleanly, and flag any you can't.
