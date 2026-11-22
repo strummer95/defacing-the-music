@@ -1,15 +1,19 @@
 # Defacing The Music: Editing Brief (Episode 1 and beyond)
 
-From Duck, Nov 22, 2026. The rules for editing every episode.
+From Duck, Nov 22, 2026 (updated the same day: ep1 source files, OBS track routing, style check before big renders). The rules for editing every episode.
 
 Host goes by "Duck" (never Dillon in show copy). Co-host Pat reacts unscripted. Comedy music-history podcast. Tone: loose, two friends at a bar, let laughs breathe. Never use em dashes in anything written for Duck.
 
 ## Source files
+- Episode 1 copies (SHA256-verified) on the shared computer: `/workspace/dtm-edit/raw/` duck-p1.mkv, duck-p2.mkv, pat-p1.mkv, pat-p2.mkv, room-p1.mkv (10.8GB), room-p2.mkv. Part 1 about 36:24, part 2 about 40:26. Not synced yet: sync cams by audio. Notes: `/workspace/dtm-edit/NOTES.md`
+- Ep1 OBS program recordings' three tracks are also identical (routing was wrong). From Nov 22 on, OBS records Track 1 mix, Track 2 Duck only, Track 3 Pat only.
+- Originals for ep1 on Duck's PC: `D:\DTM\Episode 1 Ozzy\` (do not modify). Episode 2 Woodstock raws: `D:\DTM\Episode 2 Woodstock\` (later).
 - Duck's PC: `D:\DTM\Video\{DUCK,PAT,GROUP}\` ("DTM Duck ep1 part 1.mkv" etc.)
 - Three cams per part, 30fps h264/AAC mkv: Duck 1920x1080, Pat 1080x1920 (portrait), Room 1920x1080. Ep1 is two parts (~36 and ~40 min).
 - Each file carries the same single stereo mix. No isolated mic tracks for ep1.
 
 ## Workflow
+0. Check with Duck on style before any big render; he wants to train the editor on his taste.
 1. Transcribe the full episode with timestamps and Duck/Pat speaker labels.
 2. Duck marks cuts in the transcript, plus cold open and clip picks.
 3. Edit from the marked transcript.
@@ -31,8 +35,8 @@ Cold open (~30s teaser hits) > "I'm Duck, and due to [title], this is Defacing t
 
 ## Assets
 - New Backstage theme video (full 39s song): `/workspace/dtm-edit/theme/dtm-theme-backstage.mp4` (+ `-vertical.mp4`). Tagline "TRUE STORIES. TERRIBLE DECISIONS."
-- Title card PNGs and overlays: `/workspace/dtm-obs-backstage/`
-- Note (Claude, Nov 22): those `/workspace/...` paths are from another session's machine; they are not in this repo. Upload them in admin > Uploads (or commit them under `brand/`) so any session can use them.
+- Title card PNGs and overlays: `/workspace/dtm-obs-backstage/` (includes ozzy-title.png and ozzy-subtitle.png)
+- Note (Claude, Nov 22): the `/workspace/...` paths are on the shared editing computer, not in this repo or in cloud sessions. Upload them in admin > Uploads (or commit them under `brand/`) so any session can use them.
 - Brand: stage #161518, floor #1E1D21, amber #FFB547, red #E4251B, paper #F6F3EC. Fonts Saira Stencil One, Oswald Bold, Inter, Permanent Marker. Never purple, teal, or pink.
 
 ## Deliverables
