@@ -28,7 +28,7 @@ decisive, unbounded bypass is gone; the remaining +/-1 is the much smaller, expe
 `dtm_fail()` still being two separate calls at the login.php call site, not a reopened version of the same bug).
 Verified with `php -l lib/auth.php` (clean) and a local smoke test (`php -S` + curl through setup -> create admin ->
 login -> account page -> a wrong-password POST that correctly bumps `data/throttle.json`). PR:
-https://github.com/strummer95/defacing-the-music/pull/REPLACE_ME
+https://github.com/strummer95/defacing-the-music/pull/131
 
 ## [x] DTM-UPLOADS-1: File uploads in the admin
 Done: admin > Uploads. Chunked uploads (big video works on shared hosting), progress + retries, files in uploads/media
