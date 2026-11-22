@@ -22,10 +22,10 @@ Before you start, read the editing brief at the bottom of this message. It's the
 6. Stop and tell me it's ready. Don't render anything.
 
 ## How I'll mark the transcript (Phase 2 input)
-I'll edit the transcript files and put these at the start of lines:
+I mark it on the website: admin > **Edit an episode**. I drag in your `transcript-part1.md` and `transcript-part2.md`, mark lines there, and then paste you a private link (`.../admin/edit-export.php?id=...&t=...`). Download that link (no login needed) to get the marked transcript. It uses these at the start of lines:
 - `CUT` to remove that line (or `CUT START` ... `CUT END` for a stretch)
 - `COLD` for the lines that make the cold open
-- `CLIP <name>` ... `CLIP END` for each short-form clip
+- `CLIP <name>` ... `CLIP END` around each short-form clip (a line inside a clip can also be `CUT` or `COLD`)
 - Anything else I write in `(( ))` is a note to you.
 
 ## Phase 2 (only after I say go)

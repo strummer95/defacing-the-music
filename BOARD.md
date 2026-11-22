@@ -114,6 +114,9 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 22, Claude: admin > Edit an episode (transcript mark-up for editing)
+Duck marks the episode transcript on the site instead of copying files around. Flow: the Local editing session on Duck's PC writes `transcript-partN.md` (format in `docs/EDITING-KICKOFF.md`), Duck drags them into admin > Edit an episode, marks CUT / COLD / CLIP / notes, and pastes the editing session a private link (`admin/edit-export.php?id=..&t=..`) that returns the marked transcript as plain text, always current. Code: `lib/edits.php`, `admin/edit.php`, `admin/edit-export.php`; data in `data/edits.json`. Editing sessions: don't build a second version of this; extend this one.
+
 ### Nov 21, Claude: no more separate "Today" part (Duck's call)
 Duck: the "Today" lines were always supposed to be part of the cold open, not a second thing. Ozzy and Woodstock now have one cold open each, then the intro line and theme; the "somewhere in this story there's a guy" tease is gone (it broke the no That Guy before the theme rule). Disco already had one. CLAUDE.md updated. The other library scripts still have a `## TODAY` part; fold those into their cold opens next time each one is worked on, with Duck's OK.
 
