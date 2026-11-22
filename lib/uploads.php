@@ -62,16 +62,27 @@ function dtm_raw_dir(): ?string {
   $d = dirname($root) . '/dtm-raw';
   return @is_dir($d) ? $d : null;
 }
+// Why the raw list is empty, if something went wrong (shown on the Uploads page).
+$GLOBALS['dtm_raw_problem'] = '';
 function dtm_raw_files(): array {
   $d = dtm_raw_dir();
   if (!$d) return [];
   $out = [];
-  foreach (@scandir($d) ?: [] as $f) {
-    if ($f === '' || $f[0] === '.' || !@is_file("$d/$f")) continue;
+  $list = @scandir($d);
+  if ($list === false) {
+    $e = error_get_last()['message'] ?? 'no details';
+    $GLOBALS['dtm_raw_problem'] = 'The site can\'t read the dtm-raw folder. Server said: ' . $e;
+    return [];
+  }
+  $skipped = [];
+  foreach ($list as $f) {
+    if ($f === '' || $f[0] === '.') continue;
+    if (!@is_file("$d/$f")) { $skipped[] = $f; continue; }
     $out[] = ['name' => $f, 'size' => (int)@filesize("$d/$f"), 'mtime' => (int)@filemtime("$d/$f"),
               'ext' => strtolower(pathinfo($f, PATHINFO_EXTENSION))];
   }
   usort($out, fn($a, $b) => strcmp($a['name'], $b['name']));
+  if (!$out) $GLOBALS['dtm_raw_problem'] = 'The site can open dtm-raw but sees ' . count($list) . ' entries' . ($skipped ? ' and can\'t read these as files: ' . implode(', ', $skipped) : '') . '.';
   return $out;
 }
 // The secret token for one raw file; makes one if it doesn't have one yet (or a new one when $renew).
