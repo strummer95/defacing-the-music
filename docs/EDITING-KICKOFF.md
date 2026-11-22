@@ -29,7 +29,7 @@ I mark it on the website: admin > **Edit an episode**. I drag in your `transcrip
 - Anything else I write in `(( ))` is a note to you.
 
 ## Phase 2 (only after I say go)
-Turn my marked transcript into an **Adobe Premiere Pro** project I can open and fine-tune: an XML (FCP7 xmeml) timeline with the three synced cameras, my cuts applied at clean pauses (follow step 4 of the brief: never clip a word or land mid-laugh; flag anything you couldn't do cleanly), a camera choice per section following the Layout rules, and the cold open, theme and title-card spots marked. Then the vertical clip timelines. **Check with me on style before any big render** (brief, step 0).
+Turn my marked transcript into an **Adobe Premiere Pro** project I can open and fine-tune. **The episode is ONE video**: part 1 then part 2 back to back on a single timeline (the split was only a recording break; hide the join with a cut or camera switch). Make an XML (FCP7 xmeml) timeline with the three synced cameras, my cuts applied at clean pauses (follow step 4 of the brief: never clip a word or land mid-laugh; flag anything you couldn't do cleanly), a camera choice per section following the Layout rules, and the cold open, theme and title-card spots marked. Then the vertical clip timelines. **Check with me on style before any big render** (brief, step 0).
 
 ---
 
