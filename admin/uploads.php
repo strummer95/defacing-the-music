@@ -10,6 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     dtm_json_update('uploads.json', fn($l) => array_values(array_filter($l, fn($x) => $x['id'] !== $id)));
     header('Location: uploads.php?deleted=1'); exit;
   }
+  if (($_POST['action'] ?? '') === 'clear_tmp') {
+    // remove leftovers from failed uploads; skip anything touched in the last 10 minutes (an upload still running)
+    foreach (glob(dtm_uploads_dir() . '/.tmp/*') ?: [] as $t) if (is_file($t) && filemtime($t) < time() - 600) @unlink($t);
+    header('Location: uploads.php?cleared=1'); exit;
+  }
   if (($_POST['action'] ?? '') === 'newlink' && dtm_upload($id)) {
     dtm_json_update('uploads.json', function ($l) use ($id) { foreach ($l as &$x) if ($x['id'] === $id) $x['token'] = bin2hex(random_bytes(20)); return $l; });
     header('Location: uploads.php?newlink=1'); exit;
@@ -24,6 +29,14 @@ dtm_page_start('Uploads', $user, true);
   <h1 class="metal">Uploads</h1>
   <p>Raw episode files, audio, video, images. Big files are fine; they go up in pieces. Keep this tab open until it says done.</p>
   <?php if (isset($_GET['deleted'])): ?><p class="notice ok bang" role="status">Deleted.</p><?php endif; ?>
+  <?php if (isset($_GET['cleared'])): ?><p class="notice ok bang" role="status">Leftovers from failed uploads cleared.</p><?php endif; ?>
+  <?php $tmpBytes = 0; foreach (glob(dtm_uploads_dir() . '/.tmp/*.part') ?: [] as $t) $tmpBytes += (int)@filesize($t);
+    $usedBytes = 0; foreach (dtm_uploads() as $x) $usedBytes += (int)$x['size']; ?>
+  <p class="small">Uploads are using <?= h(dtm_human_size($usedBytes)) ?> of the web hosting. Big video files fill it fast; for whole episodes, Google Drive is a better home.</p>
+  <?php if ($tmpBytes > 0): ?>
+  <form method="post" class="notice err bang"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="clear_tmp">
+    Unfinished uploads are taking <?= h(dtm_human_size($tmpBytes)) ?>. <button class="linkish danger">Clear them</button></form>
+  <?php endif; ?>
   <?php if (isset($_GET['newlink'])): ?><p class="notice ok bang" role="status">New link made. The old one stopped working.</p><?php endif; ?>
   <div class="admin-form">
     <label for="files" class="bang">Pick files</label>
