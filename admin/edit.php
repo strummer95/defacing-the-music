@@ -7,7 +7,7 @@ $json = fn($d, $code = 200) => (http_response_code($code) || true) && exit(json_
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $action = (string)($_POST['action'] ?? '');
-  $ajax = in_array($action, ['mark', 'note'], true);
+  $ajax = in_array($action, ['mark', 'note', 'words'], true);
   if ($ajax) {
     header('Content-Type: application/json');
     dtm_session();
@@ -70,6 +70,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       });
       $json(['ok' => true, 'counts' => dtm_edit_counts($p)]);
     }
+    if ($action === 'words') {
+      $pi = (int)($_POST['part'] ?? -1); $i = (int)($_POST['line'] ?? -1);
+      $w = array_values(array_unique(array_map('intval', array_filter(explode(',', (string)($_POST['words'] ?? '')), 'is_numeric'))));
+      sort($w);
+      $p = dtm_edit_update($id, function ($p) use ($pi, $i, $w) {
+        if (!isset($p['parts'][$pi]['lines'][$i])) return $p;
+        $n = count(dtm_edit_words($p['parts'][$pi]['lines'][$i]['text']));
+        $w = array_values(array_filter($w, fn($x) => $x >= 0 && $x < $n));
+        $k = "$pi:$i"; $mk = $p['marks'][$k] ?? [];
+        if ($w) $mk['words'] = $w; else unset($mk['words']);
+        if ($mk) $p['marks'][$k] = $mk; else unset($p['marks'][$k]);
+        return $p;
+      });
+      $json(['ok' => true, 'counts' => dtm_edit_counts($p)]);
+    }
     if ($action === 'note') {
       $pi = (int)($_POST['part'] ?? -1); $i = (int)($_POST['line'] ?? -1); $note = trim(mb_substr((string)($_POST['note'] ?? ''), 0, 500));
       $p = dtm_edit_update($id, function ($p) use ($pi, $i, $note) {
@@ -120,7 +135,7 @@ $marksJs = $p['marks'] ?: new stdClass();
   <?php if (isset($_GET['newlink'])): ?><p class="notice ok bang" role="status">New link made. The old one stopped working.</p><?php endif; ?>
   <?php if (($_GET['err'] ?? '') === 'file'): ?><p class="notice err bang" role="alert">Pick a transcript file (under 5 MB).</p><?php endif; ?>
   <?php if (($_GET['err'] ?? '') === 'format'): ?><p class="notice err bang" role="alert">That file has no lines like "[12:34] DUCK: ...". Is it the right transcript?</p><?php endif; ?>
-  <p id="counts" class="small"><?= $c['lines'] ?> lines · <b><?= $c['cut'] ?></b> cut · <b><?= $c['cold'] ?></b> cold open · <b><?= $c['clip'] ?></b> clip · <b><?= $c['note'] ?></b> notes</p>
+  <p id="counts" class="small"><?= $c['lines'] ?> lines · <b><?= $c['cut'] ?></b> cut · <b><?= $c['cold'] ?></b> cold open · <b><?= $c['clip'] ?></b> clip · <b><?= $c['note'] ?></b> notes · <b><?= $c['words'] ?></b> words cut</p>
   <div class="btn-row">
     <button type="button" class="pull-btn bang copy" data-link="<?= h($link) ?>">Copy link for Claude</button>
     <a class="pull-btn bang link-btn" href="edit-export.php?id=<?= h($p['id']) ?>&amp;dl=1">Download marked transcript</a>
@@ -159,7 +174,7 @@ $marksJs = $p['marks'] ?: new stdClass();
 
 <section class="admin-card edit-part">
   <h2 class="bang">Transcript</h2>
-  <p class="small"><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between (it can cross a part line). Then pick <b>Cut</b>, <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom.</p>
+  <p class="small"><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between (it can cross a part line). Then pick <b>Cut</b>, <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom. To cut <b>single words</b>, select one line, tap <b>Words</b>, tap the words to cut, then <b>Done</b>.</p>
   <?php foreach ($p['parts'] as $pi => $part): $au = $part['audio'] !== '' ? dtm_upload($part['audio']) : null;
     if ($au): ?><audio class="edit-player" data-part="<?= $pi ?>" preload="none" src="file.php?id=<?= h($au['id']) ?>"></audio><?php endif; endforeach; ?>
   <div id="nowplaying" class="small" hidden><button type="button" class="linkish" id="stopbtn">Stop</button> <span id="nptxt"></span></div>
@@ -184,6 +199,7 @@ $marksJs = $p['marks'] ?: new stdClass();
   <button type="button" data-m="cut" class="pull-btn bang">Cut</button>
   <button type="button" data-m="cold" class="pull-btn bang">Cold open</button>
   <button type="button" data-m="clip" class="pull-btn bang">Clip</button>
+  <button type="button" data-m="words" class="pull-btn bang" id="wordsbtn">Words</button>
   <button type="button" data-m="note" class="pull-btn bang">Note</button>
   <button type="button" data-m="clear" class="pull-btn bang">Clear</button>
   <button type="button" data-m="done" class="linkish">Done</button>
@@ -202,6 +218,10 @@ $marksJs = $p['marks'] ?: new stdClass();
 .tx .tag{font:13px Bangers,sans-serif;letter-spacing:.05em}
 .tx .nt{flex-basis:100%;font-size:14px;color:#1a5fb4}
 .tx .nt:empty{display:none}
+.tx .w{cursor:pointer;border-radius:3px;padding:0 1px}
+.tx li.wedit .w{outline:1px dashed #999;margin:0 1px}
+.tx li.wedit .w:hover{background:#ffe1dc}
+.tx .w.wc{color:#E4251B;text-decoration:line-through;background:#fde3df}
 .tx li.sel{background:#fff3b0;border-left-color:#111}
 .tx li.m-cut{border-left-color:#E4251B}.tx li.m-cut .tx-t{text-decoration:line-through;color:#8a7f70}
 .tx li.m-cut .tag::before{content:"CUT";color:#E4251B}
@@ -232,8 +252,18 @@ body{padding-bottom:90px}
     var tag=li.querySelector('.tag'); tag.innerHTML='';
     if(mk.clip){li.classList.add('m-clip');var cl=document.createElement('span');cl.className='cl';cl.textContent='CLIP: '+mk.clip;tag.appendChild(cl);}
     li.querySelector('.nt').textContent=mk.note?('Note: '+mk.note):'';
+    paintWords(li);
+  }
+  function words(li){ if(!li.dataset.txt) li.dataset.txt=li.querySelector('.tx-t').textContent; return li.dataset.txt.split(/\s+/).filter(Boolean); }
+  function paintWords(li){
+    var mk=MARKS[key(li)]||{}, cut=mk.words||[], t=li.querySelector('.tx-t'), ws=words(li);
+    if(!cut.length && !li.classList.contains('wedit')){ t.textContent=li.dataset.txt; return; }
+    t.innerHTML='';
+    ws.forEach(function(w,n){ var sp=document.createElement('span'); sp.className='w'+(cut.indexOf(n)>=0?' wc':''); sp.dataset.w=n; sp.textContent=w; t.appendChild(sp); t.appendChild(document.createTextNode(' ')); });
   }
   ALL.forEach(paint);
+  var wline=null; // the line being word-edited
+  function endWords(){ if(!wline) return; wline.classList.remove('wedit'); paintWords(wline); wline=null; document.getElementById('wordsbtn').textContent='Words'; }
   function selected(){if(sel.a===null)return[];var lo=Math.min(sel.a,sel.b),hi=Math.max(sel.a,sel.b);return ALL.slice(lo,hi+1);}
   function show(){
     document.querySelectorAll('.tx li.sel').forEach(function(li){li.classList.remove('sel');});
@@ -243,6 +273,16 @@ body{padding-bottom:90px}
   ALL.forEach(function(li){
     li.addEventListener('click',function(e){
       if(e.target.classList.contains('ts'))return;
+      if(wline===li){
+        var w=e.target.closest('.w'); if(!w) return;
+        var k=key(li), mk=MARKS[k]=MARKS[k]||{}, cut=(mk.words||[]).slice(), n=+w.dataset.w, at=cut.indexOf(n);
+        if(at>=0) cut.splice(at,1); else cut.push(n);
+        cut.sort(function(a,b){return a-b;});
+        w.classList.toggle('wc');
+        post({action:'words',part:li.dataset.p,line:li.dataset.i,words:cut.join(',')}).then(function(){ if(cut.length) mk.words=cut; else delete mk.words; },function(){ w.classList.toggle('wc'); });
+        return;
+      }
+      if(wline) endWords();
       var n=+li.dataset.n;
       if(sel.a!==null&&sel.b===sel.a&&n!==sel.a){sel.b=n;}
       else if(sel.a===n&&sel.b===n){sel={a:null,b:null};}
@@ -266,14 +306,19 @@ body{padding-bottom:90px}
     for(var k in data) fd.append(k,data[k]);
     return fetch('edit.php',{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
       if(j.error) throw new Error(j.error);
-      var c=j.counts; counts.innerHTML=c.lines+' lines · <b>'+c.cut+'</b> cut · <b>'+c.cold+'</b> cold open · <b>'+c.clip+'</b> clip · <b>'+c.note+'</b> notes';
+      var c=j.counts; counts.innerHTML=c.lines+' lines · <b>'+c.cut+'</b> cut · <b>'+c.cold+'</b> cold open · <b>'+c.clip+'</b> clip · <b>'+c.note+'</b> notes · <b>'+c.words+'</b> words cut';
       return j;
     }).catch(function(e){alert(e.message+'\nYour last change was NOT saved.'); throw e;});
   }
   var lastClip='';
   bar.addEventListener('click',function(e){
     var m=e.target.dataset&&e.target.dataset.m; if(!m)return;
-    if(m==='done'){sel={a:null,b:null};show();return;}
+    if(m==='done'){endWords();sel={a:null,b:null};show();return;}
+    if(m==='words'){
+      var s1=selected(); if(s1.length!==1){alert('Select just one line to cut words from it.');return;}
+      if(wline){endWords();return;}
+      wline=s1[0]; wline.classList.add('wedit'); paintWords(wline); e.target.textContent='Words done'; return;
+    }
     var s=selected(); if(!s.length)return;
     if(m==='note'){
       var first=s[0], k=key(first), cur=(MARKS[k]||{}).note||'';

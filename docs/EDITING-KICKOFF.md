@@ -26,6 +26,7 @@ I mark it on the website: admin > **Edit an episode**. I drag in your `transcrip
 - `CUT` to remove that line (or `CUT START` ... `CUT END` for a stretch)
 - `COLD` for the lines that make the cold open
 - `CLIP <name>` ... `CLIP END` around each short-form clip (a line inside a clip can also be `CUT` or `COLD`)
+- `[-like this-]` inside a kept line: cut just those words. Find their exact times in the audio (word timestamps), cut cleanly, and flag any you can't.
 - Anything else I write in `(( ))` is a note to you.
 
 ## Phase 2 (only after I say go)
