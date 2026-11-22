@@ -114,6 +114,10 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Episode 1 (Ozzy): Duck's short-form clip picks
+Editing sessions: make these into vertical clips (plus any CLIP marks on the Edit page).
+- **Part 2, 8:39 to 8:59** (Duck, Nov 22: "would make a good short"). Times are in the part 2 recordings. About 20 seconds; trim to clean starts and ends, let the laugh land.
+
 ### Nov 22, Duck: CUT on a pause = too long, decide by context
 **A `CUT` on a pause means "too long", not "zero" (Duck, Nov 22).** Duck marked many pauses `CUT` before `SHORTEN` existed (most of the first half hour of episode 1) and won't go back. So for any `CUT >> PAUSE` (or a cut gap between lines), decide by context: if the pause comes right after a punchline, a reveal, a big fact or a laugh, or right before a reveal, or Pat might react in it, shorten it to a natural beat (about half a second to a second) instead of removing it. Remove it fully only when it's plainly dead air (lost place, fumbling, waiting) and the sentences join smoothly without it. `SHORTEN` always means keep a beat. When unsure, keep a short beat; a gap that's slightly long beats a rushed punchline. (Also in docs/EDITING-KICKOFF.md.)
 
