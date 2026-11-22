@@ -32,22 +32,22 @@ $canon = $ep ? dtm_episode_page_url((string)$ep['number']) : 'https://defacingth
 <title><?= h($pageTitle) ?> | Defacing the Music</title>
 <meta name="description" content="Sources and image credits for Defacing the Music<?= $ep ? ', episode ' . h($ep['number']) : '' ?>.">
 <?php if ($preview || (!$listing && !$ep)): ?><meta name="robots" content="noindex"><?php else: ?><link rel="canonical" href="<?= h($canon) ?>"><?php endif; ?>
-<meta name="theme-color" content="#FFD21F">
+<meta name="theme-color" content="#161518">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=<?= @filemtime(DTM_ROOT . '/assets/site.css') ?>">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Permanent+Marker&family=Oswald:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/backstage.css?v=<?= @filemtime(DTM_ROOT . '/assets/backstage.css') ?>">
 </head>
 <body class="credits-page">
-<header class="wrap site-header">
-  <a href="/" class="wordmark metal"><img src="/assets/logo-192.png" alt="" width="56" height="56" class="logo-mark">Defacing the Music</a>
-  <nav class="nav bang" aria-label="Main"><a href="/ep/">All episodes</a><a href="/#listen" class="cta">Listen Now</a></nav>
-</header>
+<header class="bs-header"><div class="wrap">
+  <a href="/" class="brand"><img src="/assets/logo-192.png" alt="" width="40" height="40">Defacing the Music</a>
+  <nav class="bs-nav" aria-label="Main"><a href="/ep/">All episodes</a><a href="/" class="cta">Listen</a></nav>
+</div></header>
 <main class="wrap credits">
 <?php if ($listing): ?>
-  <p class="kicker bang">The receipts</p>
+  <p class="kicker">The receipts</p>
   <h1 class="metal">Sources &amp; Credits</h1>
   <p class="credits-lede">Every story on this show is real, so here's where we got it. Pick an episode.</p>
   <?php if (!$episodes): ?><p>Nothing here yet.</p><?php endif; ?>
@@ -58,19 +58,19 @@ $canon = $ep ? dtm_episode_page_url((string)$ep['number']) : 'https://defacingth
     <?php endforeach; ?>
   </ul>
 <?php elseif (!$script): ?>
-  <p class="kicker bang">Due to unforeseen circumstances</p>
+  <p class="kicker">Due to unforeseen circumstances</p>
   <h1 class="metal">No episode here</h1>
   <p class="credits-lede"><?= $ep ? 'That episode has no sources page yet.' : 'That episode isn\'t out yet, or it never existed. Either way, nothing to see.' ?></p>
-  <p><a class="btn bang" href="/ep/">All episodes</a></p>
+  <p><a class="btn" href="/ep/">All episodes</a></p>
 <?php else: ?>
-  <?php if ($preview): ?><p class="notice err bang">Preview. This script has no episode number yet, so the public doesn't see this page.</p><?php endif; ?>
-  <p class="kicker bang"><?= $ep ? 'Episode ' . h($ep['number']) . ' · ' : '' ?>Sources &amp; Credits</p>
+  <?php if ($preview): ?><p class="notice err">Preview. This script has no episode number yet, so the public doesn't see this page.</p><?php endif; ?>
+  <p class="kicker"><?= $ep ? 'Episode ' . h($ep['number']) . ' · ' : '' ?>Sources &amp; Credits</p>
   <h1 class="metal credits-title"><?= h($title) ?></h1>
   <?php if ($sub !== ''): ?><p class="credits-who"><?= h($sub) ?></p><?php endif; ?>
   <?php if ($ep && ($ep['youtube'] !== '' || $ep['spotify'] !== '')): ?>
   <p class="credits-watch">
-    <?php if (dtm_safe_url($ep['youtube'])): ?><a class="btn sm bang" href="<?= h($ep['youtube']) ?>" target="_blank" rel="noopener">Watch on YouTube</a><?php endif; ?>
-    <?php if (dtm_safe_url($ep['spotify'])): ?><a class="btn sm alt bang" href="<?= h($ep['spotify']) ?>" target="_blank" rel="noopener">Listen on Spotify</a><?php endif; ?>
+    <?php if (dtm_safe_url($ep['youtube'])): ?><a class="btn sm" href="<?= h($ep['youtube']) ?>" target="_blank" rel="noopener">Watch on YouTube</a><?php endif; ?>
+    <?php if (dtm_safe_url($ep['spotify'])): ?><a class="btn sm ghost" href="<?= h($ep['spotify']) ?>" target="_blank" rel="noopener">Listen on Spotify</a><?php endif; ?>
   </p>
   <?php endif; ?>
 
@@ -105,11 +105,9 @@ $canon = $ep ? dtm_episode_page_url((string)$ep['number']) : 'https://defacingth
   <?php endif; ?>
 <?php endif; ?>
 </main>
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p class="wordmark metal"><img src="/assets/logo-192.png" alt="" width="44" height="44" class="logo-mark">Defacing the Music</p>
-    <p>Due to unforeseen circumstances, all rights reserved. · <a href="/">defacingthemusic.com</a></p>
-  </div>
-</footer>
+<footer class="bs-footer"><div class="wrap">
+  <a href="/" class="brand"><img src="/assets/logo-192.png" alt="" width="40" height="40">Defacing the Music</a>
+  <small>Due to unforeseen circumstances, all rights reserved. · <a href="/">defacingthemusic.com</a></small>
+</div></footer>
 </body>
 </html>
