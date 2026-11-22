@@ -25,14 +25,23 @@ if (!$f || ($f['error'] ?? 1) !== UPLOAD_ERR_OK) out(400, ['error' => 'Chunk did
 $dir = dtm_uploads_dir();
 $part = "$dir/.tmp/$uid.part"; $metaF = "$dir/.tmp/$uid.json";
 $meta = is_file($metaF) ? (json_decode((string)file_get_contents($metaF), true) ?: []) : [];
-if ($index === 0) { $meta = ['name' => $name, 'total' => $total, 'size' => $size, 'next' => 0, 'started' => time()]; @unlink($part); }
+if ($index === 0) {
+  // starting a new upload: clear out partial uploads nobody has touched for 6 hours (failed or abandoned)
+  foreach (glob("$dir/.tmp/*") ?: [] as $t) if (filemtime($t) < time() - 21600) @unlink($t);
+  $meta = ['name' => $name, 'total' => $total, 'size' => $size, 'next' => 0, 'started' => time()]; @unlink($part);
+}
 if (!$meta || $meta['name'] !== $name || $meta['total'] !== $total) out(400, ['error' => 'Upload got out of sync. Start it again.']);
 if ($index !== $meta['next']) {
   if ($index < $meta['next']) out(200, ['ok' => true, 'next' => $meta['next']]); // duplicate retry, already have it
   out(409, ['error' => 'Missing a chunk. Start it again.', 'next' => $meta['next']]);
 }
 $in = fopen($f['tmp_name'], 'rb'); $o = fopen($part, 'ab');
-if (!$in || !$o || stream_copy_to_stream($in, $o) === false) out(500, ['error' => 'Could not save chunk. Is the disk full?']);
+if (!$in || !$o || stream_copy_to_stream($in, $o) === false) {
+  // usually the hosting is out of space: drop the partial file so it doesn't keep eating space
+  if ($in) fclose($in); if ($o) fclose($o);
+  @unlink($part); @unlink($metaF);
+  out(500, ['error' => 'Could not save chunk. The web hosting is probably out of space. The partial file was removed.']);
+}
 fclose($in); fclose($o);
 $meta['next'] = $index + 1;
 file_put_contents($metaF, json_encode($meta));
