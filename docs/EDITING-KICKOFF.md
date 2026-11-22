@@ -28,6 +28,7 @@ I mark it on the website: admin > **Edit an episode**. I drag in your `transcrip
 - `CLIP <name>` ... `CLIP END` around each short-form clip (a line inside a clip can also be `CUT` or `COLD`)
 - `[-like this-]` inside a kept line: cut just those words. Find their exact times in the audio (word timestamps), cut cleanly, and flag any you can't.
 - Anything else I write in `(( ))` is a note to you.
+- **The transcript can be wrong, and I don't fix it.** I mark based on what I know we said, not on how the transcript spelled it. So never skip or second-guess a mark because the words don't match the audio. Find a marked line by its part and timestamp, and a marked word by its position in the line (the 3rd word is the 3rd word spoken there), checked against the audio around it. Only flag it if you truly can't tell which spoken words I meant.
 
 ## Phase 2 (only after I say go)
 Turn my marked transcript into an **Adobe Premiere Pro** project I can open and fine-tune. **The episode is ONE video**: part 1 then part 2 back to back on a single timeline (the split was only a recording break; hide the join with a cut or camera switch). Make an XML (FCP7 xmeml) timeline with the three synced cameras, my cuts applied at clean pauses (follow step 4 of the brief: never clip a word or land mid-laugh; flag anything you couldn't do cleanly), a camera choice per section following the Layout rules, and the cold open, theme and title-card spots marked. Then the vertical clip timelines. **Check with me on style before any big render** (brief, step 0).

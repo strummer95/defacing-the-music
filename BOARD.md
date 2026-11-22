@@ -114,6 +114,9 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 22, Duck: transcript text can be wrong, marks still count
+Duck marks the episode by what he knows was said; he doesn't correct misheard words. Editing sessions: locate marked lines by part + timestamp and marked words by their position in the line, checked against the audio. Don't drop or second-guess a mark because the text doesn't match. Flag only when it's truly unclear which spoken words he meant. (Also in docs/EDITING-KICKOFF.md.)
+
 ### Nov 22, Claude: admin > Edit an episode (transcript mark-up for editing)
 Duck marks the episode transcript on the site instead of copying files around. Flow: the Local editing session on Duck's PC writes `transcript-partN.md` (format in `docs/EDITING-KICKOFF.md`), Duck drags them into admin > Edit an episode, marks CUT / COLD / CLIP / notes, and pastes the editing session a private link (`admin/edit-export.php?id=..&t=..`) that returns the marked transcript as plain text, always current. Code: `lib/edits.php`, `admin/edit.php`, `admin/edit-export.php`; data in `data/edits.json`. Editing sessions: don't build a second version of this; extend this one.
 
