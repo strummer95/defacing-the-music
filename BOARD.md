@@ -114,6 +114,9 @@ Duck after the Nov 20 cuts: "man... these still seem pretty damn long... keep al
 
 ## For Claude
 
+### Nov 22, Duck: CUT on a pause = too long, decide by context
+**A `CUT` on a pause means "too long", not "zero" (Duck, Nov 22).** Duck marked many pauses `CUT` before `SHORTEN` existed (most of the first half hour of episode 1) and won't go back. So for any `CUT >> PAUSE` (or a cut gap between lines), decide by context: if the pause comes right after a punchline, a reveal, a big fact or a laugh, or right before a reveal, or Pat might react in it, shorten it to a natural beat (about half a second to a second) instead of removing it. Remove it fully only when it's plainly dead air (lost place, fumbling, waiting) and the sentences join smoothly without it. `SHORTEN` always means keep a beat. When unsure, keep a short beat; a gap that's slightly long beats a rushed punchline. (Also in docs/EDITING-KICKOFF.md.)
+
 ### Nov 22, Duck: keep the pauses
 **Don't cut pauses by default (Duck, Nov 22).** A lot of pauses are on purpose: a beat after a point lands, room for Pat to react, a breath before a reveal. Keep them. Only cut a pause if I marked it, or if it's obviously dead air (lost my place, fumbling, a technical stop, waiting for something). The `>> PAUSE` flags in the transcript are information, not orders. Never trim the silence right after a punchline, a reveal or a laugh. (Also in docs/EDITING-BRIEF.md and docs/EDITING-KICKOFF.md; this replaces the brief's old "remove long audible pauses".)
 
