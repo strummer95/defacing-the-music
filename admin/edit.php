@@ -51,16 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'newlink') { dtm_edit_update($id, function ($p) { $p['token'] = bin2hex(random_bytes(20)); return $p; }); header("Location: edit.php?id=$id&newlink=1"); exit; }
     if ($action === 'delete') { dtm_edit_update($id, fn($p) => null); header('Location: edit.php?deleted=1'); exit; }
     if ($action === 'mark') {
-      $pi = (int)($_POST['part'] ?? -1);
-      $ids = array_slice(array_map('intval', array_filter(explode(',', (string)($_POST['lines'] ?? '')), 'is_numeric')), 0, 5000);
+      // items: "part:line,part:line,..." (one selection can run across the part break)
+      $items = [];
+      foreach (array_slice(explode(',', (string)($_POST['items'] ?? '')), 0, 5000) as $it) if (preg_match('/^(\d+):(\d+)$/', $it, $mm)) $items[] = [(int)$mm[1], (int)$mm[2]];
       $m = (string)($_POST['m'] ?? '');
       $clip = trim(mb_substr((string)($_POST['clip'] ?? ''), 0, 40));
       if (!in_array($m, array_merge(DTM_EDIT_MARKS, ['clear']), true)) $json(['error' => 'Bad mark'], 400);
-      $p = dtm_edit_update($id, function ($p) use ($pi, $ids, $m, $clip) {
-        if (!isset($p['parts'][$pi])) return $p;
-        $n = count($p['parts'][$pi]['lines']);
-        foreach ($ids as $i) {
-          if ($i < 0 || $i >= $n) continue;
+      $p = dtm_edit_update($id, function ($p) use ($items, $m, $clip) {
+        foreach ($items as [$pi, $i]) {
+          if (!isset($p['parts'][$pi]['lines'][$i])) continue;
           $k = "$pi:$i"; $old = $p['marks'][$k] ?? [];
           if ($m === 'clear') { if (trim((string)($old['note'] ?? '')) === '') unset($p['marks'][$k]); else $p['marks'][$k] = ['note' => $old['note']]; continue; }
           // a line can be in a clip AND be cut or cold open, so the clip is kept separately from cut/cold
@@ -140,35 +139,43 @@ $marksJs = $p['marks'] ?: new stdClass();
 </section>
 
 <?php if ($p['parts']): ?>
-<section class="admin-card edit-help">
-  <p><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between. Then pick <b>Cut</b>, <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom. Tap a timestamp to hear that spot (pick the audio for each part first).</p>
+<section class="admin-card">
+  <h2 class="bang">Parts</h2>
+  <p class="small">The episode is one video. Each part is one recording (its own camera files); the transcript below runs straight through, with a line where each new part starts.</p>
+  <ul class="up-list">
+  <?php foreach ($p['parts'] as $pi => $part): ?>
+    <li><div class="up-name"><strong>Part <?= $pi + 1 ?>: <?= h($part['name']) ?></strong> <span class="small"><?= count($part['lines']) ?> lines · <?= h($part['file']) ?></span></div>
+      <div class="up-acts">
+        <form method="post" class="edit-audio"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="audio"><input type="hidden" name="part" value="<?= $pi ?>">
+          <label class="small">Audio: <select name="upload" onchange="this.form.submit()"><option value="">None</option>
+            <?php foreach ($avs as $u): ?><option value="<?= h($u['id']) ?>"<?= $u['id'] === $part['audio'] ? ' selected' : '' ?>><?= h($u['name']) ?></option><?php endforeach; ?>
+          </select></label></form>
+        <form method="post" onsubmit="return confirm('Remove part <?= $pi + 1 ?> and its marks?')"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="delpart"><input type="hidden" name="part" value="<?= $pi ?>"><button class="linkish danger">Remove</button></form>
+      </div></li>
+  <?php endforeach; ?>
+  </ul>
+  <p class="small">Audio is optional: upload an audio export on the Uploads page, pick it here, then tap a timestamp to hear that spot.</p>
 </section>
-<?php endif; ?>
 
-<?php foreach ($p['parts'] as $pi => $part): $au = $part['audio'] !== '' ? dtm_upload($part['audio']) : null; ?>
-<section class="admin-card edit-part" id="part<?= $pi ?>" data-part="<?= $pi ?>">
-  <h2 class="bang">Part <?= $pi + 1 ?>: <?= h($part['name']) ?></h2>
-  <form method="post" class="edit-audio"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="audio"><input type="hidden" name="part" value="<?= $pi ?>">
-    <label class="small">Audio to play:
-      <select name="upload" onchange="this.form.submit()">
-        <option value="">None</option>
-        <?php foreach ($avs as $u): ?><option value="<?= h($u['id']) ?>"<?= $u['id'] === $part['audio'] ? ' selected' : '' ?>><?= h($u['name']) ?></option><?php endforeach; ?>
-      </select></label>
-    <span class="small">(upload an audio export on the Uploads page first)</span>
-  </form>
-  <?php if ($au): ?><audio class="edit-player" controls preload="metadata" src="file.php?id=<?= h($au['id']) ?>"></audio><?php endif; ?>
+<section class="admin-card edit-part">
+  <h2 class="bang">Transcript</h2>
+  <p class="small"><b>Tap a line</b> to select it, <b>tap another</b> to select everything in between (it can cross a part line). Then pick <b>Cut</b>, <b>Cold open</b>, <b>Clip</b> or <b>Note</b> in the bar at the bottom.</p>
+  <?php foreach ($p['parts'] as $pi => $part): $au = $part['audio'] !== '' ? dtm_upload($part['audio']) : null;
+    if ($au): ?><audio class="edit-player" data-part="<?= $pi ?>" preload="none" src="file.php?id=<?= h($au['id']) ?>"></audio><?php endif; endforeach; ?>
+  <div id="nowplaying" class="small" hidden><button type="button" class="linkish" id="stopbtn">Stop</button> <span id="nptxt"></span></div>
   <ol class="tx">
+    <?php foreach ($p['parts'] as $pi => $part): ?>
+    <li class="part-break" aria-hidden="<?= $pi === 0 ? 'true' : 'false' ?>"><?= $pi === 0 ? 'Part 1 starts' : 'Part ' . ($pi + 1) . ' starts here (new recording)' ?>: <?= h($part['name']) ?></li>
     <?php foreach ($part['lines'] as $ln): ?>
-    <li data-i="<?= $ln['i'] ?>" data-t="<?= h((string)$ln['t']) ?>" class="<?= $ln['flag'] ? 'flag' : '' ?><?= $ln['who'] !== '' ? ' who-' . h(strtolower(preg_replace('/[^A-Za-z]/', '', $ln['who']))) : '' ?>">
-      <?php if ($ln['ts'] !== ''): ?><button type="button" class="ts"><?= h($ln['ts']) ?></button><?php endif; ?>
+    <li data-p="<?= $pi ?>" data-i="<?= $ln['i'] ?>" data-t="<?= h((string)$ln['t']) ?>" class="<?= $ln['flag'] ? 'flag' : '' ?><?= $ln['who'] !== '' ? ' who-' . h(strtolower(preg_replace('/[^A-Za-z]/', '', $ln['who']))) : '' ?>">
+      <?php if ($ln['ts'] !== ''): ?><button type="button" class="ts" title="Part <?= $pi + 1 ?>, <?= h($ln['ts']) ?>"><?= h($ln['ts']) ?></button><?php endif; ?>
       <?php if ($ln['who'] !== ''): ?><b class="who"><?= h($ln['who']) ?></b><?php endif; ?>
       <span class="tx-t"><?= h($ln['text']) ?></span><span class="tag"></span><em class="nt"></em>
     </li>
-    <?php endforeach; ?>
+    <?php endforeach; endforeach; ?>
   </ol>
-  <form method="post" onsubmit="return confirm('Remove this part and its marks?')" class="small"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="delpart"><input type="hidden" name="part" value="<?= $pi ?>"><button class="linkish danger">Remove this part</button></form>
 </section>
-<?php endforeach; ?>
+<?php endif; ?>
 
 <section class="admin-card"><form method="post" onsubmit="return confirm('Delete this whole edit and all its marks?')"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="delete"><button class="linkish danger">Delete this edit</button></form></section>
 
@@ -200,7 +207,9 @@ $marksJs = $p['marks'] ?: new stdClass();
 .tx li.m-cut .tag::before{content:"CUT";color:#E4251B}
 .tx li.m-cold{border-left-color:#c77d00;background:#fff4dc}.tx li.m-cold .tag::before{content:"COLD OPEN";color:#c77d00}
 .tx li.m-clip{box-shadow:inset -6px 0 0 #2a7d3a}.tx li.m-clip:not(.m-cut):not(.m-cold){background:#eaf6ea}.tx .tag .cl{color:#2a7d3a;margin-left:6px}
-.edit-player{width:100%;margin:6px 0}
+.edit-player{display:none}
+.tx li.part-break{cursor:default;display:block;background:#111;color:#FFD21F;font:20px Bangers,sans-serif;letter-spacing:.05em;padding:8px 12px;margin:14px 0 4px;border:0}
+.tx li.part-break:first-child{margin-top:0}
 .edit-audio{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .edit-bar[hidden]{display:none}
 .edit-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px;background:#111;border-top:4px solid #FFD21F}
@@ -212,38 +221,44 @@ body{padding-bottom:90px}
 (function(){
   var ID=<?= json_encode($p['id']) ?>, CSRF=<?= json_encode(dtm_csrf()) ?>, MARKS=<?= json_encode($marksJs) ?>;
   var bar=document.getElementById('bar'), info=document.getElementById('selinfo'), counts=document.getElementById('counts');
-  var sel={part:null,a:null,b:null};
-  function rows(pi){return Array.prototype.slice.call(document.querySelectorAll('.edit-part[data-part="'+pi+'"] .tx li'));}
-  function paint(pi,li){
-    var mk=MARKS[pi+':'+li.dataset.i]||{};
+  var ALL=Array.prototype.slice.call(document.querySelectorAll('.tx li[data-i]')); // every line, in episode order
+  ALL.forEach(function(li,n){li.dataset.n=n;});
+  var sel={a:null,b:null};
+  function key(li){return li.dataset.p+':'+li.dataset.i;}
+  function paint(li){
+    var mk=MARKS[key(li)]||{};
     li.classList.remove('m-cut','m-cold','m-clip');
     if(mk.m) li.classList.add('m-'+mk.m);
     var tag=li.querySelector('.tag'); tag.innerHTML='';
     if(mk.clip){li.classList.add('m-clip');var cl=document.createElement('span');cl.className='cl';cl.textContent='CLIP: '+mk.clip;tag.appendChild(cl);}
     li.querySelector('.nt').textContent=mk.note?('Note: '+mk.note):'';
   }
-  document.querySelectorAll('.edit-part').forEach(function(s){var pi=s.dataset.part;rows(pi).forEach(function(li){paint(pi,li);});});
-  function selected(){if(sel.part===null)return[];var lo=Math.min(sel.a,sel.b),hi=Math.max(sel.a,sel.b);return rows(sel.part).filter(function(li){var i=+li.dataset.i;return i>=lo&&i<=hi;});}
+  ALL.forEach(paint);
+  function selected(){if(sel.a===null)return[];var lo=Math.min(sel.a,sel.b),hi=Math.max(sel.a,sel.b);return ALL.slice(lo,hi+1);}
   function show(){
     document.querySelectorAll('.tx li.sel').forEach(function(li){li.classList.remove('sel');});
     var s=selected(); s.forEach(function(li){li.classList.add('sel');});
     bar.hidden=!s.length; info.textContent=s.length?(s.length+' line'+(s.length>1?'s':'')+' selected'):'';
   }
-  document.querySelectorAll('.tx li').forEach(function(li){
+  ALL.forEach(function(li){
     li.addEventListener('click',function(e){
       if(e.target.classList.contains('ts'))return;
-      var pi=li.closest('.edit-part').dataset.part, i=+li.dataset.i;
-      if(sel.part===pi&&sel.a!==null&&sel.b===sel.a&&i!==sel.a){sel.b=i;}
-      else if(sel.part===pi&&sel.a===i&&sel.b===i){sel={part:null,a:null,b:null};}
-      else{sel={part:pi,a:i,b:i};}
+      var n=+li.dataset.n;
+      if(sel.a!==null&&sel.b===sel.a&&n!==sel.a){sel.b=n;}
+      else if(sel.a===n&&sel.b===n){sel={a:null,b:null};}
+      else{sel={a:n,b:n};}
       show();
     });
   });
+  var np=document.getElementById('nowplaying'), nptxt=document.getElementById('nptxt'), playing=null;
+  function stop(){document.querySelectorAll('.edit-player').forEach(function(a){a.pause();}); np.hidden=true;}
+  document.getElementById('stopbtn').addEventListener('click',stop);
   document.querySelectorAll('.tx .ts').forEach(function(b){
     b.addEventListener('click',function(){
-      var sec=b.closest('.edit-part'), au=sec.querySelector('.edit-player');
-      if(!au){alert('Pick the audio for this part first (above the transcript).');return;}
-      au.currentTime=Math.max(0,parseFloat(b.closest('li').dataset.t)-1); au.play();
+      var li=b.closest('li'), au=document.querySelector('.edit-player[data-part="'+li.dataset.p+'"]');
+      if(!au){alert('Pick the audio for part '+(+li.dataset.p+1)+' first (in Parts, above).');return;}
+      stop(); au.currentTime=Math.max(0,parseFloat(li.dataset.t)-1); au.play();
+      nptxt.textContent='Playing part '+(+li.dataset.p+1)+' from '+b.textContent; np.hidden=false;
     });
   });
   function post(data){
@@ -258,23 +273,22 @@ body{padding-bottom:90px}
   var lastClip='';
   bar.addEventListener('click',function(e){
     var m=e.target.dataset&&e.target.dataset.m; if(!m)return;
-    if(m==='done'){sel={part:null,a:null,b:null};show();return;}
-    var s=selected(); if(!s.length)return; var pi=sel.part;
+    if(m==='done'){sel={a:null,b:null};show();return;}
+    var s=selected(); if(!s.length)return;
     if(m==='note'){
-      var first=s[0], cur=(MARKS[pi+':'+first.dataset.i]||{}).note||'';
+      var first=s[0], k=key(first), cur=(MARKS[k]||{}).note||'';
       var n=prompt('Note for the editor (on the first selected line):',cur); if(n===null)return;
-      post({action:'note',part:pi,line:first.dataset.i,note:n}).then(function(){var k=pi+':'+first.dataset.i;MARKS[k]=MARKS[k]||{};if(n.trim())MARKS[k].note=n.trim();else delete MARKS[k].note;paint(pi,first);});
+      post({action:'note',part:first.dataset.p,line:first.dataset.i,note:n}).then(function(){MARKS[k]=MARKS[k]||{};if(n.trim())MARKS[k].note=n.trim();else delete MARKS[k].note;paint(first);});
       return;
     }
     var clip='';
     if(m==='clip'){clip=prompt('Name this clip (short, like "the frozen bat"):',lastClip); if(clip===null)return; lastClip=clip;}
-    var ids=s.map(function(li){return li.dataset.i;});
-    post({action:'mark',part:pi,lines:ids.join(','),m:m,clip:clip}).then(function(){
-      s.forEach(function(li){var k=pi+':'+li.dataset.i, old=MARKS[k]||{};
+    post({action:'mark',items:s.map(key).join(','),m:m,clip:clip}).then(function(){
+      s.forEach(function(li){var k=key(li), old=MARKS[k]||{};
         if(m==='clear'){ if(old.note) MARKS[k]={note:old.note}; else delete MARKS[k]; }
         else { MARKS[k]=old; if(m==='clip')MARKS[k].clip=clip||'clip'; else MARKS[k].m=m; }
-        paint(pi,li);});
-      sel={part:null,a:null,b:null}; show();
+        paint(li);});
+      sel={a:null,b:null}; show();
     });
   });
   document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
