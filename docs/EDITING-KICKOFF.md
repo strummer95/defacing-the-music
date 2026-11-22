@@ -28,6 +28,7 @@ I mark it on the website: admin > **Edit an episode**. I drag in your `transcrip
 - `CLIP <name>` ... `CLIP END` around each short-form clip (a line inside a clip can also be `CUT` or `COLD`)
 - `[-like this-]` inside a kept line: cut just those words. Find their exact times in the audio (word timestamps), cut cleanly, and flag any you can't.
 - Anything else I write in `(( ))` is a note to you.
+- **Small cuts are suggestions, not orders.** I mark a lot of single words and tiny bits. If one can't come out cleanly (it clips a word, makes a jumpy edit, steps on Pat or a laugh, or breaks the rhythm of a sentence), **leave it in** rather than force it. Natural flow beats a perfect trim. Don't over-edit. Bigger cuts (whole lines and stretches) do get made, at the nearest clean pause. At the end, give me a short list of the small cuts you skipped and why, so I can learn what works.
 - **The transcript can be wrong, and I don't fix it.** I mark based on what I know we said, not on how the transcript spelled it. So never skip or second-guess a mark because the words don't match the audio. Find a marked line by its part and timestamp, and a marked word by its position in the line (the 3rd word is the 3rd word spoken there), checked against the audio around it. Only flag it if you truly can't tell which spoken words I meant.
 
 ## Phase 2 (only after I say go)
