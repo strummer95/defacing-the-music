@@ -96,6 +96,9 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - **Legend or Fact:** near the end, call out which parts are real and which grew over the years. Only when a story has those questions.
 - **Where Are They Now:** a closer on what happened to the people involved afterward. Duck: "a very good idea", and a good way to add content and length.
 
+### Editing
+- Video editing follows `docs/EDITING-BRIEF.md` (Duck, Nov 22): transcript first, Duck marks cuts, then edit; two-shot of Duck and Pat as the main look; never show vaping; flag beer; nothing posts without Duck's OK.
+
 ### Social clips (important to Duck)
 - Every episode needs moments that can be cut for TikTok, Shorts and Reels: things people can consume quickly to get hooked and get the vibe without listening to a whole episode.
 - Write scripts so there are several 30 to 60 second standalone moments per episode. The "That Guy" moment is a natural one. Mark them in scripts with `[CLIP: short label]` at the start of the moment so they're easy to find when editing.
