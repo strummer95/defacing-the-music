@@ -10,6 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     dtm_json_update('uploads.json', fn($l) => array_values(array_filter($l, fn($x) => $x['id'] !== $id)));
     header('Location: uploads.php?deleted=1'); exit;
   }
+  if (($_POST['action'] ?? '') === 'rawnewlink') {
+    $rn = basename((string)($_POST['raw'] ?? ''));
+    foreach (dtm_raw_files() as $r) if ($r['name'] === $rn) { dtm_raw_token($rn, true); break; }
+    header('Location: uploads.php?newlink=1#raw'); exit;
+  }
   if (($_POST['action'] ?? '') === 'clear_tmp') {
     // remove leftovers from failed uploads; skip anything touched in the last 10 minutes (an upload still running)
     foreach (glob(dtm_uploads_dir() . '/.tmp/*') ?: [] as $t) if (is_file($t) && filemtime($t) < time() - 600) @unlink($t);
@@ -68,6 +73,29 @@ dtm_page_start('Uploads', $user, true);
   </ul>
   <p class="small">"Copy link for Claude" copies a private link to that one file. Anyone with the link can download it, so only paste it to Claude. "New link" kills the old one.</p>
 </section>
+
+<?php $rawFiles = dtm_raw_files(); if ($rawFiles || dtm_raw_dir()): ?>
+<section class="admin-card" id="raw">
+  <h2 class="bang">Raw files (/dtm-raw)</h2>
+  <p>Big files you put in the <code>dtm-raw</code> folder over SFTP. That folder is outside the website, so nobody can reach these without a link from here.</p>
+  <?php if (!$rawFiles): ?><p>Nothing in there right now.</p><?php endif; ?>
+  <ul class="up-list">
+    <?php foreach ($rawFiles as $r): $q = rawurlencode($r['name']); $link = dtm_site_base() . '/admin/file.php?raw=' . $q . '&t=' . dtm_raw_token($r['name']); ?>
+    <li>
+      <div class="up-name"><strong><?= h($r['name']) ?></strong>
+        <span class="small"><?= h(dtm_human_size($r['size'])) ?> · <?= h(date('M j, g:ia', $r['mtime'])) ?></span></div>
+      <div class="up-acts">
+        <a href="file.php?raw=<?= h($q) ?>" target="_blank" rel="noopener">Open</a>
+        <a href="file.php?raw=<?= h($q) ?>&amp;dl=1">Download</a>
+        <button type="button" class="linkish copy" data-link="<?= h($link) ?>">Copy link for Claude</button>
+        <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="rawnewlink"><input type="hidden" name="raw" value="<?= h($r['name']) ?>"><button class="linkish" title="Make a new secret link (the old one stops working)">New link</button></form>
+      </div>
+    </li>
+    <?php endforeach; ?>
+  </ul>
+  <p class="small">A file that's still uploading shows a smaller size than the real file. Wait for FileZilla to finish before copying its link. Delete files here with FileZilla.</p>
+</section>
+<?php endif; ?>
 
 <?php
 $saved = [];

@@ -52,3 +52,39 @@ function dtm_human_size(int $b): string {
 function dtm_site_base(): string {
   return rtrim((string)(dtm_secrets()['site_url'] ?? 'https://defacingthemusic.com'), '/');
 }
+
+// ---------- Raw files: big files Duck puts in /dtm-raw over SFTP ----------
+// /dtm-raw sits next to the site folder on the webspace, so the web can't reach it. The admin lists it and
+// hands out a private per-file link (admin/file.php?raw=...&t=...). Tokens live in data/raw-links.json.
+function dtm_raw_dir(): ?string {
+  $root = realpath(DTM_ROOT);
+  if ($root === false) return null;
+  $d = dirname($root) . '/dtm-raw';
+  return @is_dir($d) ? $d : null;
+}
+function dtm_raw_files(): array {
+  $d = dtm_raw_dir();
+  if (!$d) return [];
+  $out = [];
+  foreach (@scandir($d) ?: [] as $f) {
+    if ($f === '' || $f[0] === '.' || !@is_file("$d/$f")) continue;
+    $out[] = ['name' => $f, 'size' => (int)@filesize("$d/$f"), 'mtime' => (int)@filemtime("$d/$f"),
+              'ext' => strtolower(pathinfo($f, PATHINFO_EXTENSION))];
+  }
+  usort($out, fn($a, $b) => strcmp($a['name'], $b['name']));
+  return $out;
+}
+// The secret token for one raw file; makes one if it doesn't have one yet (or a new one when $renew).
+function dtm_raw_token(string $name, bool $renew = false): string {
+  $tok = '';
+  dtm_json_update('raw-links.json', function ($all) use ($name, $renew, &$tok) {
+    if ($renew || empty($all[$name])) $all[$name] = bin2hex(random_bytes(20));
+    $tok = $all[$name];
+    return $all;
+  });
+  return $tok;
+}
+function dtm_raw_token_ok(string $name, string $tok): bool {
+  $all = dtm_json_read('raw-links.json');
+  return $tok !== '' && !empty($all[$name]) && hash_equals((string)$all[$name], $tok);
+}

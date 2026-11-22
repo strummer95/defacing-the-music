@@ -1,11 +1,21 @@
 <?php
-// Streams an uploaded file. Allowed for a signed-in admin, or anyone holding the file's secret link (?t=).
+// Streams an uploaded file (or a raw file from /dtm-raw with ?raw=name). Allowed for a signed-in admin, or anyone holding the file's secret link (?t=).
 // Supports Range requests so video and audio can be played and resumed.
 require __DIR__ . '/../lib/uploads.php';
-$u = dtm_upload((string)($_GET['id'] ?? ''));
 $tok = (string)($_GET['t'] ?? '');
-if (!$u || !(dtm_user() || ($tok !== '' && hash_equals($u['token'], $tok)))) { http_response_code(404); exit('Not found.'); }
-$path = dtm_uploads_dir() . '/media/' . $u['file'];
+if (isset($_GET['raw'])) {
+  // a raw file from /dtm-raw (put there over SFTP): only names that are really in that folder, no paths
+  $raw = basename(str_replace('\\', '/', (string)$_GET['raw']));
+  $hit = null;
+  foreach (dtm_raw_files() as $r) if ($r['name'] === $raw) { $hit = $r; break; }
+  if (!$hit || !(dtm_user() || dtm_raw_token_ok($raw, $tok))) { http_response_code(404); exit('Not found.'); }
+  $u = ['name' => $hit['name'], 'ext' => $hit['ext']];
+  $path = dtm_raw_dir() . '/' . $hit['name'];
+} else {
+  $u = dtm_upload((string)($_GET['id'] ?? ''));
+  if (!$u || !(dtm_user() || ($tok !== '' && hash_equals($u['token'], $tok)))) { http_response_code(404); exit('Not found.'); }
+  $path = dtm_uploads_dir() . '/media/' . $u['file'];
+}
 if (!is_file($path)) { http_response_code(404); exit('File is missing on the server.'); }
 @set_time_limit(0);
 while (ob_get_level()) ob_end_clean();
