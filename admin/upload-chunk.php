@@ -37,10 +37,15 @@ if ($index !== $meta['next']) {
 }
 $in = fopen($f['tmp_name'], 'rb'); $o = fopen($part, 'ab');
 if (!$in || !$o || stream_copy_to_stream($in, $o) === false) {
-  // usually the hosting is out of space: drop the partial file so it doesn't keep eating space
+  // the server refused the write (space, a file size limit, temp space...): report its real reason and drop the partial file
   if ($in) fclose($in); if ($o) fclose($o);
-  @unlink($part); @unlink($metaF);
-  out(500, ['error' => 'Could not save chunk. The web hosting is probably out of space. The partial file was removed.']);
+  $why = error_get_last()['message'] ?? 'no details from the server';
+  $root = (string)realpath(DTM_ROOT);
+  if ($root !== '') $why = str_replace([$root, dirname($root)], ['(site)', '(home)'], (string)$why);
+  $free = @disk_free_space($dir);
+  $saved = (int)@filesize($part); @unlink($part); @unlink($metaF);
+  out(500, ['error' => 'Could not save chunk ' . ($index + 1) . ' of ' . $total . ' (about ' . dtm_human_size($saved) . ' saved so far). Server said: ' . $why
+    . ($free !== false ? '. Free space the server reports: ' . dtm_human_size((int)$free) : '') . '. The partial file was removed.']);
 }
 fclose($in); fclose($o);
 $meta['next'] = $index + 1;
