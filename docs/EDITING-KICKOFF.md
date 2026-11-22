@@ -16,7 +16,7 @@ Before you start, read the editing brief at the bottom of this message. It's the
 5. **Write `edit\transcript-part1.md` and `edit\transcript-part2.md`**, one line per sentence or exchange, like:
    `[12:34] DUCK: And then he bites the head off.`
    Also flag, on their own lines:
-   - `>> PAUSE 4.2s` for any gap over 2 seconds
+   - `>> PAUSE 4.2s` for any gap over 2 seconds (just so I can see them; I decide what gets cut)
    - `>> FLUB?` where I restart a sentence
    - `>> BEER?` / `>> VAPE?` if you can see it on camera (check frames every few seconds with ffmpeg); give the camera and timestamp
 6. Stop and tell me it's ready. Don't render anything.
@@ -57,7 +57,8 @@ Host goes by "Duck" (never Dillon in show copy). Co-host Pat reacts unscripted. 
 4. Check every requested cut against the audio. If it would clip a word, step on cross-talk, or land mid-laugh, shift it to the nearest clean pause or hide it with a camera switch. If it can't be done smoothly, flag it and suggest an alternative.
 
 ## Cleanup
-- Remove dead air, long audible pauses, throat clears, nose blows, and flubbed lines (Duck restarts from the start of the sentence, so cut back to there).
+- Remove dead air, throat clears, nose blows, and flubbed lines (Duck restarts from the start of the sentence, so cut back to there).
+- **Don't cut pauses by default (Duck, Nov 22).** A lot of pauses are on purpose: a beat after a point lands, room for Pat to react, a breath before a reveal. Keep them. Only cut a pause if I marked it, or if it's obviously dead air (lost my place, fumbling, a technical stop, waiting for something). The `>> PAUSE` flags in the transcript are information, not orders. Never trim the silence right after a punchline, a reveal or a laugh.
 - Don't over-trim normal ums.
 - Audio: dynamic leveling on the single mix. Boost Pat where he's low and keep both voices even. Tame spikes.
 
