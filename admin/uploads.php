@@ -78,7 +78,7 @@ dtm_page_start('Uploads', $user, true);
 <section class="admin-card" id="raw">
   <h2 class="bang">Raw files (/dtm-raw)</h2>
   <p>Big files you put in the <code>dtm-raw</code> folder over SFTP. That folder is outside the website, so nobody can reach these without a link from here.</p>
-  <?php if (!$rawFiles): ?><p>Nothing in there right now.</p><?php endif; ?>
+  <?php if (!$rawFiles): ?><p>Nothing showing.<?php if (!empty($GLOBALS['dtm_raw_problem'])): ?> <code><?= h(str_replace([(string)realpath(DTM_ROOT), dirname((string)realpath(DTM_ROOT))], ['(site)', '(webspace)'], $GLOBALS['dtm_raw_problem'])) ?></code><?php endif; ?> Looking in: <code>(webspace)/dtm-raw</code></p><?php endif; ?>
   <ul class="up-list">
     <?php foreach ($rawFiles as $r): $q = rawurlencode($r['name']); $link = dtm_site_base() . '/admin/file.php?raw=' . $q . '&t=' . dtm_raw_token($r['name']); ?>
     <li>
