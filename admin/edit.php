@@ -194,6 +194,7 @@ $marksJs = $p['marks'] ?: new stdClass();
 
 <section class="admin-card"><form method="post" onsubmit="return confirm('Delete this whole edit and all its marks?')"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($p['id']) ?>"><input type="hidden" name="action" value="delete"><button class="linkish danger">Delete this edit</button></form></section>
 
+<div class="runtime" id="runtime" title="Estimated from the transcript timestamps"><span class="rt-lbl">Edited</span> <b id="rtEdit">-</b> <span class="rt-sep">/</span> <span id="rtOrig">-</span><small id="rtNote"></small></div>
 <div class="edit-bar" id="bar" hidden>
   <span id="selinfo" class="small"></span>
   <button type="button" data-m="cut" class="pull-btn bang">Cut</button>
@@ -232,6 +233,12 @@ $marksJs = $p['marks'] ?: new stdClass();
 .tx li.part-break:first-child{margin-top:0}
 .edit-audio{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .edit-bar[hidden]{display:none}
+.runtime[hidden]{display:none}
+.runtime{position:fixed;right:14px;bottom:14px;z-index:60;background:#111;color:#F2E8D5;border:3px solid #FFD21F;box-shadow:4px 4px 0 #E4251B;padding:6px 10px;font:14px/1.3 Archivo,sans-serif;max-width:240px}
+.runtime b{color:#FFD21F;font:20px Bangers,sans-serif;letter-spacing:.04em}
+.runtime .rt-lbl{font:13px Bangers,sans-serif;letter-spacing:.05em;color:#FFD21F}
+.runtime small{display:block;font-size:11px;color:#bdb3a2}
+body:has(.edit-bar:not([hidden])) .runtime{bottom:78px}
 .edit-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px;background:#111;border-top:4px solid #FFD21F}
 .edit-bar .pull-btn{min-height:40px;font-size:18px;padding:4px 12px}
 .edit-bar #selinfo,.edit-bar .linkish{color:#F2E8D5}
@@ -262,6 +269,37 @@ body{padding-bottom:90px}
     ws.forEach(function(w,n){ var sp=document.createElement('span'); sp.className='w'+(cut.indexOf(n)>=0?' wc':''); sp.dataset.w=n; sp.textContent=w; t.appendChild(sp); t.appendChild(document.createTextNode(' ')); });
   }
   ALL.forEach(paint);
+  // ---- running time: each line lasts until the next timestamped line in its part
+  var THEME=39;
+  function fmt(x){x=Math.max(0,Math.round(x));var h=Math.floor(x/3600),m=Math.floor(x%3600/60),sec=x%60;return (h?h+':'+(m<10?'0':''):'')+m+':'+(sec<10?'0':'')+sec;}
+  function recalc(){
+    var orig=0, gone=0, cold=0, byPart={};
+    ALL.forEach(function(li){(byPart[li.dataset.p]=byPart[li.dataset.p]||[]).push(li);});
+    Object.keys(byPart).forEach(function(pk){
+      var rows=byPart[pk], owner=null, dur={};
+      // durations of timestamped lines
+      var ts=rows.filter(function(li){return !li.classList.contains('flag')&&li.querySelector('.ts');});
+      ts.forEach(function(li,n){
+        var t=parseFloat(li.dataset.t), nx=ts[n+1]?parseFloat(ts[n+1].dataset.t):null;
+        var d=nx!==null?Math.max(0,nx-t):Math.max(1,(li.dataset.txt||li.querySelector('.tx-t').textContent).split(/\s+/).length/2.6);
+        dur[li.dataset.i]=d; orig+=d;
+      });
+      rows.forEach(function(li){
+        var mk=MARKS[key(li)]||{}, d=dur[li.dataset.i];
+        if(d!==undefined){ owner=li;
+          if(mk.m==='cut'){gone+=d;}
+          else { if(mk.words&&mk.words.length){var nw=words(li).length||1; gone+=d*Math.min(1,mk.words.length/nw);} if(mk.m==='cold'){cold+=d;} }
+          return; }
+        // a flag line (">> PAUSE 4.2s") sits inside the line before it
+        if(mk.m==='cut'&&owner&&(MARKS[key(owner)]||{}).m!=='cut'){var mm=(li.dataset.txt||li.querySelector('.tx-t').textContent).match(/PAUSE\s+([\d.]+)/i); if(mm) gone+=Math.min(parseFloat(mm[1]),dur[owner.dataset.i]||0);}
+      });
+    });
+    var edited=orig-gone+cold+THEME;
+    document.getElementById('rtEdit').textContent=fmt(edited);
+    document.getElementById('rtOrig').textContent=fmt(orig);
+    document.getElementById('rtNote').textContent='cut '+fmt(gone)+(cold?' · cold open +'+fmt(cold):'')+' · theme +0:39';
+  }
+  if(ALL.length) recalc(); else document.getElementById('runtime').hidden=true;
   var wline=null; // the line being word-edited
   function endWords(){ if(!wline) return; wline.classList.remove('wedit'); paintWords(wline); wline=null; document.getElementById('wordsbtn').textContent='Words'; }
   function selected(){if(sel.a===null)return[];var lo=Math.min(sel.a,sel.b),hi=Math.max(sel.a,sel.b);return ALL.slice(lo,hi+1);}
@@ -279,7 +317,7 @@ body{padding-bottom:90px}
         if(at>=0) cut.splice(at,1); else cut.push(n);
         cut.sort(function(a,b){return a-b;});
         w.classList.toggle('wc');
-        post({action:'words',part:li.dataset.p,line:li.dataset.i,words:cut.join(',')}).then(function(){ if(cut.length) mk.words=cut; else delete mk.words; },function(){ w.classList.toggle('wc'); });
+        post({action:'words',part:li.dataset.p,line:li.dataset.i,words:cut.join(',')}).then(function(){ if(cut.length) mk.words=cut; else delete mk.words; recalc(); },function(){ w.classList.toggle('wc'); });
         return;
       }
       if(wline) endWords();
@@ -323,7 +361,7 @@ body{padding-bottom:90px}
     if(m==='note'){
       var first=s[0], k=key(first), cur=(MARKS[k]||{}).note||'';
       var n=prompt('Note for the editor (on the first selected line):',cur); if(n===null)return;
-      post({action:'note',part:first.dataset.p,line:first.dataset.i,note:n}).then(function(){MARKS[k]=MARKS[k]||{};if(n.trim())MARKS[k].note=n.trim();else delete MARKS[k].note;paint(first);});
+      post({action:'note',part:first.dataset.p,line:first.dataset.i,note:n}).then(function(){MARKS[k]=MARKS[k]||{};if(n.trim())MARKS[k].note=n.trim();else delete MARKS[k].note;paint(first);recalc();});
       return;
     }
     var clip='';
@@ -332,7 +370,7 @@ body{padding-bottom:90px}
       s.forEach(function(li){var k=key(li), old=MARKS[k]||{};
         if(m==='clear'){ if(old.note) MARKS[k]={note:old.note}; else delete MARKS[k]; }
         else { MARKS[k]=old; if(m==='clip')MARKS[k].clip=clip||'clip'; else MARKS[k].m=m; }
-        paint(li);});
+        paint(li);}); recalc();
       sel={a:null,b:null}; show();
     });
   });
