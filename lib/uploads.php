@@ -88,11 +88,14 @@ function dtm_raw_files(): array {
 // The secret token for one raw file; makes one if it doesn't have one yet (or a new one when $renew).
 function dtm_raw_token(string $name, bool $renew = false): string {
   $tok = '';
-  dtm_json_update('raw-links.json', function ($all) use ($name, $renew, &$tok) {
-    if ($renew || empty($all[$name])) $all[$name] = bin2hex(random_bytes(20));
-    $tok = $all[$name];
-    return $all;
-  });
+  if (!$renew) { $all = dtm_json_read('raw-links.json'); if (!empty($all[$name])) return (string)$all[$name]; }
+  try {
+    dtm_json_update('raw-links.json', function ($all) use ($name, $renew, &$tok) {
+      if ($renew || empty($all[$name])) $all[$name] = bin2hex(random_bytes(20));
+      $tok = $all[$name];
+      return $all;
+    });
+  } catch (Throwable $e) { return ''; } // hosting full: no link for now, but the page still loads
   return $tok;
 }
 function dtm_raw_token_ok(string $name, string $tok): bool {

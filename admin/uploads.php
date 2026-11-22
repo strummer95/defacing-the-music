@@ -80,14 +80,15 @@ dtm_page_start('Uploads', $user, true);
   <p>Big files you put in the <code>dtm-raw</code> folder over SFTP. That folder is outside the website, so nobody can reach these without a link from here.</p>
   <?php if (!$rawFiles): ?><p>Nothing showing.<?php if (!empty($GLOBALS['dtm_raw_problem'])): ?> <code><?= h(str_replace([(string)realpath(DTM_ROOT), dirname((string)realpath(DTM_ROOT))], ['(site)', '(webspace)'], $GLOBALS['dtm_raw_problem'])) ?></code><?php endif; ?> Looking in: <code>(webspace)/dtm-raw</code></p><?php endif; ?>
   <ul class="up-list">
-    <?php foreach ($rawFiles as $r): $q = rawurlencode($r['name']); $link = dtm_site_base() . '/admin/file.php?raw=' . $q . '&t=' . dtm_raw_token($r['name']); ?>
+    <?php foreach ($rawFiles as $r): $q = rawurlencode($r['name']); $rt = dtm_raw_token($r['name']); $link = $rt !== '' ? dtm_site_base() . '/admin/file.php?raw=' . $q . '&t=' . $rt : ''; ?>
     <li>
       <div class="up-name"><strong><?= h($r['name']) ?></strong>
         <span class="small"><?= h(dtm_human_size($r['size'])) ?> · <?= h(date('M j, g:ia', $r['mtime'])) ?></span></div>
       <div class="up-acts">
         <a href="file.php?raw=<?= h($q) ?>" target="_blank" rel="noopener">Open</a>
         <a href="file.php?raw=<?= h($q) ?>&amp;dl=1">Download</a>
-        <button type="button" class="linkish copy" data-link="<?= h($link) ?>">Copy link for Claude</button>
+        <?php if ($link !== ''): ?><button type="button" class="linkish copy" data-link="<?= h($link) ?>">Copy link for Claude</button>
+        <?php else: ?><span class="small">No link yet: the web hosting is full, so the site can't save one. Free up space and reload.</span><?php endif; ?>
         <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="rawnewlink"><input type="hidden" name="raw" value="<?= h($r['name']) ?>"><button class="linkish" title="Make a new secret link (the old one stops working)">New link</button></form>
       </div>
     </li>

@@ -43,19 +43,33 @@ function dtm_data_dir(): string {
 // Read-modify-write a JSON file under an exclusive lock. $fn gets the decoded array and returns the new one
 // (or null to leave the file untouched). Returns whatever the file holds afterwards.
 function dtm_json_update(string $name, ?callable $fn = null): array {
-  $fp = fopen(dtm_data_dir() . "/$name", 'c+');
-  if (!$fp) throw new RuntimeException("Cannot open data/$name");
-  flock($fp, $fn ? LOCK_EX : LOCK_SH);
+  $path = dtm_data_dir() . "/$name";
+  if (!$fn) { // plain read: never create anything (creating fails when the hosting is full)
+    if (!is_file($path)) return [];
+    $fp = @fopen($path, 'r');
+    if (!$fp) throw new RuntimeException("Cannot open data/$name");
+    flock($fp, LOCK_SH);
+    $data = json_decode(stream_get_contents($fp) ?: '[]', true);
+    flock($fp, LOCK_UN); fclose($fp);
+    return is_array($data) ? $data : [];
+  }
+  $fp = @fopen($path, 'c+');
+  if (!$fp) throw new RuntimeException("Cannot open data/$name (is the web hosting full?)");
+  flock($fp, LOCK_EX);
   $data = json_decode(stream_get_contents($fp) ?: '[]', true);
   if (!is_array($data)) $data = [];
-  if ($fn) {
-    $new = $fn($data);
-    if (is_array($new)) {
-      ftruncate($fp, 0); rewind($fp);
-      fwrite($fp, json_encode($new, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-      fflush($fp);
-      $data = $new;
+  $new = $fn($data);
+  if (is_array($new)) {
+    // Write the new version to a temp file first, then swap it in. If the hosting is full the temp write
+    // fails and the old file is left exactly as it was (the old way emptied the file first, then failed).
+    $json = json_encode($new, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    $tmp = "$path.tmp-" . bin2hex(random_bytes(4)) . '.json'; // ends in .json, so data/.htaccess blocks it too
+    $ok = $json !== false && @file_put_contents($tmp, $json) === strlen($json) && @rename($tmp, $path);
+    if (!$ok) {
+      @unlink($tmp); flock($fp, LOCK_UN); fclose($fp);
+      throw new RuntimeException("Could not save data/$name (is the web hosting full?). Nothing was changed.");
     }
+    $data = $new;
   }
   flock($fp, LOCK_UN); fclose($fp);
   return $data;
