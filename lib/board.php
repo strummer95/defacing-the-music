@@ -65,11 +65,11 @@ function dtm_board_row(array $r): string {
     $o .= '<a class="pull-btn bang link-btn" href="images.php?id=' . h($sid) . '">Images</a>';
     $o .= '<a class="pull-btn bang link-btn" href="edit.php?' . ($r['edit'] !== '' ? 'id=' . h($r['edit']) : 'script=' . h($sid)) . '">Transcript</a>';
   }
-  $o .= '<span class="more">';
-  if ($e) $o .= '<a href="episodes.php?edit=' . h(urlencode($e['id'])) . '">Details</a>';
+  $o .= '</span><span class="more">';
   if ($s) $o .= '<a href="scripts.php?edit=' . h(urlencode($s['id'])) . '">Edit script</a>';
+  if ($e) $o .= '<a href="episodes.php?edit=' . h(urlencode($e['id'])) . '">Details</a>';
   if ($r['youtube'] !== '') $o .= '<a href="' . h($r['youtube']) . '" target="_blank" rel="noopener">YouTube</a>';
-  return $o . '</span></span></li>';
+  return $o . '</span></li>';
 }
 
 function dtm_board_html(array $groups, array $empty): string {
