@@ -4,6 +4,9 @@ Site for **Defacing The Music**, Dillon Johnson's comedy podcast about the crazi
 (Limp Bizkit and the Woodstock '99 riot, Keith Moon blowing up his drums on the Smothers Brothers, and so on).
 Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visitors get https, Cloudflare talks plain http to IONOS, so PHP sees http; use X-Forwarded-Proto / `dtm_is_https()`). `lib/https.php` 301s http visitors to https, served from the `dtm` folder on Dillon's IONOS webspace (shared PHP hosting, no database assumed; use JSON files under `data/` with flock locking).
 
+## Growth playbook (Duck, Nov 23: "make sure you are notating all this stuff, so its applied to everything moving forward")
+- **Read `docs/GROWTH.md` before planning episodes, Shorts, posting, sponsors or channel changes, and add to it whenever Duck decides something new or the numbers teach us something.** It holds the 5,000-per-episode goal and honest timeline (12 to 18 months with something every week plus 3 to 5 Shorts a week), what moves the numbers, how to read YouTube analytics, what to turn on for money and when, and the avoid list (press photos, Gmail logins from the site, polarizing people, long end cards, raw video on the webspace).
+
 ## How work happens
 - Start every run by reading `BOARD.md` (Dillon talks to you there; his notes outrank TASKS.md order; answer him under "For Dillon"). Your work queue is `TASKS.md` in this repo. Each run: pick the **first** open `[ ]` task, do **only that one task**, then stop.
 - Work on a branch `claude/<task-id-lowercase>` and open a pull request against `main`. Never push to `main`.
@@ -140,12 +143,14 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 
 ## Guest List email (Duck, Nov 23: "let me email out with my gmail account for the podcast")
 - Home page signups land in `data/subscribers.json`; admin > Guest List lists them (CSV, remove) and emails the list through Duck's Gmail over SMTP (`lib/mailer.php`, a tiny built-in client; no Composer). Settings `gmail_user`, `gmail_app_password` (a Google app password, needs 2-Step Verification) and `mail_key` (signs unsubscribe links) live only in `../dtm-secrets.php`; the Guest List page writes them there safely (temp file, verify, swap).
+- **Warning (Nov 23):** setting this up put a Google security hold on Duck's podcast Gmail (new account, app passwords made and deleted several times, failed logins from the IONOS server). Don't push Gmail again. Next step, once Duck picks: switch the sender to the IONOS mailbox on defacingthemusic.com (same SMTP client, different host) or a newsletter service like MailerLite.
 - One copy per subscriber, sent in batches of 10 from the browser so nothing times out, every address logged per mailing in `data/mail-log.json` so a retry never double-sends, capped at 450 a day (Gmail's limit is about 500). Every email has an unsubscribe link and one-click List-Unsubscribe headers (`unsubscribe.php`). Always send a test to yourself first.
 
 ## Cutaway images and Sources & Credits pages
 - Every shipped script gets `lib/sources/<seed>.json` (`{"sources": [{"title", "publisher", "url"}]}`, real titles, built from `research/<seed>.notes.md`) and `lib/cutaways/<seed>.json` (5 to 10 cutaway pictures).
 - Cutaways are Wikimedia Commons only, CC BY / CC BY-SA / CC0 / public domain (never NC or ND). Add them with `python3 -I tools/commons.py add <seed> "File:..." "Title" slug`, which checks the license and records the credit. Pictures are not in git: the server downloads each one from Wikimedia on first view (admin > Scripts > Images) and caches it in `uploads/cutaways/`.
 - Public page per episode: `defacingthemusic.com/ep/<number>` (`ep/index.php`, short link via `ep/.htaccess`): sources plus image credits. It exists once a script is on an episode. Descriptions carry one line, "Sources and credits: https://defacingthemusic.com/ep/N", with a Copy button in admin > Episodes.
+- **Duck's own uploads must be free to use too** (his own photos, or Commons-licensed). His first three (Ozzy 2025, the dove meeting, Randy) were press photos; a credit line doesn't make them legal. Check every own upload's source and swap anything that isn't free.
 - Duck can hide shipped pictures, add his own (with credit) and add extra sources on the script edit page; that lives in `data/cutaways.json` and the script row.
 
 ## Google sign-in (shared across Dillon's sites)
