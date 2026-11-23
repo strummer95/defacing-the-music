@@ -1,19 +1,29 @@
-## IDEA (Off The Record, not a script yet)
-Duck approved this one for future work (Nov 23). Research it before writing; the verdict below is Claude's best guess from memory. Length: about 15 minutes on its own, or about 8 to 10 minutes as one of three in a 30-minute episode.
+[STORY BLOCK: about 2 to 3 minutes of reading. Recorded as part of Off The Record: Candy, Blood and a Cow Tongue (use that script in the prompter)]
 
-## THE LEGEND
-Everybody knows the joke: Van Halen were such spoiled rock stars their contract banned brown M&M's from the backstage bowl. People still use it as shorthand for a diva demand.
+## VAN HALEN'S BROWN M&M'S
+[CLIP: Brown M&M's]
+Van Halen banned brown M&M's. And it was the smartest thing they ever did.
 
-## VERDICT (to confirm)
-FACT, and it flips the whole story. The clause was real, but it was a test, buried deep in a huge technical rider. If the band's crew walked in and found brown M&M's, it meant the venue hadn't read the contract closely, so the stage weight limits, power and rigging might be wrong too, and they'd check everything. It went from "spoiled" to "genius safety trick."
+You've heard this one. It's the go-to joke for spoiled rock stars. Van Halen's contract said there could be no brown M&M's backstage. Not no M&M's. Just the brown ones.
 
-## THE ANGLE
-The twist is the whole bit: start with the diva version everyone knows, let Pat call them brats, then reveal it was a smoke detector made of candy.
+And it's real. Their 1982 tour rider has a section called "Munchies," and right there in the list: "M & M's (WARNING: ABSOLUTELY NO BROWN ONES)." Same rider wants herring in sour cream and Blue Nun wine "to be served at room temperature." Classy operation.
 
-## RESEARCH TO DO
-- David Lee Roth's own explanation (his memoir and interviews) and the rider page itself (the "no brown M&M's" line and where it sat in the rider).
-- The show where they found brown ones and the damage story Roth tells (which city, what got wrecked, what it cost, today's money).
-- Who wrote the clause: band, tour manager or production manager?
+[TALK: Legend or fact? Make Pat call it, and ask him what kind of guy bans one color of candy.]
 
-## SHORTS HOOK
-"Van Halen banned brown M&M's. And it was the smartest thing they ever did."
+Here's the part nobody tells you. Van Halen was hauling a giant stage into towns that weren't ready for it: nine eighteen-wheelers, when most bands showed up with three. The contract was huge, and the candy line was buried in the middle of it on purpose. David Lee Roth, in his book Crazy from the Heat:
+
+"So, when I would walk backstage, if I saw a brown M&M in that bowl... well, line-check the entire production. Guaranteed you're going to arrive at a technical error. They didn't read the contract."
+
+It was a test. If they skipped the candy, maybe they skipped the part about how much weight the floor can hold. A smoke detector made of chocolate.
+
+And it caught one. March 30th, 1980. A college gym in Pueblo, Colorado. Tickets were eight fifty. In today's money, that's about thirty-three bucks. Roth says the stage was too heavy and tore up the brand new floor. Then he found brown M&M's backstage:
+
+"I went into full Shakespearean 'What is this before me?' ... and promptly trashed the dressing room. Dumped the buffet, kicked a hole in the door, twelve thousand dollars' worth of fun."
+
+Twelve thousand dollars. In today's money, that's about forty-seven thousand. The school's vice president told the paper the band "ate the lasagna with their hands, threw the food around the room, smeared the food on the walls and on each other."
+
+The newspapers ran the version you know: rock stars wreck a college over candy. And Roth? "Well, who am I to get in the way of a good rumor?"
+
+Verdict: FACT. The ban was real, and it was a safety check. The tantrum was also real. Both things.
+
+[THAT GUY STING] That Guy: whoever ran that gym and skipped the candy line. Runner-up: Roth, who saw one brown M&M and decided a door had to die.
