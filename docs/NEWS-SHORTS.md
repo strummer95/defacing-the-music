@@ -22,13 +22,14 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
-## Format: one weekly video, cut into Shorts (Duck, Nov 23)
-Duck: "maybe they should just be 5 minutes... with the plan to make a short or 2 of them?... this was intended for shorts but 3 minutes is very short." So:
-- **One solo Fresh Tracks video a week, about 5 minutes, with 2 or 3 stories** read back to back. Posts as a regular YouTube video.
-- **Each story stands alone at about 90 seconds (200 to 250 words)**: its own hook line, its own That Guy. The editor cuts each story out as its own Short (with the end card). One recording = one weekly video + 2 or 3 Shorts.
-- **The filter still applies per story:** if it isn't wild or funny in the first line and paying off within about a minute, it doesn't make the week.
-- **Video wrapper:** a 2-line open ("This is Fresh Tracks, the music news that went wrong this week.") and a 1-line close, kept out of the story blocks so each Short starts on its own hook.
-- Line 1 of every story is the hook (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the craziest specific fact, said cold. Then a rapid chain (one line per beat), one oddly specific detail, a real quote (exact, outlet named), and a quick `[THAT GUY STING]`. Say when it happened. No TALK cues (solo). Duck's voice, no em dashes, never Counterfeit.
+## Format: one story, only when it's worth it (Duck, Nov 23)
+Duck: "this isnt gonna be regular or a set thing... its just if theres a big wild thing in music, i throw an episode out there... they arent gonna be mixed like the OTR episodes."
+- **One story per video. No schedule.** Only when something big and wild happens in music. Never a weekly roundup, never mixed with other stories.
+- **Solo, up to about 5 minutes** (no Pat, so reading time is the finished length: up to about 650 words; most land at 2 to 4 minutes). Then **a Short or two** cut from it (the hook moment, with the end card).
+- **Open:** the hook line cold, then "This is Fresh Tracks. I'm Duck." **Close:** That Guy, then "Due to unforeseen circumstances, I'll see you next time."
+- **The filter:** wild or funny in the first line, and it has to genuinely go wrong or be insane. If it can't be, skip it, however big the news.
+- Story shape: hook, the chain of events (one line per beat), oddly specific details, real quotes (exact, outlet named), `[THAT GUY STING]`. Say when it happened. No TALK cues (solo). Duck's voice, no em dashes, never Counterfeit.
+- Claude doesn't run a weekly scan by default. When Duck asks "anything wild lately?", search the last week or two and bring picks under these rules.
 
 ## Where it goes
 `lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
