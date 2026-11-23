@@ -31,7 +31,7 @@ const DTM_SEEDS = [
   'otr-vol-1' => ['', "Off The Record: Candy, Blood and a Cow Tongue", "Brown M&M's, the KISS blood comic, Gene's tongue"],
   'otr-vol-2' => ['', "Off The Record: Oz, Phil and the Parakeets", "Dark Side of the Rainbow, In the Air Tonight, Hendrix's parakeets"],
   // Fresh Tracks Duck picked (Nov 23): one story per solo video.
-  'ft-stubhub-phantom-concert' => ['a9380164ee244d72143a4857964b6d2e2d03e4af', '', "Fresh Tracks: StubHub's Phantom Concert", ''],
+  'ft-stubhub-phantom-concert' => ['', "Fresh Tracks: StubHub's Phantom Concert", ''],
   'ft-slayer-forum-seats' => ['', "Fresh Tracks: Slayer Fans vs. the Seats", ''],
   'ft-ye-band-room-opera' => ['', "Fresh Tracks: Kanye's Band Room Opera", ''],
 ];
@@ -39,7 +39,7 @@ const DTM_SEEDS = [
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
-  'ft-stubhub-phantom-concert' => ['4ee55457557182573c0499930b09c84dedcb7b72'], // first telling (confusing about who booked what)
+  'ft-stubhub-phantom-concert' => ['4ee55457557182573c0499930b09c84dedcb7b72', 'a9380164ee244d72143a4857964b6d2e2d03e4af'], // first tellings (confusing about who booked what)
   'otr-vol-2' => ['2e91936294f739961f0d347b1b473da6a191453e'],
   'otr-vol-1' => ['5012ee992e62ef8001038379a1d3e7ce5dbc4f2a'],
   'otr-brown-mms' => ['46bf539450138b0e68278f9993675900462f9546', '97741a8f637102e9c7a91840eb8308d56ff62677', '185337d55dab189a8e3351952deeba8fa15b715e'], // the idea notes, before they became story blocks
