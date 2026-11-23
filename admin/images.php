@@ -29,30 +29,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (is_file($path)) @unlink($path);
     header('Location: images.php?id=' . urlencode($script['id']) . '&removed=1'); exit;
   }
+  if ($action === 'label') {
+    $key = (string)($_POST['key'] ?? '');
+    $known = array_column(dtm_cutaways($script, true), 'key');
+    if (in_array($key, $known, true)) {
+      $label = trim(mb_substr((string)($_POST['label'] ?? ''), 0, 120));
+      $when = trim(mb_substr((string)($_POST['when'] ?? ''), 0, 200));
+      dtm_cut_state_update($script['id'], function ($st) use ($key, $label, $when) {
+        if ($label === '' && $when === '') unset($st['labels'][$key]); else $st['labels'][$key] = ['label' => $label, 'when' => $when];
+        return $st;
+      });
+    }
+    header('Location: images.php?id=' . urlencode($script['id']) . '&labeled=1#' . rawurlencode($key)); exit;
+  }
   if ($action === 'add') {
-    $up = $_FILES['img'] ?? null;
-    $ext = strtolower(pathinfo((string)($up['name'] ?? ''), PATHINFO_EXTENSION));
-    $title = trim((string)($_POST['title'] ?? ''));
+    $files = $_FILES['img'] ?? null;
     $author = trim((string)($_POST['author'] ?? ''));
     $license = trim((string)($_POST['license'] ?? ''));
     $source = trim((string)($_POST['source'] ?? ''));
-    if (!$up || ($up['error'] ?? 1) !== UPLOAD_ERR_OK) $error = ($up['error'] ?? 0) === UPLOAD_ERR_INI_SIZE || ($up['error'] ?? 0) === UPLOAD_ERR_FORM_SIZE ? 'That picture is too big for this server. Shrink it and try again.' : 'Pick a picture to upload.';
-    elseif (!isset(DTM_CUT_TYPES[$ext]) || !@getimagesize($up['tmp_name'])) $error = 'That doesn\'t look like a picture (JPG, PNG, WebP or GIF).';
-    elseif ($up['size'] > DTM_CUT_MAX_BYTES) $error = 'That picture is over 30 MB.';
+    $baseTitle = trim((string)($_POST['title'] ?? ''));
+    $when = trim(mb_substr((string)($_POST['when'] ?? ''), 0, 200));
+    $n = is_array($files['name'] ?? null) ? count($files['name']) : 0;
+    if (!$n) $error = 'Pick a picture to upload.';
     elseif ($source !== '' && !dtm_safe_url($source)) $error = 'The link has to start with https://';
-    elseif (mb_strlen($title . $author . $license) > 600) $error = 'Keep the credit fields short.';
+    elseif (mb_strlen($baseTitle . $author . $license) > 600) $error = 'Keep the credit fields short.';
     else {
       $dir = dtm_uploads_dir() . '/cutaways/own/' . $script['id'];
       if (!is_dir($dir)) @mkdir($dir, 0755, true);
-      $name = date('Ymd-His') . '-' . bin2hex(random_bytes(2)) . '.' . ($ext === 'jpeg' ? 'jpg' : $ext);
-      [$w, $h] = getimagesize($up['tmp_name']);
-      if (!@move_uploaded_file($up['tmp_name'], "$dir/$name")) $error = 'Couldn\'t save that picture. Try again.';
-      else {
-        $row = ['file' => $name, 'title' => $title !== '' ? $title : pathinfo((string)$up['name'], PATHINFO_FILENAME),
-                'author' => $author, 'license' => $license, 'license_url' => '', 'source' => $source, 'width' => $w, 'height' => $h, 'added' => date('c')];
-        dtm_cut_state_update($script['id'], function ($st) use ($row) { $st['added'][] = $row; return $st; });
-        header('Location: images.php?id=' . urlencode($script['id']) . '&added=1'); exit;
+      $rows = []; $bad = [];
+      for ($k = 0; $k < $n; $k++) {
+        $orig = (string)$files['name'][$k]; $tmp = (string)$files['tmp_name'][$k]; $err = (int)$files['error'][$k];
+        $ext = strtolower(pathinfo($orig, PATHINFO_EXTENSION));
+        if ($err !== UPLOAD_ERR_OK) { $bad[] = "$orig (" . ($err === UPLOAD_ERR_INI_SIZE || $err === UPLOAD_ERR_FORM_SIZE ? 'too big for this server' : 'did not arrive') . ')'; continue; }
+        if (!isset(DTM_CUT_TYPES[$ext]) || !@getimagesize($tmp)) { $bad[] = "$orig (not a JPG, PNG, WebP or GIF)"; continue; }
+        if ((int)$files['size'][$k] > DTM_CUT_MAX_BYTES) { $bad[] = "$orig (over 30 MB)"; continue; }
+        $name = date('Ymd-His') . '-' . bin2hex(random_bytes(3)) . '.' . ($ext === 'jpeg' ? 'jpg' : $ext);
+        [$w, $h] = getimagesize($tmp);
+        if (!@move_uploaded_file($tmp, "$dir/$name")) { $bad[] = "$orig (couldn't save; is the web hosting full?)"; continue; }
+        $title = $baseTitle !== '' ? ($n > 1 ? $baseTitle . ' ' . ($k + 1) : $baseTitle) : pathinfo($orig, PATHINFO_FILENAME);
+        $rows[] = ['file' => $name, 'title' => $title, 'author' => $author, 'license' => $license, 'license_url' => '', 'source' => $source, 'width' => $w, 'height' => $h, 'added' => date('c')];
       }
+      if ($rows) dtm_cut_state_update($script['id'], function ($st) use ($rows, $when) {
+        foreach ($rows as $r) { $st['added'][] = $r; if ($when !== '') $st['labels']['own:' . $r['file']] = ['label' => '', 'when' => $when]; }
+        return $st;
+      });
+      if ($rows && !$bad) { header('Location: images.php?id=' . urlencode($script['id']) . '&added=' . count($rows)); exit; }
+      $error = ($rows ? count($rows) . ' added. ' : '') . 'These didn\'t work: ' . implode('; ', $bad) . '.';
     }
   }
 }
@@ -68,17 +90,46 @@ dtm_page_start('Images', $user, true);
   <p class="small"><a href="scripts.php">All scripts</a> · <a href="prompter.php?id=<?= h(urlencode($script['id'])) ?>">Read</a> · <a href="scripts.php?edit=<?= h(urlencode($script['id'])) ?>">Edit</a></p>
   <h1 class="metal">Images</h1>
   <p class="cut-for bang"><?= $ep !== '' ? 'EP ' . h(str_pad($ep, 2, '0', STR_PAD_LEFT)) . ' · ' : '' ?><?= h($script['title']) ?></p>
-  <?php if (isset($_GET['added'])): ?><p class="notice ok bang" role="status">Added.</p><?php endif; ?>
+  <?php if (isset($_GET['added'])): ?><p class="notice ok bang" role="status"><?= max(1, (int)$_GET['added']) > 1 ? (int)$_GET['added'] . ' pictures added.' : 'Added.' ?></p><?php endif; ?>
+  <?php if (isset($_GET['labeled'])): ?><p class="notice ok bang" role="status">Label saved.</p><?php endif; ?>
   <?php if (isset($_GET['hidden'])): ?><p class="notice ok bang" role="status">Hidden. It's in the hidden pile at the bottom if you want it back.</p><?php endif; ?>
   <?php if (isset($_GET['removed'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
   <?php if ($error): ?><p class="notice err bang" role="alert"><?= h($error) ?></p><?php endif; ?>
-  <?php if (!$shown): ?><p>No pictures for this one yet. Add your own below.</p><?php endif; ?>
+  <details class="cut-more cut-add" open>
+    <summary class="bang">Add pictures</summary>
+    <form method="post" enctype="multipart/form-data" class="admin-form"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="add"><input type="hidden" name="id" value="<?= h($script['id']) ?>">
+      <label for="img" class="bang">Pictures (pick one or several)</label>
+      <input id="img" name="img[]" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple required>
+      <label for="ctitle" class="bang">Label</label>
+      <input id="ctitle" name="title" type="text" maxlength="120" placeholder="Comiskey Park, 1979 (blank = use the file name)">
+      <label for="cwhen" class="bang">Show when (optional)</label>
+      <input id="cwhen" name="when" type="text" maxlength="200" placeholder="When Duck says &quot;Des Moines, January 1982&quot;">
+      <details><summary class="small">Credit (needed for anything you didn't shoot yourself)</summary>
+        <label for="cauthor" class="bang">Photo by</label>
+        <input id="cauthor" name="author" type="text" maxlength="200" placeholder="Photographer's name, or Duck">
+        <label for="clicense" class="bang">License</label>
+        <input id="clicense" name="license" type="text" maxlength="120" placeholder="CC BY-SA 4.0 / Unsplash License / My own photo">
+        <label for="csource" class="bang">Where it came from</label>
+        <input id="csource" name="source" type="url" maxlength="400" placeholder="https://commons.wikimedia.org/wiki/File:...">
+        <p class="small">Only pictures you're allowed to use: your own, or Wikimedia Commons / Unsplash / Pexels with CC BY, CC BY-SA, CC0 or public domain. Not NC or ND, no Google Images grabs. The credit goes on the public sources page.</p>
+      </details>
+      <div class="btn-row"><button type="submit" class="pull-btn bang">Upload</button></div>
+    </form>
+  </details>
+  <?php if (!$shown): ?><p>No pictures for this one yet.</p><?php endif; ?>
   <div class="cut-grid">
     <?php foreach ($shown as $im): ?>
-    <figure class="cut">
-      <a href="<?= h($src($im)) ?>" target="_blank" rel="noopener"><img src="<?= h($src($im)) ?>" alt="<?= h($im['title']) ?>" loading="lazy"<?= !empty($im['width']) ? ' width="' . (int)$im['width'] . '" height="' . (int)$im['height'] . '"' : '' ?>></a>
+    <figure class="cut" id="<?= h($im['key']) ?>">
+      <a href="<?= h($src($im)) ?>" target="_blank" rel="noopener"><img src="<?= h($src($im)) ?>" alt="<?= h($im['label']) ?>" loading="lazy"<?= !empty($im['width']) ? ' width="' . (int)$im['width'] . '" height="' . (int)$im['height'] . '"' : '' ?>></a>
       <figcaption>
-        <span class="cut-ttl"><?= h($im['title']) ?></span>
+        <span class="cut-ttl"><?= h($im['label']) ?></span>
+        <?php if ($im['when'] !== ''): ?><span class="cut-when">Show when: <?= h($im['when']) ?></span><?php endif; ?>
+        <details class="cut-label"><summary class="small">Edit label</summary>
+          <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($script['id']) ?>"><input type="hidden" name="action" value="label"><input type="hidden" name="key" value="<?= h($im['key']) ?>">
+            <input name="label" type="text" maxlength="120" value="<?= h($im['label'] !== $im['title'] ? $im['label'] : '') ?>" placeholder="<?= h($im['title']) ?>" aria-label="Label">
+            <input name="when" type="text" maxlength="200" value="<?= h($im['when']) ?>" placeholder="Show when... (optional)" aria-label="Show when">
+            <button type="submit" class="pull-btn bang">Save</button>
+          </form></details>
         <span class="cut-acts">
           <a class="pull-btn bang link-btn" href="<?= h($src($im)) ?>" target="_blank" rel="noopener">Full size</a>
           <a class="pull-btn bang link-btn" href="<?= h($src($im, true)) ?>">Download</a>
@@ -93,25 +144,6 @@ dtm_page_start('Images', $user, true);
     <?php endforeach; ?>
   </div>
   <p class="small">First time you open a script's images they take a few seconds to load (the server grabs them from Wikimedia once, then keeps them).</p>
-
-  <details class="cut-more">
-    <summary class="bang">Add your own picture</summary>
-    <form method="post" enctype="multipart/form-data" class="admin-form">
-      <?= dtm_csrf_field() ?><input type="hidden" name="action" value="add"><input type="hidden" name="id" value="<?= h($script['id']) ?>">
-      <label for="img" class="bang">Picture</label>
-      <input id="img" name="img" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required>
-      <p class="small">Only pictures you're allowed to use commercially: your own photos, or Wikimedia Commons / Unsplash / Pexels with a CC BY, CC BY-SA, CC0 or public domain license. Not NC or ND, no Google Images grabs. The credit goes on the public sources page.</p>
-      <label for="ctitle" class="bang">What is it</label>
-      <input id="ctitle" name="title" type="text" maxlength="120" placeholder="Comiskey Park, 1979">
-      <label for="cauthor" class="bang">Photo by</label>
-      <input id="cauthor" name="author" type="text" maxlength="200" placeholder="Photographer's name, or Duck">
-      <label for="clicense" class="bang">License</label>
-      <input id="clicense" name="license" type="text" maxlength="120" placeholder="CC BY-SA 4.0 / Unsplash License / My own photo">
-      <label for="csource" class="bang">Where it came from</label>
-      <input id="csource" name="source" type="url" maxlength="400" placeholder="https://commons.wikimedia.org/wiki/File:...">
-      <div class="btn-row"><button type="submit" class="pull-btn bang">Add picture</button></div>
-    </form>
-  </details>
 
   <?php if ($hidden): ?>
   <details class="cut-more">

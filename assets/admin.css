@@ -91,6 +91,12 @@ body.admin{background:var(--black);background-image:radial-gradient(rgba(242,232
 .cut-x{background:none;border:0;padding:4px 0;font:inherit;font-size:14px;font-weight:800;color:var(--red);text-decoration:underline;cursor:pointer}
 .cut-more{margin:18px 0 0;border-top:3px solid var(--black);padding-top:12px}
 .cut-more summary{font-size:22px;cursor:pointer}
+.cut-add{margin:0 0 20px;border-top:0;padding-top:0}
+.cut-when{display:block;font-size:14px;color:var(--red);font-weight:700}
+.cut-label summary{cursor:pointer;color:var(--red);font-weight:800}
+.cut-label form{display:flex;flex-direction:column;gap:6px;margin:6px 0 0}
+.cut-label input{font:inherit;font-size:15px;padding:6px 8px;border:2px solid var(--black)}
+.cut-label .pull-btn{align-self:flex-start;min-height:34px;font-size:16px;padding:2px 12px}
 .copy-line{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 14px}
 .copy-line input{flex:1 1 280px;min-height:46px;font-family:'Archivo',sans-serif;font-size:16px;padding:0 12px;background:#fff;color:var(--black);border:4px solid var(--black)}
 .copy-line .pull-btn{min-height:46px;font-size:18px;padding:4px 14px}
