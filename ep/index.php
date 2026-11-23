@@ -33,8 +33,8 @@ $canon = $ep ? dtm_episode_page_url((string)$ep['number']) : 'https://defacingth
 <meta name="description" content="Sources and image credits for Defacing the Music<?= $ep ? ', episode ' . h($ep['number']) : '' ?>.">
 <?php if ($preview || (!$listing && !$ep)): ?><meta name="robots" content="noindex"><?php else: ?><link rel="canonical" href="<?= h($canon) ?>"><?php endif; ?>
 <meta name="theme-color" content="#161518">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Permanent+Marker&family=Oswald:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
