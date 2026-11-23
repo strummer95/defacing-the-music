@@ -227,6 +227,7 @@ function dtm_admin_nav(): string {
     'looks' => ['Site Looks', 'looks.php', ['looks.php']],
     'guide' => ['Host Guide', 'guide.php', ['guide.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
+    'sponsors' => ['Sponsors', 'sponsors.php', ['sponsors.php']],
   ];
   $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
   foreach ($items as $k => [$label, $href, $pages]) {
