@@ -91,3 +91,9 @@ body.admin .edit-bar .pull-btn{min-height:38px;font-size:14px}
 body.admin .news-body h2{margin-top:28px}
 body.admin .news-body h3{font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.04em;margin:30px 0 6px;padding-top:16px;border-top:2px solid #ddd6c8}
 body.admin .news-body p{font-size:18px;line-height:1.55}
+
+/* Guest List */
+body.admin .guest-list li{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:8px 0}
+body.admin .guest-list li span:first-child{flex:1;min-width:200px}
+body.admin .mail-run{background:#fff;border:2px solid var(--amber);border-radius:4px;padding:14px 16px;margin:0 0 18px}
+body.admin textarea.script-box{width:100%;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;padding:10px}
