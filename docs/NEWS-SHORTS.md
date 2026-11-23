@@ -14,14 +14,21 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 - **Real and sourced.** At least one solid outlet (AP, Reuters, BBC, Billboard, Rolling Stone, local news). No rumor accounts, no "fans are saying". Ongoing legal stuff about living people: "reportedly", "according to", "police say", and name the outlet.
 - **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Fresh Tracks story as aging after 4 days and stale after 7.
 
+## Duck's calls on the first batch (Nov 23): learn from these
+- **Yes:** StubHub selling a concert that doesn't exist. Ye locking a composer in a high school band room to write an opera ("kinda solid for DTM"; Duck's call to allow it: tell the lawsuit story only, say "allegedly", nothing about Ye's views or politics). The Beach Boys touring with no original members, **if** it's built as a chain: this one left, then this, then this, and now nobody's left but they can still use the name.
+- **Maybe:** the cruise pianist rescued by marlin fishermen. Slayer's show stopped because fans wrecked the venue (depends on what actually happened).
+- **No:** a metal band playing a Denny's ("not even a big deal... isnt even that crazy"). Fred Armisen's sound-effects Grammy nod ("not really shit going real wrong"). A $500k guitar theft ("not that interesting"). Kate Nash's tour losses. Brian Eno not flying (an irony one-liner, not a story).
+- **So the bar is:** something has to genuinely go wrong or be insane, ideally with a chain of decisions (the How Did This Get Made side). Quirky, cute or "huh, neat" doesn't make it. A story that's a sequence of events building to something absurd beats a single odd fact.
+
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
-## Format of each pick
-- 45 to 90 seconds read aloud (about 110 to 220 words). Under 3 minutes always, or YouTube won't count it as a Short.
-- **Line 1 is the hook** (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the single craziest specific fact, said cold. No "so this week", no intro.
-- Then the story with one oddly specific detail (the rabbit-hole pillar, shrunk), a real quote if there's a good one (exact wording, outlet named), and a quick `[THAT GUY STING]` verdict to close on.
-- Duck's voice: casual, blunt, funny. No em dashes. Prices get today's money only if it's an old price (news prices are already today's).
-- Never mention Counterfeit or "my band".
+## Format: one weekly video, cut into Shorts (Duck, Nov 23)
+Duck: "maybe they should just be 5 minutes... with the plan to make a short or 2 of them?... this was intended for shorts but 3 minutes is very short." So:
+- **One solo Fresh Tracks video a week, about 5 minutes, with 2 or 3 stories** read back to back. Posts as a regular YouTube video.
+- **Each story stands alone at about 90 seconds (200 to 250 words)**: its own hook line, its own That Guy. The editor cuts each story out as its own Short (with the end card). One recording = one weekly video + 2 or 3 Shorts.
+- **The filter still applies per story:** if it isn't wild or funny in the first line and paying off within about a minute, it doesn't make the week.
+- **Video wrapper:** a 2-line open ("This is Fresh Tracks, the music news that went wrong this week.") and a 1-line close, kept out of the story blocks so each Short starts on its own hook.
+- Line 1 of every story is the hook (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the craziest specific fact, said cold. Then a rapid chain (one line per beat), one oddly specific detail, a real quote (exact, outlet named), and a quick `[THAT GUY STING]`. Say when it happened. No TALK cues (solo). Duck's voice, no em dashes, never Counterfeit.
 
 ## Where it goes
 `lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
