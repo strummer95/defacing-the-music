@@ -4,7 +4,7 @@ Name picked by Duck (Nov 23). On a Short, the label reads like "Fresh Tracks: St
 
 Duck, Nov 23: "i wonder if we should watch for crazy stories of the week, and maybe i can do shorts like 1-5 minutes here and there to just keep content fresh... but the news needs to be wild enough, not tragic, and not boring... i want stuff that anyone could find interesting, not just fans of who its about."
 
-Quick vertical Shorts between full episodes. Claude finds the picks every week; Duck reads one on camera.
+A one-off solo video when something big and wild happens in music. Duck reads it on camera; a Short or two get cut from it.
 
 ## What makes the cut (all of these)
 - **Wild.** Somebody did something nobody sane would do, or something absurd happened. "Band cancels tour", "album leaks", "two rappers beef" is not wild.
@@ -20,7 +20,7 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 - **No:** a metal band playing a Denny's ("not even a big deal... isnt even that crazy"). Fred Armisen's sound-effects Grammy nod ("not really shit going real wrong"). A $500k guitar theft ("not that interesting"). Kate Nash's tour losses. Brian Eno not flying (an irony one-liner, not a story).
 - **So the bar is:** something has to genuinely go wrong or be insane, ideally with a chain of decisions (the How Did This Get Made side). Quirky, cute or "huh, neat" doesn't make it. A story that's a sequence of events building to something absurd beats a single odd fact.
 
-When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
+When nothing clears the bar, say so. A boring video hurts more than no video.
 
 ## Format: one story, only when it's worth it (Duck, Nov 23)
 Duck: "this isnt gonna be regular or a set thing... its just if theres a big wild thing in music, i throw an episode out there... they arent gonna be mixed like the OTR episodes."
