@@ -35,8 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (in_array($key, $known, true)) {
       $label = trim(mb_substr((string)($_POST['label'] ?? ''), 0, 120));
       $when = trim(mb_substr((string)($_POST['when'] ?? ''), 0, 200));
-      dtm_cut_state_update($script['id'], function ($st) use ($key, $label, $when) {
+      $credit = null;
+      if (str_starts_with($key, 'own:') && isset($_POST['author'])) {
+        $src = trim(mb_substr((string)($_POST['source'] ?? ''), 0, 400));
+        if ($src !== '' && !dtm_safe_url($src)) { header('Location: images.php?id=' . urlencode($script['id']) . '&badlink=1#' . rawurlencode($key)); exit; }
+        $credit = ['author' => trim(mb_substr((string)$_POST['author'], 0, 200)), 'license' => trim(mb_substr((string)($_POST['license'] ?? ''), 0, 120)), 'source' => $src];
+      }
+      dtm_cut_state_update($script['id'], function ($st) use ($key, $label, $when, $credit) {
         if ($label === '' && $when === '') unset($st['labels'][$key]); else $st['labels'][$key] = ['label' => $label, 'when' => $when];
+        if ($credit) foreach ($st['added'] as &$a) if ('own:' . ($a['file'] ?? '') === $key) { $a = $credit + $a; }
         return $st;
       });
     }
@@ -91,6 +98,7 @@ dtm_page_start('Images', $user, true);
   <h1 class="metal">Images</h1>
   <p class="cut-for bang"><?= $ep !== '' ? 'EP ' . h(str_pad($ep, 2, '0', STR_PAD_LEFT)) . ' · ' : '' ?><?= h($script['title']) ?></p>
   <?php if (isset($_GET['added'])): ?><p class="notice ok bang" role="status"><?= max(1, (int)$_GET['added']) > 1 ? (int)$_GET['added'] . ' pictures added.' : 'Added.' ?></p><?php endif; ?>
+  <?php if (isset($_GET['badlink'])): ?><p class="notice err bang" role="alert">The "where it came from" link has to start with https://</p><?php endif; ?>
   <?php if (isset($_GET['labeled'])): ?><p class="notice ok bang" role="status">Label saved.</p><?php endif; ?>
   <?php if (isset($_GET['hidden'])): ?><p class="notice ok bang" role="status">Hidden. It's in the hidden pile at the bottom if you want it back.</p><?php endif; ?>
   <?php if (isset($_GET['removed'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
@@ -124,10 +132,17 @@ dtm_page_start('Images', $user, true);
       <figcaption>
         <span class="cut-ttl"><?= h($im['label']) ?></span>
         <?php if ($im['when'] !== ''): ?><span class="cut-when">Show when: <?= h($im['when']) ?></span><?php endif; ?>
-        <details class="cut-label"><summary class="small">Edit label</summary>
+        <?php if ($im['kind'] === 'own' && (trim((string)($im['author'] ?? '')) === '' || trim((string)($im['license'] ?? '')) === '')): ?><span class="cut-when">Needs a credit: open Edit label</span><?php endif; ?>
+        <details class="cut-label"><summary class="small"><?= $im['kind'] === 'own' ? 'Edit label and credit' : 'Edit label' ?></summary>
           <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($script['id']) ?>"><input type="hidden" name="action" value="label"><input type="hidden" name="key" value="<?= h($im['key']) ?>">
             <input name="label" type="text" maxlength="120" value="<?= h($im['label'] !== $im['title'] ? $im['label'] : '') ?>" placeholder="<?= h($im['title']) ?>" aria-label="Label">
             <input name="when" type="text" maxlength="200" value="<?= h($im['when']) ?>" placeholder="Show when... (optional)" aria-label="Show when">
+            <?php if ($im['kind'] === 'own'): ?>
+            <span class="small"><b>Credit</b> (shows on the public sources page)</span>
+            <input name="author" type="text" maxlength="200" value="<?= h($im['author'] ?? '') ?>" placeholder="Photo by" aria-label="Photo by">
+            <input name="license" type="text" maxlength="120" value="<?= h($im['license'] ?? '') ?>" placeholder="License (CC BY 2.0 / My own photo...)" aria-label="License">
+            <input name="source" type="url" maxlength="400" value="<?= h($im['source'] ?? '') ?>" placeholder="https://commons.wikimedia.org/wiki/File:..." aria-label="Where it came from">
+            <?php endif; ?>
             <button type="submit" class="pull-btn bang">Save</button>
           </form></details>
         <span class="cut-acts">
