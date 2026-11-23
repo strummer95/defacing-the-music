@@ -39,7 +39,9 @@ const DTM_SEEDS = [
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
-  'ft-stubhub-phantom-concert' => ['4ee55457557182573c0499930b09c84dedcb7b72', 'a9380164ee244d72143a4857964b6d2e2d03e4af'], // first tellings (confusing about who booked what)
+  'ft-ye-band-room-opera' => ['a900870fe3f750e324f26a171827f3e8bbc300f1'],
+  'ft-slayer-forum-seats' => ['c5a28081020bbaf30f833c1ca7b9026cee91c214'],
+  'ft-stubhub-phantom-concert' => ['4ee55457557182573c0499930b09c84dedcb7b72', 'a9380164ee244d72143a4857964b6d2e2d03e4af', '1eb8cd6ce4edd8ca2b3f0bc25ad464628fde7d1f'], // first tellings (confusing about who booked what)
   'otr-vol-2' => ['2e91936294f739961f0d347b1b473da6a191453e'],
   'otr-vol-1' => ['5012ee992e62ef8001038379a1d3e7ce5dbc4f2a'],
   'otr-brown-mms' => ['46bf539450138b0e68278f9993675900462f9546', '97741a8f637102e9c7a91840eb8308d56ff62677', '185337d55dab189a8e3351952deeba8fa15b715e'], // the idea notes, before they became story blocks

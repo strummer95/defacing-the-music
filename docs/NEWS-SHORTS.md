@@ -26,7 +26,7 @@ When nothing clears the bar, say so. A boring video hurts more than no video.
 Duck: "this isnt gonna be regular or a set thing... its just if theres a big wild thing in music, i throw an episode out there... they arent gonna be mixed like the OTR episodes."
 - **One story per video. No schedule.** Only when something big and wild happens in music. Never a weekly roundup, never mixed with other stories.
 - **Solo, up to about 5 minutes** (no Pat, so reading time is the finished length: up to about 650 words; most land at 2 to 4 minutes). Then **a Short or two** cut from it (the hook moment, with the end card).
-- **Open:** the hook line cold, then "This is Fresh Tracks. I'm Duck." **Close:** a punchline, then "Due to unforeseen circumstances, I'll see you next time." **No That Guy and no sting**: that's for the main episodes only (Duck, Nov 23).
+- **Open:** the hook line cold, then "This is Fresh Tracks. I'm Duck." **Close:** a punchline, then "This was a Fresh Track, and due to unforeseen circumstances, I'll see you next time." (Duck's sign-off, Nov 23) **No That Guy and no sting**: that's for the main episodes only (Duck, Nov 23).
 - **The filter:** wild or funny in the first line, and it has to genuinely go wrong or be insane. If it can't be, skip it, however big the news.
 - Story shape: hook, the chain of events (one line per beat), oddly specific details, real quotes (exact, outlet named), a closing punchline. Say when it happened. No TALK cues (solo). Duck's voice, no em dashes, never Counterfeit.
 - Claude doesn't run a weekly scan by default. When Duck asks "anything wild lately?", search the last week or two and bring picks under these rules.
