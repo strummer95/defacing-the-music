@@ -30,6 +30,10 @@ const DTM_SEEDS = [
   // Full Off The Record episodes (Duck, Nov 23: 3 quick, direct stories per episode).
   'otr-vol-1' => ['', "Off The Record: Candy, Blood and a Cow Tongue", "Brown M&M's, the KISS blood comic, Gene's tongue"],
   'otr-vol-2' => ['', "Off The Record: Oz, Phil and the Parakeets", "Dark Side of the Rainbow, In the Air Tonight, Hendrix's parakeets"],
+  // Fresh Tracks Duck picked (Nov 23): one story per solo video.
+  'ft-stubhub-phantom-concert' => ['', "Fresh Tracks: StubHub's Phantom Concert", ''],
+  'ft-slayer-forum-seats' => ['', "Fresh Tracks: Slayer Fans vs. the Seats", ''],
+  'ft-ye-band-room-opera' => ['', "Fresh Tracks: Kanye's Band Room Opera", ''],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
@@ -64,8 +68,11 @@ const DTM_SEED_KINDS = [
   'otr-brown-mms' => 'otr', 'otr-hendrix-parakeets' => 'otr', 'otr-dark-side-rainbow' => 'otr', 'otr-kiss-blood-comic' => 'otr',
   'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr',
   'otr-vol-1' => 'otr', 'otr-vol-2' => 'otr',
+  'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week',
 ];
-const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2']; // side-story seeds that arrive as finished scripts, not ideas
+// side-story seeds that arrive as finished scripts, not ideas
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera'];
+const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11']; // "happened on" for dated seeds
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
 const DTM_SEED_OLD_TITLES = [
@@ -150,7 +157,7 @@ function dtm_seed_scripts(): void {
       if ($body === '') continue;
       // New scripts land in the library (no episode number); Duck decides when they become episodes.
       $kind = DTM_SEED_KINDS[$key] ?? 'episode';
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'story_date' => DTM_SEED_DATES[$key] ?? '', 'updated' => date('c')];
     }
     return $list;
   });
