@@ -160,3 +160,7 @@ body.admin .script-list.board .sline .dot{color:#9a96a0}
 body.admin .script-list.board .sline .when,body.admin .script-list.board .sline .flag{font:600 12px Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#6a645a}
 body.admin .script-list.board .sline .flag{color:var(--ink);background:var(--amber);padding:1px 6px;border-radius:2px}
 @media (max-width:900px){ body.admin .script-list.board .sline{white-space:normal} }
+
+body.admin .pull-flash{margin:0}
+body.admin .pull-flash summary{cursor:pointer}
+body.admin .pull-flash .pull-output{margin:10px 0 0;color:var(--paper);font:12px/1.4 ui-monospace,Menlo,monospace;white-space:pre-wrap;max-height:240px;overflow:auto;padding:10px}
