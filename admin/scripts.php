@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif ($yt !== '' && !preg_match('#^https://#i', $yt)) $error = 'The YouTube link should start with https://';
     elseif ($pdate !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $pdate)) $error = 'Date should look like 2026-12-04.';
     elseif ($sdate !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $sdate)) $error = 'The "happened on" date should look like 2026-11-07.';
-    elseif ($kind === 'week' && $sdate === '') $error = 'Due To This Week stories need the date it happened, so you know when it gets stale.';
+    elseif ($kind === 'week' && $sdate === '') $error = 'Fresh Tracks stories need the date it happened, so you know when it gets stale.';
     else {
       $saved = $pid !== '' ? $pid : bin2hex(random_bytes(6));
       dtm_json_update('scripts.json', function ($l) use ($saved, $title, $subtitle, $status, $body, $sources, $kind, $yt, $pdate, $sdate) {

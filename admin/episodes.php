@@ -90,7 +90,7 @@ dtm_page_start('Episodes', $user, true);
   <h1 class="metal">Episodes</h1>
   <?php if (isset($_GET['deleted'])): ?><p class="notice ok bang" role="status">Removed. Its script is back with the unnumbered ones.</p><?php endif; ?>
   <?php if ($error): ?><p class="notice err bang" role="alert"><?= h($error) ?></p><?php endif; ?>
-  <p class="small">The main show. Scripts get a number when you make them an episode. Side stuff (Off The Record, Mic Swap, Due To This Week) lives in <a href="side.php">Side Stories</a>.</p>
+  <p class="small">The main show. Scripts get a number when you make them an episode. Side stuff (Off The Record, Mic Swap, Fresh Tracks) lives in <a href="side.php">Side Stories</a>.</p>
   <p><a class="pull-btn bang link-btn" href="scripts.php?new=1&amp;kind=episode">New script</a></p>
   <?= dtm_board_html(dtm_board('main'), ['published' => 'Nothing out yet.', 'planned' => 'No numbered episodes waiting.', 'ready' => 'Nothing ready.', 'draft' => 'No drafts.']) ?>
   <?php if ($library): ?>

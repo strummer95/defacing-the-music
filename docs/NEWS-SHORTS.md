@@ -1,4 +1,6 @@
-# News Shorts: "Due To This Week"
+# News Shorts: "Fresh Tracks"
+
+Name picked by Duck (Nov 23). On a Short, the label reads like "Fresh Tracks: StubHub sold a concert that doesn't exist."
 
 Duck, Nov 23: "i wonder if we should watch for crazy stories of the week, and maybe i can do shorts like 1-5 minutes here and there to just keep content fresh... but the news needs to be wild enough, not tragic, and not boring... i want stuff that anyone could find interesting, not just fans of who its about."
 
@@ -10,7 +12,7 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 - **Not tragic.** Nobody died, nobody badly hurt, nobody's fresh crisis (overdose, illness, abuse, rehab). Small bruised egos and wrecked property are fine.
 - **Not polarizing.** No politics, elections, causes, race, religion, culture-war fights, even if it's the week's biggest music story (CLAUDE.md hard rule).
 - **Real and sourced.** At least one solid outlet (AP, Reuters, BBC, Billboard, Rolling Stone, local news). No rumor accounts, no "fans are saying". Ongoing legal stuff about living people: "reportedly", "according to", "police say", and name the outlet.
-- **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Due To This Week story as aging after 4 days and stale after 7.
+- **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Fresh Tracks story as aging after 4 days and stale after 7.
 
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
@@ -25,7 +27,7 @@ When a week has nothing that clears the bar, say so and give 0 or 1 picks. A bor
 `lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
 
 ```
-# Due To This Week: <date range>
+# Fresh Tracks: <date range>
 
 ## 1. <short label>
 **Happened:** YYYY-MM-DD (the day it happened or first got reported; required, news goes stale fast)
