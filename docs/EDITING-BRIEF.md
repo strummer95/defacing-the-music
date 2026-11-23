@@ -52,6 +52,7 @@ Duck: "we need to maximize our potential." The first Short (Ozzy bat, 21s) got 4
 - **Keep it tight:** 20 to 45 seconds. Cut every pause that isn't a punchline beat (in clips, pauses are shorter than in the full episode).
 - **End on a laugh or a punchline**, not a trailing sentence. A clean loop back to the first line is a bonus.
 - **Title and caption** say the weird specific thing ("Ozzy bit a dove's head off in a record label meeting"), never just "the Ozzy bat story".
+- **End card (Duck, Nov 23):** every Short, Reel and TikTok ends on `brand/shorts/shorts-end-card-2s.mp4` (or the still `shorts-end-card.png`, held about 1.5 to 2 seconds): logo, name, defacingthemusic.com, "Full episodes on YouTube". Cut to it hard right after the last laugh or punchline; no fade-out of the story, no "thanks for watching". Keep it to 2 seconds or less (a long ending gets swiped and hurts the loop). Its text sits clear of the right-side buttons and the bottom caption area.
 - **Volume:** post several Shorts per episode, one every day or two around release. Each one is a fresh test; new channels need a handful before one catches.
 - For each clip, give Duck 2 or 3 opening-line options (with timestamps) and the on-screen hook text, so he can pick the strongest. Check the "stayed to watch" number after each one and tell Duck what worked.
 
