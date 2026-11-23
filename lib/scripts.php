@@ -31,7 +31,7 @@ const DTM_SEEDS = [
   'otr-vol-1' => ['', "Off The Record: Candy, Blood and a Cow Tongue", "Brown M&M's, the KISS blood comic, Gene's tongue"],
   'otr-vol-2' => ['', "Off The Record: Oz, Phil and the Parakeets", "Dark Side of the Rainbow, In the Air Tonight, Hendrix's parakeets"],
   // Fresh Tracks Duck picked (Nov 23): one story per solo video.
-  'ft-stubhub-phantom-concert' => ['', "Fresh Tracks: StubHub's Phantom Concert", ''],
+  'ft-stubhub-phantom-concert' => ['a9380164ee244d72143a4857964b6d2e2d03e4af', '', "Fresh Tracks: StubHub's Phantom Concert", ''],
   'ft-slayer-forum-seats' => ['', "Fresh Tracks: Slayer Fans vs. the Seats", ''],
   'ft-ye-band-room-opera' => ['', "Fresh Tracks: Kanye's Band Room Opera", ''],
 ];
