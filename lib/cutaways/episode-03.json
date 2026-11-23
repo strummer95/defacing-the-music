@@ -27,19 +27,6 @@
    "attribution_required": "true"
   },
   {
-   "file": "03-meat-counter.jpg",
-   "title": "Butcher shop meat counter",
-   "commons_title": "-2019-09-19 Meat couter display, Coxfords Butchers, Market Place, Aylsham.JPG",
-   "source": "https://commons.wikimedia.org/wiki/File:-2019-09-19_Meat_couter_display,_Coxfords_Butchers,_Market_Place,_Aylsham.JPG",
-   "author": "Kolforn",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/-2019-09-19_Meat_couter_display%2C_Coxfords_Butchers%2C_Market_Place%2C_Aylsham.JPG/1920px--2019-09-19_Meat_couter_display%2C_Coxfords_Butchers%2C_Market_Place%2C_Aylsham.JPG",
-   "width": 1920,
-   "height": 1440,
-   "attribution_required": "true"
-  },
-  {
    "file": "04-des-moines-winter.jpg",
    "title": "Des Moines in winter",
    "commons_title": "Morning Skyline - Des Moines, Iowa - Winter on the Des Moines River (24805016620) (cropped).jpg",
@@ -79,19 +66,6 @@
    "attribution_required": "true"
   },
   {
-   "file": "07-pasteur-rabies-shot.jpg",
-   "title": "Louis Pasteur giving a rabies shot",
-   "commons_title": "Pasteur inoculating a man with the rabies virus. Chromolitho Wellcome L0027358.jpg",
-   "source": "https://commons.wikimedia.org/wiki/File:Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg",
-   "author": "Wellcome Collection",
-   "license": "CC BY 4.0",
-   "license_url": "https://creativecommons.org/licenses/by/4.0",
-   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg/1920px-Pasteur_inoculating_a_man_with_the_rabies_virus._Chromolitho_Wellcome_L0027358.jpg",
-   "width": 1920,
-   "height": 1277,
-   "attribution_required": "true"
-  },
-  {
    "file": "08-alamo.jpg",
    "title": "The Alamo, San Antonio",
    "commons_title": "Mission Alamo 7127.jpg",
@@ -102,19 +76,6 @@
    "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mission_Alamo_7127.jpg/1920px-Mission_Alamo_7127.jpg",
    "width": 1920,
    "height": 1440,
-   "attribution_required": "true"
-  },
-  {
-   "file": "09-alamo-cenotaph.jpg",
-   "title": "The Alamo Cenotaph monument",
-   "commons_title": "Alamo Cenotaph (48873531712).jpg",
-   "source": "https://commons.wikimedia.org/wiki/File:Alamo_Cenotaph_(48873531712).jpg",
-   "author": "Eden, Janine and Jim from New York City",
-   "license": "CC BY 2.0",
-   "license_url": "https://creativecommons.org/licenses/by/2.0",
-   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Alamo_Cenotaph_%2848873531712%29.jpg/1920px-Alamo_Cenotaph_%2848873531712%29.jpg",
-   "width": 1920,
-   "height": 2560,
    "attribution_required": "true"
   },
   {
@@ -129,6 +90,45 @@
    "width": 1920,
    "height": 2882,
    "attribution_required": "false"
+  },
+  {
+   "file": "08-ozzy-2025.jpg",
+   "title": "Ozzy at Back to the Beginning, 2025",
+   "commons_title": "Ozzy Osbourne performs at Back to the Beginning.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Ozzy_Osbourne_performs_at_Back_to_the_Beginning.jpg",
+   "author": "Keiran Bowers",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0",
+   "fetch": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Ozzy_Osbourne_performs_at_Back_to_the_Beginning.jpg/1920px-Ozzy_Osbourne_performs_at_Back_to_the_Beginning.jpg",
+   "width": 1920,
+   "height": 1440,
+   "attribution_required": "true"
+  },
+  {
+   "file": "09-randy-cardiff-1980.jpg",
+   "title": "Randy Rhoads live in Cardiff, 1980",
+   "commons_title": "Randy rhoads cardiff 1980.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Randy_rhoads_cardiff_1980.jpg",
+   "author": "Andrew King",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/1/19/Randy_rhoads_cardiff_1980.jpg",
+   "width": 1920,
+   "height": 2684,
+   "attribution_required": "true"
+  },
+  {
+   "file": "10-randy-les-paul-1980.jpg",
+   "title": "Randy Rhoads with a Les Paul, Cardiff 1980",
+   "commons_title": "Randy Rhoads with Les Paul guitar (1980).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Randy_Rhoads_with_Les_Paul_guitar_(1980).jpg",
+   "author": "Andrew King",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "fetch": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Randy_Rhoads_with_Les_Paul_guitar_%281980%29.jpg",
+   "width": 1920,
+   "height": 2415,
+   "attribution_required": "true"
   }
  ]
 }
