@@ -4,10 +4,10 @@
 require_once __DIR__ . '/cutaways.php';
 require_once __DIR__ . '/edits.php';
 
-const DTM_BOARD_GROUPS = ['published' => 'Published', 'ready' => 'Ready', 'draft' => 'Drafts'];
+const DTM_BOARD_GROUPS = ['published' => 'Published', 'planned' => 'Planned', 'ready' => 'Ready', 'draft' => 'Drafts'];
 
 function dtm_board(string $which): array {
-  $out = ['published' => [], 'ready' => [], 'draft' => []];
+  $out = ['published' => [], 'planned' => [], 'ready' => [], 'draft' => []];
   $scripts = dtm_scripts();
   $byId = []; foreach ($scripts as $s) $byId[$s['id']] = $s;
   $edits = []; foreach (dtm_edits() as $p) if (($p['script_id'] ?? '') !== '') $edits[$p['script_id']] = $p['id'];
@@ -15,14 +15,14 @@ function dtm_board(string $which): array {
     'script' => $s, 'episode' => $e,
     'title' => $e['title'] ?? $s['title'] ?? '', 'subtitle' => $e['subtitle'] ?? $s['subtitle'] ?? '',
     'kind' => $s['kind'] ?? 'episode', 'youtube' => ($e['youtube'] ?? '') ?: ($s['youtube'] ?? ''), 'date' => ($e['date'] ?? '') ?: ($s['date'] ?? ''),
-    'status' => $e ? (DTM_EPISODE_STATUSES[$e['status']] ?? 'Planned') : (DTM_SCRIPT_STATUSES[$s['status']] ?? 'Draft'),
+    'status' => $e ? (string)$e['status'] : (string)($s['status'] ?? 'draft'),
     'edit' => $s ? ($edits[$s['id']] ?? '') : '',
     'happened' => (string)($s['story_date'] ?? ''),
   ];
   if ($which === 'main') {
     foreach (dtm_episodes() as $e) {
       $s = $byId[$e['script_id']] ?? null;
-      $out[$e['status'] === 'published' ? 'published' : 'ready'][] = $row($s, $e);
+      $out[$e['status'] === 'published' ? 'published' : 'planned'][] = $row($s, $e);
     }
     foreach ($scripts as $s) {
       if ($s['kind'] !== 'episode' || (string)$s['episode'] !== '') continue;
@@ -47,17 +47,21 @@ function dtm_board_row(array $r): string {
   $s = $r['script']; $e = $r['episode'];
   $tag = $e ? 'EP ' . str_pad((string)$e['number'], 2, '0', STR_PAD_LEFT) : ($r['kind'] === 'episode' ? 'NO #' : strtoupper(DTM_SCRIPT_KINDS[$r['kind']] ?? 'Side'));
   $o = '<li><span class="ep bang' . ($e ? '' : ' ep-side') . '">' . h($tag) . '</span>';
-  $o .= '<span class="ttl"><span class="tline" title="' . h($r['title'] . ($r['subtitle'] !== '' ? ' · ' . $r['subtitle'] : '')) . '"><b>' . h($r['title']) . '</b>' . ($r['subtitle'] !== '' ? ' <em class="sub">' . h($r['subtitle']) . '</em>' : '') . '</span>';
-  $meta = [h($r['status'])];
-  if ($r['date'] !== '') $meta[] = 'out ' . h(date('M j, Y', strtotime($r['date'])));
+  $o .= '<span class="ttl"><span class="tline" title="' . h($r['title']) . '"><b>' . h($r['title']) . '</b></span>';
+  $meta = [];
+  if ($r['subtitle'] !== '') $meta[] = '<em class="sub">' . h($r['subtitle']) . '</em>';
+  if ($r['status'] === 'recorded') $meta[] = '<span class="flag">Recorded</span>'; // the one status the section doesn't already say
+  if ($r['status'] === 'idea') $meta[] = '<span class="flag">Idea</span>';
+  if ($r['date'] !== '') $meta[] = '<span class="when">Out ' . h(date('M j, Y', strtotime($r['date']))) . '</span>';
   if ($r['happened'] !== '') {
     $days = (int)floor((strtotime(date('Y-m-d')) - strtotime($r['happened'])) / 86400);
     $age = $days <= 0 ? 'today' : ($days === 1 ? 'yesterday' : "$days days ago");
     $live = $r['kind'] === 'week' && $r['date'] === '';
     $cls = $live && $days > 7 ? ' stale' : ($live && $days > 4 ? ' aging' : '');
-    $meta[] = '<span class="happened' . $cls . '">happened ' . h(date('M j', strtotime($r['happened']))) . ' (' . h($age) . ')' . ($cls === ' stale' ? ', getting stale' : '') . '</span>';
+    $meta[] = '<span class="when happened' . $cls . '">Happened ' . h(date('M j', strtotime($r['happened']))) . ' (' . h($age) . ')' . ($cls === ' stale' ? ', getting stale' : '') . '</span>';
   }
-  $o .= '<span class="meta">' . implode(' · ', $meta) . '</span></span>';
+  if ($meta) $o .= '<span class="sline">' . implode(' <span class="dot">·</span> ', $meta) . '</span>';
+  $o .= '</span>';
   $o .= '<span class="acts">';
   if ($s) {
     $sid = urlencode($s['id']);
@@ -75,6 +79,7 @@ function dtm_board_row(array $r): string {
 function dtm_board_html(array $groups, array $empty): string {
   $o = '';
   foreach (DTM_BOARD_GROUPS as $k => $label) {
+    if (!isset($empty[$k])) continue; // Side Stories have no Planned section
     $o .= '<h2 class="bang saved-h board-h">' . h($label) . ' <span class="small">(' . count($groups[$k]) . ')</span></h2>';
     if (!$groups[$k]) { $o .= '<p class="small">' . h($empty[$k]) . '</p>'; continue; }
     $o .= '<ul class="script-list board">' . implode('', array_map('dtm_board_row', $groups[$k])) . '</ul>';
