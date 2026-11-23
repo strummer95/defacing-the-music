@@ -7,6 +7,10 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 - **Realistic pace** if something posts every week (a full episode or a side story) plus 3 to 5 Shorts a week: about 100 to 500 per episode at 3 months, 500 to 1,500 at 6 months, 1,500 to 5,000 at 12 months; **5,000 most likely in 12 to 18 months.** One Short that takes off can jump that by months. Set expectations by this, not by hype.
 - Most shows that would have made it quit around month 4 to 6. Consistency is the plan.
 
+## Length math (learned from episodes 1 and 2)
+- Pat's reactions and riffing roughly **double** the reading time. A 20 to 30 minute script became an hour-long episode that couldn't be cut shorter.
+- So write to the finished length you want, halved: Off The Record is 3 stories in about 30 minutes, so 2 to 3 minutes of reading per story. Keep main episodes at the low end of 20 to 30 minutes of reading if the goal is under an hour.
+
 ## What moves the numbers (in order)
 1. **A steady schedule: something every week.** Full episodes take weeks of research, so fill the gaps with side stories (Off The Record, Due To This Week news Shorts, Mic Swap, Encore). Monthly-only posting makes growth crawl.
 2. **Win the first second of every Short.** The first Short (Ozzy bat, 21s) kept only 30% past the first second ("stayed to watch"); Shorts that keep getting pushed sit around 60 to 70%+. Rules in `docs/EDITING-BRIEF.md` ("Shorts, Reels, TikTok"): open on the craziest specific line, the part people don't know (the dove, the frog, the cow's head, not "the bat"), big hook text and captions from frame one, no lead-in, 20 to 45 seconds, end on a laugh, then the 2-second end card (`brand/shorts/`).

@@ -27,11 +27,21 @@ const DTM_SEEDS = [
   'otr-phil-collins-drowning' => ['', "Off The Record: In the Air Tonight", "Did Phil Collins watch a man drown?"],
   'otr-gene-simmons-tongue' => ['', "Off The Record: Gene Simmons's Cow Tongue", "Did Gene Simmons get a cow's tongue grafted on?"],
   'otr-ozzy-ants' => ['', "Off The Record: Ozzy and the Ants", "Did Ozzy really snort a line of ants?"],
+  // Full Off The Record episodes (Duck, Nov 23: 3 quick, direct stories per episode).
+  'otr-vol-1' => ['', "Off The Record: Candy, Blood and a Cow Tongue", "Brown M&M's, the KISS blood comic, Gene's tongue"],
+  'otr-vol-2' => ['', "Off The Record: Oz, Phil and the Parakeets", "Dark Side of the Rainbow, In the Air Tonight, Hendrix's parakeets"],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
+  'otr-brown-mms' => ['46bf539450138b0e68278f9993675900462f9546', '97741a8f637102e9c7a91840eb8308d56ff62677'], // the idea notes, before they became story blocks
+  'otr-hendrix-parakeets' => ['06f3370707c1c2758c3302e29563441752ac8974', '179fa24af4c8ad5bb6df5792a7ed1108bdefd701'], // the idea notes, before they became story blocks
+  'otr-dark-side-rainbow' => ['fa5f87d7f01170923c907b0f0a75207e7e907a01', '5cbf2cb1f807430625cbeed760013f1f3f9f19ec'], // the idea notes, before they became story blocks
+  'otr-kiss-blood-comic' => ['519ea0ac316cf99a1fb04b71622899b73323089d', '72da21a3c7a9480df661c93841d39bab8ada4573'], // the idea notes, before they became story blocks
+  'otr-phil-collins-drowning' => ['1b6c47848eb56876ce51a9ce7df3e0beec51fbee', '7ce9d8c5e2bd4454761aff53ea27dc9aa47c2424'], // the idea notes, before they became story blocks
+  'otr-gene-simmons-tongue' => ['d920ccadfb047027d609be7e35a3fd2b1a4014fc', '8cea70436b48d93571c7ac4665d16bec663f2783'], // the idea notes, before they became story blocks
+  'otr-ozzy-ants' => ['2bde68aa0a45ec634f7b974032651d44364a8823', 'd2805e55a366f14af5a095dcd406be4c12c04696'], // the idea notes, before they became story blocks
   'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a', '7232a021773d9aa2a230518fa393f16447343a59', 'd61ecbce297a5442a2a42112b2a583f61d133e1b', '9fb19500807901e9cf1d32c3ebff9918e42ad46c', 'e40daceeba30539686c8fbe484a7c645b2e688fb'],
   'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee', '305bfaa521a7e92ea540da27d1e71e68b29afc18', '4c534b033ad2e436832c01d045a51a5a74f49e1f', '6b7e320eed0fe6ac0402a18be46009af1e8e1442', 'fa7f326e9b310ee92d5a88bb9c4772ea4ac5d313', '0c7dc51dce8b66aad0ddd26579234aa52e38ccd7', '91ea8b21657d392a16d1ab471d2625abacba505c', '2f5511ac3b078a4619f203d1928f2c566149ebbd', 'adfd9d5a2a7b8580ef155ee7a85e6bdd525eab67'],
   'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5', '687fbe72cc2458ddad679552cf3aa2290c9f9e48', 'b76c280a63359aa13c883bc417f09f6adddab2c5', '6cd32e7d91cb8997871fa61fe41049777ec0633b', '753f5b89fd82ccc4eabdfa52a5f06e4ff26b92f9', '3ac5d60d055afac5ed18ffb2f767e0875e240f08', '8959ceeb759ab1b8783254ff339726735f07546d', '7a89853673f1480bc1808326f4e584396607f523', '2e7ac65438c3d6c86fe5fb8ae2ade3cc1c87ce4c', '447f1afc31457162070dbda3cbf53a9e5479bb99', 'b2d5e48ee734a3100bfefdb58bba16c605d14971', '940d2899c4cfbf8e05619caf278fc63e7349e041', '1a1cc66ea5721695bd21f501d3bb17d97dfb4f59', '5b0961c8bef94983a55600990b7b1b6c0b253556', '85319a50de877ee834acd790034855c3afefe3bf', '742e4da6dd6c55d1ea3dab3ca99e3764c8b4852b', '0c5f40fefe115df3c103a98dbe2eaa2d74119e43', 'a572618a70a64e6939410843e521578e0a894262', '6d3373d80a0a4ec97dba3167e3831184de2a0dfe', '451a3835f1044e8dc955dcdeffa5d73650319413', '0e4d652801e5a192271900d0594abd3d8df6bc55', '202c95ab6b5c6633a9e9044290b918f27f8f84f4'],
@@ -51,7 +61,9 @@ const DTM_SEED_OLD = [
 const DTM_SEED_KINDS = [
   'otr-brown-mms' => 'otr', 'otr-hendrix-parakeets' => 'otr', 'otr-dark-side-rainbow' => 'otr', 'otr-kiss-blood-comic' => 'otr',
   'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr',
+  'otr-vol-1' => 'otr', 'otr-vol-2' => 'otr',
 ];
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2']; // side-story seeds that arrive as finished scripts, not ideas
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
 const DTM_SEED_OLD_TITLES = [
@@ -95,6 +107,7 @@ function dtm_upgrade_seeds(): void {
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
         if (in_array((string)($s['subtitle'] ?? ''), DTM_SEED_OLD_SUBTITLES[$key] ?? [], true)) $s['subtitle'] = DTM_SEEDS[$key][2];
         if (in_array((string)($s['title'] ?? ''), DTM_SEED_OLD_TITLES[$key] ?? [], true)) $s['title'] = DTM_SEEDS[$key][1];
+        if (($s['kind'] ?? 'episode') !== 'episode' && ($s['status'] ?? '') === 'idea') $s['status'] = 'ready'; // idea notes that became scripts
       }
     }
     return $list;
@@ -135,7 +148,7 @@ function dtm_seed_scripts(): void {
       if ($body === '') continue;
       // New scripts land in the library (no episode number); Duck decides when they become episodes.
       $kind = DTM_SEED_KINDS[$key] ?? 'episode';
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => $kind === 'episode' ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
     }
     return $list;
   });

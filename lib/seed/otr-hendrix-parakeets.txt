@@ -1,19 +1,25 @@
-## IDEA (Off The Record, not a script yet)
-Duck approved this one for future work (Nov 23). Research it before writing; the verdict below is Claude's best guess from memory. Length: about 15 minutes on its own, or about 8 to 10 minutes as one of three in a 30-minute episode.
+[STORY BLOCK: about 2 to 3 minutes of reading. Recorded as part of Off The Record: Oz, Phil and the Parakeets (use that script in the prompter)]
 
-## THE LEGEND
-London has thousands of wild bright-green parakeets. The story goes that Jimi Hendrix released a pair on Carnaby Street in 1968, and every one of them descends from Jimi's birds.
+## HENDRIX AND LONDON'S PARAKEETS
+[CLIP: Hendrix's parakeets]
+London is full of wild green parrots. And everybody blames Jimi Hendrix.
 
-## VERDICT (to confirm)
-LEGEND. Scientists actually studied where the parakeets came from (pet escapes and releases over decades, sightings going back long before 1968) and found nothing behind the Hendrix story. Other versions blame the film The African Queen.
+The legend: in 1968, Jimi Hendrix let a pair of parakeets go on Carnaby Street in London. And every wild parakeet in London today comes from Jimi's two birds. Estimates put it around thirty thousand of them in and around London now. Bright green. Screaming. In England.
 
-## THE ANGLE
-Anyone gets it, no music knowledge needed. The fun is that it's such a perfect rock legend that people wanted it to be true, and the rival origin stories are just as dumb.
+[TALK: Legend or fact? Ask Pat what Jimi would even be doing with parakeets.]
 
-## RESEARCH TO DO
-- The study that tested the Hendrix theory (who did it, when, what they found).
-- How many wild parakeets London has now, and the other origin legends.
-- Where the Hendrix version first showed up in print.
+There's a rival legend too: the birds escaped from the movie set of The African Queen, Humphrey Bogart, 1951.
 
-## SHORTS HOOK
-"London is full of wild parrots and everyone blames Jimi Hendrix."
+So in 2019, scientists at Queen Mary University of London actually tested it. And here's how: they used geographic profiling. That's the method police use to find where a serial killer lives, based on where the crimes happen. They ran it on more than five thousand parakeet sightings, from 1968 to 2018, to find where the birds started.
+
+Carnaby Street? Nothing. The movie studio? Nothing. They also searched 3,697 old newspaper pages mentioning parakeets, going back to 1804. Not one release by a rock star or a movie star. The oldest mention of the Hendrix story they could find was on the BBC's website in 2005.
+
+And the birds were in England way before Jimi. There's a sighting in Norfolk in 1855. A pair with five babies in central London in 1886.
+
+The real answer is boring: people kept letting their pet birds go. Especially during the parrot disease panics of 1929 and 1952. One 1929 newspaper reported authorities in Berlin "recommended people take precautions and not to allow parrots to kiss or bite them."
+
+The lead scientist said the parakeets are "a consequence of repeated releases and introductions, and nothing to do with publicity stunts by musicians or movie stars."
+
+Verdict: LEGEND.
+
+[THAT GUY STING] That Guy: every person in 1929 who got scared of a parrot kiss and opened the window. Jimi's innocent. For once.
