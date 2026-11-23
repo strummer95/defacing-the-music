@@ -5,7 +5,8 @@
 //                 The pictures are not in git: the server downloads each one from Wikimedia the first time it's
 //                 opened and keeps it in uploads/cutaways/lib/<seed>/ (never overwritten by a pull, no direct web access).
 // Shipped sources: lib/sources/<seed>.json  {"sources": [{"title", "publisher", "url"}]}
-// Duck's changes: data/cutaways.json, keyed by script id: {"hidden": [shipped file names], "added": [his own images]}.
+// Duck's changes: data/cutaways.json, keyed by script id: {"hidden": [shipped file names], "added": [his own images],
+//                 "labels": {"lib:<file>"|"own:<file>": {"label": "his name for it", "when": "where it goes"}}}.
 //                 His own images live in uploads/cutaways/own/<script id>/. Extra sources are a field on the script.
 require_once __DIR__ . '/uploads.php';
 require_once __DIR__ . '/episodes.php';
@@ -29,11 +30,11 @@ function dtm_lib_json(string $dir, string $key): array {
 function dtm_cut_state(string $scriptId): array {
   $all = dtm_json_read('cutaways.json');
   $st = is_array($all[$scriptId] ?? null) ? $all[$scriptId] : [];
-  return $st + ['hidden' => [], 'added' => []];
+  return $st + ['hidden' => [], 'added' => [], 'labels' => []];
 }
 function dtm_cut_state_update(string $scriptId, callable $fn): void {
   dtm_json_update('cutaways.json', function ($all) use ($scriptId, $fn) {
-    $st = (is_array($all[$scriptId] ?? null) ? $all[$scriptId] : []) + ['hidden' => [], 'added' => []];
+    $st = (is_array($all[$scriptId] ?? null) ? $all[$scriptId] : []) + ['hidden' => [], 'added' => [], 'labels' => []];
     $all[$scriptId] = $fn($st);
     return $all;
   });
@@ -51,6 +52,9 @@ function dtm_cutaways(array $script, bool $withHidden = false): array {
     $out[] = $im + ['kind' => 'lib', 'key' => 'lib:' . $im['file'], 'hidden' => $hidden];
   }
   foreach ($st['added'] as $im) if (is_array($im) && isset($im['file'])) $out[] = $im + ['kind' => 'own', 'key' => 'own:' . $im['file'], 'hidden' => false];
+  // Duck's labels (admin only): 'label' is his name for the picture, 'when' says where it goes in the episode.
+  // The credit 'title' stays as it was, so the public Sources & Credits page keeps the real title.
+  foreach ($out as &$im) { $lb = $st['labels'][$im['key']] ?? []; $im['label'] = trim((string)($lb['label'] ?? '')) ?: (string)$im['title']; $im['when'] = trim((string)($lb['when'] ?? '')); }
   return $out;
 }
 
