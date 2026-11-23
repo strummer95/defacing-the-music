@@ -200,6 +200,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
     <a href="episodes.php" class="admin-user bang">Episodes</a>
     <a href="scripts.php" class="admin-user bang">Scripts</a>
     <a href="uploads.php" class="admin-user bang">Uploads</a>
+    <a href="news.php" class="admin-user bang">News</a>
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>
     <?php if ($pullButton): ?>
     <form method="post" action="deploy.php" id="pull-form">

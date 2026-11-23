@@ -104,6 +104,10 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - Write scripts so there are several 20 to 45 second standalone moments per episode. The "That Guy" moment is a natural one. Mark them in scripts with `[CLIP: short label]` at the start of the moment so they're easy to find when editing.
 - **Win the first second (Duck, Nov 23: "we need to maximize our potential").** The first Short kept only 30% past the first second. Every clip opens on its craziest, most specific line (the part people don't know, not the famous part), with big on-screen hook text and captions from frame one, no lead-in. Full rules: `docs/EDITING-BRIEF.md`, "Shorts, Reels, TikTok". When writing scripts, give each `[CLIP]` moment a line that works as a cold first sentence.
 
+### News Shorts: "Due To This Week" (Duck, Nov 23)
+- Quick 45 to 90 second Shorts on the week's wildest music news, to keep the channel fresh between episodes. Duck: "the news needs to be wild enough, not tragic, and not boring... stuff that anyone could find interesting, not just fans of who its about."
+- Picks go in `lib/news/YYYY-MM-DD.md` (0 to 3 picks with sources, hook text and a ready-to-read script), merged so Duck reads them in admin > News after Pull latest. Rules and template: `docs/NEWS-SHORTS.md`. First sample batch Nov 23; a weekly scheduled run only once Duck says go.
+
 ### Writing crutches to avoid
 - "A whole office full of guys": save it for when it's genuinely a group (it was in 9 of 13 scripts).
 - `[Pause.]`: fewer, better placed (10 to 15 per script is too many to mean anything).

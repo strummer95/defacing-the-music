@@ -86,3 +86,8 @@ body.admin .edit-bar .pull-btn{min-height:38px;font-size:14px}
   body.admin .admin-user{padding:6px 2px;font-size:13px}
   body.admin .admin-bar .pull-btn{min-height:38px;padding:6px 14px;font-size:13px}
 }
+
+/* News Shorts picks */
+body.admin .news-body h2{margin-top:28px}
+body.admin .news-body h3{font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.04em;margin:30px 0 6px;padding-top:16px;border-top:2px solid #ddd6c8}
+body.admin .news-body p{font-size:18px;line-height:1.55}
