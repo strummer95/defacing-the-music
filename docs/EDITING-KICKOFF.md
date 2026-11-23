@@ -116,6 +116,7 @@ Duck (Nov 23): bouncing between sessions "ruins the flow of everything." The clo
 
 ## Spliced Shorts ("Pat never said this")
 Duck and Pat "saying" sentences they never said, built one word at a time from different moments in an episode (started on the editing PC, Nov 2026). Rules:
+- **The model one (Duck's description):** Duck spliced to say "this show is awesome," Pat spliced to say it's terrible, Duck tells him to shut up. Short, a back-and-forth, the two of them roasting each other or the show.
 - **Only Duck and Pat, saying dumb things about themselves or each other.** Never put words in anyone else's mouth. Nothing political, racial, sexual about a real person, or anything about real crimes. Nothing that could be clipped and passed around as a real quote.
 - **The cuts stay obviously choppy** (visible jump cuts, audio not smoothed into fake-natural speech), so it reads as an edit, never a deepfake.
 - **Label every one** with the recurring on-screen tag (for example "Pat never said this") plus the normal end card.
