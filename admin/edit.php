@@ -2,6 +2,33 @@
 // Edit: mark up an episode transcript (CUT / COLD / CLIP / notes) for the editing session on Duck's PC.
 require __DIR__ . '/../lib/edits.php';
 $user = dtm_require_admin();
+// From a Transcript button: open that script's transcript project, or offer to start or hook one up.
+$forScript = (string)($_GET['script'] ?? '');
+if ($forScript !== '' && $_SERVER['REQUEST_METHOD'] !== 'POST') {
+  $sc = dtm_script($forScript);
+  if (!$sc) { header('Location: edit.php'); exit; }
+  if ($ep = dtm_edit_for_script($sc['id'])) { header('Location: edit.php?id=' . $ep['id']); exit; }
+  $free = array_values(array_filter(dtm_edits(), fn($p) => ($p['script_id'] ?? '') === ''));
+  dtm_page_start('Transcript', $user, true); ?>
+<section class="admin-card">
+  <h1 class="metal">Transcript</h1>
+  <p class="cut-for bang"><?= (string)$sc['episode'] !== '' ? 'EP ' . h(str_pad((string)$sc['episode'], 2, '0', STR_PAD_LEFT)) . ' · ' : '' ?><?= h($sc['title']) ?></p>
+  <p>No transcript is hooked to this one yet.</p>
+  <?php if ($free): ?>
+  <form method="post" class="admin-form"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="link"><input type="hidden" name="script" value="<?= h($sc['id']) ?>">
+    <label for="lid" class="bang">Already marked it up? Hook it up</label>
+    <div class="btn-row"><select id="lid" name="id" class="admin-select">
+      <?php foreach ($free as $p): ?><option value="<?= h($p['id']) ?>"><?= h($p['name']) ?> (<?= count($p['parts']) ?> part<?= count($p['parts']) === 1 ? '' : 's' ?>)</option><?php endforeach; ?>
+    </select><button type="submit" class="pull-btn bang">Use this one</button></div>
+  </form>
+  <?php endif; ?>
+  <form method="post" class="admin-form"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="create"><input type="hidden" name="script" value="<?= h($sc['id']) ?>">
+    <input type="hidden" name="name" value="<?= h(((string)$sc['episode'] !== '' ? 'Episode ' . $sc['episode'] . ': ' : '') . $sc['title']) ?>">
+    <div class="btn-row"><button type="submit" class="pull-btn bang">Start a new transcript</button></div>
+  </form>
+</section>
+<?php dtm_page_end(); exit;
+}
 $id = preg_replace('/[^a-f0-9]/', '', (string)($_GET['id'] ?? $_POST['id'] ?? ''));
 $json = fn($d, $code = 200) => (http_response_code($code) || true) && exit(json_encode($d));
 
@@ -14,11 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_SESSION['csrf']) || !hash_equals($_SESSION['csrf'], (string)($_POST['csrf'] ?? ''))) $json(['error' => 'Page expired. Reload.'], 400);
   } else dtm_check_csrf();
   try {
+    $linkTo = (string)($_POST['script'] ?? '');
+    if ($linkTo !== '' && !dtm_script($linkTo)) $linkTo = '';
     if ($action === 'create') {
       $name = trim(mb_substr((string)($_POST['name'] ?? ''), 0, 80)) ?: 'New episode';
       $nid = bin2hex(random_bytes(6));
-      dtm_edit_update($nid, fn($p) => ['id' => $nid, 'name' => $name, 'created' => date('c'), 'token' => bin2hex(random_bytes(20)), 'parts' => [], 'marks' => []]);
+      dtm_edit_update($nid, fn($p) => ['id' => $nid, 'name' => $name, 'script_id' => $linkTo, 'created' => date('c'), 'token' => bin2hex(random_bytes(20)), 'parts' => [], 'marks' => []]);
       header("Location: edit.php?id=$nid"); exit;
+    }
+    if ($action === 'link' && $linkTo !== '' && dtm_edit($id) && !dtm_edit_for_script($linkTo)) {
+      dtm_edit_update($id, function ($p) use ($linkTo) { $p['script_id'] = $linkTo; return $p; });
+      header("Location: edit.php?id=$id"); exit;
     }
     if (!dtm_edit($id)) { http_response_code(404); exit('No such edit.'); }
     if ($action === 'addpart') {

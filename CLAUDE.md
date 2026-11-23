@@ -127,6 +127,13 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - **Encore:** Duck's name for any follow-up episode on a story he's already done.
 - **Mic Swap** (Duck's pick, Nov 16): a guest flips it and tells Duck a wild story, like The Dollop's "Reverse Dollop". Title format: "Defacing the Music: Mic Swap with [guest]".
 
+## Admin layout (Duck, Nov 23)
+- Menu bar on every admin page (`dtm_admin_nav()` in `lib/auth.php`), in Duck's order: **Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List**. Account name and Pull latest stay top right.
+- **Episodes** (`admin/episodes.php`) and **Side Stories** (`admin/side.php`) share one list (`lib/board.php`): Published first, then Ready, then Drafts, each row with Prompter, Images, Transcript (opens or hooks up that script's transcript project in `edit.php?script=`), plus Details / Edit script / YouTube. `scripts.php` is now just the script editor (its list redirects to Episodes).
+- Every script has a **Type** (`kind`): `episode` (main show, numbered via Make it an episode) or a side story: `otr` Off The Record (legend or fact), `micswap` Mic Swap, `week` Due To This Week (news Shorts), `encore`, `other`. Side stories never get numbers; they carry their own status (incl. Published), YouTube link and publish date.
+- **Dates (Duck: "dates will be critical for the small crazy story snippets"):** scripts have `story_date` ("Happened on"). Required for Due To This Week; the list shows how old it is and flags it aging after 4 days, stale after 7, until it's published. News picks carry `**Happened:**` and admin > News turns a pick into a dated Due To This Week script in one click.
+- **Off The Record** (Duck's pick, Nov 23): the legend-or-fact format, "Defacing the Music: Off the Record", each story ends on a verdict (Live or Lip Sync suggested, not confirmed).
+
 ## Guest List email (Duck, Nov 23: "let me email out with my gmail account for the podcast")
 - Home page signups land in `data/subscribers.json`; admin > Guest List lists them (CSV, remove) and emails the list through Duck's Gmail over SMTP (`lib/mailer.php`, a tiny built-in client; no Composer). Settings `gmail_user`, `gmail_app_password` (a Google app password, needs 2-Step Verification) and `mail_key` (signs unsubscribe links) live only in `../dtm-secrets.php`; the Guest List page writes them there safely (temp file, verify, swap).
 - One copy per subscriber, sent in batches of 10 from the browser so nothing times out, every address logged per mailing in `data/mail-log.json` so a retry never double-sends, capped at 450 a day (Gmail's limit is about 500). Every email has an unsubscribe link and one-click List-Unsubscribe headers (`unsubscribe.php`). Always send a test to yourself first.

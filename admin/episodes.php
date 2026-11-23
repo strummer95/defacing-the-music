@@ -1,6 +1,6 @@
 <?php
 // Episodes: numbered list with status, publish date, links, and the script behind each one.
-require __DIR__ . '/../lib/cutaways.php';
+require __DIR__ . '/../lib/board.php';
 $user = dtm_require_admin();
 $id = (string)($_GET['edit'] ?? '');
 $error = '';
@@ -29,15 +29,14 @@ $episodes = dtm_episodes();
 $scripts = dtm_scripts();
 $byId = [];
 foreach ($scripts as $s) $byId[$s['id']] = $s;
-$library = array_values(array_filter($scripts, fn($s) => (string)$s['episode'] === ''));
+$library = array_values(array_filter($scripts, fn($s) => (string)$s['episode'] === '' && $s['kind'] === 'episode'));
 $current = $id !== '' ? dtm_episode($id) : null;
 if ($current && $error) $current = array_merge($current, array_intersect_key($_POST, $current));
-$badge = fn($st) => '<span class="status st-' . h($st) . '">' . h(DTM_EPISODE_STATUSES[$st] ?? 'Planned') . '</span>';
 dtm_page_start('Episodes', $user, true);
 ?>
 <?php if ($current): $c = $current; ?>
 <section class="admin-card">
-  <p class="small"><a href="episodes.php">All episodes</a></p>
+  <p class="small"><a href="episodes.php">All episodes</a><?php if ($c['script_id'] !== '' && isset($byId[$c['script_id']])): ?> · <a href="scripts.php?edit=<?= h(urlencode($c['script_id'])) ?>">Edit script</a><?php endif; ?></p>
   <h1 class="metal">Episode <?= h($c['number']) ?></h1>
   <?php if (isset($_GET['made'])): ?><p class="notice ok bang" role="status">It's an episode now. Fill in the rest when it's recorded and out.</p><?php endif; ?>
   <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status">Saved.</p><?php endif; ?>
@@ -72,8 +71,9 @@ dtm_page_start('Episodes', $user, true);
     <div class="btn-row">
       <button type="submit" class="pull-btn bang">Save</button>
       <?php if ($c['script_id'] !== '' && isset($byId[$c['script_id']])): ?>
-        <a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($c['script_id'])) ?>">Read script</a>
+        <a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($c['script_id'])) ?>">Prompter</a>
         <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($c['script_id'])) ?>">Images</a>
+        <a class="pull-btn bang link-btn" href="edit.php?script=<?= h(urlencode($c['script_id'])) ?>">Transcript</a>
       <?php endif; ?>
     </div>
   </form>
@@ -88,31 +88,18 @@ dtm_page_start('Episodes', $user, true);
 <?php else: ?>
 <section class="admin-card">
   <h1 class="metal">Episodes</h1>
-  <?php if (isset($_GET['deleted'])): ?><p class="notice ok bang" role="status">Removed. Its script is back in the library.</p><?php endif; ?>
+  <?php if (isset($_GET['deleted'])): ?><p class="notice ok bang" role="status">Removed. Its script is back with the unnumbered ones.</p><?php endif; ?>
   <?php if ($error): ?><p class="notice err bang" role="alert"><?= h($error) ?></p><?php endif; ?>
-  <?php if (!$episodes): ?><p>No episodes yet.</p><?php endif; ?>
-  <ul class="script-list">
-    <?php foreach ($episodes as $e): $s = $byId[$e['script_id']] ?? null; ?>
-    <li>
-      <span class="ep bang">EP <?= h(str_pad((string)$e['number'], 2, '0', STR_PAD_LEFT)) ?></span>
-      <span class="ttl"><?= h($e['title']) ?><?php if ($e['subtitle'] !== ''): ?><em class="sub"><?= h($e['subtitle']) ?></em><?php endif; ?>
-        <em class="meta"><?= $badge($e['status']) ?><?= $e['date'] !== '' ? ' ' . h(date('M j, Y', strtotime($e['date']))) : '' ?></em></span>
-      <span class="acts">
-        <?php if ($s): ?><a class="pull-btn bang link-btn" href="prompter.php?id=<?= h(urlencode($s['id'])) ?>">Read</a>
-        <a class="pull-btn bang link-btn" href="images.php?id=<?= h(urlencode($s['id'])) ?>">Images</a><?php endif; ?>
-        <?php if ($e['youtube'] !== ''): ?><a href="<?= h($e['youtube']) ?>" target="_blank" rel="noopener">YouTube</a><?php endif; ?>
-        <a href="episodes.php?edit=<?= h(urlencode($e['id'])) ?>">Edit</a>
-      </span>
-    </li>
-    <?php endforeach; ?>
-  </ul>
+  <p class="small">The main show. Scripts get a number when you make them an episode. Side stuff (Off The Record, Mic Swap, Due To This Week) lives in <a href="side.php">Side Stories</a>.</p>
+  <p><a class="pull-btn bang link-btn" href="scripts.php?new=1&amp;kind=episode">New script</a></p>
+  <?= dtm_board_html(dtm_board('main'), ['published' => 'Nothing out yet.', 'ready' => 'Nothing ready.', 'draft' => 'No drafts.']) ?>
   <?php if ($library): ?>
   <form method="post" class="admin-form make-ep">
     <?= dtm_csrf_field() ?><input type="hidden" name="action" value="make">
     <label for="script_id" class="bang">Next up: Episode <?= h(dtm_next_episode_number()) ?></label>
     <div class="btn-row">
       <select id="script_id" name="script_id" class="admin-select" required>
-        <option value="">Pick a script from the library...</option>
+        <option value="">Pick a script...</option>
         <?php foreach ($library as $s): ?><option value="<?= h($s['id']) ?>"><?= h($s['title']) ?> (<?= h(DTM_SCRIPT_STATUSES[$s['status']] ?? 'Draft') ?>)</option><?php endforeach; ?>
       </select>
       <button type="submit" class="pull-btn bang">Make it an episode</button>

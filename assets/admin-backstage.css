@@ -97,3 +97,31 @@ body.admin .guest-list li{display:flex;gap:12px;align-items:center;flex-wrap:wra
 body.admin .guest-list li span:first-child{flex:1;min-width:200px}
 body.admin .mail-run{background:#fff;border:2px solid var(--amber);border-radius:4px;padding:14px 16px;margin:0 0 18px}
 body.admin textarea.script-box{width:100%;font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;padding:10px}
+
+/* Menu bar (Duck, Nov 23) */
+body.admin .admin-nav{background:var(--floor);border-bottom:1px solid #2a292e;position:sticky;top:0;z-index:20}
+body.admin .admin-nav-in{max-width:1100px;margin:0 auto;display:flex;gap:4px;padding:0 14px;overflow-x:auto;scrollbar-width:none}
+body.admin .admin-nav-in::-webkit-scrollbar{display:none}
+body.admin .admin-nav a{font-family:Oswald,sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);opacity:.75;text-decoration:none;padding:14px 14px 12px;border-bottom:3px solid transparent;white-space:nowrap}
+body.admin .admin-nav a:hover{opacity:1;color:var(--amber)}
+body.admin .admin-nav a.on{opacity:1;color:var(--amber);border-bottom-color:var(--amber)}
+body.admin .admin-main{max-width:920px}
+
+/* Episodes / Side Stories lists */
+body.admin .board-h{margin-top:26px}
+body.admin .board-h .small{color:#8a8478;letter-spacing:0;text-transform:none;font-family:Inter,sans-serif;font-weight:600}
+body.admin .script-list.board li{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;padding:14px 0}
+body.admin .script-list.board .acts{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+body.admin .script-list.board .acts .pull-btn{min-height:36px;font-size:13px;padding:6px 14px}
+body.admin .script-list.board .more{display:inline-flex;gap:14px;margin-left:6px;font-size:14px}
+body.admin .script-list .ep-side{background:#3a3940;color:var(--paper);font-size:12px}
+body.admin .script-list .ttl .meta{display:block;font-style:normal;font-size:13px;color:#6a645a;margin-top:4px}
+body.admin .happened{font-weight:600;color:#6a645a}
+body.admin .happened.aging{color:#a86400}
+body.admin .happened.stale{color:var(--red-dk)}
+body.admin .kind-tabs{display:flex;flex-wrap:wrap;gap:6px 14px}
+body.admin .kind-tabs a.on{font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--red)}
+body.admin .news-start{background:#fff;border:2px solid var(--amber);border-radius:4px;padding:12px 14px;margin:0 0 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+body.admin .news-start form{margin:0}
+body.admin .news-start .pull-btn{min-height:36px;font-size:13px;padding:6px 12px}
+@media (max-width:600px){ body.admin .admin-nav a{font-size:13px;padding:12px 10px 10px} }

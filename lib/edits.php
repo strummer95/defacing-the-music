@@ -7,6 +7,7 @@
 //    marks: {"<part>:<line>": {"m": "cut"|"cold"|"trim", "clip": "name", "note": "...", "words": [cut word indexes]}}}
 //    (clip is separate: a line can be both; words = single words cut inside a kept line)
 require_once __DIR__ . '/uploads.php';
+require_once __DIR__ . '/scripts.php';
 
 const DTM_EDIT_MARKS = ['cut', 'cold', 'clip', 'trim']; // trim = shorten (a pause): keep a natural beat, don't remove it
 
@@ -43,6 +44,12 @@ function dtm_edit_normalize(?array $p): ?array {
 }
 
 function dtm_edits(): array { return array_map('dtm_edit_normalize', dtm_json_read('edits.json')['projects'] ?? []); }
+// The transcript project hooked to a script (admin > Episodes / Side Stories > Transcript), or null.
+function dtm_edit_for_script(string $scriptId): ?array {
+  if ($scriptId === '') return null;
+  foreach (dtm_edits() as $p) if (($p['script_id'] ?? '') === $scriptId) return $p;
+  return null;
+}
 function dtm_edit(string $id): ?array { $p = dtm_edits()[$id] ?? null; return is_array($p) ? $p : null; }
 function dtm_edit_update(string $id, callable $fn): ?array {
   $out = null;

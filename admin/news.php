@@ -1,7 +1,41 @@
 <?php
 // News Shorts picks ("Due To This Week"): Claude drops a file in lib/news/ every Monday (docs/NEWS-SHORTS.md).
-require __DIR__ . '/../lib/auth.php';
+require __DIR__ . '/../lib/scripts.php';
 $user = dtm_require_admin();
+
+// The picks in one file: [label, title, happened, script text].
+function dtm_news_picks(string $md): array {
+  $out = [];
+  foreach (preg_split('/^## /m', $md) as $sec) {
+    if (!preg_match('/^(\d+)\.\s+(.+)$/m', $sec, $m)) continue;
+    $label = trim($m[2]);
+    $title = preg_match('/^\*\*Title:\*\*\s*(.+)$/m', $sec, $t) ? trim($t[1]) : $label;
+    $happened = preg_match('/^\*\*Happened:\*\*\s*(\d{4}-\d{2}-\d{2})/m', $sec, $d) ? $d[1] : '';
+    $parts = preg_split('/^\*\*Sources:\*\*.*$/m', $sec, 2);
+    $script = trim($parts[1] ?? '');
+    $out[] = [$label, $title, $happened, $script];
+  }
+  return $out;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  dtm_check_csrf();
+  $f = basename((string)($_POST['f'] ?? ''));
+  $n = (int)($_POST['n'] ?? -1);
+  $path = DTM_ROOT . "/lib/news/$f";
+  $picks = is_file($path) && str_ends_with($f, '.md') ? dtm_news_picks((string)file_get_contents($path)) : [];
+  if (isset($picks[$n])) {
+    [$label, $title, $happened, $script] = $picks[$n];
+    $sid = bin2hex(random_bytes(6));
+    dtm_json_update('scripts.json', function ($l) use ($sid, $title, $happened, $script) {
+      $l[] = ['id' => $sid, 'episode' => '', 'kind' => 'week', 'status' => 'draft', 'title' => $title, 'subtitle' => '', 'body' => $script . "\n",
+              'sources' => '', 'youtube' => '', 'date' => '', 'story_date' => $happened, 'updated' => date('c')];
+      return $l;
+    });
+    header('Location: scripts.php?edit=' . $sid . '&saved=1'); exit;
+  }
+  header('Location: news.php'); exit;
+}
 $files = glob(DTM_ROOT . '/lib/news/*.md') ?: [];
 rsort($files);
 $want = basename((string)($_GET['f'] ?? ''));
@@ -28,9 +62,19 @@ dtm_page_start('News', $user, true);
 ?>
 <section class="admin-card news">
   <h1 class="metal">Due To This Week</h1>
+  <p class="small"><a href="side.php?kind=week">Back to Side Stories</a></p>
   <p class="small">Claude digs up the week's wildest music stories (wild, not tragic, not political, interesting even if you've never heard of the band) and writes each one as a 45 to 90 second Short. Pick one and hit record. Hit Pull latest first if this week's isn't here yet.</p>
   <?php if (!$files): ?><p>No picks yet. None yet.</p><?php else: ?>
   <p class="small"><?php foreach ($files as $f): $b = basename($f); ?><a href="news.php?f=<?= h(urlencode($b)) ?>"<?= $f === $cur ? ' style="font-weight:800"' : '' ?>><?= h(substr($b, 0, -3)) ?></a> &nbsp; <?php endforeach; ?></p>
+  <?php $picks = dtm_news_picks((string)file_get_contents($cur)); if ($picks): ?>
+  <div class="news-start"><span class="bang">Make one a script</span>
+    <?php foreach ($picks as $i => [$label, , $happened]): ?>
+    <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="f" value="<?= h(basename($cur)) ?>"><input type="hidden" name="n" value="<?= $i ?>">
+      <button type="submit" class="pull-btn bang"><?= h(($i + 1) . '. ' . $label) ?><?= $happened !== '' ? ' (' . h(date('M j', strtotime($happened))) . ')' : '' ?></button></form>
+    <?php endforeach; ?>
+    <p class="small">Turns that pick into a Due To This Week script in Side Stories, with the date it happened, so it gets a Prompter, Images and Transcript like everything else.</p>
+  </div>
+  <?php endif; ?>
   <div class="news-body"><?= dtm_news_md((string)file_get_contents($cur)) ?></div>
   <?php endif; ?>
 </section>
