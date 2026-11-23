@@ -186,10 +186,11 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 <title><?= h($title) ?> | Defacing the Music admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Oswald:wght@500;700&family=Inter:wght@400;600;800&family=Metal+Mania&family=Bangers&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="stylesheet" href="../assets/site.css?v=<?= @filemtime(DTM_ROOT . '/assets/site.css') ?>">
 <link rel="stylesheet" href="../assets/admin.css?v=<?= @filemtime(DTM_ROOT . '/assets/admin.css') ?>">
+<link rel="stylesheet" href="../assets/admin-backstage.css?v=<?= @filemtime(DTM_ROOT . '/assets/admin-backstage.css') ?>">
 </head>
 <body class="admin">
 <header class="admin-bar">

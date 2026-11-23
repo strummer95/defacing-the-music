@@ -20,7 +20,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 
 ## Public site look: "Backstage" (Duck, Nov 22, 2026)
 - Duck picked the Backstage concept from admin > Site looks ("nice and simple"; the others "try too hard to be a theme"). The public site (`index.php`, `ep/index.php`) uses `assets/backstage.css`: dark stage `#161518` / floor `#1E1D21`, warm spotlight `#FFB547`, red `#E4251B`, paper `#F6F3EC`. Fonts: Saira Stencil One (headings, road-case stencil), Oswald (labels, buttons), Inter (body), Permanent Marker (the setlist only). Latest episode = ALL ACCESS laminate on a red lanyard; upcoming stories = Sharpie setlist gaff-taped down. Keep it simple, not a costume.
-- The admin still uses the Gig Poster styles below (`site.css` + `admin.css`). Thumbnails, OBS pieces and cover art are still Gig Poster unless Duck says otherwise.
+- The admin matches it too (Duck, Nov 23): `lib/auth.php` loads `assets/admin-backstage.css` after `site.css` + `admin.css` (it only overrides). New admin styles go in admin-backstage.css. The teleprompter (`admin/prompter.php`) keeps its own black reading screen. Thumbnails, OBS pieces and cover art are still Gig Poster unless Duck says otherwise.
 - Rejected site concepts (Nov 20 to 22), don't bring back: Hazard, B-Side (70s retro), newspaper/Front Page, VCR blue "Rewind". Suspects and Grok's After Hours stay in brand/concepts for reference.
 
 ## Brand ("Gig Poster", chosen by Dillon Nov 2026; the purple/teal/pink "Sea of Thieves / High Seas" look was rejected, never use it)
@@ -29,7 +29,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 - Hosts art: Duck and Pat drawn in the gig-poster style (made in Grok from their photos, Nov 20). Web versions `assets/hosts.webp` (1400) and `assets/hosts-800.webp`; master PNG `brand/hosts/duck-and-pat-1400.png`. Second version (Nov 20, natural skin tones): Duck on the left (slicked hair, aviators, gauges, arms crossed), Pat on the right (bald, beard).
 - Palette: black `#111111`, yellow `#FFD21F`, red `#E4251B`, cream `#F2E8D5`; illustration extras `#FF8A00`, `#FFE23B`.
 - Fonts (Google Fonts): Metal Mania (wordmark/headings), Bangers (labels, buttons, stickers), Archivo (body).
-- For new public pages, reuse `assets/backstage.css` (see Public site look above). `assets/site.css` is the Gig Poster reference for the admin.
+- For new public pages, reuse `assets/backstage.css`; for admin pages, the admin classes plus `assets/admin-backstage.css` (see Public site look above).
 - Logo: yellow warning sign with a music-note exclamation mark, bullet hole and burnt corner. Transparent `assets/logo.png` (512), `assets/logo-192.png`, favicons, `assets/og-image.png`; untouched original `assets/logo-original.png` (1024, cream background). Pair it with the Metal Mania wordmark. Host photos for thumbnails/art: `brand/photos/` (see its README; never use the Counterfeit one). Vector master from Illustrator: `brand/DTM_Logo.pdf` (+ `brand/DTM_Logo.svg`) for print, merch and cover art; the site uses the PNG because the vector trace flattens the halftone and bands the burn.
 
 ## The show
