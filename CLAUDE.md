@@ -101,6 +101,7 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 
 ### Editing
 - **Fewer trips to the PC (Duck, Nov 23: having to bounce to the Claude session on his home computer "ruins the flow of everything"; Remote Control to that PC was tried and doesn't work, don't suggest it again):** do everything possible here (scripts, research, thumbnails, Spotify art, descriptions, site). When the PC is needed, give Duck ONE paste-ready block per release covering all of it (edit, segments, Shorts, exports, checks), never a string of small asks. Exports are always one Rec. 709 SDR color setting (Spotify rejects mixed color; `docs/EDITING-BRIEF.md`, Export settings).
+- **Spliced Shorts ("Pat never said this")**: word-by-word sentences Duck and Pat never said, made on the editing PC. Rules and the shared log (`docs/SHORTS-LOG.md`) are in `docs/EDITING-BRIEF.md`. Only Duck and Pat about themselves, obviously choppy, always labeled, never anyone else's words.
 - Video editing follows `docs/EDITING-BRIEF.md` (Duck, Nov 22): transcript first, Duck marks cuts, then edit; two-shot of Duck and Pat as the main look; never show vaping; flag beer; nothing posts without Duck's OK. Don't cut pauses by default (many are beats on purpose), don't force tiny cuts or camera switches, and transcript misspellings never cancel a mark.
 
 ### Social clips (important to Duck)
