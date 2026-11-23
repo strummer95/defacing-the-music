@@ -38,17 +38,20 @@ body.playing.idle #bar{opacity:0}
 #bar button:active{background:#1c1c1c}
 #bar .val{color:#6a6a6a;font:600 13px/1 'Archivo',sans-serif;min-width:44px;text-align:center}
 #play.on{color:#FFD21F;border-color:#4a3d00}
-#help{position:fixed;top:10px;right:12px;color:#3a3a3a;font:500 12px/1.4 'Archivo',sans-serif;text-align:right;transition:opacity .4s}
+#back{position:fixed;top:10px;right:12px;z-index:6;font:600 22px/1 'Archivo',system-ui,sans-serif;color:#9a9a9a;background:rgba(17,17,17,.85);border:1px solid #2a2a2a;border-radius:8px;width:42px;height:40px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:opacity .4s}
+#back:hover{color:#FFD21F}
+body.playing.idle #back{opacity:0}
+#help{position:fixed;top:10px;left:12px;color:#3a3a3a;font:500 12px/1.4 'Archivo',sans-serif;text-align:left;transition:opacity .4s}
 body.playing #help{opacity:0}
 @media (max-width:600px){#bar .hide-sm{display:none}#help{display:none}}
 </style>
 </head>
 <body>
 <div id="line"></div>
+<a id="back" href="<?= $back ?>" title="Back" aria-label="Back to the list">←</a>
 <div id="help">Space: play/pause · ↑↓: speed · + −: size · [ ]: width · F: full screen · M: mirror</div>
 <main id="script"><?= dtm_script_html(dtm_fill_episode_number((string)$s['body'], (string)$s['episode'])) ?></main>
 <nav id="bar" aria-label="Teleprompter controls">
-  <a href="<?= $back ?>" title="Back to the list">✕</a>
   <button id="smaller" title="Smaller text (−)">A−</button>
   <button id="bigger" title="Bigger text (+)">A+</button>
   <button id="narrower" title="Narrower column ([)">⇥⇤</button>

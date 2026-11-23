@@ -225,7 +225,7 @@ function dtm_admin_nav(): string {
     'side' => ['Side Stories', 'side.php', ['side.php', 'news.php']],
     'uploads' => ['Uploads', 'uploads.php', ['uploads.php']],
     'looks' => ['Site Looks', 'looks.php', ['looks.php']],
-    'guide' => ['Host Guide', '/brand/guide/', []],
+    'guide' => ['Host Guide', 'guide.php', ['guide.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
   ];
   $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
@@ -233,7 +233,7 @@ function dtm_admin_nav(): string {
     $on = in_array($page, $pages, true);
     if ($k === 'episodes' && $side) $on = false;
     if ($k === 'side' && $side) $on = true;
-    $o .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . ($k === 'guide' ? ' target="_blank" rel="noopener"' : '') . '>' . h($label) . '</a>';
+    $o .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . '>' . h($label) . '</a>';
   }
   return $o . '</div></nav>';
 }
