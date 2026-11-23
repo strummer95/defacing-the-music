@@ -1,10 +1,12 @@
 <?php
-// Serves one cutaway image to a signed-in admin: ?s=<script id>&k=<lib:file|own:file>[&dl=1].
+// Serves one cutaway image to a signed-in admin, or to anyone holding that script's private picture link
+// (&t=, see images-share.php): ?s=<script id>&k=<lib:file|own:file>[&dl=1].
 // Shipped (lib) pictures are downloaded from Wikimedia on first use and cached in uploads/cutaways/.
 require __DIR__ . '/../lib/cutaways.php';
-dtm_require_admin();
-session_write_close(); // don't block the other images on this page while one downloads
 $script = dtm_script((string)($_GET['s'] ?? ''));
+$tok = (string)($_GET['t'] ?? '');
+if (!($tok !== '' && $script && dtm_cut_share_ok((string)$script['id'], $tok))) dtm_require_admin();
+if (session_status() === PHP_SESSION_ACTIVE) session_write_close(); // don't block the other images on this page while one downloads
 $want = (string)($_GET['k'] ?? '');
 $im = null;
 if ($script) foreach (dtm_cutaways($script, true) as $x) if ($x['key'] === $want) { $im = $x; break; }

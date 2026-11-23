@@ -40,6 +40,24 @@ function dtm_cut_state_update(string $scriptId, callable $fn): void {
   });
 }
 
+// Private link to one script's pictures for Claude (admin > Images > Copy link for Claude), like the transcript link.
+function dtm_cut_share_token(string $scriptId, bool $renew = false): string {
+  if (!$renew && ($t = (string)(dtm_cut_state($scriptId)['share'] ?? '')) !== '') return $t;
+  $tok = '';
+  try {
+    dtm_cut_state_update($scriptId, function ($st) use ($renew, &$tok) {
+      if ($renew || empty($st['share'])) $st['share'] = bin2hex(random_bytes(20));
+      $tok = (string)$st['share'];
+      return $st;
+    });
+  } catch (Throwable $e) { return ''; } // hosting full: no link for now, the page still loads
+  return $tok;
+}
+function dtm_cut_share_ok(string $scriptId, string $tok): bool {
+  $t = (string)(dtm_cut_state($scriptId)['share'] ?? '');
+  return $tok !== '' && $t !== '' && hash_equals($t, $tok);
+}
+
 // Every image for a script, shipped ones first (story order), then Duck's own.
 // Each row: file, title, author, license, license_url, source, kind ('lib'|'own'), key (lib:<file> / own:<file>), hidden.
 function dtm_cutaways(array $script, bool $withHidden = false): array {

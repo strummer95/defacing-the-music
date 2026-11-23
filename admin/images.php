@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (is_file($path)) @unlink($path);
     header('Location: images.php?id=' . urlencode($script['id']) . '&removed=1'); exit;
   }
+  if ($action === 'newshare') { dtm_cut_share_token($script['id'], true); header('Location: images.php?id=' . urlencode($script['id']) . '&newshare=1'); exit; }
   if ($action === 'label') {
     $key = (string)($_POST['key'] ?? '');
     $known = array_column(dtm_cutaways($script, true), 'key');
@@ -102,6 +103,13 @@ dtm_page_start('Images', $user, true);
   <?php if (isset($_GET['labeled'])): ?><p class="notice ok bang" role="status">Label saved.</p><?php endif; ?>
   <?php if (isset($_GET['hidden'])): ?><p class="notice ok bang" role="status">Hidden. It's in the hidden pile at the bottom if you want it back.</p><?php endif; ?>
   <?php if (isset($_GET['removed'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
+  <?php if (isset($_GET['newshare'])): ?><p class="notice ok bang" role="status">New link made. The old one stopped working.</p><?php endif; ?>
+  <?php $shareTok = dtm_cut_share_token($script['id']); if ($shareTok !== ''): ?>
+  <div class="cut-share"><p class="small">Need Claude to look at these pictures (to find credits and so on)? Copy this and paste it to Claude. It's a private link to this episode's pictures only.</p>
+    <?= dtm_copy_line('https://defacingthemusic.com/admin/images-share.php?id=' . rawurlencode($script['id']) . '&t=' . $shareTok, 'Copy link for Claude') ?>
+    <form method="post" class="small"><?= dtm_csrf_field() ?><input type="hidden" name="id" value="<?= h($script['id']) ?>"><input type="hidden" name="action" value="newshare"><button type="submit" class="linkish">New link (turns the old one off)</button></form>
+  </div>
+  <?php endif; ?>
   <?php if ($error): ?><p class="notice err bang" role="alert"><?= h($error) ?></p><?php endif; ?>
   <details class="cut-more cut-add" open>
     <summary class="bang">Add pictures</summary>
