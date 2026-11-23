@@ -23,11 +23,13 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
 ## Format of each pick
-- 45 to 90 seconds read aloud (about 110 to 220 words). Under 3 minutes always, or YouTube won't count it as a Short.
+- **Solo videos, up to 5 minutes** (Duck, Nov 23: "these should be very brief, up to 5 minutes, they will probably be solo videos"). No Pat, so reading time is the finished length: about 150 words a minute, **300 to 650 words**.
+- **Aim for 2 to 3 minutes** for most: YouTube only counts a vertical video as a Short at 3 minutes or less, and the Shorts feed is where new people find the channel. Let the big chain-of-events stories run 3 to 5 minutes as regular videos.
 - **Line 1 is the hook** (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the single craziest specific fact, said cold. No "so this week", no intro.
-- Then the story with one oddly specific detail (the rabbit-hole pillar, shrunk), a real quote if there's a good one (exact wording, outlet named), and a quick `[THAT GUY STING]` verdict to close on.
-- Duck's voice: casual, blunt, funny. No em dashes. Prices get today's money only if it's an old price (news prices are already today's).
-- Never mention Counterfeit or "my band".
+- Then the story as a quick chain (this happened, then this, then this), one oddly specific detail, a real quote if there's a good one (exact wording, outlet named), and a quick `[THAT GUY STING]` verdict to close on. No TALK cues (solo).
+- Say when it happened ("Last Saturday...", "November 7th...") so it still makes sense later.
+- Duck's voice: casual, blunt, funny. No em dashes. Never mention Counterfeit or "my band".
+- End on the 2-second end card like every Short.
 
 ## Where it goes
 `lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
