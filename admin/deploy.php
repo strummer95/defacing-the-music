@@ -13,4 +13,4 @@ dtm_json_update('deploys.json', function ($log) use ($ok, $msg, $user) {
   return array_slice($log, 0, 20);
 });
 $_SESSION['flash'] = ['ok' => $ok, 'msg' => $msg];
-header('Location: index.php');
+header('Location: ' . dtm_safe_back((string)($_POST['back'] ?? ''))); // back to the page Duck was on

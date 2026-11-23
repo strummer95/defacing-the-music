@@ -201,6 +201,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
     <?php if ($pullButton): ?>
     <form method="post" action="deploy.php" id="pull-form">
       <input type="hidden" name="csrf" value="<?= h($csrf) ?>">
+      <input type="hidden" name="back" value="<?= h((string)($_SERVER['REQUEST_URI'] ?? '')) ?>">
       <button type="submit" class="pull-btn bang" onclick="this.disabled=true;this.textContent='Pulling...';this.form.submit()">Pull latest</button>
     </form>
     <?php endif; ?>
@@ -209,6 +210,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 </header>
 <?php if ($user): echo dtm_admin_nav(); endif; ?>
 <main class="admin-main">
+<?php if ($user) echo dtm_pull_flash(); ?>
 <?php
 }
 // The menu bar (Duck, Nov 23): Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List.
@@ -237,5 +239,20 @@ function dtm_admin_nav(): string {
     $o .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . '>' . h($label) . '</a>';
   }
   return $o . '</div></nav>';
+}
+// After Pull latest: a one-line result at the top of whatever page Duck was on (details tucked away).
+function dtm_pull_flash(): string {
+  dtm_session();
+  $f = $_SESSION['flash'] ?? null;
+  if (!$f) return '';
+  unset($_SESSION['flash']);
+  $ok = !empty($f['ok']);
+  return '<details class="notice ' . ($ok ? 'ok' : 'err') . ' bang pull-flash"' . ($ok ? '' : ' open') . '><summary>' . ($ok ? 'Pulled. The site is up to date.' : 'Pull failed. Tap for details.') . '</summary><pre class="pull-output">' . h((string)($f['msg'] ?? '')) . '</pre></details>';
+}
+// Where Pull latest sends Duck back to: the admin page he was on, never anywhere else.
+function dtm_safe_back(string $back): string {
+  $back = (string)strtok($back, '#');
+  if (!preg_match('#^/admin/[A-Za-z0-9_.-]+\.php(\?[^\s<>"\'`]*)?$#', $back) || str_contains($back, 'deploy.php') || str_contains($back, '..')) return 'index.php';
+  return $back;
 }
 function dtm_page_end(): void { echo "</main>\n</body>\n</html>\n"; }
