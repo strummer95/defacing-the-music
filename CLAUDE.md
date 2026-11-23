@@ -127,6 +127,10 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - **Encore:** Duck's name for any follow-up episode on a story he's already done.
 - **Mic Swap** (Duck's pick, Nov 16): a guest flips it and tells Duck a wild story, like The Dollop's "Reverse Dollop". Title format: "Defacing the Music: Mic Swap with [guest]".
 
+## Guest List email (Duck, Nov 23: "let me email out with my gmail account for the podcast")
+- Home page signups land in `data/subscribers.json`; admin > Guest List lists them (CSV, remove) and emails the list through Duck's Gmail over SMTP (`lib/mailer.php`, a tiny built-in client; no Composer). Settings `gmail_user`, `gmail_app_password` (a Google app password, needs 2-Step Verification) and `mail_key` (signs unsubscribe links) live only in `../dtm-secrets.php`; the Guest List page writes them there safely (temp file, verify, swap).
+- One copy per subscriber, sent in batches of 10 from the browser so nothing times out, every address logged per mailing in `data/mail-log.json` so a retry never double-sends, capped at 450 a day (Gmail's limit is about 500). Every email has an unsubscribe link and one-click List-Unsubscribe headers (`unsubscribe.php`). Always send a test to yourself first.
+
 ## Cutaway images and Sources & Credits pages
 - Every shipped script gets `lib/sources/<seed>.json` (`{"sources": [{"title", "publisher", "url"}]}`, real titles, built from `research/<seed>.notes.md`) and `lib/cutaways/<seed>.json` (5 to 10 cutaway pictures).
 - Cutaways are Wikimedia Commons only, CC BY / CC BY-SA / CC0 / public domain (never NC or ND). Add them with `python3 -I tools/commons.py add <seed> "File:..." "Title" slug`, which checks the license and records the credit. Pictures are not in git: the server downloads each one from Wikimedia on first view (admin > Scripts > Images) and caches it in `uploads/cutaways/`.

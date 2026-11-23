@@ -32,8 +32,9 @@ sources + image credits, copy-ready description line in admin > Episodes. PR: ht
 ## [x] DTM-VOICE-1114: Duck's Nov 14 evening voice session (BOARD note)
 Done: rules into CLAUDE.md/STORIES.md, Ozzy/Woodstock/Disco/Jerry Lee reworked, every cold open ~75 words, decision chains and crutch cleanup across the library, seed upgrade hashes. Questions for Duck under "For Dillon". PR: https://github.com/strummer95/defacing-the-music/pull/47
 
-## [ ] DTM-SUBSCRIBERS-1: Guest List in the admin
+## [x] DTM-SUBSCRIBERS-1: Guest List in the admin
 Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
+Done (Nov 23): admin > Guest List (list, CSV, remove) plus emailing the list through Duck's Gmail (app password saved into ../dtm-secrets.php), batched sends, unsubscribe links.
 
 ## [ ] DTM-STORIES-1: Story idea backlog in the admin
 Admin-only page to log candidate stories (title, artist, year, one-line hook, source links, status idea/researching/recorded).

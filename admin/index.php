@@ -18,7 +18,7 @@ dtm_page_start('Admin', $user, true);
   <p>Hit <strong>Pull latest</strong> (top right) to copy what's on GitHub <code>main</code> onto the live site.</p>
   <p class="btn-row"><a class="pull-btn bang link-btn" href="episodes.php">Episodes</a> <a class="pull-btn bang link-btn" href="scripts.php">Scripts and teleprompter</a> <a class="pull-btn bang link-btn" href="edit.php">Edit an episode</a> <a class="pull-btn bang link-btn" href="uploads.php">Uploads</a> <a class="pull-btn bang link-btn" href="looks.php">Site looks</a> <a class="pull-btn bang link-btn" href="/brand/guide/" target="_blank" rel="noopener">Host guide</a></p>
   <ul class="stats">
-    <li><span class="bang">Guest List</span> <?= (int)$subs ?> signed up</li>
+    <li><a href="guests.php"><span class="bang">Guest List</span> <?= (int)$subs ?> signed up</a></li>
     <li><span class="bang">Last pull</span> <?= $last ? h($last['at'] . ' by ' . $last['by'] . ($last['ok'] ? '' : ' (failed)')) : 'Never from here' ?></li>
   </ul>
 </section>
