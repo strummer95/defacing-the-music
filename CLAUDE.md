@@ -100,6 +100,7 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - **Where Are They Now:** a closer on what happened to the people involved afterward. Duck: "a very good idea", and a good way to add content and length.
 
 ### Editing
+- **Fewer trips to the PC (Duck, Nov 23: having to bounce to the Claude session on his home computer "ruins the flow of everything"; Remote Control to that PC was tried and doesn't work, don't suggest it again):** do everything possible here (scripts, research, thumbnails, Spotify art, descriptions, site). When the PC is needed, give Duck ONE paste-ready block per release covering all of it (edit, segments, Shorts, exports, checks), never a string of small asks. Exports are always one Rec. 709 SDR color setting (Spotify rejects mixed color; `docs/EDITING-BRIEF.md`, Export settings).
 - Video editing follows `docs/EDITING-BRIEF.md` (Duck, Nov 22): transcript first, Duck marks cuts, then edit; two-shot of Duck and Pat as the main look; never show vaping; flag beer; nothing posts without Duck's OK. Don't cut pauses by default (many are beats on purpose), don't force tiny cuts or camera switches, and transcript misspellings never cancel a mark.
 
 ### Social clips (important to Duck)

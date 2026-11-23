@@ -64,5 +64,15 @@ The full episode stays full (an hour is normal for this kind of show). Every ful
 - **YouTube chapters on the full episode too:** timestamps in the description (0:00 Cold open, 2:10 ..., etc.) so people can jump to the part they want. Chapters need at least 3 timestamps starting at 0:00.
 - Post order around a release: full episode, then one segment and Shorts every day or two after it.
 
+## Export settings (every video, every platform)
+Spotify rejected episode 1 (Nov 23): "The color details (color range, space, primaries, and/or transfer characteristics) of the video frames change during your video." One camera (likely a phone in HDR) was tagged differently from the others. YouTube hides it; Spotify refuses. So every export:
+- **One color setting for the whole video: Rec. 709, SDR, no HDR.** Premiere: Sequence Settings > Working Color Space Rec. 709 (HDR/auto tone-mapping off); any phone clips: Modify > Interpret Footage > color space override Rec. 709 (tone-map real HDR/HLG footage first); export H.264, Rec. 709 output, HDR off.
+- **Check before upload:** `ffprobe` the export and confirm color primaries, transfer and matrix are all bt709 and the range is tv, with nothing changing partway through.
+- **Fix for a file that's already exported:** `ffmpeg -i in.mp4 -vf "scale=out_color_matrix=bt709:out_range=tv,format=yuv420p" -c:v libx264 -preset medium -crf 18 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv -c:a aac -b:a 192k -movflags +faststart out.mp4`
+- The same file goes to YouTube and Spotify (one export, both platforms).
+
+## One paste per release
+Duck (Nov 23): bouncing between sessions "ruins the flow of everything." The cloud session hands the PC session **one block per release** covering everything that needs the video files: the edit, segments, Shorts (with end card), exports and the checks above. Report back once, at the end, with every file and anything that needs Duck's call.
+
 ## Hard rules
 No political, racial, or polarizing content. Never mention Counterfeit or "my band".
