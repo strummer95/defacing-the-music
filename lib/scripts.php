@@ -19,6 +19,14 @@ const DTM_SEEDS = [
   'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
   'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
   'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
+  // Off The Record ideas Duck picked (Nov 23): land in Side Stories as ideas, not scripts yet.
+  'otr-brown-mms' => ['', "Off The Record: Van Halen's Brown M&M's", "Did Van Halen really ban brown M&M's?"],
+  'otr-hendrix-parakeets' => ['', "Off The Record: Hendrix and London's Parakeets", "Did Jimi Hendrix let loose London's wild parrots?"],
+  'otr-dark-side-rainbow' => ['', "Off The Record: Dark Side of the Rainbow", "Did Pink Floyd secretly score The Wizard of Oz?"],
+  'otr-kiss-blood-comic' => ['', "Off The Record: KISS Bled Into a Comic Book", "Did KISS really print their blood in a comic?"],
+  'otr-phil-collins-drowning' => ['', "Off The Record: In the Air Tonight", "Did Phil Collins watch a man drown?"],
+  'otr-gene-simmons-tongue' => ['', "Off The Record: Gene Simmons's Cow Tongue", "Did Gene Simmons get a cow's tongue grafted on?"],
+  'otr-ozzy-ants' => ['', "Off The Record: Ozzy and the Ants", "Did Ozzy really snort a line of ants?"],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
@@ -37,6 +45,12 @@ const DTM_SEED_OLD = [
   'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384', '3c2e6640338309ad8ba074c89d160eb2bf08144b', '80426cefcd98d892351591172fdacd4a23d26a78', '3456c1323858db2d7e76d640f2bad87b30e4b92e'],
   'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa', '78f9ce091756b4cc9e7696706ca53b389d320439', '71bf05cb3d1b659c0261af7e7ed05642421432bd', 'ff58b6e50727ed12ec11b233df789e6c0c4cc65b'],
   'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b', '59f6cbf0d89ca110853ff09a843bae56945f9d3e', '7993347285dfc4560bee02198181b5a242952274', '8d5defe843f17f645d9ef7e49a652b35c6582bcf'],
+];
+
+// Seeds that aren't main-show scripts: their type and starting status (everything else: main episode, Ready).
+const DTM_SEED_KINDS = [
+  'otr-brown-mms' => 'otr', 'otr-hendrix-parakeets' => 'otr', 'otr-dark-side-rainbow' => 'otr', 'otr-kiss-blood-comic' => 'otr',
+  'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr',
 ];
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
@@ -120,7 +134,8 @@ function dtm_seed_scripts(): void {
       $body = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
       if ($body === '') continue;
       // New scripts land in the library (no episode number); Duck decides when they become episodes.
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'status' => 'ready', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
+      $kind = DTM_SEED_KINDS[$key] ?? 'episode';
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => $kind === 'episode' ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'updated' => date('c')];
     }
     return $list;
   });
