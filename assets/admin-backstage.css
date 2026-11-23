@@ -1,0 +1,88 @@
+/* Admin in the "Backstage" look (Duck, Nov 23, 2026), to match the public site (assets/backstage.css).
+   Loaded after site.css + admin.css and only overrides: dark stage, paper cards, red buttons,
+   stencil headings (Saira Stencil One), Oswald labels, Inter text. The teleprompter keeps its own page. */
+body.admin{--stage:#161518;--floor:#1E1D21;--edge:#2b2a2f;--amber:#FFB547;--red:#E4251B;--red-dk:#b51b13;--paper:#F6F3EC;--ink:#111;--gray:#9a96a0;
+  background:var(--stage);background-image:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(255,181,71,.10),transparent 70%);background-attachment:fixed;
+  color:var(--paper);font-family:Inter,system-ui,sans-serif}
+body.admin .metal{font-family:"Saira Stencil One",Oswald,sans-serif;font-weight:400;letter-spacing:.01em}
+body.admin .bang{font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+/* top bar */
+body.admin .admin-bar{background:var(--stage);border-bottom:1px solid #2a292e;padding:12px 22px}
+body.admin .admin-bar .wordmark{font-family:"Saira Stencil One",sans-serif;font-size:22px;color:var(--paper);text-shadow:none}
+body.admin .admin-user{font-family:Oswald,sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.85}
+body.admin .admin-user:hover{color:var(--amber);opacity:1}
+
+/* buttons */
+body.admin .pull-btn{font-family:Oswald,sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  min-height:44px;padding:10px 18px;background:var(--red);color:#fff;border:0;border-radius:3px;box-shadow:none}
+body.admin .pull-btn:hover{background:#f0342a}
+body.admin .pull-btn:active{transform:translateY(1px);box-shadow:none}
+body.admin .admin-bar .pull-btn{box-shadow:0 0 0 2px var(--stage),0 0 0 4px var(--red)}
+body.admin .link-btn{color:#fff!important}
+body.admin .signout-btn{font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:15px;
+  background:transparent;color:var(--ink);border:2px solid var(--ink);border-radius:3px;box-shadow:none}
+body.admin .linkish{color:var(--red-dk)}
+
+/* cards */
+body.admin .admin-card{background:var(--paper);color:var(--ink);border:0;border-radius:4px;box-shadow:0 20px 44px rgba(0,0,0,.45);padding:26px 24px}
+body.admin .admin-card.ok{box-shadow:0 20px 44px rgba(0,0,0,.45),inset 5px 0 0 #2a7d3a}
+body.admin .admin-card.err{box-shadow:0 20px 44px rgba(0,0,0,.45),inset 5px 0 0 var(--red)}
+body.admin .admin-card h1{font-family:"Saira Stencil One",sans-serif;font-size:44px;line-height:1.05;color:var(--ink);text-shadow:none}
+body.admin .admin-card h2{font-family:Oswald,sans-serif;font-weight:700;font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+body.admin .admin-card a{color:var(--red-dk)}
+body.admin .admin-card code{background:rgba(0,0,0,.07);border-radius:3px}
+body.admin .admin-card p,body.admin .admin-card li{font-family:Inter,system-ui,sans-serif}
+
+/* forms */
+body.admin .admin-form label{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6a645a}
+body.admin .admin-form input,body.admin .admin-select,body.admin .copy-line input,body.admin .script-box,body.admin .cut-label input{
+  font-family:Inter,system-ui,sans-serif;border:2px solid #cfc8ba;border-radius:3px;background:#fff;color:var(--ink)}
+body.admin .script-box{font-family:ui-monospace,Menlo,Consolas,monospace}
+body.admin .admin-form input:focus,body.admin .admin-select:focus,body.admin .copy-line input:focus,body.admin .script-box:focus,body.admin .cut-label input:focus{outline:none;border-color:var(--amber)}
+body.admin .admin-form input[type=file]{border-style:dashed}
+
+/* notices */
+body.admin .notice{font-family:Oswald,sans-serif;font-weight:700;letter-spacing:.04em;text-transform:none;border:0;border-radius:3px;box-shadow:none;padding:10px 14px;transform:none}
+body.admin .notice.ok{background:#e7f3e4;color:#1f5a29;box-shadow:inset 5px 0 0 #2a7d3a}
+body.admin .notice.err{background:#fde3df;color:#8a0f08;box-shadow:inset 5px 0 0 var(--red)}
+
+/* lists, badges */
+body.admin .stats .bang{color:var(--red);font-size:14px}
+body.admin .script-list li,body.admin .up-list li{border-bottom:1px solid #ddd6c8}
+body.admin .script-list .ep{background:var(--ink);color:var(--amber);font-family:Oswald,sans-serif;font-weight:700;letter-spacing:.08em;font-size:15px;border-radius:2px}
+body.admin .script-list .ttl .sub{color:var(--red-dk)}
+body.admin .status{font-family:Oswald,sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #bdb6a8;border-radius:2px}
+body.admin .status.st-ready{background:var(--amber)}
+body.admin .up-row{border:1px solid #cfc8ba;border-radius:3px}
+body.admin .up-bar{border:1px solid #cfc8ba;border-radius:2px;background:#ece6da}
+body.admin .up-bar i{background:var(--amber)}
+body.admin .pull-output{background:var(--floor);border-radius:3px}
+body.admin .make-ep{border-top:1px dashed #cfc8ba}
+body.admin .cut-more{border-top:1px solid #ddd6c8}
+
+/* images page */
+body.admin .cut{background:var(--ink);border:0;border-radius:4px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+body.admin .cut figcaption{background:var(--paper)}
+body.admin .cut .pull-btn{min-height:34px;font-size:13px;padding:4px 10px;box-shadow:none}
+body.admin .cut-x{color:var(--red-dk)}
+body.admin .cut-when{color:var(--red-dk)}
+body.admin .saved-grid figure{border:1px solid #cfc8ba;border-radius:3px}
+
+/* edit-an-episode page (its own inline styles use the old fonts/colors) */
+body.admin .tx .who,body.admin .tx .tag,body.admin .tx li.part-break,body.admin .runtime b,body.admin .runtime .rt-lbl{font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+body.admin .tx .ts{color:var(--amber);border-radius:2px}
+body.admin .tx li.part-break{color:var(--amber);background:var(--ink);font-size:15px;border-radius:3px}
+body.admin .runtime{border:1px solid #3a3940;box-shadow:0 10px 24px rgba(0,0,0,.5);border-radius:4px;background:var(--floor)}
+body.admin .runtime b{color:var(--amber);font-size:18px}
+body.admin .runtime .rt-lbl{color:var(--amber)}
+body.admin .edit-bar{background:var(--floor);border-top:1px solid #3a3940}
+body.admin .edit-bar .pull-btn{min-height:38px;font-size:14px}
+
+@media (max-width:600px){
+  body.admin .admin-card h1{font-size:36px}
+  body.admin .admin-bar{padding:10px 12px}
+  body.admin .admin-bar-right{flex-wrap:wrap;justify-content:center;gap:4px 14px;margin:0 auto}
+  body.admin .admin-user{padding:6px 2px;font-size:13px}
+  body.admin .admin-bar .pull-btn{min-height:38px;padding:6px 14px;font-size:13px}
+}
