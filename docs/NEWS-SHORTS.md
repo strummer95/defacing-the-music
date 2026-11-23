@@ -32,21 +32,4 @@ Duck: "this isnt gonna be regular or a set thing... its just if theres a big wil
 - Claude doesn't run a weekly scan by default. When Duck asks "anything wild lately?", search the last week or two and bring picks under these rules.
 
 ## Where it goes
-`lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
-
-```
-# Fresh Tracks: <date range>
-
-## 1. <short label>
-**Happened:** YYYY-MM-DD (the day it happened or first got reported; required, news goes stale fast)
-**Wild because:** one line. **Why anyone cares:** one line.
-**On-screen hook text:** <6 to 10 words>
-**Title:** <the weird specific thing>
-**Sources:** [Outlet: headline](url), ...
-
-<script, about 150 words, line 1 = hook>
-
-## 2. ...
-## Close calls (skipped)
-- <story>: skipped because <tragic / political / only fans care / not wild enough>
-```
+Straight into admin > Side Stories > Fresh Tracks as a **Draft** (Duck, Nov 23: "there is no news page. just put them in fresh tracks and drafts"). Each story is its own seed: `lib/seed/ft-<slug>.txt` added to `DTM_SEEDS` (title "Fresh Tracks: <short title>"), `DTM_SEED_KINDS` (`week`), `DTM_SEED_DRAFT` and `DTM_SEED_DATES` (the happened-on date), plus `lib/sources/ft-<slug>.json` and `research/ft-<slug>.notes.md`. Script body: a bracketed note (happened date, anything to be careful about), `## OPEN` with `[CLIP: ...]` and the hook line, "This is Fresh Tracks. I'm Duck.", `## THE STORY`, `## SIGN-OFF`, `[END CARD]`.
