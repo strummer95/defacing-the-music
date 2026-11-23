@@ -63,7 +63,7 @@ dtm_page_start('Guest List', $user, true);
   <h1 class="metal">Guest List</h1>
   <p class="cut-for bang"><?= count($subs) ?> signed up</p>
   <?php if (isset($_GET['removed'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
-  <?php if (isset($_GET['gmail'])): ?><p class="notice ok bang" role="status">Gmail saved. Send yourself a test below.</p><?php endif; ?>
+  <?php if (isset($_GET['gmail']) && $_SERVER['REQUEST_METHOD'] !== 'POST'): ?><p class="notice ok bang" role="status">Gmail saved. Send yourself a test below.</p><?php endif; ?>
   <?php if ($msg): ?><p class="notice ok bang" role="status"><?= h($msg) ?></p><?php endif; ?>
   <?php if ($err): ?><p class="notice err bang" role="alert"><?= h($err) ?></p><?php endif; ?>
 
