@@ -22,14 +22,13 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
-## Format of each pick
-- **Solo videos, up to 5 minutes** (Duck, Nov 23: "these should be very brief, up to 5 minutes, they will probably be solo videos"). No Pat, so reading time is the finished length: about 150 words a minute, **300 to 650 words**.
-- **As short as the story allows: usually 60 to 90 seconds (150 to 250 words).** Duck: "im not sure these can work as 3 minutes... they have to be really wild or funny quick." The filter: if it isn't wild or funny in the first line and paying off within about a minute, it's not a Fresh Track, however big the news. Chain-of-events stories go rapid-fire (one line per beat), not long. 5 minutes is the absolute ceiling and almost never used. If a pick can't be funny fast, say so and drop it; never pad.
-- **Line 1 is the hook** (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the single craziest specific fact, said cold. No "so this week", no intro.
-- Then the story as a quick chain (this happened, then this, then this), one oddly specific detail, a real quote if there's a good one (exact wording, outlet named), and a quick `[THAT GUY STING]` verdict to close on. No TALK cues (solo).
-- Say when it happened ("Last Saturday...", "November 7th...") so it still makes sense later.
-- Duck's voice: casual, blunt, funny. No em dashes. Never mention Counterfeit or "my band".
-- End on the 2-second end card like every Short.
+## Format: one weekly video, cut into Shorts (Duck, Nov 23)
+Duck: "maybe they should just be 5 minutes... with the plan to make a short or 2 of them?... this was intended for shorts but 3 minutes is very short." So:
+- **One solo Fresh Tracks video a week, about 5 minutes, with 2 or 3 stories** read back to back. Posts as a regular YouTube video.
+- **Each story stands alone at about 90 seconds (200 to 250 words)**: its own hook line, its own That Guy. The editor cuts each story out as its own Short (with the end card). One recording = one weekly video + 2 or 3 Shorts.
+- **The filter still applies per story:** if it isn't wild or funny in the first line and paying off within about a minute, it doesn't make the week.
+- **Video wrapper:** a 2-line open ("This is Fresh Tracks, the music news that went wrong this week.") and a 1-line close, kept out of the story blocks so each Short starts on its own hook.
+- Line 1 of every story is the hook (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the craziest specific fact, said cold. Then a rapid chain (one line per beat), one oddly specific detail, a real quote (exact, outlet named), and a quick `[THAT GUY STING]`. Say when it happened. No TALK cues (solo). Duck's voice, no em dashes, never Counterfeit.
 
 ## Where it goes
 `lib/news/YYYY-MM-DD.md` (the Monday it was made), read in admin > News. Template:
