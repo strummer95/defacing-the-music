@@ -14,6 +14,12 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 - **Real and sourced.** At least one solid outlet (AP, Reuters, BBC, Billboard, Rolling Stone, local news). No rumor accounts, no "fans are saying". Ongoing legal stuff about living people: "reportedly", "according to", "police say", and name the outlet.
 - **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Fresh Tracks story as aging after 4 days and stale after 7.
 
+## Duck's calls on the first batch (Nov 23): learn from these
+- **Yes:** StubHub selling a concert that doesn't exist. Ye locking a composer in a high school band room to write an opera ("kinda solid for DTM"; Duck's call to allow it: tell the lawsuit story only, say "allegedly", nothing about Ye's views or politics). The Beach Boys touring with no original members, **if** it's built as a chain: this one left, then this, then this, and now nobody's left but they can still use the name.
+- **Maybe:** the cruise pianist rescued by marlin fishermen. Slayer's show stopped because fans wrecked the venue (depends on what actually happened).
+- **No:** a metal band playing a Denny's ("not even a big deal... isnt even that crazy"). Fred Armisen's sound-effects Grammy nod ("not really shit going real wrong"). A $500k guitar theft ("not that interesting"). Kate Nash's tour losses. Brian Eno not flying (an irony one-liner, not a story).
+- **So the bar is:** something has to genuinely go wrong or be insane, ideally with a chain of decisions (the How Did This Get Made side). Quirky, cute or "huh, neat" doesn't make it. A story that's a sequence of events building to something absurd beats a single odd fact.
+
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
 ## Format of each pick
