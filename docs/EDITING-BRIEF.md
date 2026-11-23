@@ -74,13 +74,5 @@ Spotify rejected episode 1 (Nov 23): "The color details (color range, space, pri
 ## One paste per release
 Duck (Nov 23): bouncing between sessions "ruins the flow of everything." The cloud session hands the PC session **one block per release** covering everything that needs the video files: the edit, segments, Shorts (with end card), exports and the checks above. Report back once, at the end, with every file and anything that needs Duck's call.
 
-## Spliced Shorts ("Pat never said this")
-Duck and Pat "saying" sentences they never said, built one word at a time from different moments in an episode (started on the editing PC, Nov 2026). Rules:
-- **Only Duck and Pat, saying dumb things about themselves or each other.** Never put words in anyone else's mouth. Nothing political, racial, sexual about a real person, or anything about real crimes. Nothing that could be clipped and passed around as a real quote.
-- **The cuts stay obviously choppy** (visible jump cuts, audio not smoothed into fake-natural speech), so it reads as an edit, never a deepfake.
-- **Label every one** with the recurring on-screen tag (for example "Pat never said this") plus the normal end card.
-- Build from word-level timestamps of the episode audio; note in the log which line each word came from.
-- **Log every Short and spliced clip** in `docs/SHORTS-LOG.md` (file, what it says, source episode, posted or not) and push it, so the cloud session can see what exists.
-
 ## Hard rules
 No political, racial, or polarizing content. Never mention Counterfeit or "my band".
