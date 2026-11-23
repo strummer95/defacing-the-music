@@ -88,7 +88,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
   </header>
   <div class="wrap">
     <div class="stage-copy">
-      <span class="label">Tonight only. Every night.</span>
+      <span class="label">True stories. Terrible decisions.</span>
       <h1>Defacing<br><span>the Music</span></h1>
       <p class="lede">Rock and roll's worst nights, and who to blame for them.</p>
       <a class="btn" href="<?= $h($listen['YouTube']) ?>?sub_confirmation=1" rel="noopener" target="_blank">Subscribe on YouTube</a>
