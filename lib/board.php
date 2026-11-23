@@ -47,15 +47,17 @@ function dtm_board_row(array $r): string {
   $s = $r['script']; $e = $r['episode'];
   $tag = $e ? 'EP ' . str_pad((string)$e['number'], 2, '0', STR_PAD_LEFT) : ($r['kind'] === 'episode' ? 'NO #' : strtoupper(DTM_SCRIPT_KINDS[$r['kind']] ?? 'Side'));
   $o = '<li><span class="ep bang' . ($e ? '' : ' ep-side') . '">' . h($tag) . '</span>';
-  $o .= '<span class="ttl">' . h($r['title']) . ($r['subtitle'] !== '' ? '<em class="sub">' . h($r['subtitle']) . '</em>' : '');
-  $o .= '<em class="meta"><span class="status">' . h($r['status']) . '</span>' . ($r['date'] !== '' ? ' Out ' . h(date('M j, Y', strtotime($r['date']))) : '');
+  $o .= '<span class="ttl"><span class="tline" title="' . h($r['title'] . ($r['subtitle'] !== '' ? ' · ' . $r['subtitle'] : '')) . '"><b>' . h($r['title']) . '</b>' . ($r['subtitle'] !== '' ? ' <em class="sub">' . h($r['subtitle']) . '</em>' : '') . '</span>';
+  $meta = [h($r['status'])];
+  if ($r['date'] !== '') $meta[] = 'out ' . h(date('M j, Y', strtotime($r['date'])));
   if ($r['happened'] !== '') {
     $days = (int)floor((strtotime(date('Y-m-d')) - strtotime($r['happened'])) / 86400);
     $age = $days <= 0 ? 'today' : ($days === 1 ? 'yesterday' : "$days days ago");
-    $stale = $r['kind'] === 'week' && $r['date'] === '' && $days > 7;
-    $o .= ' <span class="happened' . ($stale ? ' stale' : ($r['kind'] === 'week' && $r['date'] === '' && $days > 4 ? ' aging' : '')) . '">Happened ' . h(date('M j', strtotime($r['happened']))) . ' (' . h($age) . ')' . ($stale ? ': getting stale' : '') . '</span>';
+    $live = $r['kind'] === 'week' && $r['date'] === '';
+    $cls = $live && $days > 7 ? ' stale' : ($live && $days > 4 ? ' aging' : '');
+    $meta[] = '<span class="happened' . $cls . '">happened ' . h(date('M j', strtotime($r['happened']))) . ' (' . h($age) . ')' . ($cls === ' stale' ? ', getting stale' : '') . '</span>';
   }
-  $o .= '</em></span>';
+  $o .= '<span class="meta">' . implode(' · ', $meta) . '</span></span>';
   $o .= '<span class="acts">';
   if ($s) {
     $sid = urlencode($s['id']);
