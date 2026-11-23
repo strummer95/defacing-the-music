@@ -159,7 +159,7 @@ const DTM_SCRIPT_STATUSES = ['idea' => 'Idea', 'draft' => 'Draft', 'ready' => 'R
 
 // What a script is for (Duck, Nov 23): the main show ("episode", numbered in admin > Episodes) or a side story,
 // listed in admin > Side Stories. Side stories never get episode numbers.
-const DTM_SCRIPT_KINDS = ['episode' => 'Main episode', 'otr' => 'Off The Record', 'micswap' => 'Mic Swap', 'week' => 'Due To This Week', 'encore' => 'Encore', 'other' => 'Other side story'];
+const DTM_SCRIPT_KINDS = ['episode' => 'Main episode', 'otr' => 'Off The Record', 'micswap' => 'Mic Swap', 'week' => 'Fresh Tracks', 'encore' => 'Encore', 'other' => 'Other side story'];
 const DTM_SIDE_KINDS = ['otr', 'micswap', 'week', 'encore', 'other'];
 
 // One-time move to "scripts library + episodes": tags seeded rows with their seed key, gives every script a

@@ -1,6 +1,6 @@
 <?php
 // Side Stories (Duck, Nov 23): everything that isn't a numbered main episode. Off The Record (legend or fact),
-// Mic Swap, Due To This Week (quick news Shorts), Encore, and anything else. Same list and buttons as Episodes.
+// Mic Swap, Fresh Tracks (quick news Shorts), Encore, and anything else. Same list and buttons as Episodes.
 require __DIR__ . '/../lib/board.php';
 $user = dtm_require_admin();
 $want = (string)($_GET['kind'] ?? '');

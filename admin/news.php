@@ -1,5 +1,5 @@
 <?php
-// News Shorts picks ("Due To This Week"): Claude drops a file in lib/news/ every Monday (docs/NEWS-SHORTS.md).
+// News Shorts picks ("Fresh Tracks"): Claude drops a file in lib/news/ every Monday (docs/NEWS-SHORTS.md).
 require __DIR__ . '/../lib/scripts.php';
 $user = dtm_require_admin();
 
@@ -61,7 +61,7 @@ function dtm_news_md(string $md): string {
 dtm_page_start('News', $user, true);
 ?>
 <section class="admin-card news">
-  <h1 class="metal">Due To This Week</h1>
+  <h1 class="metal">Fresh Tracks</h1>
   <p class="small"><a href="side.php?kind=week">Back to Side Stories</a></p>
   <p class="small">Claude digs up the week's wildest music stories (wild, not tragic, not political, interesting even if you've never heard of the band) and writes each one as a 45 to 90 second Short. Pick one and hit record. Hit Pull latest first if this week's isn't here yet.</p>
   <?php if (!$files): ?><p>No picks yet. None yet.</p><?php else: ?>
@@ -72,7 +72,7 @@ dtm_page_start('News', $user, true);
     <form method="post"><?= dtm_csrf_field() ?><input type="hidden" name="f" value="<?= h(basename($cur)) ?>"><input type="hidden" name="n" value="<?= $i ?>">
       <button type="submit" class="pull-btn bang"><?= h(($i + 1) . '. ' . $label) ?><?= $happened !== '' ? ' (' . h(date('M j', strtotime($happened))) . ')' : '' ?></button></form>
     <?php endforeach; ?>
-    <p class="small">Turns that pick into a Due To This Week script in Side Stories, with the date it happened, so it gets a Prompter, Images and Transcript like everything else.</p>
+    <p class="small">Turns that pick into a Fresh Tracks script in Side Stories, with the date it happened, so it gets a Prompter, Images and Transcript like everything else.</p>
   </div>
   <?php endif; ?>
   <div class="news-body"><?= dtm_news_md((string)file_get_contents($cur)) ?></div>
