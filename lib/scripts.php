@@ -71,7 +71,9 @@ const DTM_SEED_KINDS = [
   'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week',
 ];
 // side-story seeds that arrive as finished scripts, not ideas
-const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera'];
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2'];
+// Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
+const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera'];
 const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11']; // "happened on" for dated seeds
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
@@ -157,7 +159,7 @@ function dtm_seed_scripts(): void {
       if ($body === '') continue;
       // New scripts land in the library (no episode number); Duck decides when they become episodes.
       $kind = DTM_SEED_KINDS[$key] ?? 'episode';
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : 'idea', 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'story_date' => DTM_SEED_DATES[$key] ?? '', 'updated' => date('c')];
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : (in_array($key, DTM_SEED_DRAFT, true) ? 'draft' : 'idea'), 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'story_date' => DTM_SEED_DATES[$key] ?? '', 'updated' => date('c')];
     }
     return $list;
   });
@@ -188,8 +190,25 @@ function dtm_scripts_migrate_v2(): void {
   @file_put_contents($marker, date('c'));
 }
 
+// One time: Fresh Tracks picks that shipped as Ready (Nov 23) move to Draft, unless Duck already changed them.
+function dtm_seed_drafts_fix(): void {
+  $marker = dtm_data_dir() . '/scripts.ftdraft';
+  if (is_file($marker)) return;
+  dtm_json_update('scripts.json', function ($list) {
+    foreach ($list as &$s) {
+      $key = (string)($s['seed'] ?? '');
+      if (!in_array($key, DTM_SEED_DRAFT, true) || ($s['status'] ?? '') !== 'ready') continue;
+      $fresh = (string)@file_get_contents(__DIR__ . "/seed/$key.txt");
+      if (rtrim((string)$s['body']) === rtrim($fresh)) $s['status'] = 'draft';
+    }
+    return $list;
+  });
+  @file_put_contents($marker, date('c'));
+}
+
 function dtm_scripts(): array {
   dtm_seed_scripts();
+  dtm_seed_drafts_fix();
   dtm_scripts_migrate_v2();
   $list = dtm_json_read('scripts.json');
   foreach ($list as &$s) { $s += ['episode' => '', 'status' => 'draft', 'subtitle' => '', 'kind' => 'episode', 'youtube' => '', 'date' => '', 'story_date' => '']; if (!isset(DTM_SCRIPT_KINDS[$s['kind']])) $s['kind'] = 'episode'; }

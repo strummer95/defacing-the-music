@@ -20,7 +20,6 @@ dtm_page_start('Side Stories', $user, true);
   </p>
   <p class="btn-row">
     <a class="pull-btn bang link-btn" href="scripts.php?new=1&amp;kind=<?= h($want !== '' ? $want : 'otr') ?>">New <?= h($want !== '' ? DTM_SCRIPT_KINDS[$want] : 'side story') ?></a>
-    <?php if ($news && ($want === '' || $want === 'week')): ?><a class="pull-btn bang link-btn" href="news.php">This week's news picks</a><?php endif; ?>
   </p>
   <?= dtm_board_html($groups, ['published' => 'Nothing out yet.', 'ready' => 'Nothing ready.', 'draft' => 'No drafts yet. Hit New to start one.']) ?>
 </section>
