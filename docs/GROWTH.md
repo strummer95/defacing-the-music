@@ -10,11 +10,12 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 ## What moves the numbers (in order)
 1. **A steady schedule: something every week.** Full episodes take weeks of research, so fill the gaps with side stories (Off The Record, Due To This Week news Shorts, Mic Swap, Encore). Monthly-only posting makes growth crawl.
 2. **Win the first second of every Short.** The first Short (Ozzy bat, 21s) kept only 30% past the first second ("stayed to watch"); Shorts that keep getting pushed sit around 60 to 70%+. Rules in `docs/EDITING-BRIEF.md` ("Shorts, Reels, TikTok"): open on the craziest specific line, the part people don't know (the dove, the frog, the cow's head, not "the bat"), big hook text and captions from frame one, no lead-in, 20 to 45 seconds, end on a laugh, then the 2-second end card (`brand/shorts/`).
-3. **Volume of Shorts:** several per episode, one every day or two around a release. Each one is a fresh test.
-4. **Guest swaps with similar podcasts** (Mic Swap format): go on theirs, they come on ours.
-5. **Hometown press for Disco Demolition** (Chicago outlets love that story).
-6. **Post where the fans already are:** Reddit and Facebook groups for the bands, classic rock, metal, music history. Only when the episode is genuinely their story; never spam.
-7. **Evergreen, searchable topics** (Ozzy's bat, Woodstock '99, Disco Demolition) keep getting found for years. Titles and descriptions should use the words people search.
+3. **Digestible sizes, not just long episodes** (Duck, Nov 23: the first two episodes run about an hour and won't cut shorter). Three sizes per story: Shorts (20 to 45 seconds), **segments** (5 to 15 minute standalone chapters on YouTube, 2 to 4 per episode, rules in `docs/EDITING-BRIEF.md`), and the full episode with YouTube chapters. Plus side stories that are short by design: Off The Record (15 minutes for one story, or 3 in 30) and Due To This Week (under 90 seconds). New people sample a segment before they commit an hour.
+4. **Volume of Shorts:** several per episode, one every day or two around a release. Each one is a fresh test.
+5. **Guest swaps with similar podcasts** (Mic Swap format): go on theirs, they come on ours.
+6. **Hometown press for Disco Demolition** (Chicago outlets love that story).
+7. **Post where the fans already are:** Reddit and Facebook groups for the bands, classic rock, metal, music history. Only when the episode is genuinely their story; never spam.
+8. **Evergreen, searchable topics** (Ozzy's bat, Woodstock '99, Disco Demolition) keep getting found for years. Titles and descriptions should use the words people search.
 
 ## Reading YouTube numbers (so nobody panics or celebrates early)
 - **Views vs engaged views:** since 2025 every Short start counts as a view. "Engaged views" (people who actually watched) is the real number. First Short: 171 views, 39 engaged (about 1 in 4), average 0:11 of 0:21.

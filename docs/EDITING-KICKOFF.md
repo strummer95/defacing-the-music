@@ -96,5 +96,13 @@ Duck: "we need to maximize our potential." The first Short (Ozzy bat, 21s) got 4
 - **Volume:** post several Shorts per episode, one every day or two around release. Each one is a fresh test; new channels need a handful before one catches.
 - For each clip, give Duck 2 or 3 opening-line options (with timestamps) and the on-screen hook text, so he can pick the strongest. Check the "stayed to watch" number after each one and tell Duck what worked.
 
+## Segments: the middle size (Duck, Nov 23: "we need some more digestable content... these first 2 episodes are like an hour and i really cant get them cut down shorter")
+The full episode stays full (an hour is normal for this kind of show). Every full episode also gets cut into **2 to 4 segments**: standalone 5 to 15 minute YouTube videos, each one complete chapter of the story with its own title and thumbnail ("The Dove Incident: Ozzy vs a Record Label", "The Night Ozzy Peed on the Alamo"). They sit between Shorts (seconds) and the full episode (an hour).
+- **Mark them in the transcript** as clips named `SEGMENT: <title>` (same CLIP marks as Shorts; the name tells you which is which).
+- **A segment starts like a Short:** cold, on its best line, then gives just enough setup to stand alone (no "as we said earlier"). Keep the jokes and Pat's reactions; trim side trips.
+- **Ends with a pointer to the full episode** ("the whole story's in the full episode, link's up top") and the end card.
+- **YouTube chapters on the full episode too:** timestamps in the description (0:00 Cold open, 2:10 ..., etc.) so people can jump to the part they want. Chapters need at least 3 timestamps starting at 0:00.
+- Post order around a release: full episode, then one segment and Shorts every day or two after it.
+
 ## Hard rules
 No political, racial, or polarizing content. Never mention Counterfeit or "my band".
