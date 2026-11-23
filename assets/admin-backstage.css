@@ -137,3 +137,15 @@ body.admin .script-list.board .ttl .sub{display:inline;margin:0 0 0 6px}
 body.admin .script-list.board .ttl .sub::before{content:"· ";color:#9a96a0;font-style:normal}
 body.admin .script-list.board .tline{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:900px){ body.admin .script-list.board .tline{white-space:normal} }
+
+/* Host guide in the admin */
+body.admin .guide .toc{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px;position:sticky;top:52px;background:var(--paper);padding:8px 0;z-index:2}
+body.admin .guide .toc a{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--ink);padding:6px 12px;border-radius:3px}
+body.admin .guide .toc a:hover{background:var(--red)}
+body.admin .guide .card{border-top:1px solid #ddd6c8;padding:18px 0 6px;scroll-margin-top:110px}
+body.admin .guide .card h2{margin:0 0 10px}
+body.admin .guide ol,body.admin .guide ul{padding-left:22px}
+body.admin .guide li{margin:0 0 8px;line-height:1.55}
+body.admin .guide code,body.admin .guide .cue{font:700 14px/1.3 ui-monospace,Menlo,monospace;background:var(--ink);color:var(--amber);padding:2px 6px;border-radius:3px}
+body.admin .guide .say{background:#fff;border-left:4px solid var(--red);padding:8px 12px;font-style:italic;margin:0 0 14px}
+body.admin .guide dt{margin:12px 0 4px}
