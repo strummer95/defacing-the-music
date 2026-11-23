@@ -5,7 +5,7 @@ require __DIR__ . '/../lib/cutaways.php';
 $user = dtm_require_admin();
 $id = (string)($_GET['id'] ?? $_POST['id'] ?? '');
 $script = $id !== '' ? dtm_script($id) : null;
-if (!$script || dtm_safe_id($script['id']) === '') { http_response_code(404); dtm_page_start('Images', $user); echo '<section class="admin-card"><h1 class="metal">Images</h1><p>No such script. <a href="scripts.php">Back to scripts</a></p></section>'; dtm_page_end(); exit; }
+if (!$script || dtm_safe_id($script['id']) === '') { http_response_code(404); dtm_page_start('Images', $user); echo '<section class="admin-card"><h1 class="metal">Images</h1><p>No such script. <a href="episodes.php">Back to episodes</a></p></section>'; dtm_page_end(); exit; }
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -95,7 +95,7 @@ $ep = (string)$script['episode'];
 dtm_page_start('Images', $user, true);
 ?>
 <section class="admin-card">
-  <p class="small"><a href="scripts.php">All scripts</a> · <a href="prompter.php?id=<?= h(urlencode($script['id'])) ?>">Read</a> · <a href="scripts.php?edit=<?= h(urlencode($script['id'])) ?>">Edit</a></p>
+  <p class="small"><a href="<?= ($script['kind'] ?? 'episode') === 'episode' ? 'episodes.php' : 'side.php' ?>">Back to the list</a> · <a href="prompter.php?id=<?= h(urlencode($script['id'])) ?>">Prompter</a> · <a href="edit.php?script=<?= h(urlencode($script['id'])) ?>">Transcript</a> · <a href="scripts.php?edit=<?= h(urlencode($script['id'])) ?>">Edit script</a></p>
   <h1 class="metal">Images</h1>
   <p class="cut-for bang"><?= $ep !== '' ? 'EP ' . h(str_pad($ep, 2, '0', STR_PAD_LEFT)) . ' · ' : '' ?><?= h($script['title']) ?></p>
   <?php if (isset($_GET['added'])): ?><p class="notice ok bang" role="status"><?= max(1, (int)$_GET['added']) > 1 ? (int)$_GET['added'] . ' pictures added.' : 'Added.' ?></p><?php endif; ?>

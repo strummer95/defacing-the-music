@@ -127,7 +127,12 @@ function dtm_seed_scripts(): void {
   @file_put_contents($marker, json_encode(array_values(array_unique(array_merge($done, $todo)))));
 }
 
-const DTM_SCRIPT_STATUSES = ['idea' => 'Idea', 'draft' => 'Draft', 'ready' => 'Ready', 'recorded' => 'Recorded'];
+const DTM_SCRIPT_STATUSES = ['idea' => 'Idea', 'draft' => 'Draft', 'ready' => 'Ready', 'recorded' => 'Recorded', 'published' => 'Published'];
+
+// What a script is for (Duck, Nov 23): the main show ("episode", numbered in admin > Episodes) or a side story,
+// listed in admin > Side Stories. Side stories never get episode numbers.
+const DTM_SCRIPT_KINDS = ['episode' => 'Main episode', 'otr' => 'Off The Record', 'micswap' => 'Mic Swap', 'week' => 'Due To This Week', 'encore' => 'Encore', 'other' => 'Other side story'];
+const DTM_SIDE_KINDS = ['otr', 'micswap', 'week', 'encore', 'other'];
 
 // One-time move to "scripts library + episodes": tags seeded rows with their seed key, gives every script a
 // status, keeps Episode 0 as an episode, and returns the other seeded scripts to the library (no number).
@@ -150,7 +155,7 @@ function dtm_scripts(): array {
   dtm_seed_scripts();
   dtm_scripts_migrate_v2();
   $list = dtm_json_read('scripts.json');
-  foreach ($list as &$s) { $s += ['episode' => '', 'status' => 'draft', 'subtitle' => '']; }
+  foreach ($list as &$s) { $s += ['episode' => '', 'status' => 'draft', 'subtitle' => '', 'kind' => 'episode', 'youtube' => '', 'date' => '', 'story_date' => '']; if (!isset(DTM_SCRIPT_KINDS[$s['kind']])) $s['kind'] = 'episode'; }
   usort($list, function ($a, $b) {
     $ea = (string)$a['episode']; $eb = (string)$b['episode'];
     if ($ea !== '' && $eb !== '') return strnatcmp($ea, $eb);

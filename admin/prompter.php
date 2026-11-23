@@ -3,7 +3,8 @@
 require __DIR__ . '/../lib/scripts.php';
 dtm_require_admin();
 $s = dtm_script((string)($_GET['id'] ?? ''));
-if (!$s) { header('Location: scripts.php'); exit; }
+if (!$s) { header('Location: episodes.php'); exit; }
+$back = ($s['kind'] ?? 'episode') === 'episode' ? 'episodes.php' : 'side.php';
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -47,7 +48,7 @@ body.playing #help{opacity:0}
 <div id="help">Space: play/pause · ↑↓: speed · + −: size · [ ]: width · F: full screen · M: mirror</div>
 <main id="script"><?= dtm_script_html(dtm_fill_episode_number((string)$s['body'], (string)$s['episode'])) ?></main>
 <nav id="bar" aria-label="Teleprompter controls">
-  <a href="scripts.php" title="Back to scripts">✕</a>
+  <a href="<?= $back ?>" title="Back to the list">✕</a>
   <button id="smaller" title="Smaller text (−)">A−</button>
   <button id="bigger" title="Bigger text (+)">A+</button>
   <button id="narrower" title="Narrower column ([)">⇥⇤</button>

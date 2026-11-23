@@ -10,7 +10,7 @@ Quick vertical Shorts between full episodes. Claude finds the picks every week; 
 - **Not tragic.** Nobody died, nobody badly hurt, nobody's fresh crisis (overdose, illness, abuse, rehab). Small bruised egos and wrecked property are fine.
 - **Not polarizing.** No politics, elections, causes, race, religion, culture-war fights, even if it's the week's biggest music story (CLAUDE.md hard rule).
 - **Real and sourced.** At least one solid outlet (AP, Reuters, BBC, Billboard, Rolling Stone, local news). No rumor accounts, no "fans are saying". Ongoing legal stuff about living people: "reportedly", "according to", "police say", and name the outlet.
-- **From the last 7 days** (an older story that just got a crazy new twist is fine).
+- **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Due To This Week story as aging after 4 days and stale after 7.
 
 When a week has nothing that clears the bar, say so and give 0 or 1 picks. A boring Short hurts more than no Short.
 
@@ -28,6 +28,7 @@ When a week has nothing that clears the bar, say so and give 0 or 1 picks. A bor
 # Due To This Week: <date range>
 
 ## 1. <short label>
+**Happened:** YYYY-MM-DD (the day it happened or first got reported; required, news goes stale fast)
 **Wild because:** one line. **Why anyone cares:** one line.
 **On-screen hook text:** <6 to 10 words>
 **Title:** <the weird specific thing>

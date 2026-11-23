@@ -197,11 +197,6 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
   <a href="index.php" class="wordmark metal"><img src="../assets/logo-192.png" alt="" width="40" height="40" class="logo-mark">Defacing the Music</a>
   <?php if ($user): ?>
   <div class="admin-bar-right">
-    <a href="episodes.php" class="admin-user bang">Episodes</a>
-    <a href="scripts.php" class="admin-user bang">Scripts</a>
-    <a href="guests.php" class="admin-user bang">Guest List</a>
-    <a href="uploads.php" class="admin-user bang">Uploads</a>
-    <a href="news.php" class="admin-user bang">News</a>
     <a href="account.php" class="admin-user bang"><?= h($user['name']) ?></a>
     <?php if ($pullButton): ?>
     <form method="post" action="deploy.php" id="pull-form">
@@ -212,7 +207,34 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
   </div>
   <?php endif; ?>
 </header>
+<?php if ($user): echo dtm_admin_nav(); endif; ?>
 <main class="admin-main">
 <?php
+}
+// The menu bar (Duck, Nov 23): Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List.
+function dtm_admin_nav(): string {
+  $page = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
+  $side = false;
+  if (in_array($page, ['scripts.php', 'prompter.php', 'images.php', 'edit.php'], true) && function_exists('dtm_script')) {
+    $sid = (string)($_GET['edit'] ?? $_GET['id'] ?? $_GET['script'] ?? '');
+    if ($page !== 'edit.php' && $sid !== '' && ($sc = dtm_script($sid))) $side = ($sc['kind'] ?? 'episode') !== 'episode';
+    if ($page === 'scripts.php' && isset($_GET['new'])) $side = ($_GET['kind'] ?? 'episode') !== 'episode';
+  }
+  $items = [
+    'episodes' => ['Episodes', 'episodes.php', ['episodes.php', 'scripts.php', 'prompter.php', 'images.php', 'edit.php']],
+    'side' => ['Side Stories', 'side.php', ['side.php', 'news.php']],
+    'uploads' => ['Uploads', 'uploads.php', ['uploads.php']],
+    'looks' => ['Site Looks', 'looks.php', ['looks.php']],
+    'guide' => ['Host Guide', '/brand/guide/', []],
+    'guests' => ['Guest List', 'guests.php', ['guests.php']],
+  ];
+  $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
+  foreach ($items as $k => [$label, $href, $pages]) {
+    $on = in_array($page, $pages, true);
+    if ($k === 'episodes' && $side) $on = false;
+    if ($k === 'side' && $side) $on = true;
+    $o .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . ($k === 'guide' ? ' target="_blank" rel="noopener"' : '') . '>' . h($label) . '</a>';
+  }
+  return $o . '</div></nav>';
 }
 function dtm_page_end(): void { echo "</main>\n</body>\n</html>\n"; }
