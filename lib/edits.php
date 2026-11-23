@@ -15,7 +15,7 @@ function dtm_edit_words(string $text): array { return array_values(array_filter(
 
 // One transcript line: "[12:34] DUCK: text", "[29:01] DUCK [?]: text" (unsure speaker), "[1:02:03.5] [?]: text".
 function dtm_edit_line_match(string $l): ?array {
-  if (!preg_match('/^\[(\d{1,2}(?::\d{1,2}){1,2}(?:[.,]\d+)?)\]\s*([A-Za-z][A-Za-z ]{0,20}?)?\s*(\[\?\])?\s*:\s*(.*)$/u', $l, $m)) return null;
+  if (!preg_match('/^\[(\d{1,3}(?::\d{1,2}){1,2}(?:[.,]\d+)?)\]\s*([A-Za-z][A-Za-z ]{0,20}?)?\s*(\[\?\])?\s*:\s*(.*)$/u', $l, $m)) return null;
   $who = strtoupper(trim($m[2] ?? ''));
   if ($who === '' && ($m[3] ?? '') === '') return null;
   if (($m[3] ?? '') !== '') $who .= '?';
