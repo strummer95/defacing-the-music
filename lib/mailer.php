@@ -78,7 +78,12 @@ final class DtmSmtp {
     $this->cmd('AUTH LOGIN', '334');
     $this->cmd(base64_encode($this->cfg['user']), '334', true);
     try { $this->cmd(base64_encode($this->cfg['pass']), '235', true); }
-    catch (RuntimeException $e) { throw new RuntimeException('Gmail turned down the login. Check the Gmail address and make a new app password.'); }
+    catch (RuntimeException $e) {
+      // Gmail's own reason (never contains the password), e.g. "535 5.7.8 Username and Password not accepted".
+      $why = trim(preg_replace('/^\d{3}[- ]/', '', strtok(substr($e->getMessage(), 14), "\n")));
+      $why = trim(preg_replace('/For more information.*$/i', '', $why));
+      throw new RuntimeException('Gmail turned down the login for ' . $this->cfg['user'] . '. Gmail said: "' . rtrim($why, '.') . '". Usually the app password was made on a different Google account than this address, or it got mistyped. Make a new one while signed in as ' . $this->cfg['user'] . ' and save it again.');
+    }
   }
   public function send(string $to, string $subject, string $text, string $html, string $unsub): void {
     $b = 'dtm' . bin2hex(random_bytes(8));
