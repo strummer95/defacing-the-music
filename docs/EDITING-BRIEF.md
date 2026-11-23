@@ -43,5 +43,17 @@ Cold open (~30s teaser hits) > "I'm Duck, and due to [title], this is Defacing t
 ## Deliverables
 Full episode 1920x1080 for YouTube, then 3 to 5 vertical 1080x1920 clips for TikTok, Reels, Shorts. Nothing gets posted without Duck's approval.
 
+## Shorts, Reels, TikTok: win the first second (Duck, Nov 23)
+Duck: "we need to maximize our potential." The first Short (Ozzy bat, 21s) got 49 views in two hours with only 30% "stayed to watch" (70% swiped away in the first second or two). Shorts that keep getting pushed sit around 60 to 70%+. So every clip is built around the opening:
+- **Frame one is the hook.** Start on the craziest, most specific line of the clip, mid-energy. No setup, no "so", no breath, no logo, no intro card. Trim any lead-in, even half a second.
+- **Hook on what people don't know.** Everybody knows the bat; the dove in the boardroom, the frog, the cow's head are the hook. The famous part is the payoff, not the opener.
+- **Big on-screen text from the first frame** (most people scroll with the sound off): a short line that promises something weird, in the brand look (Saira Stencil One / Oswald, paper on dark, red or amber accent), kept clear of the bottom fifth and right edge where the app buttons sit.
+- **Burned-in captions all the way through**, big, a few words at a time.
+- **Keep it tight:** 20 to 45 seconds. Cut every pause that isn't a punchline beat (in clips, pauses are shorter than in the full episode).
+- **End on a laugh or a punchline**, not a trailing sentence. A clean loop back to the first line is a bonus.
+- **Title and caption** say the weird specific thing ("Ozzy bit a dove's head off in a record label meeting"), never just "the Ozzy bat story".
+- **Volume:** post several Shorts per episode, one every day or two around release. Each one is a fresh test; new channels need a handful before one catches.
+- For each clip, give Duck 2 or 3 opening-line options (with timestamps) and the on-screen hook text, so he can pick the strongest. Check the "stayed to watch" number after each one and tell Duck what worked.
+
 ## Hard rules
 No political, racial, or polarizing content. Never mention Counterfeit or "my band".
