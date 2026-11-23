@@ -9,7 +9,7 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 
 ## Length math (learned from episodes 1 and 2)
 - Pat's reactions and riffing roughly **double** the reading time. A 20 to 30 minute script became an hour-long episode that couldn't be cut shorter.
-- So write to the finished length you want, halved: a 15 minute Off The Record is 6 to 8 minutes of reading; a 3-story 30 minute one is 3 to 4 minutes per story. Keep main episodes at the low end of 20 to 30 minutes of reading if the goal is under an hour.
+- So write to the finished length you want, halved: Off The Record is 3 stories in about 30 minutes, so 2 to 3 minutes of reading per story. Keep main episodes at the low end of 20 to 30 minutes of reading if the goal is under an hour.
 
 ## What moves the numbers (in order)
 1. **A steady schedule: something every week.** Full episodes take weeks of research, so fill the gaps with side stories (Off The Record, Due To This Week news Shorts, Mic Swap, Encore). Monthly-only posting makes growth crawl.
