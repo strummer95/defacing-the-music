@@ -24,7 +24,7 @@ When a week has nothing that clears the bar, say so and give 0 or 1 picks. A bor
 
 ## Format of each pick
 - **Solo videos, up to 5 minutes** (Duck, Nov 23: "these should be very brief, up to 5 minutes, they will probably be solo videos"). No Pat, so reading time is the finished length: about 150 words a minute, **300 to 650 words**.
-- **Aim for 2 to 3 minutes** for most: YouTube only counts a vertical video as a Short at 3 minutes or less, and the Shorts feed is where new people find the channel. Let the big chain-of-events stories run 3 to 5 minutes as regular videos.
+- **As short as the story allows: usually 60 to 90 seconds (150 to 250 words).** Duck: "im not sure these can work as 3 minutes... they have to be really wild or funny quick." The filter: if it isn't wild or funny in the first line and paying off within about a minute, it's not a Fresh Track, however big the news. Chain-of-events stories go rapid-fire (one line per beat), not long. 5 minutes is the absolute ceiling and almost never used. If a pick can't be funny fast, say so and drop it; never pad.
 - **Line 1 is the hook** (see "Shorts, Reels, TikTok" in `docs/EDITING-BRIEF.md`): the single craziest specific fact, said cold. No "so this week", no intro.
 - Then the story as a quick chain (this happened, then this, then this), one oddly specific detail, a real quote if there's a good one (exact wording, outlet named), and a quick `[THAT GUY STING]` verdict to close on. No TALK cues (solo).
 - Say when it happened ("Last Saturday...", "November 7th...") so it still makes sense later.

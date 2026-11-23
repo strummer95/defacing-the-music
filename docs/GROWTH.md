@@ -14,7 +14,7 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 ## What moves the numbers (in order)
 1. **A steady schedule: something every week.** Full episodes take weeks of research, so fill the gaps with side stories (Off The Record, Fresh Tracks news Shorts, Mic Swap, Encore). Monthly-only posting makes growth crawl.
 2. **Win the first second of every Short.** The first Short (Ozzy bat, 21s) kept only 30% past the first second ("stayed to watch"); Shorts that keep getting pushed sit around 60 to 70%+. Rules in `docs/EDITING-BRIEF.md` ("Shorts, Reels, TikTok"): open on the craziest specific line, the part people don't know (the dove, the frog, the cow's head, not "the bat"), big hook text and captions from frame one, no lead-in, 20 to 45 seconds, end on a laugh, then the 2-second end card (`brand/shorts/`).
-3. **Digestible sizes, not just long episodes** (Duck, Nov 23: the first two episodes run about an hour and won't cut shorter). Three sizes per story: Shorts (20 to 45 seconds), **segments** (5 to 15 minute standalone chapters on YouTube, 2 to 4 per episode, rules in `docs/EDITING-BRIEF.md`), and the full episode with YouTube chapters. Plus side stories that are short by design: Off The Record (3 quick stories, about 30 minutes) and Fresh Tracks (solo, 2 to 5 minutes). New people sample a segment before they commit an hour.
+3. **Digestible sizes, not just long episodes** (Duck, Nov 23: the first two episodes run about an hour and won't cut shorter). Three sizes per story: Shorts (20 to 45 seconds), **segments** (5 to 15 minute standalone chapters on YouTube, 2 to 4 per episode, rules in `docs/EDITING-BRIEF.md`), and the full episode with YouTube chapters. Plus side stories that are short by design: Off The Record (3 quick stories, about 30 minutes) and Fresh Tracks (solo, usually 60 to 90 seconds). New people sample a segment before they commit an hour.
 4. **Volume of Shorts:** several per episode, one every day or two around a release. Each one is a fresh test.
 5. **Guest swaps with similar podcasts** (Mic Swap format): go on theirs, they come on ours.
 6. **Hometown press for Disco Demolition** (Chicago outlets love that story).
@@ -43,7 +43,7 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 - **No polarizing people or topics**, even when the story is great: the Marilyn Manson rib legend was swapped out (abuse allegations), and the Ye opera lawsuit was skipped for the same reason. Hard rule in CLAUDE.md.
 - **Nobody hurt or dead is the joke**, and fresh tragedies (a concert gassing, a building collapse) are not news Shorts.
 - **"Side Stories" is the name of Last Podcast on the Left's bonus show.** Fine as an admin label; never use it as a public series name.
-- **Shorts over 3 minutes stop counting as Shorts** on YouTube. Fresh Tracks aim for 2 to 3 minutes so they count as Shorts; big stories can run to 5 as regular videos.
+- **Shorts over 3 minutes stop counting as Shorts** on YouTube. Fresh Tracks are usually 60 to 90 seconds; if a story can't be funny that fast, it isn't one.
 - **Long end cards hurt the loop.** 2 seconds max, hard cut after the last laugh.
 - **Don't publish raw video on the website.** IONOS caps real storage around 20 GB (shared with Duck's other sites) and the file manager has a 50 MB per-file limit. Raw files stay on Duck's PC; `/dtm-raw` sits outside the site.
 - **Nothing posts anywhere without Duck's OK.**
