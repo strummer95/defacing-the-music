@@ -22,7 +22,7 @@ Live at https://defacingthemusic.com behind Cloudflare (SSL mode Flexible: visit
 - Writing style for site copy: casual, funny, blunt. No em dashes.
 
 ## Ownership
-- The show is owned by **Duck and Rabbit LLC** (Duck, Nov 24). It's stated quietly: the site footers ("© <year> Duck and Rabbit LLC"), sponsor paperwork and platform business/payout info. Never on air, in titles or thumbnails; the show's branding stays Defacing the Music.
+- The show is owned by **Duck and Rabbit LLC** (Duck, Nov 24). It's stated quietly: the site footers ("© <year> Duck and Rabbit LLC"), sponsor paperwork and platform business/payout info. Never on air, in titles or thumbnails; the show's branding stays Defacing the Music. No bank account, EIN check, DBA or payouts set up yet; the plan for when money arrives is in `docs/BUSINESS.md` (Duck, Nov 24: nothing to do until he actually needs it).
 
 ## Public site look: "Backstage" (Duck, Nov 22, 2026)
 - Duck picked the Backstage concept from admin > Site looks ("nice and simple"; the others "try too hard to be a theme"). The public site (`index.php`, `ep/index.php`) uses `assets/backstage.css`: dark stage `#161518` / floor `#1E1D21`, warm spotlight `#FFB547`, red `#E4251B`, paper `#F6F3EC`. Fonts: Saira Stencil One (headings, road-case stencil), Oswald (labels, buttons), Inter (body), Permanent Marker (the setlist only). Latest episode = ALL ACCESS laminate on a red lanyard; upcoming stories = Sharpie setlist gaff-taped down. Keep it simple, not a costume.
