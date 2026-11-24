@@ -19,6 +19,9 @@ const DTM_SEEDS = [
   'story-montreux-fire'         => ['', 'Due To a Flare Gun Indoors', 'Who Brought a Flare Gun to a Zappa Show?'],
   'story-metallica-gnr-montreal'=> ['', 'Due To Pyro and a Sore Throat', 'Who Stood James Hetfield on the Flamethrower?'],
   'story-gg-allin'              => ['', 'Due To Everything', 'Who Kept Booking GG Allin?'],
+  // Main-episode ideas Duck asked for (Nov 24): land in Episodes as ideas, not scripts yet.
+  'story-mj-beatles-catalog'    => ['', 'Due To a Hot Business Tip', 'Who Taught Michael Jackson About Publishing?'],
+  'story-rammstein'             => ['', 'Due To Excessive Pyrotechnics', 'Who Let Rammstein Into Massachusetts?'],
   // Off The Record ideas Duck picked (Nov 23): land in Side Stories as ideas, not scripts yet.
   'otr-brown-mms' => ['', "Off The Record: Van Halen's Brown M&M's", "Did Van Halen really ban brown M&M's?"],
   'otr-hendrix-parakeets' => ['', "Off The Record: Hendrix and London's Parakeets", "Did Jimi Hendrix let loose London's wild parrots?"],
@@ -74,6 +77,8 @@ const DTM_SEED_KINDS = [
   'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week',
 ];
 // side-story seeds that arrive as finished scripts, not ideas
+// Main-episode seeds that start as ideas (notes, not scripts).
+const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein'];
 const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2'];
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
 const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera'];
@@ -162,7 +167,7 @@ function dtm_seed_scripts(): void {
       if ($body === '') continue;
       // New scripts land in the library (no episode number); Duck decides when they become episodes.
       $kind = DTM_SEED_KINDS[$key] ?? 'episode';
-      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => ($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : (in_array($key, DTM_SEED_DRAFT, true) ? 'draft' : 'idea'), 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'story_date' => DTM_SEED_DATES[$key] ?? '', 'updated' => date('c')];
+      $list[] = ['id' => bin2hex(random_bytes(6)), 'seed' => $key, 'episode' => '', 'kind' => $kind, 'status' => in_array($key, DTM_SEED_IDEA, true) ? 'idea' : (($kind === 'episode' || in_array($key, DTM_SEED_READY, true)) ? 'ready' : (in_array($key, DTM_SEED_DRAFT, true) ? 'draft' : 'idea')), 'title' => $title, 'subtitle' => $subtitle, 'body' => $body, 'story_date' => DTM_SEED_DATES[$key] ?? '', 'updated' => date('c')];
     }
     return $list;
   });
