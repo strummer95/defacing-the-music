@@ -81,9 +81,9 @@ const DTM_SEED_KINDS = [
 // side-story seeds that arrive as finished scripts, not ideas
 // Main-episode seeds that start as ideas (notes, not scripts).
 const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein'];
-const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2'];
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-gta6-content-id']; // GTA 6 one is up first (Duck, Nov 24)
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
-const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire', 'ft-gta6-content-id'];
+const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire'];
 const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11', 'ft-gta-songs-expire' => '2026-11-20', 'ft-gta6-content-id' => '2026-11-22']; // "happened on" for dated seeds
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
@@ -216,9 +216,21 @@ function dtm_seed_drafts_fix(): void {
   @file_put_contents($marker, date('c'));
 }
 
+// One time: the GTA 6 Fresh Track arrived as a Draft; Duck wants it first, so it moves to Ready (unless he changed it).
+function dtm_seed_ready_fix(): void {
+  $marker = dtm_data_dir() . '/scripts.gtaready';
+  if (is_file($marker)) return;
+  dtm_json_update('scripts.json', function ($list) {
+    foreach ($list as &$s) if (($s['seed'] ?? '') === 'ft-gta6-content-id' && ($s['status'] ?? '') === 'draft') $s['status'] = 'ready';
+    return $list;
+  });
+  @file_put_contents($marker, date('c'));
+}
+
 function dtm_scripts(): array {
   dtm_seed_scripts();
   dtm_seed_drafts_fix();
+  dtm_seed_ready_fix();
   dtm_scripts_migrate_v2();
   $list = dtm_json_read('scripts.json');
   foreach ($list as &$s) { $s += ['episode' => '', 'status' => 'draft', 'subtitle' => '', 'kind' => 'episode', 'youtube' => '', 'date' => '', 'story_date' => '']; if (!isset(DTM_SCRIPT_KINDS[$s['kind']])) $s['kind'] = 'episode'; }
