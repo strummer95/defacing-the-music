@@ -6,6 +6,7 @@ Saved Nov 24, 2026. Duck: "save this info for DnR but i have no reason to do thi
 - **Duck and Rabbit LLC (DnR)** is a real company and owns Defacing the Music. The site footers say "© <year> Duck and Rabbit LLC."
 - **No bank account** for DnR yet. No money coming in yet.
 - **"Defacing the Music" is not a registered assumed name (DBA)** for DnR yet.
+- **DnR's Etsy payouts currently go to Duck's personal bank account** (Nov 24). Common for small shops and not illegal, but it mixes business and personal money, which weakens the LLC's liability protection and makes taxes messier to sort. It's the one real reason to open DnR's business account sooner; when it opens, switch the Etsy payout first.
 - Duck started a Mercury business account application on Nov 24 and stopped partway (got as far as the "is your company any of the following" screen; answer there is "None of the above"). There may be an unfinished application sitting in Mercury.
 
 ## When to do this
