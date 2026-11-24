@@ -29,6 +29,10 @@ Duck: "make sure you are notating all this stuff, so its applied to everything m
 - **Unique viewers shows 0** for the first day or two. It fills in late.
 - When Duck shares analytics, tell him what the number actually means, what to change in the next Short, and when to check again.
 
+## What the numbers have taught us so far
+- **Timely, searchable topics work (Nov 24):** the GTA 6 Fresh Track ("Who owns GTA 6?", 1:25) hit about 1,100 views in roughly 11 hours, about double the Ozzy Short after a full day, with **YouTube search as the top source** and the channel's first new subscriber. People were searching the GTA 6 copyright mess and found us. When a big, searchable thing happens (a huge game, movie or tour) and there's a real music angle, a quick Fresh Track on it is worth doing fast.
+- **Shorts watch time doesn't count toward Partner Program hours.** The 3,000 (or 4,000) watch hours only come from long-form videos: full episodes, segments, Off The Record. Shorts count only on the separate "qualified Shorts views in the last 90 days" path. So the hours come from getting people to watch the long stuff; segments help because they're long-form.
+
 ## Money: what to turn on and when
 - **Now (no audience needed):** affiliate links in descriptions for gear Duck actually uses (Sweetwater, Reverb, Guitar Center / Musician's Friend, Amazon). Spotify for Creators > **Monetize** page shows Partner Program eligibility (Spotify lowered the bar in January 2026; check the page for current numbers). Upload the video version to Spotify too.
 - **YouTube Partner Program:** 1,000 subscribers + 4,000 watch hours (or the Shorts views route).
