@@ -9,3 +9,5 @@
 - Some YouTubers called it deliberate; he denies it. Not stated as deliberate on air.
 - Terminology: these were Content ID claims (revenue redirected), not strikes (Cut.Pro). Script says "copyright-claimed" / "flagged."
 - Separate, not used: Warner/Atlantic claims over Overmono's "Welcome to Leonida" even with streamer mode on.
+
+- Not about his song: the claims matched his gameplay videos (DarkViperAU: "you have put your GTA 6 playthrough in the Content ID system"; a creator said they hit "gameplay with no music at all"). The script says so plainly.
