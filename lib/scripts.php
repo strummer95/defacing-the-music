@@ -45,7 +45,7 @@ const DTM_SEEDS = [
 // exactly (Duck never edited it), it gets upgraded to the current seed text. Edited scripts are never touched.
 const DTM_SEED_OLD = [
   'ft-gta6-content-id' => ['7839d81d9983a48091173a17128d082ec6f8a150', 'de4f98538aae9ebc2d537eed71c5fad93661806a', '0f5ded23a47d1783ceb2a24f56b958bca4fabda2', '7fb8943abcd43173637eb5b7a0f572a70939503c'],
-  'ft-gta-songs-expire' => ['8e847eaad29de18e75bf0b4068d0e1f8e4931229', '99556005b2fe693ae08195910d5550e6edfce321'],
+  'ft-gta-songs-expire' => ['8e847eaad29de18e75bf0b4068d0e1f8e4931229', '99556005b2fe693ae08195910d5550e6edfce321', '0cce8fe6562340c3e29f83d54a07c8641b9db5fa'],
   'ft-ye-band-room-opera' => ['a900870fe3f750e324f26a171827f3e8bbc300f1', 'cc81fb8c5e2763887c8c33753b750e9922e5c87f'],
   'ft-slayer-forum-seats' => ['c5a28081020bbaf30f833c1ca7b9026cee91c214'],
   'ft-stubhub-phantom-concert' => ['4ee55457557182573c0499930b09c84dedcb7b72', 'a9380164ee244d72143a4857964b6d2e2d03e4af', '1eb8cd6ce4edd8ca2b3f0bc25ad464628fde7d1f'], // first tellings (confusing about who booked what)

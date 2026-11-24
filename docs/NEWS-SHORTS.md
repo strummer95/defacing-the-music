@@ -26,6 +26,7 @@ When nothing clears the bar, say so. A boring video hurts more than no video.
 ## Format: one story, only when it's worth it (Duck, Nov 23)
 Duck: "this isnt gonna be regular or a set thing... its just if theres a big wild thing in music, i throw an episode out there... they arent gonna be mixed like the OTR episodes."
 - **One story per video. No schedule.** Only when something big and wild happens in music. Never a weekly roundup, never mixed with other stories.
+- **Aim for about 60 seconds (about 150 words), no longer** (Duck, Nov 24: "try to make these closer to 60 seconds then, not as long as this one"). The GTA 6 Short ran 1:25; people watched about 39 seconds on average (half), and the feed push stopped after about 5 hours. Hook, the twist, the punchline, out.
 - **Solo, up to about 5 minutes** (no Pat, so reading time is the finished length: up to about 650 words; most land at 2 to 4 minutes). Then **a Short or two** cut from it (the hook moment, with the end card).
 - **Open:** the hook line cold, then "This is Fresh Tracks. I'm Duck." **Close:** a punchline, then "This was a Fresh Track, and due to unforeseen circumstances, I'll see you next time." (Duck's sign-off, Nov 23) **No That Guy and no sting**: that's for the main episodes only (Duck, Nov 23).
 - **The filter:** wild or funny in the first line, and it has to genuinely go wrong or be insane. If it can't be, skip it, however big the news.
