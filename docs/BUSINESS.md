@@ -25,3 +25,12 @@ When the first real money is on the horizon: a sponsor saying yes, YouTube or Sp
 
 ## The one rule
 Keep show money out of personal accounts. Mixing them weakens the LLC's protection. Contracts, payments and the bank account all go in DnR's name.
+
+## Splitting money with Pat (Duck, Nov 24)
+Nothing to do now; this is just the plan if the show ever makes money. Duck: the point is to get paid for the time, but more importantly not to wreck a friendship.
+- **75 / 25** (Duck 75, Pat 25). Duck does the research, writing, editing, social and runs the business; Pat shows up and reacts. Half the money pays for the work, all Duck's; the other half pays the two on-air hosts equally.
+- **Split profit, not gross.** Costs come out first.
+- **Duck and Rabbit owns the show.** Pat gets a share of income, not ownership. If he leaves, he gets his share of money already earned and nothing after; the name, episodes and audience stay with DnR.
+- **Only episodes he's on.** Solo Fresh Tracks and Mic Swaps he isn't part of stay out of the split. His share covers ad reads he does.
+- **Paid as a contractor** (a 1099 from the LLC once he passes the IRS threshold).
+- **Put it in writing before the first dollar**, even a one-page note or an email you both answer "agreed". If he starts doing more (promo, guests, clips), revisit the number.
