@@ -36,8 +36,19 @@ Done: rules into CLAUDE.md/STORIES.md, Ozzy/Woodstock/Disco/Jerry Lee reworked, 
 Admin page listing `data/subscribers.json` (count, newest first) with a CSV download and a remove button (CSRF protected).
 Done (Nov 23): admin > Guest List (list, CSV, remove) plus emailing the list through Duck's Gmail (app password saved into ../dtm-secrets.php), batched sends, unsubscribe links.
 
-## [ ] DTM-STORIES-1: Story idea backlog in the admin
-Admin-only page to log candidate stories (title, artist, year, one-line hook, source links, status idea/researching/recorded).
-Seed it with: Limp Bizkit and the Woodstock '99 riot; Keith Moon blowing up his drum kit on The Smothers Brothers Comedy Hour;
-Ozzy and the bat in Des Moines (1982); Mayhem (Norwegian black metal); the Bjork stalker case; the Montreux casino fire ("Smoke on the Water");
-GG Allin; Metallica/Guns N' Roses in Montreal 1992.
+## [x] DTM-STORIES-1: Story idea backlog in the admin
+Superseded, not built separately (bridge run, 2026-11-24): this task is from the repo's very first commit
+(Nov 11), before admin > Scripts/Episodes/Side Stories existed. That system, built out since under
+DTM-EPISODES-1 and Duck's Nov 23 admin-layout notes, now covers everything this task asked for and more:
+every script already carries a title, subtitle (the one-line hook), and a status of idea/draft/ready/
+recorded/published (`DTM_SCRIPT_STATUSES` in `lib/scripts.php`), plus a `kind` (main episode or a side
+story), a `story_date`, and per-shipped-script sources (`lib/sources/<seed>.json`). `STORIES.md` is the
+plain-text idea backlog Duck and Claude already maintain by hand, with a table of story / rating / notes.
+Checked every seed story this task named against the current repo rather than assuming: all 8 are already
+tracked. Limp Bizkit/Woodstock '99, Keith Moon/Smothers Brothers, Ozzy/Des Moines, the Montreux casino
+fire, GG Allin, and Metallica/GN'R Montreal are all full "Ready" scripts in `data/scripts.json` (episode-01,
+episode-02, episode-03, story-montreux-fire, story-gg-allin, story-metallica-gnr-montreal) with their own
+sources files. Mayhem (Norwegian black metal) and Bjork's 1996 stalker case are both already listed in
+`STORIES.md`'s "Darker list" table with Duck's rating. A dedicated admin page with separate
+title/artist/year fields would just duplicate the richer system that already exists and fork the backlog
+across two places — not built. Doc-only change (this note), no functional code touched.
