@@ -107,7 +107,7 @@ $canon = $ep ? dtm_episode_page_url((string)$ep['number']) : 'https://defacingth
 </main>
 <footer class="bs-footer"><div class="wrap">
   <a href="/" class="brand"><img src="/assets/logo-192.png" alt="" width="40" height="40">Defacing the Music</a>
-  <small>Due to unforeseen circumstances, all rights reserved. · <a href="/">defacingthemusic.com</a></small>
+  <small>© <?= date('Y') ?> Duck and Rabbit LLC. Due to unforeseen circumstances, all rights reserved. · <a href="/">defacingthemusic.com</a></small>
 </div></footer>
 </body>
 </html>

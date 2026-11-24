@@ -118,7 +118,7 @@ $email = filter_var($cfg['email'], FILTER_VALIDATE_EMAIL) ? $cfg['email'] : '';
 </main>
 <footer class="bs-footer"><div class="wrap">
   <a href="/" class="brand"><img src="/assets/logo-192.png" alt="" width="40" height="40">Defacing the Music</a>
-  <small>defacingthemusic.com/sponsor</small>
+  <small>© <?= date('Y') ?> Duck and Rabbit LLC · defacingthemusic.com/sponsor</small>
 </div></footer>
 </body>
 </html>
