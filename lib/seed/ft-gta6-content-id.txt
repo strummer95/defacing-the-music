@@ -9,9 +9,13 @@ This is Fresh Tracks. I'm Duck.
 ## THE STORY
 GTA 6 comes out. Everybody on YouTube streams it. Ten-hour streams. Huge.
 
-One of the artists on the soundtrack, a Colombian reggaeton singer called Frank El Santo, also streams it. And then, apparently, his GTA 6 playthrough ends up in YouTube's copyright system. The robot that scans every video for stolen stuff.
+One of the artists on the soundtrack, a Colombian reggaeton singer called Frank El Santo, also streams it. And then, apparently, his playthrough gets registered as his protected property. Like it's a song he owns.
 
-And since everybody's playing the same game, everybody's video looks like his. So now the robot thinks anybody playing GTA 6 is stealing from Frank, and it files the claims in his name. Big channels get flagged. Even streams with the music turned off. One streamer said, "Ppl are losing 10 hour streams to him."
+YouTube has a robot called Content ID. It scans every video and compares it to protected stuff, so if you upload somebody's song, it catches you. Normally that's songs and movies. Now it's also Frank playing GTA 6.
+
+And since everybody's playing the same game, everybody's video looks like his. So the robot thinks anybody playing GTA 6 is stealing from Frank, and it files the claims in his name. On other people's videos.
+
+Big channels get flagged. Even streams with the music turned off. One streamer said, "Ppl are losing 10 hour streams to him."
 
 DarkViperAU, one of the biggest GTA channels, messaged him: "Yo my dude, you have put your GTA 6 playthrough in the Content ID system, and so are claiming GTA 6 gameplay livestreams. Please fix."
 
