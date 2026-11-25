@@ -258,3 +258,30 @@ body.admin .nav-more-menu a{padding:10px 16px;border-bottom:0;font-size:14px}
 body.admin .nav-more-menu a.on{border-bottom:0;background:rgba(255,181,71,.08)}
 @media (max-width:600px){ body.admin .nav-more summary{font-size:13px;padding:12px 10px 10px} }
 @media (max-width:600px){ body.admin .admin-nav-in{flex-wrap:wrap;justify-content:center;gap:0} body.admin .admin-nav a,body.admin .nav-more summary{padding:10px 9px 8px} }
+/* Stats: totals and By platform stand out more (Duck, Nov 25) */
+body.admin .an-tiles{gap:10px;margin:4px 0 10px}
+body.admin .an-tile{padding:12px 16px;box-shadow:inset 0 -3px 0 var(--amber)}
+body.admin .an-tile .an-lbl{font-size:13px}
+body.admin .an-tile b{font-size:34px;line-height:1.05}
+body.admin .an-delta{font-size:12px}
+body.admin .an-plat{font-size:17px}
+body.admin .an-plat th{font-size:13px;padding:6px 10px}
+body.admin .an-plat td{padding:9px 10px;font-weight:700;font-variant-numeric:tabular-nums}
+body.admin .an-plat td:first-child a{font-family:Oswald,sans-serif;font-size:18px;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+body.admin .an-plat td:first-child a:hover{color:var(--red)}
+body.admin .an-plat tbody tr:hover{background:rgba(0,0,0,.03)}
+body.admin .an-tile{padding:16px 18px}
+body.admin .an-tile .an-lbl{font-size:14px}
+body.admin .an-tile b{font-size:44px}
+body.admin .an-plat{font-size:19px;margin-top:4px}
+body.admin .an-plat td{padding:11px 10px}
+body.admin .an-plat td:first-child a{font-size:20px}
+body.admin .an-chart{height:70px}
+/* Stats filters: dark chips with a caret instead of plain white boxes */
+body.admin .an-filters{justify-content:flex-start;gap:8px}
+body.admin .an-filters label{flex:none}
+body.admin .an-filters .admin-select{appearance:none;-webkit-appearance:none;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23FFB547'/%3E%3C/svg%3E") no-repeat right 12px center;color:var(--paper);border:0;border-radius:3px;font-family:Oswald,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:0 34px 0 14px;height:36px;min-height:36px;cursor:pointer;max-width:min(320px,100%)}
+body.admin .an-filters .admin-select:hover{background-color:#2a292e}
+body.admin .an-filters .admin-select:focus{outline:2px solid var(--amber);outline-offset:1px}
+body.admin .an-filters .admin-select option{text-transform:none;font-family:Inter,sans-serif;font-weight:400;letter-spacing:0;background:#fff;color:var(--ink)}
+body.admin .an-filters label{display:contents}
