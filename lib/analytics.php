@@ -155,14 +155,22 @@ function dtm_an_meta(string $path, array $p, string $token): array {
   return dtm_an_get(DTM_META_API . $path . '?' . http_build_query($p + ['access_token' => $token]));
 }
 // One lifetime insight number, trying metric names in order (Meta renames them every so often).
-function dtm_an_meta_insight(string $id, array $metrics, string $token): ?int {
-  foreach ($metrics as $m) {
+function dtm_an_meta_insight(string $id, array $metrics, string $token, array $edges = ['insights']): ?int {
+  // Meta renames metrics every so often, and some report 0 under an old name while the real number sits under a
+  // new one. Try each edge and name; take the first number above zero, else 0 if one answered, else null.
+  $best = null;
+  foreach ($edges as $edge) foreach ($metrics as $m) {
     try {
-      $r = dtm_an_meta($id . '/insights', ['metric' => $m, 'period' => 'lifetime'], $token);
-      foreach ($r['data'] ?? [] as $d) { $v = $d['values'][0]['value'] ?? ($d['total_value']['value'] ?? null); if (is_numeric($v)) return (int)$v; }
-    } catch (RuntimeException $e) { /* try the next name */ }
+      $r = dtm_an_meta($id . '/' . $edge, ['metric' => $m] + ($edge === 'insights' ? ['period' => 'lifetime'] : []), $token);
+      foreach ($r['data'] ?? [] as $d) {
+        $v = $d['values'][0]['value'] ?? ($d['total_value']['value'] ?? null);
+        if (!is_numeric($v)) continue;
+        if ((int)$v > 0) return (int)$v;
+        $best = 0;
+      }
+    } catch (RuntimeException $e) { /* try the next one */ }
   }
-  return null;
+  return $best;
 }
 function dtm_an_fetch_meta(string $token, array &$errors): array {
   // A personal token saved by mistake: use the Defacing The Music Page's token from it.
@@ -189,7 +197,7 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
         if ($url !== '' && $url[0] === '/') $url = 'https://www.facebook.com' . $url;
         $posts[] = ['platform' => 'facebook', 'id' => $id, 'title' => mb_substr($title, 0, 140), 'url' => $url,
           'published' => substr((string)($v['created_time'] ?? ''), 0, 10),
-          'views' => dtm_an_meta_insight($id, ['blue_reels_play_count', 'fb_reels_total_plays', 'total_video_views'], $token),
+          'views' => dtm_an_meta_insight($id, ['post_video_views', 'blue_reels_play_count', 'fb_reels_total_plays', 'total_video_views', 'post_media_view', 'views'], $token, ['video_insights', 'insights']),
           'likes' => isset($v['likes']['summary']['total_count']) ? (int)$v['likes']['summary']['total_count'] : null,
           'comments' => isset($v['comments']['summary']['total_count']) ? (int)$v['comments']['summary']['total_count'] : null, 'shares' => null];
       }
