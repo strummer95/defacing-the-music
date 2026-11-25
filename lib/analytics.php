@@ -165,6 +165,11 @@ function dtm_an_meta_insight(string $id, array $metrics, string $token): ?int {
   return null;
 }
 function dtm_an_fetch_meta(string $token, array &$errors): array {
+  // A personal token saved by mistake: use the Defacing The Music Page's token from it.
+  try {
+    $acc = dtm_an_meta('me/accounts', ['fields' => 'name,access_token', 'limit' => 100], $token);
+    foreach ($acc['data'] ?? [] as $p) if (stripos((string)($p['name'] ?? ''), 'defacing') !== false && !empty($p['access_token'])) { $token = (string)$p['access_token']; break; }
+  } catch (RuntimeException $e) { /* already a Page token */ }
   $me = dtm_an_meta('me', ['fields' => 'id,name,followers_count,fan_count,instagram_business_account{id,username,followers_count}'], $token);
   $pageId = (string)($me['id'] ?? '');
   if ($pageId === '') throw new RuntimeException("That token isn't a Page token (Meta didn't say which Page it belongs to).");
