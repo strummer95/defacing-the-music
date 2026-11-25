@@ -21,13 +21,14 @@ $episodes = [
   ['title' => 'Due To Not Giving Peace a Chance', 'who' => 'Who Asked Fred Durst to Be a Therapist?',
    'blurb' => '200,000 people, an old Air Force base, four dollar water, and a nu-metal band that did not calm anybody down.',
    'meta' => 'Rome, NY, 1999', 'shadow' => 'red'],
-  ['title' => 'Due To Excessive Disco', 'who' => 'Who Let a DJ Blow Up Center Field?',
-   'blurb' => "A White Sox promotion: bring a disco record, get in for 98 cents, watch a DJ blow them up in center field. Chicago did not stay in its seats.",
-   'meta' => 'Comiskey Park, 1979', 'shadow' => ''],
   ['title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
    'blurb' => "The Who on network TV. Keith Moon decides the exploding drum kit needs more flash powder. Nobody stops him.",
-   'meta' => 'Smothers Brothers, 1967', 'shadow' => 'red'],
+   'meta' => 'Smothers Brothers, 1967', 'shadow' => ''],
+  ['title' => 'Due To Great Balls of Firearms', 'who' => 'Who Let Jerry Lee Back to Graceland?',
+   'blurb' => "Three in the morning. Elvis's front gate. Jerry Lee Lewis, a Lincoln, and a loaded derringer somebody handed him.",
+   'meta' => 'Graceland, 1976', 'shadow' => 'red'],
 ];
+// Disco Demolition is Ready but off the setlist until Duck picks its slot (Nov 25; it pairs with a Studio 54 episode).
 // Blurbs for the latest-episode pass, by title (so they work whatever number the admin gives the episode).
 $blurbsByTitle = [];
 foreach ($episodes as $u) $blurbsByTitle[strtolower($u['title'])] = $u['blurb'];
