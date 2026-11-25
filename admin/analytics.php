@@ -146,9 +146,11 @@ $delta = function (string $m) use ($weekAgo, $series) {
 dtm_page_start('Analytics', $user, true);
 ?>
 <section class="admin-card an">
-  <h1 class="metal">Analytics</h1>
-  <p class="small">Lifetime numbers for every post, all platforms together. <?php if (!empty($state['fetched'])): ?>Last fetched <?= h(date('M j, g:ia', (int)$state['fetched'])) ?>; it fetches again by itself every few hours when you open this page.<?php endif; ?></p>
-  <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status"><?= $_GET['saved'] === 'yt' ? 'YouTube key saved. Hit Refresh now.' : 'Meta token saved' . (($_GET['page'] ?? '') !== '' ? ' (Page: ' . h((string)$_GET['page']) . ')' : '') . '. Hit Refresh now.' ?></p><?php endif; ?>
+  <div class="an-head"><h1 class="metal">Analytics</h1>
+    <span class="small an-when"><?= !empty($state['fetched']) ? 'Updated ' . h(date('M j, g:ia', (int)$state['fetched'])) : 'Not fetched yet' ?></span>
+    <form method="post" action="<?= h($q([])) ?>" class="an-refresh"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="refresh"><button class="an-btn" onclick="this.disabled=true;this.textContent='Fetching...';this.form.submit()">Refresh</button></form>
+  </div>
+  <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status"><?= $_GET['saved'] === 'yt' ? 'YouTube key saved. Hit Refresh.' : 'Meta token saved' . (($_GET['page'] ?? '') !== '' ? ' (Page: ' . h((string)$_GET['page']) . ')' : '') . '. Hit Refresh.' ?></p><?php endif; ?>
   <?php if (($_GET['saved'] ?? '') === 'meta' && (int)($_GET['expires'] ?? 0) > 0): ?><p class="notice err bang" role="alert">Heads up: that token stops working <?= h(date('M j, g:ia', (int)$_GET['expires'])) ?>. To make a permanent one: open Meta's Access Token Debugger, paste your token from Graph API Explorer, click Debug, then "Extend Access Token" at the bottom, and paste that new one here.</p><?php endif; ?>
   <?php if (isset($_GET['cleared'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
   <?php if (($_GET['refreshed'] ?? '') === '1'): ?><p class="notice ok bang" role="status">Fresh numbers fetched.</p><?php endif; ?>
@@ -157,20 +159,19 @@ dtm_page_start('Analytics', $user, true);
   <?php foreach ($fetchErrors as $pl => $e): ?><p class="notice err bang" role="alert"><?= h((DTM_AN_PLATFORMS[$pl] ?? $pl) . ': ' . $e) ?></p><?php endforeach; ?>
 
   <form method="get" class="an-filters">
-    <label>Platform <select name="platform" class="admin-select" onchange="this.form.submit()">
+    <label><span class="sr">Platform</span><select name="platform" class="admin-select" onchange="this.form.submit()">
       <option value="">All platforms</option>
       <?php foreach (DTM_AN_PLATFORMS as $k => $l): ?><option value="<?= h($k) ?>"<?= $fPlat === $k ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
     </select></label>
-    <label>Video <select name="video" class="admin-select" onchange="this.form.submit()">
+    <label><span class="sr">Video</span><select name="video" class="admin-select" onchange="this.form.submit()">
       <option value="">All videos</option>
       <?php foreach ($choices as $g => $l): ?><option value="<?= h($g) ?>"<?= $fVideo === $g ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
     </select></label>
-    <label>Trend <select name="days" class="admin-select" onchange="this.form.submit()">
-      <?php foreach (['7' => 'Last 7 days', '28' => 'Last 28 days', '90' => 'Last 90 days', 'all' => 'All time'] as $k => $l): ?><option value="<?= h($k) ?>"<?= $fDays === (string)$k ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
+    <label><span class="sr">Trend</span><select name="days" class="admin-select" onchange="this.form.submit()">
+      <?php foreach (['7' => 'Chart: 7 days', '28' => 'Chart: 28 days', '90' => 'Chart: 90 days', 'all' => 'Chart: all time'] as $k => $l): ?><option value="<?= h($k) ?>"<?= $fDays === (string)$k ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
     </select></label>
     <noscript><button class="btn">Show</button></noscript>
   </form>
-  <form method="post" action="<?= h($q([])) ?>" class="an-refresh"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="refresh"><button class="btn btn-ghost bang" onclick="this.disabled=true;this.textContent='Fetching...';this.form.submit()">Refresh now</button></form>
 
   <div class="an-tiles">
     <?php foreach (DTM_AN_METRICS as $m => $l): ?>
@@ -178,7 +179,6 @@ dtm_page_start('Analytics', $user, true);
     <?php endforeach; ?>
     <?php if ($fVideo === ''): ?><div class="an-tile"><span class="an-lbl">Followers</span><b><?= $fmt($followers) ?></b><?= $delta('followers') ?></div><?php endif; ?>
   </div>
-  <p class="small an-later">Watch time, impressions and click-through rate: coming later. They need YouTube Analytics sign-in (a Google OAuth connection), not just a key. Until then, check them in YouTube Studio.</p>
 
   <h2 class="bang">Views gained per day</h2>
   <?php if (count($gain) < 1): ?>
@@ -207,9 +207,8 @@ dtm_page_start('Analytics', $user, true);
   </table>
   <?php endif; ?>
 
-  <h2 class="bang" id="videos">By video</h2>
-  <?php if (!$rows): ?><p class="small">No posts yet. Add the YouTube key below and hit Refresh now.</p><?php else: ?>
-  <p class="small">The same clip on several platforms rolls up into one row (best guess by title and date). Open a row to see each platform and fix a wrong match. Click a column to sort.</p>
+  <h2 class="bang" id="videos">By video <span class="small an-hint">same clip on every platform = one row; open a row to fix a match; click a column to sort</span></h2>
+  <?php if (!$rows): ?><p class="small">No posts yet. Add the YouTube key below and hit Refresh.</p><?php else: ?>
   <table class="an-table an-sort">
     <thead><tr><th data-k="t">Video</th><th data-k="d">Posted</th><?php foreach (DTM_AN_METRICS as $l): ?><th class="num" data-k="n"><?= h($l) ?></th><?php endforeach; ?></tr></thead>
     <tbody>
@@ -240,8 +239,8 @@ dtm_page_start('Analytics', $user, true);
   <?php endif; ?>
 </section>
 
-<section class="admin-card an" id="settings">
-  <h2 class="bang">Connections</h2>
+<section class="admin-card an an-fold" id="settings"><details<?= ($cfg['yt'] === '' || $cfg['meta'] === '') ? ' open' : '' ?>>
+  <summary><h2 class="bang">Connections</h2> <span class="small">YouTube <?= $cfg['yt'] !== '' ? 'on' : 'off' ?> · Facebook + Instagram <?= $cfg['meta'] !== '' ? 'on' : 'off' ?></span></summary>
   <p class="small">Keys and tokens are saved only in the secrets file on the server (one folder above the site), never shown here and never in git. Never paste them in a chat.</p>
 
   <h3 class="bang">YouTube <?= $cfg['yt'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
@@ -272,10 +271,10 @@ dtm_page_start('Analytics', $user, true);
     <button name="action" value="save_meta" class="btn bang">Save</button>
     <?php if ($cfg['meta'] !== ''): ?><button name="action" value="clear_meta" class="linkish" onclick="return confirm('Remove the Meta token?')">Remove</button><?php endif; ?>
   </form>
-</section>
+</details></section>
 
-<section class="admin-card an" id="import">
-  <h2 class="bang">TikTok numbers (import)</h2>
+<section class="admin-card an an-fold" id="import"><details<?= $newImportKey !== '' || $msg !== '' ? ' open' : '' ?>>
+  <summary><h2 class="bang">TikTok numbers (import)</h2> <span class="small">paste numbers or set up Defa</span></summary>
   <p class="small">TikTok has no API we can use yet, so its numbers come in here: paste them below, or Defa posts them automatically every day or two. Works for any platform as a backup. One row per post; <b>date</b> is the day the numbers were taken. A row with only <b>followers</b> sets the follower count.</p>
   <pre class="an-example">date,platform,post,caption,views,likes,comments,shares,followers
 2026-11-25,tiktok,https://www.tiktok.com/@defacingthemusic/video/1234567890,Slayer fans vs the seats,5400,320,41,12,
@@ -292,7 +291,7 @@ dtm_page_start('Analytics', $user, true);
   <?php endif; ?>
   <p class="small">POST the same CSV or JSON to <code>https://defacingthemusic.com/admin/analytics-import.php</code> with the header <code>X-Import-Key: &lt;key&gt;</code> (or a <code>key</code> form field) and the data as the body (or a <code>data</code> form field). <?= $cfg['import'] !== '' ? 'An import key is set.' : 'No import key yet.' ?></p>
   <form method="post"><?= dtm_csrf_field() ?><button name="action" value="import_key" class="btn btn-ghost bang"<?= $cfg['import'] !== '' ? ' onclick="return confirm(\'Make a new key? The old one stops working.\')"' : '' ?>><?= $cfg['import'] !== '' ? 'Make a new import key' : 'Make an import key' ?></button></form>
-</section>
+</details></section>
 
 <script>
 // Click a column header to sort the By video table.
