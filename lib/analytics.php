@@ -207,7 +207,7 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
   try {
     $seen = [];
     foreach (['videos', 'video_reels'] as $edge) {
-      $r = dtm_an_meta($pageId . '/' . $edge, ['fields' => 'id,title,description,created_time,permalink_url,post_id,likes.summary(true).limit(0),comments.summary(true).limit(0)', 'limit' => 50], $token);
+      $r = dtm_an_meta($pageId . '/' . $edge, ['fields' => 'id,title,description,created_time,permalink_url,post_id,length,likes.summary(true).limit(0),comments.summary(true).limit(0)', 'limit' => 50], $token);
       foreach ($r['data'] ?? [] as $v) {
         $id = (string)$v['id'];
         if (isset($seen[$id])) continue;
@@ -220,7 +220,10 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
           'views' => dtm_an_meta_insight($id, ['post_video_views', 'blue_reels_play_count', 'fb_reels_total_plays', 'total_video_views', 'post_media_view', 'views'], $token, ['video_insights', 'insights']),
           'likes' => isset($v['likes']['summary']['total_count']) ? (int)$v['likes']['summary']['total_count'] : null,
           'comments' => isset($v['comments']['summary']['total_count']) ? (int)$v['comments']['summary']['total_count'] : null,
-          'shares' => dtm_an_fb_shares($pageId, (string)($v['post_id'] ?? ''), $id, $token)];
+          'shares' => dtm_an_fb_shares($pageId, (string)($v['post_id'] ?? ''), $id, $token),
+          'seconds' => isset($v['length']) ? (int)round((float)$v['length']) : null,
+          'watch_minutes' => ($ms = dtm_an_meta_insight($id, ['post_video_view_time', 'fb_reels_total_view_time'], $token, ['video_insights', 'insights'])) !== null ? (int)round($ms / 60000) : null,
+          'avg_seconds' => ($ms = dtm_an_meta_insight($id, ['post_video_avg_time_watched', 'fb_reels_avg_time_watched'], $token, ['video_insights', 'insights'])) !== null ? (int)round($ms / 1000) : null];
       }
     }
   } catch (RuntimeException $e) { $errors['facebook'] = $e->getMessage(); }
@@ -237,7 +240,10 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
           'published' => substr((string)($m['timestamp'] ?? ''), 0, 10),
           'views' => dtm_an_meta_insight($id, ['views', 'plays', 'impressions'], $token),
           'likes' => isset($m['like_count']) ? (int)$m['like_count'] : null, 'comments' => isset($m['comments_count']) ? (int)$m['comments_count'] : null,
-          'shares' => dtm_an_meta_insight($id, ['shares'], $token)];
+          'shares' => dtm_an_meta_insight($id, ['shares'], $token),
+          'watch_minutes' => ($ms = dtm_an_meta_insight($id, ['ig_reels_video_view_total_time'], $token)) !== null ? (int)round($ms / 60000) : null,
+          'avg_seconds' => ($ms = dtm_an_meta_insight($id, ['ig_reels_avg_watch_time'], $token)) !== null ? (int)round($ms / 1000) : null,
+          'new_followers' => dtm_an_meta_insight($id, ['follows'], $token)];
       }
     } catch (RuntimeException $e) { $errors['instagram'] = $e->getMessage(); }
   }
@@ -444,10 +450,10 @@ function dtm_an_fetch_yta(): array {
   $access = dtm_an_g_tokens(['grant_type' => 'refresh_token', 'refresh_token' => $cfg['g_refresh']]);
   $j = dtm_an_tt_get('https://youtubeanalytics.googleapis.com/v2/reports?' . http_build_query([
     'ids' => 'channel==MINE', 'startDate' => '2026-01-01', 'endDate' => date('Y-m-d'),
-    'metrics' => 'views,shares,estimatedMinutesWatched', 'dimensions' => 'video', 'sort' => '-views', 'maxResults' => 200]), $access);
+    'metrics' => 'views,shares,estimatedMinutesWatched,averageViewDuration,subscribersGained', 'dimensions' => 'video', 'sort' => '-views', 'maxResults' => 200]), $access);
   $posts = [];
   foreach ($j['rows'] ?? [] as $r) {
-    $posts[] = ['platform' => 'youtube', 'id' => (string)$r[0], 'shares' => (int)$r[2], 'watch_minutes' => (int)$r[3]];
+    $posts[] = ['platform' => 'youtube', 'id' => (string)$r[0], 'shares' => (int)$r[2], 'watch_minutes' => (int)$r[3], 'avg_seconds' => (int)$r[4], 'new_followers' => (int)$r[5]];
   }
   return $posts;
 }
