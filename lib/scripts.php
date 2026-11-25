@@ -23,6 +23,7 @@ const DTM_SEEDS = [
   'story-mj-beatles-catalog'    => ['', 'Due To a Hot Business Tip', 'Who Taught Michael Jackson About Publishing?'],
   'story-rammstein'             => ['', 'Due To Excessive Pyrotechnics', 'Who Let Rammstein Into Massachusetts?'],
   'story-napster'               => ['', 'Due To Unauthorized Downloading', 'Who Brought Lars Ulrich the Boxes?'],
+  'story-studio-54'             => ['', 'Due To a Strict Door Policy', 'Who Kept Chic Out of Studio 54?'],
   // Off The Record ideas Duck picked (Nov 23): land in Side Stories as ideas, not scripts yet.
   'otr-brown-mms' => ['', "Off The Record: Van Halen's Brown M&M's", "Did Van Halen really ban brown M&M's?"],
   'otr-hendrix-parakeets' => ['', "Off The Record: Hendrix and London's Parakeets", "Did Jimi Hendrix let loose London's wild parrots?"],
@@ -83,7 +84,7 @@ const DTM_SEED_KINDS = [
 ];
 // side-story seeds that arrive as finished scripts, not ideas
 // Main-episode seeds that start as ideas (notes, not scripts).
-const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein', 'story-napster'];
+const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein', 'story-napster', 'story-studio-54'];
 const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-gta6-content-id']; // GTA 6 one is up first (Duck, Nov 24)
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
 const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire'];
