@@ -24,9 +24,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $t = preg_replace('/\s+/', '', (string)($_POST['meta_token'] ?? ''));
       if (strlen($t) < 40) $err = "That's too short to be a Meta access token.";
       else {
-        try { $me = dtm_an_get(DTM_META_API . 'me?' . http_build_query(['fields' => 'id,name', 'access_token' => $t])); }
-        catch (RuntimeException $e) { $err = 'Meta turned that token down: ' . $e->getMessage(); }
-        if ($err === '' && ($err = dtm_an_save_secrets(['meta_page_token' => $t])) === '') { header('Location: analytics.php?saved=meta&page=' . rawurlencode((string)($me['name'] ?? ''))); exit; }
+        try {
+          $me = dtm_an_get(DTM_META_API . 'me?' . http_build_query(['fields' => 'id,name', 'access_token' => $t]));
+          // A personal (user) token: swap it for the Defacing The Music Page's own token, so Duck doesn't have to dig it out.
+          $acc = dtm_an_get(DTM_META_API . 'me/accounts?' . http_build_query(['fields' => 'id,name,access_token', 'limit' => 100, 'access_token' => $t]));
+          $pages = $acc['data'] ?? [];
+          if ($pages) {
+            $pick = null;
+            foreach ($pages as $p) if (stripos((string)($p['name'] ?? ''), 'defacing') !== false) $pick = $p;
+            if (!$pick && count($pages) === 1) $pick = $pages[0];
+            if (!$pick || empty($pick['access_token'])) $err = "That's your personal token, and I couldn't find the Defacing The Music Page in it. Make a new token and tick that Page when Facebook asks which Pages.";
+            else { $t = (string)$pick['access_token']; $me = $pick; }
+          }
+        } catch (RuntimeException $e) {
+          if (!isset($me)) $err = 'Meta turned that token down: ' . $e->getMessage();
+          // me/accounts fails on a Page token itself; that's fine, keep it as is.
+        }
+        $exp = 0;
+        if ($err === '') {
+          try { $dbg = dtm_an_get(DTM_META_API . 'debug_token?' . http_build_query(['input_token' => $t, 'access_token' => $t])); $exp = (int)($dbg['data']['expires_at'] ?? 0); }
+          catch (RuntimeException $e) { /* can't tell; save it anyway */ }
+        }
+        if ($err === '' && ($err = dtm_an_save_secrets(['meta_page_token' => $t])) === '') { header('Location: analytics.php?saved=meta&page=' . rawurlencode((string)($me['name'] ?? '')) . ($exp > 0 ? '&expires=' . $exp : '')); exit; }
       }
     }
     if ($a === 'clear_yt' || $a === 'clear_meta') {
@@ -130,6 +149,7 @@ dtm_page_start('Analytics', $user, true);
   <h1 class="metal">Analytics</h1>
   <p class="small">Lifetime numbers for every post, all platforms together. <?php if (!empty($state['fetched'])): ?>Last fetched <?= h(date('M j, g:ia', (int)$state['fetched'])) ?>; it fetches again by itself every few hours when you open this page.<?php endif; ?></p>
   <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status"><?= $_GET['saved'] === 'yt' ? 'YouTube key saved. Hit Refresh now.' : 'Meta token saved' . (($_GET['page'] ?? '') !== '' ? ' (Page: ' . h((string)$_GET['page']) . ')' : '') . '. Hit Refresh now.' ?></p><?php endif; ?>
+  <?php if (($_GET['saved'] ?? '') === 'meta' && (int)($_GET['expires'] ?? 0) > 0): ?><p class="notice err bang" role="alert">Heads up: that token stops working <?= h(date('M j, g:ia', (int)$_GET['expires'])) ?>. To make a permanent one: open Meta's Access Token Debugger, paste your token from Graph API Explorer, click Debug, then "Extend Access Token" at the bottom, and paste that new one here.</p><?php endif; ?>
   <?php if (isset($_GET['cleared'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
   <?php if (($_GET['refreshed'] ?? '') === '1'): ?><p class="notice ok bang" role="status">Fresh numbers fetched.</p><?php endif; ?>
   <?php if ($msg): ?><p class="notice ok bang" role="status"><?= h($msg) ?></p><?php endif; ?>
