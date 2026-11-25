@@ -39,9 +39,14 @@ $blurbs = [
 ];
 try {
   require_once __DIR__ . '/lib/episodes.php';
-  foreach (array_reverse(dtm_episodes()) as $e) {
-    if (($e['status'] ?? '') !== 'published') continue;
-    if (!preg_match('~(?:youtu\.be/|v=|/embed/|/shorts/|/live/)([A-Za-z0-9_-]{11})~', (string)($e['youtube'] ?? ''), $m)) continue;
+  $eps = dtm_episodes();
+  usort($eps, fn($a, $b) => (int)($b['number'] ?? 0) <=> (int)($a['number'] ?? 0)); // highest episode number first
+  foreach ($eps as $e) {
+    // Published, or its release date has arrived (so an episode that's out but still marked Planned shows up too).
+    // Any YouTube link works: watch, youtu.be, shorts, live, embed, or a Studio /video/ link.
+    $out = ($e['status'] ?? '') === 'published' || (!empty($e['date']) && $e['date'] <= date('Y-m-d'));
+    if (!$out) continue;
+    if (!preg_match('~(?:youtu\.be/|v=|/embed/|/shorts/|/live/|/video/)([A-Za-z0-9_-]{11})~', (string)($e['youtube'] ?? ''), $m)) continue;
     $latest = ['num' => (string)$e['number'], 'title' => (string)$e['title'], 'who' => (string)($e['subtitle'] ?? ''), 'yt' => $m[1]];
     break;
   }
