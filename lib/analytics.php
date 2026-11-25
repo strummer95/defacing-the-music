@@ -22,7 +22,9 @@ function dtm_an_cfg(): array {
   return ['yt' => trim((string)($s['youtube_api_key'] ?? '')), 'meta' => trim((string)($s['meta_page_token'] ?? '')),
           'import' => trim((string)($s['analytics_import_key'] ?? '')),
           'tt_key' => trim((string)($s['tiktok_client_key'] ?? '')), 'tt_secret' => trim((string)($s['tiktok_client_secret'] ?? '')),
-          'tt_refresh' => trim((string)($s['tiktok_refresh_token'] ?? ''))];
+          'tt_refresh' => trim((string)($s['tiktok_refresh_token'] ?? '')),
+          'g_id' => trim((string)($s['google_client_id'] ?? '')), 'g_secret' => trim((string)($s['google_client_secret'] ?? '')),
+          'g_refresh' => trim((string)($s['youtube_analytics_refresh_token'] ?? ''))];
 }
 
 // Same safe write as the Guest List settings: temp file next to the secrets file, check it loads and kept every
@@ -257,6 +259,10 @@ function dtm_an_refresh(bool $force = false): array {
     try { [$p, $f] = dtm_an_fetch_youtube($cfg['yt']); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['youtube'] = $e->getMessage(); }
   }
+  if ($cfg['g_refresh'] !== '') {
+    try { dtm_an_store($today, dtm_an_fetch_yta(), []); }
+    catch (RuntimeException $e) { $errors['youtube'] = trim(($errors['youtube'] ?? '') . ' YouTube Analytics: ' . $e->getMessage()); }
+  }
   if ($cfg['meta'] !== '') {
     try { [$p, $f] = dtm_an_fetch_meta($cfg['meta'], $errors); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['facebook'] = $errors['instagram'] = $e->getMessage(); }
@@ -415,4 +421,33 @@ function dtm_an_fetch_tiktok(): array {
     if ($cursor === null) break;
   }
   return [$posts, $followers];
+}
+
+// ---------- YouTube Analytics (Google sign-in): shares and watch time per video ----------
+// Uses the shared Google OAuth client (google_client_id, plus google_client_secret pasted on the Stats page). Duck
+// clicks Connect YouTube Analytics (admin/analytics-google.php) once; the refresh token lives in ../dtm-secrets.php.
+const DTM_YTA_SCOPE = 'https://www.googleapis.com/auth/yt-analytics.readonly';
+function dtm_an_g_redirect(): string { return 'https://defacingthemusic.com/admin/analytics-google.php'; }
+function dtm_an_g_tokens(array $grant): string {
+  $cfg = dtm_an_cfg();
+  if ($cfg['g_id'] === '' || $cfg['g_secret'] === '') throw new RuntimeException('Paste the Google client secret first.');
+  $j = dtm_an_post('https://oauth2.googleapis.com/token', ['client_id' => $cfg['g_id'], 'client_secret' => $cfg['g_secret']] + $grant);
+  if (empty($j['access_token'])) throw new RuntimeException('Google did not send a login token back.');
+  if (!empty($j['refresh_token']) && $j['refresh_token'] !== $cfg['g_refresh']) {
+    $err = dtm_an_save_secrets(['youtube_analytics_refresh_token' => (string)$j['refresh_token']]);
+    if ($err !== '') throw new RuntimeException($err);
+  }
+  return (string)$j['access_token'];
+}
+function dtm_an_fetch_yta(): array {
+  $cfg = dtm_an_cfg();
+  $access = dtm_an_g_tokens(['grant_type' => 'refresh_token', 'refresh_token' => $cfg['g_refresh']]);
+  $j = dtm_an_tt_get('https://youtubeanalytics.googleapis.com/v2/reports?' . http_build_query([
+    'ids' => 'channel==MINE', 'startDate' => '2026-01-01', 'endDate' => date('Y-m-d'),
+    'metrics' => 'views,shares,estimatedMinutesWatched', 'dimensions' => 'video', 'sort' => '-views', 'maxResults' => 200]), $access);
+  $posts = [];
+  foreach ($j['rows'] ?? [] as $r) {
+    $posts[] = ['platform' => 'youtube', 'id' => (string)$r[0], 'shares' => (int)$r[2], 'watch_minutes' => (int)$r[3]];
+  }
+  return $posts;
 }

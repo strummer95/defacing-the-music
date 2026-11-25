@@ -55,6 +55,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       else { $set = ['tiktok_client_key' => $k]; if ($sec !== '') $set['tiktok_client_secret'] = $sec;
         if (($err = dtm_an_save_secrets($set)) === '') { header('Location: analytics.php?saved=ttkeys#settings'); exit; } }
     }
+    if ($a === 'save_g') {
+      $sec = trim((string)($_POST['g_secret'] ?? ''));
+      if (!preg_match('/^[A-Za-z0-9_-]{16,80}$/', $sec)) $err = "That doesn't look like a Google client secret (it usually starts with GOCSPX-).";
+      elseif (($err = dtm_an_save_secrets(['google_client_secret' => $sec])) === '') { header('Location: analytics.php?saved=gkeys#settings'); exit; }
+    }
+    if ($a === 'clear_g') {
+      $err = dtm_an_save_secrets(['youtube_analytics_refresh_token' => '']);
+      if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
+    }
     if ($a === 'clear_tt') {
       $err = dtm_an_save_secrets(['tiktok_refresh_token' => '', 'tiktok_client_key' => '', 'tiktok_client_secret' => '']);
       if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
@@ -154,10 +163,10 @@ $delta = function (string $m) use ($weekAgo, $series) {
   return '<span class="an-delta">' . ($d >= 0 ? '+' : '−') . number_format(abs($d)) . ' this week</span>';
 };
 
-dtm_page_start('Analytics', $user, true);
+dtm_page_start('Stats', $user, true);
 ?>
 <section class="admin-card an">
-  <div class="an-head"><h1 class="metal">Analytics</h1>
+  <div class="an-head"><h1 class="metal">Stats</h1>
     <span class="small an-when"><?= !empty($state['fetched']) ? 'Updated ' . h(date('M j, g:ia', (int)$state['fetched'])) : 'Not fetched yet' ?></span>
     <form method="post" action="<?= h($q([])) ?>" class="an-refresh"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="refresh"><button class="an-btn" onclick="this.disabled=true;this.textContent='Fetching...';this.form.submit()">Refresh</button></form>
   </div>
@@ -165,6 +174,9 @@ dtm_page_start('Analytics', $user, true);
   <?php if (($_GET['saved'] ?? '') === 'meta' && (int)($_GET['expires'] ?? 0) > 0): ?><p class="notice err bang" role="alert">Heads up: that token stops working <?= h(date('M j, g:ia', (int)$_GET['expires'])) ?>. To make a permanent one: open Meta's Access Token Debugger, paste your token from Graph API Explorer, click Debug, then "Extend Access Token" at the bottom, and paste that new one here.</p><?php endif; ?>
   <?php if (($_GET['saved'] ?? '') === 'tt'): ?><p class="notice ok bang" role="status">TikTok connected. Hit Refresh.</p><?php endif; ?>
   <?php if (($_GET['saved'] ?? '') === 'ttkeys'): ?><p class="notice ok bang" role="status">TikTok keys saved. Now click Connect TikTok.</p><?php endif; ?>
+  <?php if (($_GET['saved'] ?? '') === 'g'): ?><p class="notice ok bang" role="status">YouTube Analytics connected. Hit Refresh (YouTube's own numbers run about 2 days behind).</p><?php endif; ?>
+  <?php if (($_GET['saved'] ?? '') === 'gkeys'): ?><p class="notice ok bang" role="status">Google secret saved. Now click Connect YouTube Analytics.</p><?php endif; ?>
+  <?php if (($_GET['g_err'] ?? '') !== ''): ?><p class="notice err bang" role="alert"><?= h(mb_substr((string)$_GET['g_err'], 0, 300)) ?></p><?php endif; ?>
   <?php if (($_GET['tt_err'] ?? '') !== ''): ?><p class="notice err bang" role="alert"><?= h(mb_substr((string)$_GET['tt_err'], 0, 300)) ?></p><?php endif; ?>
   <?php if (isset($_GET['cleared'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
   <?php if (($_GET['refreshed'] ?? '') === '1'): ?><p class="notice ok bang" role="status">Fresh numbers fetched.</p><?php endif; ?>
@@ -191,6 +203,7 @@ dtm_page_start('Analytics', $user, true);
     <?php foreach (DTM_AN_METRICS as $m => $l): ?>
     <div class="an-tile"><span class="an-lbl"><?= h($l) ?></span><b><?= $fmt($tot[$m]) ?></b><?= $delta($m) ?></div>
     <?php endforeach; ?>
+    <?php $wm = array_sum(array_map(fn($p) => (int)($p['watch_minutes'] ?? 0), $sel)); if ($wm > 0): ?><div class="an-tile" title="YouTube only; Shorts and long videos together"><span class="an-lbl">YT watch hours</span><b><?= number_format($wm / 60, 1) ?></b></div><?php endif; ?>
     <?php if ($fVideo === ''): ?><div class="an-tile"><span class="an-lbl">Followers</span><b><?= $fmt($followers) ?></b><?= $delta('followers') ?></div><?php endif; ?>
   </div>
 
@@ -254,8 +267,8 @@ dtm_page_start('Analytics', $user, true);
   <?php endif; ?>
 </section>
 
-<section class="admin-card an an-fold" id="settings"><details<?= ($cfg['yt'] === '' || $cfg['meta'] === '' || $cfg['tt_refresh'] === '' || isset($_GET['tt_err']) || ($_GET['saved'] ?? '') === 'ttkeys') ? ' open' : '' ?>>
-  <summary><h2 class="bang">Connections</h2> <span class="small">YouTube <?= $cfg['yt'] !== '' ? 'on' : 'off' ?> · Facebook + Instagram <?= $cfg['meta'] !== '' ? 'on' : 'off' ?> · TikTok <?= $cfg['tt_refresh'] !== '' ? 'on' : 'off' ?></span></summary>
+<section class="admin-card an an-fold" id="settings"><details<?= ($cfg['yt'] === '' || $cfg['meta'] === '' || $cfg['tt_refresh'] === '' || $cfg['g_refresh'] === '' || isset($_GET['g_err']) || ($_GET['saved'] ?? '') === 'gkeys' || isset($_GET['tt_err']) || ($_GET['saved'] ?? '') === 'ttkeys') ? ' open' : '' ?>>
+  <summary><h2 class="bang">Connections</h2> <span class="small">YouTube <?= $cfg['yt'] !== '' ? 'on' : 'off' ?> · YouTube shares <?= $cfg['g_refresh'] !== '' ? 'on' : 'off' ?> · Facebook + Instagram <?= $cfg['meta'] !== '' ? 'on' : 'off' ?> · TikTok <?= $cfg['tt_refresh'] !== '' ? 'on' : 'off' ?></span></summary>
   <p class="small">Keys and tokens are saved only in the secrets file on the server (one folder above the site), never shown here and never in git. Never paste them in a chat.</p>
 
   <h3 class="bang">YouTube <?= $cfg['yt'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
@@ -271,6 +284,23 @@ dtm_page_start('Analytics', $user, true);
     <button name="action" value="save_yt" class="btn bang">Save</button>
     <?php if ($cfg['yt'] !== ''): ?><button name="action" value="clear_yt" class="linkish" onclick="return confirm('Remove the YouTube key?')">Remove</button><?php endif; ?>
   </form>
+
+  <h3 class="bang">YouTube shares + watch time <?= $cfg['g_refresh'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
+  <details<?= $cfg['g_refresh'] === '' ? ' open' : '' ?>><summary class="small">How to set it up (about 5 minutes)</summary>
+    <ol class="small">
+      <li>In <a href="https://console.cloud.google.com/apis/library/youtubeanalytics.googleapis.com" target="_blank" rel="noopener">Google Cloud, YouTube Analytics API</a> (duck-andrabbit-co project), click <b>Enable</b>.</li>
+      <li><b>APIs &amp; Services &gt; Credentials</b>, open the OAuth client <b>dnr-sites-signin</b>. Under <b>Authorized redirect URIs</b> add <code class="an-secret">https://defacingthemusic.com/admin/analytics-google.php</code> and Save. Copy its <b>Client secret</b> (starts with GOCSPX-) and paste it below.</li>
+      <li><b>Google Auth Platform &gt; Audience</b>: if it says <b>Testing</b>, click <b>Publish app</b> (otherwise Google logs us out every 7 days). It stays unverified; that's fine for our own channel.</li>
+      <li>Click <b>Connect YouTube Analytics</b> and sign in with the Google account that owns the DTM channel. If Google warns the app isn't verified, click Advanced, then continue.</li>
+    </ol></details>
+  <form method="post" class="admin-form an-key"><?= dtm_csrf_field() ?>
+    <input type="password" name="g_secret" autocomplete="off" placeholder="<?= $cfg['g_secret'] !== '' ? 'Google client secret (saved)' : 'Google client secret (GOCSPX-...)' ?>" aria-label="Google client secret">
+    <button name="action" value="save_g" class="btn bang">Save</button>
+    <?php if ($cfg['g_refresh'] !== ''): ?><button name="action" value="clear_g" class="linkish" onclick="return confirm('Disconnect YouTube Analytics?')">Disconnect</button><?php endif; ?>
+  </form>
+  <?php if ($cfg['g_secret'] !== '' && $cfg['g_id'] !== ''): ?>
+  <form method="post" action="analytics-google.php"><?= dtm_csrf_field() ?><button class="an-btn"><?= $cfg['g_refresh'] !== '' ? 'Reconnect YouTube Analytics' : 'Connect YouTube Analytics' ?></button></form>
+  <?php endif; ?>
 
   <h3 class="bang">Facebook + Instagram <?= $cfg['meta'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
   <details<?= $cfg['meta'] === '' ? ' open' : '' ?>><summary class="small">How to get the Page token (about 10 minutes)</summary>
