@@ -213,7 +213,8 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 <?php if ($user) echo dtm_pull_flash(); ?>
 <?php
 }
-// The menu bar (Duck, Nov 23): Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List, Analytics (Nov 25), Sponsors.
+// The menu bar (Duck, Nov 25): Episodes, Side Stories, Guest List, Stats, and a Backstage menu with Uploads, Host Guide,
+// Sponsors & Media Kit and Site Looks.
 function dtm_admin_nav(): string {
   $page = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
   $side = false;
@@ -225,12 +226,15 @@ function dtm_admin_nav(): string {
   $items = [
     'episodes' => ['Episodes', 'episodes.php', ['episodes.php', 'scripts.php', 'prompter.php', 'images.php', 'edit.php']],
     'side' => ['Side Stories', 'side.php', ['side.php', 'news.php']],
-    'uploads' => ['Uploads', 'uploads.php', ['uploads.php']],
-    'looks' => ['Site Looks', 'looks.php', ['looks.php']],
-    'guide' => ['Host Guide', 'guide.php', ['guide.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
     'analytics' => ['Stats', 'analytics.php', ['analytics.php']],
-    'sponsors' => ['Sponsors', 'sponsors.php', ['sponsors.php']],
+  ];
+  // Everything else lives under one "Backstage" menu (Duck, Nov 25).
+  $more = [
+    ['Uploads', 'uploads.php', ['uploads.php']],
+    ['Host Guide', 'guide.php', ['guide.php']],
+    ['Sponsors & Media Kit', 'sponsors.php', ['sponsors.php']],
+    ['Site Looks', 'looks.php', ['looks.php']],
   ];
   $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
   foreach ($items as $k => [$label, $href, $pages]) {
@@ -239,6 +243,13 @@ function dtm_admin_nav(): string {
     if ($k === 'side' && $side) $on = true;
     $o .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . '>' . h($label) . '</a>';
   }
+  $moreOn = false; $links = '';
+  foreach ($more as [$label, $href, $pages]) {
+    $on = in_array($page, $pages, true); $moreOn = $moreOn || $on;
+    $links .= '<a href="' . h($href) . '"' . ($on ? ' class="on" aria-current="page"' : '') . '>' . h($label) . '</a>';
+  }
+  $o .= '<details class="nav-more' . ($moreOn ? ' on' : '') . '"><summary>Backstage</summary><div class="nav-more-menu">' . $links . '</div></details>';
+  $o .= '<script>document.addEventListener("click",e=>{document.querySelectorAll(".nav-more[open]").forEach(d=>{if(!d.contains(e.target))d.removeAttribute("open")})});</script>';
   return $o . '</div></nav>';
 }
 // After Pull latest: a one-line result at the top of whatever page Duck was on (details tucked away).
