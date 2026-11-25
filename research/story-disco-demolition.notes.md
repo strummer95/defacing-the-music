@@ -163,3 +163,6 @@ Applied D1 to D4 from BOARD.md. 33.4 to 27.9 min. Cut: THE OLDER COUSIN (Ten Cen
 ## "Le Freak" tease (added Nov 25, Duck's call)
 - The Disco Demolition script teases a future Studio 54 episode: Nile Rodgers and Bernard Edwards of Chic were invited to Studio 54 on New Year's Eve 1977, turned away at the door, and wrote "Le Freak" out of it. Source to confirm before recording: Nile Rodgers, *Le Freak: An Upside Down Story of Family, Disco, and Destiny* (2011), and his interviews.
 - "Le Freak" at No. 1 on the Billboard Hot 100 in December 1978: confirm the exact weeks against Billboard's chart archive (the FILL already says it was No. 1 the week Dahl was fired).
+
+## Framing (Duck, Nov 25)
+- Duck: "we won't touch on that at all... it was just one genre not liking another." Disco Demolition (and any Studio 54 / rise-and-fall-of-disco pairing) is told as rock fans vs disco, a radio war and a promotion gone wrong. No race or sexuality angle anywhere: script, TALK cues, FILLs, descriptions or Shorts.
