@@ -12,7 +12,7 @@ uasort($posts, fn($a, $b) => strcmp((string)($b['published'] ?? ''), (string)($a
 $dur = function ($s) { if ($s === null || $s === '') return null; $s = (int)$s; return $s >= 3600 ? gmdate('G:i:s', $s) : gmdate('i:s', $s); };
 $num = fn($v) => $v === null ? null : number_format((int)$v);
 $cols = [ // key => [label, how to show, sort value]
-  'published' => ['Posted', fn($x) => !empty($x['published']) ? date('M j, Y', strtotime($x['published'])) : null, fn($x) => (string)($x['published'] ?? '')],
+  'published' => ['Posted', fn($x) => !empty($x['published']) ? date(substr($x['published'], 0, 4) === date('Y') ? 'M j' : 'M j, Y', strtotime($x['published'])) : null, fn($x) => (string)($x['published'] ?? '')],
   'seconds' => ['Length', fn($x) => $dur($x['seconds'] ?? null), fn($x) => (int)($x['seconds'] ?? 0)],
   'views' => ['Views', fn($x) => $num($x['views'] ?? null), fn($x) => (int)($x['views'] ?? 0)],
   'watch_minutes' => ['Watch time', fn($x) => isset($x['watch_minutes']) ? number_format($x['watch_minutes'] / 60, 1) . ' h' : null, fn($x) => (int)($x['watch_minutes'] ?? 0)],

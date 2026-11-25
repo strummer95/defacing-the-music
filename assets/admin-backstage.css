@@ -302,3 +302,42 @@ body.admin .an-vids tbody tr:hover{background:rgba(0,0,0,.03)}
 body.admin .an-vids tfoot td{font-weight:800;border-top:2px solid var(--ink);border-bottom:0}
 body.admin .an-hint-line{margin:6px 0 0;color:#5a5560}
 body.admin .admin-card a.an-back{color:var(--paper)} body.admin .admin-card a.an-back:hover{color:#fff}
+/* Stats on phones (Duck, Nov 25: "needs to work on mobile too") */
+body.admin .an-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:600px){
+  body.admin .admin-nav{position:static}
+  body.admin .admin-nav a,body.admin .nav-more summary{font-size:12px;letter-spacing:.08em;padding:9px 7px 7px}
+  body.admin .admin-main{padding-left:8px;padding-right:8px}
+  body.admin .an{padding:12px 12px}
+  body.admin .an-head{gap:6px 10px}
+  body.admin .an-head h1{font-size:26px}
+  body.admin .an-when{font-size:12px}
+  body.admin .an-filters{gap:6px}
+  body.admin .an-filters .admin-select{font-size:11px;height:32px;min-height:32px;padding:0 26px 0 10px;background-position:right 9px center;max-width:100%}
+  body.admin .an-filters select[name=video]{flex:1 1 100%}
+  body.admin .an-tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  body.admin .an-tile{padding:8px 10px;column-gap:4px}
+  body.admin .an-tile .an-lbl{font-size:10px;letter-spacing:.08em}
+  body.admin .an-tile b{font-size:22px}
+  body.admin .an-delta{font-size:10px}
+  body.admin .an h2{font-size:14px;margin:12px 0 4px}
+  body.admin .an-hint{display:none}
+  body.admin .an-plat{font-size:14px}
+  body.admin .an-plat th{font-size:10px;padding:5px 6px}
+  body.admin .an-plat td{padding:8px 6px}
+  body.admin .an-plat td:first-child a{font-size:15px}
+  body.admin .an-table{font-size:13px}
+  body.admin .an-table th{font-size:10px;padding:4px 5px}
+  body.admin .an-table td{padding:6px 5px}
+  body.admin .an-sort td:first-child{min-width:150px;max-width:200px}
+  body.admin .an-sort summary b{font-size:13px;font-weight:700}
+  body.admin .an-chart{height:60px}
+  body.admin .an-tabs a{font-size:11px;padding:5px 8px}
+  body.admin .an-vids td:first-child{min-width:170px}
+}
+body.admin .an-plat td:first-child{white-space:nowrap}
+@media (max-width:600px){
+  body.admin .an-hint-line{font-size:11px;line-height:1.4}
+  body.admin .an-vids td:first-child{min-width:150px;max-width:190px;font-size:13px}
+  body.admin .an-head .an-back{padding:5px 10px;min-height:28px;font-size:11px}
+}
