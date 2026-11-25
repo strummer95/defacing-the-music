@@ -207,21 +207,9 @@ dtm_page_start('Stats', $user, true);
     <?php if ($fVideo === ''): ?><div class="an-tile"><span class="an-lbl">Followers</span><b><?= $fmt($followers) ?></b><?= $delta('followers') ?></div><?php endif; ?>
   </div>
 
-  <h2 class="bang">Views gained per day</h2>
-  <?php if (count($gain) < 1): ?>
-  <p class="small">The trend starts once there are two days of numbers. Come back tomorrow.</p>
-  <?php else: ?>
-  <div class="an-chart" role="img" aria-label="Views gained per day">
-    <?php foreach ($gain as $day => $v): ?>
-    <div class="an-col" tabindex="0"><i style="height:<?= max(2, round($v / $gainMax * 100, 1)) ?>%"></i><span class="an-tip"><?= h(date('M j', strtotime($day))) ?>: <?= number_format($v) ?> views</span></div>
-    <?php endforeach; ?>
-  </div>
-  <div class="an-axis small"><span><?= h(date('M j', strtotime(array_key_first($gain)))) ?></span><span>Most in a day: <?= number_format($gainMax) ?></span><span><?= h(date('M j', strtotime(array_key_last($gain)))) ?></span></div>
-  <?php endif; ?>
-
   <?php if ($fVideo === ''): ?>
   <h2 class="bang">By platform</h2>
-  <table class="an-table">
+  <table class="an-table an-plat">
     <thead><tr><th>Platform</th><th class="num">Followers</th><?php foreach (DTM_AN_METRICS as $l): ?><th class="num"><?= h($l) ?></th><?php endforeach; ?><th class="num">Posts</th></tr></thead>
     <tbody>
     <?php foreach (DTM_AN_PLATFORMS as $pl => $label): if ($fPlat !== '' && $pl !== $fPlat) continue;
@@ -232,6 +220,18 @@ dtm_page_start('Stats', $user, true);
     <?php endforeach; ?>
     </tbody>
   </table>
+  <?php endif; ?>
+
+  <h2 class="bang">Views gained per day</h2>
+  <?php if (count($gain) < 1): ?>
+  <p class="small">The trend starts once there are two days of numbers. Come back tomorrow.</p>
+  <?php else: ?>
+  <div class="an-chart" role="img" aria-label="Views gained per day">
+    <?php foreach ($gain as $day => $v): ?>
+    <div class="an-col" tabindex="0"><i style="height:<?= max(2, round($v / $gainMax * 100, 1)) ?>%"></i><span class="an-tip"><?= h(date('M j', strtotime($day))) ?>: <?= number_format($v) ?> views</span></div>
+    <?php endforeach; ?>
+  </div>
+  <div class="an-axis small"><span><?= h(date('M j', strtotime(array_key_first($gain)))) ?></span><span>Most in a day: <?= number_format($gainMax) ?></span><span><?= h(date('M j', strtotime(array_key_last($gain)))) ?></span></div>
   <?php endif; ?>
 
   <h2 class="bang" id="videos">By video <span class="small an-hint">same clip on every platform = one row; open a row to fix a match; click a column to sort</span></h2>
