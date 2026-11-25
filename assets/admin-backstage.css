@@ -341,3 +341,9 @@ body.admin .an-plat td:first-child{white-space:nowrap}
   body.admin .an-vids td:first-child{min-width:150px;max-width:190px;font-size:13px}
   body.admin .an-head .an-back{padding:5px 10px;min-height:28px;font-size:11px}
 }
+/* Stats tiles: big numbers shrink to fit their tile instead of getting cut off (Duck, Nov 25) */
+body.admin .an-tile{container-type:inline-size;min-width:0;overflow:hidden}
+body.admin .an-tile b{font-size:min(44px,22cqi);white-space:nowrap}
+@media (max-width:600px){ body.admin .an-tile b{font-size:min(22px,20cqi)} }
+body.admin .an-tile b{font-size:min(44px,calc(150cqi / var(--n,6)))}
+@media (max-width:600px){ body.admin .an-tile b{font-size:min(24px,calc(150cqi / var(--n,6)))} }
