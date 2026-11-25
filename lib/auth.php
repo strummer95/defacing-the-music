@@ -213,7 +213,7 @@ function dtm_page_start(string $title, ?array $user = null, bool $pullButton = f
 <?php if ($user) echo dtm_pull_flash(); ?>
 <?php
 }
-// The menu bar (Duck, Nov 23): Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List.
+// The menu bar (Duck, Nov 23): Episodes, Side Stories, Uploads, Site Looks, Host Guide, Guest List, Analytics (Nov 25), Sponsors.
 function dtm_admin_nav(): string {
   $page = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
   $side = false;
@@ -229,6 +229,7 @@ function dtm_admin_nav(): string {
     'looks' => ['Site Looks', 'looks.php', ['looks.php']],
     'guide' => ['Host Guide', 'guide.php', ['guide.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
+    'analytics' => ['Analytics', 'analytics.php', ['analytics.php']],
     'sponsors' => ['Sponsors', 'sponsors.php', ['sponsors.php']],
   ];
   $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
