@@ -158,3 +158,8 @@ All quotes re-checked against the full Chicago magazine page (https://www.chicag
 
 ## Nov 20 length cuts (Duck approved, via Defa)
 Applied D1 to D4 from BOARD.md. 33.4 to 27.9 min. Cut: THE OLDER COUSIN (Ten Cent Beer Night; its three sources removed from lib/sources), the "where I went digging" line, Paul Sullivan and the 1968 reference (too close to the hard rule), Jack Morris, the pole climbers and the Gaborek foul pole and sign quotes, Piersall long version, Mike Veeck's lost years (drinking, divorce, jai alai), Nobody Night, Vasectomy Night, Dahl's book, Devil Rays and Marlins, the Veeck surgery wording and the "story changed every time" line. Notes on cut material stay above for reference.
+
+
+## "Le Freak" tease (added Nov 25, Duck's call)
+- The Disco Demolition script teases a future Studio 54 episode: Nile Rodgers and Bernard Edwards of Chic were invited to Studio 54 on New Year's Eve 1977, turned away at the door, and wrote "Le Freak" out of it. Source to confirm before recording: Nile Rodgers, *Le Freak: An Upside Down Story of Family, Disco, and Destiny* (2011), and his interviews.
+- "Le Freak" at No. 1 on the Billboard Hot 100 in December 1978: confirm the exact weeks against Billboard's chart archive (the FILL already says it was No. 1 the week Dahl was fired).
