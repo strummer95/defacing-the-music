@@ -44,13 +44,24 @@ Research notes with sources for each: `research/<slug>.notes.md`.
 ## Ideas, not scripted yet
 | Story | Duck's rating | Notes |
 |---|---|---|
-| Axl Rose, St. Louis Riverport riot, 1991 | YES | Already backstory inside the Metallica/GN'R script; could be its own episode. |
+| Axl Rose, St. Louis Riverport riot, 1991 | YES (came up again Nov 25 from friends: "Axl Rose starting riots") | Already backstory inside the Metallica/GN'R script; could be its own episode. Could cover both riots: St. Louis 1991 (jumped into the crowd after a camera, left the stage) and Montreal 1992 (the Metallica co-headline night: Hetfield burned by pyro, GN'R cut their set short). People were hurt both nights: straight, brief. |
 | Keith Moon's car in the Holiday Inn pool, Flint, Michigan | MAYBE, as a "how the legend grew" episode | His "21st birthday" party; cake fight; he knocked out his own tooth; band supposedly banned from Holiday Inns for life; the car in the pool is the unconfirmable part. Already touched in ep 1. |
 | Award show disasters (combo episode) | MAYBE, as a combo | Courtney Love throwing a makeup compact at Madonna during Kurt Loder's interview at the 1995 MTV VMAs, then crashing it (thin alone, needs dramatizing). PLUS Duck's addition: Rage Against the Machine bassist Tim Commerford climbing the set scaffolding at the 2000 VMAs because Rage lost Best Rock Video; night in jail; the band that beat them was Limp Bizkit (Fred Durst callback); Zack de la Rocha quit weeks later. Duck: "it was really stupid because he thought he was protesting someone but no one gave a shit." |
 | Vanilla Ice dangling a guy off a balcony | Not rated | Legend; Vanilla Ice denies it. Would be a "how the legend grew" episode. |
 | Black Sabbath's 1983 tour: a Stonehenge stage set too big for most stages | Not rated ("that's good for now") | Real-life Spinal Tap; Duck loves Spinal Tap. |
 | Ted Nugent's draft-dodging bragging | Not rated | |
 | Courtney Love's whole career | Not rated | |
+
+## Parking lot: friends' ideas to discuss (Duck, Nov 25: "some may be too controversial")
+Not decided. Claude's first read on each, to talk through with Duck:
+| Idea | First read | Notes |
+|---|---|---|
+| CBGB | Good fit | Everybody knows the awning, almost nobody knows the details: the name stood for Country, BlueGrass and Blues (what Hilly Kristal meant to book), the legendary bathroom, the rent fight and 2006 closing, and the space becoming a designer clothing store. Needs a crazy center (a single night or the eviction fight) so it isn't just a history lesson. |
+| The Go-Go's and the roadies' tapes | Check first; risky | Duck's note: the Go-Go's made roadies make sex tapes. Need to confirm what actually happened and from whose account (their documentary, Belinda Carlisle's memoir). Sexual content plus possible consent questions: only workable as a light, non-graphic, fully sourced bit, maybe inside a bigger Go-Go's "they were wilder than the boys" episode. |
+| Michael Jackson "not Joe's kid" | Probably skip | A paternity rumor about a real family, mostly tabloid, and it pulls Michael Jackson toward the topics we already said we'd stay off. Not a story with a chain of decisions. |
+| Axl Rose starting riots | YES (already on the list above) | See the Axl row in Ideas: St. Louis 1991 and Montreal 1992. |
+| Napster fallout | Idea note in Episodes > Drafts | Metallica's lawsuit, Lars's boxes of usernames, the backlash, the labels suing regular people. |
+| Studio 54 | Idea note in Episodes > Drafts | Spine: Chic got turned away at the door and wrote "Le Freak" about it; then the IRS raid and prison. Pairs with Disco Demolition. |
 
 ## Darker list (careful tone: people died or were hurt; they are never the joke)
 | Story | Duck's rating | Notes |
