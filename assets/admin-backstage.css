@@ -207,3 +207,39 @@ body.admin .an-key input{flex:1 1 280px;height:auto;min-height:46px;width:auto}
 body.admin .an-key .btn{width:auto}
 body.admin .an-example{background:var(--ink);color:var(--paper);padding:10px 12px;border-radius:3px;font-size:12px;overflow-x:auto}
 body.admin .an-secret{user-select:all;word-break:break-all}
+/* Analytics, compact (Duck, Nov 25: "WAY less vertical space") */
+body.admin .an{padding:14px 18px}
+body.admin .an + .an{margin-top:12px}
+body.admin .an-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+body.admin .an-head h1{font-size:30px;margin:0}
+body.admin .an-when{color:#5a5560;margin:0}
+body.admin .an-refresh{margin:0 0 0 auto}
+body.admin .an-btn{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:0;border-radius:3px;padding:6px 12px;cursor:pointer;min-height:32px}
+body.admin .an-btn:hover{background:var(--red)}
+body.admin .an .notice{padding:6px 10px;margin:4px 0;font-size:14px}
+body.admin .an-filters{gap:6px;margin:4px 0 8px;align-items:center}
+body.admin .an-filters label{gap:0}
+body.admin .an-filters .admin-select{min-width:0;font-size:14px;padding:4px 8px;height:34px;min-height:34px}
+body.admin .an .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body.admin .an-tiles{grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px;margin:0 0 4px}
+body.admin .an-tile{padding:6px 10px;flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:8px}
+body.admin .an-tile .an-lbl{font-size:11px;width:100%}
+body.admin .an-tile b{font-size:20px}
+body.admin .an-delta{font-size:11px}
+body.admin .an h2{font-size:15px;margin:14px 0 4px}
+body.admin .an-hint{font-family:Inter,sans-serif;font-weight:400;font-size:12px;letter-spacing:0;text-transform:none;color:#5a5560;margin-left:6px}
+body.admin .an-chart{height:90px}
+body.admin .an-table{margin:2px 0;font-size:13px}
+body.admin .an-table th{padding:4px 6px}
+body.admin .an-table td{padding:4px 6px}
+body.admin .an-posts li{padding:3px 0}
+body.admin .an-link .admin-select{height:30px;min-height:30px;padding:2px 6px}
+body.admin .an-fold summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:8px}
+body.admin .an-fold summary::-webkit-details-marker{display:none}
+body.admin .an-fold summary h2{margin:0}
+body.admin .an-fold summary::before{content:"▸";color:var(--red)}
+body.admin .an-fold details[open] summary::before{content:"▾"}
+body.admin .an h3{margin:12px 0 4px;font-size:14px}
+body.admin .an-key input{min-height:36px}
+body.admin .an .btn{min-height:36px;padding:6px 14px;font-size:15px}
+body.admin .an ol{margin:4px 0;padding-left:20px}
