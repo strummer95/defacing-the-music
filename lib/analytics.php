@@ -172,6 +172,22 @@ function dtm_an_meta_insight(string $id, array $metrics, string $token, array $e
   }
   return $best;
 }
+// Facebook shares live on the post, not the video: ask the post (page_post id), then fall back to the reel's insights.
+function dtm_an_fb_shares(string $pageId, string $postId, string $videoId, string $token): ?int {
+  $ids = [];
+  if ($postId !== '') $ids[] = str_contains($postId, '_') ? $postId : $pageId . '_' . $postId;
+  $ids[] = $pageId . '_' . $videoId;
+  foreach ($ids as $pid) {
+    try { $r = dtm_an_meta($pid, ['fields' => 'shares'], $token); if (isset($r['shares']['count'])) return (int)$r['shares']['count']; if (array_key_exists('id', $r)) return 0; }
+    catch (RuntimeException $e) { /* try the next */ }
+  }
+  try {
+    $r = dtm_an_meta($videoId . '/video_insights', ['metric' => 'post_video_social_actions'], $token);
+    foreach ($r['data'] ?? [] as $d) { $v = $d['values'][0]['value'] ?? null; if (is_array($v) && isset($v['SHARE'])) return (int)$v['SHARE']; if (is_array($v) && isset($v['share'])) return (int)$v['share']; }
+  } catch (RuntimeException $e) {}
+  return null;
+}
+
 function dtm_an_fetch_meta(string $token, array &$errors): array {
   // A personal token saved by mistake: use the Defacing The Music Page's token from it.
   try {
@@ -187,7 +203,7 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
   try {
     $seen = [];
     foreach (['videos', 'video_reels'] as $edge) {
-      $r = dtm_an_meta($pageId . '/' . $edge, ['fields' => 'id,title,description,created_time,permalink_url,likes.summary(true).limit(0),comments.summary(true).limit(0)', 'limit' => 50], $token);
+      $r = dtm_an_meta($pageId . '/' . $edge, ['fields' => 'id,title,description,created_time,permalink_url,post_id,likes.summary(true).limit(0),comments.summary(true).limit(0)', 'limit' => 50], $token);
       foreach ($r['data'] ?? [] as $v) {
         $id = (string)$v['id'];
         if (isset($seen[$id])) continue;
@@ -199,7 +215,8 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
           'published' => substr((string)($v['created_time'] ?? ''), 0, 10),
           'views' => dtm_an_meta_insight($id, ['post_video_views', 'blue_reels_play_count', 'fb_reels_total_plays', 'total_video_views', 'post_media_view', 'views'], $token, ['video_insights', 'insights']),
           'likes' => isset($v['likes']['summary']['total_count']) ? (int)$v['likes']['summary']['total_count'] : null,
-          'comments' => isset($v['comments']['summary']['total_count']) ? (int)$v['comments']['summary']['total_count'] : null, 'shares' => null];
+          'comments' => isset($v['comments']['summary']['total_count']) ? (int)$v['comments']['summary']['total_count'] : null,
+          'shares' => dtm_an_fb_shares($pageId, (string)($v['post_id'] ?? ''), $id, $token)];
       }
     }
   } catch (RuntimeException $e) { $errors['facebook'] = $e->getMessage(); }
