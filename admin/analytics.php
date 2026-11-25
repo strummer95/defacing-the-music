@@ -215,10 +215,11 @@ dtm_page_start('Analytics', $user, true);
     <?php foreach ($rows as $g => $r): ?>
     <tr>
       <td data-v="<?= h(strtolower($r['title'])) ?>"><details><summary><b><?= h($r['title'] !== '' ? mb_strimwidth($r['title'], 0, 80, '…') : '(no title)') ?></b>
-        <?php foreach ($r['posts'] as $p): ?><span class="an-chip"><?= h(DTM_AN_PLATFORMS[$p['platform']]) ?></span><?php endforeach; ?></summary>
+        <?php $cnt = array_count_values(array_column($r['posts'], 'platform')); $ab = ['youtube' => 'YT', 'facebook' => 'FB', 'instagram' => 'IG', 'tiktok' => 'TT']; ?>
+        <span class="an-plats"><?= h(implode(' · ', array_map(fn($pl) => $ab[$pl] . ($cnt[$pl] > 1 ? '×' . $cnt[$pl] : ''), array_keys(array_intersect_key(array_flip(array_keys($ab)), $cnt))))) ?></span></summary>
         <ul class="an-posts">
           <?php foreach ($r['posts'] as $k => $p): ?>
-          <li><span class="an-chip"><?= h(DTM_AN_PLATFORMS[$p['platform']]) ?></span>
+          <li><span class="an-plats"><?= h(DTM_AN_PLATFORMS[$p['platform']]) ?>:</span>
             <?php if (!empty($p['url'])): ?><a href="<?= h($p['url']) ?>" target="_blank" rel="noopener"><?= h(mb_strimwidth((string)($p['title'] ?: $p['id']), 0, 70, '…')) ?></a><?php else: ?><?= h(mb_strimwidth((string)($p['title'] ?: $p['id']), 0, 70, '…')) ?><?php endif; ?>
             <span class="small"><?php foreach (DTM_AN_METRICS as $m => $l): if (($p[$m] ?? null) === null) continue; ?> · <?= $fmt($p[$m]) ?> <?= h(strtolower($l)) ?><?php endforeach; ?><?= !empty($p['seconds']) ? ' · ' . gmdate($p['seconds'] >= 3600 ? 'G:i:s' : 'i:s', (int)$p['seconds']) : '' ?></span>
             <form method="post" action="<?= h($q([])) ?>" class="an-link"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="link"><input type="hidden" name="post" value="<?= h($k) ?>">
