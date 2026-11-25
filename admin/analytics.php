@@ -202,10 +202,10 @@ dtm_page_start('Stats', $user, true);
 
   <div class="an-tiles">
     <?php foreach (DTM_AN_METRICS as $m => $l): ?>
-    <div class="an-tile"><span class="an-lbl"><?= h($l) ?></span><b><?= $fmt($tot[$m]) ?></b><?= $delta($m) ?></div>
+    <div class="an-tile"><span class="an-lbl"><?= h($l) ?></span><b style="--n:<?= max(3, strlen($fmt($tot[$m]))) ?>"><?= $fmt($tot[$m]) ?></b><?= $delta($m) ?></div>
     <?php endforeach; ?>
-    <?php $wm = array_sum(array_map(fn($p) => (int)($p['watch_minutes'] ?? 0), $sel)); if ($wm > 0): ?><div class="an-tile" title="YouTube only; Shorts and long videos together"><span class="an-lbl">YT watch hours</span><b><?= number_format($wm / 60, 1) ?></b></div><?php endif; ?>
-    <?php if ($fVideo === ''): ?><div class="an-tile"><span class="an-lbl">Followers</span><b><?= $fmt($followers) ?></b><?= $delta('followers') ?></div><?php endif; ?>
+    <?php $wm = array_sum(array_map(fn($p) => (int)($p['watch_minutes'] ?? 0), $sel)); if ($wm > 0): ?><div class="an-tile" title="YouTube only; Shorts and long videos together"><span class="an-lbl">YT watch hours</span><b style="--n:<?= max(3, strlen(number_format($wm / 60, 1))) ?>"><?= number_format($wm / 60, 1) ?></b></div><?php endif; ?>
+    <?php if ($fVideo === ''): ?><div class="an-tile"><span class="an-lbl">Followers</span><b style="--n:<?= max(3, strlen($fmt($followers))) ?>"><?= $fmt($followers) ?></b><?= $delta('followers') ?></div><?php endif; ?>
   </div>
 
   <?php if ($fVideo === ''): ?>
