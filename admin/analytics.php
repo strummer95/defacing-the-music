@@ -170,7 +170,7 @@ dtm_page_start('Analytics', $user, true);
     </select></label>
     <noscript><button class="btn">Show</button></noscript>
   </form>
-  <form method="post" action="<?= h($q([])) ?>" class="an-refresh"><?= dtm_csrf_field() ?><button name="action" value="refresh" class="btn btn-ghost bang" onclick="this.disabled=true;this.textContent='Fetching...';this.form.submit()">Refresh now</button></form>
+  <form method="post" action="<?= h($q([])) ?>" class="an-refresh"><?= dtm_csrf_field() ?><input type="hidden" name="action" value="refresh"><button class="btn btn-ghost bang" onclick="this.disabled=true;this.textContent='Fetching...';this.form.submit()">Refresh now</button></form>
 
   <div class="an-tiles">
     <?php foreach (DTM_AN_METRICS as $m => $l): ?>
