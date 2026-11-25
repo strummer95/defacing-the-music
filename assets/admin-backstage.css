@@ -245,3 +245,16 @@ body.admin .an .btn{min-height:36px;padding:6px 14px;font-size:15px}
 body.admin .an ol{margin:4px 0;padding-left:20px}
 body.admin .an-plats{font-size:12px;font-weight:400;color:#8a8590;margin-left:6px;white-space:nowrap}
 body.admin .an-posts .an-plats{margin:0 4px 0 0;color:#5a5560}
+/* Backstage dropdown in the admin menu (Duck, Nov 25) */
+body.admin .admin-nav-in{overflow:visible}
+body.admin .nav-more{position:relative}
+body.admin .nav-more summary{list-style:none;cursor:pointer;font-family:Oswald,sans-serif;font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);opacity:.75;padding:14px 14px 12px;border-bottom:3px solid transparent;white-space:nowrap}
+body.admin .nav-more summary::-webkit-details-marker{display:none}
+body.admin .nav-more summary::after{content:" ▾";font-size:11px}
+body.admin .nav-more summary:hover,body.admin .nav-more[open] summary{opacity:1;color:var(--amber)}
+body.admin .nav-more.on summary{opacity:1;color:var(--amber);border-bottom-color:var(--amber)}
+body.admin .nav-more-menu{position:absolute;right:0;top:100%;background:var(--floor);border:1px solid #3a3940;border-radius:4px;box-shadow:0 14px 30px rgba(0,0,0,.5);min-width:220px;z-index:30;display:flex;flex-direction:column;padding:4px 0}
+body.admin .nav-more-menu a{padding:10px 16px;border-bottom:0;font-size:14px}
+body.admin .nav-more-menu a.on{border-bottom:0;background:rgba(255,181,71,.08)}
+@media (max-width:600px){ body.admin .nav-more summary{font-size:13px;padding:12px 10px 10px} }
+@media (max-width:600px){ body.admin .admin-nav-in{flex-wrap:wrap;justify-content:center;gap:0} body.admin .admin-nav a,body.admin .nav-more summary{padding:10px 9px 8px} }
