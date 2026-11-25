@@ -61,7 +61,7 @@ Not decided. Claude's first read on each, to talk through with Duck:
 | Michael Jackson "not Joe's kid" | Probably skip | A paternity rumor about a real family, mostly tabloid, and it pulls Michael Jackson toward the topics we already said we'd stay off. Not a story with a chain of decisions. |
 | Axl Rose starting riots | YES (already on the list above) | See the Axl row in Ideas: St. Louis 1991 and Montreal 1992. |
 | Napster fallout | Idea note in Episodes > Drafts | Metallica's lawsuit, Lars's boxes of usernames, the backlash, the labels suing regular people. |
-| Studio 54 | Idea note in Episodes > Drafts | Spine: Chic got turned away at the door and wrote "Le Freak" about it; then the IRS raid and prison. Pairs with Disco Demolition. |
+| Studio 54 | YES (Duck, Nov 25: "we will def do 54"), paired with Disco Demolition | Spine: Chic got turned away at the door and wrote "Le Freak" about it; then the IRS raid and prison. Pairs with Disco Demolition. |
 
 ## Darker list (careful tone: people died or were hurt; they are never the joke)
 | Story | Duck's rating | Notes |
