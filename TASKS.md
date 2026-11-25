@@ -52,3 +52,17 @@ sources files. Mayhem (Norwegian black metal) and Bjork's 1996 stalker case are 
 `STORIES.md`'s "Darker list" table with Duck's rating. A dedicated admin page with separate
 title/artist/year fields would just duplicate the richer system that already exists and fork the backlog
 across two places — not built. Doc-only change (this note), no functional code touched.
+
+## [ ] DTM-ANALYTICS-1: admin > Analytics (all platforms in one place)
+Duck (Nov 25): a new admin page called **Analytics**, added to the admin menu (`dtm_admin_nav()`, put it after Guest List). One master view of views, likes, comments, shares, watch time and followers across YouTube, Facebook, Instagram and TikTok, that he can break down **by platform and/or by video** (filters, sortable table, totals up top, simple trend by day). Backstage admin look (`assets/admin-backstage.css`). Do everything possible automatically; TikTok is filled in by Defa (see below).
+
+Data model: store daily snapshots in `data/analytics/` (JSON, one file per day or one per platform, your call), so trends work and nothing is lost if an API hiccups. Group posts into a "video" so the same clip on 4 platforms rolls up into one row (match by a manual "link these" control in the admin, with a best-guess match by title/date; Duck should be able to fix links).
+
+Sources:
+- **YouTube**: the YouTube Data API v3 with an API key (no OAuth, works over plain http) gives per-video views, likes, comments and channel subscribers for channel `UCRXnCbaJExnAwNbeb1d5mZg`. Watch time / impressions / CTR need the YouTube Analytics API (OAuth); there is no SSL, so don't block on it: build the API-key version now and leave a clearly labeled slot for Analytics-API metrics later.
+- **Facebook Page "Defacing The Music" + Instagram "defacingthemusicpod"**: Meta Graph API with a long-lived Page access token (Page insights, post/reel insights, IG media insights, follower counts). No OAuth redirect needed: the admin has a settings box where Duck pastes the token (saved only into `../dtm-secrets.php`, same safe write as the Guest List settings), plus short plain-English steps on the page for getting the token from Meta's Graph API Explorer and extending it.
+- **TikTok**: no API for now. Provide an import endpoint/form (admin-only, CSRF, plus a token-protected POST `admin/analytics-import.php` using a new `analytics_import_key` in `../dtm-secrets.php`) that accepts a JSON or CSV snapshot: date, platform, post id/url, caption, views, likes, comments, shares, followers. Defa will post TikTok numbers every 1-2 days. Any platform can use the import as a fallback.
+- Refresh: a "Refresh now" button, plus fetch-on-view at most once per few hours (shared hosting, no cron). Never print keys/tokens on the page or in logs.
+
+Done when the page shows real YouTube numbers from the API key, Meta numbers once a token is pasted, and TikTok rows from the import, with platform/video filters working.
+
