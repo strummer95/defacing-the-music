@@ -92,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $cfg = dtm_an_cfg();
 $fetchErrors = dtm_an_refresh(false);
+try { require_once __DIR__ . '/../lib/episodes.php'; dtm_episodes_autopublish(); } catch (Throwable $t) {}
 $state = dtm_an_state();
 $latest = dtm_an_latest();
 $posts = $latest['posts'];

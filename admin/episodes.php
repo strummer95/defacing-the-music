@@ -2,6 +2,7 @@
 // Episodes: numbered list with status, publish date, links, and the script behind each one.
 require __DIR__ . '/../lib/board.php';
 $user = dtm_require_admin();
+try { dtm_episodes_autopublish(); } catch (Throwable $t) { /* never block the page */ }
 $id = (string)($_GET['edit'] ?? '');
 $error = '';
 
