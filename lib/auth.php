@@ -227,7 +227,7 @@ function dtm_admin_nav(): string {
     'episodes' => ['Episodes', 'episodes.php', ['episodes.php', 'scripts.php', 'prompter.php', 'images.php', 'edit.php']],
     'side' => ['Side Stories', 'side.php', ['side.php', 'news.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
-    'analytics' => ['Stats', 'analytics.php', ['analytics.php']],
+    'analytics' => ['Stats', 'analytics.php', ['analytics.php', 'stats-videos.php']],
   ];
   // Everything else lives under one "Backstage" menu (Duck, Nov 25).
   $more = [

@@ -215,7 +215,7 @@ dtm_page_start('Stats', $user, true);
     <?php foreach (DTM_AN_PLATFORMS as $pl => $label): if ($fPlat !== '' && $pl !== $fPlat) continue;
       $pp = array_filter($posts, fn($p) => $p['platform'] === $pl); $t = array_fill_keys(array_keys(DTM_AN_METRICS), 0);
       foreach ($pp as $p) foreach ($t as $m => $_) $t[$m] += (int)($p[$m] ?? 0); ?>
-      <tr><td><a href="<?= h($q(['platform' => $pl])) ?>"><?= h($label) ?></a></td><td class="num"><?= $fmt($latest['followers'][$pl] ?? null) ?></td>
+      <tr><td><a href="stats-videos.php?p=<?= h($pl) ?>" title="See every <?= h($label) ?> video"><?= h($label) ?> <span class="an-go">›</span></a></td><td class="num"><?= $fmt($latest['followers'][$pl] ?? null) ?></td>
         <?php foreach ($t as $m => $v): $has = (bool)array_filter($pp, fn($p) => ($p[$m] ?? null) !== null); ?><td class="num"<?= !$has && $pp ? ' title="' . h($label) . ' doesn\'t give us this number"' : '' ?>><?= $has ? $fmt($v) : '–' ?></td><?php endforeach; ?><td class="num"><?= count($pp) ?></td></tr>
     <?php endforeach; ?>
     </tbody>

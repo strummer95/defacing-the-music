@@ -285,3 +285,20 @@ body.admin .an-filters .admin-select:hover{background-color:#2a292e}
 body.admin .an-filters .admin-select:focus{outline:2px solid var(--amber);outline-offset:1px}
 body.admin .an-filters .admin-select option{text-transform:none;font-family:Inter,sans-serif;font-weight:400;letter-spacing:0;background:#fff;color:var(--ink)}
 body.admin .an-filters label{display:contents}
+/* Stats > one platform's videos */
+body.admin .an-go{color:var(--red);font-size:.9em}
+body.admin .an-back{margin-left:auto;text-decoration:none}
+body.admin .an-tabs{display:flex;gap:4px;flex-wrap:wrap;margin:2px 0 10px}
+body.admin .an-tabs a{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:3px;background:rgba(0,0,0,.06)}
+body.admin .an-tabs a.on{background:var(--ink);color:var(--amber)}
+body.admin .an-scroll{overflow-x:auto}
+body.admin .an-vids{font-size:14px}
+body.admin .an-vids td,body.admin .an-vids th{padding:7px 8px;white-space:nowrap}
+body.admin .an-vids td:first-child{white-space:normal;min-width:260px}
+body.admin .an-vids td:first-child a{color:var(--ink);font-weight:600;text-decoration:none}
+body.admin .an-vids td:first-child a:hover{color:var(--red);text-decoration:underline}
+body.admin .an-vids .an-date{color:#5a5560}
+body.admin .an-vids tbody tr:hover{background:rgba(0,0,0,.03)}
+body.admin .an-vids tfoot td{font-weight:800;border-top:2px solid var(--ink);border-bottom:0}
+body.admin .an-hint-line{margin:6px 0 0;color:#5a5560}
+body.admin .admin-card a.an-back{color:var(--paper)} body.admin .admin-card a.an-back:hover{color:#fff}
