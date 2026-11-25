@@ -229,7 +229,7 @@ function dtm_admin_nav(): string {
     'looks' => ['Site Looks', 'looks.php', ['looks.php']],
     'guide' => ['Host Guide', 'guide.php', ['guide.php']],
     'guests' => ['Guest List', 'guests.php', ['guests.php']],
-    'analytics' => ['Analytics', 'analytics.php', ['analytics.php']],
+    'analytics' => ['Stats', 'analytics.php', ['analytics.php']],
     'sponsors' => ['Sponsors', 'sponsors.php', ['sponsors.php']],
   ];
   $o = '<nav class="admin-nav" aria-label="Admin"><div class="admin-nav-in">';
