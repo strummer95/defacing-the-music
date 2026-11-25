@@ -186,7 +186,7 @@ $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, 
         <a class="btn sm ghost" href="<?= $h($url) ?>" rel="noopener" target="_blank"><?= $h($name) ?></a>
       <?php endforeach; ?>
     </div>
-    <small>© <?= date('Y') ?> Duck and Rabbit LLC. Due to unforeseen circumstances, all rights reserved. · <a href="/sponsor/">Sponsor the show</a></small>
+    <small>© <?= date('Y') ?> Duck and Rabbit LLC. Due to unforeseen circumstances, all rights reserved. · <a href="/sponsor/">Sponsor the show</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></small>
   </div>
 </footer>
 </body>
