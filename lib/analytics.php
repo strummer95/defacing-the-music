@@ -20,7 +20,9 @@ const DTM_AN_REFRESH_EVERY = 3 * 3600; // fetch-on-view at most every 3 hours (n
 function dtm_an_cfg(): array {
   $s = dtm_secrets();
   return ['yt' => trim((string)($s['youtube_api_key'] ?? '')), 'meta' => trim((string)($s['meta_page_token'] ?? '')),
-          'import' => trim((string)($s['analytics_import_key'] ?? ''))];
+          'import' => trim((string)($s['analytics_import_key'] ?? '')),
+          'tt_key' => trim((string)($s['tiktok_client_key'] ?? '')), 'tt_secret' => trim((string)($s['tiktok_client_secret'] ?? '')),
+          'tt_refresh' => trim((string)($s['tiktok_refresh_token'] ?? ''))];
 }
 
 // Same safe write as the Guest List settings: temp file next to the secrets file, check it loads and kept every
@@ -244,7 +246,7 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
 // never fetch at once.
 function dtm_an_refresh(bool $force = false): array {
   $cfg = dtm_an_cfg();
-  if ($cfg['yt'] === '' && $cfg['meta'] === '') return [];
+  if ($cfg['yt'] === '' && $cfg['meta'] === '' && $cfg['tt_refresh'] === '') return [];
   $st = dtm_an_state();
   if (!$force && time() - (int)($st['fetched'] ?? 0) < DTM_AN_REFRESH_EVERY) return $st['errors'] ?? [];
   $lock = @fopen(dtm_data_dir() . '/analytics-fetch.lock', 'c');
@@ -258,6 +260,10 @@ function dtm_an_refresh(bool $force = false): array {
   if ($cfg['meta'] !== '') {
     try { [$p, $f] = dtm_an_fetch_meta($cfg['meta'], $errors); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['facebook'] = $errors['instagram'] = $e->getMessage(); }
+  }
+  if ($cfg['tt_refresh'] !== '') {
+    try { [$p, $f] = dtm_an_fetch_tiktok(); dtm_an_store($today, $p, $f); }
+    catch (RuntimeException $e) { $errors['tiktok'] = $e->getMessage(); }
   }
   dtm_json_update('analytics-state.json', fn($s) => ['fetched' => time(), 'errors' => $errors] + $s);
   flock($lock, LOCK_UN); fclose($lock);
@@ -341,4 +347,72 @@ function dtm_an_groups(array $posts): array {
   }
   foreach ($g as $k => $to) if (!isset($posts[$to])) $g[$k] = $k; // a link to a post we no longer have
   return $g;
+}
+
+// ---------- TikTok (Login Kit + Display API: user.info.basic, user.info.stats, video.list) ----------
+// Duck makes an app at developers.tiktok.com, pastes its Client key and Client secret on the Analytics page, then
+// clicks Connect TikTok (admin/analytics-tiktok.php) and logs in once. The refresh token (good for a year, renewed on
+// every use) lives in ../dtm-secrets.php; the day-long access token is fetched fresh on each refresh.
+const DTM_TT_SCOPES = 'user.info.basic,user.info.stats,video.list';
+function dtm_an_tt_redirect(): string { return 'https://defacingthemusic.com/admin/analytics-tiktok.php'; }
+
+// POST to TikTok. $form: form-encoded body, or $json: JSON body. Errors never include tokens.
+function dtm_an_post(string $url, array $form = [], ?array $json = null, array $headers = []): array {
+  $body = $json !== null ? json_encode($json) : http_build_query($form);
+  $headers[] = $json !== null ? 'Content-Type: application/json' : 'Content-Type: application/x-www-form-urlencoded';
+  $ch = curl_init($url);
+  curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => $body, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
+    CURLOPT_CONNECTTIMEOUT => 8, CURLOPT_HTTPHEADER => $headers, CURLOPT_USERAGENT => 'DefacingTheMusic/1.0 (analytics)']);
+  $res = curl_exec($ch); $code = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE); $cerr = curl_error($ch); curl_close($ch);
+  if ($res === false) throw new RuntimeException('Could not reach TikTok (' . ($cerr ?: 'network error') . ').');
+  $j = json_decode((string)$res, true);
+  if (!is_array($j)) throw new RuntimeException("TikTok sent back something unreadable (HTTP $code).");
+  $e = $j['error'] ?? null;
+  if (is_array($e) && ($e['code'] ?? 'ok') !== 'ok') throw new RuntimeException('TikTok: ' . ($e['message'] ?? $e['code']));
+  if (is_string($e) && $e !== '') throw new RuntimeException('TikTok: ' . ($j['error_description'] ?? $e));
+  if ($code >= 400) throw new RuntimeException("TikTok said no (HTTP $code).");
+  return $j;
+}
+function dtm_an_tt_get(string $url, string $access): array {
+  $ch = curl_init($url);
+  curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $access]]);
+  $res = curl_exec($ch); $code = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE); curl_close($ch);
+  $j = json_decode((string)$res, true);
+  if (!is_array($j)) throw new RuntimeException("TikTok sent back something unreadable (HTTP $code).");
+  if (($j['error']['code'] ?? 'ok') !== 'ok') throw new RuntimeException('TikTok: ' . ($j['error']['message'] ?? $j['error']['code']));
+  return $j;
+}
+// Trade a login code (or the saved refresh token) for tokens; saves the new refresh token. Returns the access token.
+function dtm_an_tt_tokens(array $grant): string {
+  $cfg = dtm_an_cfg();
+  if ($cfg['tt_key'] === '' || $cfg['tt_secret'] === '') throw new RuntimeException('Paste the TikTok Client key and Client secret first.');
+  $j = dtm_an_post('https://open.tiktokapis.com/v2/oauth/token/', ['client_key' => $cfg['tt_key'], 'client_secret' => $cfg['tt_secret']] + $grant);
+  if (empty($j['access_token'])) throw new RuntimeException('TikTok did not send a login token back.');
+  if (!empty($j['refresh_token']) && $j['refresh_token'] !== $cfg['tt_refresh']) {
+    $err = dtm_an_save_secrets(['tiktok_refresh_token' => (string)$j['refresh_token']]);
+    if ($err !== '') throw new RuntimeException($err);
+  }
+  return (string)$j['access_token'];
+}
+function dtm_an_fetch_tiktok(): array {
+  $cfg = dtm_an_cfg();
+  $access = dtm_an_tt_tokens(['grant_type' => 'refresh_token', 'refresh_token' => $cfg['tt_refresh']]);
+  $u = dtm_an_tt_get('https://open.tiktokapis.com/v2/user/info/?fields=follower_count,display_name', $access);
+  $followers = ['tiktok' => isset($u['data']['user']['follower_count']) ? (int)$u['data']['user']['follower_count'] : null];
+  $posts = []; $cursor = null;
+  for ($i = 0; $i < 10; $i++) {
+    $j = dtm_an_post('https://open.tiktokapis.com/v2/video/list/?fields=id,title,video_description,create_time,share_url,duration,view_count,like_count,comment_count,share_count',
+      [], ['max_count' => 20] + ($cursor !== null ? ['cursor' => $cursor] : []), ['Authorization: Bearer ' . $access]);
+    foreach ($j['data']['videos'] ?? [] as $v) {
+      $title = trim((string)($v['title'] ?? '')) ?: trim((string)($v['video_description'] ?? ''));
+      $posts[] = ['platform' => 'tiktok', 'id' => (string)$v['id'], 'title' => mb_substr($title, 0, 140), 'url' => (string)($v['share_url'] ?? ''),
+        'published' => !empty($v['create_time']) ? date('Y-m-d', (int)$v['create_time']) : null, 'seconds' => isset($v['duration']) ? (int)$v['duration'] : null,
+        'views' => isset($v['view_count']) ? (int)$v['view_count'] : null, 'likes' => isset($v['like_count']) ? (int)$v['like_count'] : null,
+        'comments' => isset($v['comment_count']) ? (int)$v['comment_count'] : null, 'shares' => isset($v['share_count']) ? (int)$v['share_count'] : null];
+    }
+    if (empty($j['data']['has_more'])) break;
+    $cursor = $j['data']['cursor'] ?? null;
+    if ($cursor === null) break;
+  }
+  return [$posts, $followers];
 }

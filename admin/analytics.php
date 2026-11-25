@@ -48,6 +48,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($err === '' && ($err = dtm_an_save_secrets(['meta_page_token' => $t])) === '') { header('Location: analytics.php?saved=meta&page=' . rawurlencode((string)($me['name'] ?? '')) . ($exp > 0 ? '&expires=' . $exp : '')); exit; }
       }
     }
+    if ($a === 'save_tt') {
+      $k = trim((string)($_POST['tt_key'] ?? '')); $sec = trim((string)($_POST['tt_secret'] ?? ''));
+      if (!preg_match('/^[A-Za-z0-9_-]{8,64}$/', $k)) $err = "That doesn't look like a TikTok Client key.";
+      elseif ($sec === '' && dtm_an_cfg()['tt_secret'] === '') $err = 'Paste the Client secret too.';
+      else { $set = ['tiktok_client_key' => $k]; if ($sec !== '') $set['tiktok_client_secret'] = $sec;
+        if (($err = dtm_an_save_secrets($set)) === '') { header('Location: analytics.php?saved=ttkeys#settings'); exit; } }
+    }
+    if ($a === 'clear_tt') {
+      $err = dtm_an_save_secrets(['tiktok_refresh_token' => '', 'tiktok_client_key' => '', 'tiktok_client_secret' => '']);
+      if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
+    }
     if ($a === 'clear_yt' || $a === 'clear_meta') {
       $err = dtm_an_save_secrets([$a === 'clear_yt' ? 'youtube_api_key' : 'meta_page_token' => '']);
       if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
@@ -152,6 +163,9 @@ dtm_page_start('Analytics', $user, true);
   </div>
   <?php if (isset($_GET['saved'])): ?><p class="notice ok bang" role="status"><?= $_GET['saved'] === 'yt' ? 'YouTube key saved. Hit Refresh.' : 'Meta token saved' . (($_GET['page'] ?? '') !== '' ? ' (Page: ' . h((string)$_GET['page']) . ')' : '') . '. Hit Refresh.' ?></p><?php endif; ?>
   <?php if (($_GET['saved'] ?? '') === 'meta' && (int)($_GET['expires'] ?? 0) > 0): ?><p class="notice err bang" role="alert">Heads up: that token stops working <?= h(date('M j, g:ia', (int)$_GET['expires'])) ?>. To make a permanent one: open Meta's Access Token Debugger, paste your token from Graph API Explorer, click Debug, then "Extend Access Token" at the bottom, and paste that new one here.</p><?php endif; ?>
+  <?php if (($_GET['saved'] ?? '') === 'tt'): ?><p class="notice ok bang" role="status">TikTok connected. Hit Refresh.</p><?php endif; ?>
+  <?php if (($_GET['saved'] ?? '') === 'ttkeys'): ?><p class="notice ok bang" role="status">TikTok keys saved. Now click Connect TikTok.</p><?php endif; ?>
+  <?php if (($_GET['tt_err'] ?? '') !== ''): ?><p class="notice err bang" role="alert"><?= h(mb_substr((string)$_GET['tt_err'], 0, 300)) ?></p><?php endif; ?>
   <?php if (isset($_GET['cleared'])): ?><p class="notice ok bang" role="status">Removed.</p><?php endif; ?>
   <?php if (($_GET['refreshed'] ?? '') === '1'): ?><p class="notice ok bang" role="status">Fresh numbers fetched.</p><?php endif; ?>
   <?php if ($msg): ?><p class="notice ok bang" role="status"><?= h($msg) ?></p><?php endif; ?>
@@ -240,8 +254,8 @@ dtm_page_start('Analytics', $user, true);
   <?php endif; ?>
 </section>
 
-<section class="admin-card an an-fold" id="settings"><details<?= ($cfg['yt'] === '' || $cfg['meta'] === '') ? ' open' : '' ?>>
-  <summary><h2 class="bang">Connections</h2> <span class="small">YouTube <?= $cfg['yt'] !== '' ? 'on' : 'off' ?> · Facebook + Instagram <?= $cfg['meta'] !== '' ? 'on' : 'off' ?></span></summary>
+<section class="admin-card an an-fold" id="settings"><details<?= ($cfg['yt'] === '' || $cfg['meta'] === '' || $cfg['tt_refresh'] === '' || isset($_GET['tt_err']) || ($_GET['saved'] ?? '') === 'ttkeys') ? ' open' : '' ?>>
+  <summary><h2 class="bang">Connections</h2> <span class="small">YouTube <?= $cfg['yt'] !== '' ? 'on' : 'off' ?> · Facebook + Instagram <?= $cfg['meta'] !== '' ? 'on' : 'off' ?> · TikTok <?= $cfg['tt_refresh'] !== '' ? 'on' : 'off' ?></span></summary>
   <p class="small">Keys and tokens are saved only in the secrets file on the server (one folder above the site), never shown here and never in git. Never paste them in a chat.</p>
 
   <h3 class="bang">YouTube <?= $cfg['yt'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
@@ -272,6 +286,25 @@ dtm_page_start('Analytics', $user, true);
     <button name="action" value="save_meta" class="btn bang">Save</button>
     <?php if ($cfg['meta'] !== ''): ?><button name="action" value="clear_meta" class="linkish" onclick="return confirm('Remove the Meta token?')">Remove</button><?php endif; ?>
   </form>
+
+  <h3 class="bang">TikTok <?= $cfg['tt_refresh'] !== '' ? '<span class="an-ok">connected</span>' : ($cfg['tt_key'] !== '' ? '<span class="an-no">keys saved, not connected</span>' : '<span class="an-no">not set</span>') ?></h3>
+  <details<?= $cfg['tt_refresh'] === '' ? ' open' : '' ?>><summary class="small">How to set it up (about 10 minutes)</summary>
+    <ol class="small">
+      <li>At <a href="https://developers.tiktok.com/" target="_blank" rel="noopener">developers.tiktok.com</a>, create an app of type <b>Other</b>.</li>
+      <li>Add the products <b>Login Kit</b> and <b>Display API</b> (or whatever TikTok currently calls the "show your own videos" product) and the scopes <code>user.info.basic</code>, <code>user.info.stats</code>, <code>video.list</code>.</li>
+      <li>Login Kit redirect URI (Web): <code class="an-secret">https://defacingthemusic.com/admin/analytics-tiktok.php</code></li>
+      <li>Turn on <b>Sandbox</b> and add your TikTok account (@defacingthemusic) as a target user, so it works before TikTok reviews the app.</li>
+      <li>Copy the app's <b>Client key</b> and <b>Client secret</b> (from the sandbox, if you use it) below, Save, then click <b>Connect TikTok</b> and log in as @defacingthemusic.</li>
+    </ol></details>
+  <form method="post" class="admin-form an-key"><?= dtm_csrf_field() ?>
+    <input type="text" name="tt_key" autocomplete="off" placeholder="Client key" value="<?= h($cfg['tt_key']) ?>" aria-label="TikTok Client key">
+    <input type="password" name="tt_secret" autocomplete="off" placeholder="<?= $cfg['tt_secret'] !== '' ? 'Client secret (saved)' : 'Client secret' ?>" aria-label="TikTok Client secret">
+    <button name="action" value="save_tt" class="btn bang">Save</button>
+    <?php if ($cfg['tt_key'] !== ''): ?><button name="action" value="clear_tt" class="linkish" onclick="return confirm('Disconnect TikTok and remove its keys?')">Remove</button><?php endif; ?>
+  </form>
+  <?php if ($cfg['tt_key'] !== '' && $cfg['tt_secret'] !== ''): ?>
+  <form method="post" action="analytics-tiktok.php"><?= dtm_csrf_field() ?><button class="an-btn"><?= $cfg['tt_refresh'] !== '' ? 'Reconnect TikTok' : 'Connect TikTok' ?></button></form>
+  <?php endif; ?>
 </details></section>
 
 <section class="admin-card an an-fold" id="import"><details<?= $newImportKey !== '' || $msg !== '' ? ' open' : '' ?>>
