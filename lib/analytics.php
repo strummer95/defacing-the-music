@@ -12,7 +12,7 @@
 require_once __DIR__ . '/auth.php';
 
 const DTM_YT_CHANNEL = 'UCRXnCbaJExnAwNbeb1d5mZg';
-const DTM_META_API = 'https://graph.facebook.com/v23.0/';
+const DTM_META_API = 'https://graph.facebook.com/v27.0/';
 const DTM_AN_PLATFORMS = ['youtube' => 'YouTube', 'facebook' => 'Facebook', 'instagram' => 'Instagram', 'tiktok' => 'TikTok'];
 const DTM_AN_METRICS = ['views' => 'Views', 'likes' => 'Likes', 'comments' => 'Comments', 'shares' => 'Shares'];
 const DTM_AN_REFRESH_EVERY = 3 * 3600; // fetch-on-view at most every 3 hours (no cron on shared hosting)
