@@ -53,7 +53,9 @@ sources files. Mayhem (Norwegian black metal) and Bjork's 1996 stalker case are 
 title/artist/year fields would just duplicate the richer system that already exists and fork the backlog
 across two places — not built. Doc-only change (this note), no functional code touched.
 
-## [ ] DTM-ANALYTICS-1: admin > Analytics (all platforms in one place)
+## [x] DTM-ANALYTICS-1: admin > Analytics (all platforms in one place)
+Done (Nov 25): admin/analytics.php + lib/analytics.php + admin/analytics-import.php. YouTube via API key, Facebook/Instagram via a pasted Page token, TikTok via import; daily snapshots in data/analytics/. Waiting on Duck's YouTube key and Meta token.
+
 Duck (Nov 25): a new admin page called **Analytics**, added to the admin menu (`dtm_admin_nav()`, put it after Guest List). One master view of views, likes, comments, shares, watch time and followers across YouTube, Facebook, Instagram and TikTok, that he can break down **by platform and/or by video** (filters, sortable table, totals up top, simple trend by day). Backstage admin look (`assets/admin-backstage.css`). Do everything possible automatically; TikTok is filled in by Defa (see below).
 
 Data model: store daily snapshots in `data/analytics/` (JSON, one file per day or one per platform, your call), so trends work and nothing is lost if an API hiccups. Group posts into a "video" so the same clip on 4 platforms rolls up into one row (match by a manual "link these" control in the admin, with a best-guess match by title/date; Duck should be able to fix links).

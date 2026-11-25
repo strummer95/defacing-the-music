@@ -164,3 +164,46 @@ body.admin .script-list.board .sline .flag{color:var(--ink);background:var(--amb
 body.admin .pull-flash{margin:0}
 body.admin .pull-flash summary{cursor:pointer}
 body.admin .pull-flash .pull-output{margin:10px 0 0;color:var(--paper);font:12px/1.4 ui-monospace,Menlo,monospace;white-space:pre-wrap;max-height:240px;overflow:auto;padding:10px}
+
+/* admin > Analytics (DTM-ANALYTICS-1) */
+body.admin .an + .an{margin-top:22px}
+body.admin .an h3{font-family:Oswald,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin:22px 0 6px}
+body.admin .an-filters{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;margin:14px 0 6px}
+body.admin .an-filters label{display:flex;flex-direction:column;gap:4px;font-family:Oswald,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5a5560}
+body.admin .an-filters label{max-width:100%}
+body.admin .an-filters .admin-select{min-width:170px;max-width:min(340px,100%)}
+body.admin .an-refresh{margin:0 0 14px}
+body.admin .an-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:8px 0}
+body.admin .an-tile{background:var(--ink);color:var(--paper);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+body.admin .an-tile .an-lbl{font-family:Oswald,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+body.admin .an-tile b{font-family:Inter,sans-serif;font-weight:800;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}
+body.admin .an-delta{font-size:12px;color:#c9c4cc}
+body.admin .an-later{margin:6px 0 18px}
+body.admin .an-chart{display:flex;align-items:flex-end;gap:2px;height:160px;border-bottom:1px solid #cfc8ba;padding-top:8px}
+body.admin .an-col{flex:1 1 0;max-width:48px;height:100%;display:flex;align-items:flex-end;position:relative;min-width:3px;outline:none}
+body.admin .an-col i{display:block;width:100%;background:var(--red);border-radius:4px 4px 0 0}
+body.admin .an-col:hover i,body.admin .an-col:focus i{background:var(--red-dk)}
+body.admin .an-tip{display:none;position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--ink);color:var(--paper);font-size:12px;padding:4px 8px;border-radius:3px;z-index:2;pointer-events:none}
+body.admin .an-col:hover .an-tip,body.admin .an-col:focus .an-tip{display:block}
+body.admin .an-axis{display:flex;justify-content:space-between;color:#5a5560;margin-top:4px}
+body.admin .an-table{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:14px}
+body.admin .an-table th{font-family:Oswald,sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#5a5560;text-align:left;border-bottom:2px solid var(--ink);padding:6px 8px}
+body.admin .an-sort th{cursor:pointer;user-select:none}
+body.admin .an-sort th[data-dir="asc"]::after{content:" ▲"}
+body.admin .an-sort th[data-dir="desc"]::after{content:" ▼"}
+body.admin .an-table td{border-bottom:1px solid #e2dccf;padding:8px;vertical-align:top}
+body.admin .an-table .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+body.admin .an-table summary{cursor:pointer}
+body.admin .an-chip{display:inline-block;font-family:Oswald,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);border-radius:2px;padding:1px 6px;margin-left:6px}
+body.admin .an-posts{list-style:none;padding:0;margin:8px 0 0}
+body.admin .an-posts li{padding:6px 0;border-top:1px dashed #d6cfc0}
+body.admin .an-posts .an-chip{margin:0 6px 0 0}
+body.admin .an-link{margin-top:4px}
+body.admin .an-link .admin-select{font-size:13px;padding:4px 6px;max-width:100%}
+body.admin .an-ok{font-size:12px;background:#2a7d3a;color:#fff;border-radius:2px;padding:1px 6px;margin-left:6px;letter-spacing:.08em}
+body.admin .an-no{font-size:12px;background:#8a8590;color:#fff;border-radius:2px;padding:1px 6px;margin-left:6px;letter-spacing:.08em}
+body.admin .an-key{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;align-items:center}
+body.admin .an-key input{flex:1 1 280px;height:auto;min-height:46px;width:auto}
+body.admin .an-key .btn{width:auto}
+body.admin .an-example{background:var(--ink);color:var(--paper);padding:10px 12px;border-radius:3px;font-size:12px;overflow-x:auto}
+body.admin .an-secret{user-select:all;word-break:break-all}
