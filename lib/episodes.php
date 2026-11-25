@@ -131,3 +131,31 @@ function dtm_delete_episode(string $id): void {
   dtm_json_update('episodes.json', fn($l) => array_values(array_filter($l, fn($e) => $e['id'] !== $id)));
   dtm_script_set_episode((string)$ep['script_id'], '');
 }
+
+// Auto-publish (Duck, Nov 25: "you do it"): when a public YouTube upload (from the Stats snapshots) has an episode's
+// "Due To ..." title in its title and is longer than a Short, fill in that episode's YouTube link and date and mark it
+// Published. Never overwrites a YouTube link Duck already pasted. Runs when Episodes or Stats is opened. Returns how
+// many episodes it updated.
+function dtm_episodes_autopublish(): int {
+  require_once __DIR__ . '/analytics.php';
+  $norm = fn(string $t) => trim(preg_replace('/[^a-z0-9]+/', ' ', strtolower($t)));
+  $vids = array_filter(dtm_an_latest()['posts'], fn($p) => ($p['platform'] ?? '') === 'youtube' && (int)($p['seconds'] ?? 0) > 180 && !empty($p['published']));
+  if (!$vids) return 0;
+  $n = 0;
+  dtm_json_update('episodes.json', function ($eps) use ($vids, $norm, &$n) {
+    foreach ($eps as &$e) {
+      if (trim((string)($e['youtube'] ?? '')) !== '' && ($e['status'] ?? '') === 'published') continue;
+      $key = $norm((string)($e['title'] ?? ''));
+      if (strlen($key) < 8) continue;
+      foreach ($vids as $v) {
+        if (!str_contains(' ' . $norm((string)($v['title'] ?? '')) . ' ', ' ' . $key . ' ')) continue;
+        if (trim((string)($e['youtube'] ?? '')) === '') $e['youtube'] = 'https://youtu.be/' . $v['id'];
+        if (empty($e['date'])) $e['date'] = (string)$v['published'];
+        $e['status'] = 'published'; $e['updated'] = date('c'); $n++;
+        break;
+      }
+    }
+    return $n ? $eps : null;
+  });
+  return $n;
+}
