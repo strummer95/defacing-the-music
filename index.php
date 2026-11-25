@@ -24,7 +24,13 @@ $episodes = [
   ['title' => 'Due To Excessive Disco', 'who' => 'Who Let a DJ Blow Up Center Field?',
    'blurb' => "A White Sox promotion: bring a disco record, get in for 98 cents, watch a DJ blow them up in center field. Chicago did not stay in its seats.",
    'meta' => 'Comiskey Park, 1979', 'shadow' => ''],
+  ['title' => 'Due To Excessive Flash Powder', 'who' => 'Who Gave The Who Explosives?',
+   'blurb' => "The Who on network TV. Keith Moon decides the exploding drum kit needs more flash powder. Nobody stops him.",
+   'meta' => 'Smothers Brothers, 1967', 'shadow' => 'red'],
 ];
+// Blurbs for the latest-episode pass, by title (so they work whatever number the admin gives the episode).
+$blurbsByTitle = [];
+foreach ($episodes as $u) $blurbsByTitle[strtolower($u['title'])] = $u['blurb'];
 // Latest episode for the top of the page: the newest published episode in admin > Episodes that has a YouTube link.
 // Falls back to Episode 0 if that data isn't available.
 $latest = ['num' => '0', 'title' => 'Due To Unforeseen Circumstances', 'who' => 'Who Gave This Guy a Mic?', 'yt' => 'FQK-XMkoajA'];
@@ -40,7 +46,11 @@ try {
     break;
   }
 } catch (Throwable $t) { /* keep the fallback */ }
-$latestBlurb = $blurbs[$latest['num']] ?? '';
+$latestBlurb = $blurbs[$latest['num']] ?? ($blurbsByTitle[strtolower($latest['title'])] ?? '');
+// Coming up: drop anything already published, show the next three.
+$publishedTitles = [];
+try { foreach (dtm_episodes() as $e) if (($e['status'] ?? '') === 'published') $publishedTitles[strtolower(trim((string)$e['title']))] = true; } catch (Throwable $t) {}
+$episodes = array_slice(array_values(array_filter($episodes, fn($u) => !isset($publishedTitles[strtolower($u['title'])]))), 0, 3);
 $signup = $_GET['signup'] ?? '';
 $h = fn($s) => htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 $desc = "Rock and roll's worst nights, and who to blame for them. Real stories, told like a friend at the bar who actually went down the rabbit hole.";
