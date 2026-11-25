@@ -209,7 +209,7 @@ dtm_page_start('Stats', $user, true);
 
   <?php if ($fVideo === ''): ?>
   <h2 class="bang">By platform</h2>
-  <table class="an-table an-plat">
+  <div class="an-scroll"><table class="an-table an-plat">
     <thead><tr><th>Platform</th><th class="num">Followers</th><?php foreach (DTM_AN_METRICS as $l): ?><th class="num"><?= h($l) ?></th><?php endforeach; ?><th class="num">Posts</th></tr></thead>
     <tbody>
     <?php foreach (DTM_AN_PLATFORMS as $pl => $label): if ($fPlat !== '' && $pl !== $fPlat) continue;
@@ -219,7 +219,7 @@ dtm_page_start('Stats', $user, true);
         <?php foreach ($t as $m => $v): $has = (bool)array_filter($pp, fn($p) => ($p[$m] ?? null) !== null); ?><td class="num"<?= !$has && $pp ? ' title="' . h($label) . ' doesn\'t give us this number"' : '' ?>><?= $has ? $fmt($v) : '–' ?></td><?php endforeach; ?><td class="num"><?= count($pp) ?></td></tr>
     <?php endforeach; ?>
     </tbody>
-  </table>
+  </table></div>
   <?php endif; ?>
 
   <h2 class="bang">Views gained per day</h2>
@@ -236,7 +236,7 @@ dtm_page_start('Stats', $user, true);
 
   <h2 class="bang" id="videos">By video <span class="small an-hint">same clip on every platform = one row; open a row to fix a match; click a column to sort</span></h2>
   <?php if (!$rows): ?><p class="small">No posts yet. Add the YouTube key below and hit Refresh.</p><?php else: ?>
-  <table class="an-table an-sort">
+  <div class="an-scroll"><table class="an-table an-sort">
     <thead><tr><th data-k="t">Video</th><th data-k="d">Posted</th><?php foreach (DTM_AN_METRICS as $l): ?><th class="num" data-k="n"><?= h($l) ?></th><?php endforeach; ?></tr></thead>
     <tbody>
     <?php foreach ($rows as $g => $r): ?>
@@ -263,7 +263,7 @@ dtm_page_start('Stats', $user, true);
     </tr>
     <?php endforeach; ?>
     </tbody>
-  </table>
+  </table></div>
   <?php endif; ?>
 </section>
 
