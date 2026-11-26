@@ -497,5 +497,8 @@ function dtm_an_hourly(int $hours, callable $keep): array {
       if ($part > 0) $b[$t] += $g * $part;
     }
   }
+  // Hours after the last check aren't zero, they're unknown: leave them off the end.
+  $last = $h ? (int)end($h)['t'] : 0;
+  $b = array_filter($b, fn($t) => $t <= $last, ARRAY_FILTER_USE_KEY);
   return array_map(fn($x) => (int)round($x), $b);
 }

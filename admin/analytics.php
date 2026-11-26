@@ -171,6 +171,25 @@ $delta = function (string $m) use ($weekAgo, $series) {
   return '<span class="an-delta">' . ($d >= 0 ? '+' : '−') . number_format(abs($d)) . ' this week</span>';
 };
 
+// Line graph (Duck, Nov 26: "i didnt want a bar chart, i wanted a line graph"): an SVG line + soft fill, with
+// invisible hover columns on top that show a dot and the exact number.
+function dtm_an_line(array $pts, string $aria): string {
+  $n = count($pts); if ($n < 1) return '';
+  $max = max(1, max(array_column($pts, 1)));
+  $x = fn($i) => $n === 1 ? 500 : round($i / ($n - 1) * 1000, 2);
+  $y = fn($v) => round(100 - $v / $max * 92, 2);
+  $line = ''; foreach (array_values($pts) as $i => [$l, $v]) $line .= ($i ? ' L' : 'M') . $x($i) . ' ' . $y($v);
+  $area = $line . ' L' . $x($n - 1) . ' 100 L' . $x(0) . ' 100 Z';
+  $o = '<div class="an-line" role="img" aria-label="' . h($aria) . '"><span class="an-ymax">' . number_format($max) . '</span>'
+     . '<svg viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">'
+     . '<line x1="0" y1="8" x2="1000" y2="8" class="an-grid"/><line x1="0" y1="54" x2="1000" y2="54" class="an-grid"/>'
+     . '<path d="' . $area . '" class="an-area"/><path d="' . $line . '" class="an-stroke"/></svg><div class="an-hits">';
+  foreach (array_values($pts) as $i => [$l, $v]) {
+    $o .= '<div class="an-hit" tabindex="0" style="--x:' . ($n === 1 ? 50 : round($i / ($n - 1) * 100, 3)) . '%;--y:' . round($v / $max * 92, 2) . '%"><b></b><span class="an-tip">' . h($l) . ': ' . number_format($v) . ' views</span></div>';
+  }
+  return $o . '</div></div>';
+}
+
 dtm_page_start('Stats', $user, true);
 ?>
 <section class="admin-card an">
@@ -235,23 +254,15 @@ dtm_page_start('Stats', $user, true);
   <?php if (!$hourHas): ?>
   <p class="small">The hourly chart fills in as the site checks your numbers each hour. Turn on the hourly ping (Connections) so it keeps going when this page isn't open.</p>
   <?php else: ?>
-  <div class="an-chart an-chart-h" role="img" aria-label="Views per hour, last 48 hours">
-    <?php foreach ($hourly as $ts => $v): ?>
-    <div class="an-col" tabindex="0"><i style="height:<?= $v ? max(2, round($v / $hourMax * 100, 1)) : 0 ?>%"></i><span class="an-tip"><?= h(date('D g a', $ts)) ?>: <?= number_format($v) ?> views</span></div>
-    <?php endforeach; ?>
-  </div>
-  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in 48 hours · most in an hour: <?= number_format($hourMax) ?></span><span>now</span></div>
+  <?= dtm_an_line(array_map(fn($ts, $v) => [date('D g a', $ts), $v], array_keys($hourly), $hourly), 'Views per hour, last 48 hours') ?>
+  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in 48 hours · most in an hour: <?= number_format($hourMax) ?></span><span><?= h(date('D g a', array_key_last($hourly))) ?></span></div>
   <?php endif; ?>
   <?php else: ?>
   <h2 class="bang">Views gained per day</h2>
   <?php if (count($gain) < 1): ?>
   <p class="small">The trend starts once there are two days of numbers. Come back tomorrow.</p>
   <?php else: ?>
-  <div class="an-chart" role="img" aria-label="Views gained per day">
-    <?php foreach ($gain as $day => $v): ?>
-    <div class="an-col" tabindex="0"><i style="height:<?= max(2, round($v / $gainMax * 100, 1)) ?>%"></i><span class="an-tip"><?= h(date('M j', strtotime($day))) ?>: <?= number_format($v) ?> views</span></div>
-    <?php endforeach; ?>
-  </div>
+  <?= dtm_an_line(array_map(fn($d, $v) => [date('M j', strtotime($d)), $v], array_keys($gain), $gain), 'Views gained per day') ?>
   <div class="an-axis small"><span><?= h(date('M j', strtotime(array_key_first($gain)))) ?></span><span>Most in a day: <?= number_format($gainMax) ?></span><span><?= h(date('M j', strtotime(array_key_last($gain)))) ?></span></div>
   <?php endif; ?>
   <?php endif; ?>
