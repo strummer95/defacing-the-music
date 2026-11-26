@@ -115,6 +115,12 @@ $sel = array_filter($posts, fn($p, $k) => $keep($k, $p), ARRAY_FILTER_USE_BOTH);
 // Totals now.
 $tot = array_fill_keys(array_keys(DTM_AN_METRICS), 0);
 foreach ($sel as $p) foreach ($tot as $m => $_) $tot[$m] += (int)($p[$m] ?? 0);
+// Facebook's dashboard "Views" counts the whole Page (reels plus photos, links, stories). When we have the Page's own
+// day-by-day views, use that total for Facebook so the site matches it (Duck, Nov 26).
+$fbPage = array_sum(dtm_an_daily()['facebook'] ?? []);
+$fbVideos = array_sum(array_map(fn($p) => (int)($p['views'] ?? 0), array_filter($posts, fn($p) => ($p['platform'] ?? '') === 'facebook')));
+$fbUsePage = $fVideo === '' && $fbPage > $fbVideos;
+if ($fbUsePage && ($fPlat === '' || $fPlat === 'facebook')) $tot['views'] += $fbPage - $fbVideos;
 $followers = 0;
 foreach ($latest['followers'] as $pl => $n) if ($fPlat === '' || $pl === $fPlat) $followers += (int)$n;
 
@@ -277,7 +283,8 @@ dtm_page_start('Stats', $user, true);
     <tbody>
     <?php foreach (DTM_AN_PLATFORMS as $pl => $label): if ($fPlat !== '' && $pl !== $fPlat) continue;
       $pp = array_filter($posts, fn($p) => $p['platform'] === $pl); $t = array_fill_keys(array_keys(DTM_AN_METRICS), 0);
-      foreach ($pp as $p) foreach ($t as $m => $_) $t[$m] += (int)($p[$m] ?? 0); ?>
+      foreach ($pp as $p) foreach ($t as $m => $_) $t[$m] += (int)($p[$m] ?? 0);
+      if ($pl === 'facebook' && $fbUsePage) $t['views'] = $fbPage; ?>
       <tr><td><a href="stats-videos.php?p=<?= h($pl) ?>" title="See every <?= h($label) ?> video"><?= h($label) ?> <span class="an-go">›</span></a></td><td class="num"><?= $fmt($latest['followers'][$pl] ?? null) ?></td>
         <?php foreach ($t as $m => $v): $has = (bool)array_filter($pp, fn($p) => ($p[$m] ?? null) !== null); ?><td class="num"<?= !$has && $pp ? ' title="' . h($label) . ' doesn\'t give us this number"' : '' ?>><?= $has ? $fmt($v) : '–' ?></td><?php endforeach; ?><td class="num"><?= count($pp) ?></td></tr>
     <?php endforeach; ?>
