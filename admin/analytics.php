@@ -137,6 +137,25 @@ foreach ($series as $day => $row) if ($day <= date('Y-m-d', strtotime('-7 days')
 // Views gained per day in the chosen range.
 $gain = []; $prev = null;
 foreach ($series as $day => $row) { if ($prev !== null) $gain[$day] = max(0, $row['views'] - $prev['views']); $prev = $row; }
+// With no single video picked, use each platform's own day-by-day history (YouTube, Facebook, Instagram) where we have
+// it, and the snapshots only for the rest (TikTok). That gives real days back to the start, not just since Stats began.
+$daily = dtm_an_daily();
+if ($fVideo === '' && $daily) {
+  $byPl = []; $prevP = []; $statePl = [];
+  foreach ($days as $day) {
+    foreach (dtm_an_day($day)['posts'] as $k => $p) $statePl[$k] = array_merge($statePl[$k] ?? [], $p);
+    $tot = [];
+    foreach ($statePl as $k => $p) $tot[$p['platform'] ?? ''] = ($tot[$p['platform'] ?? ''] ?? 0) + (int)($p['views'] ?? 0);
+    foreach ($tot as $pl => $v) { if (isset($prevP[$pl])) $byPl[$pl][$day] = max(0, $v - $prevP[$pl]); $prevP[$pl] = $v; }
+  }
+  foreach ($daily as $pl => $rowsD) if ($rowsD) $byPl[$pl] = $rowsD;
+  $gain = [];
+  foreach ($byPl as $pl => $rowsD) if ($fPlat === '' || $pl === $fPlat) foreach ($rowsD as $day => $v) $gain[$day] = ($gain[$day] ?? 0) + $v;
+  ksort($gain);
+  if ($gain) { $full = []; for ($t = strtotime(array_key_first($gain)); $t <= strtotime(array_key_last($gain)); $t += 86400) { $dd = date('Y-m-d', $t); $full[$dd] = $gain[$dd] ?? 0; } $gain = $full; }
+  // Start the chart at the first day with any views.
+  while ($gain && reset($gain) === 0) array_shift($gain);
+}
 if ($fDays !== 'all' && $fDays !== '48h') $gain = array_filter($gain, fn($day) => $day > date('Y-m-d', strtotime('-' . $fDays . ' days')), ARRAY_FILTER_USE_KEY);
 $gainMax = max([1] + array_values($gain));
 $hourly = $fDays === '48h' ? dtm_an_hourly(48, fn($k) => isset($posts[$k]) && $keep($k, $posts[$k])) : [];
@@ -352,7 +371,7 @@ dtm_page_start('Stats', $user, true);
   <form method="post" action="analytics-google.php"><?= dtm_csrf_field() ?><button class="an-btn"><?= $cfg['g_refresh'] !== '' ? 'Reconnect YouTube Analytics' : 'Connect YouTube Analytics' ?></button></form>
   <?php endif; ?>
 
-  <h3 class="bang">Facebook + Instagram <?= $cfg['meta'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?></h3>
+  <h3 class="bang">Facebook + Instagram <?= $cfg['meta'] !== '' ? '<span class="an-ok">connected</span>' : '<span class="an-no">not set</span>' ?> <a href="stats-check.php" class="small">check Facebook numbers</a></h3>
   <details<?= $cfg['meta'] === '' ? ' open' : '' ?>><summary class="small">How to get the Page token (about 10 minutes)</summary>
     <ol class="small">
       <li>Instagram @defacingthemusicpod has to be a Professional (Creator or Business) account linked to the Defacing The Music Facebook Page.</li>

@@ -295,6 +295,7 @@ function dtm_an_refresh(bool $force = false): array {
     try { [$p, $f] = dtm_an_fetch_tiktok(); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['tiktok'] = $e->getMessage(); }
   }
+  if ($metaDue) { try { dtm_an_fetch_history(); } catch (Throwable $e) { /* the daily chart falls back to snapshots */ } }
   dtm_json_update('analytics-state.json', fn($s) => ['fetched' => time(), 'errors' => $errors] + ($metaDue ? ['meta_at' => time()] : []) + $s);
   dtm_an_record_hour();
   flock($lock, LOCK_UN); fclose($lock);
@@ -517,4 +518,58 @@ function dtm_an_hourly(int $hours, callable $keep): array {
   // Keep all 48 hours on the axis; unknown hours are null (drawn as a gap, not as zero).
   foreach ($b as $t => $x) $b[$t] = ($t > $last || $t < $first) ? null : (int)round($x);
   return $b;
+}
+
+// ---------- daily history straight from the platforms (Nov 26, Duck: "why arent u tracking views right? youtube and
+// the other platforms show the type of chart i want") ----------
+// YouTube Analytics (views by day), the Facebook Page (page_media_view by day) and Instagram (views per day) keep their
+// own day-by-day history back to the start, so the daily charts use that instead of the site's own snapshots.
+// Stored in data/analytics-daily.json as platform => date => views. TikTok has no daily history in its API, so its
+// days come from the site's snapshots. Hour-by-hour isn't offered by any of them; that line is the site's own checks.
+function dtm_an_meta_page(string $token): array {
+  try {
+    $acc = dtm_an_meta('me/accounts', ['fields' => 'name,access_token', 'limit' => 100], $token);
+    foreach ($acc['data'] ?? [] as $p) if (stripos((string)($p['name'] ?? ''), 'defacing') !== false && !empty($p['access_token'])) { $token = (string)$p['access_token']; break; }
+  } catch (RuntimeException $e) {}
+  $me = dtm_an_meta('me', ['fields' => 'id,name,instagram_business_account{id}'], $token);
+  return [$token, (string)($me['id'] ?? ''), (string)($me['instagram_business_account']['id'] ?? '')];
+}
+function dtm_an_daily(): array { return dtm_json_read('analytics-daily.json'); }
+function dtm_an_fetch_history(): void {
+  $cfg = dtm_an_cfg(); $got = [];
+  $since = date('Y-m-d', strtotime('-88 days')); $today = date('Y-m-d');
+  if ($cfg['g_refresh'] !== '') {
+    try {
+      $access = dtm_an_g_tokens(['grant_type' => 'refresh_token', 'refresh_token' => $cfg['g_refresh']]);
+      $j = dtm_an_tt_get('https://youtubeanalytics.googleapis.com/v2/reports?' . http_build_query(['ids' => 'channel==MINE', 'startDate' => '2026-01-01', 'endDate' => $today, 'metrics' => 'views', 'dimensions' => 'day', 'sort' => 'day']), $access);
+      foreach ($j['rows'] ?? [] as $r) $got['youtube'][(string)$r[0]] = (int)$r[1];
+    } catch (RuntimeException $e) {}
+  }
+  if ($cfg['meta'] !== '') {
+    try {
+      [$tok, $pageId, $igId] = dtm_an_meta_page($cfg['meta']);
+      foreach (['page_media_view', 'page_video_views'] as $m) {
+        try {
+          $r = dtm_an_meta($pageId . '/insights', ['metric' => $m, 'period' => 'day', 'since' => $since, 'until' => date('Y-m-d', strtotime('+1 day'))], $tok);
+          $rows = [];
+          foreach ($r['data'][0]['values'] ?? [] as $v) if (is_numeric($v['value'] ?? null)) $rows[date('Y-m-d', strtotime((string)$v['end_time']) - 86400)] = (int)$v['value'];
+          if (array_sum($rows) > 0) { $got['facebook'] = $rows; break; }
+        } catch (RuntimeException $e) {}
+      }
+      if ($igId !== '') {
+        // Instagram gives views per day only one day at a time; fetch the days we don't have yet (plus the last 2).
+        $have = dtm_an_daily()['instagram'] ?? [];
+        for ($d = strtotime('-29 days'); $d <= time(); $d += 86400) {
+          $day = date('Y-m-d', $d);
+          if (isset($have[$day]) && $day < date('Y-m-d', strtotime('-2 days'))) continue;
+          try {
+            $r = dtm_an_meta($igId . '/insights', ['metric' => 'views', 'period' => 'day', 'metric_type' => 'total_value', 'since' => $d, 'until' => $d + 86400], $tok);
+            $v = $r['data'][0]['total_value']['value'] ?? null;
+            if (is_numeric($v)) $got['instagram'][$day] = (int)$v;
+          } catch (RuntimeException $e) { break; }
+        }
+      }
+    } catch (RuntimeException $e) {}
+  }
+  if ($got) dtm_json_update('analytics-daily.json', function ($d) use ($got) { foreach ($got as $pl => $rows) $d[$pl] = $rows + ($d[$pl] ?? []); foreach ($d as &$r) ksort($r); return $d; });
 }
