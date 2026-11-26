@@ -13,6 +13,7 @@ A one-off solo video when something big and wild happens in music. Duck reads it
 - **Not polarizing.** No politics, elections, causes, race, religion, culture-war fights, even if it's the week's biggest music story (CLAUDE.md hard rule).
 - **No AI music stories (Duck, Nov 25):** the theme song is AI-generated, so stay away from AI music controversy (AI song generators, AI content mills, AI copyright fights, AI voice clones) so nobody turns it into a conversation about the theme. Skip them even when they're wild; the Nov 25 pick about an AI content mill taking down a singer's folk song cover was dropped for this.
 - **Real and sourced.** At least one solid outlet (AP, Reuters, BBC, Billboard, Rolling Stone, local news). No rumor accounts, no "fans are saying". Ongoing legal stuff about living people: "reportedly", "according to", "police say", and name the outlet.
+- **Holiday throwbacks count (Duck, Nov 26):** an old story becomes a Fresh Track when the date makes it relevant right now (KISS's 2014 Thanksgiving parade float, posted on Thanksgiving). Post it that day only.
 - **From the last 7 days** (an older story that just got a crazy new twist is fine). Every pick carries a **Happened:** date (Duck, Nov 23: "dates will be critical"), and the script says when it happened ("Last Saturday...", "November 7th...") so the Short still makes sense a month later. admin > Side Stories flags a Fresh Tracks story as aging after 4 days and stale after 7.
 
 ## Duck's calls on the first batch (Nov 23): learn from these
