@@ -347,3 +347,4 @@ body.admin .an-tile b{font-size:min(44px,22cqi);white-space:nowrap}
 @media (max-width:600px){ body.admin .an-tile b{font-size:min(22px,20cqi)} }
 body.admin .an-tile b{font-size:min(44px,calc(150cqi / var(--n,6)))}
 @media (max-width:600px){ body.admin .an-tile b{font-size:min(24px,calc(150cqi / var(--n,6)))} }
+body.admin .an-chart-h{gap:1px} body.admin .an-chart-h .an-col{max-width:none}

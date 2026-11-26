@@ -15,12 +15,14 @@ const DTM_YT_CHANNEL = 'UCRXnCbaJExnAwNbeb1d5mZg';
 const DTM_META_API = 'https://graph.facebook.com/v27.0/';
 const DTM_AN_PLATFORMS = ['youtube' => 'YouTube', 'facebook' => 'Facebook', 'instagram' => 'Instagram', 'tiktok' => 'TikTok'];
 const DTM_AN_METRICS = ['views' => 'Views', 'likes' => 'Likes', 'comments' => 'Comments', 'shares' => 'Shares'];
-const DTM_AN_REFRESH_EVERY = 3 * 3600; // fetch-on-view at most every 3 hours (no cron on shared hosting)
+const DTM_AN_REFRESH_EVERY = 3600; // fetch at most hourly (on view, or from the hourly ping, admin/stats-tick.php)
+const DTM_AN_META_EVERY = 3 * 3600; // Meta has tight rate limits: Facebook/Instagram at most every 3 hours unless Refresh is pressed
+const DTM_AN_HOURLY_KEEP = 14 * 86400; // hourly history for the 48-hour chart
 
 function dtm_an_cfg(): array {
   $s = dtm_secrets();
   return ['yt' => trim((string)($s['youtube_api_key'] ?? '')), 'meta' => trim((string)($s['meta_page_token'] ?? '')),
-          'import' => trim((string)($s['analytics_import_key'] ?? '')),
+          'import' => trim((string)($s['analytics_import_key'] ?? '')), 'tick' => trim((string)($s['stats_tick_key'] ?? '')),
           'tt_key' => trim((string)($s['tiktok_client_key'] ?? '')), 'tt_secret' => trim((string)($s['tiktok_client_secret'] ?? '')),
           'tt_refresh' => trim((string)($s['tiktok_refresh_token'] ?? '')),
           'g_id' => trim((string)($s['google_client_id'] ?? '')), 'g_secret' => trim((string)($s['google_client_secret'] ?? '')),
@@ -269,15 +271,19 @@ function dtm_an_refresh(bool $force = false): array {
     try { dtm_an_store($today, dtm_an_fetch_yta(), []); }
     catch (RuntimeException $e) { $errors['youtube'] = trim(($errors['youtube'] ?? '') . ' YouTube Analytics: ' . $e->getMessage()); }
   }
-  if ($cfg['meta'] !== '') {
+  $metaDue = $force || time() - (int)($st['meta_at'] ?? 0) >= DTM_AN_META_EVERY;
+  if ($cfg['meta'] !== '' && $metaDue) {
     try { [$p, $f] = dtm_an_fetch_meta($cfg['meta'], $errors); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['facebook'] = $errors['instagram'] = $e->getMessage(); }
+  } elseif ($cfg['meta'] !== '') {
+    foreach (['facebook', 'instagram'] as $pl) if (isset($st['errors'][$pl])) $errors[$pl] = $st['errors'][$pl];
   }
   if ($cfg['tt_refresh'] !== '') {
     try { [$p, $f] = dtm_an_fetch_tiktok(); dtm_an_store($today, $p, $f); }
     catch (RuntimeException $e) { $errors['tiktok'] = $e->getMessage(); }
   }
-  dtm_json_update('analytics-state.json', fn($s) => ['fetched' => time(), 'errors' => $errors] + $s);
+  dtm_json_update('analytics-state.json', fn($s) => ['fetched' => time(), 'errors' => $errors] + ($metaDue ? ['meta_at' => time()] : []) + $s);
+  dtm_an_record_hour();
   flock($lock, LOCK_UN); fclose($lock);
   return $errors;
 }
@@ -456,4 +462,40 @@ function dtm_an_fetch_yta(): array {
     $posts[] = ['platform' => 'youtube', 'id' => (string)$r[0], 'shares' => (int)$r[2], 'watch_minutes' => (int)$r[3], 'avg_seconds' => (int)$r[4], 'new_followers' => (int)$r[5]];
   }
   return $posts;
+}
+
+// ---------- hourly history (the 48-hour chart) ----------
+// Every fetch adds one point: each post's lifetime views at that moment. Kept for 14 days.
+function dtm_an_record_hour(): void {
+  $v = [];
+  foreach (dtm_an_latest()['posts'] as $k => $p) if (isset($p['views']) && $p['views'] !== null) $v[$k] = (int)$p['views'];
+  if (!$v) return;
+  $now = time();
+  dtm_json_update('analytics-hourly.json', function ($h) use ($v, $now) {
+    $h = array_values(array_filter($h, fn($x) => ($x['t'] ?? 0) > $now - DTM_AN_HOURLY_KEEP));
+    $h[] = ['t' => $now, 'v' => $v];
+    return $h;
+  });
+}
+// Views gained per hour for the last $hours hours, for the posts $keep() accepts. Returns [hour start ts => views].
+// A gap between two fetches is spread evenly over the hours it covers.
+function dtm_an_hourly(int $hours, callable $keep): array {
+  $end = (int)(floor(time() / 3600) * 3600) + 3600; $start = $end - $hours * 3600;
+  $b = []; for ($t = $start; $t < $end; $t += 3600) $b[$t] = 0;
+  $h = dtm_json_read('analytics-hourly.json');
+  usort($h, fn($a, $c) => $a['t'] <=> $c['t']);
+  for ($i = 1; $i < count($h); $i++) {
+    $a = $h[$i - 1]; $c = $h[$i];
+    if ($c['t'] <= $start) continue;
+    $g = 0;
+    foreach ($c['v'] as $k => $n) if (isset($a['v'][$k]) && $keep($k)) $g += max(0, $n - $a['v'][$k]);
+    if (!$g) continue;
+    $from = max($a['t'], $start); $to = $c['t']; $span = max(1, $c['t'] - $a['t']);
+    for ($t = (int)(floor($from / 3600) * 3600); $t < $to; $t += 3600) {
+      if (!isset($b[$t])) continue;
+      $part = (min($to, $t + 3600) - max($a['t'], $t)) / $span;
+      if ($part > 0) $b[$t] += $g * $part;
+    }
+  }
+  return array_map(fn($x) => (int)round($x), $b);
 }
