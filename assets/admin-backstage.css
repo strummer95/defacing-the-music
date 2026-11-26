@@ -371,3 +371,5 @@ body.admin .an-axis{gap:10px}
 body.admin .an-axis span:first-child,body.admin .an-axis span:last-child{white-space:nowrap}
 body.admin .an-sort td:nth-child(2){white-space:nowrap}
 @media (max-width:600px){ body.admin .an-axis{font-size:11px} }
+body.admin .an-untracked{position:absolute;left:0;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(0,0,0,.035) 0 6px,transparent 6px 12px);border-right:1px dashed #cfc8ba;display:flex;align-items:center;justify-content:center}
+body.admin .an-untracked span{font-size:11px;color:#8a8590;letter-spacing:.04em;white-space:nowrap}
