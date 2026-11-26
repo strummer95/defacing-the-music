@@ -349,6 +349,6 @@ body.admin .an-tile b{font-size:min(44px,calc(150cqi / var(--n,6)))}
 @media (max-width:600px){ body.admin .an-tile b{font-size:min(24px,calc(150cqi / var(--n,6)))} }
 body.admin .an-chart-h{gap:1px} body.admin .an-chart-h .an-col{max-width:none}
 /* Stats charts: bars can never draw outside the chart box (Nov 26: a bar showed up over the whole page) */
-body.admin .an-chart{position:relative;overflow:hidden;contain:paint}
+body.admin .an-chart{position:relative;overflow:hidden}
 body.admin .an-col i{max-height:100%}
 body.admin .an-chart:hover,body.admin .an-chart:focus-within{overflow:visible}
