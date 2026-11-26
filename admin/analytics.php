@@ -140,8 +140,9 @@ foreach ($series as $day => $row) { if ($prev !== null) $gain[$day] = max(0, $ro
 if ($fDays !== 'all' && $fDays !== '48h') $gain = array_filter($gain, fn($day) => $day > date('Y-m-d', strtotime('-' . $fDays . ' days')), ARRAY_FILTER_USE_KEY);
 $gainMax = max([1] + array_values($gain));
 $hourly = $fDays === '48h' ? dtm_an_hourly(48, fn($k) => isset($posts[$k]) && $keep($k, $posts[$k])) : [];
-$hourMax = max([1] + array_values($hourly));
-$hourHas = (bool)array_filter($hourly);
+$hourKnown = array_filter($hourly, fn($v) => $v !== null);
+$hourMax = max([1] + array_values($hourKnown));
+$hourHas = (bool)array_filter($hourKnown);
 
 // Video rows (groups), with the per-platform posts inside.
 $rows = [];
@@ -175,17 +176,33 @@ $delta = function (string $m) use ($weekAgo, $series) {
 // invisible hover columns on top that show a dot and the exact number.
 function dtm_an_line(array $pts, string $aria): string {
   $n = count($pts); if ($n < 1) return '';
-  $max = max(1, max(array_column($pts, 1)));
+  $pts = array_values($pts);
+  $vals = array_filter(array_column($pts, 1), fn($v) => $v !== null);
+  $max = max(1, $vals ? max($vals) : 1);
   $x = fn($i) => $n === 1 ? 500 : round($i / ($n - 1) * 1000, 2);
   $y = fn($v) => round(100 - $v / $max * 92, 2);
-  $line = ''; foreach (array_values($pts) as $i => [$l, $v]) $line .= ($i ? ' L' : 'M') . $x($i) . ' ' . $y($v);
-  $area = $line . ' L' . $x($n - 1) . ' 100 L' . $x(0) . ' 100 Z';
+  // One line + fill per run of known values; unknown (null) points are gaps.
+  $paths = ''; $run = [];
+  $flush = function () use (&$run, &$paths, $x, $y) {
+    if (!$run) return;
+    $d = ''; foreach ($run as $k => [$i, $v]) $d .= ($k ? ' L' : 'M') . $x($i) . ' ' . $y($v);
+    if (count($run) === 1) $d .= ' L' . ($x($run[0][0]) + 0.01) . ' ' . $y($run[0][1]);
+    $paths .= '<path d="' . $d . ' L' . $x(end($run)[0]) . ' 100 L' . $x($run[0][0]) . ' 100 Z" class="an-area"/><path d="' . $d . '" class="an-stroke"/>';
+    $run = [];
+  };
+  foreach ($pts as $i => [$l, $v]) { if ($v === null) $flush(); else $run[] = [$i, $v]; }
+  $flush();
+  // Shade the stretch before the first known point ("not tracked yet").
+  $firstKnown = null; foreach ($pts as $i => [$l, $v]) if ($v !== null) { $firstKnown = $i; break; }
+  $pre = ($firstKnown !== null && $firstKnown > 0 && $n > 1) ? round($firstKnown / ($n - 1) * 100, 2) : 0;
   $o = '<div class="an-line" role="img" aria-label="' . h($aria) . '"><span class="an-ymax">' . number_format($max) . '</span>'
+     . ($pre > 0 ? '<div class="an-untracked" style="width:' . $pre . '%"><span>not tracked yet</span></div>' : '')
      . '<svg viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">'
      . '<line x1="0" y1="8" x2="1000" y2="8" class="an-grid"/><line x1="0" y1="54" x2="1000" y2="54" class="an-grid"/>'
-     . '<path d="' . $area . '" class="an-area"/><path d="' . $line . '" class="an-stroke"/></svg><div class="an-hits">';
-  foreach (array_values($pts) as $i => [$l, $v]) {
-    $o .= '<div class="an-hit" tabindex="0" style="--x:' . ($n === 1 ? 50 : round($i / ($n - 1) * 100, 3)) . '%;--y:' . round($v / $max * 92, 2) . '%"><b></b><span class="an-tip">' . h($l) . ': ' . number_format($v) . ' views</span></div>';
+     . $paths . '</svg><div class="an-hits">';
+  foreach ($pts as $i => [$l, $v]) {
+    $o .= '<div class="an-hit" tabindex="0" style="--x:' . ($n === 1 ? 50 : round($i / ($n - 1) * 100, 3)) . '%;--y:' . ($v === null ? 0 : round($v / $max * 92, 2)) . '%">'
+        . ($v === null ? '' : '<b></b>') . '<span class="an-tip">' . h($l) . ': ' . ($v === null ? 'not tracked' : number_format($v) . ' views') . '</span></div>';
   }
   return $o . '</div></div>';
 }
@@ -255,7 +272,7 @@ dtm_page_start('Stats', $user, true);
   <p class="small">The hourly chart fills in as the site checks your numbers each hour. Turn on the hourly ping (Connections) so it keeps going when this page isn't open.</p>
   <?php else: ?>
   <?= dtm_an_line(array_map(fn($ts, $v) => [date('D g a', $ts), $v], array_keys($hourly), $hourly), 'Views per hour, last 48 hours') ?>
-  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in <?= count($hourly) < 48 ? count($hourly) . ' hours (since hourly tracking started)' : '48 hours' ?> · most in an hour: <?= number_format($hourMax) ?></span><span><?= h(date('D g a', array_key_last($hourly))) ?></span></div>
+  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourKnown)) ?> views<?= count($hourKnown) < 48 ? ' since hourly tracking started (' . count($hourKnown) . ' hours so far)' : ' in 48 hours' ?> · most in an hour: <?= number_format($hourMax) ?></span><span><?= h(date('D g a', array_key_last($hourly))) ?></span></div>
   <?php endif; ?>
   <?php else: ?>
   <h2 class="bang">Views gained per day</h2>

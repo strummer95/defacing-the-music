@@ -514,6 +514,7 @@ function dtm_an_hourly(int $hours, callable $keep): array {
   // Same for the hours before the first check (Nov 26: the line sat on zero for the day and a half before tracking began).
   $last = $h ? (int)end($h)['t'] : 0;
   $first = $h ? (int)(floor((int)$h[0]['t'] / 3600) * 3600) : PHP_INT_MAX;
-  $b = array_filter($b, fn($t) => $t <= $last && $t >= $first, ARRAY_FILTER_USE_KEY);
-  return array_map(fn($x) => (int)round($x), $b);
+  // Keep all 48 hours on the axis; unknown hours are null (drawn as a gap, not as zero).
+  foreach ($b as $t => $x) $b[$t] = ($t > $last || $t < $first) ? null : (int)round($x);
+  return $b;
 }
