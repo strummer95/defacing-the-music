@@ -64,6 +64,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $err = dtm_an_save_secrets(['youtube_analytics_refresh_token' => '']);
       if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
     }
+    if ($a === 'tick_key') {
+      $err = dtm_an_save_secrets(['stats_tick_key' => bin2hex(random_bytes(16))]);
+      if ($err === '') { header('Location: analytics.php#tick'); exit; }
+    }
     if ($a === 'clear_tt') {
       $err = dtm_an_save_secrets(['tiktok_refresh_token' => '', 'tiktok_client_key' => '', 'tiktok_client_secret' => '']);
       if ($err === '') { header('Location: analytics.php?cleared=1'); exit; }
@@ -103,8 +107,8 @@ $fPlat = (string)($_GET['platform'] ?? '');
 if (!isset(DTM_AN_PLATFORMS[$fPlat])) $fPlat = '';
 $fVideo = (string)($_GET['video'] ?? '');
 if ($fVideo !== '' && !in_array($fVideo, $groups, true)) $fVideo = '';
-$fDays = (string)($_GET['days'] ?? '28');
-if (!in_array($fDays, ['7', '28', '90', 'all'], true)) $fDays = '28';
+$fDays = (string)($_GET['days'] ?? '48h');
+if (!in_array($fDays, ['48h', '7', '28', '90', 'all'], true)) $fDays = '48h';
 $keep = fn(string $k, array $p) => ($fPlat === '' || ($p['platform'] ?? '') === $fPlat) && ($fVideo === '' || ($groups[$k] ?? $k) === $fVideo);
 $sel = array_filter($posts, fn($p, $k) => $keep($k, $p), ARRAY_FILTER_USE_BOTH);
 
@@ -133,8 +137,11 @@ foreach ($series as $day => $row) if ($day <= date('Y-m-d', strtotime('-7 days')
 // Views gained per day in the chosen range.
 $gain = []; $prev = null;
 foreach ($series as $day => $row) { if ($prev !== null) $gain[$day] = max(0, $row['views'] - $prev['views']); $prev = $row; }
-if ($fDays !== 'all') $gain = array_filter($gain, fn($day) => $day > date('Y-m-d', strtotime('-' . $fDays . ' days')), ARRAY_FILTER_USE_KEY);
+if ($fDays !== 'all' && $fDays !== '48h') $gain = array_filter($gain, fn($day) => $day > date('Y-m-d', strtotime('-' . $fDays . ' days')), ARRAY_FILTER_USE_KEY);
 $gainMax = max([1] + array_values($gain));
+$hourly = $fDays === '48h' ? dtm_an_hourly(48, fn($k) => isset($posts[$k]) && $keep($k, $posts[$k])) : [];
+$hourMax = max([1] + array_values($hourly));
+$hourHas = (bool)array_filter($hourly);
 
 // Video rows (groups), with the per-platform posts inside.
 $rows = [];
@@ -195,7 +202,7 @@ dtm_page_start('Stats', $user, true);
       <?php foreach ($choices as $g => $l): ?><option value="<?= h($g) ?>"<?= $fVideo === $g ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
     </select></label>
     <label><span class="sr">Trend</span><select name="days" class="admin-select" onchange="this.form.submit()">
-      <?php foreach (['7' => 'Chart: 7 days', '28' => 'Chart: 28 days', '90' => 'Chart: 90 days', 'all' => 'Chart: all time'] as $k => $l): ?><option value="<?= h($k) ?>"<?= $fDays === (string)$k ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
+      <?php foreach (['48h' => 'Chart: 48 hours', '7' => 'Chart: 7 days', '28' => 'Chart: 28 days', '90' => 'Chart: 90 days', 'all' => 'Chart: all time'] as $k => $l): ?><option value="<?= h($k) ?>"<?= $fDays === (string)$k ? ' selected' : '' ?>><?= h($l) ?></option><?php endforeach; ?>
     </select></label>
     <noscript><button class="btn">Show</button></noscript>
   </form>
@@ -223,6 +230,19 @@ dtm_page_start('Stats', $user, true);
   </table></div>
   <?php endif; ?>
 
+  <?php if ($fDays === '48h'): ?>
+  <h2 class="bang">Views, last 48 hours <span class="small an-hint">per hour</span></h2>
+  <?php if (!$hourHas): ?>
+  <p class="small">The hourly chart fills in as the site checks your numbers each hour. Turn on the hourly ping (Connections) so it keeps going when this page isn't open.</p>
+  <?php else: ?>
+  <div class="an-chart an-chart-h" role="img" aria-label="Views per hour, last 48 hours">
+    <?php foreach ($hourly as $ts => $v): ?>
+    <div class="an-col" tabindex="0"><i style="height:<?= $v ? max(2, round($v / $hourMax * 100, 1)) : 0 ?>%"></i><span class="an-tip"><?= h(date('D g a', $ts)) ?>: <?= number_format($v) ?> views</span></div>
+    <?php endforeach; ?>
+  </div>
+  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in 48 hours · most in an hour: <?= number_format($hourMax) ?></span><span>now</span></div>
+  <?php endif; ?>
+  <?php else: ?>
   <h2 class="bang">Views gained per day</h2>
   <?php if (count($gain) < 1): ?>
   <p class="small">The trend starts once there are two days of numbers. Come back tomorrow.</p>
@@ -233,6 +253,7 @@ dtm_page_start('Stats', $user, true);
     <?php endforeach; ?>
   </div>
   <div class="an-axis small"><span><?= h(date('M j', strtotime(array_key_first($gain)))) ?></span><span>Most in a day: <?= number_format($gainMax) ?></span><span><?= h(date('M j', strtotime(array_key_last($gain)))) ?></span></div>
+  <?php endif; ?>
   <?php endif; ?>
 
   <h2 class="bang" id="videos">By video <span class="small an-hint">same clip on every platform = one row; open a row to fix a match; click a column to sort</span></h2>
@@ -336,6 +357,18 @@ dtm_page_start('Stats', $user, true);
   <?php if ($cfg['tt_key'] !== '' && $cfg['tt_secret'] !== ''): ?>
   <form method="post" action="analytics-tiktok.php"><?= dtm_csrf_field() ?><button class="an-btn"><?= $cfg['tt_refresh'] !== '' ? 'Reconnect TikTok' : 'Connect TikTok' ?></button></form>
   <?php endif; ?>
+
+  <h3 class="bang" id="tick">Hourly ping <?= $cfg['tick'] !== '' ? '<span class="an-ok">link made</span>' : '<span class="an-no">off</span>' ?></h3>
+  <p class="small">Keeps the 48-hour chart filling in when nobody has this page open. A free scheduler opens a secret link every hour; the link only fetches numbers.</p>
+  <?php if ($cfg['tick'] !== ''): ?>
+  <p class="small"><code class="an-secret">https://defacingthemusic.com/admin/stats-tick.php?key=<?= h($cfg['tick']) ?></code></p>
+  <details><summary class="small">Set it up on cron-job.org (about 3 minutes)</summary><ol class="small">
+    <li>Make a free account at <a href="https://cron-job.org" target="_blank" rel="noopener">cron-job.org</a>.</li>
+    <li><b>Create cronjob</b>: title "DTM stats", paste the link above as the URL, schedule <b>Every hour</b>, Save.</li>
+    <li>Done. Its history page shows a green check each hour.</li>
+  </ol></details>
+  <?php endif; ?>
+  <form method="post"><?= dtm_csrf_field() ?><button name="action" value="tick_key" class="an-btn"<?= $cfg['tick'] !== '' ? ' onclick="return confirm(\'Make a new link? The old one stops working.\')"' : '' ?>><?= $cfg['tick'] !== '' ? 'Make a new link' : 'Make the hourly ping link' ?></button></form>
 </details></section>
 
 <section class="admin-card an an-fold" id="import"><details<?= $newImportKey !== '' || $msg !== '' ? ' open' : '' ?>>
