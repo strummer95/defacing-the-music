@@ -42,6 +42,7 @@ const DTM_SEEDS = [
   'ft-ye-band-room-opera' => ['', "Fresh Tracks: Kanye's Band Room Opera", ''],
   'ft-gta-songs-expire' => ['', "Fresh Tracks: GTA's Songs Have an Expiration Date", ''],
   'ft-gta6-content-id' => ['', "Fresh Tracks: The Guy Who Claimed GTA 6", ''],
+  'ft-kiss-macys-parade' => ['', "Fresh Tracks: KISS Got a U-Haul", ''],
 ];
 
 // sha1 of earlier shipped versions of each seed. If a script on the server still matches one of these
@@ -82,15 +83,15 @@ const DTM_SEED_KINDS = [
   'otr-brown-mms' => 'otr', 'otr-hendrix-parakeets' => 'otr', 'otr-dark-side-rainbow' => 'otr', 'otr-kiss-blood-comic' => 'otr',
   'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr',
   'otr-vol-1' => 'otr', 'otr-vol-2' => 'otr',
-  'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week', 'ft-gta-songs-expire' => 'week', 'ft-gta6-content-id' => 'week',
+  'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week', 'ft-gta-songs-expire' => 'week', 'ft-gta6-content-id' => 'week', 'ft-kiss-macys-parade' => 'week',
 ];
 // side-story seeds that arrive as finished scripts, not ideas
 // Main-episode seeds that start as ideas (notes, not scripts).
 const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein', 'story-napster', 'story-studio-54', 'story-icp-gathering'];
-const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-gta6-content-id']; // GTA 6 one is up first (Duck, Nov 24)
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-gta6-content-id', 'ft-kiss-macys-parade']; // GTA 6 one is up first (Duck, Nov 24)
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
 const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire'];
-const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11', 'ft-gta-songs-expire' => '2026-11-20', 'ft-gta6-content-id' => '2026-11-22']; // "happened on" for dated seeds
+const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11', 'ft-gta-songs-expire' => '2026-11-20', 'ft-gta6-content-id' => '2026-11-22', 'ft-kiss-macys-parade' => '2026-11-26']; // "happened on" for dated seeds
 
 // Earlier shipped titles. When an unedited seed is upgraded and its title is still one of these, it gets the new one.
 const DTM_SEED_OLD_TITLES = [
