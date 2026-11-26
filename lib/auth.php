@@ -132,19 +132,63 @@ function dtm_clear_fails(): void {
 }
 
 // ---------- login state ----------
-function dtm_login_as(string $email, string $name, string $via): void {
+function dtm_login_as(string $email, string $name, string $via, bool $remember = true): void {
   dtm_session();
   session_regenerate_id(true);
   $_SESSION['admin'] = ['email' => $email, 'name' => $name, 'via' => $via];
   $_SESSION['csrf'] = bin2hex(random_bytes(32));
+  if ($remember) dtm_remember_issue($email, $name, $via);
 }
-function dtm_user(): ?array { dtm_session(); return $_SESSION['admin'] ?? null; }
+function dtm_user(): ?array {
+  dtm_session();
+  if (empty($_SESSION['admin'])) dtm_remember_login();
+  return $_SESSION['admin'] ?? null;
+}
+
+// ---------- stay signed in (Duck, Nov 26: "it doesn't remember my login, and I have to login EVERY time") ----------
+// A 90-day cookie "dtm_remember" = selector:validator. data/remember.json keeps only a hash of the validator, so the
+// file can't be used to log in. Each use swaps in a fresh validator; signing out deletes it. The account must still be
+// allowed (in admins.json, or in admin_emails for Google) or the cookie is ignored.
+const DTM_REMEMBER_DAYS = 90;
+function dtm_remember_cookie(string $value, int $expires): void {
+  setcookie('dtm_remember', $value, ['expires' => $expires, 'path' => '/', 'httponly' => true, 'samesite' => 'Lax', 'secure' => dtm_is_https()]);
+}
+function dtm_remember_issue(string $email, string $name, string $via, string $replace = ''): void {
+  $sel = bin2hex(random_bytes(9)); $val = bin2hex(random_bytes(32)); $exp = time() + DTM_REMEMBER_DAYS * 86400;
+  try {
+    dtm_json_update('remember.json', function ($r) use ($sel, $val, $exp, $email, $name, $via, $replace) {
+      $now = time();
+      foreach ($r as $k => $x) if (($x['exp'] ?? 0) < $now || $k === $replace) unset($r[$k]);
+      $r[$sel] = ['hash' => hash('sha256', $val), 'email' => $email, 'name' => $name, 'via' => $via, 'exp' => $exp];
+      return $r;
+    });
+    dtm_remember_cookie($sel . ':' . $val, $exp);
+  } catch (RuntimeException $e) { /* can't save: just no remembering */ }
+}
+function dtm_remember_login(): void {
+  $c = (string)($_COOKIE['dtm_remember'] ?? '');
+  if (!preg_match('/^([a-f0-9]{18}):([a-f0-9]{64})$/', $c, $m)) return;
+  $row = dtm_json_read('remember.json')[$m[1]] ?? null;
+  if (!$row || ($row['exp'] ?? 0) < time() || !hash_equals((string)$row['hash'], hash('sha256', $m[2]))) { dtm_remember_cookie('', time() - 3600); return; }
+  $ok = ($row['via'] ?? '') === 'google' ? in_array(strtolower($row['email']), dtm_google_emails(), true) : (bool)dtm_find_admin((string)$row['email']);
+  if (!$ok) { dtm_remember_forget(); return; }
+  session_regenerate_id(true);
+  $_SESSION['admin'] = ['email' => $row['email'], 'name' => $row['name'], 'via' => $row['via']];
+  $_SESSION['csrf'] = bin2hex(random_bytes(32));
+  dtm_remember_issue($row['email'], $row['name'], $row['via'], $m[1]);
+}
+function dtm_remember_forget(): void {
+  $c = (string)($_COOKIE['dtm_remember'] ?? '');
+  if (preg_match('/^([a-f0-9]{18}):/', $c, $m)) { try { dtm_json_update('remember.json', function ($r) use ($m) { unset($r[$m[1]]); return $r; }); } catch (RuntimeException $e) {} }
+  dtm_remember_cookie('', time() - 3600);
+}
 function dtm_require_admin(): array {
   $u = dtm_user();
   if (!$u) { header('Location: login.php'); exit; }
   return $u;
 }
 function dtm_logout(): void {
+  dtm_remember_forget();
   dtm_session();
   $_SESSION = [];
   $p = session_get_cookie_params();

@@ -169,6 +169,9 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - **Duck's own uploads must be free to use too** (his own photos, or Commons-licensed). His first three (Ozzy 2025, the dove meeting, Randy) were press photos; a credit line doesn't make them legal. Check every own upload's source and swap anything that isn't free.
 - Duck can hide shipped pictures, add his own (with credit) and add extra sources on the script edit page; that lives in `data/cutaways.json` and the script row.
 
+## Staying signed in (Duck, Nov 26)
+- Every admin login (password or Google) also sets a 90-day `dtm_remember` cookie (selector:validator; only a hash of the validator is stored in `data/remember.json`, rotated on each use, deleted on sign-out, ignored if the account is no longer an admin). `dtm_user()` signs Duck back in from it, so he doesn't log in every visit.
+
 ## Google sign-in (shared across Dillon's sites)
 - One OAuth Web client for all projects (Google Cloud project `duck-andrabbit-co`, client `dnr-sites-signin`).
   Client ID (public): `189196968664-684fp4dk94n94hq26ovccm65450457b1.apps.googleusercontent.com`
