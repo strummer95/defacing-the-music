@@ -144,9 +144,9 @@ if ($fVideo === '' && $daily) {
   $byPl = []; $prevP = []; $statePl = [];
   foreach ($days as $day) {
     foreach (dtm_an_day($day)['posts'] as $k => $p) $statePl[$k] = array_merge($statePl[$k] ?? [], $p);
-    $tot = [];
-    foreach ($statePl as $k => $p) $tot[$p['platform'] ?? ''] = ($tot[$p['platform'] ?? ''] ?? 0) + (int)($p['views'] ?? 0);
-    foreach ($tot as $pl => $v) { if (isset($prevP[$pl])) $byPl[$pl][$day] = max(0, $v - $prevP[$pl]); $prevP[$pl] = $v; }
+    $totPl = [];
+    foreach ($statePl as $k => $p) $totPl[$p['platform'] ?? ''] = ($totPl[$p['platform'] ?? ''] ?? 0) + (int)($p['views'] ?? 0);
+    foreach ($totPl as $pl => $v) { if (isset($prevP[$pl])) $byPl[$pl][$day] = max(0, $v - $prevP[$pl]); $prevP[$pl] = $v; }
   }
   foreach ($daily as $pl => $rowsD) if ($rowsD) $byPl[$pl] = $rowsD;
   $gain = [];

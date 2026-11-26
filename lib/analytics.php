@@ -493,7 +493,20 @@ function dtm_an_record_hour(): void {
 }
 // Views gained per hour for the last $hours hours, for the posts $keep() accepts. Returns [hour start ts => views].
 // A gap between two fetches is spread evenly over the hours it covers.
+// Facebook views switched to the dashboard's own "Views" metric on Nov 26, which jumped every Facebook post at once
+// and showed up as a fake 2,000-view hour. Rebase: drop Facebook numbers from the hourly points taken before the switch.
+function dtm_an_hourly_rebase(): void {
+  if (!empty(dtm_an_state()['fb_rebased'])) return;
+  try {
+    dtm_json_update('analytics-hourly.json', function ($h) {
+      foreach ($h as &$pt) foreach (array_keys($pt['v'] ?? []) as $k) if (str_starts_with($k, 'facebook:')) unset($pt['v'][$k]);
+      return $h;
+    });
+    dtm_json_update('analytics-state.json', fn($s) => ['fb_rebased' => time()] + $s);
+  } catch (RuntimeException $e) {}
+}
 function dtm_an_hourly(int $hours, callable $keep): array {
+  dtm_an_hourly_rebase();
   $end = (int)(floor(time() / 3600) * 3600) + 3600; $start = $end - $hours * 3600;
   $b = []; for ($t = $start; $t < $end; $t += 3600) $b[$t] = 0;
   $h = dtm_json_read('analytics-hourly.json');
