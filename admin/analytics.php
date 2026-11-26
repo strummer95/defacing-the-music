@@ -255,7 +255,7 @@ dtm_page_start('Stats', $user, true);
   <p class="small">The hourly chart fills in as the site checks your numbers each hour. Turn on the hourly ping (Connections) so it keeps going when this page isn't open.</p>
   <?php else: ?>
   <?= dtm_an_line(array_map(fn($ts, $v) => [date('D g a', $ts), $v], array_keys($hourly), $hourly), 'Views per hour, last 48 hours') ?>
-  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in 48 hours · most in an hour: <?= number_format($hourMax) ?></span><span><?= h(date('D g a', array_key_last($hourly))) ?></span></div>
+  <div class="an-axis small"><span><?= h(date('D g a', array_key_first($hourly))) ?></span><span><?= number_format(array_sum($hourly)) ?> views in <?= count($hourly) < 48 ? count($hourly) . ' hours (since hourly tracking started)' : '48 hours' ?> · most in an hour: <?= number_format($hourMax) ?></span><span><?= h(date('D g a', array_key_last($hourly))) ?></span></div>
   <?php endif; ?>
   <?php else: ?>
   <h2 class="bang">Views gained per day</h2>
