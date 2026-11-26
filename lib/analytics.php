@@ -178,6 +178,19 @@ function dtm_an_meta_insight(string $id, array $metrics, string $token, array $e
   }
   return $best;
 }
+// Facebook views, matching the "Views" number in Facebook's own dashboard (Nov 26: the site showed about 3,000 fewer).
+// That number is the post-level "post_media_view" metric; older reel metrics count plays or 3-second views instead,
+// so they're only a fallback.
+function dtm_an_fb_views(string $pageId, string $postId, string $videoId, string $token): ?int {
+  if ($postId !== '') {
+    $pid = str_contains($postId, '_') ? $postId : $pageId . '_' . $postId;
+    $v = dtm_an_meta_insight($pid, ['post_media_view'], $token);
+    if ($v) return $v;
+  }
+  $v = dtm_an_meta_insight($pageId . '_' . $videoId, ['post_media_view'], $token);
+  if ($v) return $v;
+  return dtm_an_meta_insight($videoId, ['post_media_view', 'fb_reels_total_plays', 'blue_reels_play_count', 'post_video_views', 'total_video_views'], $token, ['insights', 'video_insights']);
+}
 // Facebook shares live on the post, not the video: ask the post (page_post id), then fall back to the reel's insights.
 function dtm_an_fb_shares(string $pageId, string $postId, string $videoId, string $token): ?int {
   $ids = [];
@@ -219,7 +232,7 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
         if ($url !== '' && $url[0] === '/') $url = 'https://www.facebook.com' . $url;
         $posts[] = ['platform' => 'facebook', 'id' => $id, 'title' => mb_substr($title, 0, 140), 'url' => $url,
           'published' => substr((string)($v['created_time'] ?? ''), 0, 10),
-          'views' => dtm_an_meta_insight($id, ['post_video_views', 'blue_reels_play_count', 'fb_reels_total_plays', 'total_video_views', 'post_media_view', 'views'], $token, ['video_insights', 'insights']),
+          'views' => dtm_an_fb_views($pageId, (string)($v['post_id'] ?? ''), $id, $token),
           'likes' => isset($v['likes']['summary']['total_count']) ? (int)$v['likes']['summary']['total_count'] : null,
           'comments' => isset($v['comments']['summary']['total_count']) ? (int)$v['comments']['summary']['total_count'] : null,
           'shares' => dtm_an_fb_shares($pageId, (string)($v['post_id'] ?? ''), $id, $token),
