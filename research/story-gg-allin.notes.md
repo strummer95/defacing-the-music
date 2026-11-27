@@ -48,3 +48,24 @@ Research note: direct page fetches were blocked in this session, so facts were c
 - GG on Springer saying his pay only covered hospital bills and jail fines: TV Tropes only, left out.
 - Funeral body details (unwashed, items placed in mouth): gross-out, left out.
 - "24 minutes and 51 seconds" set length: Spanish-language source only, left out.
+
+## Nov 27 revision
+Trimmed to the 3,300 ceiling: 3,312 to about 3,260 spoken words, while adding two of Duck's wished-for last-night/funeral details.
+
+What got cut or changed (Duck, quick read):
+- The separate "TODAY" rundown is gone (one cold open only); cold open from 210 to about 80 words; no That Guy tease. The "this one's darker than usual" warning moved to the top of the first section, after the theme.
+- Cut "fighting people the whole way" and "bleeding, filthy" from the cold open (kept the cab).
+- Cut Linus Coraggio's NYT quote about the Gas Station (kept that it was a scrap-metal sculpture yard).
+- Cut the Cavity Club closing a year later with the band Pork.
+- Cut "One more side character, because he's the one that blew my mind" (crutch); the Todd Phillips CLIP now opens cold.
+- CLIP lines reworked to open cold (Jesus Christ Allin, the GG-proofed club, The Hangover director).
+- Added 5 TALK cues (club owner, the Mace cop, talk show booker, the cab driver, Todd Phillips); none in THE SERIOUS PART.
+
+New facts added, with sources:
+- Merle on the Chicago date (next-to-last of the tour, late June 1993): "he just looked bad. He'd been out on the road for a month abusing himself, and we talked about him dying and about his funeral. And GG was like: 'When I die you guys better have a fucking party.'": Greg Prato, Classic Rock, via Louder https://www.loudersound.com/features/gg-allin-the-gruesome-life-and-tragic-death-of-the-most-shocking-man-in-music
+- Funeral: open casket, body not cleaned up/unembalmed, leather jacket, bottle of Jim Beam, mourners posed for photos with the body: https://en.wikipedia.org/wiki/GG_Allin ; https://tomfogarty.com/blog/the-infamous-farewell-inside-gg-allins-notorious-funeral/ (the Fogarty post gets the funeral date wrong; the July 3 date stays from Wikipedia). Jockstrap, souvenir grabbing and things put in his mouth are left out on purpose (gross-out, and the body is not the joke).
+
+Prices (CPI-U, rounded):
+- $100 guarantee (late 1980s, about 1988) about $275 today. $5 door (1992) about $11.
+
+Not verified: exact year of the $100 guarantee ads ("back in the eighties"); conversion uses 1988.

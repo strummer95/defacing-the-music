@@ -68,3 +68,23 @@ Research note: direct page fetches were blocked in this session (wikipedia.org e
 - Vice friend's claim about who did what backstage, Tarlton "hero of the century" line (that's Ranker's writer, not Tarlton): left out.
 - Pyro operator's name: not found; deliberately not pursued.
 - Whether the Hetfield punch target was security: "by most tellings".
+
+## Nov 27 revision (new 2,700 to 3,300 word target)
+4,029 to 3,218 spoken words (about 21.5 min). Cold open 79 words, 5 TALK cues, 6 CLIPs.
+
+What got cut:
+- The separate "TODAY" rundown after the cold open (one cold open only), and the cold open's "only one of them gets the sting" line (cold opens never tease That Guy).
+- James's childhood section (Christian Science household, his mom, "The God That Failed") and the "house with no doctors" callbacks at the hospital. Kept only the 1986 broken wrist and John Marshall, now a short THE GUITAR TECH section.
+- The sixteen-year-old ticket riff, the "late to practice" FILL, the Lars traitor RIFF (kept the joke as plain lines), the "half step" RIFF, the "longest wait" RIFF (kept the hostage-with-merch line), the stadium RIFF and the closing "Fade to Black" RIFF.
+- The 2006 smoking-ban line about the stadium debt (single thin source).
+- The "James was told about the wing pyro but not the front" fan-site account (one account only).
+- Newsted's "whole arm" quote, the "brought the band together" line, Lars's promise to return, the 2010 later-lineup Montreal show, the monitor-feedback line, the "fans waited two or three hours" line (opening night's three-hour gap stays).
+- The "two hours" wait now says "two hours and fifteen minutes, by most counts" (Wikipedia tour page); the Gazette's "more than two hours" still fits.
+
+What got added (St. Louis 1991, Duck wants Axl's riots covered):
+- Axl spotting the camera: "Wait, take that! Take that! Now! Get that guy and take that!" and leaving with "Well, thanks to the lame-ass security, we're going home!" (Louder, Henry Yates, "Bikers, fire hoses and looting: the story of the Guns N' Roses fan riot in St. Louis"). Note: Wikipedia's Riverport Riot page has "I'm going home!"; script reads Louder's wording and names Louder.
+- The fire hose: "A fire hose was rolled out onstage, the idea being to blast anyone who dared try and break the cops' perimeter." (Louder, attributed there to Daniel Durchholz in Billboard). Almost no water pressure; a man stepped into the stream, pulled his pants down and waved at the cops (same piece).
+- Seats torn off and thrown, video screens pulled down, fans swinging under the lighting rig, gear carried out, an eyewitness saw GN'R piano keys sold in the parking lot for $5 each (same piece). $5 in 1991 is about $12 today (BLS CPI calculator, 1991 to 2026).
+- 65 injured including 25 police officers (Louder). Older notes said about 60; script uses Louder's 65.
+- Axl on custody after the JFK arrest: "writing autographs for cops" (Ultimate Classic Rock, "Axl Rose arrested for St. Louis riot").
+- $50,000 to charities in 1992 is about $115,000 today (BLS CPI calculator, 1992 to 2026).

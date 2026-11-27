@@ -37,3 +37,30 @@ Research note: only web search result summaries were reachable in this session (
 - Grundy's and Jones's exact ages on the night: not stated.
 - Specific merchandise the SEX shop sold: kept generic.
 - No SERIOUS PART: nobody was hurt (Sid Vicious's later death is outside this story).
+
+## Nov 27 revision
+Script went from 2,350 to about 2,900 spoken words, all added material sourced below. Duck's MAYBE-PLUS asked for funny details; most new stuff is the aftermath (tour, Wales, A&M).
+
+What got cut or changed (Duck, quick read):
+- The separate "TODAY" rundown is gone (one cold open only). Cold open cut from 170 to about 80 words; no That Guy tease. Added the limo and the ninety seconds as teaser hits.
+- "First I need you to meet the host" (crutch) reworded; "Keep him/them in mind" lines trimmed.
+- Shortened the shop and Malcolm McLaren intro a little (the review said backstory runs long).
+- The interview now reads the Guardian-published transcript lines straight (Jones "We've fucking spent it, ain't we?", the "keep going, chief" run, "What a clever boy", Grundy's "I'm not seeing you again") instead of paraphrase.
+- Freddie's "fifteen years" stays called a legend; the toothache is framed as in nearly every retelling (Mental Floss: EMI's publicist's own account doesn't mention it).
+- Lorry driver still unnamed and still in "the papers reported" pile.
+- A Caerphilly leaflet quote about Jesus' prophecy was considered and left out (religion, hard rule). Carol singers and the preacher stay as plain facts.
+- Added 5 TALK cues; CLIPs reworked to open cold (Bowie gear, Freddie's teeth, lorry driver, Buckingham Palace/six days).
+
+New facts added, with sources:
+- EMI publicist Eric Hall (Telegraph, 2020): producer called "asking whether I had anyone for him because they needed to fill their 'pop slot.'" / "I've got one which you won't want, the Sex Pistols."; McLaren demanded "a limousine and champagne and beer"; Hall: "I suppose I was partly responsible for them going on and drinking so much."; Matlock: "This big limousine turned up outside this place."; McLaren: "If you don't do it your wages will be stopped this week."; producer Mike Housego: band allotted 90 seconds; Thames files show a researcher warned they might swear; Guardian two days later: 12 switchboard lines jammed, viewer kicked in new £380 TV; Jeremy Isaacs "a gross error of judgment" caused by "inexcusably sloppy journalism"; Grundy "to prove that these louts were a foul-mouthed set of yobs. And that is what I did prove."; Grundy's sign-off and "I'm not seeing you again"; Preston officer "We don't ever want them here."; 13 of 19 dates called off; Lou Reed's London shows cancelled; "Anarchy" sold 1,800 the day after; EMI statement Jan 6 1977 "unable to promote this group's records in view of the adverse publicity generated over the last two months.": Mental Floss, "The Toothache That Made the Sex Pistols Famous" (Nov 16, 2026) https://www.mentalfloss.com/entertainment/music/toothache-made-sex-pistols-famous
+- Grundy "stone-cold sober. You cannot do a job like I do without being sober." (to the Guardian); Grundy's Punch "Dean Martin-style drunk" image; lorry driver rang Thames to complain about the damage; Rotten "Haven't they ever heard of the off button?"; Sid to Freddie "Ah, Freddie Mercury, still bringing ballet to the massses are you?" / "Oh yes, Mr Ferocious, dear," "We're doing our best." (Wessex studios; Louder says 1978, Mental Floss puts Queen there summer 1977, so the script says "not long after"): Louder https://www.loudersound.com/features/what-really-happened-when-the-sex-pistols-appeared-on-the-bill-grundy-show
+- Transcript lines "Well keep going, chief, keep going...", "What a clever boy."; Derby council wanted a private show first; McLaren "We're not going to encourage censorship. If we perform for these idiots we'll end up doing matinees for every council in the country": Flashbak https://flashbak.com/the-anarchy-tour-of-1976-397393/
+- Caerphilly Castle Cinema, 14 Dec 1976: pubs barricaded windows, preacher in the car park, carol singers, Dave Smitham quote "Valley's punks and the curious gathered themselves in the cinema's seven front rows...": Far Out https://faroutmagazine.co.uk/welsh-town-believe-the-sex-pistols-were-a-biblical-prophecy/
+- A&M afterparty (Sid cut himself smashing a bathroom, trailed blood; Rotten swearing at staff; Jones and a fan in another lavatory): Far Out https://faroutmagazine.co.uk/sex-pistols-dropped-from-record-deal-outrageous-behaviour-afterparty/
+- Rick Wakeman to Mojo (2025): the "Wakeman threatened to leave" story is "total bollocks"; "So he used me and [The Carpenters'] Richard Carpenter, saying that we sent them letters saying that we'd leave the label.": Louder https://www.loudersound.com/bands-artists/rick-wakeman-sex-pistols-dumped-by-record-label
+- Nearly all 25,000 A&M "God Save the Queen" copies destroyed: Guitar World https://guitarworld.com/news/march-16-1977-am-records-fires-sex-pistols-after-six-days ; band left with £75,000; Virgin; No. 2: Punknews https://www.punknews.org/article/22767
+
+Prices (UK CPI, Bank of England inflation calculator ratio about 7.5x for 1976 to now, about 6.5x for 1977; rounded):
+- £40,000 (1976) about £300,000 today. £380 TV (1976) about £2,900. £75,000 (1977) about £500,000.
+
+Not verified / left out: Bernard Brook-Partridge's "sudden death" line (couldn't confirm wording); lorry driver's name (Louder says Jason Holmes, son Lee; other retellings differ).

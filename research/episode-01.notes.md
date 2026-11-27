@@ -49,3 +49,14 @@ Research method: WebSearch only (WebFetch could not reach outside hosts in this 
 ## Left out (Nov 14 pass)
 - One retelling (search summary, source unclear, possibly matthewdicks.com or Uproxx) names the stage manager as "Bob LeHendro" and says he loaded the charge without knowing Moon had already added more ("three times the firepower"). A search for the name returned nothing else, so it stays out of the script; never name a crew member as That Guy on one unclear source.
 - Fixed: cold open no longer says Tommy planned to play the guitar later (the smash was the planned bit, per Tommy).
+
+## Nov 27 revision (word target 2,700 to 3,300; was 3,019, now 3,004)
+What changed (length was already fine, so almost nothing was cut):
+- Cold open cut from 172 to 78 words: 4 hits, no "Today" rundown, no "there's a guy" That Guy tease. Herman's Hermits is no longer teased up top, so the "For who?" reveal stays a surprise.
+- Flash powder amount now told as the legend: "double, three times, ten times, nobody measured it" (sources disagree: Far Out and others say three times or double, one account says ten). A FILL owns up that the pilot said "ten times" like a fact. The taped, not live, correction (taped Fri Sept 15, aired Sun Sept 17) was already in THE SMOTHERS BROTHERS and stays.
+- Cut the old "ten times... different recipe" FILL (it treated ten times as fact) and the "Next time, another one" line before the sign-off. Added [THEME SONG] after the sign-off.
+- Added 5 TALK cues and a sixth CLIP (the bass drum going off); CLIP markers moved so each one starts on a line that works cold.
+- Dick Smothers' Bette Davis line is now read as his exact quote from the Hollywood Reporter oral history instead of a paraphrase.
+
+New fact:
+- Herman's Hermits introduced Keith Moon to cherry bombs on the 1967 tour (the Hermits had found them on their own 1965 US tour; Alabama swing), per Keith's biographer Tony Fletcher, "Moon: The Life and Death of a Rock Legend" (some outlets misname him "Terry Fletcher"; it's Tony). Not quoted, since I couldn't read Fletcher's exact wording: https://americansongwriter.com/how-the-whos-1967-us-tour-was-marked-with-piranhas-shotguns-and-exploding-toilets-and-yes-keith-moon-was-involved-in-all-three , https://neatorama.com/2011/06/13/keith-moon-bathroom-bomber , https://faroutmagazine.co.uk/the-who-drummer-keith-moon-bathroom-bomber/

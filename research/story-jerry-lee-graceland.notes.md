@@ -62,3 +62,20 @@ Timeline (corrects "all within a few hours"):
 - Elvis "lock him up" per Rolling Stone 2022: seen only in a search summary; script uses Loyd's retelling instead.
 - Deaths of his sons: not researched, left out.
 - THE SERIOUS PART covers Butch Owens (shot) and Myra Gale Brown (13-year-old bride), since those are real people who were hurt. Nobody but Lewis was hurt at the gate.
+
+## Nov 27 revision
+New length target (2,700 to 3,300). Went from about 4,430 spoken words to 3,243 (about 21.6 min). Cold open cut from 204 words to 78; 5 TALK cues added; 6 CLIP markers, each opening on a cold first line.
+What got cut:
+- The separate "Today" rundown and the "somewhere in this story there's a guy" tease (cold open rule: one cold open, never tease That Guy).
+- "Follow That" section: the burning piano legend now lives only in Legend or Fact, in two lines.
+- The 1989 movie paragraph up top; the movie is now one line under Myra in Where Are They Now (the re-recorded soundtrack detail is gone).
+- The second Killer nickname version ("called everybody Killer"), the cousins RIFF, the Million Dollar Quartet RIFF, the Nelson University rename.
+- Separate ELVIS section folded into the Springsteen section; Springsteen trimmed (no Lake Tahoe vs Vegas).
+- Jaren in the car, the gate-bump account, who-ordered-the-guards speculation, the "which window" aside, the champagne RIFF tag (kept as a plain line).
+- "What Jerry Lee said later" no longer repeats his full defense; Legend or Fact cut to four items (dropped the repeats).
+- Kept: Bible school, Steve Allen bench, Butch Owens on his birthday, the flipped Rolls, the Vapors derringer, Loyd's quotes, the knee, the champagne, Judge Boyd's ruling, Bragg's "He was a coward" quote, the Serious Part.
+New facts and prices:
+- Piano bought in 1945 (Rolling Stone, "The Killer Reloaded"; Encyclopedia.com also says 1945; jerryleelewis.com says he was 10). $300 (Country Music Hall of Fame) in 1945 is about $5,500 today (CPI 18.0 in 1945 vs about 334 in 2026). One source says $250; script uses the Hall of Fame's $300.
+- $250 bond in 1976 is about $1,500 today (CPI 56.9 vs about 334; in2013dollars.com 1976 table).
+- Butch Owens's $400,000 suit (1977) is about $2.2 million today (CPI 60.6 vs about 334).
+- Kris Kristofferson accepted for him at the Country Hall induction (Hank Jr. dropped from the line for length, still true per AP).

@@ -60,8 +60,10 @@ Not decided. Claude's first read on each, to talk through with Duck:
 | The Go-Go's and the roadies' tapes | Check first; risky | Duck's note: the Go-Go's made roadies make sex tapes. Need to confirm what actually happened and from whose account (their documentary, Belinda Carlisle's memoir). Sexual content plus possible consent questions: only workable as a light, non-graphic, fully sourced bit, maybe inside a bigger Go-Go's "they were wilder than the boys" episode. |
 | Michael Jackson "not Joe's kid" | Probably skip | A paternity rumor about a real family, mostly tabloid, and it pulls Michael Jackson toward the topics we already said we'd stay off. Not a story with a chain of decisions. |
 | Axl Rose starting riots | YES (already on the list above) | See the Axl row in Ideas: St. Louis 1991 and Montreal 1992. |
-| Napster fallout | Idea note in Episodes > Drafts | Metallica's lawsuit, Lars's boxes of usernames, the backlash, the labels suing regular people. |
-| Studio 54 | YES (Duck, Nov 25: "we will def do 54"), paired with Disco Demolition | Spine: Chic got turned away at the door and wrote "Le Freak" about it; then the IRS raid and prison. Pairs with Disco Demolition. |
+| Napster fallout | Full script, Ready (Nov 27) | Metallica's lawsuit, Lars's boxes of usernames, the backlash, the labels suing regular people. |
+| Studio 54 | YES (Duck, Nov 25: "we will def do 54"), paired with Disco Demolition | Spine: Chic got turned away at the door and wrote "Le Freak" about it; then the IRS raid and prison. Pairs with Disco Demolition. Full script, Ready (Nov 27). |
+
+Nov 27: MJ Beatles catalog, Rammstein (Worcester, June 5, 1999), Napster, Studio 54 and ICP are now full scripts in Episodes > Ready. Every Ready script was trimmed to about 20 minutes of reading.
 
 ## Darker list (careful tone: people died or were hurt; they are never the joke)
 | Story | Duck's rating | Notes |

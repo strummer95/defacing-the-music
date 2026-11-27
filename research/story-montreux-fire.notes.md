@@ -73,3 +73,18 @@ Shooter fires once early (one witness) and nobody stops him; fires again. Buildi
 - Whether doors were chained: Zappa vs one eyewitness; both given.
 - The coffee-machine hose detail: one unnamed commentator only; framed as "the story goes".
 - The value of the Mothers' gear (one unsourced 600,000 francs figure): left out.
+
+## Nov 27 revision
+New length target (2,700 to 3,300). Went from about 4,414 spoken words to about 3,190 (about 21 min). Cold open cut from 167 words to 79 and no longer teases the guy (it teases the hourglass, the ceiling, Claude crawling, and the riff); 5 TALK cues added; 5 CLIP markers, each opening on a cold first line.
+What got cut:
+- The separate "Today" rundown and the "there's a guy, keep an eye out" tease.
+- MONTREUX and FUNKY CLAUDE merged; the Kursaal room-by-room list shortened.
+- Zappa's Freak Out! history and the Fillmore East album mention.
+- The "tropical island" decor dispute and the rattan photo analysis; the "up to 4,000" crowd figure; the four firefighters on duty line in The Room.
+- The Arthur Brown "Fire!" joke legend (disputed and needed a FILL to explain it to anyone under 60).
+- The matches theory and the electric lamp short-circuit theory (kept: test shot, Gillan's two flares, Zappa's bottle rocket, the engineers' verdict).
+- Nobs's "Zappa smashed the window with his guitar" version; the fire department arrival times; the 12 to 15 million franc damage figure (dropped instead of converting Swiss francs).
+- Jon Lord and Ian Paice from the lineup roll call; the Stones Mobile Led Zeppelin aside; the no-playback RIFF; the one-string "kid doing history" outro RIFF; the "Next time, another night" line.
+- The Trevor Howell motive debate in The Serious Part (both motives were reported; script now just says it depends on the report, with no joke in that section).
+- Kept: the oil hourglass and the lawyer's "only mineral oil", chained doors quote, test shot, "very stoned it looked beautiful", the coffee machine hose, "if you'd kindly", Ferla's crawl quote, Lake Geneva, the fruit basket pass, Gillan's jacket, police at the door, the mattress hallway, "some stupid with a flare gun".
+No new facts added. "Last show of the year was Zappa" is still the mild-risk claim noted above.

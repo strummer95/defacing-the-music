@@ -31,3 +31,30 @@ Research note: only web search result summaries were reachable in this session (
 - Bike shorts / specific outfits: not verified, removed.
 - Other 1990 Best New Artist nominees: not verified, omitted.
 - Rob's post-1990 troubles (arrests, suicide attempt): omitted to keep the serious line short and respectful.
+
+## Nov 27 revision
+Script went from 2,262 to about 2,700 spoken words. Duck's MAYBE asked for how bad and embarrassing it got and how it hit their lives; that's what was added.
+
+What got cut or changed (Duck, quick read):
+- The separate "TODAY" rundown is gone (one cold open only); cold open from 160 to about 77 words; no That Guy tease.
+- Trimmed the Time magazine section (the review said it sags): one riff fallback folded into the text.
+- Rob's background now says he was bullied, without the race framing (hard rule: state briefly, move on). Rob's 1989 LA Times quote about race left out for the same reason.
+- Press conference count corrected from "more than two hundred" to "more than a hundred" (Yahoo, Far Out both say 100+).
+- Name origin now gives both versions (Turkish "positive energy" claim vs. a Berlin nightclub) as "the story goes".
+- Rob's death moved after the new AFTER THE FALL section, so the ending lands on the unreleased comeback album; WHERE ARE THEY NOW (Fab, Grammy nomination, Farian) closes before THAT GUY.
+- Added 4 TALK cues; CLIPs reworked to open cold; new CLIP on praying not to win the Grammy.
+
+New facts added, with sources:
+- Fab: "We walked into a trap, not knowing it was a trap" (VladTV); Farian first played them the song as an instrumental; they owed Farian money and couldn't walk away; Farian to LA Times "It was a crazy idea... I thought, OK, it's just for discotheques and clubs." and "I've never heard such a bad singer... Someone who lives like that can't make good music.": Mental Floss https://www.mentalfloss.com/entertainment/music/milli-vanilli-hoax
+- Rob on Lake Compounce: "When my voice got stuck in the computer, and it just kept repeating and repeating, I panicked. I didn't know what to do. I just ran off the stage." and "I knew right then and there, it was the beginning of the end for Milli Vanilli."; Downtown Julie Brown's account on VH1 Behind the Music; Rob to LA Times reporter Chuck Phillips "I feel like a mosquito being squeezed... that maniac Frank Farian would never allow us to express ourselves.": Far Out https://faroutmagazine.co.uk/lake-commence-89-the-disastrous-show-that-exposed-milli-vanilli/
+- Fab (Yahoo, 2013 interview): limo to the Shrine, "Let's hope that it's Indigo Girls or Tone Lōc, or Soul II Soul, but let it not be us."; "But of course: 'And the winner is… Milli Vanilli!'..."; "The Grammy was at our house. It could have stayed at our house. But we made the choice to give it back."; "All those journalists were just out for blood. They were really there to hang us dry."; Back and in Attack comeback album, Rob died on the eve of its promo tour, never released: Yahoo https://www.yahoo.com/entertainment/milli-vanillis-fab-morvan-recalls-1990-grammy-scandal-all-those-journalists-were-just-out-for-blood-174514953.html
+- At least 26 lawsuits; Cook County judge; $3 CD / $2 cassette / 5% of concert ticket; judge's "devote their time to the resolution of controversies of a more significant social and economic nature."; "The Real Milli Vanilli" with a member made up to look like Rob; sugarless gum commercial lip-syncing opera until the tape skips; Rob & Fab album sold only 2,000 copies in the U.S.; Fab to BBC (2018) both fell into drugs; Rob talked down from a ninth-story balcony by police in 1991 (Entertainment Weekly); rehab, jail; barely a relationship by 1997: Grunge https://grunge.com/122943/whatever-happened-milli-vanilli
+- Rob & Fab ~2,000 copies also: Showbiz Cheat Sheet https://www.cheatsheet.com/news/milli-vanilli-caught-lip-syncing.html ; Fab's quote on Rob's death ("When I heard the news of Rob's death, everything went blank...") same source.
+
+Prices (CPI-U, BLS calculator ratio rounded):
+- $150,000 (1989) about $390,000 today (x2.6). $3 CD refund (1991) about $7 today (x2.4).
+
+Not verified / left out:
+- Rob's age at death: Yahoo says 32, Grunge 33; script says "early thirties".
+- "Most of the crowd barely noticed" the skip: Duck's own note in STORIES.md, consistent with the records still selling; crowd size (20,000 vs 80,000) still omitted.
+- Charles Shaw $150,000: still "reportedly".

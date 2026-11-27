@@ -1,17 +1,109 @@
-{"sources": [
- {"title": "Fyre Festival", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Fyre_Festival"},
- {"title": "Billy McFarland", "publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Billy_McFarland"},
- {"title": "Fyre Festival canceled after guests allege hoax", "publisher": "CBS News", "url": "https://www.cbsnews.com/news/fyre-festival-canceled-after-guests-allege-hoax/"},
- {"title": "Fyre Festival postponed amid reports of chaos in Bahamas", "publisher": "NBC News", "url": "https://www.nbcnews.com/pop-culture/music/fyre-festival-postponed-amid-reports-chaos-bahamas-n752561"},
- {"title": "Fyre Festival Promoter Billy McFarland Pleads Guilty To Fraud", "publisher": "NPR", "url": "https://www.npr.org/sections/thetwo-way/2018/03/06/591366152/fyre-festival-promoter-billy-mcfarland-pleads-guilty-to-fraud"},
- {"title": "Great frauds in history: Billy McFarland, the man behind the Fyre Festival", "publisher": "MoneyWeek", "url": "https://moneyweek.com/economy/people/601752/great-frauds-in-history-billy-mcfarland-the-man-behind-the-fyre-festival"},
- {"title": "How A Viral Cheese Sandwich Tweet May Help To Pay Medical Bills", "publisher": "NPR", "url": "https://www.npr.org/2021/04/12/986365873/how-a-viral-cheese-sandwich-tweet-may-help-to-pay-medical-bills"},
- {"title": "The Full Story of the Legendary Fyre Festival Cheese Sandwich", "publisher": "Vice", "url": "https://www.vice.com/en/article/the-full-story-of-the-legendary-fyre-festival-cheese-sandwich/"},
- {"title": "Models And Influencers Who Promoted Disastrous Fyre Festival Being Subpoenaed Over Payments They Received", "publisher": "Celebrity Net Worth", "url": "https://www.celebritynetworth.com/articles/entertainment-articles/models-and-influencers-who-promoted-disastrous-fyre-festival-being-subpoenaed-over-payments-they-received/"},
- {"title": "Ja Rule: Social Media Posts Do Not Create Liability for Failed Fyre Festival", "publisher": "Steptoe SDNY Blog", "url": "https://www.steptoe.com/en/news-publications/sdny-blog/ja-rule-social-media-posts-do-not-create-liability-for-failed-fyre-festival/"},
- {"title": "Fyre Festival Promoter Billy McFarland Released From Prison", "publisher": "Deadline", "url": "https://deadline.com/2022/05/fyre-festival-promoter-billy-mcfarland-released-prison-1234735645/"},
- {"title": "Netflix vs. Hulu: Competing Fyre Festival Documentaries Set Off War of Words Between Two Filmmakers", "publisher": "TheWrap", "url": "https://www.thewrap.com/netflix-vs-hulu-competing-fyre-festival-documentaries-sets-off-war-of-words-between-two-filmmakers/"},
- {"title": "Convicted fraudster Billy McFarland sells infamous Fyre Festival on eBay", "publisher": "Euronews", "url": "https://www.euronews.com/2025/07/16/convicted-fraudster-billy-mcfarland-sells-infamous-fyre-festival-on-ebay-for-less-than-250"},
- {"title": "Fyre Festival: Bahamian restaurant owner's GoFundMe campaign recoups more than $100,000 from scam", "publisher": "CBS News", "url": "https://www.cbsnews.com/amp/news/fyre-festival-bahamian-restaurant-owners-gofundme-campaign-recoups-more-than-100000-from-scam"},
- {"title": "Ja Rule Once Tried to End His Infamous Beef With 50 Cent With the Help of This Religious Leader", "publisher": "Vice", "url": "https://www.vice.com/en/article/ja-rule-once-tried-to-end-his-infamous-beef-with-50-cent-with-the-help-of-this-religious-leader/"}
-]}
+{
+ "sources": [
+  {
+   "title": "Fyre Festival",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fyre_Festival"
+  },
+  {
+   "title": "Billy McFarland",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Billy_McFarland"
+  },
+  {
+   "title": "Fyre Festival canceled after guests allege hoax",
+   "publisher": "CBS News",
+   "url": "https://www.cbsnews.com/news/fyre-festival-canceled-after-guests-allege-hoax/"
+  },
+  {
+   "title": "Fyre Festival postponed amid reports of chaos in Bahamas",
+   "publisher": "NBC News",
+   "url": "https://www.nbcnews.com/pop-culture/music/fyre-festival-postponed-amid-reports-chaos-bahamas-n752561"
+  },
+  {
+   "title": "Fyre Festival Promoter Billy McFarland Pleads Guilty To Fraud",
+   "publisher": "NPR",
+   "url": "https://www.npr.org/sections/thetwo-way/2018/03/06/591366152/fyre-festival-promoter-billy-mcfarland-pleads-guilty-to-fraud"
+  },
+  {
+   "title": "Great frauds in history: Billy McFarland, the man behind the Fyre Festival",
+   "publisher": "MoneyWeek",
+   "url": "https://moneyweek.com/economy/people/601752/great-frauds-in-history-billy-mcfarland-the-man-behind-the-fyre-festival"
+  },
+  {
+   "title": "How A Viral Cheese Sandwich Tweet May Help To Pay Medical Bills",
+   "publisher": "NPR",
+   "url": "https://www.npr.org/2021/04/12/986365873/how-a-viral-cheese-sandwich-tweet-may-help-to-pay-medical-bills"
+  },
+  {
+   "title": "The Full Story of the Legendary Fyre Festival Cheese Sandwich",
+   "publisher": "Vice",
+   "url": "https://www.vice.com/en/article/the-full-story-of-the-legendary-fyre-festival-cheese-sandwich/"
+  },
+  {
+   "title": "Models And Influencers Who Promoted Disastrous Fyre Festival Being Subpoenaed Over Payments They Received",
+   "publisher": "Celebrity Net Worth",
+   "url": "https://www.celebritynetworth.com/articles/entertainment-articles/models-and-influencers-who-promoted-disastrous-fyre-festival-being-subpoenaed-over-payments-they-received/"
+  },
+  {
+   "title": "Ja Rule: Social Media Posts Do Not Create Liability for Failed Fyre Festival",
+   "publisher": "Steptoe SDNY Blog",
+   "url": "https://www.steptoe.com/en/news-publications/sdny-blog/ja-rule-social-media-posts-do-not-create-liability-for-failed-fyre-festival/"
+  },
+  {
+   "title": "Fyre Festival Promoter Billy McFarland Released From Prison",
+   "publisher": "Deadline",
+   "url": "https://deadline.com/2022/05/fyre-festival-promoter-billy-mcfarland-released-prison-1234735645/"
+  },
+  {
+   "title": "Convicted fraudster Billy McFarland sells infamous Fyre Festival on eBay",
+   "publisher": "Euronews",
+   "url": "https://www.euronews.com/2025/07/16/convicted-fraudster-billy-mcfarland-sells-infamous-fyre-festival-on-ebay-for-less-than-250"
+  },
+  {
+   "title": "Fyre Festival: Bahamian restaurant owner's GoFundMe campaign recoups more than $100,000 from scam",
+   "publisher": "CBS News",
+   "url": "https://www.cbsnews.com/amp/news/fyre-festival-bahamian-restaurant-owners-gofundme-campaign-recoups-more-than-100000-from-scam"
+  },
+  {
+   "title": "Ja Rule Once Tried to End His Infamous Beef With 50 Cent With the Help of This Religious Leader",
+   "publisher": "Vice",
+   "url": "https://www.vice.com/en/article/ja-rule-once-tried-to-end-his-infamous-beef-with-50-cent-with-the-help-of-this-religious-leader/"
+  },
+  {
+   "title": "Fyre Festival Co-Founder Billy McFarland Sentenced To 6 Years In Prison",
+   "publisher": "NPR",
+   "url": "https://www.npr.org/2018/10/11/656480640/fyre-festival-co-founder-billy-mcfarland-sentenced-in-manhattan"
+  },
+  {
+   "title": "Fyre Festival fraudster who targeted status seekers gets 6 years",
+   "publisher": "Associated Press (via Bangor Daily News)",
+   "url": "https://www.bangordailynews.com/2018/10/12/wires/fyre-festival-fraudster-who-targeted-status-seekers-gets-6-years/"
+  },
+  {
+   "title": "William McFarland Sentenced To 6 Years In Prison In Manhattan Federal Court For Engaging In Multiple Fraudulent Schemes",
+   "publisher": "U.S. Attorney's Office, Southern District of New York",
+   "url": "https://www.justice.gov/usao-sdny/pr/william-mcfarland-sentenced-6-years-prison-manhattan-federal-court-engaging-multiple"
+  },
+  {
+   "title": "Fyre Fest's Founder Is Going to Prison, but the Spirit of His Scam Lives On",
+   "publisher": "Vice",
+   "url": "https://broadly.vice.com/en/article/a3ayma/fyre-fests-founder-is-going-to-prison-but-the-spirit-of-his-scam-lives-on"
+  },
+  {
+   "title": "Federal Judge Dismisses $100 Million Fyre Festival Lawsuit Against Ja Rule, With a Major Caveat",
+   "publisher": "Digital Music News",
+   "url": "https://www.digitalmusicnews.com/?p=127729"
+  },
+  {
+   "title": "Tickets to \"Fyre Fest 2\" have just gone on sale... for $499",
+   "publisher": "Mixmag",
+   "url": "https://mixmag.net/read/tickets-fyre-fest-2-on-sale-499-dollars-billy-mcfarland-news"
+  },
+  {
+   "title": "'Fyre' Documentary: Bahamian Cook Surpasses $123,000 Fundraising Goal",
+   "publisher": "Rolling Stone",
+   "url": "https://www.rollingstone.com/movies/movie-news/fyre-fest-documentary-cook-fundraising-goal-782116/"
+  }
+ ]
+}
