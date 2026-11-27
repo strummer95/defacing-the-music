@@ -73,7 +73,8 @@ Duck: "That's the key thing for me that's going to make me want to do this and m
 - People who got hurt or died are never the joke; the joke is the guy who decided it was fine.
 
 ### Length (Duck, Nov 20: overrides the older "15 minutes minimum, do not trim" rule)
-- **Target 20 to 30 minutes of reading before any riffing, trying to stay under 30.** Duck: "if it can be told in only 15 minutes, then maybe it's not that interesting... 20 to 30 is ideal." 40 minutes of script is too long: with Pat and riffing that becomes an hour, twice what he intended.
+- **Updated Nov 27 (Duck: "20-25 mins, but yeah, closer to 20 does sound better"): script reads in about 20 minutes, 25 max: about 2,700 to 3,300 spoken words, 3,750 hard ceiling.** Real numbers: Ozzy's 4,234-word script (28 min read) recorded at about 76 min and edited to 53:34; Woodstock's 4,271 words recorded at about 102 min. Each minute of script becomes about 2.7 to 3.6 minutes recorded with Pat, so 20 minutes of script lands about 35 to 45 minutes finished. The older line below is kept for history.
+- (Older, Nov 20) **Target 20 to 30 minutes of reading before any riffing, trying to stay under 30.** Duck: "if it can be told in only 15 minutes, then maybe it's not that interesting... 20 to 30 is ideal." 40 minutes of script is too long: with Pat and riffing that becomes an hour, twice what he intended.
 - Trimming for length is allowed, but only cuts Duck has said yes to (ask-before-changing rule still applies). Cut repetition, side trips and stacked quotes from the same source first. Never cut the buildup details that make the ending feel inevitable (see below).
 - `[RIFF]`, `[FILL]` and `[TALK]` lines don't count toward length; they're optional.
 - Measure spoken length as words outside [brackets] at about 150 words per minute.
