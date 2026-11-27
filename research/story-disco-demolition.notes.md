@@ -166,3 +166,24 @@ Applied D1 to D4 from BOARD.md. 33.4 to 27.9 min. Cut: THE OLDER COUSIN (Ten Cen
 
 ## Framing (Duck, Nov 25)
 - Duck: "we won't touch on that at all... it was just one genre not liking another." Disco Demolition (and any Studio 54 / rise-and-fall-of-disco pairing) is told as rock fans vs disco, a radio war and a promotion gone wrong. No race or sexuality angle anywhere: script, TALK cues, FILLs, descriptions or Shorts.
+
+## Nov 27 revision (new 2,700 to 3,300 word target)
+4,263 to 3,284 spoken words (about 21.9 min). Cold open 69 words (unchanged), 5 TALK cues, 5 CLIPs.
+
+What got cut:
+- The Christmas Eve FILL's "Le Freak" chart lines (the spoken "Le Freak" tease after Dahl gets fired stays, word for word).
+- The Coho Lips and "Do You Think I'm Disco?" explanations, shortened (the gang-and-salmon line stays).
+- Bill Veeck's scoreboard sirens and names-on-jerseys; the Harry Caray hidden-mic story, shortened.
+- Rusty Staub's "People brought ladders" quote (the NYT original was never found) and the 20,000-outside estimate.
+- Les Grobstein's souvenir turf, Jimmy Piersall's booth quote, the "people ran the bases" line, the Bill Veeck "where home plate used to be" detail, the 37-arrests variant.
+- Kravec's second half, shortened to the move to the main mound and "I threw 10 pitches".
+- David Israel's "Veeckstock" line, the groundskeeper's nightmares, the "insurance meeting" recap line after the leg quote.
+- Mike Veeck's blackball line, the Netflix documentary and "made me great" lines, the "twenty years out of the majors" line in That Guy.
+- The "next time, another night" line before the sign-off, and several RIFF prompts (their fallback jokes stay as plain lines).
+
+What got added back:
+- A short Ten Cent Beer Night callback in THE FORFEIT (Cleveland, June 4, 1974): ten cent beers, a fan grabbed Jeff Burroughs's cap in the ninth, Billy Martin's Rangers came out with bats, Indians players came out with bats to help them, forfeit to Texas. Sources in the Ten Cent Beer Night section above (SABR, SI, Wikipedia). Price: $0.10 in June 1974 is about $0.66 today (BLS CPI, already noted Nov 19); script says "about sixty five cents".
+- The "last forfeited game in AL history" FILL now sits right after the forfeit, so it's not confused with Cleveland's.
+- Garry Meier is now introduced in THE BOOM ("his on-air partner"), since his earlier mention was cut.
+
+Framing check: no race or sexuality angle, no Drew Peterson, Dahl told straight, Mike Veeck still That Guy, Vince Lawrence only as the usher-to-house ending.

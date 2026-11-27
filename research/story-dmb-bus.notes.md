@@ -58,3 +58,21 @@ Wohl reaches back and flips the switch on the bridge (engineers: not an accident
 - Whether Fitzpatrick's plate tip was a witness error or a different bus sighting: unresolved; script just says the plate pointed at the wrong driver.
 - Chicago magazine footnote saying the plea was in "January 2009": treated as an error (all period reports say March 2005).
 - Boyd Tinsley's 2018 exit from the band: unrelated, left out.
+
+## Nov 27 revision (new 2,700 to 3,300 word target; was 3,675, now 3,250)
+What got cut or changed:
+- Cold open cut to 4 quick hits (82 words with the intro line); the separate "Today" rundown is gone, and so is the "there's a guy" tease (no That Guy in cold opens). The "this happened right here in Chicago" line moved to the top of THE BAND as the warm-up.
+- Band history trimmed (South Africa, five-driver count); the Earth Day setup stays.
+- Cut the "right move, sleeping on the Mag Mile" FILL, the "I understand the instinct" denial FILL, the job application FILL, and the line about separate personal injury suits.
+- Cut the "here's everything on the record" recap at the top of WHY THERE (it repeated the last three sections).
+- Cut the bond, the "That's the engineers. Not me." repeat (the engineers line still lands in THAT GUY), and a few doubled sentences in the Jerry Fitzpatrick and THAT GUY parts.
+- "It's like weather" dropped from the Crash Into Me fallback (the Keith Moon script uses the weather joke); the RIFF fallback in WHY THERE no longer says "I'm a guitar player" twice in one script.
+- Added: 5 TALK cues, today's money for every price, [THEME SONG] after the sign-off, the Earth Day FILL no longer mentions a flyer (no source for a flyer).
+
+Today's money (CPI-U, BLS: 2000 = 172.2, 2004 = 188.9, 2005 = 195.3; late 2026 taken as about 330, rounded down where unsure):
+- $68M (2000) -> "well over a hundred and twenty million" (about $127M to $130M).
+- $25 boat ticket (2004) -> about $40 (about $43).
+- $10,000 fine (2005) -> about $17,000.
+- $50,000 donations (2004) -> about $85,000 each.
+- $200,000 settlement (2005) -> about $330,000 (about $325K to $338K).
+No new facts added.
