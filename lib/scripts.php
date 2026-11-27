@@ -76,6 +76,7 @@ const DTM_SEED_OLD = [
   'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa', '78f9ce091756b4cc9e7696706ca53b389d320439', '71bf05cb3d1b659c0261af7e7ed05642421432bd', 'ff58b6e50727ed12ec11b233df789e6c0c4cc65b'],
   'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b', '59f6cbf0d89ca110853ff09a843bae56945f9d3e', '7993347285dfc4560bee02198181b5a242952274', '8d5defe843f17f645d9ef7e49a652b35c6582bcf'],
   'story-studio-54' => ['6d65f5374112ea1b0542c3cccedc2600122662a5'],
+  'ft-kiss-macys-parade' => ['570c1c5be8cd6aa516c9822b5041e3d31c40b48c'],
 ];
 
 // Seeds that aren't main-show scripts: their type and starting status (everything else: main episode, Ready).
