@@ -1,27 +1,161 @@
-## IDEA (main episode, not a script yet)
-Duck asked for this one (Nov 25): "Napster fallout." Everybody knows "Metallica sued Napster"; almost nobody knows how weird the fallout got. Research before writing; everything below is from memory and must be confirmed.
+## COLD OPEN
+A college freshman in Boston names a computer program after an insult about his hair.
+A year later, the Senate downloads a Creed song mid-hearing, tells the witnesses to listen, and leaves to vote.
+And a heavy metal drummer rolls up to an office with sixty thousand pages of screen names. The crowd outside is not on his side.
+Everybody knows Metallica sued Napster. Almost nobody knows how weird it got.
+I'm Duck, and due to unauthorized downloading, this is Defacing the Music.
+[THEME SONG, hard stop]
+Episode [NUMBER]. Who Brought Lars Ulrich the Boxes?
 
-## THE ANGLE
-Not "piracy is bad" or "the labels were evil." The chain of decisions: a college kid's dorm-room program, a band that found its own unreleased song already out there, and a fight that turned a heavy metal drummer into the face of the music business. The ending should feel inevitable: of course they hauled boxes of usernames to an office.
+## THE KID WITH THE HAIR
+This one starts with a kid named Shawn Fanning.
+Shawn grows up on Cape Cod, and according to Time magazine, he taught himself Unix programming between his junior and senior years of high school.
+By 1998 he's a freshman at Northeastern University in Boston. And his roommates are music nerds. Here's Shawn, to Spin magazine in 2000: "My roommates were MP3 fanatics. I heard them complaining all the time about how hard it was trying to find songs."
+So he fixes it. He writes a program where everybody's music folder is connected to everybody else's. You type in a song, you find some stranger who has it, you take it.
+And he names it after himself. Or after his hair, technically. Time says "the Napster" was his high school nickname, "a reference to his perpetually nappy hair." Fortune's oral history of the company says it came from a guy trash talking him on a basketball court. Either way, somebody made fun of this kid's hair, and the insult became one of the most famous companies on Earth.
+His friend Sean Parker, who he met online in a hacker chat room when they were teenagers, raises the first money. Fifty grand. In today's money, that's about a hundred thousand.
+And Shawn doesn't go back to school. Time magazine: "He never went back to his dorm room, leaving behind his clothes, books and bedding."
+He left the bedding. Somewhere at Northeastern, a resident advisor opened that room and found sheets and no Shawn.
+It goes out June 1st, 1999. And it spreads like a rash. According to Spin, at one school Napster was eating ten percent of the network in November and half of it by January. By March, more than a hundred and thirty universities had pulled the plug on it, because students were clogging the whole campus internet downloading Limp Bizkit.
+And these kids are famous. One of Napster's investors, Ron Conway, says he threw a party at his house, and two young guys named Larry Page and Sergey Brin, the founders of Google, looked across the room and said, "Wow, we'll never be as famous as that Fanning guy standing over there."
+[FILL: Spoiler. They got a little more famous than that Fanning guy.]
 
-## BEATS TO CONFIRM
-- Shawn Fanning, about 19, builds Napster in 1999. How fast it grew (millions of users within a year), colleges banning it for clogging their networks.
-- Metallica finds "I Disappear" (the Mission: Impossible II song) on Napster before it's released, and radio stations playing it. They sue in April 2000.
-- Lars Ulrich shows up at Napster's office in May 2000 with boxes of paper listing hundreds of thousands of usernames caught sharing Metallica songs (the number usually quoted is about 335,000). Find who drove, what the boxes looked like, what Napster said, the press scene.
-- Dr. Dre sues too, with his own list.
-- The backlash: fans booing, "Napster Bad," the Flash cartoon that made Lars a cartoon villain and Metallica a punchline; the MTV VMAs bit with Lars (2000).
-- The irony beat: Metallica's own early days spread through fan tape trading.
-- Napster shuts down in 2001. Then the labels start suing regular people, including a 12-year-old in New York (2003) whose mom settled.
-- Where Are They Now: Fanning, Sean Parker (Facebook), Lars and Fanning appearing together years later, the band's later take.
+## THE PHONE CALL
+[CLIP: "I don't subscribe to Billboard magazine"]
+The head of the record industry's trade group told Napster's CEO to go open up Billboard magazine. And Napster's CEO said she didn't subscribe.
+That's the whole relationship.
+So, the record labels are not happy. The Recording Industry Association of America, the RIAA, run by Hilary Rosen, sues Napster in December 1999. And before that, there's a phone call between Hilary and Eileen. Eileen was in her car, and here's how she tells it to Fortune:
+"She said, 'You're letting people download …' I said, 'You don't understand the technology. That is not what we're doing.' She said, 'You're infringing on copyrights.' I said, 'Well, I'd like to know which ones. Who, what, when, where, how?' And that's when she said, 'Open up Billboard magazine! The top 200 are right there!' Really meanly. And I said, 'I'm sorry. I don't subscribe to Billboard magazine.'"
+[Pause.]
+You run the biggest free music service on Earth and you can't find a copy of Billboard?
+[TALK: Who wins that phone call?]
 
-## THAT GUY CANDIDATES
-Lars (the boxes), the labels' lawyers (suing a 12-year-old), or Napster's own executives (who knew what they had). Verdict depends on what the research shows.
+## I DISAPPEAR
+Now. Metallica.
+Early 2000, Metallica records a song called "I Disappear" for the "Mission: Impossible 2" soundtrack. Tom Cruise, motorcycles, doves. It's not supposed to come out for months.
+[CLIP: "It lives in our vault somewhere"]
+Lars Ulrich told this story at the 92nd Street Y in New York in 2017, and he tells it better than I can, so here it is:
+"And so one day I got a call from Cliff saying 'I Disappear' is being played on 20 radio stations across America, and we're, like, 'How the fuck is this possible?' And he said there's something called Napster where people can go and share. And we're, like, 'How the hell did they get 'I Disappear'? It lives in our vault somewhere.' And so we traced it back to this company Napster, and as you did in those days, it was, like, 'Well, let's go fuck with Napster then.'"
+That's Cliff Burnstein, the band's co-manager, making the phone call. And notice what Lars says next, in front of the Senate a few months later: "five or six versions of our work in progress" were already on the radio. Not just the song. The unfinished versions.
+To this day, nobody has ever said who leaked it.
+And all of Metallica's albums were on there too. Every song, free.
+So on April 13th, 2000, Metallica sues. And this is not a polite lawsuit. They sue Napster for copyright infringement and under RICO, the racketeering law, which is the law they built to go after the mob. Metallica is suing a company a teenager started, under the mob law.
+And they sue three colleges too. The University of Southern California, Yale, and Indiana University. Yale. They sued Yale.
+They're asking for at least ten million dollars, a hundred thousand per song. In today's money, that's about nineteen million, or two hundred grand a song.
+And Napster's lawyer, Laurence Pulgram, gets in one good shot in his statement to Wired. Metallica is from the Bay Area. Napster is in the Bay Area. And they filed in Los Angeles. Pulgram: "It is also hard to understand why plaintiffs, a group located in the San Francisco Bay Area, saw it necessary to file a separate action in Los Angeles."
+They drove six hours to sue their neighbor.
+The internet reacts right away. Hackers get into Metallica's website and leave a message: "LEAVE NAPSTER ALONE."
 
-## CAREFUL
-- No legal or political takes on copyright; tell what people did and said.
-- The kid sued in 2003 is a private person: no name on air unless it was widely public and her family spoke publicly; keep her out of the joke.
+## THE BOXES
+Then Metallica does the thing.
+According to Lars, Napster's position was basically: we don't know who's sharing your songs. So Metallica hires a British consulting firm called NetPD, and over one weekend, April 28th to the 30th, NetPD logs every Napster user it can catch sharing Metallica. Not real names. Screen names. Three hundred thirty five thousand, four hundred thirty five of them.
+They print them out. On paper. Sixty thousand pages. Thirteen boxes.
+[CLIP: Lars wheels in the boxes]
+May 3rd, 2000. Lars Ulrich and the band's lawyer, Howard King, show up at Napster's office in San Mateo with thirteen boxes of printed screen names on handcarts.
+And Napster knew he was coming. According to Stereogum's look back at the case, Napster's people tipped off a group of users, who were waiting for him. They greeted the drummer of Metallica with a chant of "Fuck you, Lars!" The San Francisco Chronicle had fans yelling "Long live Napster." CBS News reported fans breaking their Metallica CDs right there outside the building.
+And Lars stands in front of all that and says this, word for word, from CBS:
+"If they want to steal Metallica's music, instead of hiding behind their computers in their bedrooms and dorm rooms, then just go down to Tower Records and grab them off the shelves."
+[Pause.]
+Okay. I think he means "go buy it." But what he said was "go shoplift it." To a crowd that already hated him. From the guy who's suing people for stealing.
+Meanwhile Shawn Fanning, nineteen, puts out a statement: "I'm a huge Metallica fan and therefore really sorry that they're going in this direction."
+Seventeen years later, Lars was asked about the boxes, and here's what he said:
+"That was a dare. Because what they said… They were very smart and they really were very smart. They said, 'We don't know who these people are that are downloading your songs.' And we went, 'We don't believe that. And we believe that we can find those names.' And they go, 'Okay. Who are they?' And we went, 'Here are the names.' I showed up at Napster and started pulling 335,000 names out of a pickup truck. 'Here are the people. If you can't find them, we can give 'em to you.' And so that was… maybe not the smartest PR move of all time, but at least we won the argument."
+A pickup truck. The drummer of the biggest metal band in the world, unloading paperwork out of a pickup like he's helping a buddy move.
+[TALK: You're in that crowd. Are you chanting at Lars or asking him to sign the box?]
+So Napster bans about three hundred seventeen thousand accounts. And then, the law gave banned users a way to say "you got the wrong guy." About thirty thousand of them did. Metallica's lawyer, Howard King, was not buying it. Here he is to Salon:
+"They're perjuring themselves. They're not misidentified. We did a survey and we have proof that at such-and-such a date, they were offering Metallica songs. Could there be 10 mistakes? Sure. 15? Maybe. But there are not 17,000 mistakes. There's no way."
+And for the people who didn't file anything, the Register, the British tech site, reported the ban could be beaten "simply by fiddling around with Windows' Registry file and reinstalling Napster's software."
+Sixty thousand pages. Thirteen boxes. A pickup truck. Undone by a teenager reinstalling a program.
 
-## RESEARCH TO DO
-- Period coverage: Rolling Stone, MTV News, Wired, the SF Chronicle (Napster was in the Bay Area), court filings for the numbers.
-- Lars's own quotes from that day and his later interviews.
-- Any prices (Metallica's settlement terms, if public; the 2003 settlements) with today's money.
+## DR. DRE
+And Metallica isn't alone for long.
+On April 25th, 2000, Dr. Dre sues Napster too. Same lawyer, Howard King. Also ten million dollars. In today's money, again, that's about nineteen million. And Dre goes a step further: his suit goes after the users themselves.
+Then Dre hands Napster his own list. The Register, June 1st, 2000: Napster "booted a further 230,142 alleged copyright infringers," which brought the number of what they called "Napster Exiles" to just under five hundred fifty thousand.
+And Metallica's longtime attorney, Peter Paterno, told Variety years later what Dre said when they first told him about Napster: "I work 24/7 in the lab and these guys just steal it? Screw them."
+[FILL: Here's the thing nobody remembers. Dre gave them a list too. But nobody ever made a cartoon about Dre. Because Dre didn't do it with a pickup truck in front of a crowd.]
+
+## MR. ULRICH GOES TO WASHINGTON
+[CLIP: The Senate downloads Creed]
+On July 11th, 2000, the United States Senate held a hearing about music on the internet. Lars Ulrich was the first witness. And before he said a word, the committee chairman, Senator Orrin Hatch, made an announcement.
+They'd started a download at the beginning of the hearing, on another file-sharing program called Gnutella, to show how easy it was. Hatch, from the official transcript:
+"I think what we are going to do is the Gnutella download is complete, I understand. We searched for music from a popular rock group called Creed, and our search turned up hundreds of Creed songs from their million-selling albums. We downloaded just one of these songs."
+And then: "Senator Leahy and I want to hear every one of you, so we are going to go vote while you listen to one of these songs. Is that all right?"
+[Pause.]
+So the senators walk out to vote, and Lars Ulrich, the drummer of Metallica, sits there in the United States Senate and listens to a pirated Creed song.
+And Hatch adds, "I have to say that I was listening to Metallica this morning in my office." And the official transcript notes laughter.
+Hatch wrote songs on the side, by the way. So he's a songwriter, chairing a hearing about songs getting taken for free, who just took one for free in front of everybody.
+Then the senators come back, and Lars gives his statement. The line that made the papers: "Napster hijacked our music without asking."
+[TALK: Senators leave you alone in a room with a pirated Creed song. What do you do?]
+
+## NAPSTER BAD
+And the internet makes Lars into a cartoon. A real one.
+A Flash animation site called Camp Chaos puts out "Napster Bad!" Bob Cesca wrote it, animated it, and did all the voices. Lars is a hyperactive, extremely profane little guy, and James Hetfield is a caveman who talks like Frankenstein. "Napster bad!" "Fire bad!" They're sitting in a room full of money bags.
+One review from the time says it got five million downloads in the first week. Which, if you think about it, means five million people downloaded a cartoon about how downloading is bad.
+[CLIP: Fanning wears the Metallica shirt at the VMAs]
+Then the MTV Video Music Awards, September 7th, 2000, Radio City Music Hall. Metallica does a fake commercial with the host, Marlon Wayans, who plays a frat boy downloading Metallica. Lars walks in and starts "sharing" the frat boy's stuff. His Pepsi. His computer. His girlfriend. Lars: "I'm starting to like this whole sharing thing." And it ends on Lars's voice: "Napster: sharing's only fun when it's not your stuff."
+Napster had a counterpunch at the same show.
+Shawn Fanning came out to introduce Britney Spears. Wearing a Metallica T-shirt. With "For Whom the Bell Tolls" playing. And when they asked him where he got the shirt, he said a friend shared it with him.
+And the cameras cut to Lars, in the audience, pretending to be bored.
+[TALK: Be honest. Is the T-shirt the best troll of the year 2000?]
+
+## THE TAPE TRADERS
+And here's what made the fans so mad. Metallica got famous by people copying their music.
+Salon ran a piece in May 2000 by a guy named Brian Lew, who was an old metal tape trader, and he lays it out. Here's a chunk of it:
+"In 1982, an upstart band called Metallica provided a few tape-trading friends with a demo tape of seven songs, called 'No Life 'Til Leather.' Dubbed and re-dubbed and re-re-dubbed, the tape made its way from California to Chicago, to New York, to England, to Holland, to Germany. Within months, the band had fans worldwide, without the benefit of a publicist, an A&R person or a marketing budget."
+Chicago got it early. I'm just saying.
+And here's Lars at the 92nd Street Y, on that exact point:
+"We were all tape traders, and we were totally pro all this stuff. But the thing that blew our minds about Napster was we couldn't wrap our heads around, 'Why did nobody from Napster call and go, 'Are you okay with us doing this?' Because then it was a conversation."
+So for Lars, it was never about the copying. It was about nobody asking. He's said it that way for twenty five years. The fans heard "rich guy wants more money," and the rich guy was standing next to thirteen boxes, so that's the version that stuck.
+
+## THE PLUG GETS PULLED
+Napster loses in court in July 2000. A judge orders it to stop. And at the last minute an appeals court gives them a stay. Jordan Ritter, the programmer, remembers the office: "There was actual nerd dancing."
+That summer, Napster sponsors a free concert tour to win people back. The headliner: Limp Bizkit. Yes. That Limp Bizkit.
+In February 2001, Napster and the German company Bertelsmann offer the record industry one billion dollars to settle. In today's money, that's almost two billion. The labels say no. That same month, the appeals court rules against Napster.
+So Napster tries to filter out every copyrighted song. One of the engineers, Eddie Kessler, says they hired "probably 50 temps" to sit there and type in song titles and all the ways people misspell them. A guy from Gracenote, the music database company that helped, said, "The band Aha was a big one." Fifty temps, typing "Take On Me" every possible wrong way.
+And it doesn't work. Somebody always gets a song through. So in July 2001, Napster shuts off the sharing.
+At its peak, in February 2001, about twenty six million people used Napster in a single month.
+On July 12th, 2001, Napster settles with Metallica and Dr. Dre. In 2002 the company goes bankrupt.
+And one more thing came out in the lawsuit. An early internal email from Sean Parker, the co-founder, about collecting info on users without names attached, "especially since they are exchanging pirated music."
+In his own email. A lawyer for the song publishers, Jeff Knowles, told Fortune: "How many cases do you have an email that's essentially a confession?"
+
+## THE LABELS SUE EVERYBODY
+And this is where it stops being funny for a minute.
+Napster is dead, but file sharing isn't. So on September 8th, 2003, the record industry starts suing regular people. Two hundred sixty one lawsuits on day one.
+One of them was a twelve year old girl in New York City. Her family had paid twenty nine ninety nine for a file-sharing program and thought that made it legal. In today's money, that's about fifty five bucks. Within about a day, her mom agreed to pay two thousand dollars to make it go away. In today's money, that's about thirty six hundred.
+She's a kid. She's not the joke. The Register wrote that the industry moved fast "to blunt a public relations atrocity."
+And it kept going. By 2008, the Electronic Frontier Foundation counted at least thirty thousand people the industry had sued, settled with, or threatened.
+
+## THAT GUY
+[CLIP: That Guy verdict]
+Okay. Who's That Guy?
+Suspect one: whoever leaked "I Disappear." Still unknown. Still out there. Possibly listening.
+Suspect two: Shawn Fanning. The kid built it, never asked anybody, and walked away from his bedding.
+Suspect three: Napster's grown-ups. They told Metallica "we don't know who these people are," with an email in their own files about "pirated music," and then they tipped off the crowd that Lars was coming.
+Suspect four: Lars Ulrich.
+And the verdict.
+Lars told us himself: "That was a dare." Napster said "we don't know who they are." And a guy who got famous mailing tapes to metalheads in Holland heard that, and printed sixty thousand pages, and put them in a pickup truck, and drove them to the one building in America where everybody already hated him.
+Of course he did. He's a drummer.
+That Guy is Lars.
+[THAT GUY STING]
+But Napster packed the boxes.
+[RIFF: your verdict. Lars, Napster, or the leaker? Or use this:]
+If somebody dares you to bring the names, the move is to send a lawyer with a floppy disk. Not a drummer with a truck.
+
+## WHERE ARE THEY NOW
+Shawn Fanning kept starting companies. In 2012 he and Sean Parker launched a video chat site called Airtime at a big celebrity event, and the product kept crashing.
+He also had a cameo in the 2003 movie "The Italian Job," playing himself. In the movie, Seth Green's character says Shawn stole Napster from him while he was napping in their dorm room at Northeastern.
+The Napster. Because he took it during a nap.
+Sean Parker became the first president of Facebook. Justin Timberlake played him in "The Social Network." Parker called the movie version a "morally reprehensible human being," but added, "it's hard to complain about being played by a sex symbol."
+Then Parker put money into Spotify. And on December 6th, 2012, at a press event in New York, Metallica put its whole catalog on Spotify. And who's on stage? Lars Ulrich and Sean Parker. Lars: "We were younger, maybe somewhat more ignorant. We sat down and had a heart to heart."
+By 2017, Lars was calling Sean Parker one of his best friends. He went to Parker's wedding.
+In 2016, Metallica put its music on Napster. The paid streaming service using the name now. Napster finally asked.
+[TALK: Twenty five years later, who do you think came out of this looking worse?]
+And in April 2021, Metallica put out a vinyl single through their own fan club. Track one is called "I Disappear (Leaked Napster Version)."
+They're selling the leak.
+
+## OUT
+So that's the story. A kid's hair, a leaked demo, thirteen boxes, a Creed song in the Senate, and a frat boy's Pepsi.
+[RIFF: defacingthemusic.com, Guest List, subscribe, socials. Or use this:]
+Get on the Guest List at defacingthemusic.com. We know who you are. We have it in a box.
+I'm Duck. Due to unforeseen circumstances, I'll see you next time.
+[THEME SONG]

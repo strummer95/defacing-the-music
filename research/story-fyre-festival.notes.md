@@ -39,3 +39,31 @@ Research note: in this session only web search result summaries were reachable (
 
 ## Judgment call
 - Included a short "THE SERIOUS PART" for unpaid Bahamian workers (financial harm, not injury). Nobody died. Drop the section if the rule is strictly "physically hurt or died"; the script reads fine without it.
+
+## Nov 27 revision
+New length target (2,700 to 3,300 spoken words). Script went from 2,663 to about 2,950 with new sourced details; nothing padded.
+
+What got cut or changed (Duck, quick read):
+- The separate "TODAY" rundown is gone (one cold open only, per the Nov 21 rule). Cold open cut from 183 to about 77 words; no That Guy tease.
+- Cut the Louis Farrakhan meeting from the Ja Rule section (polarizing figure; hard rule). Now just "50 Cent won the feud."
+- Cut the Hulu vs. Netflix documentary war (the review called it a tangent).
+- Cut the guest locked-in-the-airport framing down to one line, the ministry's 30-person team, and the "missed payments means you know" aside.
+- Shortened the IMG line and the Andy King framing.
+- Moved the Ja Rule lawsuit dismissal and "False advertising, maybe, not fraud" into THAT GUY.
+- Added 5 TALK cues; CLIPs reworked so each opens on a cold first line (Andy King, Met Gala on bail, Fyre 2).
+
+New facts added, with sources:
+- NYC VIP Access (Duck's wish list): started while on pretrial release; fake tickets to the Met Gala, Coachella, Burning Man, Super Bowl; AP: more than $100,000 from at least 15 people (DOJ later said about $150,000 from at least 30); targeted Fyre Festival attendees and Magnises customers and concealed his link to the company; prosecution memo quote "He found young and naive employees...": AP via Bangor Daily News https://www.bangordailynews.com/2018/10/12/wires/fyre-festival-fraudster-who-targeted-status-seekers-gets-6-years/ ; NPR https://www.npr.org/2018/10/11/656480640/fyre-festival-co-founder-billy-mcfarland-sentenced-in-manhattan ; DOJ SDNY release https://www.justice.gov/usao-sdny/pr/william-mcfarland-sentenced-6-years-prison-manhattan-federal-court-engaging-multiple (DOJ page blocked by bot check here; figures from search excerpt); Vice on the emails to Fyre attendees https://broadly.vice.com/en/article/a3ayma/fyre-fests-founder-is-going-to-prison-but-the-spirit-of-his-scam-lives-on
+- Judge Buchwald: "serial fraudster", "been dishonest for most of his life" (NPR, AP); "McFarland is unique in this court's memory ... for starting the NYC VIP Access while awaiting trial" (NPR; NPR's punctuation splits the sentence around "Judge Buchwald observed from the bench", script reads it as one line). "Nonsense", "laughable", Maserati, "The portrait simply doesn't fit the facts" (AP) are in the notes but cut from the script for length.
+- Prosecutors' "Whenever he needed more money..." three-sentence quote; false documents inflating revenue; stock statement altered to show $2.5M when shares were worth less than $1,500: AP (Bangor link above).
+- Ja Rule tweet the day before, "The stage is set!!! In less than 24 hours, the first annual Fyre Festival begins. #festivallife."; full apology text: Digital Music News https://www.digitalmusicnews.com/?p=127729
+- Blink-182 tweet, full text, and Fyre's "Due to unforeseen and extenuating circumstances, Fyre Festival has been fully postponed.": CBS News https://www.cbsnews.com/news/fyre-festival-canceled-after-guests-allege-hoax/
+- DeHaas tweet text ("The dinner that @fyrefestival promised us was catered by Steven Starr is literally bread, cheese, and salad with dressing."); Starr Events pulled out weeks before; replacement Bahamian caterer Denaldo Bain says the sandwich was meant for staff; guest (Crossno) got pasta, chicken, salad, "pretty good"; Austin Rose "there was definitely a finite quantity of cheese sandwiches"; McFarland on a crate calling for order: Vice https://www.vice.com/en/article/the-full-story-of-the-legendary-fyre-festival-cheese-sandwich/
+- Fyre Festival II: tickets on sale Aug 2023, first 100 at $499 sold out within about a day; top presale tier $7,999; later aimed at Isla Mujeres, Mexico: Mixmag https://mixmag.net/read/tickets-fyre-fest-2-on-sale-499-dollars-billy-mcfarland-news , Yahoo https://ca.news.yahoo.com/fyre-festival-ii-disastrous-luxury-142900777.html
+- Rolle "life savings" wording: Rolling Stone (existing link).
+
+Prices (CPI-U, BLS calculator ratio, 2017 to late 2026 about 1.35; 2023 to late 2026 about 1.09; rounded):
+- $1,500 (2017) about $2,000 today; $12,000 about $16,000; $50,000 (Rolle, 2017) about $65,000.
+- $499 (2023) about $550; $7,999 about $8,700.
+
+Not verified / left out: exact NYC VIP Access victim count differs (AP 15+, DOJ 30+); script uses AP's "at least fifteen".
