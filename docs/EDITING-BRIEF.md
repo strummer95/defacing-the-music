@@ -32,6 +32,7 @@ Host goes by "Duck" (never Dillon in show copy). Co-host Pat reacts unscripted. 
 - Beer is OK in full episodes. Avoid it in short clips when easy, and flag beer moments in the transcript.
 
 ## Structure
+**First 3 minutes (Nov 27, Ep 1 retention):** half of viewers left in the first 30 seconds and the rest settled by minute 3, then held flat to the end. So: frame one is Duck mid-line on the cold open (no logo hold, no fade-in, no setup shot); captions on from the start; the theme runs about 5 to 10 seconds in the video, not the full song; no dead air between the theme and the first line after it.
 Cold open (~30s teaser hits) > "I'm Duck, and due to [title], this is Defacing the Music." > theme > "Episode [n]. [subtitle]" title card > the story > "That Guy" segment (suspects, verdict, guitar squeal sting, "Because in every story there's a that guy. Don't be that guy.") > sign-off "I'm Duck. Due to unforeseen circumstances, I'll see you next time." > theme.
 
 ## Assets
