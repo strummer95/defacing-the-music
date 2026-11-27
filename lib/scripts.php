@@ -63,20 +63,24 @@ const DTM_SEED_OLD = [
   'otr-gene-simmons-tongue' => ['d920ccadfb047027d609be7e35a3fd2b1a4014fc', '8cea70436b48d93571c7ac4665d16bec663f2783', '147e9f8f20d074fb17d6a85fdec2f415497894e4'], // the idea notes, before they became story blocks
   'otr-ozzy-ants' => ['2bde68aa0a45ec634f7b974032651d44364a8823', 'd2805e55a366f14af5a095dcd406be4c12c04696', '94d6b549bb99e8be4e3ec3d9fa594495aa0efc56'], // the idea notes, before they became story blocks
   'episode-00' => ['0a3c62561acfefa9b47142542b2566c6c40aaa2a', '7232a021773d9aa2a230518fa393f16447343a59', 'd61ecbce297a5442a2a42112b2a583f61d133e1b', '9fb19500807901e9cf1d32c3ebff9918e42ad46c', 'e40daceeba30539686c8fbe484a7c645b2e688fb'],
-  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee', '305bfaa521a7e92ea540da27d1e71e68b29afc18', '4c534b033ad2e436832c01d045a51a5a74f49e1f', '6b7e320eed0fe6ac0402a18be46009af1e8e1442', 'fa7f326e9b310ee92d5a88bb9c4772ea4ac5d313', '0c7dc51dce8b66aad0ddd26579234aa52e38ccd7', '91ea8b21657d392a16d1ab471d2625abacba505c', '2f5511ac3b078a4619f203d1928f2c566149ebbd', 'adfd9d5a2a7b8580ef155ee7a85e6bdd525eab67'],
+  'episode-01' => ['0ad617e1ddbffcc280e0a6c9760e8268d0fe2717', '7b3dbd18cefdbf8b0f5b173c5b673be91be4aeee', '305bfaa521a7e92ea540da27d1e71e68b29afc18', '4c534b033ad2e436832c01d045a51a5a74f49e1f', '6b7e320eed0fe6ac0402a18be46009af1e8e1442', 'fa7f326e9b310ee92d5a88bb9c4772ea4ac5d313', '0c7dc51dce8b66aad0ddd26579234aa52e38ccd7', '91ea8b21657d392a16d1ab471d2625abacba505c', '2f5511ac3b078a4619f203d1928f2c566149ebbd', 'adfd9d5a2a7b8580ef155ee7a85e6bdd525eab67', '7cdc28b44f7ecdb07e533a805b79d065c95ccb0a'],
   'episode-02' => ['9699dcc012bd232b28aec8f657c1482d538d61f5', '687fbe72cc2458ddad679552cf3aa2290c9f9e48', 'b76c280a63359aa13c883bc417f09f6adddab2c5', '6cd32e7d91cb8997871fa61fe41049777ec0633b', '753f5b89fd82ccc4eabdfa52a5f06e4ff26b92f9', '3ac5d60d055afac5ed18ffb2f767e0875e240f08', '8959ceeb759ab1b8783254ff339726735f07546d', '7a89853673f1480bc1808326f4e584396607f523', '2e7ac65438c3d6c86fe5fb8ae2ade3cc1c87ce4c', '447f1afc31457162070dbda3cbf53a9e5479bb99', 'b2d5e48ee734a3100bfefdb58bba16c605d14971', '940d2899c4cfbf8e05619caf278fc63e7349e041', '1a1cc66ea5721695bd21f501d3bb17d97dfb4f59', '5b0961c8bef94983a55600990b7b1b6c0b253556', '85319a50de877ee834acd790034855c3afefe3bf', '742e4da6dd6c55d1ea3dab3ca99e3764c8b4852b', '0c5f40fefe115df3c103a98dbe2eaa2d74119e43', 'a572618a70a64e6939410843e521578e0a894262', '6d3373d80a0a4ec97dba3167e3831184de2a0dfe', '451a3835f1044e8dc955dcdeffa5d73650319413', '0e4d652801e5a192271900d0594abd3d8df6bc55', '202c95ab6b5c6633a9e9044290b918f27f8f84f4'],
   'episode-03' => ['a95c81044af6ccae27de7c120ab6ccbf6f91c375', 'c4f5e7c8a43992869c40ad4fae986b8143646781', 'c02bf5dcf4b3383c30fad282fe5470e99eec82f1', '49c09096b60f68d41f99caf79d6547a3d0d968c2', '5d356b15f96b61936f8fda8b601284b2f4dafc4e', '14e7d40dc153a8f1521d67111baebb1d61af5b53', '8b5f17270f933b7cf89deaa61943ff90fe1bf8ef', '2f2852fde320f56711139f4bc1829026736f6d74', 'ebfe75b0f7632178d048e303a4ee16b802eef276', '13aae67f970a3671b0e0ca56850d8dd953f53d95', '79daf04ce6eda2b843d49dbcefd387efe4ccf523', 'e234d0aae612747824b57da95529b19bf6b70743', 'e910aa0f16b0c5be0a412c6ae78f5843013dc0f2', '8a33fb9ec3d6733dd1adea71bb825c607f76f3c7', 'fd596e0a5457f75e4a9e6e472d452e3d4c560c83', 'c0e47664159b27ce034606e02cc452fd1e48c0ae', '06f3d5c670b7b74c4a4a9f2876a40cfb1821553d', '619b12521f2f70bda5d2b3dc3555147dd7c7bd9a', 'a2ff0ad3aabf3541e0783d036ce399dd6f7cd138'],
-  'story-disco-demolition' => ['0804b0c9682b79aaf9f7716bab6dfb114c3ae0e8', '729fae1af1b9f6c002f0fa941b70633784660f2d', 'e982882cd6f38b653862f6af2ec02d40b924c16d', '4d2027e67c2217fe71be9535c09c3c08d3e89f80', '70f8d0a76bf402fe83f3a1bed8bf44eb304ae7d8', '92dcaec97507f05e2b60519cca40416ecb7754c0', 'a5b697ea2511b5e3a9f983892e3ca2f544c8dd9b', 'f79782385ab397529c03ab85fc555df0d3a3ada1', '23efa643d8897dc451879aedf55a2bd61d7ffefd', 'c1337a5b7fcdb8d236d8378a8846c823c257d33f', '3b4f4b1ff968611314ac9f9c527de406a40d6833', '69029ed95b7ad71dee91c9a7a676bd843eb17b9d', 'f285af85e63f23ab128507285db266039b002c33'],
-  'story-dmb-bus' => ['b688ec518f0b47630373d1373f73ec663a3fa1b1', '95b8bed82284c7992a91680dcf1bf22d935e3f79', '0772952fa1b1ea245a6f60c6cf36eec9a92110ce', 'cf8600e2cffa7d404e995fffc47a189d2bd5e7e3'],
-  'story-fyre-festival' => ['2a104530ee95bc40c824b8fa646b6d07fd332ce6', 'd6d84255abf2bdd50c7419c2e7681c05d5cd4f12', '2adb1165cbd085e79ab9b68439466f342cfafd24', 'd38c4d727776020cccfe682ead2417fe2dbbf362'],
-  'story-gg-allin' => ['4c037d575f180c786c9ba74e76abd5b7a9cf82ff', '08d68fc6e643fa0a31d7204e9853d0e31a1daa14', 'c6d78629c027f7367de686490b60db2c3ba8622c', '90265d8390cf7486ab2454cfafec27842d547765'],
-  'story-jerry-lee-graceland' => ['c529afbd373824cb730f0ad76505b7cd6851bf9a', 'c882b610870cd66067ab08db6e193e8f3b2a4bc0', 'ecad2fd6ef45f1e1192b76897e08f72104d8154a', '1b2c151a998f05b7e7efbbfbee64bf7c1b659415', 'f6de35ccd95827299cbbcee7387c994cadb9bb50'],
-  'story-metallica-gnr-montreal' => ['3ca77605ef5cc95a6b854130d6efa2422797e165', 'a7dad0ed695be61f20b2973d8288e7ec8c86cf48', '618a52da21fb82d6f1880b2443a24b90466e65ed', 'df2bf8d04a5effe13d6528ac68fcb6aef09dd107'],
-  'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384', '3c2e6640338309ad8ba074c89d160eb2bf08144b', '80426cefcd98d892351591172fdacd4a23d26a78', '3456c1323858db2d7e76d640f2bad87b30e4b92e'],
-  'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa', '78f9ce091756b4cc9e7696706ca53b389d320439', '71bf05cb3d1b659c0261af7e7ed05642421432bd', 'ff58b6e50727ed12ec11b233df789e6c0c4cc65b'],
-  'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b', '59f6cbf0d89ca110853ff09a843bae56945f9d3e', '7993347285dfc4560bee02198181b5a242952274', '8d5defe843f17f645d9ef7e49a652b35c6582bcf'],
-  'story-studio-54' => ['6d65f5374112ea1b0542c3cccedc2600122662a5'],
+  'story-disco-demolition' => ['0804b0c9682b79aaf9f7716bab6dfb114c3ae0e8', '729fae1af1b9f6c002f0fa941b70633784660f2d', 'e982882cd6f38b653862f6af2ec02d40b924c16d', '4d2027e67c2217fe71be9535c09c3c08d3e89f80', '70f8d0a76bf402fe83f3a1bed8bf44eb304ae7d8', '92dcaec97507f05e2b60519cca40416ecb7754c0', 'a5b697ea2511b5e3a9f983892e3ca2f544c8dd9b', 'f79782385ab397529c03ab85fc555df0d3a3ada1', '23efa643d8897dc451879aedf55a2bd61d7ffefd', 'c1337a5b7fcdb8d236d8378a8846c823c257d33f', '3b4f4b1ff968611314ac9f9c527de406a40d6833', '69029ed95b7ad71dee91c9a7a676bd843eb17b9d', 'f285af85e63f23ab128507285db266039b002c33', 'd600ce9fe206f20e6e8e7684cfe855f4ac540206'],
+  'story-dmb-bus' => ['b688ec518f0b47630373d1373f73ec663a3fa1b1', '95b8bed82284c7992a91680dcf1bf22d935e3f79', '0772952fa1b1ea245a6f60c6cf36eec9a92110ce', 'cf8600e2cffa7d404e995fffc47a189d2bd5e7e3', 'c4a2183f56aa6d0b0db2a01a084fdf8de2363ea8'],
+  'story-fyre-festival' => ['2a104530ee95bc40c824b8fa646b6d07fd332ce6', 'd6d84255abf2bdd50c7419c2e7681c05d5cd4f12', '2adb1165cbd085e79ab9b68439466f342cfafd24', 'd38c4d727776020cccfe682ead2417fe2dbbf362', '853ad6c0697c984ea19564ef56820958c8a8e65f'],
+  'story-gg-allin' => ['4c037d575f180c786c9ba74e76abd5b7a9cf82ff', '08d68fc6e643fa0a31d7204e9853d0e31a1daa14', 'c6d78629c027f7367de686490b60db2c3ba8622c', '90265d8390cf7486ab2454cfafec27842d547765', 'dae2b46ffaaf361f62adedeafa027e47d7066d75'],
+  'story-jerry-lee-graceland' => ['c529afbd373824cb730f0ad76505b7cd6851bf9a', 'c882b610870cd66067ab08db6e193e8f3b2a4bc0', 'ecad2fd6ef45f1e1192b76897e08f72104d8154a', '1b2c151a998f05b7e7efbbfbee64bf7c1b659415', 'f6de35ccd95827299cbbcee7387c994cadb9bb50', '67d141233f8c3c81a206ed40f2bcd2c8296b0b27'],
+  'story-metallica-gnr-montreal' => ['3ca77605ef5cc95a6b854130d6efa2422797e165', 'a7dad0ed695be61f20b2973d8288e7ec8c86cf48', '618a52da21fb82d6f1880b2443a24b90466e65ed', 'df2bf8d04a5effe13d6528ac68fcb6aef09dd107', '92a90ea060a22dcd0805efd7d0303bbbf64a75a7'],
+  'story-milli-vanilli' => ['40e13115fb21719ba6100eca5ee905ff4ba62384', '3c2e6640338309ad8ba074c89d160eb2bf08144b', '80426cefcd98d892351591172fdacd4a23d26a78', '3456c1323858db2d7e76d640f2bad87b30e4b92e', '68c61451cda82ebddbfa744dda4dbd26099b1ff9'],
+  'story-montreux-fire' => ['5795a5ca24f88ae52027cb4cb2579ca6ebf50faa', '78f9ce091756b4cc9e7696706ca53b389d320439', '71bf05cb3d1b659c0261af7e7ed05642421432bd', 'ff58b6e50727ed12ec11b233df789e6c0c4cc65b', 'df4d853d7c4bfbdcb753e833e58fafe789334ccc'],
+  'story-sex-pistols-grundy' => ['6b05c0ad3511e5f9901dbdfc35bc7cdea9082a7b', '59f6cbf0d89ca110853ff09a843bae56945f9d3e', '7993347285dfc4560bee02198181b5a242952274', '8d5defe843f17f645d9ef7e49a652b35c6582bcf', '5c6d0405e697bec71b572fea4fe84841040e7359'],
+  'story-studio-54' => ['6d65f5374112ea1b0542c3cccedc2600122662a5', 'c10cdfed539400826157feac7da51d1b0b43f904'],
   'ft-kiss-macys-parade' => ['570c1c5be8cd6aa516c9822b5041e3d31c40b48c', 'edf83d12c2dc4b36df8c1f1a52016fe5f423b9ca', 'd49e86e1b8aae122fa24382b81edfa8e9bb8788a'],
+  'story-mj-beatles-catalog' => ['a75288e127776e839c4512fea03c01d26533513e'],
+  'story-rammstein' => ['d92c31fb3e853cf3bd975741e3f1de261f1b4c76'],
+  'story-napster' => ['00e946d3ddfb802fcde1a1131e824d8a83341529'],
+  'story-icp-gathering' => ['31b3871724f3192f58ac58b442e8b538daf0e2d9'],
 ];
 
 // Seeds that aren't main-show scripts: their type and starting status (everything else: main episode, Ready).
@@ -88,7 +92,7 @@ const DTM_SEED_KINDS = [
 ];
 // side-story seeds that arrive as finished scripts, not ideas
 // Main-episode seeds that start as ideas (notes, not scripts).
-const DTM_SEED_IDEA = ['story-mj-beatles-catalog', 'story-rammstein', 'story-napster', 'story-studio-54', 'story-icp-gathering'];
+const DTM_SEED_IDEA = []; // Nov 27: MJ, Rammstein, Napster, Studio 54 and ICP became full scripts
 const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'ft-gta6-content-id', 'ft-kiss-macys-parade']; // GTA 6 one is up first (Duck, Nov 24)
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
 const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire'];
@@ -136,7 +140,7 @@ function dtm_upgrade_seeds(): void {
         if ($body !== '') { $s['body'] = $body; $s['updated'] = date('c'); }
         if (in_array((string)($s['subtitle'] ?? ''), DTM_SEED_OLD_SUBTITLES[$key] ?? [], true)) $s['subtitle'] = DTM_SEEDS[$key][2];
         if (in_array((string)($s['title'] ?? ''), DTM_SEED_OLD_TITLES[$key] ?? [], true)) $s['title'] = DTM_SEEDS[$key][1];
-        if (($s['kind'] ?? 'episode') !== 'episode' && ($s['status'] ?? '') === 'idea') $s['status'] = 'ready'; // idea notes that became scripts
+        if (($s['status'] ?? '') === 'idea' && !in_array($key, DTM_SEED_IDEA, true)) $s['status'] = 'ready'; // idea notes that became scripts
       }
     }
     return $list;
