@@ -32,11 +32,12 @@ Host goes by "Duck" (never Dillon in show copy). Co-host Pat reacts unscripted. 
 - Beer is OK in full episodes. Avoid it in short clips when easy, and flag beer moments in the transcript.
 
 ## Structure
-**First 3 minutes (Nov 27, Ep 1 retention):** half of viewers left in the first 30 seconds and the rest settled by minute 3, then held flat to the end. So: frame one is Duck mid-line on the cold open (no logo hold, no fade-in, no setup shot); captions on from the start; the theme runs about 5 to 10 seconds in the video, not the full song; no dead air between the theme and the first line after it.
+**First 3 minutes (Nov 27, Ep 1 retention):** half of viewers left in the first 30 seconds and the rest settled by minute 3, then held flat to the end. So: frame one is Duck mid-line on the cold open (no logo hold, no fade-in, no setup shot); captions on from the start; the theme is the 22-second short theme (see Assets), never the full 39-second song; no dead air between the theme and the first line after it.
 Cold open (~30s teaser hits) > "I'm Duck, and due to [title], this is Defacing the Music." > theme > "Episode [n]. [subtitle]" title card > the story > "That Guy" segment (suspects, verdict, guitar squeal sting, "Because in every story there's a that guy. Don't be that guy.") > sign-off "I'm Duck. Due to unforeseen circumstances, I'll see you next time." > theme.
 
 ## Assets
 - New Backstage theme video (full 39s song): `/workspace/dtm-edit/theme/dtm-theme-backstage.mp4` (+ `-vertical.mp4`). Tagline "TRUE STORIES. TERRIBLE DECISIONS."
+- **Short theme, used in every episode from now on (Duck, Nov 27, picked version D):** 22.4 seconds = the song's intro 0:00 to 0:09.60, then straight to the big hit at 0:26.53 through the hard-stop ending (cuts land on bar lines, 113 BPM; 30 ms crossfade at the join). The audio is `assets/audio/defacing-the-music-theme-short.mp3`. For the video, cut `dtm-theme-backstage.mp4` at the same two points (0:00 to 0:09.60 plus 0:26.53 to the end) so picture and music match. The "it's all real" lyric is in the dropped middle; Duck is fine losing it. The full 39-second version stays for trailers and promos.
 - Title card PNGs and overlays: `/workspace/dtm-obs-backstage/` (includes ozzy-title.png and ozzy-subtitle.png)
 - Note (Claude, Nov 22): the `/workspace/...` paths are on the shared editing computer, not in this repo or in cloud sessions. Upload them in admin > Uploads (or commit them under `brand/`) so any session can use them.
 - Brand: stage #161518, floor #1E1D21, amber #FFB547, red #E4251B, paper #F6F3EC. Fonts Saira Stencil One, Oswald Bold, Inter, Permanent Marker. Never purple, teal, or pink.
