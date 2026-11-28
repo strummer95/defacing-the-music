@@ -80,7 +80,7 @@ const DTM_SEED_OLD = [
   'ft-kiss-macys-parade' => ['570c1c5be8cd6aa516c9822b5041e3d31c40b48c', 'edf83d12c2dc4b36df8c1f1a52016fe5f423b9ca', 'd49e86e1b8aae122fa24382b81edfa8e9bb8788a'],
   'story-mj-beatles-catalog' => ['a75288e127776e839c4512fea03c01d26533513e'],
   'story-rammstein' => ['d92c31fb3e853cf3bd975741e3f1de261f1b4c76'],
-  'story-napster' => ['00e946d3ddfb802fcde1a1131e824d8a83341529'],
+  'story-napster' => ['3990efce7bcdbbabd4ff6b3277314e45c18f5759', '00e946d3ddfb802fcde1a1131e824d8a83341529'],
   'story-icp-gathering' => ['31b3871724f3192f58ac58b442e8b538daf0e2d9'],
 ];
 
