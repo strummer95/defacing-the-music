@@ -7,6 +7,29 @@ Done: `/admin/` with first-run setup (deploy key as proof), password login with 
 Google sign-in that turns on by itself under https, account page with sign-out, and a CSRF-protected Pull latest button
 (shared deploy code in `lib/deploy.php`; `pull.php` still works with the key). PR: https://github.com/strummer95/defacing-the-music/pull/2
 
+**2026-11-22, self-picked adversarial security review (no Dillon ask):** gave DTM-ADMIN-1 its first dedicated adversarial
+pass (login throttle, Google sign-in, CSRF, password reset, account page, Pull latest). Checked for: unlocked
+read-check-write races on the throttle counter, Google-account-linking races, allowlist checks skipped at link time,
+`==`/`!=` instead of `hash_equals` on CSRF/reset tokens, and missing `aud`/`exp`/`email_verified` checks on Google ID
+tokens. CSRF, reset tokens and Google verification were all already solid (`hash_equals` throughout, `aud`/`iss`/
+`email_verified`/`exp` all checked in `dtm_google_verify()`). Found and fixed a real one: `dtm_json_update()` in
+`lib/auth.php` (the shared flock-locked JSON read-modify-write every data file goes through, not just the throttle)
+held its exclusive lock on the data file itself, but the write path swaps the file in with `rename()`, which points the
+filename at a brand-new inode; a lock taken via `flock()` on an fd opened before the rename doesn't bind to whatever
+the filename points at later, so any process that opened the same path fresh right after a rename got the new inode
+with no contention at all, even while the renaming process was still logically inside its locked section. Proved it
+with real concurrent `php` CLI processes hammering an isolated copy of the store: a 60-process "increment a shared
+counter by 1" test landed on 40/60 (not 60) before the fix, and a 60-process burst of simulated wrong-password login
+attempts against the per-IP throttle (limit 5) let up to 48 of them through before being blocked. Fixed by locking a
+stable sidecar `data/<name>.json.lock` file (never renamed) instead of the data file itself, so every caller contends
+for the same inode for the whole read-check-write. Same repro after the fix: counter test landed on 60/60 every time
+across 5 trials; the throttle burst test topped out at 5-6 allowed across 10 trials of 60 concurrent requests (the
+decisive, unbounded bypass is gone; the remaining +/-1 is the much smaller, expected slop from `dtm_throttled()` and
+`dtm_fail()` still being two separate calls at the login.php call site, not a reopened version of the same bug).
+Verified with `php -l lib/auth.php` (clean) and a local smoke test (`php -S` + curl through setup -> create admin ->
+login -> account page -> a wrong-password POST that correctly bumps `data/throttle.json`). PR:
+https://github.com/strummer95/defacing-the-music/pull/131
+
 ## [x] DTM-UPLOADS-1: File uploads in the admin
 Done: admin > Uploads. Chunked uploads (big video works on shared hosting), progress + retries, files in uploads/media
 (blocked from the web), download/stream via admin/file.php for admins or a per-file secret link ("Copy link for Claude").

@@ -42,37 +42,41 @@ function dtm_data_dir(): string {
 
 // Read-modify-write a JSON file under an exclusive lock. $fn gets the decoded array and returns the new one
 // (or null to leave the file untouched). Returns whatever the file holds afterwards.
+//
+// The lock is held on a separate, never-replaced "$name.lock" file, not on the data file itself. The data
+// file gets swapped in with rename() (so a crash mid-write can't corrupt it), but rename() points the
+// filename at a brand-new inode; a lock held via flock() on an fd opened before the rename is a lock on the
+// OLD inode, so any process that opens the path fresh AFTER the rename gets a lock on the NEW inode instead
+// and is let straight through, even while the renaming process is still "inside" its critical section. That
+// let concurrent requests race past checks like the login throttle. Locking a path that's never renamed
+// keeps every caller contending for the exact same inode for the whole read-check-write.
 function dtm_json_update(string $name, ?callable $fn = null): array {
   $path = dtm_data_dir() . "/$name";
-  if (!$fn) { // plain read: never create anything (creating fails when the hosting is full)
-    if (!is_file($path)) return [];
-    $fp = @fopen($path, 'r');
-    if (!$fp) throw new RuntimeException("Cannot open data/$name");
-    flock($fp, LOCK_SH);
-    $data = json_decode(stream_get_contents($fp) ?: '[]', true);
-    flock($fp, LOCK_UN); fclose($fp);
-    return is_array($data) ? $data : [];
-  }
-  $fp = @fopen($path, 'c+');
-  if (!$fp) throw new RuntimeException("Cannot open data/$name (is the web hosting full?)");
-  flock($fp, LOCK_EX);
-  $data = json_decode(stream_get_contents($fp) ?: '[]', true);
-  if (!is_array($data)) $data = [];
-  $new = $fn($data);
-  if (is_array($new)) {
-    // Write the new version to a temp file first, then swap it in. If the hosting is full the temp write
-    // fails and the old file is left exactly as it was (the old way emptied the file first, then failed).
-    $json = json_encode($new, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-    $tmp = "$path.tmp-" . bin2hex(random_bytes(4)) . '.json'; // ends in .json, so data/.htaccess blocks it too
-    $ok = $json !== false && @file_put_contents($tmp, $json) === strlen($json) && @rename($tmp, $path);
-    if (!$ok) {
-      @unlink($tmp); flock($fp, LOCK_UN); fclose($fp);
-      throw new RuntimeException("Could not save data/$name (is the web hosting full?). Nothing was changed.");
+  $lockPath = "$path.lock"; // stable path: never renamed, so flock() on it always targets the same inode
+  $lockFp = @fopen($lockPath, 'c');
+  if (!$lockFp) throw new RuntimeException("Cannot open data/$name.lock");
+  flock($lockFp, $fn ? LOCK_EX : LOCK_SH);
+  try {
+    $data = is_file($path) ? json_decode((string)@file_get_contents($path), true) : [];
+    if (!is_array($data)) $data = [];
+    if (!$fn) return $data; // plain read: never create anything (creating fails when the hosting is full)
+    $new = $fn($data);
+    if (is_array($new)) {
+      // Write the new version to a temp file first, then swap it in. If the hosting is full the temp write
+      // fails and the old file is left exactly as it was (the old way emptied the file first, then failed).
+      $json = json_encode($new, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+      $tmp = "$path.tmp-" . bin2hex(random_bytes(4)) . '.json'; // ends in .json, so data/.htaccess blocks it too
+      $ok = $json !== false && @file_put_contents($tmp, $json) === strlen($json) && @rename($tmp, $path);
+      if (!$ok) {
+        @unlink($tmp);
+        throw new RuntimeException("Could not save data/$name (is the web hosting full?). Nothing was changed.");
+      }
+      $data = $new;
     }
-    $data = $new;
+    return $data;
+  } finally {
+    flock($lockFp, LOCK_UN); fclose($lockFp);
   }
-  flock($fp, LOCK_UN); fclose($fp);
-  return $data;
 }
 function dtm_json_read(string $name): array { return dtm_json_update($name); }
 
