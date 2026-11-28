@@ -373,3 +373,12 @@ body.admin .an-sort td:nth-child(2){white-space:nowrap}
 @media (max-width:600px){ body.admin .an-axis{font-size:11px} }
 body.admin .an-untracked{position:absolute;left:0;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(0,0,0,.035) 0 6px,transparent 6px 12px);border-right:1px dashed #cfc8ba;display:flex;align-items:center;justify-content:center}
 body.admin .an-untracked span{font-size:11px;color:#8a8590;letter-spacing:.04em;white-space:nowrap}
+
+/* B-Sides builder (Nov 28) */
+.bside-build{margin:0 0 16px}
+.bside-build summary{cursor:pointer;font-size:20px;margin-bottom:8px}
+.bside-pool{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-direction:column;gap:4px}
+.bside-pool li{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bside-pool label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.bside-pool input[type=checkbox]{width:20px;height:20px}
+.bside-title{min-height:40px;padding:0 10px;flex:1 1 220px;max-width:360px}
