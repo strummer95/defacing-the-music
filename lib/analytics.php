@@ -267,6 +267,14 @@ function dtm_an_fetch_meta(string $token, array &$errors): array {
 
 // Fetch everything that has a key. Returns the errors (platform => message). Uses a lock so two page views
 // never fetch at once.
+// Is a background fetch due? (The Stats page never fetches while you wait: it shows the saved numbers and asks
+// admin/stats-refresh.php to fetch in the background. Duck, Nov 28: the page took forever to open.)
+function dtm_an_refresh_due(): bool {
+  $cfg = dtm_an_cfg();
+  if ($cfg['yt'] === '' && $cfg['meta'] === '' && $cfg['tt_refresh'] === '') return false;
+  return time() - (int)(dtm_an_state()['fetched'] ?? 0) >= DTM_AN_REFRESH_EVERY;
+}
+
 function dtm_an_refresh(bool $force = false): array {
   $cfg = dtm_an_cfg();
   if ($cfg['yt'] === '' && $cfg['meta'] === '' && $cfg['tt_refresh'] === '') return [];

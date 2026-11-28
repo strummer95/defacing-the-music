@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $a = (string)($_POST['action'] ?? '');
   $back = 'analytics.php?' . http_build_query(array_intersect_key($_GET, array_flip(['platform', 'video', 'days'])));
   try {
-    if ($a === 'refresh') { $e = dtm_an_refresh(true); header('Location: ' . $back . '&refreshed=' . ($e ? 'some' : '1')); exit; }
+    if ($a === 'refresh') { session_write_close(); $e = dtm_an_refresh(true); header('Location: ' . $back . '&refreshed=' . ($e ? 'some' : '1')); exit; }
     if ($a === 'save_yt') {
       $k = trim((string)($_POST['yt_key'] ?? ''));
       if (!preg_match('/^AIza[0-9A-Za-z_-]{30,}$/', $k)) $err = "That doesn't look like a Google API key (they start with AIza).";
@@ -95,9 +95,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $cfg = dtm_an_cfg();
-$fetchErrors = dtm_an_refresh(false);
-try { require_once __DIR__ . '/../lib/episodes.php'; dtm_episodes_autopublish(); } catch (Throwable $t) {}
 $state = dtm_an_state();
+$fetchErrors = $state['errors'] ?? [];
+$refreshDue = dtm_an_refresh_due(); // fetched in the background by the script at the bottom, never while the page loads
+try { require_once __DIR__ . '/../lib/episodes.php'; dtm_episodes_autopublish(); } catch (Throwable $t) {}
 $latest = dtm_an_latest();
 $posts = $latest['posts'];
 $groups = dtm_an_groups($posts);
@@ -445,6 +446,20 @@ dtm_page_start('Stats', $user, true);
   <form method="post"><?= dtm_csrf_field() ?><button name="action" value="import_key" class="btn btn-ghost bang"<?= $cfg['import'] !== '' ? ' onclick="return confirm(\'Make a new key? The old one stops working.\')"' : '' ?>><?= $cfg['import'] !== '' ? 'Make a new import key' : 'Make an import key' ?></button></form>
 </details></section>
 
+<?php if ($refreshDue): ?>
+<script>
+// Background fetch (Nov 28): the page shows the saved numbers right away; this pulls new ones and offers them.
+(() => {
+  const when = document.querySelector('.an-when'); if (when) when.textContent += ' · checking for new numbers…';
+  const fd = new FormData(); fd.append('csrf', <?= json_encode(dtm_csrf()) ?>);
+  fetch('stats-refresh.php', {method: 'POST', body: fd, credentials: 'same-origin'}).then(r => r.json()).then(j => {
+    if (!when) return;
+    if (j.ok && j.fetched) { when.innerHTML = 'New numbers in. <a href="">Show them</a>'; }
+    else when.textContent = when.textContent.replace(' · checking for new numbers…', '');
+  }).catch(() => { if (when) when.textContent = when.textContent.replace(' · checking for new numbers…', ''); });
+})();
+</script>
+<?php endif; ?>
 <script>
 // Click a column header to sort the By video table.
 document.querySelectorAll('.an-sort th').forEach((th, i) => th.addEventListener('click', () => {
