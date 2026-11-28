@@ -76,3 +76,9 @@ Research via WebSearch/WebFetch. Quotes in the script were copied from the pages
 - Hogrock acreage (600 vs 115): conflicting, left out.
 - Toledo hotel intercom story, Peoria Vicodin quote, Charlie Sheen 2011: side trips, left out.
 - Whether Lil' Kim performed in 2010: not found; script only says she "was supposed to headline" (in the quote).
+
+## Nov 28 additions (Duck: more of the clowns' and fans' craziness; Tila part lightened)
+- Violent J fired from a job dressing as a pizza slice for wearing a fake diamond on his tooth; the duo dated Kinko's employees for free fliers; 2001 fans stormed MTV's Total Request Live for "Let's Go All the Way", NYPD cleared face-painted kids before cameras rolled: Metro Times, "ICP's clowning glory" https://www.metrotimes.com/music/icps-clowning-glory-2174778
+- Charlie Sheen at the Gathering, Hogrock, Sat Aug 13 2011: "Are you still 'Whoop-Whoop winning'?", "You guys are fucking asleep.", caught an opened Faygo can mid-air with his right hand, soda down his arm: Village Voice https://www.villagevoice.com/charlie-sheen-catches-a-flying-faygo-and-says-whoop-whoop-winning-at-the-gathering-of-the-juggalos/
+- Shaggy 2 Dope, 2011 Gathering: golf cart donuts, hit gravel, foot caught under it; "On the plane there was a puddle of blood in the bottom of my shoe. I just had to tough it out."; about a week in hospital, skin graft: Spin, Aug 2012 oral history https://www.spinmagazine.com/2012/08/crazy-clown-time-history-gathering-juggalos/6/
+- Tila section shortened at Duck's request: kept "cuts and bruises" (Rabin's description), security pulled her off and drove her out, threatened suit never filed, Violent J "It was one asshole" (about Method Man's can, already sourced).
