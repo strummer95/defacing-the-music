@@ -34,6 +34,12 @@ const DTM_SEEDS = [
   'otr-gene-simmons-tongue' => ['', "Off The Record: Gene Simmons's Cow Tongue", "Did Gene Simmons get a cow's tongue grafted on?"],
   'otr-ozzy-ants' => ['', "Off The Record: Ozzy and the Ants", "Did Ozzy really snort a line of ants?"],
   'otr-dave-matthews-bus' => ['', "Off The Record: The Dave Matthews Band Bus", "Did the Dave Matthews Band really dump on a tour boat?"], // Duck, Nov 28: keep it in both places, B-Side story and full-episode draft
+  // Themed B-Side stories (Duck, Nov 28): Tour Disasters and Riders.
+  'otr-sabbath-stonehenge' => ['', "Off The Record: Black Sabbath's Stonehenge", "Did Spinal Tap steal Sabbath's Stonehenge?"],
+  'otr-hendrix-monkees' => ['', "Off The Record: Hendrix Opens for the Monkees", "Did Hendrix get kicked off the Monkees tour for being too dirty?"],
+  'otr-fake-fleetwood-mac' => ['', "Off The Record: The Fake Fleetwood Mac", "Did a fake Fleetwood Mac really tour America?"],
+  'otr-iggy-rider' => ['', "Off The Record: Iggy Pop's Rider", "Does Iggy Pop have the craziest rider in rock?"],
+  'otr-foo-fighters-rider' => ['', "Off The Record: The Foo Fighters' Coloring Book", "Are crazy riders just rock stars being divas?"],
   // Full Off The Record episodes (Duck, Nov 23: 3 quick, direct stories per episode).
   'otr-vol-1' => ['', "Off The Record: Candy, Blood and a Cow Tongue", "Brown M&M's, the KISS blood comic, Gene's tongue"],
   'otr-vol-2' => ['', "Off The Record: Oz, Phil and the Parakeets", "Dark Side of the Rainbow, In the Air Tonight, Hendrix's parakeets"],
@@ -87,14 +93,14 @@ const DTM_SEED_OLD = [
 // Seeds that aren't main-show scripts: their type and starting status (everything else: main episode, Ready).
 const DTM_SEED_KINDS = [
   'otr-brown-mms' => 'otr', 'otr-hendrix-parakeets' => 'otr', 'otr-dark-side-rainbow' => 'otr', 'otr-kiss-blood-comic' => 'otr',
-  'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr', 'otr-dave-matthews-bus' => 'otr',
+  'otr-phil-collins-drowning' => 'otr', 'otr-gene-simmons-tongue' => 'otr', 'otr-ozzy-ants' => 'otr', 'otr-dave-matthews-bus' => 'otr', 'otr-sabbath-stonehenge' => 'otr', 'otr-hendrix-monkees' => 'otr', 'otr-fake-fleetwood-mac' => 'otr', 'otr-iggy-rider' => 'otr', 'otr-foo-fighters-rider' => 'otr',
   'otr-vol-1' => 'otr', 'otr-vol-2' => 'otr',
   'ft-stubhub-phantom-concert' => 'week', 'ft-slayer-forum-seats' => 'week', 'ft-ye-band-room-opera' => 'week', 'ft-gta-songs-expire' => 'week', 'ft-gta6-content-id' => 'week', 'ft-kiss-macys-parade' => 'week',
 ];
 // side-story seeds that arrive as finished scripts, not ideas
 // Main-episode seeds that start as ideas (notes, not scripts).
 const DTM_SEED_IDEA = []; // Nov 27: MJ, Rammstein, Napster, Studio 54 and ICP became full scripts
-const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'otr-dave-matthews-bus', 'ft-gta6-content-id', 'ft-kiss-macys-parade']; // GTA 6 one is up first (Duck, Nov 24)
+const DTM_SEED_READY = ['otr-vol-1', 'otr-vol-2', 'otr-dave-matthews-bus', 'otr-sabbath-stonehenge', 'otr-hendrix-monkees', 'otr-fake-fleetwood-mac', 'otr-iggy-rider', 'otr-foo-fighters-rider', 'ft-gta6-content-id', 'ft-kiss-macys-parade']; // GTA 6 one is up first (Duck, Nov 24)
 // Fresh Tracks picks land as drafts (Duck, Nov 23: "just put them in fresh tracks and drafts").
 const DTM_SEED_DRAFT = ['ft-stubhub-phantom-concert', 'ft-slayer-forum-seats', 'ft-ye-band-room-opera', 'ft-gta-songs-expire'];
 const DTM_SEED_DATES = ['ft-stubhub-phantom-concert' => '2026-11-15', 'ft-slayer-forum-seats' => '2026-11-14', 'ft-ye-band-room-opera' => '2026-11-11', 'ft-gta-songs-expire' => '2026-11-20', 'ft-gta6-content-id' => '2026-11-22', 'ft-kiss-macys-parade' => '2026-11-26']; // "happened on" for dated seeds
