@@ -1,0 +1,5 @@
+# Off The Record: otr-sabbath-stonehenge
+
+Written Nov 28 2026 for Duck's themed B-Sides (Tour Disasters / Riders).
+
+Geezer Butler quotes ("He came up with the idea of having the stage set be Stonehenge." / "He wrote it down in meters but he meant to write it down in feet." / "There was not a building on Earth that you could fit it into." / "We just had to leave it in the storage area."), Spinal Tap scene conceived and filmed before the Born Again tour: Classical Music (Louder). Tony Iommi "We couldn't believe the size of it when we saw it.", Butler "they were almost touching the ceiling", largest stone about 15 meters / nearly 50 feet, Don Arden hired a performer dressed as the demon baby who crawled across the tallest stone and fell off to a taped scream, Gillan "absolutely horrendous" and mattresses removed, Spinal Tap released March 1984, Sabbath members suspected the film stole their story: American Songwriter. Note: American Songwriter says the builders (LSD) read the measurements as meters; the script uses Geezer's version ("wrote it down in meters"). Called it a legend because the Spinal Tap scene came first.
