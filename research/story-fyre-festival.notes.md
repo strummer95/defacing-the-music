@@ -67,3 +67,11 @@ Prices (CPI-U, BLS calculator ratio, 2017 to late 2026 about 1.35; 2023 to late 
 - $499 (2023) about $550; $7,999 about $8,700.
 
 Not verified / left out: exact NYC VIP Access victim count differs (AP 15+, DOJ 30+); script uses AP's "at least fifteen".
+
+## Nov 28 additions (Duck asked for more specific, amusing moments)
+- McFarland "we're selling a pipe dream to your average loser, your average guy in middle America." (video quoted from the documentary): NPR, Jan 13 2019 https://www.npr.org/2019/01/13/684887614/fyre-festival-documentary-shows-perception-and-reality-of-infamous-concert-flop (transcript https://www.npr.org/transcripts/684887614)
+- Guest: "We see this sea of white, little tents." / "And it was the bus driver who said, oh, no. That's where you're staying.": same NPR transcript (unnamed attendee in the documentary). The "figuring it was for staff" bit is paraphrase framing, kept out of quote marks.
+- Leaked emails: Conall Arora (Fyre Media president) "I'm seeing some sites that say we could get away with 75 toilets." and "If we cut it in half, we would just have double the line wait?"; Marc Weinstein (consultant) "Of course, these villas don't exist.": Spin, June 2017 https://www.spinmagazine.com/2017/06/fyre-festival-leaked-emails-toilets-showers-housing/
+- FyreBands: April 17 email, cashless, "We recommend adding at least $300-$500 per day."; $10 "refund handling fee"; more than $700,000 loaded (lender says $760,000); lender owed at least 40 percent of wristband deposits; April 26 email reopened loading citing "anticipated lines" (Bloomberg's wording, read in script as their description): Bloomberg via BloombergQuint, May 15 2017 https://www.bloombergquint.com/markets/2017/05/15/fyre-festival-was-buried-under-millions-in-debt-before-it-even-began
+- Luggage: attendee found people unloading luggage from a large red shipping container at nightfall, searching by phone flashlight: Bloomberg, May 2 2017 https://www.bloomberg.com/news/articles/2017-05-02/the-inside-story-of-how-fyre-festival-went-up-in-flames (replaces the earlier "luggage dumped in the dark: not verified" note)
+- Prices (2017 to late 2026 about 1.35): $300 to $500 about $400 to $675 ("four to seven hundred"); $700,000 about $950,000.
