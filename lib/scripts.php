@@ -81,7 +81,7 @@ const DTM_SEED_OLD = [
   'story-mj-beatles-catalog' => ['a75288e127776e839c4512fea03c01d26533513e'],
   'story-rammstein' => ['d92c31fb3e853cf3bd975741e3f1de261f1b4c76'],
   'story-napster' => ['3990efce7bcdbbabd4ff6b3277314e45c18f5759', '00e946d3ddfb802fcde1a1131e824d8a83341529'],
-  'story-icp-gathering' => ['07e51ebe8488cffd87024da77b80eade15a73f54', '4bd6c6d307d53b23e1ddf6e62266bcd9dccb09c2', '31b3871724f3192f58ac58b442e8b538daf0e2d9'],
+  'story-icp-gathering' => ['74894bf9bbf5a699e1b2228abb6b05a44d3a8ee6', '07e51ebe8488cffd87024da77b80eade15a73f54', '4bd6c6d307d53b23e1ddf6e62266bcd9dccb09c2', '31b3871724f3192f58ac58b442e8b538daf0e2d9'],
 ];
 
 // Seeds that aren't main-show scripts: their type and starting status (everything else: main episode, Ready).
