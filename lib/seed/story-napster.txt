@@ -1,14 +1,18 @@
 ## COLD OPEN
-A college freshman in Boston names a computer program after an insult about his hair.
-A year later, the Senate downloads a Creed song mid-hearing, tells the witnesses to listen, and leaves to vote.
-And a heavy metal drummer rolls up to an office with sixty thousand pages of screen names. The crowd outside is not on his side.
+You remember Napster. Every song on earth, free, on your dorm computer.
+It's named after an insult about a college kid's hair.
+A year later, the drummer of Metallica pulls up to its office with sixty thousand pages of screen names. The crowd outside is not on his side.
+And the United States Senate downloads a Creed song in the middle of a hearing, tells everybody to listen, and leaves to vote.
 Everybody knows Metallica sued Napster. Almost nobody knows how weird it got.
 I'm Duck, and due to unauthorized downloading, this is Defacing the Music.
 [THEME SONG, hard stop]
 Episode [NUMBER]. Who Brought Lars Ulrich the Boxes?
 
 ## THE KID WITH THE HAIR
-This one starts with a kid named Shawn Fanning.
+[CLIP: Metallica sued Yale]
+Metallica once sued Yale. And a company a teenager started, under the racketeering law, the one built to go after the mob. And before it was over, the drummer of Metallica was unloading boxes out of a pickup truck while a crowd chanted at him.
+It all starts with a kid's hair.
+The kid is Shawn Fanning.
 Shawn grows up on Cape Cod, and according to Time magazine, he taught himself Unix programming between his junior and senior years of high school.
 By 1998 he's a freshman at Northeastern University in Boston. And his roommates are music nerds. Here's Shawn, to Spin magazine in 2000: "My roommates were MP3 fanatics. I heard them complaining all the time about how hard it was trying to find songs."
 So he fixes it. He writes a program where everybody's music folder is connected to everybody else's. You type in a song, you find some stranger who has it, you take it.
@@ -22,7 +26,7 @@ And these kids are famous. One of Napster's investors, Ron Conway, says he threw
 
 ## THE PHONE CALL
 [CLIP: "I don't subscribe to Billboard magazine"]
-The head of the record industry's trade group told Napster's CEO to go open up Billboard magazine. And Napster's CEO said she didn't subscribe.
+The head of the record industry's trade group told Napster's CEO, Eileen Richardson, to go open up Billboard magazine. And Napster's CEO said she didn't subscribe.
 That's the whole relationship.
 So, the record labels are not happy. The Recording Industry Association of America, the RIAA, run by Hilary Rosen, sues Napster in December 1999. And before that, there's a phone call between Hilary and Eileen. Eileen was in her car, and here's how she tells it to Fortune:
 "She said, 'You're letting people download …' I said, 'You don't understand the technology. That is not what we're doing.' She said, 'You're infringing on copyrights.' I said, 'Well, I'd like to know which ones. Who, what, when, where, how?' And that's when she said, 'Open up Billboard magazine! The top 200 are right there!' Really meanly. And I said, 'I'm sorry. I don't subscribe to Billboard magazine.'"
@@ -119,27 +123,18 @@ And one more thing came out in the lawsuit. An early internal email from Sean Pa
 In his own email. A lawyer for the song publishers, Jeff Knowles, told Fortune: "How many cases do you have an email that's essentially a confession?"
 
 ## THE LABELS SUE EVERYBODY
-And this is where it stops being funny for a minute.
-Napster is dead, but file sharing isn't. So on September 8th, 2003, the record industry starts suing regular people. Two hundred sixty one lawsuits on day one.
-One of them was a twelve year old girl in New York City. Her family had paid twenty nine ninety nine for a file-sharing program and thought that made it legal. In today's money, that's about fifty five bucks. Within about a day, her mom agreed to pay two thousand dollars to make it go away. In today's money, that's about thirty six hundred.
-She's a kid. She's not the joke. The Register wrote that the industry moved fast "to blunt a public relations atrocity."
-And it kept going. By 2008, the Electronic Frontier Foundation counted at least thirty thousand people the industry had sued, settled with, or threatened.
+Napster's dead, but file sharing isn't. So on September 8th, 2003, the record industry starts suing regular people. Two hundred sixty one lawsuits on day one.
+One of them was a twelve year old girl in New York City. Her mom paid two thousand dollars to make it go away. In today's money, that's about thirty six hundred. The Register wrote that the industry moved fast "to blunt a public relations atrocity."
+By 2008, the Electronic Frontier Foundation counted at least thirty thousand people the industry had sued, settled with, or threatened.
+So the record industry looked at Lars and the boxes and went, "What if we did that, but to everybody?"
 
 ## THAT GUY
 [CLIP: That Guy verdict]
-Okay. Who's That Guy?
-Suspect one: whoever leaked "I Disappear." Still unknown. Still out there. Possibly listening.
-Suspect two: Shawn Fanning. The kid built it, never asked anybody, and walked away from his bedding.
-Suspect three: Napster's grown-ups. They told Metallica "we don't know who these people are," with an email in their own files about "pirated music," and then they tipped off the crowd that Lars was coming.
-Suspect four: Lars Ulrich.
-And the verdict.
-Lars told us himself: "That was a dare." Napster said "we don't know who they are." And a guy who got famous mailing tapes to metalheads in Holland heard that, and printed sixty thousand pages, and put them in a pickup truck, and drove them to the one building in America where everybody already hated him.
-Of course he did. He's a drummer.
-That Guy is Lars.
+So let's recap Lars. Finds out his unfinished song is on twenty radio stations. Sues a teenager's company under the mob law. Sues Yale. Prints sixty thousand pages of screen names, loads them in a pickup truck, drives them to the one building in America where everybody already hates him, and tells the crowd to go shoplift from Tower Records instead.
+And this is a guy who got famous because fans copied his tapes.
+Come on, Lars. Don't be that guy.
 [THAT GUY STING]
-But Napster packed the boxes.
-[RIFF: your verdict. Lars, Napster, or the leaker? Or use this:]
-If somebody dares you to bring the names, the move is to send a lawyer with a floppy disk. Not a drummer with a truck.
+In fairness, Napster dared him. But you don't have to take every dare.
 
 ## WHERE ARE THEY NOW
 Shawn Fanning kept starting companies. In 2012 he and Sean Parker launched a video chat site called Airtime at a big celebrity event, and the product kept crashing.
